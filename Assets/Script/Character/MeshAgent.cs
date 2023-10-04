@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +17,11 @@ public class MeshAgent : MonoBehaviour
 
     private NavMeshPath path = null;
 
-
+    public Action OnArried = null; 
     public void Initialized()
     {
-        path = GetComponent<NavMeshPath>();
+        path = new NavMeshPath();
+        Debug.Log("Initialized");
     }
     public void MoveToDirection(Vector3 direction)
     {

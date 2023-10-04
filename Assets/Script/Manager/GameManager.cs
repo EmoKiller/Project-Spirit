@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager Instance = null;
+    public static GameManager Instance = null;
+    //enemy
+    public List<WayPoint> enemyWayPoints = null;
+    public List<Enemy> enemies = null;
+    //
 
-
+    public Player player = null;
     private void Awake()
     {
         if (Instance == null)
