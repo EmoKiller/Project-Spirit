@@ -8,6 +8,7 @@ TagManager:
   - JoyStick
   - JoyStickHandle
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX

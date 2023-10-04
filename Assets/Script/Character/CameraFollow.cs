@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    [SerializeField] private Player target => GameManager.Instance.player ;
     //[SerializeField] private PlayerControllerPC player;
     [SerializeField] private Vector3 offset = new Vector3(0, 9.7f, -13.3f);
     Vector3 targetpos;
@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
     
     private void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        
         transform.eulerAngles = new Vector3(37, 0, 0);
     }
     private void FixedUpdate()

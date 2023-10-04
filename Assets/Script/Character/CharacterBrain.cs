@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class CharacterBrain : MonoBehaviour
 {
     [Header("Configuration")]
-    [SerializeField] protected string characterName;
+    [SerializeField] protected string characterName = "";
+    [SerializeField] protected float hp = 5f;
 
     [Header("Component System")]
     [SerializeField] protected MeshAgent agent = null;
@@ -13,8 +14,6 @@ public abstract class CharacterBrain : MonoBehaviour
     //[SerializeField] protected CharacterAttack characterAttack = null;
 
     public string Name => characterName;
-
-
     protected abstract CharacterBrain targetAttack { get; }
 
 
@@ -22,7 +21,7 @@ public abstract class CharacterBrain : MonoBehaviour
     protected virtual void Awake()
     {
         agent.Initialized();
-        //characterAnimator.Initialized();
+        characterName = gameObject.name;
     }
 
 
@@ -31,8 +30,12 @@ public abstract class CharacterBrain : MonoBehaviour
         return targetAttack != null;
     }
 
-    protected void DoAttack()
+    protected void DoAttackNomal()
     {
         
+    }
+    protected void DoAttackHeavy()
+    {
+
     }
 }
