@@ -25,7 +25,8 @@ public class Player : CharacterBrain
         agent.MoveToDirection(new Vector3(horizontal, 0, vertical));
         if (Input.GetKeyDown(KeyCode.J))
         {
-            
+            //Instantiate();
         }
     }
+    
 }
