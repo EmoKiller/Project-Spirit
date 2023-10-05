@@ -10,7 +10,7 @@ public abstract class CharacterBrain : MonoBehaviour
 
     [Header("Component System")]
     [SerializeField] protected MeshAgent agent = null;
-    //[SerializeField] protected CharacterAnimator characterAnimator = null;
+    [SerializeField] protected CharacterAnimator characterAnimator = null;
     //[SerializeField] protected CharacterAttack characterAttack = null;
 
     public string Name => characterName;
@@ -32,10 +32,14 @@ public abstract class CharacterBrain : MonoBehaviour
 
     protected void DoAttackNomal()
     {
-        
+        //characterAnimator.SetTrigger();
     }
     protected void DoAttackHeavy()
     {
 
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log(other);
     }
 }
