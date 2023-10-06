@@ -1,18 +1,4 @@
 {
-	"SaveGame" : {
-		"baseAttribute" : {
-			"HP" : {
-				"type" : 0,
-				"ratio" : 100,
-				"value" : 3
-			},
-			"Coin" : {
-				"type" : 0,
-				"ratio" : 100,
-				"value" : 0
-			}
-		}
-	},
 	"PlayerConfig" : {
 		"Nomal" : {
 			"HP" : {

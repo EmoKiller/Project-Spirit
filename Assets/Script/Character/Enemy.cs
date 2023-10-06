@@ -15,7 +15,7 @@ public class Enemy : CharacterBrain
 
     protected override void Awake()
     {
-        agent = GetComponent<MeshAgent>();
+       
         base.Awake();
         agent.OnArried = OnArried;
         
