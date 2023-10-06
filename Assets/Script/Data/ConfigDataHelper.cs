@@ -27,6 +27,7 @@ public class ConfigDataHelper
                 userData = ES3.Load<UserData>(GameConstants.USERDATA);
             return userData;
         }
+        set => ES3.Save(GameConstants.USERDATA, value);
     }
     
 

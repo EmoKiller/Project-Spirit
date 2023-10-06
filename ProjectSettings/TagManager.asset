@@ -9,6 +9,7 @@ TagManager:
   - JoyStickHandle
   - Enemy
   - Ground
+  - Weapon
   layers:
   - Default
   - TransparentFX
