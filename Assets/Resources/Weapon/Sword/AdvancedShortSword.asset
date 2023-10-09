@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AdvancedShortSword
   m_EditorClassIdentifier: 
   projectTile: {fileID: 8575648628153387391, guid: b5d55e83ee1152548b7ee7470ec258de, type: 3}
-  attackRange: 1
+  attackRange: 1.5
   damage: 3
