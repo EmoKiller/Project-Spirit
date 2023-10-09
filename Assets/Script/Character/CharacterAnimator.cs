@@ -15,7 +15,7 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackType currentAttackType;
 
-    protected string currentTrigger = "";
+    [SerializeField] protected string currentTrigger = "";
     public Animator Ator
     {
         get
@@ -75,4 +75,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         Ator.SetInteger(param, value);
     }
+
+
+    
 }

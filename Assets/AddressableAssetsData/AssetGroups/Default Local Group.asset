@@ -25,6 +25,22 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Weapon/Sword/AssaultSword.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 124d1c5e0359579489d34e1f2733a8a4
+    m_Address: Assets/Prefabs/Weapon/Axe/BalancedAxe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a417d34ad1d225a47819a697f8f4895f
+    m_Address: Assets/Prefabs/Weapon/Wand/WoodenWand.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 665e4fd0f16cf5b4aaf83ba42d77dd72
+    m_Address: Assets/Prefabs/UI/ShowHPEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ab2f23600f00b7945a5c2b36e8336d2e
+    m_Address: Assets/Prefabs/Enemy/EnemyHuman.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:

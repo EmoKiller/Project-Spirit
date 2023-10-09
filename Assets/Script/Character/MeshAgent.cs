@@ -21,7 +21,6 @@ public class MeshAgent : MonoBehaviour
     public void Initialized()
     {
         path = new NavMeshPath();
-        Debug.Log("Initialized");
     }
 
     public void MoveToDirection(Vector3 direction)
