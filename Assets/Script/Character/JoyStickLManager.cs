@@ -37,7 +37,7 @@ public class JoyStickLManager : MonoBehaviour, IPointerDownHandler, IDragHandler
     {
         
         Debug.Log("Inside Joystick L space");
-        Debug.Log(eventData);
+        //Debug.Log(eventData);
         joyStickL.transform.position = eventData.position;
         handle.transform.position = eventData.position;
         joystickTouchPos = eventData.position;

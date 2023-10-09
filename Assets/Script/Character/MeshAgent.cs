@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class MeshAgent : MonoBehaviour
 {
     [Header("Configuration")]
-    [SerializeField]private float moveSpeed = 3f;
+    [SerializeField]private float moveSpeed = 1f;
 
     [Header("Debuger")]
     public bool showPath = true;
@@ -23,10 +23,13 @@ public class MeshAgent : MonoBehaviour
         path = new NavMeshPath();
         Debug.Log("Initialized");
     }
+
     public void MoveToDirection(Vector3 direction)
     {
         agentBody.Move(direction * moveSpeed * Time.deltaTime);
     }
+
+    
     private void OnDrawGizmos()
     {
         if (!showPath || path == null)

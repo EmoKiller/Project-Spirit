@@ -16,10 +16,7 @@ public enum AttributeType
 }
 public enum ItemsType
 {
-    Helmet,
-    Armor,
-    Grover,
-    Boots,
-    Ring,
-    Trousers
+    Weapon,
+    cloth
 }
+

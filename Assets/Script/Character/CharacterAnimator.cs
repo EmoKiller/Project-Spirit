@@ -2,33 +2,56 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.ScrollRect;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    public enum AnimationState { }
+    public enum AnimationState { Movement, Attack }
+    public enum MovementType { Idle, Ready, Walk, Run }
     public enum AttackType { nomal, power }
 
-    private Animator animator = null;
-
-    protected AttackType currentAttackType;
+    private Animator ator = null;
+    [SerializeField] protected AnimationState currentAnimationState;
+    [SerializeField] protected MovementType currentMovementType;
+    [SerializeField] protected AttackType currentAttackType;
 
     protected string currentTrigger = "";
     public Animator Ator
     {
         get
         {
-            if (animator == null)
+            if (ator == null)
                 GetComponent<Animator>();
-            return animator;
-        }
+            return ator;
+        }                                                          
     }
     public void Initialized()
     {
-        
+        ator = GetComponent<Animator>();
     }
+    public void SetMovement(MovementType type)
+    {
+        if (currentAnimationState == AnimationState.Movement && currentMovementType == type)
+            return;
+
+        //SetFloat("MovementType", (int)type);
+        //SetTrigger("Movement");
+        SetInt("State", (int)type);
+
+        currentAnimationState = AnimationState.Movement;
+        currentMovementType = type;
+    }
+
     public void SetAttack(AttackType type)
     {
+        if (currentAnimationState == AnimationState.Attack && currentAttackType == type)
+            return;
 
+        SetFloat("AttackType", (int)type);
+        SetTrigger("Attack");
+
+        currentAnimationState = AnimationState.Attack;
+        currentAttackType = type;
     }
     public void SetTrigger(string param)
     {
@@ -47,5 +70,9 @@ public class CharacterAnimator : MonoBehaviour
     public void SetFloat(string param, float value)
     {
         Ator.SetFloat(param, value);
+    }
+    public void SetInt(string param, int value)
+    {
+        Ator.SetInteger(param, value);
     }
 }

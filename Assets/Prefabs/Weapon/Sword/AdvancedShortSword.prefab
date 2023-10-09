@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8575648628153387390}
   - component: {fileID: 8575648628153387377}
+  - component: {fileID: 4441014725829088647}
   m_Layer: 0
   m_Name: AdvancedShortSword
   m_TagString: Untagged
@@ -131,3 +132,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponObject: {fileID: 11400000, guid: e102c7073ffbbae4e9928ddd1ffc6a58, type: 2}
   spanPoint: {fileID: 0}
+--- !u!210 &4441014725829088647
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575648628153387391}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
