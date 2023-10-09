@@ -2,40 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.UI;
 
 public class Player : CharacterBrain
 {
 
     //[SerializeField] protected Joystick joyStick = null;
-    
-    private float horizontal { get; set; }
-    private float vertical { get; set; }
+    [SerializeField] protected Slider hpSlider;
+    [SerializeField] protected Slider mpSlider;
+    [SerializeField] protected Slider spSlider;
+    protected float horizontal { get{ return Input.GetAxis("Horizontal"); } set {  } }
+    protected float vertical { get { return Input.GetAxis("Vertical"); } set {  } }
 
-    private int dirMove = 0;
     protected override CharacterBrain targetAttack => throw new System.NotImplementedException();
-
-   
-
     protected override void Awake()
     {
         
-        base.Awake();
+        base.Awake(); 
     }
     protected void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
-        {
-            dirMove = horizontal > 0 ? 3 : 2;
-            
-        }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
-        {
-            dirMove = vertical > 0 ? 1 : 0;
-            
-        }
         agent.MoveToDirection(new Vector3(horizontal, 0, vertical));
         if (horizontal != 0 || vertical!=0)
         {
@@ -45,12 +31,13 @@ public class Player : CharacterBrain
         {
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
         }
-        ManagerDirectionMove.SetActiveDirectionMove((DirectionMove)dirMove);
+        charactorDirectionMove.DirectionMove(transform.position, new Vector3(horizontal, 0, vertical) * 100, dirMove);
         
         if (Input.GetKeyDown(KeyCode.J))
         {
-            
-            
+
+            characterAnimator.SetTrigger("Slash1H");
+
 
         }
         if (Input.GetKeyDown(KeyCode.E))

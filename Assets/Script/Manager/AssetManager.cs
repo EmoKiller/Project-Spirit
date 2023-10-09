@@ -7,6 +7,8 @@ using UnityEngine.AddressableAssets;
 public class AssetManager : MonoBehaviour
 {
     public string Weapon;
+    public string ShowHPEnemy;
+    public string Enemy;
     //public void SpawnItems(Vector3 position, Quaternion quaternion)
     //{
     //    Weapon.InstantiateAsync(position, quaternion);

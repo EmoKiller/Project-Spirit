@@ -14,8 +14,9 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected MeshAgent agent = null;
     [SerializeField] protected CharacterAnimator characterAnimator = null;
     [SerializeField] protected CharacterAttack characterAttack = null;
-    [SerializeField] protected ManagerDirectionMove ManagerDirectionMove = null;
+    [SerializeField] protected ManagerDirectionMove charactorDirectionMove = null;
     public string Name => characterName;
+    public int dirMove = 0;
     protected abstract CharacterBrain targetAttack { get; }
 
     public MeshAgent Agent => agent;
@@ -23,16 +24,16 @@ public abstract class CharacterBrain : MonoBehaviour
 
     protected virtual void Awake()
     {
-        ManagerDirectionMove = GetComponentInChildren<ManagerDirectionMove>();
+        charactorDirectionMove = GetComponentInChildren<ManagerDirectionMove>();
         characterAnimator = GetComponentInChildren<CharacterAnimator>();
         agent.Initialized();
         characterAnimator.Initialized();
-        ManagerDirectionMove.Initialized();
+        charactorDirectionMove.Initialized();
         characterName = gameObject.name;
     }
     private void Start()
     {
-        ManagerDirectionMove.SetActiveDirectionMove(DirectionMove.Front);
+        charactorDirectionMove.SetActiveDirectionMove(DirectionMove.Front);
     }
 
     protected bool CanAttack()
