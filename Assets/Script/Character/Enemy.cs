@@ -33,7 +33,7 @@ public class Enemy : CharacterBrain
         }
         else if (distance <= characterAttack.AttackRange)
         {
-            Debug.Log("Atk ");
+            Debug.Log("Atk");
         }
         //if (onFollowPlayer && targetAttack != null && Vector3.Distance(transform.position, targetAttack.transform.position) > attackRange)
         //{
