@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1955247744252447243}
   - component: {fileID: 1955247744252447236}
+  - component: {fileID: -6655983766562661760}
   m_Layer: 0
   m_Name: AssaultSword
   m_TagString: Untagged
@@ -45,8 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4092f2a0c294c54428cfd0ff499445d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponObject: {fileID: 11400000, guid: e102c7073ffbbae4e9928ddd1ffc6a58, type: 2}
+  weaponObject: {fileID: 11400000, guid: 4797584c974ff0443a3907243acaeb41, type: 2}
   spanPoint: {fileID: 0}
+--- !u!210 &-6655983766562661760
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955247744252447242}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1955247744500689936
 GameObject:
   m_ObjectHideFlags: 0

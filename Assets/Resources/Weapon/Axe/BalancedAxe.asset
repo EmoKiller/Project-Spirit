@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
-  m_Name: Sword
+  m_Name: BalancedAxe
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
-  attackRange: 5
+  projectTile: {fileID: 8691996245498916314, guid: 124d1c5e0359579489d34e1f2733a8a4, type: 3}
+  attackRange: 1
+  damage: 7
