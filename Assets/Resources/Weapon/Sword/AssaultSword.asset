@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AssaultSword
   m_EditorClassIdentifier: 
   projectTile: {fileID: 1955247744252447242, guid: 31df45f0871a16c4dbd2d57e66906431, type: 3}
-  attackRange: 1
+  attackRange: 1.5
   damage: 5
