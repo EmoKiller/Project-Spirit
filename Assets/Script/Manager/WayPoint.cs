@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class WayPoint : MonoBehaviour
+public class WayPoint
 {
     public string targetEnemy = "";
-    public List<WayPoint> points = null;
+    public List<Transform> points = null;
 
     public WayPoint()
     {
