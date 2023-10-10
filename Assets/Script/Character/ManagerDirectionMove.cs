@@ -22,16 +22,19 @@ public class ManagerDirectionMove : MonoBehaviour
             move.gameObject.SetActive(move.direction == type);
         }
     }
-    public void DirectionMove(Vector3 positon, Vector3 dirTarget,int direcMove)
+    public void DirectionMove(Vector3 positon, Vector3 dirTarget,int dirNum)
     {
-        if (Mathf.Abs(dirTarget.x - positon.x) > Mathf.Abs(dirTarget.z - positon.z))
+
+        if (Mathf.Abs(dirTarget.x - positon.x) >= Mathf.Abs(dirTarget.z - positon.z))
         {
-            direcMove = positon.x < dirTarget.x ? 3 : 2;
+            dirNum = positon.x < dirTarget.x ? 3 : 2;
         }
-        else if (Mathf.Abs(dirTarget.x - positon.x) < Mathf.Abs(dirTarget.z - positon.z))
+        else if (Mathf.Abs(dirTarget.x - positon.x) <= Mathf.Abs(dirTarget.z - positon.z))
         {
-            direcMove = transform.position.z < dirTarget.z ? 1 : 0;
+            dirNum = positon.z < dirTarget.z ? 1 : 0;
         }
-        SetActiveDirectionMove((DirectionMove)direcMove);
+            
+        SetActiveDirectionMove((DirectionMove)dirNum);
+
     }
 }

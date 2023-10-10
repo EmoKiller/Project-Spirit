@@ -1,28 +1,43 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.UI;
 
 public class Player : CharacterBrain
 {
-
-    //[SerializeField] protected Joystick joyStick = null;
-    [SerializeField] protected Slider hpSlider;
-    [SerializeField] protected Slider mpSlider;
-    [SerializeField] protected Slider spSlider;
-    protected float horizontal { get{ return Input.GetAxis("Horizontal"); } set {  } }
-    protected float vertical { get { return Input.GetAxis("Vertical"); } set {  } }
-
     protected override CharacterBrain targetAttack => throw new System.NotImplementedException();
+    protected float horizontal => Input.GetAxis("Horizontal");
+    protected float vertical => Input.GetAxis("Vertical");
+
+    protected override Vector3 direction => new Vector3(horizontal, 0, vertical);
+    [SerializeField] protected JoyStickLManager joyStick = null;
+    
+
+    //private float mana = 10f;
+    //private float stamina = 10f;
+    //private float currentMana = 10f;
+    //private float currentStamina = 10f;
     protected override void Awake()
     {
         
-        base.Awake(); 
+        base.Awake();
+        
+    }
+    private void Start()
+    {
+        
     }
     protected void Update()
     {
-        agent.MoveToDirection(new Vector3(horizontal, 0, vertical));
+        agent.MoveToDirection(direction);
+        if (Vector3.Distance(transform.position, transform.position + direction) > 0.3)
+            charactorDirectionMove.DirectionMove(transform.position, transform.position + direction, dirNum);
+        
+        //Debug.Log(joyStick.handle.position.normalized);
+        //Debug.Log(Vector2.Distance(joyStick.handle.position.normalized, joyStick.handle.position));
+        //if (Vector3.Distance(joyStick.joyStickL.position, joyStick.joyStickL.position + joyStick.handle.position) > 2)
+        //    charactorDirectionMove.DirectionMove(joyStick.joyStickL.position, joyStick.joyStickL.position + joyStick.handle.position, dirNum);
+
         if (horizontal != 0 || vertical!=0)
         {
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
@@ -31,12 +46,10 @@ public class Player : CharacterBrain
         {
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
         }
-        charactorDirectionMove.DirectionMove(transform.position, new Vector3(horizontal, 0, vertical) * 100, dirMove);
         
         if (Input.GetKeyDown(KeyCode.J))
         {
-
-            characterAnimator.SetTrigger("Slash1H");
+            //characterAnimator.SetTrigger("Slash1H");
 
 
         }
@@ -46,6 +59,7 @@ public class Player : CharacterBrain
             Debug.Log(characterAttack.Damage);
         }
     }
+    
     
     //private void OnTriggerStay(Collider other)
     //{

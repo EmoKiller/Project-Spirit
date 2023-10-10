@@ -17,7 +17,7 @@ public class MeshAgent : MonoBehaviour
 
     private NavMeshPath path = null;
 
-    public Action OnArried = null; 
+    
     public void Initialized()
     {
         path = new NavMeshPath();
@@ -27,8 +27,8 @@ public class MeshAgent : MonoBehaviour
     {
         agentBody.Move(direction * moveSpeed * Time.deltaTime);
     }
-
     
+
     private void OnDrawGizmos()
     {
         if (!showPath || path == null)
