@@ -25,6 +25,7 @@ public class MeshAgent : MonoBehaviour
 
     public void MoveToDirection(Vector3 direction)
     {
+        direction = direction.normalized;
         agentBody.Move(direction * moveSpeed * Time.deltaTime);
     }
     
