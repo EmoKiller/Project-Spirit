@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
     public Player player = null;
     public Transform hand;
     
-
+    //public Func<float> getEnemyDamage = null;
     private void Awake()
     {
         if (Instance == null)
@@ -28,8 +30,9 @@ public class GameManager : MonoBehaviour
         else
             Destroy(Instance);
         //assetManager.InstantiateSword(assetManager.Weapon, hand);
+        // getEnemyDamage
     }
-    
+
     private void OnDestroy()
     {
         Instance = null;

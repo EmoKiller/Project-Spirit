@@ -18,12 +18,12 @@ public class Enemy : CharacterBrain
     
 
     protected override Vector3 direction => targetAttack.transform.position;
-    public Slider SliderHp => sliderHp;
+    protected Slider SliderHp => sliderHp;
 
     private float distance => Vector3.Distance(transform.position, targetAttack.transform.position);
 
 
-    public Action onArried = null;
+    protected Action onArried = null;
 
 
     protected override void Awake()
@@ -39,12 +39,12 @@ public class Enemy : CharacterBrain
     }
     void Update()
     {
+        Debug.Log(agent.agentBody.isStopped);
         if (arried)
             return;
         if (targetAttack != null && distance <= attackRange && distance > characterAttack.AttackRange)
         {
             onFollowPlayer = true;
-            agent.agentBody.isStopped = true;
             SetDestination(targetAttack.transform.position);
             charactorDirectionMove.DirectionMove(transform.position, targetAttack.transform.position, dirNum);
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
@@ -55,14 +55,11 @@ public class Enemy : CharacterBrain
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
             return;
         }
-        if (!arried)
-        {
-            SetDestination(wayPoints[currentWaypointIndex]);
-            charactorDirectionMove.DirectionMove(transform.position, wayPoints[currentWaypointIndex], dirNum);
-            characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
-            if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
-                onArried?.Invoke();
-        }
+        SetDestination(wayPoints[currentWaypointIndex]);
+        charactorDirectionMove.DirectionMove(transform.position, wayPoints[currentWaypointIndex], dirNum);
+        characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
+        if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
+            onArried?.Invoke();
         
     }
     public void SetDestination(Vector3 direction)
@@ -74,7 +71,7 @@ public class Enemy : CharacterBrain
 
     protected virtual void OnArried()
     {
-        
+        agent.agentBody.isStopped = true;
         arried = true;
         characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
         this.DelayCall(2, () =>

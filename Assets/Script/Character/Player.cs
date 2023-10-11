@@ -29,7 +29,7 @@ public class Player : CharacterBrain
     }
     protected void Update()
     {
-        agent.MoveToDirection(direction);
+        agent.MoveToDirection(direction.normalized);
         if (Vector3.Distance(transform.position, transform.position + direction) > 0.3)
             charactorDirectionMove.DirectionMove(transform.position, transform.position + direction, dirNum);
         

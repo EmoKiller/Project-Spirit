@@ -8,7 +8,7 @@ using UnityEngine;
 public class ManagerDirectionMove : MonoBehaviour
 {
     [SerializeField] private List<ChildrenDirectionMove> directionMove = new List<ChildrenDirectionMove>();
-    
+    private Action moveAction;
     public void Initialized()
     {
         directionMove = GetComponentsInChildren<ChildrenDirectionMove>().ToList();
