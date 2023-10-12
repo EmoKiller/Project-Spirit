@@ -8,5 +8,5 @@ using UnityEngine.Events;
 public class ChildrenDirectionMove : MonoBehaviour 
 {
     public DirectionMove direction;
-    public Action<DirectionMove> OnSelected = null;
+    
 }

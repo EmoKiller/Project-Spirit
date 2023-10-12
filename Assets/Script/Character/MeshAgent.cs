@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class MeshAgent : MonoBehaviour
 {
     [Header("Configuration")]
-    [SerializeField]private float moveSpeed = 1f;
+    public float moveSpeed = 1f;
 
     [Header("Debuger")]
     public bool showPath = true;
@@ -25,7 +25,6 @@ public class MeshAgent : MonoBehaviour
 
     public void MoveToDirection(Vector3 direction)
     {
-        direction = direction.normalized;
         agentBody.Move(direction * moveSpeed * Time.deltaTime);
     }
     

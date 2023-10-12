@@ -5,18 +5,14 @@ using UnityEngine.AddressableAssets;
 
 public class Player : CharacterBrain
 {
-    protected override CharacterBrain targetAttack => throw new System.NotImplementedException();
+    protected override CharacterBrain targetAttack => GameManager.Instance.enemies.Find(
+        e => Vector3.Distance(transform.position, e.gameObject.transform.position) <= characterAttack.AttackRange); 
     protected float horizontal => Input.GetAxis("Horizontal");
     protected float vertical => Input.GetAxis("Vertical");
 
     protected override Vector3 direction => new Vector3(horizontal, 0, vertical);
     [SerializeField] protected JoyStickLManager joyStick = null;
     
-
-    //private float mana = 10f;
-    //private float stamina = 10f;
-    //private float currentMana = 10f;
-    //private float currentStamina = 10f;
     protected override void Awake()
     {
         
@@ -25,13 +21,12 @@ public class Player : CharacterBrain
     }
     private void Start()
     {
-        
+        agent.moveSpeed = 4f;
     }
     protected void Update()
     {
-        agent.MoveToDirection(direction.normalized);
-        if (Vector3.Distance(transform.position, transform.position + direction) > 0.3)
-            charactorDirectionMove.DirectionMove(transform.position, transform.position + direction, dirNum);
+        agent.MoveToDirection(direction);
+        charactorDirectionMove.DirectionMove(transform.position, transform.position + direction, dirNum);
         
         //Debug.Log(joyStick.handle.position.normalized);
         //Debug.Log(Vector2.Distance(joyStick.handle.position.normalized, joyStick.handle.position));
@@ -40,47 +35,25 @@ public class Player : CharacterBrain
 
         if (horizontal != 0 || vertical!=0)
         {
-            characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
+            characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
         }
         else
         {
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
         }
-        
         if (Input.GetKeyDown(KeyCode.J))
         {
             //characterAnimator.SetTrigger("Slash1H");
-
-
+            Debug.Log(targetAttack.Name);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            characterAttack.Initialized();
-            Debug.Log(characterAttack.Damage);
+            //characterAttack.Initialized();
+            //Debug.Log(characterAttack.Damage);
+            characterAnimator.SetTrigger("Slash2H");
+            //UIManager.Instance.AddSlider();
         }
     }
     
-    
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.name == "DropItem")
-    //    {
-    //        DropItemsOnWorld dropitem = other.GetComponent<DropItemsOnWorld>();
-    //        dropitem.showButton.gameObject.SetActive(true);
-    //        if (Input.GetKeyDown(KeyCode.E))
-    //        {
-    //            Debug.Log("Pick Up Items");
-    //        }
-    //    }
-    //}
-    
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.name == "DropItem")
-    //    {
-    //        DropItemsOnWorld dropitem = other.GetComponent<DropItemsOnWorld>();
-    //        dropitem.showButton.gameObject.SetActive(false);
-    //    }
-    //}
 
 }
