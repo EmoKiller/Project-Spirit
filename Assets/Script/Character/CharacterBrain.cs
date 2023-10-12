@@ -44,13 +44,9 @@ public abstract class CharacterBrain : MonoBehaviour
         return targetAttack != null;
     }
 
-    protected void DoAttackNomal()
+    protected void DoAttack()
     {
-        //characterAnimator.SetTrigger();
-    }
-    protected void DoAttackHeavy()
-    {
-
+        characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);
     }
     private void OnTriggerStay(Collider other)
     {

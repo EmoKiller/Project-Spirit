@@ -9,7 +9,7 @@ public class Enemy : CharacterBrain
 {
     protected override CharacterBrain targetAttack => GameManager.Instance.player;
     [Header("Attack")]
-    [SerializeField] protected float attackRange = 5f;
+    [SerializeField] protected float playerDetectionRange = 5f;
     [SerializeField] protected bool arried = false;
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected Slider sliderHp;
@@ -18,9 +18,7 @@ public class Enemy : CharacterBrain
     
 
     protected override Vector3 direction => targetAttack.transform.position;
-    protected Slider SliderHp => sliderHp;
-
-    private float distance => Vector3.Distance(transform.position, targetAttack.transform.position);
+    protected float distance => Vector3.Distance(transform.position, targetAttack.transform.position);
 
 
     protected Action onArried = null;
@@ -39,10 +37,10 @@ public class Enemy : CharacterBrain
     }
     void Update()
     {
-        Debug.Log(agent.agentBody.isStopped);
+        
         if (arried)
             return;
-        if (targetAttack != null && distance <= attackRange && distance > characterAttack.AttackRange)
+        if (targetAttack != null && distance <= playerDetectionRange && distance > characterAttack.AttackRange)
         {
             onFollowPlayer = true;
             SetDestination(targetAttack.transform.position);
@@ -50,9 +48,10 @@ public class Enemy : CharacterBrain
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
             return;
         }
-        else if (distance <= characterAttack.AttackRange)
+        if (onFollowPlayer && distance <= characterAttack.AttackRange)
         {
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
+            DoAttack();
             return;
         }
         SetDestination(wayPoints[currentWaypointIndex]);
@@ -66,7 +65,7 @@ public class Enemy : CharacterBrain
     {
         agent.agentBody.isStopped = false;
         Vector3 dir = direction - transform.position;
-        agent.MoveToDirection(dir);
+        agent.MoveToDirection(dir.normalized);
     }
 
     protected virtual void OnArried()
@@ -85,6 +84,6 @@ public class Enemy : CharacterBrain
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
     }
 }

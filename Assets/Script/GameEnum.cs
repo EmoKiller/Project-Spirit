@@ -19,4 +19,10 @@ public enum ItemsType
     Weapon,
     cloth
 }
+public enum SliderPlayerType
+{
+    HP,
+    MP,
+    SP
+}
 

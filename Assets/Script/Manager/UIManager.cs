@@ -1,31 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
-    public Slider hpSliderPlayer;
-    public Slider mpSliderPlayer;
-    public Slider spSliderPlayer;
+    public static UIManager Instance;
+    [SerializeField] List<SliderPlayer> sliderPlayers = new List<SliderPlayer>();
+    
+    public void UpdateFullSliderPlayer()
+    {
+        for (int i = 0; i < sliderPlayers.Count; i++)
+        {
+            sliderPlayers[i].UpdateSlider(10);
+        }
+    }
+    public void UpdateSlider(SliderPlayerType type)
+    {
+        sliderPlayers[(int)type].UpdateSlider(20);
+    }
 
-    public TMP_Text hpText;
-    public TMP_Text mpText;
-    public TMP_Text spText;
+
+
+
+    private void Start()
+    {
+        UpdateFullSliderPlayer();
+        UpdateSlider(SliderPlayerType.HP);
+    }
+
+
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
-            Destroy(instance);
+            Destroy(Instance);
     }
-    public void UpdateValue(Slider slider, float maxValue, float value,TMP_Text text, string textIn)
+    private void OnDestroy()
     {
-        slider.maxValue = maxValue;
-        slider.value = value;
-        text.text = textIn;
+        Instance = null;
     }
 }

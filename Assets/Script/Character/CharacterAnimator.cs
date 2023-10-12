@@ -7,7 +7,7 @@ using static UnityEngine.UI.ScrollRect;
 public class CharacterAnimator : MonoBehaviour
 {
     public enum AnimationState { Movement, Attack }
-    public enum MovementType { Idle, Ready, Walk, Run }
+    public enum MovementType { Idle, Walk, Run }
     public enum AttackType { nomal, power }
 
     private Animator ator = null;
@@ -62,6 +62,10 @@ public class CharacterAnimator : MonoBehaviour
 
         Ator.SetTrigger(param);
         currentTrigger = param;
+    }
+    public void ResetTrigger()
+    {
+        currentTrigger = "";
     }
     public void SetBool(string param, bool value)
     {

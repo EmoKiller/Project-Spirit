@@ -2538,7 +2538,7 @@ MonoBehaviour:
   characterAnimator: {fileID: 0}
   characterAttack: {fileID: 2332673530657470516}
   charactorDirectionMove: {fileID: 0}
-  attackRange: 5
+  playerDetectionRange: 10
   arried: 0
   onFollowPlayer: 0
   sliderHp: {fileID: 5312514035861102759}
