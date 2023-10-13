@@ -32,21 +32,24 @@ public class GameManager : MonoBehaviour
         //assetManager.InstantiateSword(assetManager.Weapon, hand);
         // getEnemyDamage
     }
-    private void Start()
-    {
-        
-    }
-    public void Add(Enemy enemy)
-    {
-        enemies.Add(enemy);
-    }
-    public void Remove(Enemy enemy)
-    {
-        enemies.Remove(enemy);
-    }
     private void OnDestroy()
     {
         Instance = null;
+    }
+
+    private void OnEnable()
+    {
+        EventDispatcher.AddListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+    }
+
+    private void OnDisable()
+    {
+        EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+    }
+
+    private void OnPlayerHealthChanged()
+    {
+        Debug.Log("GameManager Trigger OnHealthChange");
     }
 
 

@@ -4,32 +4,25 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target => GameManager.Instance.cameraTarget;
-    //[SerializeField] private PlayerControllerPC player;
-    [SerializeField] private Vector3 offset = new Vector3(0, 9.7f, -13.3f);
-    Vector3 targetpos;
-    [SerializeField] private float maxX;
-    [SerializeField] private float minX;
-    [SerializeField] private float maxZ;
-    [SerializeField] private float minZ;
-
-    public float smooth;
-
-    Transform max1;
-
+    [SerializeField] private Player player;
+    [SerializeField] private Enemy enemy;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] Transform targetPos;
+    [SerializeField] private float smooth;
     private Vector3 vecref = Vector3.zero;
-    
-    private void Awake()
-    {
-        
-       
-    }
+    //[SerializeField] private float maxX;
+    //[SerializeField] private float minX;
+    //[SerializeField] private float maxZ;
+    //[SerializeField] private float minZ;
+
+
     private void Update()
     {
-        targetpos = target.transform.position;
-        targetpos.x = Mathf.Clamp(targetpos.x, minX, maxX);
-        targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
-        transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
+        targetPos = player.transform;
+        
+        //targetpos.x = Mathf.Clamp(targetpos.x, minX, maxX);
+        //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPos.position + offset, ref vecref, smooth);
     }
     private void FixedUpdate()
     {
@@ -51,4 +44,5 @@ public class CameraFollow : MonoBehaviour
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
         //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
     }
+
 }

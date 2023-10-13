@@ -27,7 +27,7 @@ public class ManagerDirectionMove : MonoBehaviour
         {
             dirNum = positon.x < dirTarget.x ? 3 : 2;
         }
-        else if (Mathf.Abs(dirTarget.x - positon.x) <= Mathf.Abs(dirTarget.z - positon.z))
+        else 
         {
             dirNum = positon.z < dirTarget.z ? 1 : 0;
         }

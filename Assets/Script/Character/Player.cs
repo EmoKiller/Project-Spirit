@@ -5,6 +5,7 @@ using UnityEngine.AddressableAssets;
 
 public class Player : CharacterBrain
 {
+    
     protected override CharacterBrain targetAttack => GameManager.Instance.enemies.Find(
         e => Vector3.Distance(transform.position, e.gameObject.transform.position) <= characterAttack.AttackRange); 
     protected float horizontal => Input.GetAxis("Horizontal");
@@ -25,7 +26,7 @@ public class Player : CharacterBrain
     }
     protected void Update()
     {
-        agent.MoveToDirection(direction);
+        agent.MoveToDirection(direction.normalized);
         charactorDirectionMove.DirectionMove(transform.position, transform.position + direction, dirNum);
         
         //Debug.Log(joyStick.handle.position.normalized);
@@ -43,17 +44,21 @@ public class Player : CharacterBrain
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            //characterAnimator.SetTrigger("Slash1H");
-            Debug.Log(targetAttack.Name);
+            characterAnimator.SetTrigger("Slash1H");
+        }
+        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            characterAnimator.SetTrigger("Slash2H");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("Press E");
+            EventDispatcher.TriggerEvent(Events.OnHealthChanged);
             //characterAttack.Initialized();
             //Debug.Log(characterAttack.Damage);
-            characterAnimator.SetTrigger("Slash2H");
+            
             //UIManager.Instance.AddSlider();
         }
     }
-    
-
 }

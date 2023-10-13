@@ -11,7 +11,7 @@ public abstract class SliderPlayer : MonoBehaviour
 
 public class ChildrenSlider : SliderPlayer
 {
-    public SliderPlayerType type;
+    public AttributeType type;
     public Slider sliders;
     public TMP_Text text;
 

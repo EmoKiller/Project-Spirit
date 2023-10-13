@@ -34,9 +34,9 @@ public abstract class CharacterBrain : MonoBehaviour
         characterName = gameObject.name;
         charactorDirectionMove.SetActiveDirectionMove(DirectionMove.Front);
     }
-    private void Start()
+    private void OnEnable()
     {
-        
+        //EventDispatcher.TriggerEvent(Events.OnHealthChanged);
     }
 
     protected bool CanAttack()
@@ -47,9 +47,5 @@ public abstract class CharacterBrain : MonoBehaviour
     protected void DoAttack()
     {
         characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log(other);
     }
 }
