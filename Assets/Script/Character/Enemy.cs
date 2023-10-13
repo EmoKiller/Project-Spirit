@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : CharacterBrain
+public class Enemy : CharacterBrain 
 {
     protected override CharacterBrain targetAttack => GameManager.Instance.player;
     [Header("Attack")]
@@ -81,6 +81,20 @@ public class Enemy : CharacterBrain
             
             arried = false;
         });
+    }
+    private void OnEnable()
+    {
+        EventDispatcher.AddListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+    }
+
+    private void OnDisable()
+    {
+        EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+    }
+
+    private void OnPlayerHealthChanged()
+    {
+        Debug.Log("enemy Trigger OnHealthChange");
     }
     private void OnDrawGizmos()
     {

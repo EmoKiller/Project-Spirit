@@ -12,17 +12,18 @@ public enum AttributeTypeOfHero
 }
 public enum AttributeType
 {
-    HP
+    HP,
+    MP,
+    SP
 }
 public enum ItemsType
 {
     Weapon,
     cloth
 }
-public enum SliderPlayerType
+
+public enum Events
 {
-    HP,
-    MP,
-    SP
+    OnHealthChanged,
 }
 
