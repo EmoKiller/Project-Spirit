@@ -16,13 +16,11 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected ManagerDirectionMove charactorDirectionMove = null;
     protected abstract CharacterBrain targetAttack { get; }
     protected abstract Vector3 direction { get; }
+    protected abstract bool Alive { get; }
     protected int dirNum = 0;
-
-    public virtual float Health => health;
-    public virtual float CurrentHealth => currentHealth;
     public string Name => characterName;
 
-    public bool Alive => currentHealth > 0;
+    
     public MeshAgent Agent => agent;
     public CharacterAttack CharacterAtk => characterAttack;
 
@@ -34,18 +32,14 @@ public abstract class CharacterBrain : MonoBehaviour
         characterName = gameObject.name;
         charactorDirectionMove.SetActiveDirectionMove(DirectionMove.Front);
     }
-    private void OnEnable()
-    {
-        //EventDispatcher.TriggerEvent(Events.OnHealthChanged);
-    }
-
     protected bool CanAttack()
     {
         return targetAttack != null;
     }
 
-    protected void DoAttack()
+    public void DoAttack()
     {
         characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);
     }
+    
 }

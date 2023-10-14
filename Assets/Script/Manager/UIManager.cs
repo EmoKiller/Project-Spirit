@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    //public static UIManager Instance;
-    [SerializeField] List<SliderPlayer> sliderPlayers = new List<SliderPlayer>();
+    public static UIManager Instance;
+    [SerializeField] List<ChildrenSlider> sliderPlayers = new List<ChildrenSlider>();
     
     public void UpdateFullSliderPlayer()
     {
@@ -20,6 +20,17 @@ public class UIManager : MonoBehaviour
     public void UpdateSlider(AttributeType type)
     {
         sliderPlayers[(int)type].UpdateSlider(20);
+    }
+    private void Awake()
+    {
+        if (Instance != null)
+            Instance = this;
+        else
+            Destroy(this);
+    }
+    private void OnDisable()
+    {
+        Instance = null;
     }
 
     //public void OnNotify()

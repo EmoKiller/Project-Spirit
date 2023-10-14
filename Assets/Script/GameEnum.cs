@@ -25,5 +25,7 @@ public enum ItemsType
 public enum Events
 {
     OnHealthChanged,
+    OnAttack
 }
+
 
