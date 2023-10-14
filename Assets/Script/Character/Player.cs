@@ -7,12 +7,14 @@ public class Player : CharacterBrain
 {
     
     protected override CharacterBrain targetAttack => GameManager.Instance.enemies.Find(
-        e => Vector3.Distance(transform.position, e.gameObject.transform.position) <= characterAttack.AttackRange); 
+        e => Vector3.Distance(transform.position, e.gameObject.transform.position) <= characterAttack.AttackRange);
+    protected override Vector3 direction => new Vector3(horizontal, 0, vertical);
+    protected override bool Alive => throw new System.NotImplementedException();
+    [SerializeField] protected ChildrenSlider sliderHp;
+
+
     protected float horizontal => Input.GetAxis("Horizontal");
     protected float vertical => Input.GetAxis("Vertical");
-
-    protected override Vector3 direction => new Vector3(horizontal, 0, vertical);
-    [SerializeField] protected JoyStickLManager joyStick = null;
     
     protected override void Awake()
     {
@@ -45,20 +47,51 @@ public class Player : CharacterBrain
         if (Input.GetKeyDown(KeyCode.J))
         {
             characterAnimator.SetTrigger("Slash1H");
+            OnAttack();
         }
         
         if (Input.GetKeyDown(KeyCode.K))
         {
-            characterAnimator.SetTrigger("Slash2H");
+            //characterAnimator.SetTrigger("Slash2H");
+            Debug.Log(targetAttack);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Press E");
-            EventDispatcher.TriggerEvent(Events.OnHealthChanged);
+            
             //characterAttack.Initialized();
             //Debug.Log(characterAttack.Damage);
             
             //UIManager.Instance.AddSlider();
         }
+        
     }
+    private void OnEnable()
+    {
+        EventDispatcher.AddListener(Events.OnAttack, OnHit);
+    }
+    private void OnDisable()
+    {
+        EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
+    }
+    public void OnHit()
+    {
+        Debug.Log("enemy Trigger OnHit");
+        sliderHp.OnReduceValueChanged(targetAttack.CharacterAtk.Damage);
+        sliderHp.gameObject.SetActive(true);
+        if (!Alive)
+        {
+            Debug.Log("Enemy Dead");
+        }
+
+
+    }
+    public void OnAttack()
+    {
+        if (CanAttack())
+        {
+            EventDispatcher.TriggerEvent(Events.OnAttack);
+        }
+    }
+    
 }

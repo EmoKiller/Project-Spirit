@@ -8,22 +8,18 @@ using UnityEngine.UI;
 public class Enemy : CharacterBrain 
 {
     protected override CharacterBrain targetAttack => GameManager.Instance.player;
+    protected override Vector3 direction => targetAttack.transform.position;
+    protected override bool Alive => sliderHp.sliders.value > 0;
+
     [Header("Attack")]
     [SerializeField] protected float playerDetectionRange = 5f;
     [SerializeField] protected bool arried = false;
     [SerializeField] protected bool onFollowPlayer = false;
-    [SerializeField] protected Slider sliderHp;
+    [SerializeField] protected ChildrenSlider sliderHp;
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
-    
-
-    protected override Vector3 direction => targetAttack.transform.position;
     protected float distance => Vector3.Distance(transform.position, targetAttack.transform.position);
-
-
     protected Action onArried = null;
-
-
     protected override void Awake()
     {
         
@@ -34,11 +30,12 @@ public class Enemy : CharacterBrain
     private void Start()
     {
         wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
+        sliderHp.UpdateSlider(health);
+        sliderHp.gameObject.SetActive(false);
     }
     void Update()
     {
-        
-        if (arried)
+        if (arried && Alive)
             return;
         if (targetAttack != null && distance <= playerDetectionRange && distance > characterAttack.AttackRange)
         {
@@ -51,7 +48,7 @@ public class Enemy : CharacterBrain
         if (onFollowPlayer && distance <= characterAttack.AttackRange)
         {
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
-            DoAttack();
+            //DoAttack();
             return;
         }
         SetDestination(wayPoints[currentWaypointIndex]);
@@ -84,17 +81,23 @@ public class Enemy : CharacterBrain
     }
     private void OnEnable()
     {
-        EventDispatcher.AddListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+        EventDispatcher.AddListener(Events.OnAttack, OnHit);
     }
-
     private void OnDisable()
     {
-        EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+        EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
     }
-
-    private void OnPlayerHealthChanged()
+    public void OnHit()
     {
-        Debug.Log("enemy Trigger OnHealthChange");
+        Debug.Log("enemy Trigger OnHit");
+        sliderHp.OnReduceValueChanged(targetAttack.CharacterAtk.Damage);
+        sliderHp.gameObject.SetActive(true);
+        if (!Alive)
+        {
+            Debug.Log("Enemy Dead");
+        }
+
+
     }
     private void OnDrawGizmos()
     {
