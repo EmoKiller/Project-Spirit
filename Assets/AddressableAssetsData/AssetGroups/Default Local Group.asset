@@ -21,16 +21,8 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Weapon/Sword/AdvancedShortSword.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 31df45f0871a16c4dbd2d57e66906431
-    m_Address: Assets/Prefabs/Weapon/Sword/AssaultSword.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 124d1c5e0359579489d34e1f2733a8a4
     m_Address: Assets/Prefabs/Weapon/Axe/BalancedAxe.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a417d34ad1d225a47819a697f8f4895f
-    m_Address: Assets/Prefabs/Weapon/Wand/WoodenWand.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 665e4fd0f16cf5b4aaf83ba42d77dd72

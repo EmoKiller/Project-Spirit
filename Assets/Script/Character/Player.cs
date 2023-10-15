@@ -15,12 +15,10 @@ public class Player : CharacterBrain
 
     protected float horizontal => Input.GetAxis("Horizontal");
     protected float vertical => Input.GetAxis("Vertical");
-    
+    [SerializeField] private Transform PointChecklr;
     protected override void Awake()
     {
-        
         base.Awake();
-        
     }
     private void Start()
     {
@@ -31,14 +29,11 @@ public class Player : CharacterBrain
         agent.MoveToDirection(direction.normalized);
         charactorDirectionMove.DirectionMove(transform.position, transform.position + direction, dirNum);
         
-        //Debug.Log(joyStick.handle.position.normalized);
-        //Debug.Log(Vector2.Distance(joyStick.handle.position.normalized, joyStick.handle.position));
-        //if (Vector3.Distance(joyStick.joyStickL.position, joyStick.joyStickL.position + joyStick.handle.position) > 2)
-        //    charactorDirectionMove.DirectionMove(joyStick.joyStickL.position, joyStick.joyStickL.position + joyStick.handle.position, dirNum);
-
+        
         if (horizontal != 0 || vertical!=0)
         {
             characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
+            PointChecklr.position = new Vector3(horizontal, 0, 0).normalized + transform.position;
         }
         else
         {

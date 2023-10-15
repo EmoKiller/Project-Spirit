@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,304 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Heart_Red_full
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 12
+        width: 98
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d91e992153a5ed4ea391b8147863599
+      internalID: -1710007018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Red_Half_empty
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 12
+        width: 98
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0869def946d9f498df5867d54ee434
+      internalID: 1098774387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Empty
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 12
+        width: 98
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d791b825ef09446bc9abb23220d0ff
+      internalID: -728717398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Blue_full
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 12
+        width: 98
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20d8f80e20b24e4db0c0a17160fdec6
+      internalID: 1885248175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Blue_Haft
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 12
+        width: 98
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e53e4ae4db1a55479a9d2b7ed079f12
+      internalID: 1865055561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_cru
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 12
+        width: 98
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00c771c44b5ce2409f25bc093b71168
+      internalID: -1189616015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Red_Half
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 12
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ff5a40c1bdeb44e930730c471ad374
+      internalID: 1756483838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Haft_Empty
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 12
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6a2578a3cd3e641aa81a8918fa539e
+      internalID: 704378473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Red_full_HL
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 118
+        width: 104
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de01abe4f69fcd54bb2dc2df85122deb
+      internalID: -376282679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Red_Half_empty_HL
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 118
+        width: 104
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e0f2784de56f943b0e1252fb056eff
+      internalID: 1210785852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Empty_HL
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 118
+        width: 104
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcac5f8a8629f64793c7b5cd5421264
+      internalID: 2135175801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Red_Half_HL
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 240
+        width: 65
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3768073e4301eb941821ae9ab23a84a1
+      internalID: 845212517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart_Haft_Empty_HL
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 238
+        width: 65
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7543008a31b38ad4786b4ba81ac7587a
+      internalID: 1469014962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5a6d0a3a05f1f0143b82c729c74c94bf
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Heart_Haft_Empty: 704378473
+      Heart_Blue_full: 1885248175
+      Heart_Empty: -728717398
+      Heart_Blue_Haft: 1865055561
+      Heart_cru: -1189616015
+      Heart_Red_Half_HL: 845212517
+      Heart_Red_Half_empty_HL: 1210785852
+      Heart_Red_Half_empty: 1098774387
+      Heart_Red_Half: 1756483838
+      Heart_Haft_Empty_HL: 1469014962
+      Heart_Red_full_HL: -376282679
+      Heart_Empty_HL: 2135175801
+      Heart_Red_full: -1710007018
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Player player;
-    [SerializeField] private Enemy enemy;
+    [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset;
     [SerializeField] Transform targetPos;
     [SerializeField] private float smooth;
@@ -18,11 +17,9 @@ public class CameraFollow : MonoBehaviour
 
     private void Update()
     {
-        targetPos = player.transform;
-        
         //targetpos.x = Mathf.Clamp(targetpos.x, minX, maxX);
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos.position + offset, ref vecref, smooth);
+        transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
     }
     private void FixedUpdate()
     {
