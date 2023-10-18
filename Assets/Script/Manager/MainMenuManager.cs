@@ -13,8 +13,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button buttonCredits;
     [SerializeField] private Button buttonQuit;
     [SerializeField] private Camera cameraMenu;
-
-    [SerializeField] private GameObject groupMenu;
+    [SerializeField] private Image logo;
+    [SerializeField] private GameObject menu;
     [SerializeField] private GameObject presstost;
 
     void Start()
@@ -33,8 +33,8 @@ public class MainMenuManager : MonoBehaviour
         {
             cameraMenu.transform.DOLocalMoveZ(-25, 1, false).OnComplete(() =>
             {
-                groupMenu.gameObject.SetActive(true);
-           
+                menu.gameObject.SetActive(true);
+                logo.gameObject.SetActive(true);
             });
         });
     }

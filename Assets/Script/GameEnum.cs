@@ -25,15 +25,21 @@ public enum ItemsType
 public enum Events
 {
     OnHealthChanged,
-    OnAttack
+    OnAttack,
+    OnEnemyAttack
 }
-public enum MenuTypezzz
+public enum MenuType
 {
     Play,
     Settings,
     Credits,
     RoadMap,
-    Quit
+    Quit,
+    SaveGame1,
+    SaveGame2,
+    SaveGame3,
+    Back,
+    DeleteSaveGame
 }
 
 

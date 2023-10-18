@@ -41,5 +41,7 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);
     }
-    
+    public virtual void OnHit() { }
+
+
 }

@@ -9,8 +9,8 @@ using UnityEngine.UI;
 
 public class UIToggle : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public MenuTypezzz type;
-    public Action<MenuTypezzz> OnSelected = null;
+    public MenuType type;
+    public Action<MenuType> OnSelected = null;
     [SerializeField] Sprite _sprite;
     [SerializeField] Image image;
     [SerializeField] TMP_Text text;

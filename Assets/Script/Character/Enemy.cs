@@ -87,7 +87,7 @@ public class Enemy : CharacterBrain
     {
         EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
     }
-    public void OnHit()
+    public override void OnHit()
     {
         Debug.Log("enemy Trigger OnHit");
         sliderHp.OnReduceValueChanged(targetAttack.CharacterAtk.Damage);
