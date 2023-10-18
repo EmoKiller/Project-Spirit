@@ -63,13 +63,13 @@ public class Player : CharacterBrain
     }
     private void OnEnable()
     {
-        EventDispatcher.AddListener(Events.OnAttack, OnHit);
+        EventDispatcher.AddListener(Events.OnEnemyAttack, OnHit);
     }
     private void OnDisable()
     {
-        EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
+        EventDispatcher.RemoveListener(Events.OnEnemyAttack, OnHit);
     }
-    public void OnHit()
+    public override void OnHit()
     {
         Debug.Log("enemy Trigger OnHit");
         sliderHp.OnReduceValueChanged(targetAttack.CharacterAtk.Damage);
