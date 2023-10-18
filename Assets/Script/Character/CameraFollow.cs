@@ -13,6 +13,7 @@ public class CameraFollow : MonoBehaviour
     //[SerializeField] private float minX;
     //[SerializeField] private float maxZ;
     //[SerializeField] private float minZ;
+    
 
 
     private void Update()

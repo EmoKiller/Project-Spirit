@@ -8,7 +8,7 @@ public class WeaponObject : ScriptableObject
 
     [Header("Comfinguration")]
     public float attackRange = 2f;
-    public float damage = 5f;
+    public float damage = 1f;
 
     public WeaponObject()
     {

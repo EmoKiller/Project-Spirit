@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,898 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: WeaponCard_0
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffc7d2fe36750240a178430f6dcce04
+      internalID: -1736752613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_1
+      rect:
+        serializedVersion: 2
+        x: 2822
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba9fd0bdcd096e47b346aac5a5a4dd8
+      internalID: 971077786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_2
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770a6ebeaeab3094e9e584b078bdf310
+      internalID: 369243472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_3
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 41
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f7764f6165c8944b074dd394e8294f
+      internalID: 661535285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_4
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce1f88ce8dc00048a66a7e2ad2e92cc
+      internalID: 1137709399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_5
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf184a1a43c5f2c4b912803b31eab461
+      internalID: 855965079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_6
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407453873055aea4db0f78761720c882
+      internalID: -771805169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_7
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb3a8f5bf9874d48886f26a6a820362
+      internalID: -1830990117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_8
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 41
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94a5cf75e2a5f84b900f1d51d1183ac
+      internalID: 141091393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_9
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 40
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d691fe703a960d43ad8da043644a43a
+      internalID: 1770287105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 544
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35580b010e312e945af080e9d5243f67
+      internalID: -1880659541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_11
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed512ff01a2df5e45a18a47764ebf893
+      internalID: 1959900992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_12
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfb9fa864b5358428ffd2155309be5c
+      internalID: -1667381797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_13
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b559d9e5845f04ba8ac7a13810f41d
+      internalID: -43287497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_14
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3525287c9e21047a04dd787a7a3732
+      internalID: 931961484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_15
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c311bfe0007cc1c4eac82bb7bd7df228
+      internalID: -713040047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_16
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9997e7058e150414b8b65ff6e7042992
+      internalID: -4184924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_17
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce3b4030924a6141a2ec38b7e7eb2cf
+      internalID: 1573842911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_18
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e27119b55914c2499e5def6d2903b53
+      internalID: -592036285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_19
+      rect:
+        serializedVersion: 2
+        x: 2824
+        y: 543
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5046dffcae2c8240b21ef85b3bed8d7
+      internalID: -510777450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_20
+      rect:
+        serializedVersion: 2
+        x: 2824
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1521626028d966946ab67ac2547b35de
+      internalID: 270416628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_21
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b69db189a36624d8df0c6a6ed600a2
+      internalID: 351345622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_22
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 1044
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03db27cc246a0d54fa67da8a5083b5a7
+      internalID: -704009884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_23
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95521f673647a2940be6774c50f829b2
+      internalID: -1253390589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_24
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542893bdea428754292966fe4f0be29d
+      internalID: -426050743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_25
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3221d437707c854c8253bee4652e8b3
+      internalID: 911337017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_26
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e6ee00276fa9e42a5ff396326f4147
+      internalID: 1728918587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_27
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7216780abd6d3f24cb16d09ed8b8b8fd
+      internalID: 1108047969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_28
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1043
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7bddfd42bcdae44a8c02b30ae3a942
+      internalID: 653958759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1043
+        width: 315
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbb44ca8a58d3147a7a3d138f25b0ae
+      internalID: -1199407642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1546
+        width: 317
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704ca8fb5b01d8a409fd427b70b1facd
+      internalID: 1528432457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_31
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1546
+        width: 315
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6c74d27fda0e849bb5e7e3d9d50869
+      internalID: -1087872093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_32
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1546
+        width: 315
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bd5c50d8a3da043aeb3f56a7886f0d
+      internalID: 186363033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_33
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1542
+        width: 315
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e780ba86e073984fbc9f45591d328af
+      internalID: -307343442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_34
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1542
+        width: 315
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77ef48e138ffa2448e54a942bc2d945
+      internalID: 70105716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_35
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1535
+        width: 315
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5911dde33d4525438f7d2910602be46
+      internalID: -591918105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_36
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1533
+        width: 315
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4704579bce1b094d8ea010ded734ca7
+      internalID: 933951253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_37
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 1535
+        width: 315
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b72b190f48e0b42bfc4a4b8740907c
+      internalID: 1873607699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_38
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 1535
+        width: 315
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d655f314f5f692942a886e5d1e0a1f38
+      internalID: 1496460333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponCard_39
+      rect:
+        serializedVersion: 2
+        x: 2824
+        y: 1535
+        width: 315
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831016dda79e5fa4694641b1018ff83d
+      internalID: -1284950100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5be7f0487f7535c4b8370135d26cd3e2
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WeaponCard_10: 1770287105
+      WeaponCard_11: -1880659541
+      WeaponCard_36: -591918105
+      WeaponCard_35: 70105716
+      WeaponCard_6: 855965079
+      WeaponCard_8: -1830990117
+      WeaponCard_37: 933951253
+      WeaponCard_39: 1496460333
+      WeaponCard_3: 369243472
+      WeaponCard_9: 141091393
+      WeaponCard_31: 1528432457
+      WeaponCard_23: -704009884
+      WeaponCard_25: -426050743
+      WeaponCard_34: -307343442
+      WeaponCard_22: 351345622
+      WeaponCard_5: 1137709399
+      WeaponCard_2: 971077786
+      WeaponCard_15: 931961484
+      WeaponCard_27: 1728918587
+      WeaponCard_1: -173207541
+      WeaponCard_18: 1573842911
+      WeaponCard_38: 1873607699
+      WeaponCard_17: -4184924
+      WeaponCard_4: 661535285
+      WeaponCard_19: -592036285
+      WeaponCard_20: -510777450
+      WeaponCard_21: 270416628
+      WeaponCard_32: -1087872093
+      WeaponCard_28: 1108047969
+      WeaponCard_14: -43287497
+      WeaponCard_29: 653958759
+      WeaponCard_24: -1253390589
+      WeaponCard_30: -1199407642
+      WeaponCard_13: -1667381797
+      WeaponCard_33: 186363033
+      WeaponCard_12: 1959900992
+      WeaponCard_26: 911337017
+      WeaponCard_7: -771805169
+      WeaponCard_0: -1736752613
+      WeaponCard_16: -713040047
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
