@@ -27,5 +27,13 @@ public enum Events
     OnHealthChanged,
     OnAttack
 }
+public enum MenuTypezzz
+{
+    Play,
+    Settings,
+    Credits,
+    RoadMap,
+    Quit
+}
 
 

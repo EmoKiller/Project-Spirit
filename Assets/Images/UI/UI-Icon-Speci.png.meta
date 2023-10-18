@@ -1,0 +1,1367 @@
+fileFormatVersion: 2
+guid: bdaaff1e37a7063408c181fe5b2148b1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0-Swords
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 327
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e753139c37c84b6458023d07c64c63c2
+      internalID: -42888344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Swords
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 671
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50ce1b2b6fb8df4ca29e8144831c8a3
+      internalID: 1150181472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Swords
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 336
+        width: 158
+        height: 172
+      alignment: 9
+      pivot: {x: 0.5000008, y: 0.43717867}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dc5bd2db77ad847a75ec787a89cbd6
+      internalID: 1731615511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3-Swords
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 513
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae24864e261a23042a3b4bc10abcb026
+      internalID: -1014418662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4-Swords
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 756
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d1d26931a4ab54b913a8b19ad53a19
+      internalID: 1499332722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6-Swords
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 181
+        width: 158
+        height: 179
+      alignment: 9
+      pivot: {x: 0.5081555, y: 0.40641043}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa22ba6e918d094b83d567c1fe47cf0
+      internalID: 1939771423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7-Swords
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 333
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10cc6f23a6558e45a8c165cc62d18c5
+      internalID: 1566554370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axes-0
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 334
+        width: 169
+        height: 169
+      alignment: 9
+      pivot: {x: 0.509208, y: 0.45396036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a36a2d3c7f8ce429b8549bf2af2003
+      internalID: 188978791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axes-1
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 504
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7cd96207ac56e418b8ab4f3429fbbd
+      internalID: 634892512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axes-2
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 512
+        width: 169
+        height: 169
+      alignment: 9
+      pivot: {x: 0.463168, y: 0.47237635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43641ec819905934d8a43ce7648a69f6
+      internalID: 762611402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axes-3
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 0
+        width: 169
+        height: 169
+      alignment: 9
+      pivot: {x: 0.48158398, y: 0.48158446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276411164a4e9be4ab19ce976a3ec533
+      internalID: -82055526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axes-4
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 0
+        width: 170
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692dca8ff6485a34daff5e2c30914535
+      internalID: 45256147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axes-5
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 0
+        width: 176
+        height: 166
+      alignment: 9
+      pivot: {x: 0.42926547, y: 0.47187704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d928e2522b57ee488eccbb0eb150af2
+      internalID: 1775588204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axes-6
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 0
+        width: 173
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386ea87b6ca72bb419e4b8d7b4a84420
+      internalID: -840916217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Daggers-0
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 170
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364ae37fa19b76848a14df5ad82545a8
+      internalID: -1514729328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Daggers-1
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 808
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2421fac7baf2e16469fb5ac5efc5d988
+      internalID: -847842991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Daggers-2
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 167
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d3b3685626b444c82679c37ef3b683
+      internalID: -1709230894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Daggers-3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 926
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f543c863e22bc954d90b38bf9991bf6d
+      internalID: 1638689517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Daggers-4
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 514
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ded413fdfd7974db7aeb758aa05235
+      internalID: -120680114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Daggers-5
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 670
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb455e80e1d561e4996b5ee692ef1ac7
+      internalID: 990350590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Daggers-6
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 675
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce1657a1d7a7f14eaf7885752a99ebd
+      internalID: -1852928897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauntlets-0
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 799
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ef6312535fd3a4ba0b1bc3abb7039d
+      internalID: 1703120301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauntlets-1
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 491
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11d21fdd344cc44b9feeeb3ff1628b3
+      internalID: -214656345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauntlets-2
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 485
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067325ab52cfafd4885cf5192af9e082
+      internalID: 615430487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauntlets-3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 975
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa57271911222a4e9aa55446386fd81
+      internalID: -538037169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauntlets-4
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 642
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31dfa0b903d4b544bfd6c8ba260da26
+      internalID: 113235393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauntlets-5
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 650
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91b69269664d9346b5d8798b90d82bc
+      internalID: 1191769744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauntlets-6
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 828
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54c320ab64ae9847b992d1cc409ed40
+      internalID: 1139321382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammers-0
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 570
+        width: 171
+        height: 176
+      alignment: 9
+      pivot: {x: 0.45999843, y: 0.46113482}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4b72a2e80e80049802d7bd1247cc1a
+      internalID: -303338877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammers-1
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 170
+        width: 181
+        height: 161
+      alignment: 9
+      pivot: {x: 0.46220878, y: 0.46813548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc9c2f54476af1409c2bb7b7c9fa8df
+      internalID: 1006059855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammers-2
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 757
+        width: 175
+        height: 167
+      alignment: 9
+      pivot: {x: 0.4609131, y: 0.448801}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b96d5c43da5459498e968847a97b7e6
+      internalID: -1654575127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammers-3
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 170
+        width: 163
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e62e7142085d4741a026f5aa04162a2
+      internalID: 1328868537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammers-4
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 0
+        width: 167
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbae328c4f186445a290be3315cd1d7
+      internalID: -546792838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammers-5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 341
+        width: 183
+        height: 171
+      alignment: 9
+      pivot: {x: 0.4813109, y: 0.46999925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fb7431d140dda47b4d336862990ead
+      internalID: -1099842221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammers-6
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 1
+        width: 162
+        height: 164
+      alignment: 9
+      pivot: {x: 0.47888786, y: 0.4791458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea99f8cd52106341a602034e50f49d9
+      internalID: -1217427296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-0
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 837
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d112a764078eeb549a8ae899d82ebe66
+      internalID: 862230689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-1
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 189
+        width: 180
+        height: 186
+      alignment: 9
+      pivot: {x: 0.49065563, y: 0.40099633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe29f87cf384764ebedcb6b34e33628
+      internalID: 2080177977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 784
+        width: 180
+        height: 188
+      alignment: 9
+      pivot: {x: 0.4524982, y: 0.49090415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f53c1a009fe4f438b84bc9731863ed
+      internalID: 1532275750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-3
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 385
+        width: 176
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad5a04420daf70418ff7183d0411afc
+      internalID: 362957728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-4
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 572
+        width: 184
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e6a71c5a2acd340871c6a414b0cb61
+      internalID: -1320600553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-5
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 172
+        width: 178
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6377563b50d114caf588d522533e1d
+      internalID: 1526125258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 184
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9ae7d217ad43d499be8e2831d72825
+      internalID: -688988042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-7
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 750
+        width: 178
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f238c2f0a8d220245b772f01e6c742ba
+      internalID: 1980587918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 423
+        width: 231
+        height: 178
+      alignment: 9
+      pivot: {x: 0.48519427, y: 0.5096072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380f6cc8319aad44ea22c211e117cec4
+      internalID: -2117339492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-9
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 187
+        width: 219
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89af29a6b7a2ee24b8bd667595519755
+      internalID: 420557477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-10
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 2
+        width: 235
+        height: 182
+      alignment: 9
+      pivot: {x: 0.49999988, y: 0.48120812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed0c1b5eb62f7c48b0faab76cffda74
+      internalID: 185356583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 238
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376c34d719116004bb3a0b141d2d24a8
+      internalID: 1413758304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-12
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 182
+        width: 178
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891011d1165bf6b429cb64f53c14f0be
+      internalID: -1121180312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-13
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 782
+        width: 178
+        height: 192
+      alignment: 9
+      pivot: {x: 0.43275023, y: 0.4198408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6846fac40efca4ba4a287630373f08
+      internalID: 1069952041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209
+        width: 227
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff528ca6955b8bc4d9585d724a87bf55
+      internalID: 983562135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-15
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 385
+        width: 207
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3c1e3205e528a4da08996a666243ea
+      internalID: 1903628775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-16
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 555
+        width: 164
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184bda2aba541124a9ac880f708fcac9
+      internalID: -702652829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 601
+        width: 214
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5056243eb3503fa45a0bbef6b51f2339
+      internalID: -1525440784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-18
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 382
+        width: 171
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a358d1f316113e4ca275bc9cbea3539
+      internalID: 472126270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-19
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 574
+        width: 176
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e9cf52a213fc44bbb452cfbe514b2f
+      internalID: -720701214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Curses-20
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 772
+        width: 176
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7786881b5f6dc8740b06d32fdd5ca8db
+      internalID: -1565696765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: de5f7794ef2eb6a41aff0da717648464
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Axes-4: 45256147
+      Hammers-0: -303338877
+      Curses-15: 1903628775
+      Curses-7: 1980587918
+      Curses-8: -2117339492
+      Curses-6: -688988042
+      Curses-14: 983562135
+      2-Swords: 1731615511
+      Gauntlets-0: 1703120301
+      Curses-4: -1320600553
+      Daggers-2: -1709230894
+      Daggers-0: -1514729328
+      Curses-3: 362957728
+      Curses-11: 1413758304
+      Hammers-5: -1099842221
+      Curses-10: 185356583
+      Axes-0: 188978791
+      Hammers-4: -546792838
+      Axes-3: -82055526
+      Curses-12: -1121180312
+      Curses-19: -720701214
+      Hammers-1: 1006059855
+      1-Swords: 1150181472
+      Daggers-6: -1852928897
+      Axes-1: 634892512
+      Curses-13: 1069952041
+      Gauntlets-1: -214656345
+      Daggers-4: -120680114
+      Axes-6: -840916217
+      Curses-1: 2080177977
+      Axes-5: 1775588204
+      Hammers-2: -1654575127
+      7-Swords: 1566554370
+      Curses-20: -1565696765
+      Daggers-3: 1638689517
+      Curses-5: 1526125258
+      Daggers-1: -847842991
+      Curses-0: 862230689
+      3-Swords: -1014418662
+      Gauntlets-5: 1191769744
+      Daggers-5: 990350590
+      Gauntlets-2: 615430487
+      Curses-9: 420557477
+      Curses-17: -1525440784
+      Hammers-3: 1328868537
+      6-Swords: 1939771423
+      Curses-18: 472126270
+      Gauntlets-6: 1139321382
+      0-Swords: -42888344
+      Curses-2: 1532275750
+      Gauntlets-4: 113235393
+      Curses-16: -702652829
+      Axes-2: 762611402
+      4-Swords: 1499332722
+      Gauntlets-3: -538037169
+      Hammers-6: -1217427296
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

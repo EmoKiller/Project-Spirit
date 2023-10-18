@@ -17,20 +17,24 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d93c371f3cd853c4f9aa4bdf16db8744
   m_SerializeEntries:
-  - m_GUID: b5d55e83ee1152548b7ee7470ec258de
-    m_Address: Assets/Prefabs/Weapon/Sword/AdvancedShortSword.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 124d1c5e0359579489d34e1f2733a8a4
-    m_Address: Assets/Prefabs/Weapon/Axe/BalancedAxe.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 665e4fd0f16cf5b4aaf83ba42d77dd72
     m_Address: Assets/Prefabs/UI/ShowHPEnemy.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ab2f23600f00b7945a5c2b36e8336d2e
     m_Address: Assets/Prefabs/Enemy/EnemyHuman.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 257f82ee30dcce649aefb9ab0cfe362e
+    m_Address: Assets/Prefabs/UI/Heart/Heart_Large.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b37d7addbcee43b49948f4f020900002
+    m_Address: Assets/Prefabs/UI/Heart/Heart_Nomal.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a37f4634697c43b4ea5dc4b62e538163
+    m_Address: Assets/Prefabs/UI/Heart/Heart_Nomal_hafl.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

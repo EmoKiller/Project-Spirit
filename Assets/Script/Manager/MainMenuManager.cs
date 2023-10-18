@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,36 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] private Button buttonPressToPlay;
     [SerializeField] private Button buttonPlay;
     [SerializeField] private Button buttonSetting;
     [SerializeField] private Button buttonCredits;
     [SerializeField] private Button buttonQuit;
+    [SerializeField] private Camera cameraMenu;
+
+    [SerializeField] private GameObject groupMenu;
+    [SerializeField] private GameObject presstost;
 
     void Start()
     {
-        buttonPlay.onClick.AddListener(Play);
-        buttonSetting.onClick.AddListener(Setting);
-        buttonCredits.onClick.AddListener(Credits);
-        buttonQuit.onClick.AddListener(Quit);
+        buttonPressToPlay.onClick.AddListener(PressToPlay);
+        //buttonPlay.onClick.AddListener(Play);
+        //buttonSetting.onClick.AddListener(Setting);
+        //buttonCredits.onClick.AddListener(Credits);
+        //buttonQuit.onClick.AddListener(Quit);
+        
+    }
+    private void PressToPlay()
+    {
+        presstost.gameObject.SetActive(false);
+        cameraMenu.transform.DOLocalMoveZ(-20, 3, false).OnComplete(() =>
+        {
+            cameraMenu.transform.DOLocalMoveZ(-25, 1, false).OnComplete(() =>
+            {
+                groupMenu.gameObject.SetActive(true);
+           
+            });
+        });
     }
     private void Play()
     {

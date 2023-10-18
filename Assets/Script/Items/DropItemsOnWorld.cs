@@ -23,7 +23,7 @@ public class DropItemsOnWorld : MonoBehaviour
     }
     void Start()
     {
-        GameManager.Instance.assetManager.InstantiateSword(GameManager.Instance.assetManager.Weapon, transform);
+        //GameManager.Instance.assetManager.InstantiateSword(GameManager.Instance.assetManager.Weapon, transform);
     }
     public void TakeItems()
     {
