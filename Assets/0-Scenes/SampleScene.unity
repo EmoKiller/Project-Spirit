@@ -872,6 +872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93383603}
   - component: {fileID: 93383604}
+  - component: {fileID: 93383605}
   m_Layer: 0
   m_Name: Grass_Dungeon1_21 (1)
   m_TagString: Untagged
@@ -946,6 +947,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &93383605
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93383602}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &97086349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180049514}
   - component: {fileID: 180049515}
+  - component: {fileID: 180049516}
   m_Layer: 0
   m_Name: Grass_Dungeon1_24 (1)
   m_TagString: Untagged
@@ -1982,6 +1995,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &180049516
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180049513}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &181587105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,9 +2723,9 @@ RectTransform:
   m_Father: {fileID: 1023871655}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115, y: -18.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229302574
@@ -4684,9 +4708,9 @@ RectTransform:
   m_Father: {fileID: 1023871655}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 82, y: -18.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &453213731
@@ -6724,6 +6748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682239870}
   - component: {fileID: 682239871}
+  - component: {fileID: 682239872}
   m_Layer: 0
   m_Name: Grass_Dungeon1_24 (2)
   m_TagString: Untagged
@@ -6798,6 +6823,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &682239872
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682239869}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &685335583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,6 +7000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 719688937}
   - component: {fileID: 719688938}
+  - component: {fileID: 719688939}
   m_Layer: 0
   m_Name: Grass_Dungeon1_22
   m_TagString: Untagged
@@ -7038,6 +7075,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &719688939
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719688936}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &721541005
 GameObject:
   m_ObjectHideFlags: 0
@@ -9877,6 +9925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1073360238}
   - component: {fileID: 1073360239}
+  - component: {fileID: 1073360240}
   m_Layer: 0
   m_Name: Grass_Dungeon1_22 (1)
   m_TagString: Untagged
@@ -9951,6 +10000,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &1073360240
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073360237}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1074958480
 GameObject:
   m_ObjectHideFlags: 0
@@ -10364,9 +10424,9 @@ RectTransform:
   m_Father: {fileID: 1023871655}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 49, y: -18.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129261632
@@ -11434,6 +11494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1234003927}
   - component: {fileID: 1234003928}
+  - component: {fileID: 1234003929}
   m_Layer: 0
   m_Name: Grass_Dungeon1_21
   m_TagString: Untagged
@@ -11508,6 +11569,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &1234003929
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234003926}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1239551240
 GameObject:
   m_ObjectHideFlags: 0
@@ -11841,6 +11913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1269845579}
   - component: {fileID: 1269845580}
+  - component: {fileID: 1269845581}
   m_Layer: 0
   m_Name: Grass_Dungeon1_0
   m_TagString: Untagged
@@ -11915,6 +11988,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &1269845581
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269845578}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1276685145
 GameObject:
   m_ObjectHideFlags: 0
@@ -15187,6 +15271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644173731}
   - component: {fileID: 1644173732}
+  - component: {fileID: 1644173733}
   m_Layer: 0
   m_Name: Grass_Dungeon1_2
   m_TagString: Untagged
@@ -15261,6 +15346,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &1644173733
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644173730}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1651485950
 GameObject:
   m_ObjectHideFlags: 0
@@ -15648,9 +15744,9 @@ RectTransform:
   m_Father: {fileID: 1023871655}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 148, y: -18.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678246818
@@ -15701,6 +15797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682211607}
   - component: {fileID: 1682211608}
+  - component: {fileID: 1682211609}
   m_Layer: 0
   m_Name: Grass_Dungeon1_24
   m_TagString: Untagged
@@ -15775,6 +15872,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &1682211609
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682211606}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1685752742
 GameObject:
   m_ObjectHideFlags: 0
@@ -16208,9 +16316,9 @@ RectTransform:
   m_Father: {fileID: 1023871655}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 16, y: -18.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744708854

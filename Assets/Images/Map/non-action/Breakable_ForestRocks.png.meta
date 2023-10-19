@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 1207304780750754a87ea49474fd3869
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 22
+        width: 245
+        height: 369
+      alignment: 9
+      pivot: {x: 0.5036074, y: 0.028175106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199e917fb40dca646b197b15802ec5e2
+      internalID: -139783168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 18
+        width: 185
+        height: 172
+      alignment: 9
+      pivot: {x: 0.49522293, y: 0.017007273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e69fbe675a967d408f38e6aa2e0afda
+      internalID: -651537059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_2
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 141
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.026297275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583c5d4499286484ab42232e7d355b6e
+      internalID: 110537869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_3
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 140
+        width: 201
+        height: 239
+      alignment: 9
+      pivot: {x: 0.50879425, y: 0.04147313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a785c68c9f8c574b841bcc89b926f87
+      internalID: -1192635010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 149
+        width: 191
+        height: 265
+      alignment: 9
+      pivot: {x: 0.5000003, y: 0.01642577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61500a42f5d4880439603953ac1408f7
+      internalID: 1549261836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_5
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 62
+        width: 100
+        height: 83
+      alignment: 9
+      pivot: {x: 0.49999878, y: 0.03807656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1032a67fa5a0cc4c948bc7cbacc5631
+      internalID: -72361580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_6
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 57
+        width: 82
+        height: 69
+      alignment: 9
+      pivot: {x: 0.49999925, y: 0.039355513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eaf847055d2f1842bcefab6c6258cb7
+      internalID: 736621809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_7
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 0
+        width: 67
+        height: 47
+      alignment: 9
+      pivot: {x: 0.49999908, y: 0.040552184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d23be1b0bbaeb242bcdc168f61435c7
+      internalID: -965555396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_8
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 4
+        width: 63
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5037899, y: 0.059881598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be684fc97b5186488827d91f765008d
+      internalID: 379395878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_9
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 6
+        width: 41
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5177523, y: 0.022323415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a44c818216ab5429b38d7d4159ebeb
+      internalID: 1192581959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_ForestRocks_10
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 9
+        width: 47
+        height: 43
+      alignment: 9
+      pivot: {x: 0.51032275, y: 0.05988079}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4c3db5bcefe184a92ec752383c74d9
+      internalID: 2118814663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c0a2424375e6d4d4fbd6d075ce3117a2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Breakable_ForestRocks_10: 2118814663
+      Breakable_ForestRocks_3: -1192635010
+      Breakable_ForestRocks_2: 110537869
+      Breakable_ForestRocks_0: -139783168
+      Breakable_ForestRocks_9: 1192581959
+      Breakable_ForestRocks_8: 379395878
+      Breakable_ForestRocks_4: 1549261836
+      Breakable_ForestRocks_5: -72361580
+      Breakable_ForestRocks_6: 736621809
+      Breakable_ForestRocks_7: -965555396
+      Breakable_ForestRocks_1: -651537059
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
