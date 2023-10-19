@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,568 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 222
+        height: 161
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f204222590ed45745a73d3e7778f9ba4
+      internalID: 1994398060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 163
+        width: 232
+        height: 154
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97e5cd1fc27e27419dc29968e1a287e
+      internalID: -96443995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 223
+        height: 148
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac9b672ffb4d474ca7ba1fca8743d36
+      internalID: -1474066742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 296
+        width: 204
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee4b32c935b7574b9fe53600643eddf
+      internalID: 631585145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 479
+        width: 213
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99a3da3bc028f048aa07dcec3032f0f
+      internalID: -1661267968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_5
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 0
+        width: 219
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dca792f02775c48a9025b9056acd5d
+      internalID: -260106538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_6
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 453
+        width: 90
+        height: 82
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49164403180c8148aaa438c956954f9
+      internalID: -326095989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_7
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 452
+        width: 81
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f639ac845eac3b42a419591b3ce929f
+      internalID: -1784409808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_8
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 542
+        width: 119
+        height: 68
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d9b0bce26fd9c478142b1be80adfb9
+      internalID: 1725277980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 82
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481b73a34f0357643b38daca781d4ba9
+      internalID: -1638672816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_10
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 608
+        width: 123
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ab9d961d4df744d8fa97bb57785d0e
+      internalID: -848074824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_11
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 616
+        width: 77
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4994dc1c08bdd7940b468d72d896ffb9
+      internalID: -1285784007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_12
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 613
+        width: 72
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bafdd9e242b924dbe38f9912f47846
+      internalID: 1261085219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_13
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 617
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a6c9385370cde4d8a45d61b55917b8
+      internalID: -387597872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_14
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 703
+        width: 65
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a4f72fdb708224c8e53a329806d9b7
+      internalID: -989835339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_15
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 738
+        width: 57
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfab879fd9d04e74f95592cad89ffbbc
+      internalID: 1480224364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 706
+        width: 197
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3c7198debae5b4292267ed3649123a
+      internalID: -1846652725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_17
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 708
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729319f64f37caa47ae217844fc6b25a
+      internalID: -443294496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 770
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b1ffee8e91dc0428696a103f48f4cf
+      internalID: 1126543464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_19
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 771
+        width: 78
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f831ec69858eb20449c0a30c5c9da09d
+      internalID: 2059219722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 835
+        width: 78
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853724d7c0ca6a3408101d546008207a
+      internalID: 164047378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 907
+        width: 69
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f020e79c74af5d44951720a002c4fc1
+      internalID: 1542760467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_22
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 777
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b01578392209a749a34674f56ecbbd4
+      internalID: -1804886472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_23
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 820
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dacc3e61b43e0b45b4596b0ef6c44fe
+      internalID: 1550727843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_24
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 571
+        width: 68
+        height: 41
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a352df330e521b8419459ca5d30e99a4
+      internalID: 1500614786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c090f7ce1e9e2374a8679dacbea105b6
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_12: 1261085219
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_3: 631585145
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_11: -1285784007
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_20: 164047378
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_17: -443294496
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_9: -1638672816
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_13: -387597872
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_4: -1661267968
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_18: 1126543464
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_21: 1542760467
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_2: -1474066742
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_1: -96443995
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_6: -326095989
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_16: -1846652725
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_7: -1784409808
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_22: -1804886472
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_19: 2059219722
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_8: 1725277980
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_5: -260106538
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_23: 1550727843
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_10: -848074824
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_24: 1500614786
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_14: -989835339
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_0: 1994398060
+      sactx-512x1024-Crunch-BreakableRock-5d60e085 #244634_15: 1480224364
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
