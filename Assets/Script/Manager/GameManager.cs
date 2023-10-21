@@ -1,16 +1,11 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance = null;
+    //public static GameManager Instance = null;
+    public Camera Camera;
 
-    [Header("Manager")]
-    public AssetManager assetManager;
     [Header("Camera")]
     public Transform cameraTarget = null;
     [Header("Enemy")]
@@ -23,29 +18,39 @@ public class GameManager : MonoBehaviour
     public Transform hand;
     
     //public Func<float> getEnemyDamage = null;
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(Instance);
-        //assetManager.InstantiateSword(assetManager.Weapon, hand);
-        // getEnemyDamage
-    }
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
+    //private void Awake()
+    //{
+    //    if (Instance == null)
+    //        Instance = this;
+    //    else
+    //        Destroy(Instance);
+    //    //assetManager.InstantiateSword(assetManager.Weapon, hand);
+    //    // getEnemyDamage
+    //}
+    //private void OnDestroy()
+    //{
+    //    Instance = null;
+    //}
 
     private void OnEnable()
     {
         EventDispatcher.AddListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+        //EventDispatcher.AddListener(Events.OnAttack, OnHit);
     }
 
     private void OnDisable()
     {
         EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
+        //EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
     }
+    //private void OnEnable()
+    //{
+    //    EventDispatcher.AddListener(Events.OnAttack, OnHit);
+    //}
+    //private void OnDisable()
+    //{
+    //    EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
+    //}
 
     private void OnPlayerHealthChanged()
     {
@@ -55,3 +60,4 @@ public class GameManager : MonoBehaviour
 
 
 }
+

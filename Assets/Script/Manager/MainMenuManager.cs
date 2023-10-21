@@ -1,7 +1,5 @@
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
@@ -17,10 +15,15 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button buttonReset;
     [SerializeField] private Button buttonOnQuitBack;
     [SerializeField] private Button buttonOnQuitAccept;
+    [SerializeField] private Button backOnStartMenu;
     [SerializeField] private Camera cameraMenu;
+
+    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject save;
     [SerializeField] private GameObject grMenu;
     [SerializeField] private GameObject presstost;
     [SerializeField] private GameObject waterway;
+    [SerializeField] private GameObject onStart;
     [SerializeField] private GameObject onSetting;
     [SerializeField] private GameObject onCredits;
     [SerializeField] private GameObject onRoadMap;
@@ -43,6 +46,7 @@ public class MainMenuManager : MonoBehaviour
 
         buttonOnQuitAccept.onClick.AddListener(ExitGame);
         buttonOnQuitBack.onClick.AddListener(BackToMenu);
+        backOnStartMenu.onClick.AddListener(BackToMenu);
     }
     private void Update()
     {
@@ -61,7 +65,9 @@ public class MainMenuManager : MonoBehaviour
     }
     private void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        menu.gameObject.SetActive(false);
+        save.gameObject.SetActive(true);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     private void Setting()
     {
@@ -114,7 +120,8 @@ public class MainMenuManager : MonoBehaviour
         accept.gameObject.SetActive(false);
         back.gameObject.SetActive(false);
         reset.gameObject.SetActive(false);
-        
+        save.gameObject.SetActive(false);
+        menu.gameObject.SetActive(true);
         
     }
 

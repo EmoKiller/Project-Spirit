@@ -11302,10 +11302,14 @@ MonoBehaviour:
   buttonReset: {fileID: 1405429757}
   buttonOnQuitBack: {fileID: 1381108490}
   buttonOnQuitAccept: {fileID: 499497012}
+  backOnStartMenu: {fileID: 1866943960}
   cameraMenu: {fileID: 460533726}
+  menu: {fileID: 331465987}
+  save: {fileID: 788971109}
   grMenu: {fileID: 642023922}
   presstost: {fileID: 1107550751}
   waterway: {fileID: 1534126775}
+  onStart: {fileID: 0}
   onSetting: {fileID: 220800206}
   onCredits: {fileID: 858109412}
   onRoadMap: {fileID: 731669414}

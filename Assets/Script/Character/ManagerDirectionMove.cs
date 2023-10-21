@@ -22,12 +22,15 @@ public class ManagerDirectionMove : MonoBehaviour
     }
     public void DirectionMove(Vector3 positon, Vector3 dirTarget,int dirNum)
     {
-
+        if (positon == dirTarget)
+        {
+            return;
+        }
         if (Mathf.Abs(dirTarget.x - positon.x) >= Mathf.Abs(dirTarget.z - positon.z))
         {
-            dirNum = positon.x < dirTarget.x ? 3 : 2;
+            dirNum = dirTarget.x > positon.x ? 3 : 2;
         }
-        else 
+        else if ((Mathf.Abs(dirTarget.x - positon.x) <= Mathf.Abs(dirTarget.z - positon.z))) 
         {
             dirNum = positon.z < dirTarget.z ? 1 : 0;
         }

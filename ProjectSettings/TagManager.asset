@@ -4,9 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - JoyStickManager
-  - JoyStick
-  - JoyStickHandle
   - Enemy
   - Ground
   - Weapon
@@ -15,11 +12,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Slash
   - 
   - 
   - 

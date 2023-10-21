@@ -7,30 +7,36 @@ using UnityEngine.UI;
 
 public class Enemy : CharacterBrain 
 {
-    protected override CharacterBrain targetAttack => GameManager.Instance.player;
+    protected CharacterBrain targetAttack => throw new NotImplementedException();
     protected override Vector3 direction => targetAttack.transform.position;
     protected override bool Alive => sliderHp.sliders.value > 0;
 
     [Header("Attack")]
+    [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 5f;
+
     [SerializeField] protected bool arried = false;
     [SerializeField] protected bool onFollowPlayer = false;
+
     [SerializeField] protected ChildrenSlider sliderHp;
+
     [SerializeField] protected List<Vector3> wayPoints = null;
-    [SerializeField] protected int currentWaypointIndex = 0;
+
     protected float distance => Vector3.Distance(transform.position, targetAttack.transform.position);
+
+
     protected Action onArried = null;
     protected override void Awake()
     {
         
         base.Awake();
-        onArried = OnArried;
+        //onArried = OnArried;
         
     }
     private void Start()
     {
-        wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
-        sliderHp.UpdateSlider(health);
+        //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
+        sliderHp.UpdateSlider(3);
         sliderHp.gameObject.SetActive(false);
     }
     void Update()
@@ -79,26 +85,27 @@ public class Enemy : CharacterBrain
             arried = false;
         });
     }
-    private void OnEnable()
-    {
-        EventDispatcher.AddListener(Events.OnAttack, OnHit);
-    }
-    private void OnDisable()
-    {
-        EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
-    }
-    public override void OnHit()
-    {
-        Debug.Log("enemy Trigger OnHit");
-        sliderHp.OnReduceValueChanged(targetAttack.CharacterAtk.Damage);
-        sliderHp.gameObject.SetActive(true);
-        if (!Alive)
-        {
-            Debug.Log("Enemy Dead");
-        }
+
+    //private void OnEnable()
+    //{
+    //    EventDispatcher.AddListener(Events.OnAttack, OnHit);
+    //}
+    //private void OnDisable()
+    //{
+    //    EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
+    //}
+    //public override void OnHit()
+    //{
+    //    Debug.Log("enemy Trigger OnHit");
+    //    sliderHp.OnReduceValueChanged(targetAttack.CharacterAtk.Damage);
+    //    sliderHp.gameObject.SetActive(true);
+    //    if (!Alive)
+    //    {
+    //        Debug.Log("Enemy Dead");
+    //    }
 
 
-    }
+    //}
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, playerDetectionRange);

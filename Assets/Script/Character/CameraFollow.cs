@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset;
-    [SerializeField] Transform targetPos;
     [SerializeField] private float smooth;
     private Vector3 vecref = Vector3.zero;
     //[SerializeField] private float maxX;

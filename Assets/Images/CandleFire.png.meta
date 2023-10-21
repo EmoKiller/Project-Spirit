@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,282 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CandleFire_0
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 0
+        width: 96
+        height: 128
+      alignment: 9
+      pivot: {x: 0.98146313, y: 0.4763213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9a7c6744ca3224f8dbd54a9c4a0c02
+      internalID: 2146058224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_1
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 0
+        width: 101
+        height: 128
+      alignment: 9
+      pivot: {x: 0.9501264, y: 0.5118391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8613b1bbad37ea742928e451df865dbf
+      internalID: -955728539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_2
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 0
+        width: 104
+        height: 128
+      alignment: 9
+      pivot: {x: 0.95899844, y: 0.36384836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dff4ae2936a2444aef659a6943e91a
+      internalID: 1388179590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_3
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 0
+        width: 108
+        height: 128
+      alignment: 9
+      pivot: {x: 0.9911103, y: 0.49999982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf67ecbb492384249ba1b024eaa82e9b
+      internalID: -488645149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_4
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 0
+        width: 108
+        height: 128
+      alignment: 9
+      pivot: {x: 0.969661, y: 0.63465726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871b865c4c329e04c80d30b137ddf0ad
+      internalID: 442871891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 0
+        width: 121
+        height: 128
+      alignment: 9
+      pivot: {x: 0.95583075, y: 0.5500155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5af524906a4304a81c44d1e531868c
+      internalID: 82700908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_6
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 0
+        width: 125
+        height: 128
+      alignment: 9
+      pivot: {x: 0.96882224, y: 0.50769466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2737af9d9399742a4ace0687d8d38d
+      internalID: 1918762787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_7
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 0
+        width: 127
+        height: 128
+      alignment: 9
+      pivot: {x: 0.96919453, y: 0.54616815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bd27bb72709c5458677106d902c8d5
+      internalID: -1008602137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_8
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 0
+        width: 134
+        height: 128
+      alignment: 9
+      pivot: {x: 0.95570946, y: 0.51923674}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b3146749775e245a413447bec17448
+      internalID: 1326868582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_9
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 142
+        height: 128
+      alignment: 9
+      pivot: {x: 0.9543122, y: 0.44228968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2292d60b4a06d34d8762bf4765ccbf2
+      internalID: 1316506243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_10
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 158
+        height: 128
+      alignment: 9
+      pivot: {x: 0.96752584, y: 0.49230525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e342087b05fc64448357d465c8c6edc
+      internalID: -1471171413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CandleFire_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 164
+        height: 128
+      alignment: 9
+      pivot: {x: 0.98645514, y: 0.4807632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c26391639920f3408f731693da13cc5
+      internalID: 506388726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6c651f083a6eadc448ab858e89804fea
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CandleFire_0: 2146058224
+      CandleFire_11: 506388726
+      CandleFire_1: -955728539
+      CandleFire_7: -1008602137
+      CandleFire_10: -1471171413
+      CandleFire_4: 442871891
+      CandleFire_3: -488645149
+      CandleFire_5: 82700908
+      CandleFire_8: 1326868582
+      CandleFire_6: 1918762787
+      CandleFire_9: 1316506243
+      CandleFire_2: 1388179590
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
