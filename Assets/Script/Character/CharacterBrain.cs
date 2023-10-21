@@ -6,16 +6,15 @@ public abstract class CharacterBrain : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] protected string characterName = "";
-    [SerializeField] protected float health = 1;
-    [SerializeField] protected float currentHealth = 1;
     
     [Header("Component System")]
     [SerializeField] protected MeshAgent agent = null;
     [SerializeField] protected CharacterAnimator characterAnimator = null;
     [SerializeField] protected CharacterAttack characterAttack = null;
     [SerializeField] protected ManagerDirectionMove charactorDirectionMove = null;
-    protected abstract CharacterBrain targetAttack { get; }
-    protected abstract Vector3 direction { get; }
+    
+    //protected virtual CharacterBrain targetAttack { get; }
+    protected virtual Vector3 direction { get; }
     protected abstract bool Alive { get; }
     protected int dirNum = 0;
     public string Name => characterName;
@@ -32,10 +31,10 @@ public abstract class CharacterBrain : MonoBehaviour
         characterName = gameObject.name;
         charactorDirectionMove.SetActiveDirectionMove(DirectionMove.Front);
     }
-    protected bool CanAttack()
-    {
-        return targetAttack != null;
-    }
+    //protected bool CanAttack()
+    //{
+    //    return targetAttack != null;
+    //}
 
     public void DoAttack()
     {

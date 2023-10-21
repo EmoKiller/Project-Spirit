@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/ShowHPEnemy.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ab2f23600f00b7945a5c2b36e8336d2e
-    m_Address: Assets/Prefabs/Enemy/EnemyHuman.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 257f82ee30dcce649aefb9ab0cfe362e
     m_Address: Assets/Prefabs/UI/Heart/Heart_Large.prefab
     m_ReadOnly: 0

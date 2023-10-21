@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.UI.ScrollRect;
 
 public class CharacterAnimator : MonoBehaviour
 {
@@ -79,6 +76,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         Ator.SetInteger(param, value);
     }
+
 
 
     
