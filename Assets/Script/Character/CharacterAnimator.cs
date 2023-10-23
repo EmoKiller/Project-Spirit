@@ -97,12 +97,14 @@ public class CharacterAnimator : MonoBehaviour
         {
             combo++;
         }
+        EventDispatcher.TriggerEvent(Events.OnRemoveSlash);
     }
     public void FinishAni()
     {
         ataCanDo = false;
         combo = 0;
         ResetTrigger();
+
     }
 
 

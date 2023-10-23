@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    //public static GameManager Instance = null;
-    
+    public static UnityEvent<string,CharacterBrain> OnCharacterBrainEvent = new UnityEvent<string,CharacterBrain>();
 
     [Header("Camera")]
     public CameraFollow Camera;
@@ -55,18 +55,10 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
+        OnCharacterBrainEvent = null;
         EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
-        //EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
+        
     }
-    //private void OnEnable()
-    //{
-    //    EventDispatcher.AddListener(Events.OnAttack, OnHit);
-    //}
-    //private void OnDisable()
-    //{
-    //    EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
-    //}
-
     private void OnPlayerHealthChanged()
     {
         Debug.Log("GameManager Trigger OnHealthChange");

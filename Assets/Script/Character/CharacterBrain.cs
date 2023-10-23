@@ -17,10 +17,7 @@ public abstract class CharacterBrain : MonoBehaviour
     protected abstract bool Alive { get; }
     protected int dirNum = 0;
     public string Name => characterName;
-
-    
     public MeshAgent Agent => agent;
-    public CharacterAttack CharacterAtk => characterAttack;
 
     protected virtual void Awake()
     {
@@ -28,11 +25,6 @@ public abstract class CharacterBrain : MonoBehaviour
         characterAnimator.Initialized();
         characterName = gameObject.name;
     }
-    //protected bool CanAttack()
-    //{
-    //    return targetAttack != null;
-    //}
-
     public void DoAttack()
     {
         characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);

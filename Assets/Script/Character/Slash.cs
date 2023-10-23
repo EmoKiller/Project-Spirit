@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Slash : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        
     }
+    
 }

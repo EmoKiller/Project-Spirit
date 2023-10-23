@@ -1,11 +1,5 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using static CharacterAnimator;
 
 public class Player : CharacterBrain
 {
@@ -27,8 +21,7 @@ public class Player : CharacterBrain
     }
     protected void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !characterAnimator.ataCanDo)
         {
             OnAttack();
         }
@@ -39,15 +32,12 @@ public class Player : CharacterBrain
             characterAnimator.SetFloat("vertical", vertical);
             agent.MoveToDirection(direction);
         }
-        else if (horizontal >= 0.2f || vertical >= 0.2f)
-        {
-            agent.MoveToDirection(direction.normalized);
-        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Press E");
             EventDispatcher.TriggerEvent(Events.OnPlayerActionItems);
         }
+        
     }
     
     public void OnAttack()
@@ -58,18 +48,26 @@ public class Player : CharacterBrain
             PointTargetOfCamera.position = transform.position + (raycastHit.point - transform.position).normalized;
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
-        if (!characterAnimator.ataCanDo)
-        {
-            characterAnimator.ataCanDo = true;
-            characterAnimator.SetTrigger("" + characterAnimator.combo);
-        }
-        
+        characterAnimator.ataCanDo = true;
+        slash.gameObject.SetActive(true);
+
+        characterAnimator.SetTrigger("" + characterAnimator.combo);
+
+
+        Vector3 vec = PointTargetOfCamera.position - transform.position;
+        transform.DOMove(transform.position + vec.normalized * 0.8f, 0.3f);
+    }
+    private void SlashObj()
+    {
+        slash.gameObject.SetActive(false);
     }
     private void OnEnable()
     {
+        EventDispatcher.AddListener(Events.OnRemoveSlash, SlashObj);
     }
     private void OnDisable()
     {
+        EventDispatcher.RemoveListener(Events.OnRemoveSlash, SlashObj);
     }
 
 }
