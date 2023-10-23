@@ -23,7 +23,6 @@ public class ToggleManager : MonoBehaviour
             current.text.color = new Color32(20, 73, 45, 255);
             current = Tog;
         }
-        
     }
     private void OnDestroy()
     {

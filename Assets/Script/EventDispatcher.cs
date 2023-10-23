@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public static class EventDispatcher
 {
     public static Dictionary<Events, UnityEvent> _events = new Dictionary<Events, UnityEvent>();
+    
 
     public static void AddListener(Events eventName, UnityAction Action)
     {
@@ -14,13 +15,13 @@ public static class EventDispatcher
 
         _events[eventName].AddListener(Action);
     }
-    public static void AddListener<T1>(Events eventName, UnityAction Action)
-    {
-        if (!_events.ContainsKey(eventName))
-            _events.Add(eventName, new UnityEvent());
+    //public static void AddListener<T0>(Events eventName, UnityAction<T0> Action)
+    //{
+    //    if (!_events.ContainsKey(eventName))
+    //        _events.Add(eventName, new UnityEvent());
 
-        _events[eventName].AddListener(Action);
-    }
+    //    _events[eventName].AddListener(Action);
+    //}
 
     public static void RemoveListener(Events eventName, UnityAction Action)
     {

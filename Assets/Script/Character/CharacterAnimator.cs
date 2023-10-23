@@ -4,15 +4,18 @@ using UnityEngine;
 public class CharacterAnimator : MonoBehaviour
 {
     public enum AnimationState { Movement, Attack }
-    public enum MovementType { Idle, Walk, Run }
+    public enum MovementType { Idle, Run }
     public enum AttackType { nomal, power }
-
+    public enum AttackStep { step1 , step2, step3 }
+    
     private Animator ator = null;
     [SerializeField] protected AnimationState currentAnimationState;
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackType currentAttackType;
-
+    //[SerializeField] protected AttackStep currentAttackStep;
     [SerializeField] protected string currentTrigger = "";
+    public int combo;
+    public bool ataCanDo;
     public Animator Ator
     {
         get
@@ -33,7 +36,7 @@ public class CharacterAnimator : MonoBehaviour
 
         //SetFloat("MovementType", (int)type);
         //SetTrigger("Movement");
-        SetInt("State", (int)type);
+        SetFloat("Speed", (float)type);
 
         currentAnimationState = AnimationState.Movement;
         currentMovementType = type;
@@ -45,7 +48,18 @@ public class CharacterAnimator : MonoBehaviour
             return;
 
         SetFloat("AttackType", (int)type);
-        SetTrigger("Attack");
+        //SetTrigger("Attack");
+
+        currentAnimationState = AnimationState.Attack;
+        currentAttackType = type;
+    }
+    public void SetComboAttack(AttackType type, float step)
+    {
+        ataCanDo = true;
+        if (currentAnimationState == AnimationState.Attack && currentAttackType == type)
+            return;
+
+        SetFloat("Attack", step);
 
         currentAnimationState = AnimationState.Attack;
         currentAttackType = type;
@@ -75,6 +89,20 @@ public class CharacterAnimator : MonoBehaviour
     public void SetInt(string param, int value)
     {
         Ator.SetInteger(param, value);
+    }
+    public void StartCombo()
+    {
+        ataCanDo = false;
+        if (combo < 3)
+        {
+            combo++;
+        }
+    }
+    public void FinishAni()
+    {
+        ataCanDo = false;
+        combo = 0;
+        ResetTrigger();
     }
 
 

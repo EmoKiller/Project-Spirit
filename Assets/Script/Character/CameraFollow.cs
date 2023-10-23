@@ -2,26 +2,14 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private Vector3 offset;
-    [SerializeField] private float smooth;
+    public Transform target;
+    public float smooth;
+    public Vector3 offset;
     private Vector3 vecref = Vector3.zero;
-    //[SerializeField] private float maxX;
-    //[SerializeField] private float minX;
-    //[SerializeField] private float maxZ;
-    //[SerializeField] private float minZ;
     
-
-
-    private void Update()
-    {
-        //targetpos.x = Mathf.Clamp(targetpos.x, minX, maxX);
-        //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
-        transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
-    }
     private void FixedUpdate()
     {
-
+        transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
         //if (player.isRolling || player.isJump)
         //{
         //    smooth += Time.deltaTime * 0.4f;
@@ -39,5 +27,6 @@ public class CameraFollow : MonoBehaviour
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
         //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
     }
+
 
 }
