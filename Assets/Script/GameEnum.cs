@@ -24,6 +24,8 @@ public enum ItemsType
 
 public enum Events
 {
+    OnTriggerItems,
+    OnPlayerActionItems,
     OnHealthChanged,
     OnAttack,
     OnEnemyAttack

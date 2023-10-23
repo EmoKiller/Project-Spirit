@@ -11,7 +11,6 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected MeshAgent agent = null;
     [SerializeField] protected CharacterAnimator characterAnimator = null;
     [SerializeField] protected CharacterAttack characterAttack = null;
-    [SerializeField] protected ManagerDirectionMove charactorDirectionMove = null;
     
     //protected virtual CharacterBrain targetAttack { get; }
     protected virtual Vector3 direction { get; }
@@ -27,9 +26,7 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         agent.Initialized();
         characterAnimator.Initialized();
-        charactorDirectionMove.Initialized();
         characterName = gameObject.name;
-        charactorDirectionMove.SetActiveDirectionMove(DirectionMove.Front);
     }
     //protected bool CanAttack()
     //{

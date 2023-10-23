@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Enemy : CharacterBrain 
 {
-    protected CharacterBrain targetAttack => throw new NotImplementedException();
+    public CharacterBrain targetAttack = null;
     protected override Vector3 direction => targetAttack.transform.position;
     protected override bool Alive => sliderHp.sliders.value > 0;
 
@@ -47,8 +47,8 @@ public class Enemy : CharacterBrain
         {
             onFollowPlayer = true;
             SetDestination(targetAttack.transform.position);
-            charactorDirectionMove.DirectionMove(transform.position, targetAttack.transform.position, dirNum);
-            characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
+           
+            characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
             return;
         }
         if (onFollowPlayer && distance <= characterAttack.AttackRange)
@@ -57,11 +57,10 @@ public class Enemy : CharacterBrain
             //DoAttack();
             return;
         }
-        SetDestination(wayPoints[currentWaypointIndex]);
-        charactorDirectionMove.DirectionMove(transform.position, wayPoints[currentWaypointIndex], dirNum);
-        characterAnimator.SetMovement(CharacterAnimator.MovementType.Walk);
-        if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
-            onArried?.Invoke();
+        //SetDestination(wayPoints[currentWaypointIndex]);
+        characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
+        //if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
+        //    onArried?.Invoke();
         
     }
     public void SetDestination(Vector3 direction)

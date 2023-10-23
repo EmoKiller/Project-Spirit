@@ -4,10 +4,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.UI.CanvasScaler;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+    [SerializeField] protected TMP_Text text;
     
     private void Awake()
     {
@@ -16,29 +18,17 @@ public class UIManager : MonoBehaviour
         else
             Destroy(this);
     }
+    private void OnEnable()
+    {
+        EventDispatcher.AddListener(Events.OnTriggerItems, OnTriggerItems);
+    }
     private void OnDisable()
     {
         Instance = null;
+        EventDispatcher.RemoveListener(Events.OnTriggerItems, OnTriggerItems);
     }
+    private void OnTriggerItems()
+    {
 
-    //public void OnNotify()
-    //{
-    //    Debug.Log("UIManager OnNotify");
-    //    UpdateFullSliderPlayer();
-    //    UpdateSlider(AttributeType.HP);
-    //}
-    //private void OnEnable()
-    //{
-    //    EventDispatcher.TriggerEvent(Events.OnHealthChanged);
-    //}
-    //private void OnDisable()
-    //{
-    //    EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
-    //}
-
-    //private void OnPlayerHealthChanged()
-    //{
-    //    Debug.Log("GameManager Trigger OnHealthChange");
-    //}
-
+    }
 }
