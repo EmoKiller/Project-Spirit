@@ -55,7 +55,7 @@ public class CharacterAnimator : MonoBehaviour
     }
     public void SetComboAttack(AttackType type, float step)
     {
-        ataCanDo = true;
+        
         if (currentAnimationState == AnimationState.Attack && currentAttackType == type)
             return;
 
