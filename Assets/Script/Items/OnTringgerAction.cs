@@ -8,12 +8,14 @@ public class OnTringgerAction : MonoBehaviour
     protected string text = "";
     protected bool actioned = false;
     
+
     private void OnTriggerEnter(Collider other)
     {
         if (!actioned)
         {
             EventDispatcher.AddListener(Events.OnPlayerActionItems, ItemAction);
-            EventDispatcher.TriggerEvent(Events.OnTriggerItems);
+            Debug.Log(text);
+            UIManager.UpdateStringButtonE.Invoke(text);
         }
     }
     private void OnTriggerExit(Collider other)

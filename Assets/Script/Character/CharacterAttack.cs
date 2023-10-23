@@ -5,8 +5,13 @@ using UnityEngine;
 public class CharacterAttack : MonoBehaviour
 {
     [SerializeField]private Weapon currentWeapon = null;
-    public float AttackRange => currentWeapon.weaponObject.attackRange;
-    public float Damage => currentWeapon.weaponObject.damage;
+
+    public float AttackRange => currentWeapon.weaponObject.AttackRange;
+    public float firsthit => currentWeapon.weaponObject.Firsthit;
+    public float SecondHit => currentWeapon.weaponObject.SecondHit;
+    public float ThirdHit => currentWeapon.weaponObject.ThirdHit;
+    public float FourHit => currentWeapon.weaponObject.FourHit;
+
 
 
     private void Awake()

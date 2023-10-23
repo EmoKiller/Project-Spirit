@@ -24,6 +24,7 @@ public enum ItemsType
 
 public enum Events
 {
+    OnRemoveSlash,
     OnTriggerItems,
     OnPlayerActionItems,
     OnHealthChanged,

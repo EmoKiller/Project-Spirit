@@ -1,34 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using static UnityEngine.UI.CanvasScaler;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
+    public static Action<string> UpdateStringButtonE;
     [SerializeField] protected TMP_Text text;
     
-    private void Awake()
-    {
-        if (Instance != null)
-            Instance = this;
-        else
-            Destroy(this);
-    }
     private void OnEnable()
     {
-        EventDispatcher.AddListener(Events.OnTriggerItems, OnTriggerItems);
+        UpdateStringButtonE = OnTriggerItems;
     }
     private void OnDisable()
     {
-        Instance = null;
-        EventDispatcher.RemoveListener(Events.OnTriggerItems, OnTriggerItems);
+        UpdateStringButtonE = null;
     }
-    private void OnTriggerItems()
+    private void OnTriggerItems(string str)
     {
-
+        Debug.Log(str.Length);
+        text.text = str;
     }
 }

@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class Axes : Weapon
 {
-    public override void Attack(Vector3 target)
-    {
-
-    }
+    
 }
