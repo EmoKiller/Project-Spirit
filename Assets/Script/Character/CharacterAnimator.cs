@@ -13,7 +13,7 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackType currentAttackType;
     //[SerializeField] protected AttackStep currentAttackStep;
-    [SerializeField] protected string currentTrigger = "";
+    public string currentTrigger = "";
     public int combo;
     public bool ataCanDo;
     public Animator Ator
@@ -104,7 +104,7 @@ public class CharacterAnimator : MonoBehaviour
         ataCanDo = false;
         combo = 0;
         ResetTrigger();
-
+        EventDispatcher.TriggerEvent(Events.OnRemoveSlash);
     }
 
 

@@ -9,15 +9,16 @@ public class AssetManager : MonoBehaviour
     public string Weapon;
     public string ShowHPEnemy;
     public string Enemy;
+    public string SlashHit;
     //public void SpawnItems(Vector3 position, Quaternion quaternion)
     //{
     //    Weapon.InstantiateAsync(position, quaternion);
     //}
-    public void InstantiateSword(string str, Transform hand)
+    public void InstantiateItems(string str, Transform pos)
     {
         //GameObject weaponObj = Resources.Load<GameObject>(string.Format(GameConstants.Sword, "AdvancedShortSword"));
         //Instantiate();
-        GameObject weapon = null;
+        GameObject item = null;
         //Addressables.InstantiateAsync("Assets/Prefabs/Weapon/Sword/AdvancedShortSword.prefab").Completed += (handle) => 
         //{
         //    handle.Result
@@ -26,8 +27,8 @@ public class AssetManager : MonoBehaviour
 
         Addressables.LoadAssetAsync<GameObject>(str).Completed += (handle) =>
         {
-            weapon = handle.Result;
-            Instantiate(weapon, hand);
+            item = handle.Result;
+            Instantiate(item, pos);
         };
     }
 }

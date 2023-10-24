@@ -29,7 +29,8 @@ public enum Events
     OnPlayerActionItems,
     OnHealthChanged,
     OnAttack,
-    OnEnemyAttack
+    OnEnemyAttack,
+    OnEnemyHit
 }
 public enum MenuType
 {

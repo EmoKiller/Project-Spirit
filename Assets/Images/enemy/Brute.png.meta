@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,172 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Brute_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004
+        width: 369
+        height: 402
+      alignment: 9
+      pivot: {x: 0.5, y: 0.014907305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d66056ded801e3409bfb794eafc2b4a
+      internalID: 1749422501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brute_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 882
+        width: 244
+        height: 243
+      alignment: 9
+      pivot: {x: 0.48838493, y: 0.4043632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efdb4f8d990f46347a65ff69cf750566
+      internalID: 1445957048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brute_2
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 954
+        width: 426
+        height: 330
+      alignment: 9
+      pivot: {x: 0.35065943, y: 0.54653466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6967986668da943a63f57f9d7d1ac7
+      internalID: -274286488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brute_3
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 947
+        width: 225
+        height: 479
+      alignment: 9
+      pivot: {x: 0.5988108, y: 0.16478549}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0d8434371ead5488eb255e9de1598e
+      internalID: -1998978303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brute_4
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 291
+        width: 244
+        height: 140
+      alignment: 9
+      pivot: {x: 0.06466525, y: 0.37648642}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3514901e2dea6ee418b44df442ced20e
+      internalID: -904784508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brute_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1749
+        width: 97
+        height: 113
+      alignment: 9
+      pivot: {x: 0.0938749, y: 0.6226159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38dfdb73bf7c4748afe35c333d79b7a
+      internalID: 77481521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brute_6
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1912
+        width: 172
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335514e8b68a9af48a630298d036c4c8
+      internalID: 1560872089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Brute_0: 1749422501
+      Brute_5: 77481521
+      Brute_3: -1998978303
+      Brute_2: -274286488
+      Brute_1: 1445957048
+      Brute_4: -904784508
+      Brute_6: 1560872089
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
