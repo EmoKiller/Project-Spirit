@@ -15,7 +15,7 @@ public class Enemy : CharacterBrain
     [SerializeField] protected bool arried = false;
     [SerializeField] protected bool onFollowPlayer = false;
 
-    [SerializeField] protected ChildrenSlider sliderHp;
+    public ChildrenSlider sliderHp;
 
     [SerializeField] protected List<Vector3> wayPoints = null;
 
@@ -25,10 +25,8 @@ public class Enemy : CharacterBrain
     protected Action onArried = null;
     protected override void Awake()
     {
-        
         base.Awake();
         //onArried = OnArried;
-        
     }
     private void Start()
     {
@@ -38,24 +36,24 @@ public class Enemy : CharacterBrain
     }
     void Update()
     {
-        if (arried && Alive)
+        if (arried || !Alive)
             return;
         if (targetAttack != null && distance <= playerDetectionRange && distance > characterAttack.AttackRange)
         {
             onFollowPlayer = true;
             SetDestination(targetAttack.transform.position);
            
-            characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
+            //characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
             return;
         }
         if (onFollowPlayer && distance <= characterAttack.AttackRange)
         {
-            characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
+            //characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
             //DoAttack();
             return;
         }
         //SetDestination(wayPoints[currentWaypointIndex]);
-        characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
+        //characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
         //if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
         //    onArried?.Invoke();
         
@@ -81,27 +79,6 @@ public class Enemy : CharacterBrain
             arried = false;
         });
     }
-
-    //private void OnEnable()
-    //{
-    //    EventDispatcher.AddListener(Events.OnAttack, OnHit);
-    //}
-    //private void OnDisable()
-    //{
-    //    EventDispatcher.RemoveListener(Events.OnAttack, OnHit);
-    //}
-    //public override void OnHit()
-    //{
-    //    Debug.Log("enemy Trigger OnHit");
-    //    sliderHp.OnReduceValueChanged(targetAttack.CharacterAtk.Damage);
-    //    sliderHp.gameObject.SetActive(true);
-    //    if (!Alive)
-    //    {
-    //        Debug.Log("Enemy Dead");
-    //    }
-
-
-    //}
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, playerDetectionRange);

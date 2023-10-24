@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,414 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BloodFire_0
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 0
+        width: 66
+        height: 96
+      alignment: 9
+      pivot: {x: 0.85311055, y: 0.0269221}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a10ffea604d02944a4e57adcbf06ea4
+      internalID: -890797516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_1
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 0
+        width: 96
+        height: 121
+      alignment: 9
+      pivot: {x: 0.8236847, y: 0.006138718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1ffb220ea3f9a40af1515a5e6320db
+      internalID: -261375648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_2
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 0
+        width: 81
+        height: 127
+      alignment: 9
+      pivot: {x: 0.7849694, y: 0.020551603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69db32aad25c0f24ca692703f85503da
+      internalID: 2078194672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_3
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 79
+        height: 129
+      alignment: 9
+      pivot: {x: 0.85263485, y: 0.018729795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c135c0bf259584db50db83c81c81d7
+      internalID: 1039468809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_4
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 100
+        height: 134
+      alignment: 9
+      pivot: {x: 0.65122986, y: 0.027777707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26fcdcf440c16e44a41cf3e9cfc9084
+      internalID: -1385926849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_5
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 99
+        height: 137
+      alignment: 9
+      pivot: {x: 0.82159483, y: 0.011974121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495f3214bbd495748a164f417a634439
+      internalID: -1108090760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_6
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 0
+        width: 90
+        height: 139
+      alignment: 9
+      pivot: {x: 0.84933233, y: 0.01613286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01edf2521154c9241a5a002bdadf17ae
+      internalID: -141611695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 108
+        height: 151
+      alignment: 9
+      pivot: {x: 0.6842471, y: 0.025594523}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3213af37d4de34d4988f9df011c3e797
+      internalID: -1293261282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 105
+        height: 159
+      alignment: 9
+      pivot: {x: 0.7425744, y: 0.017982448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2688b823be5fb44792eaf0c31ca39c5
+      internalID: 926118728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_9
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 121
+        width: 73
+        height: 95
+      alignment: 9
+      pivot: {x: 0.9451946, y: 0.010085257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152b5487534629f47a071c939810598b
+      internalID: -1039333782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_10
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 122
+        width: 72
+        height: 95
+      alignment: 9
+      pivot: {x: 0.90679765, y: 0.01853204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e1a79bedd5cd5448b5cb0023128758
+      internalID: 2129530232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_11
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 128
+        width: 77
+        height: 128
+      alignment: 9
+      pivot: {x: 0.88866156, y: 0.013629079}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bb9ae166b018540adc20530f5ca0dd
+      internalID: -255476760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_12
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 135
+        width: 85
+        height: 100
+      alignment: 9
+      pivot: {x: 0.85024416, y: 0.02680298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2433238b2dd2a9e4da36830835acb98d
+      internalID: -1602440622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_13
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 138
+        width: 142
+        height: 118
+      alignment: 9
+      pivot: {x: 0.6368262, y: 0.032592386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30f80206660d564e93da13d2d7fae02
+      internalID: 349337691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_14
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 137
+        width: 46
+        height: 119
+      alignment: 9
+      pivot: {x: 0.90193903, y: 0.03388682}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb80c858d4053ac43a51d2f1b4fd35c9
+      internalID: 2048130398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_15
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 139
+        width: 129
+        height: 117
+      alignment: 9
+      pivot: {x: 0.7623613, y: 0.025919074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f3f8178f4715a4e9b60058cb70decc
+      internalID: -2042628798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 150
+        width: 83
+        height: 106
+      alignment: 9
+      pivot: {x: 0.8775613, y: 0.026980419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d75da622ec2034a9dbf7117dddf873
+      internalID: 498442600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloodFire_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 131
+        height: 96
+      alignment: 9
+      pivot: {x: 0.74878687, y: 0.016879559}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d818445a0d33e564d824b68d86a510e7
+      internalID: -295203488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ec36a004f874fe641af64f1362d90a26
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BloodFire_6: -141611695
+      BloodFire_1: -261375648
+      BloodFire_0: -890797516
+      BloodFire_2: 2078194672
+      BloodFire_8: 926118728
+      BloodFire_10: 2129530232
+      BloodFire_16: 498442600
+      BloodFire_13: 349337691
+      BloodFire_17: -295203488
+      BloodFire_3: 1039468809
+      BloodFire_14: 2048130398
+      BloodFire_15: -2042628798
+      BloodFire_7: -1293261282
+      BloodFire_9: -1039333782
+      BloodFire_12: -1602440622
+      BloodFire_4: -1385926849
+      BloodFire_11: -255476760
+      BloodFire_5: -1108090760
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

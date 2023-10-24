@@ -6,7 +6,8 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public static UnityEvent<string,CharacterBrain> OnCharacterBrainEvent = new UnityEvent<string,CharacterBrain>();
-
+    [Header("Camera")]
+    public AssetManager assetManager;
     [Header("Camera")]
     public CameraFollow Camera;
     [Header("Enemy")]
@@ -18,20 +19,6 @@ public class GameManager : MonoBehaviour
     public Player player = null;
     public Transform hand;
 
-    //public Func<float> getEnemyDamage = null;
-    //private void Awake()
-    //{
-    //    if (Instance == null)
-    //        Instance = this;
-    //    else
-    //        Destroy(Instance);
-    //    //assetManager.InstantiateSword(assetManager.Weapon, hand);
-    //    // getEnemyDamage
-    //}
-    //private void OnDestroy()
-    //{
-    //    Instance = null;
-    //}
     private void Awake()
     {
         addTargetForEnemy = AddTargetAttackFor;
@@ -50,14 +37,18 @@ public class GameManager : MonoBehaviour
     {
         EventDispatcher.AddListener(Events.OnHealthChanged, OnPlayerHealthChanged);
         //EventDispatcher.AddListener(Events.OnAttack, OnHit);
-        
+        EventDispatcher.AddListener(Events.OnEnemyHit, OnEnemyHit);
     }
-
     private void OnDisable()
     {
         OnCharacterBrainEvent = null;
         EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
-        
+        EventDispatcher.RemoveListener(Events.OnEnemyHit, OnEnemyHit);
+
+    }
+    private void OnEnemyHit()
+    {
+        assetManager.InstantiateItems(assetManager.SlashHit, enemies[0].transform);
     }
     private void OnPlayerHealthChanged()
     {

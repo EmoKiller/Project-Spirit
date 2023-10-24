@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class Player : CharacterBrain
@@ -9,7 +10,7 @@ public class Player : CharacterBrain
     protected float vertical => Input.GetAxis("Vertical");
 
     [SerializeField] Slash slash = null;
-    
+    public static Action<Enemy> enemy;
     public Transform PointTargetOfCamera;
     protected override void Awake()
     {
@@ -17,7 +18,7 @@ public class Player : CharacterBrain
     }
     private void Start()
     {
-        
+        enemy = AttackOnEnemy;
     }
     protected void Update()
     {
@@ -55,7 +56,20 @@ public class Player : CharacterBrain
 
 
         Vector3 vec = PointTargetOfCamera.position - transform.position;
-        transform.DOMove(transform.position + vec.normalized * 0.8f, 0.3f);
+        agent.agentBody.Move(vec.normalized);
+        //transform.DOMove(transform.position + vec.normalized * 0.8f, 0.3f);
+    }
+    private void AttackOnEnemy(Enemy ene)
+    {
+        ene.sliderHp.gameObject.SetActive(true);
+        ene.sliderHp.OnReduceValueChanged(characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)]);
+        Vector3 vec = transform.position - ene.transform.position;
+        float force = ene.characterAttack.Weight - characterAttack.PowerForce;
+        if (force > 0)
+            transform.DOMove(transform.position + vec.normalized * force, 0.3f);
+        else
+            ene.transform.DOMove(ene.transform.position+vec.normalized * force, 0.3f);
+        EventDispatcher.TriggerEvent(Events.OnEnemyHit);
     }
     private void SlashObj()
     {
@@ -67,6 +81,7 @@ public class Player : CharacterBrain
     }
     private void OnDisable()
     {
+        enemy = null;
         EventDispatcher.RemoveListener(Events.OnRemoveSlash, SlashObj);
     }
 

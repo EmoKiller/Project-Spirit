@@ -10,9 +10,9 @@ public abstract class CharacterBrain : MonoBehaviour
     [Header("Component System")]
     [SerializeField] protected MeshAgent agent = null;
     [SerializeField] protected CharacterAnimator characterAnimator = null;
-    [SerializeField] protected CharacterAttack characterAttack = null;
+    [SerializeField] public CharacterAttack characterAttack = null;
     
-    //protected virtual CharacterBrain targetAttack { get; }
+    
     protected virtual Vector3 direction { get; }
     protected abstract bool Alive { get; }
     protected int dirNum = 0;
