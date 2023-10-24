@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,348 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_0
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 581
+        width: 328
+        height: 210
+      alignment: 9
+      pivot: {x: 0.5089941, y: 0.055152528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1773065200c83ae4d80fd9aec12eaea6
+      internalID: 215496984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_1
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 577
+        width: 220
+        height: 241
+      alignment: 9
+      pivot: {x: 0.49553058, y: 0.03076805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c363564939e9e498d36c25c5f0050b
+      internalID: 1837027676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 367
+        width: 240
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f345f029405d6478d6e8db0f8bce36
+      internalID: -1208201638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_3
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 369
+        width: 245
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779225de7d13cdb4aae658bc631380a1
+      internalID: 467541112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 276
+        width: 82
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036dc6b1d537b6c43b5b650f14a9262b
+      internalID: -1573109645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_5
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 284
+        width: 75
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de507af247c9244fa571fcdb5ce9388
+      internalID: 76100064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_6
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 279
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e537d19f95dad94cbaffc040edfde0c
+      internalID: -1552356853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_7
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 279
+        width: 59
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1decc3a74cd14f143a8acaeda4e8f096
+      internalID: -6303836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_8
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 211
+        width: 47
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75b2eb66bc13a34c9e5f6e4586efcb3
+      internalID: -1984651268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_9
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 217
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6564fd99fa1d4d94ea8d353e1b30f385
+      internalID: -2132259898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_10
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 218
+        width: 78
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb4fccf4a28375479c32eb34d41494f
+      internalID: -1700690671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_11
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 220
+        width: 52
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b22eb1ea228d0b40a2996c5afc9a9c0
+      internalID: 183986569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_12
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 222
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbff389822e8a71438839ee107401311
+      internalID: -226666335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_13
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 224
+        width: 33
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e985657c94f4b564d9575967f9ccea32
+      internalID: -570018023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_SkullPiles_14
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 226
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8378531ad171ca7409197f3b79db2448
+      internalID: -1631949366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 22df5b8be49a68844906992eeb681b69
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Breakable_SkullPiles_14: -1631949366
+      Breakable_SkullPiles_11: 183986569
+      Breakable_SkullPiles_3: 467541112
+      Breakable_SkullPiles_10: -1700690671
+      Breakable_SkullPiles_8: -1984651268
+      Breakable_SkullPiles_4: -1573109645
+      Breakable_SkullPiles_13: -570018023
+      Breakable_SkullPiles_6: -1552356853
+      Breakable_SkullPiles_12: -226666335
+      Breakable_SkullPiles_1: 1837027676
+      Breakable_SkullPiles_7: -6303836
+      Breakable_SkullPiles_5: 76100064
+      Breakable_SkullPiles_9: -2132259898
+      Breakable_SkullPiles_0: 215496984
+      Breakable_SkullPiles_2: -1208201638
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

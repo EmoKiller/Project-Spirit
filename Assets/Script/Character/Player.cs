@@ -19,6 +19,7 @@ public class Player : CharacterBrain
     private void Start()
     {
         enemy = AttackOnEnemy;
+        
     }
     protected void Update()
     {
@@ -33,7 +34,7 @@ public class Player : CharacterBrain
             characterAnimator.SetFloat("vertical", vertical);
             agent.MoveToDirection(direction);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("Press E");
             EventDispatcher.TriggerEvent(Events.OnPlayerActionItems);
