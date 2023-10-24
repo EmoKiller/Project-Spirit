@@ -2,9 +2,17 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine.Events;
-
 public static class EventDispatcher
 {
+
+
+    
+
+
+
+
+
+
     public static Dictionary<Events, UnityEvent> _events = new Dictionary<Events, UnityEvent>();
     
 

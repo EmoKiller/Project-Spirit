@@ -1,9 +1,11 @@
 using System;
 using TMPro;
 using UnityEngine;
- 
+using UnityEngine.Events;
+
 public class UIManager : MonoBehaviour
 {
+
     public static Action<string> UpdateStringButtonE;
     public RectTransform buttonActionE;
     [SerializeField] protected TMP_Text text;

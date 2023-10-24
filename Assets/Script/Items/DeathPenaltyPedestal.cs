@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class DeathPenaltyPedestal : OnTringgerAction
 {
+    float count = 0;
     private void Awake()
     {
         text = "Knell to be Sacrificed";
     }
     public override void ItemAction()
     {
-        actioned = true;
+        count++;
+        //actioned = true;
+        Debug.Log(count);
     }
 }
