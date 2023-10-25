@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         addTargetForEnemy = AddTargetAttackFor;
         ChangeTargetOfCamera(player.PointTargetOfCamera);
         addTargetForEnemy?.Invoke(enemies[0]);
+        //addTargetForEnemy?.Invoke(enemies[1]);
     }
     private void ChangeTargetOfCamera(Transform target)
     {
@@ -39,19 +40,40 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         EventDispatcher.AddListener(Events.OnHealthChanged, OnPlayerHealthChanged);
-        //EventDispatcher.AddListener(Events.OnAttack, OnHit);
         EventDispatcher.AddListener(Events.OnEnemyHit, OnEnemyHit);
+        EventDispatcher.AddListener(Events.OnEnemyDead, OnEnemyDead);
     }
     private void OnDisable()
     {
         OnCharacterBrainEvent = null;
         EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
         EventDispatcher.RemoveListener(Events.OnEnemyHit, OnEnemyHit);
-
+        EventDispatcher.RemoveListener(Events.OnEnemyDead, OnEnemyDead);
     }
     private void OnEnemyHit()
     {
         assetManager.InstantiateItems(assetManager.SlashHit, enemies[0].transform);
+    }
+    private void OnEnemyDead() 
+    {
+
+    }
+    private Vector3 DirBetween2Obj(Vector3 present, Vector3 toWards)
+    {
+        Vector3 dir = present - toWards;
+        return dir;
+    }
+    private void CompareForce()
+    {
+        //float force = ene.characterAttack.Weight - characterAttack.PowerForce;
+        //if (force > 0)
+        //{
+        //    agent.agentBody.Move(vec.normalized * force);
+        //}
+        //else
+        //{
+        //    ene.agent.agentBody.Move(vec.normalized * force);
+        //}
     }
     private void OnPlayerHealthChanged()
     {

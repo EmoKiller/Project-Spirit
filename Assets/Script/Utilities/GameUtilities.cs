@@ -14,6 +14,21 @@ public static class GameUtilities
         yield return new WaitForSeconds(time);
         callBack?.Invoke();
     }
+    public static void LoopDelayCall(this MonoBehaviour mono, float time, Action callBack)
+    {
+        mono.StartCoroutine(IELoopDelayCall(time, callBack));
+    }
+    public static IEnumerator IELoopDelayCall(float time, Action callBack)
+    {
+        float start = 0f;
+        while (start <= time)
+        {
+            start += Time.deltaTime;
+            callBack?.Invoke();
+        }
+        yield return null;
+        
+    }
     public static T TryGetMonoComponent<T>(this MonoBehaviour mono, ref T tryValue)
     {
         if(tryValue == null)

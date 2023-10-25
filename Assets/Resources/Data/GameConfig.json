@@ -1,17 +1,6 @@
 {
 	"PlayerConfig" : {
-		"SaveGame1" : {
-			"Heart" : {
-				"type" : 0,
-				"ratio" : 100,
-				"value" : 3
-			},
-			"Coin" : {
-				"type" : 0,
-				"ratio" : 100,
-				"value" : 0
-			}
-		}
+		"SaveGame1" : {}
 	},
 	"EnemyConfigs" : {
 		"1" : {
@@ -31,6 +20,11 @@
 					}
 				}
 			}
+		}
+	},
+	"Dungeon" : {
+		"NameDungeon" : {
+			"Intro" : ""
 		}
 	}
 }

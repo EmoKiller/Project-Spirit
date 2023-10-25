@@ -1,11 +1,13 @@
 using DG.Tweening;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : CharacterBrain
 {
     protected override Vector3 direction => new Vector3(horizontal, 0, vertical);
-    protected override bool Alive => throw new System.NotImplementedException();
+    public override bool Alive => throw new System.NotImplementedException();
     protected float horizontal => Input.GetAxis("Horizontal");
     protected float vertical => Input.GetAxis("Vertical");
 
@@ -15,11 +17,11 @@ public class Player : CharacterBrain
     protected override void Awake()
     {
         base.Awake();
+        slash.gameObject.SetActive(false);
     }
     private void Start()
     {
         enemy = AttackOnEnemy;
-        
     }
     protected void Update()
     {
@@ -41,7 +43,6 @@ public class Player : CharacterBrain
         }
         
     }
-    
     public void OnAttack()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -50,6 +51,7 @@ public class Player : CharacterBrain
             PointTargetOfCamera.position = transform.position + (raycastHit.point - transform.position).normalized;
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
+        characterAnimator.SetFloat("Dir", PointTargetOfCamera.localPosition.x);
         characterAnimator.ataCanDo = true;
         slash.gameObject.SetActive(true);
 
@@ -57,6 +59,7 @@ public class Player : CharacterBrain
 
 
         Vector3 vec = PointTargetOfCamera.position - transform.position;
+        
         agent.agentBody.Move(vec.normalized);
         //transform.DOMove(transform.position + vec.normalized * 0.8f, 0.3f);
     }
@@ -67,10 +70,18 @@ public class Player : CharacterBrain
         Vector3 vec = transform.position - ene.transform.position;
         float force = ene.characterAttack.Weight - characterAttack.PowerForce;
         if (force > 0)
-            transform.DOMove(transform.position + vec.normalized * force, 0.3f);
+        {
+            agent.agentBody.Move(vec.normalized*force);
+        }
         else
-            ene.transform.DOMove(ene.transform.position+vec.normalized * force, 0.3f);
+        {
+            ene.agent.agentBody.Move(vec.normalized * force);
+        }
         EventDispatcher.TriggerEvent(Events.OnEnemyHit);
+        if (!ene.Alive)
+        {
+            EventDispatcher.TriggerEvent(Events.OnEnemyDead);
+        }
     }
     private void SlashObj()
     {
