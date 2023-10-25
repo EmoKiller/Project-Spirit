@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,8 +14,8 @@ public class MeshAgent : MonoBehaviour
     public NavMeshAgent agentBody => this.TryGetMonoComponent(ref _agent); 
 
     private NavMeshPath path = null;
+    public Action onArried = null;
 
-    
     public void Initialized()
     {
         path = new NavMeshPath();

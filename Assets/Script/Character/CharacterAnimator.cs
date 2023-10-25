@@ -48,7 +48,7 @@ public class CharacterAnimator : MonoBehaviour
             return;
 
         SetFloat("AttackType", (int)type);
-        //SetTrigger("Attack");
+        SetTrigger("Attack");
 
         currentAnimationState = AnimationState.Attack;
         currentAttackType = type;
@@ -106,8 +106,16 @@ public class CharacterAnimator : MonoBehaviour
         ResetTrigger();
         EventDispatcher.TriggerEvent(Events.OnRemoveSlash);
     }
+    public void OnEnemyStartAttack()
+    {
+        EventDispatcher.TriggerEvent(Events.OnEnemyStartAttack);
+    }
+    public void OnEnemyAttack()
+    {
+        EventDispatcher.TriggerEvent(Events.OnEnemyAttack);
+    }
 
 
 
-    
+
 }

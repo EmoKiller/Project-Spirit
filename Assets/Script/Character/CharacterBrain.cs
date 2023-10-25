@@ -8,14 +8,13 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected string characterName = "";
     
     [Header("Component System")]
-    [SerializeField] protected MeshAgent agent = null;
+    [SerializeField] public MeshAgent agent = null;
     [SerializeField] protected CharacterAnimator characterAnimator = null;
     [SerializeField] public CharacterAttack characterAttack = null;
     
     
     protected virtual Vector3 direction { get; }
-    protected abstract bool Alive { get; }
-    protected int dirNum = 0;
+    public abstract bool Alive { get; }
     public string Name => characterName;
     public MeshAgent Agent => agent;
 
