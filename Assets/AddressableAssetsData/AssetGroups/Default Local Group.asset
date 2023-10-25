@@ -17,10 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d93c371f3cd853c4f9aa4bdf16db8744
   m_SerializeEntries:
-  - m_GUID: 665e4fd0f16cf5b4aaf83ba42d77dd72
-    m_Address: Assets/Prefabs/UI/ShowHPEnemy.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 257f82ee30dcce649aefb9ab0cfe362e
     m_Address: Assets/Prefabs/UI/Heart/Heart_Large.prefab
     m_ReadOnly: 0

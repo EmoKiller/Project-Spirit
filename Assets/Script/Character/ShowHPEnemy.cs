@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class ChildrenSlider : MonoBehaviour
+public class ShowHPEnemy : MonoBehaviour
 {
     public Slider sliders;
     public void UpdateSlider(float maxValue)
@@ -16,16 +15,4 @@ public class ChildrenSlider : MonoBehaviour
     {
         sliders.value = health;
     }
-
-
-    //public void OnReduceValueChanged(float Reduce)
-    //{
-    //    sliders.value -= Reduce;
-    //}
-    //public void OnIncreaseValueChanged(float Reduce)
-    //{
-    //    sliders.value += Reduce;
-    //}
-    
-
 }
