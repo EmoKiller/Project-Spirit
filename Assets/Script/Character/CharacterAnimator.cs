@@ -97,7 +97,6 @@ public class CharacterAnimator : MonoBehaviour
         {
             combo++;
         }
-        EventDispatcher.TriggerEvent(Events.OnRemoveSlash);
     }
     public void FinishAni()
     {
@@ -113,6 +112,10 @@ public class CharacterAnimator : MonoBehaviour
     public void OnEnemyAttack()
     {
         EventDispatcher.TriggerEvent(Events.OnEnemyAttack);
+    }
+    public void RemoveSlash()
+    {
+        EventDispatcher.TriggerEvent(Events.OnRemoveSlash);
     }
 
 

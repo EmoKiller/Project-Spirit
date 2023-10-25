@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Enemy : CharacterBrain 
+public class Enemy : CharacterBrain
 {
     public CharacterBrain targetAttack = null;
     protected override Vector3 direction => targetAttack.transform.position;
@@ -18,7 +19,8 @@ public class Enemy : CharacterBrain
 
     [SerializeField] protected List<Vector3> wayPoints = null;
     public Transform TranfomThis;
-    public ChildrenSlider sliderHp;
+    public ShowHPEnemy sliderHp;
+    [SerializeField] private HealthBar healthBar;
 
     protected float distance => Vector3.Distance(transform.position, targetAttack.transform.position);
     [SerializeField] private bool onAniAttck = false;
@@ -30,16 +32,25 @@ public class Enemy : CharacterBrain
     }
     private void Start()
     {
-        //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
-        sliderHp.UpdateSlider(100);
-        sliderHp.gameObject.SetActive(false);
+        Init();
     }
+
+    private void Init()
+    {
+        //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
+        health = maxHealth;
+        sliderHp.UpdateSlider(maxHealth);
+        sliderHp.gameObject.SetActive(false);
+        //healthBar.SetHealh(maxHealth);
+
+    }
+
     void Update()
     {
-        
+
         if (arried || !Alive)
             return;
-        
+
         if (onFollowPlayer && distance > characterAttack.AttackRange && !onAniAttck ||
             targetAttack != null && distance <= playerDetectionRange && distance > characterAttack.AttackRange && !onAniAttck)
         {
@@ -58,14 +69,14 @@ public class Enemy : CharacterBrain
         //characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
         //if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
         //    onArried?.Invoke();
-        
+
     }
     private void EnemyRotation()
     {
         Vector3 dir = targetAttack.transform.position - transform.position;
         if (dir.normalized.x > 0)
             TranfomThis.rotation = Quaternion.Euler(-20, 180, 0);
-        else if(dir.normalized.x < 0)
+        else if (dir.normalized.x < 0)
             TranfomThis.rotation = Quaternion.Euler(0, 0, 0);
     }
     public void SetDestination(Vector3 direction)
@@ -98,9 +109,9 @@ public class Enemy : CharacterBrain
         this.DelayCall(2, () =>
         {
             currentWaypointIndex++;
-            if(currentWaypointIndex >= wayPoints.Count)
+            if (currentWaypointIndex >= wayPoints.Count)
                 currentWaypointIndex = 0;
-            
+
             arried = false;
         });
     }
@@ -120,4 +131,25 @@ public class Enemy : CharacterBrain
         Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
 
     }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        Debug.Log($"health: {health}\ntake damage: {damage}");
+        sliderHp.gameObject.SetActive(true);
+        sliderHp.UpdateHealth(health);
+        //healthBar.UpdateHealth(health);
+    }
+
+    public void OnHealhBarChanged(float value)
+    {
+        if(value != health)
+        Debug.LogError($"some thing has changed this value: {value} -   healh: {health}");
+    }
+    public void OnHealhBarChanged2(float value)
+    {
+        if (value != health)
+            Debug.LogError($"some thing has changed this value: {value} -   healh: {health}");
+    }
+
 }

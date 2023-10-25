@@ -3,15 +3,26 @@ using UnityEngine;
 public class Slash : MonoBehaviour
 {
 
+    [SerializeField] private Player player;
+
+    public void Init(Player attacker)
+    {
+        player = attacker;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(3))
+        if (IsEnemy(other))
         {
-            Enemy ene = other.gameObject.GetComponent<Enemy>();
-            Player.enemy.Invoke(ene);
+            Enemy ene = other.GetComponent<Enemy>();
+            player.enemy.Invoke(ene);
             Debug.Log("hit Enemy");
         }
-        
+
     }
-    
+
+    private bool IsEnemy(Collider other)
+    {
+        return other.gameObject.layer.Equals(3);
+    }
 }

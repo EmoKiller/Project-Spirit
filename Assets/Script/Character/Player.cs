@@ -12,7 +12,7 @@ public class Player : CharacterBrain
     protected float vertical => Input.GetAxis("Vertical");
 
     [SerializeField] Slash slash = null;
-    public static Action<Enemy> enemy;
+    public Action<Enemy> enemy;
     public Transform PointTargetOfCamera;
     protected override void Awake()
     {
@@ -65,13 +65,14 @@ public class Player : CharacterBrain
     }
     private void AttackOnEnemy(Enemy ene)
     {
-        ene.sliderHp.gameObject.SetActive(true);
-        ene.sliderHp.OnReduceValueChanged(characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)]);
+        var damage = GetDamage();
+        //Debug.LogError($"deal damage: {damage}");
+        ene.TakeDamage(damage);
         Vector3 vec = transform.position - ene.transform.position;
         float force = ene.characterAttack.Weight - characterAttack.PowerForce;
         if (force > 0)
         {
-            agent.agentBody.Move(vec.normalized*force);
+            agent.agentBody.Move(vec.normalized * force);
         }
         else
         {
@@ -83,6 +84,12 @@ public class Player : CharacterBrain
             EventDispatcher.TriggerEvent(Events.OnEnemyDead);
         }
     }
+
+    private float GetDamage()
+    {
+        return characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)];
+    }
+
     private void SlashObj()
     {
         slash.gameObject.SetActive(false);
