@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - Ground
   - Weapon
-  - PickUp
+  - SlashObj
   layers:
   - Default
   - TransparentFX

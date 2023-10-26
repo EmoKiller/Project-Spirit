@@ -7,24 +7,25 @@ public class HealthBar : MonoBehaviour
 {
     private float _maxHealth;
     private float _health;
-
     [SerializeField] private Slider slider;
 
-    private void Start()
+    private void Awake()
     {
-        if (_maxHealth == 0)
-            _maxHealth = 1;
+        gameObject.SetActive(false);
     }
-
+    public void SetActive()
+    {
+        gameObject.SetActive(true);
+    }
     public void SetHealh(float maxHealth)
     {
         _maxHealth = maxHealth;
         _health = maxHealth;
+        slider.maxValue = maxHealth;
     }
-
     public void UpdateHealth(float health)
     {
         this._health = health;
-        slider.value = health/_maxHealth;
+        slider.value = health;
     }
 }

@@ -6,19 +6,18 @@ using UnityEngine.Events;
 
 public class Player : CharacterBrain
 {
-    protected float horizontal => Input.GetAxis("Horizontal");
-    protected float vertical => Input.GetAxis("Vertical");
-    [SerializeField] Slash slash = null;
-    protected Action<Enemy> enemy;
+    protected float Horizontal => Input.GetAxis("Horizontal");
+    protected float Vertical => Input.GetAxis("Vertical");
+    public Action<Enemy> enemy;
     //private Transform direction;
     protected override void Awake()
     {
         base.Awake();
-        slash.gameObject.SetActive(false);
     }
     private void Start()
     {
         enemy = AttackOnEnemy;
+        slash.SetSizeBox(4,1,4);
     }
     protected void Update()
     {
@@ -26,12 +25,12 @@ public class Player : CharacterBrain
         {
             OnAttack();
         }
-        if (horizontal != 0 || vertical!=0)
+        if (Horizontal != 0 || Vertical!=0)
         {
-            direction.position = new Vector3(horizontal, 0, vertical).normalized + transform.position;
-            characterAnimator.SetFloat("horizontal", horizontal);
-            characterAnimator.SetFloat("vertical", vertical);
-            agent.MoveToDirection(new Vector3(horizontal,0, vertical));
+            //direction.position = new Vector3(horizontal, 0, vertical).normalized + transform.position;
+            characterAnimator.SetFloat("horizontal", Horizontal);
+            characterAnimator.SetFloat("vertical", Vertical);
+            agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
         }
         if (Input.GetKey(KeyCode.E))
         {
@@ -44,15 +43,15 @@ public class Player : CharacterBrain
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            direction.position = transform.position + (raycastHit.point - transform.position).normalized;
+            //direction.position = transform.position + (raycastHit.point - transform.position).normalized;
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
-        characterAnimator.SetFloat("Dir", direction.localPosition.x);
+        //characterAnimator.SetFloat("Dir", direction.localPosition.x);
         characterAnimator.SetTrigger("" + characterAnimator.combo);
         characterAnimator.ataCanDo = true;
-        Vector3 vec = direction.position - transform.position;
+        //Vector3 vec = direction.position - transform.position;
 
-        agent.agentBody.Move(vec.normalized);
+        //agent.agentBody.Move(vec.normalized);
         slash.gameObject.SetActive(true);
     }
     private void AttackOnEnemy(Enemy ene)
@@ -98,4 +97,8 @@ public class Player : CharacterBrain
         throw new NotImplementedException();
     }
 
+    public override void StartAttack(float damage)
+    {
+        throw new NotImplementedException();
+    }
 }
