@@ -1,61 +1,60 @@
-
 using System;
 using System.Collections.Generic;
-using UnityEngine.Events;
-public static class EventDispatcher
+using UnityEngine;
+
+public class EventDispatcherComponent : MonoBehaviour
 {
+    private static EventDispatcherComponent instance;
 
-
+    private Dictionary<string, Action<object>> _eventDictionary = new Dictionary<string, Action<object>>();
     
-
-
-
-
-
-
-    public static Dictionary<Events, UnityEvent> _events = new Dictionary<Events, UnityEvent>();
-    
-
-    public static void AddListener(Events eventName, UnityAction Action)
+    public static EventDispatcherComponent Instance()
     {
-        if (!_events.ContainsKey(eventName))
-            _events.Add(eventName, new UnityEvent());
-
-        _events[eventName].AddListener(Action);
-    }
-    //public static void AddListener<T0>(Events eventName, UnityAction<T0> Action)
-    //{
-    //    if (!_events.ContainsKey(eventName))
-    //        _events.Add(eventName, new UnityEvent());
-
-    //    _events[eventName].AddListener(Action);
-    //}
-
-    public static void RemoveListener(Events eventName, UnityAction Action)
-    {
-        if (!_events.ContainsKey(eventName))
-            return;
-
-        _events[eventName].RemoveListener(Action);
+        if (instance == null)
+            instance = new EventDispatcherComponent();
+        return instance;
     }
 
-    public static void RemoveAllListener(Events eventName)
+    private void AddEventListener(string eventName, Action<object> listener)
     {
-        if (!_events.ContainsKey(eventName))
-            return;
-
-        _events[eventName].RemoveAllListeners();
+        if (_eventDictionary.TryGetValue(eventName, out Action<object> thisEvent))
+        {
+            thisEvent += listener;
+            _eventDictionary[eventName] = thisEvent;
+        }
+        else
+        {
+            thisEvent += listener;
+            _eventDictionary.Add(eventName, thisEvent);
+        }
     }
 
-    public static void TriggerEvent(Events eventName)
+    private void RemoveEventListener(string eventName, Action<object> listener)
     {
-        if (!_events.ContainsKey(eventName))
-            return;
-
-        _events[eventName]?.Invoke();
+        if (_eventDictionary.TryGetValue(eventName, out Action<object> thisEvent))
+        {
+            thisEvent -= listener;
+            if (thisEvent == null)
+            {
+                _eventDictionary.Remove(eventName);
+            }
+            else
+            {
+                _eventDictionary[eventName] = thisEvent;
+            }
+        }
     }
 
-    
+    private void DispatchEvent(string eventName, object payload = null)
+    {
+        if (_eventDictionary.TryGetValue(eventName, out Action<object> thisEvent))
+        {
+            thisEvent.Invoke(payload);
+        }
+    }
+    public void TestDispatcher()
+    {
+        Debug.Log("TestDispatcher");
+    }
+
 }
-
-

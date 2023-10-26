@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         addTargetForEnemy = AddTargetAttackFor;
-        ChangeTargetOfCamera(player.PointTargetOfCamera);
+        //ChangeTargetOfCamera(player.PointTargetOfCamera);
         addTargetForEnemy?.Invoke(enemies[0]);
         //addTargetForEnemy?.Invoke(enemies[1]);
     }

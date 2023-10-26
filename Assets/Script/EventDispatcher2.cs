@@ -5,10 +5,8 @@ using UnityEngine.Events;
 public class UnityEventGeneric : UnityEvent { }
 public class UnityEventGeneric<T1> : UnityEvent<T1> { }
 public class UnityEventGeneric<T1, T2> : UnityEvent<T1, T2> { }
-public class EventDispatcher2 : MonoBehaviour
+public class EventDispatcher : MonoBehaviour
 {
-    
-
 
     public static Dictionary<Events, UnityEvent> _events = new Dictionary<Events, UnityEvent>();
 
@@ -50,4 +48,5 @@ public class EventDispatcher2 : MonoBehaviour
 
         _events[eventName]?.Invoke();
     }
+    
 }
