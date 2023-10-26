@@ -7,8 +7,6 @@ using UnityEngine.UIElements;
 public class Enemy : CharacterBrain
 {
     public CharacterBrain targetAttack = null;
-    protected override Vector3 direction => targetAttack.transform.position;
-    public override bool Alive => sliderHp.sliders.value > 0;
 
     [Header("Attack")]
     [SerializeField] protected int currentWaypointIndex = 0;
@@ -27,7 +25,6 @@ public class Enemy : CharacterBrain
     protected override void Awake()
     {
         base.Awake();
-        //agent.onArried = OnArried;
         agent.onArried = OnAttack;
     }
     private void Start()
@@ -79,7 +76,7 @@ public class Enemy : CharacterBrain
         else if (dir.normalized.x < 0)
             TranfomThis.rotation = Quaternion.Euler(0, 0, 0);
     }
-    public void SetDestination(Vector3 direction)
+    private void SetDestination(Vector3 direction)
     {
         agent.agentBody.isStopped = false;
         Vector3 dir = direction - transform.position;
@@ -91,7 +88,7 @@ public class Enemy : CharacterBrain
     {
         onAniAttck = true;
     }
-    public virtual void OnAttack()
+    private void OnAttack()
     {
         if (distance <= characterAttack.AttackRange + 1f)
         {
@@ -125,14 +122,7 @@ public class Enemy : CharacterBrain
         EventDispatcher.AddListener(Events.OnEnemyAttack, OnAttack);
         EventDispatcher.AddListener(Events.OnEnemyStartAttack, OnStartAttack);
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
-
-    }
-
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         health -= damage;
         Debug.Log($"health: {health}\ntake damage: {damage}");
@@ -144,12 +134,18 @@ public class Enemy : CharacterBrain
     public void OnHealhBarChanged(float value)
     {
         if(value != health)
-        Debug.LogError($"some thing has changed this value: {value} -   healh: {health}");
+            Debug.LogError($"some thing has changed this value: {value} -   healh: {health} \"Something changed\" " + GetInstanceID());
+        
     }
     public void OnHealhBarChanged2(float value)
     {
         if (value != health)
-            Debug.LogError($"some thing has changed this value: {value} -   healh: {health}");
+            Debug.LogError($"some thing has changed this value: {value} -   healh: {health} \"Something changed\" " + GetInstanceID());
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
+
     }
 
 }

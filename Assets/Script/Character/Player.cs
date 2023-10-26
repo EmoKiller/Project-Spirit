@@ -6,14 +6,11 @@ using UnityEngine.Events;
 
 public class Player : CharacterBrain
 {
-    protected override Vector3 direction => new Vector3(horizontal, 0, vertical);
-    public override bool Alive => throw new System.NotImplementedException();
     protected float horizontal => Input.GetAxis("Horizontal");
     protected float vertical => Input.GetAxis("Vertical");
-
     [SerializeField] Slash slash = null;
-    public Action<Enemy> enemy;
-    public Transform PointTargetOfCamera;
+    protected Action<Enemy> enemy;
+    //private Transform direction;
     protected override void Awake()
     {
         base.Awake();
@@ -31,65 +28,58 @@ public class Player : CharacterBrain
         }
         if (horizontal != 0 || vertical!=0)
         {
-            PointTargetOfCamera.position = new Vector3(horizontal, 0, vertical).normalized + transform.position;
+            direction.position = new Vector3(horizontal, 0, vertical).normalized + transform.position;
             characterAnimator.SetFloat("horizontal", horizontal);
             characterAnimator.SetFloat("vertical", vertical);
-            agent.MoveToDirection(direction);
+            agent.MoveToDirection(new Vector3(horizontal,0, vertical));
         }
         if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("Press E");
             EventDispatcher.TriggerEvent(Events.OnPlayerActionItems);
         }
-        
     }
-    public void OnAttack()
+    private void OnAttack()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            PointTargetOfCamera.position = transform.position + (raycastHit.point - transform.position).normalized;
+            direction.position = transform.position + (raycastHit.point - transform.position).normalized;
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
-        characterAnimator.SetFloat("Dir", PointTargetOfCamera.localPosition.x);
-        characterAnimator.ataCanDo = true;
-        slash.gameObject.SetActive(true);
-
+        characterAnimator.SetFloat("Dir", direction.localPosition.x);
         characterAnimator.SetTrigger("" + characterAnimator.combo);
+        characterAnimator.ataCanDo = true;
+        Vector3 vec = direction.position - transform.position;
 
-
-        Vector3 vec = PointTargetOfCamera.position - transform.position;
-        
         agent.agentBody.Move(vec.normalized);
-        //transform.DOMove(transform.position + vec.normalized * 0.8f, 0.3f);
+        slash.gameObject.SetActive(true);
     }
     private void AttackOnEnemy(Enemy ene)
     {
-        var damage = GetDamage();
-        //Debug.LogError($"deal damage: {damage}");
-        ene.TakeDamage(damage);
+        ene.TakeDamage(GetDamageCombo());
         Vector3 vec = transform.position - ene.transform.position;
-        float force = ene.characterAttack.Weight - characterAttack.PowerForce;
-        if (force > 0)
-        {
-            agent.agentBody.Move(vec.normalized * force);
-        }
-        else
-        {
-            ene.agent.agentBody.Move(vec.normalized * force);
-        }
-        EventDispatcher.TriggerEvent(Events.OnEnemyHit);
-        if (!ene.Alive)
-        {
-            EventDispatcher.TriggerEvent(Events.OnEnemyDead);
-        }
+        //float force = ene.characterAttack.Weight - characterAttack.PowerForce;
+        //if (force > 0)
+        //{
+        //    agent.agentBody.Move(vec.normalized * force);
+        //}
+        //else
+        //{
+        //    ene.agent.agentBody.Move(vec.normalized * force);
+        //}
+        //EventDispatcher.TriggerEvent(Events.OnEnemyHit);
+        //if (!ene.Alive)
+        //{
+        //    EventDispatcher.TriggerEvent(Events.OnEnemyDead);
+        //}
     }
 
-    private float GetDamage()
+    private float GetDamageCombo()
     {
         return characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)];
     }
-
+    
     private void SlashObj()
     {
         slash.gameObject.SetActive(false);
@@ -102,6 +92,10 @@ public class Player : CharacterBrain
     {
         enemy = null;
         EventDispatcher.RemoveListener(Events.OnRemoveSlash, SlashObj);
+    }
+    public override void TakeDamage(float damage)
+    {
+        throw new NotImplementedException();
     }
 
 }

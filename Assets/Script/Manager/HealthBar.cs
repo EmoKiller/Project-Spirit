@@ -8,8 +8,7 @@ public class HealthBar : MonoBehaviour
     private float _maxHealth;
     private float _health;
 
-    [SerializeField]
-    private Slider slider;
+    [SerializeField] private Slider slider;
 
     private void Start()
     {

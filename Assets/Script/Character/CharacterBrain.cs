@@ -4,21 +4,18 @@ using UnityEngine;
 
 public abstract class CharacterBrain : MonoBehaviour
 {
-    [Header("Configuration")]
-    [SerializeField] protected string characterName = "";
-    
     [Header("Component System")]
-    [SerializeField] public MeshAgent agent = null;
+    [SerializeField] protected MeshAgent agent = null;
     [SerializeField] protected CharacterAnimator characterAnimator = null;
-    [SerializeField] public CharacterAttack characterAttack = null;
-    [SerializeField] protected float health;
-    [SerializeField] protected float maxHealth = 100;
+    [SerializeField] protected CharacterAttack characterAttack = null;
 
-    protected virtual Vector3 direction { get; }
-    public abstract bool Alive { get; }
-    public string Name => characterName;
-    public MeshAgent Agent => agent;
-
+    //BaseCharacter
+    protected string characterName {get; set;}
+    protected float health { get; set; }
+    protected float maxHealth { get; set; }
+    public bool Alive => health >= 0;
+    public virtual string Name => characterName;
+    
     protected virtual void Awake()
     {
         agent.Initialized();
@@ -29,7 +26,7 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);
     }
-    public virtual void OnHit() { }
 
+    public abstract void TakeDamage(float damage);
 
 }
