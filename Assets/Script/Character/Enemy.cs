@@ -6,21 +6,18 @@ using UnityEngine.UIElements;
 
 public class Enemy : CharacterBrain
 {
-    public CharacterBrain targetAttack = null;
+    private Transform targetAttack = null;
 
-    [Header("Attack")]
+    [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 15f;
-
     [SerializeField] protected bool arried = false;
     [SerializeField] protected bool onFollowPlayer = false;
 
-    [SerializeField] protected List<Vector3> wayPoints = null;
-    public Transform TranfomThis;
-    public ShowHPEnemy sliderHp;
+    [SerializeField] private Transform TranfomThis;
     [SerializeField] private HealthBar healthBar;
 
-    protected float distance => Vector3.Distance(transform.position, targetAttack.transform.position);
+    protected float Distance => Vector3.Distance(transform.position, targetAttack.transform.position);
     [SerializeField] private bool onAniAttck = false;
     protected override void Awake()
     {
@@ -31,14 +28,12 @@ public class Enemy : CharacterBrain
     {
         Init();
     }
-
     private void Init()
     {
+        MaxHealth = 100;
         //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
-        health = maxHealth;
-        sliderHp.UpdateSlider(maxHealth);
-        sliderHp.gameObject.SetActive(false);
-        //healthBar.SetHealh(maxHealth);
+        Health = MaxHealth;
+        healthBar.SetHealh(MaxHealth);
 
     }
 
@@ -48,15 +43,15 @@ public class Enemy : CharacterBrain
         if (arried || !Alive)
             return;
 
-        if (onFollowPlayer && distance > characterAttack.AttackRange && !onAniAttck ||
-            targetAttack != null && distance <= playerDetectionRange && distance > characterAttack.AttackRange && !onAniAttck)
+        if (onFollowPlayer && Distance > characterAttack.AttackRange && !onAniAttck ||
+            targetAttack != null && Distance <= playerDetectionRange && Distance > characterAttack.AttackRange && !onAniAttck)
         {
             onFollowPlayer = true;
-            SetDestination(targetAttack.transform.position);
+            EnemyMove(targetAttack.transform.position);
             EnemyRotation();
             return;
         }
-        if (onFollowPlayer && distance <= characterAttack.AttackRange)
+        if (onFollowPlayer && Distance <= characterAttack.AttackRange)
         {
             EnemyRotation();
             characterAnimator.SetTrigger("Attack");
@@ -68,6 +63,10 @@ public class Enemy : CharacterBrain
         //    onArried?.Invoke();
 
     }
+    public void SetTarget(Transform target)
+    {
+        targetAttack = target;
+    }
     private void EnemyRotation()
     {
         Vector3 dir = targetAttack.transform.position - transform.position;
@@ -76,9 +75,8 @@ public class Enemy : CharacterBrain
         else if (dir.normalized.x < 0)
             TranfomThis.rotation = Quaternion.Euler(0, 0, 0);
     }
-    private void SetDestination(Vector3 direction)
+    private void EnemyMove(Vector3 direction)
     {
-        agent.agentBody.isStopped = false;
         Vector3 dir = direction - transform.position;
         agent.MoveToDirection(dir.normalized);
         characterAnimator.SetFloat("horizontal", dir.normalized.x);
@@ -90,7 +88,7 @@ public class Enemy : CharacterBrain
     }
     private void OnAttack()
     {
-        if (distance <= characterAttack.AttackRange + 1f)
+        if (Distance <= characterAttack.AttackRange + 1f)
         {
             Debug.Log("Enemy Hit Player");
         }
@@ -100,7 +98,7 @@ public class Enemy : CharacterBrain
     }
     protected virtual void OnArried()
     {
-        agent.agentBody.isStopped = true;
+        agent.AgentBody.isStopped = true;
         arried = true;
         characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
         this.DelayCall(2, () =>
@@ -124,23 +122,16 @@ public class Enemy : CharacterBrain
     }
     public override void TakeDamage(float damage)
     {
-        health -= damage;
-        Debug.Log($"health: {health}\ntake damage: {damage}");
-        sliderHp.gameObject.SetActive(true);
-        sliderHp.UpdateHealth(health);
-        //healthBar.UpdateHealth(health);
+        Health -= damage;
+        Debug.Log($"health: {Health}\ntake damage: {damage}");
+        healthBar.SetActive();
+        healthBar.UpdateHealth(Health);
     }
 
     public void OnHealhBarChanged(float value)
     {
-        if(value != health)
-            Debug.LogError($"some thing has changed this value: {value} -   healh: {health} \"Something changed\" " + GetInstanceID());
-        
-    }
-    public void OnHealhBarChanged2(float value)
-    {
-        if (value != health)
-            Debug.LogError($"some thing has changed this value: {value} -   healh: {health} \"Something changed\" " + GetInstanceID());
+        if(value != Health)
+            Debug.LogError($"some thing has changed this value: {value} - healh: {Health} \"Something changed\" " + GetInstanceID());
     }
     private void OnDrawGizmos()
     {
@@ -148,4 +139,8 @@ public class Enemy : CharacterBrain
 
     }
 
+    public override void StartAttack(float damage)
+    {
+        throw new NotImplementedException();
+    }
 }

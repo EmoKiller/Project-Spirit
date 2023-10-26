@@ -8,25 +8,27 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected MeshAgent agent = null;
     [SerializeField] protected CharacterAnimator characterAnimator = null;
     [SerializeField] protected CharacterAttack characterAttack = null;
-
+    [SerializeField] protected Slash slash = null;
     //BaseCharacter
-    protected string characterName {get; set;}
-    protected float health { get; set; }
-    protected float maxHealth { get; set; }
-    public bool Alive => health >= 0;
-    public virtual string Name => characterName;
+    protected string CharacterName {get; set;}
+    protected float Health { get; set; }
+    protected float MaxHealth { get; set; }
+    public bool Alive => Health >= 0;
+    public virtual string Name => CharacterName;
     
     protected virtual void Awake()
     {
         agent.Initialized();
         characterAnimator.Initialized();
-        characterName = gameObject.name;
+        characterAttack.Initialized();
+        CharacterName = gameObject.name;
+        slash.SetActiveSlash(false);
     }
     public void DoAttack()
     {
-        characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);
+        //characterAnimator.SetAttack(CharacterAnimator.AttackType.nomal);
     }
 
     public abstract void TakeDamage(float damage);
-
+    public abstract void StartAttack(float damage);
 }

@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public List<Enemy> enemies = null;
     public List<WayPoint> enemyWayPoints = null;
     [Header("EnemyAction")]
-    public Action<Enemy> addTargetForEnemy = null;
     [Header("Player Infomation")]
     public Player player = null;
     public Transform hand;
@@ -24,18 +23,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        addTargetForEnemy = AddTargetAttackFor;
-        //ChangeTargetOfCamera(player.PointTargetOfCamera);
-        addTargetForEnemy?.Invoke(enemies[0]);
-        //addTargetForEnemy?.Invoke(enemies[1]);
+        enemies[0].SetTarget(player.transform);
     }
     private void ChangeTargetOfCamera(Transform target)
     {
         Camera.target = target;
-    }
-    private void AddTargetAttackFor(Enemy ene)
-    {
-        ene.targetAttack = player;
     }
     private void OnEnable()
     {
@@ -57,23 +49,6 @@ public class GameManager : MonoBehaviour
     private void OnEnemyDead() 
     {
 
-    }
-    private Vector3 DirBetween2Obj(Vector3 present, Vector3 toWards)
-    {
-        Vector3 dir = present - toWards;
-        return dir;
-    }
-    private void CompareForce()
-    {
-        //float force = ene.characterAttack.Weight - characterAttack.PowerForce;
-        //if (force > 0)
-        //{
-        //    agent.agentBody.Move(vec.normalized * force);
-        //}
-        //else
-        //{
-        //    ene.agent.agentBody.Move(vec.normalized * force);
-        //}
     }
     private void OnPlayerHealthChanged()
     {

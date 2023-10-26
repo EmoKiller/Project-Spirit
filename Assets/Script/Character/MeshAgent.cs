@@ -10,7 +10,7 @@ public class MeshAgent : MonoBehaviour
 
     [Header("Debuger")]
     public bool showPath = true;
-    public NavMeshAgent agentBody => this.TryGetMonoComponent(ref _agent);
+    public NavMeshAgent AgentBody => this.TryGetMonoComponent(ref _agent);
     private NavMeshAgent _agent = null;
     private NavMeshPath path = null;
     public void Initialized()
@@ -19,7 +19,7 @@ public class MeshAgent : MonoBehaviour
     }
     public void MoveToDirection(Vector3 direction)
     {
-        agentBody.Move(direction * moveSpeed * Time.deltaTime);
+        AgentBody.Move(direction * moveSpeed * Time.deltaTime);
     }
     private void OnDrawGizmos()
     {
