@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private RectTransform buttonActionE;
     [SerializeField] private TMP_Text text;
     [SerializeField] private Image fill;
+    public static Action<float> imageEvent;
 
     private void Awake()
     {
@@ -17,13 +19,19 @@ public class UIManager : MonoBehaviour
     }
     private void OnEnable()
     {
+        imageEvent = FillAmount;
         UpdateStringButtonE = OnTriggerItems;
         EventDispatcher.AddListener(Events.OnTriggerItems, SetOffButtonE);
     }
     private void OnDisable()
     {
         UpdateStringButtonE = null;
+        imageEvent = null;
         EventDispatcher.RemoveListener(Events.OnTriggerItems, SetOffButtonE);
+    }
+    private void FillAmount(float amount)
+    {
+        fill.fillAmount += amount;
     }
     private void OnTriggerItems(string str)
     {

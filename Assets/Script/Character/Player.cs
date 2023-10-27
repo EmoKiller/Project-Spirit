@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : CharacterBrain
@@ -7,6 +8,7 @@ public class Player : CharacterBrain
     private int combo;
     private bool atkCanDo;
     [SerializeField] private Transform direction;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -22,7 +24,7 @@ public class Player : CharacterBrain
         SetoffSlash();
         characterAnimator.AddStepAni(SetOnSlash, SetoffSlash, StartCombo, FinishAni);
         slash.AddActionAttack(OnAttackHit);
-
+        deadAction = Dead;
     }
     private void Update()
     {
@@ -31,6 +33,7 @@ public class Player : CharacterBrain
             OnAttack();
             return;
         }
+
         if (Horizontal != 0 || Vertical!=0)
         {
             if (onAniAttck)
@@ -40,9 +43,9 @@ public class Player : CharacterBrain
             characterAnimator.SetFloat("vertical", Vertical);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
         }
+        
         if (Input.GetKey(KeyCode.E))
         {
-            Debug.Log("Press E");
             EventDispatcher.TriggerEvent(Events.OnPlayerActionItems);
         }
     }
@@ -59,7 +62,8 @@ public class Player : CharacterBrain
         characterAnimator.SetFloat("Dir", direction.localPosition.x);
         characterAnimator.SetTrigger("" + combo);
         Vector3 vec = direction.position - transform.position;
-        agent.AgentBody.Move(vec.normalized * 0.6f);
+        
+        agent.AgentBody.Move(vec.normalized * 0);
     }
     protected override void OnAttackHit(CharacterBrain target)
     {
@@ -91,7 +95,7 @@ public class Player : CharacterBrain
     }
     public override void TakeDamage(float damage)
     {
-        Debug.Log("Player takeDamage" + damage);
+        //Debug.Log("Player takeDamage" + damage);
     }
 
     public override void Dead(bool isDead)

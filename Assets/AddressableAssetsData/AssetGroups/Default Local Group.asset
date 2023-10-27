@@ -37,6 +37,22 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Object/HitFX_0.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9f44054b5a275f645b0e027c82da64b1
+    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7d74b11433f2b064f86775125eb99995
+    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 765db819d0463b24aa9eb3b4f329246f
+    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ed90832800c3ce44ab3d85e28d457504
+    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:

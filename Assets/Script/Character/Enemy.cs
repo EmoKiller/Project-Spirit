@@ -31,11 +31,11 @@ public class Enemy : CharacterBrain
         health = maxHealth;
         healthBar.SetHealh(maxHealth);
         SetTypeSlash();
-        slash.SetSizeBox(3, 1, 3);
+        slash.SetSizeBox(4, 1, 4);
         SetoffSlash();
         characterAnimator.AddStepAni(StartAni, SetOnSlash, SetoffSlash, FinishAni);
         slash.AddActionAttack(OnAttackHit);
-        dead = Dead;
+        deadAction = Dead;
     }
 
     void Update()
@@ -120,12 +120,11 @@ public class Enemy : CharacterBrain
         Debug.Log($"health: {health}\ntake damage: {damage}");
         healthBar.SetActive();
         healthBar.UpdateHealth(health);
-    }
-
-    public void OnHealhBarChanged(float value)
-    {
-        if(value != health)
-            Debug.LogError($"some thing has changed this value: {value} - healh: {health} \"Something changed\" " + GetInstanceID());
+        onAniAttck = true;
+        this.DelayCall(1, () =>
+        {
+            onAniAttck = false;
+        });
     }
     private void OnDrawGizmos()
     {
