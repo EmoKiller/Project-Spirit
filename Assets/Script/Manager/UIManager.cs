@@ -1,13 +1,15 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
 
     public static Action<string> UpdateStringButtonE;
-    public RectTransform buttonActionE;
-    [SerializeField] protected TMP_Text text;
+    [SerializeField] private RectTransform buttonActionE;
+    [SerializeField] private TMP_Text text;
+    [SerializeField] private Image fill;
 
     private void Awake()
     {

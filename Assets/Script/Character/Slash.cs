@@ -1,34 +1,27 @@
+using System;
 using UnityEngine;
 
 public class Slash : MonoBehaviour
 {
-    [SerializeField] private GameObject SlashObj;
-    BoxCollider BoxCollider => SlashObj.GetComponent<BoxCollider>();
+    private string typeSlash = "";
+    public string ThisType => typeSlash;
+    BoxCollider BoxCollider => gameObject.GetComponent<BoxCollider>();
+    protected Action<CharacterBrain> attack;
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (IsEnemy(other))
+
+        if (typeSlash != "Enemy" & IsEnemy(other))
         {
-            
-            //Enemy ene = other.GetComponent<Enemy>();
-            //player.enemy.Invoke(ene);
+            Enemy ene = other.GetComponent<Enemy>();
+            attack?.Invoke(ene);
             Debug.Log("hit Enemy");
         }
-        if (IsPlayer(other))
+        if (typeSlash != "Player" && IsPlayer(other))
         {
-            //Player player = other.GetComponent<Player>();
-            //player.enemy.Invoke(ene);
+            Player player = other.GetComponent<Player>();
+            attack?.Invoke(player);
             Debug.Log("hit Player");
         }
-    }
-    
-    public void SetActiveSlash(bool set)
-    {
-        SlashObj.SetActive(set);
-    }
-    public void SetSizeBox(float x, float y, float z)
-    {
-        BoxCollider.size = new Vector3(x,y,z);
     }
     private bool IsEnemy(Collider other)
     {
@@ -37,6 +30,22 @@ public class Slash : MonoBehaviour
     private bool IsPlayer(Collider other)
     {
         return other.gameObject.layer.Equals(6);
+    }
+    public void AddActionAttack(Action<CharacterBrain> action) 
+    {
+        attack += action;
+    }
+    public void SetType(string type)
+    {
+        typeSlash = type;
+    }
+    public void SetActiveSlash(bool set)
+    {
+        gameObject.SetActive(set);
+    }
+    public void SetSizeBox(float x, float y, float z)
+    {
+        BoxCollider.size = new Vector3(x, y, z);
     }
 
 }

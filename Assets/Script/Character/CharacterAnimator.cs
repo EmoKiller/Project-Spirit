@@ -13,9 +13,11 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackType currentAttackType;
     //[SerializeField] protected AttackStep currentAttackStep;
+    Action step1ani = null;
+    Action step2ani = null;
+    Action step3ani = null;
+    Action step4ani = null;
     public string currentTrigger = "";
-    public int combo;
-    public bool ataCanDo;
     public Animator Ator
     {
         get
@@ -90,33 +92,30 @@ public class CharacterAnimator : MonoBehaviour
     {
         Ator.SetInteger(param, value);
     }
-    public void StartCombo()
+    public void AddStepAni(Action step1ani, Action step2ani, Action step3ani, Action step4ani)
     {
-        ataCanDo = false;
-        if (combo < 3)
-        {
-            combo++;
-        }
+        this.step1ani = step1ani;
+        this.step2ani = step2ani;
+        this.step3ani = step3ani;
+        this.step4ani = step4ani;
     }
-    public void FinishAni()
+    public void Step1Ani()
     {
-        ataCanDo = false;
-        combo = 0;
-        ResetTrigger();
-        EventDispatcher.TriggerEvent(Events.OnRemoveSlash);
+        step1ani?.Invoke();
     }
-    public void OnEnemyStartAttack()
+    public void Step2Ani()
     {
-        EventDispatcher.TriggerEvent(Events.OnEnemyStartAttack);
+        step2ani?.Invoke();
     }
-    public void OnEnemyAttack()
+    public void Step3Ani()
     {
-        EventDispatcher.TriggerEvent(Events.OnEnemyAttack);
+        step3ani?.Invoke();
     }
-    public void RemoveSlash()
+    public void Step4Ani()
     {
-        EventDispatcher.TriggerEvent(Events.OnRemoveSlash);
+        step4ani?.Invoke();
     }
+    
 
 
 
