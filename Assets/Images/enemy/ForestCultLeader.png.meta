@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,414 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ForestCultLeader_0
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 280
+        width: 92
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9673e65397d720446993d9ebba1abb86
+      internalID: -2070255223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 353
+        width: 293
+        height: 306
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a2404868a567e45a9d9b0bb1c7a602
+      internalID: -2140933227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 660
+        width: 294
+        height: 308
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c523d39787973194cb25f075091621c3
+      internalID: 1457034376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 345
+        height: 346
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb3519bc1b5c8843bd0894d30140967
+      internalID: 1689806257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_4
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 295
+        width: 113
+        height: 204
+      alignment: 9
+      pivot: {x: 0.9911002, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd48a633aef3b049ba085e852cb3275
+      internalID: -36813160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_5
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 670
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763c30a2f6f47ea46b946284359f64da
+      internalID: -943673959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_6
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 6
+        width: 324
+        height: 86
+      alignment: 9
+      pivot: {x: 0.996721, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 699c24fe5041fd743acf83ed5cac87dc
+      internalID: 1883504905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 766
+        width: 94
+        height: 112
+      alignment: 9
+      pivot: {x: 0.9435522, y: 0.036421638}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591b5877f8ec8d343811f63c04280293
+      internalID: 406789633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_8
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 650
+        width: 91
+        height: 117
+      alignment: 9
+      pivot: {x: 0.9841094, y: 0.97738624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce34dbad198516f42ba51b3957e14d2a
+      internalID: -625726838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_9
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 500
+        width: 106
+        height: 150
+      alignment: 9
+      pivot: {x: 0.9749756, y: 0.9772514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea416def97c32d40a10febdc37f4d43
+      internalID: 1142395999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_10
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 173
+        width: 149
+        height: 105
+      alignment: 9
+      pivot: {x: 0.045944314, y: 0.07294631}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f02ba5dcb2ccd644b51580a3ae0a02c
+      internalID: -1314487755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_11
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 957
+        width: 94
+        height: 55
+      alignment: 9
+      pivot: {x: 0.970409, y: 0.952235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c81ebd1f2250e14da1fbea9690ffe68
+      internalID: 1825298301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_12
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 962
+        width: 90
+        height: 47
+      alignment: 9
+      pivot: {x: 0.9825426, y: 0.046393212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29257accf543b14d99008d61190904e
+      internalID: -1829409886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_13
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 97
+        width: 152
+        height: 71
+      alignment: 9
+      pivot: {x: 0.96717274, y: 0.8941616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90992aa1f8d81443b0cfa69ebed8dd0
+      internalID: -2030734197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_14
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 94
+        width: 147
+        height: 70
+      alignment: 9
+      pivot: {x: 0.967849, y: 0.084642135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa94d577bb1b47e49be898d972824117
+      internalID: -1081882134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 968
+        width: 142
+        height: 56
+      alignment: 9
+      pivot: {x: 0.9782174, y: 0.86660767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a3b983be91d3f4cb58104601c50203
+      internalID: 670906556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_16
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 969
+        width: 141
+        height: 55
+      alignment: 9
+      pivot: {x: 0.026791945, y: 0.79431266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97298f563cfe77e4690b1595f82b5f2b
+      internalID: 432316375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCultLeader_17
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 678
+        width: 109
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5043587, y: 0.13044795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e189690024b8d248bfe3cd8f47d159f
+      internalID: -2034489181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0d594d7dab2d90a439ca8b9d958b6410
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ForestCultLeader_10: -1314487755
+      ForestCultLeader_17: -2034489181
+      ForestCultLeader_15: 670906556
+      ForestCultLeader_12: -1829409886
+      ForestCultLeader_4: -36813160
+      ForestCultLeader_8: -625726838
+      ForestCultLeader_0: -2070255223
+      ForestCultLeader_16: 432316375
+      ForestCultLeader_13: -2030734197
+      ForestCultLeader_1: -2140933227
+      ForestCultLeader_2: 1457034376
+      ForestCultLeader_6: 1883504905
+      ForestCultLeader_7: 406789633
+      ForestCultLeader_11: 1825298301
+      ForestCultLeader_5: -943673959
+      ForestCultLeader_3: 1689806257
+      ForestCultLeader_9: 1142395999
+      ForestCultLeader_14: -1081882134
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

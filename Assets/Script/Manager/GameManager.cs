@@ -31,20 +31,17 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventDispatcher.AddListener(Events.OnHealthChanged, OnPlayerHealthChanged);
-        EventDispatcher.AddListener(Events.OnEnemyHit, OnEnemyHit);
-        EventDispatcher.AddListener(Events.OnEnemyDead, OnEnemyDead);
+        
     }
     private void OnDisable()
     {
         OnCharacterBrainEvent = null;
-        EventDispatcher.RemoveListener(Events.OnHealthChanged, OnPlayerHealthChanged);
-        EventDispatcher.RemoveListener(Events.OnEnemyHit, OnEnemyHit);
-        EventDispatcher.RemoveListener(Events.OnEnemyDead, OnEnemyDead);
+        
+        
     }
     private void OnEnemyHit()
     {
-        assetManager.InstantiateItems(assetManager.SlashHit, enemies[0].transform);
+        
     }
     private void OnEnemyDead() 
     {

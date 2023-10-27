@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.UIElements;
 
 public class AssetManager : MonoBehaviour
 {
+    public static AssetManager Instance = null;
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
     public string Weapon;
     public string ShowHPEnemy;
     public string Enemy;
@@ -14,7 +24,7 @@ public class AssetManager : MonoBehaviour
     //{
     //    Weapon.InstantiateAsync(position, quaternion);
     //}
-    public void InstantiateItems(string str, Transform pos)
+    public void InstantiateItems(string str, Transform pos , Vector3 dir)
     {
         //GameObject weaponObj = Resources.Load<GameObject>(string.Format(GameConstants.Sword, "AdvancedShortSword"));
         //Instantiate();
@@ -24,11 +34,22 @@ public class AssetManager : MonoBehaviour
         //    handle.Result
         //    //Instantiate(weapon, hand);
         //};
-
+        
+        //Addressables.LoadAssetAsync<GameObject>(str).Completed += (handle) =>
+        //{
+        //    item = handle.Result;
+        //    GameObject obj = Instantiate(item, pos);
+        //    obj.transform.position = dir + new Vector3(0,1f,0);
+        //};
         Addressables.LoadAssetAsync<GameObject>(str).Completed += (handle) =>
         {
             item = handle.Result;
-            Instantiate(item, pos);
+            GameObject obj = Instantiate(item, pos);
+            obj.transform.position = dir + new Vector3(0, 1f, 0);
         };
+    }
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 }

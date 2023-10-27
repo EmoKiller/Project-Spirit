@@ -52,6 +52,10 @@ public class EventDispatcherComponent : MonoBehaviour
             thisEvent.Invoke(payload);
         }
     }
+    private void OnDisable()
+    {
+        instance = null;
+    }
     public void TestDispatcher()
     {
         Debug.Log("TestDispatcher");

@@ -1,33 +1,41 @@
-using DG.Tweening;
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Player : CharacterBrain
 {
-    protected float Horizontal => Input.GetAxis("Horizontal");
-    protected float Vertical => Input.GetAxis("Vertical");
-    public Action<Enemy> enemy;
-    //private Transform direction;
+    private float Horizontal => Input.GetAxis("Horizontal");
+    private float Vertical => Input.GetAxis("Vertical");
+    private int combo;
+    private bool atkCanDo;
+    [SerializeField] private Transform direction;
     protected override void Awake()
     {
         base.Awake();
     }
     private void Start()
     {
-        enemy = AttackOnEnemy;
-        slash.SetSizeBox(4,1,4);
+        Init();
     }
-    protected void Update()
+    private void Init()
     {
-        if (Input.GetMouseButtonDown(0) && !characterAnimator.ataCanDo)
+        SetTypeSlash();
+        slash.SetSizeBox(4, 1, 4);
+        SetoffSlash();
+        characterAnimator.AddStepAni(SetOnSlash, SetoffSlash, StartCombo, FinishAni);
+        slash.AddActionAttack(OnAttackHit);
+
+    }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && !atkCanDo)
         {
             OnAttack();
+            return;
         }
         if (Horizontal != 0 || Vertical!=0)
         {
-            //direction.position = new Vector3(horizontal, 0, vertical).normalized + transform.position;
+            if (onAniAttck)
+                return;
+            direction.position = new Vector3(Horizontal, 0, Vertical).normalized + transform.position;
             characterAnimator.SetFloat("horizontal", Horizontal);
             characterAnimator.SetFloat("vertical", Vertical);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
@@ -40,65 +48,59 @@ public class Player : CharacterBrain
     }
     private void OnAttack()
     {
+        atkCanDo = true;
+        StartAni();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            //direction.position = transform.position + (raycastHit.point - transform.position).normalized;
+            direction.position = transform.position + (raycastHit.point - transform.position).normalized;
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
-        //characterAnimator.SetFloat("Dir", direction.localPosition.x);
-        characterAnimator.SetTrigger("" + characterAnimator.combo);
-        characterAnimator.ataCanDo = true;
-        //Vector3 vec = direction.position - transform.position;
-
-        //agent.agentBody.Move(vec.normalized);
-        slash.gameObject.SetActive(true);
+        characterAnimator.SetFloat("Dir", direction.localPosition.x);
+        characterAnimator.SetTrigger("" + combo);
+        Vector3 vec = direction.position - transform.position;
+        agent.AgentBody.Move(vec.normalized * 0.6f);
     }
-    private void AttackOnEnemy(Enemy ene)
+    protected override void OnAttackHit(CharacterBrain target)
     {
-        ene.TakeDamage(GetDamageCombo());
-        Vector3 vec = transform.position - ene.transform.position;
-        //float force = ene.characterAttack.Weight - characterAttack.PowerForce;
-        //if (force > 0)
-        //{
-        //    agent.agentBody.Move(vec.normalized * force);
-        //}
-        //else
-        //{
-        //    ene.agent.agentBody.Move(vec.normalized * force);
-        //}
-        //EventDispatcher.TriggerEvent(Events.OnEnemyHit);
-        //if (!ene.Alive)
-        //{
-        //    EventDispatcher.TriggerEvent(Events.OnEnemyDead);
-        //}
+        target.TakeDamage(GetDamageCombo());
+        base.OnAttackHit(target);
     }
-
     private float GetDamageCombo()
     {
         return characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)];
     }
-    
-    private void SlashObj()
+
+    private void StartCombo()
     {
-        slash.gameObject.SetActive(false);
+        atkCanDo = false;
+        if (combo < 3)
+        {
+            combo++;
+        }
     }
-    private void OnEnable()
+    protected override void StartAni()
     {
-        EventDispatcher.AddListener(Events.OnRemoveSlash, SlashObj);
+        base.StartAni();
     }
-    private void OnDisable()
+    protected override void FinishAni()
     {
-        enemy = null;
-        EventDispatcher.RemoveListener(Events.OnRemoveSlash, SlashObj);
+        base.FinishAni();
+        atkCanDo = false;
+        combo = 0;
     }
     public override void TakeDamage(float damage)
     {
-        throw new NotImplementedException();
+        Debug.Log("Player takeDamage" + damage);
     }
 
-    public override void StartAttack(float damage)
+    public override void Dead(bool isDead)
     {
-        throw new NotImplementedException();
+        throw new System.NotImplementedException();
+    }
+
+    public override void EffectHit(Vector3 dir)
+    {
+        AssetManager.Instance.InstantiateItems(AssetManager.Instance.SlashHit, transform, dir);
     }
 }
