@@ -11,8 +11,8 @@ public class DeathPenaltyPedestal : OnTringgerAction
     }
     public override void ItemAction()
     {
-        count++;
-        //actioned = true;
+        count += 0.0001f;
+        UIManager.imageEvent?.Invoke(count);
         Debug.Log(count);
     }
 }

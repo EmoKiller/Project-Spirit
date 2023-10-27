@@ -16,15 +16,6 @@ public class DropItemsOnWorld : MonoBehaviour
         set { isTake = value; }
     }
     private bool isTake;
-    //public Image showButton = null;
-    private void Awake()
-    {
-        //showButton.gameObject.SetActive(false);
-    }
-    void Start()
-    {
-        //GameManager.Instance.assetManager.InstantiateSword(GameManager.Instance.assetManager.Weapon, transform);
-    }
     public void TakeItems()
     {
         IsTake = true;

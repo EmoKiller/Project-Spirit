@@ -16,7 +16,7 @@ public abstract class CharacterBrain : MonoBehaviour
     protected float health { get; set; }
     protected float maxHealth { get; set; }
     protected bool onAniAttck = false;
-    protected Action<bool> dead = null;
+    protected Action<bool> deadAction = null;
     public bool Alive => health >= 0;
     public virtual string Name => characterName;
     

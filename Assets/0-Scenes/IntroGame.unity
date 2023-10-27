@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6259,7 +6259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1635935518877544838, guid: acf5fcaf9341c3844b178cfab79806b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1635935518877544838, guid: acf5fcaf9341c3844b178cfab79806b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21798,19 +21798,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 804468063552799667}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: OnHealhBarChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1911277487
 GameObject:
   m_ObjectHideFlags: 0
@@ -25384,6 +25372,7 @@ GameObject:
   - component: {fileID: 429933364971830306}
   - component: {fileID: 429933364971830366}
   - component: {fileID: 429933364971830364}
+  - component: {fileID: 429933364971830367}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -25437,6 +25426,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!143 &429933364971830367
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429933364971830311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &528239616022596462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25787,7 +25794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1635935518877544838, guid: acf5fcaf9341c3844b178cfab79806b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1635935518877544838, guid: acf5fcaf9341c3844b178cfab79806b1, type: 3}
       propertyPath: m_LocalRotation.w

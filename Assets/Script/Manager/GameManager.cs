@@ -36,20 +36,6 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         OnCharacterBrainEvent = null;
-        
-        
-    }
-    private void OnEnemyHit()
-    {
-        
-    }
-    private void OnEnemyDead() 
-    {
-
-    }
-    private void OnPlayerHealthChanged()
-    {
-        Debug.Log("GameManager Trigger OnHealthChange");
     }
 
 
