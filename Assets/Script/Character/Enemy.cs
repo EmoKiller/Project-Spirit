@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy : CharacterBrain
 {
-    private Transform targetAttack = null;
-
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 15f;
@@ -45,10 +43,10 @@ public class Enemy : CharacterBrain
             return;
 
         if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniAttck ||
-            targetAttack != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniAttck)
+            direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniAttck)
         {
             onFollowPlayer = true;
-            EnemyMove(targetAttack.transform.position);
+            EnemyMove(direction.transform.position);
             EnemyRotation();
             return;
         }
@@ -66,15 +64,15 @@ public class Enemy : CharacterBrain
     }
     public void SetTarget(Transform target)
     {
-        targetAttack = target;
+        direction = target;
     }
     private float Distance()
     {
-        return Vector3.Distance(transform.position, targetAttack.transform.position);
+        return Vector3.Distance(transform.position, direction.transform.position);
     }
     private void EnemyRotation()
     {
-        Vector3 dir = targetAttack.transform.position - transform.position;
+        Vector3 dir = direction.transform.position - transform.position;
         if (dir.normalized.x > 0)
             tranformOfAni.rotation = Quaternion.Euler(-20, 180, 0);
         else if (dir.normalized.x < 0)
@@ -120,11 +118,6 @@ public class Enemy : CharacterBrain
         Debug.Log($"health: {health}\ntake damage: {damage}");
         healthBar.SetActive();
         healthBar.UpdateHealth(health);
-        onAniAttck = true;
-        this.DelayCall(1, () =>
-        {
-            onAniAttck = false;
-        });
     }
     private void OnDrawGizmos()
     {

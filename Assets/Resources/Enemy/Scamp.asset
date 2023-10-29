@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 8334744416479764868, guid: 4f0670f45e2c6334c840d2bc9c4c00f6, type: 3}
   AttackRange: 2
-  PowerForce: 2
-  weight: 1
+  PowerForce: 25
+  weight: 20
   FirstHit: 1
   SecondHit: 1
   ThirdHit: 1

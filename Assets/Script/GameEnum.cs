@@ -1,10 +1,8 @@
-
-public enum DirectionMove
+public enum Events
 {
-    Front,
-    Back,
-    Left,
-    Right
+    SetDefaultButton,
+    OnPlayerActionItemsButtonDown,
+    OnPlayerActionItemsButtonUp,
 }
 public enum AttributeTypeOfHero
 {
@@ -20,19 +18,6 @@ public enum ItemsType
 {
     Weapon,
     cloth
-}
-
-public enum Events
-{
-    OnRemoveSlash,
-    OnTriggerItems,
-    OnPlayerActionItems,
-    OnHealthChanged,
-    OnAttack,
-    OnEnemyAttack,
-    OnEnemyHit,
-    OnEnemyDead,
-    OnEnemyStartAttack
 }
 public enum MenuType
 {
