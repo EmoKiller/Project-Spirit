@@ -1,47 +1,78 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private UIButtonAction buttonActionE;
+    public static Action<string> UpdateTextButton;
+    IEnumerator fillIncreaseAction;
+    IEnumerator fillReduceAction;
 
-    public static Action<string> UpdateStringButtonE;
-    [SerializeField] private RectTransform buttonActionE;
-    [SerializeField] private TMP_Text text;
-    [SerializeField] private Image fill;
-    public static Action<float> imageEvent;
-
-    private void Awake()
+    private void Start()
     {
         buttonActionE.gameObject.SetActive(false);
+        
+        
     }
     private void OnEnable()
     {
-        imageEvent = FillAmount;
-        UpdateStringButtonE = OnTriggerItems;
-        EventDispatcher.AddListener(Events.OnTriggerItems, SetOffButtonE);
+        UpdateTextButton = UpdateText;
+        EventDispatcher.AddListener(Events.SetDefaultButton, ResetButton);
+        EventDispatcher.AddListener(Events.OnPlayerActionItemsButtonDown, ButtonDown);
+        EventDispatcher.AddListener(Events.OnPlayerActionItemsButtonUp, ButtonUp);
     }
     private void OnDisable()
     {
-        UpdateStringButtonE = null;
-        imageEvent = null;
-        EventDispatcher.RemoveListener(Events.OnTriggerItems, SetOffButtonE);
+        UpdateTextButton = null;
+        EventDispatcher.RemoveListener(Events.SetDefaultButton, ResetButton);
+        EventDispatcher.RemoveListener(Events.OnPlayerActionItemsButtonDown, ButtonDown);
+        EventDispatcher.RemoveListener(Events.OnPlayerActionItemsButtonUp, ButtonUp);
     }
-    private void FillAmount(float amount)
+
+    private void UpdateText(string str)
     {
-        fill.fillAmount += amount;
+        buttonActionE.UpdateText(str);
     }
-    private void OnTriggerItems(string str)
+    private void ResetButton()
     {
-        buttonActionE.gameObject.SetActive(true);
-        buttonActionE.sizeDelta = new Vector2(buttonActionE.sizeDelta.x + (str.Length*24), 110);
-        text.text = str;
+        buttonActionE.ResetButton();
     }
-    private void SetOffButtonE()
+    private void ButtonDown()
     {
-        buttonActionE.gameObject.SetActive(false);
-        buttonActionE.sizeDelta = new Vector2(125, 110);
+        fillIncreaseAction = FillIncreaseAction(buttonActionE.FillValue());
+        if (fillReduceAction != null)
+            StopCoroutine(fillReduceAction);
+        StartCoroutine(fillIncreaseAction);
+
+    }
+    private void ButtonUp()
+    {
+        StopCoroutine(fillIncreaseAction);
+        fillReduceAction = FillReduceAction(buttonActionE.FillValue());
+        StartCoroutine(fillReduceAction);
+        
+        
+    }
+    IEnumerator FillIncreaseAction(float amount)
+    {
+        while (amount <= 1)
+        {
+            amount += 0.4f * Time.deltaTime;
+            buttonActionE.FillUpdate(amount);
+            yield return null;
+        }
+    }
+    IEnumerator FillReduceAction(float amount)
+    {
+        while (amount > 0)
+        {
+            amount -= 0.4f * Time.deltaTime;
+            buttonActionE.FillUpdate(amount);
+            Debug.Log(amount);
+            yield return null;
+        }
     }
 }

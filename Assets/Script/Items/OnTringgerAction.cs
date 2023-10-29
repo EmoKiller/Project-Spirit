@@ -8,13 +8,13 @@ public class OnTringgerAction : MonoBehaviour
     {
         if (actioned)
             return;
-        EventDispatcher.AddListener(Events.OnPlayerActionItems, ItemAction);
-        UIManager.UpdateStringButtonE.Invoke(text);
+        EventDispatcher.AddListener(Events.OnPlayerActionItemsButtonDown, ItemAction);
+        UIManager.UpdateTextButton.Invoke(text);
     }
     private void OnTriggerExit(Collider other)
     {
-        EventDispatcher.RemoveListener(Events.OnPlayerActionItems, ItemAction);
-        EventDispatcher.TriggerEvent(Events.OnTriggerItems);
+        EventDispatcher.RemoveListener(Events.OnPlayerActionItemsButtonDown, ItemAction);
+        EventDispatcher.TriggerEvent(Events.SetDefaultButton);
     }
     public virtual void ItemAction()
     {

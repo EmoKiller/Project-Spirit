@@ -7,7 +7,7 @@ public class Player : CharacterBrain
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
     private bool atkCanDo;
-    [SerializeField] private Transform direction;
+    
     
     protected override void Awake()
     {
@@ -33,6 +33,14 @@ public class Player : CharacterBrain
             OnAttack();
             return;
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            EventDispatcher.TriggerEvent(Events.OnPlayerActionItemsButtonDown);
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            EventDispatcher.TriggerEvent(Events.OnPlayerActionItemsButtonUp);
+        }
 
         if (Horizontal != 0 || Vertical!=0)
         {
@@ -42,11 +50,6 @@ public class Player : CharacterBrain
             characterAnimator.SetFloat("horizontal", Horizontal);
             characterAnimator.SetFloat("vertical", Vertical);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
-        }
-        
-        if (Input.GetKey(KeyCode.E))
-        {
-            EventDispatcher.TriggerEvent(Events.OnPlayerActionItems);
         }
     }
     private void OnAttack()

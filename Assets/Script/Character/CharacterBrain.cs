@@ -11,6 +11,8 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected CharacterAnimator characterAnimator = null;
     [SerializeField] protected CharacterAttack characterAttack = null;
     [SerializeField] protected Slash slash = null;
+    [SerializeField] protected Transform direction;
+    [SerializeField] protected AnimationCurve forceCurve;
     //BaseCharacter
     protected string characterName {get; set;}
     protected float health { get; set; }
@@ -53,9 +55,9 @@ public abstract class CharacterBrain : MonoBehaviour
         Vector3 dir = transform.position - target.transform.position;
         float force = target.characterAttack.Weight - characterAttack.PowerForce;
         if (force > 0)
-            agent.AgentBody.Move(dir.normalized * force);
+            ImpactForce(dir.normalized * force);
         else
-            target.agent.AgentBody.Move(dir.normalized * force);
+            target.ImpactForce(dir.normalized * force);
         target.EffectHit(dir.normalized + target.transform.position);
         //EventDispatcher.TriggerEvent(Events.OnEnemyHit);
         if (!target.Alive)
@@ -66,6 +68,13 @@ public abstract class CharacterBrain : MonoBehaviour
     public abstract void TakeDamage(float damage);
     public abstract void EffectHit(Vector3 dir);
     public abstract void Dead(bool isDead);
+    public void ImpactForce(Vector3 dir)
+    {
+        this.LoopDelayCall(0.3f, () =>
+        {
+            agent.AgentBody.Move(dir * Time.deltaTime);
+        });
+    }
 
     //private void CheckImpactForce(CharacterBrain target)
     //{
