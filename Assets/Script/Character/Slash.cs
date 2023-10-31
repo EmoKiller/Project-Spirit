@@ -23,6 +23,12 @@ public class Slash : MonoBehaviour
             Debug.Log("hit Player");
         }
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        
+    }
+    
     private bool IsEnemy(Collider other)
     {
         return other.gameObject.layer.Equals(3);

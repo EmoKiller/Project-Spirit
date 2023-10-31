@@ -1,6 +1,14 @@
+public enum ListScript
+{
+    UIManager
+}
 public enum Events
 {
+    AddListener,
+    RemoveEvent,
+    SwitchImageButton,
     SetDefaultButton,
+    UpdateText,
     OnPlayerActionItemsButtonDown,
     OnPlayerActionItemsButtonUp,
 }
@@ -32,5 +40,6 @@ public enum MenuType
     Back,
     DeleteSaveGame
 }
+
 
 
