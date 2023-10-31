@@ -6,32 +6,34 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private UIButtonAction buttonActionE;
-    public static Action<string> UpdateTextButton;
-    IEnumerator fillIncreaseAction;
-    IEnumerator fillReduceAction;
 
+    [SerializeField] private UIButtonAction buttonActionE;
     private void Start()
     {
         buttonActionE.gameObject.SetActive(false);
-        
-        
     }
     private void OnEnable()
     {
-        UpdateTextButton = UpdateText;
-        EventDispatcher.AddListener(Events.SetDefaultButton, ResetButton);
-        EventDispatcher.AddListener(Events.OnPlayerActionItemsButtonDown, ButtonDown);
-        EventDispatcher.AddListener(Events.OnPlayerActionItemsButtonUp, ButtonUp);
+        EventDispatcher.Addlistener<string>(ListScript.UIManager, Events.SwitchImageButton, SwitchImageButton);
+        EventDispatcher.Addlistener<string>(ListScript.UIManager, Events.UpdateText, UpdateText);
+        EventDispatcher.Addlistener(ListScript.UIManager, Events.SetDefaultButton, ResetButton);
+        EventDispatcher.Addlistener(ListScript.UIManager, Events.AddListener, AddListener);
+        EventDispatcher.Addlistener(ListScript.UIManager, Events.RemoveEvent, RemoveEvent);
     }
-    private void OnDisable()
+    private void AddListener()
     {
-        UpdateTextButton = null;
-        EventDispatcher.RemoveListener(Events.SetDefaultButton, ResetButton);
-        EventDispatcher.RemoveListener(Events.OnPlayerActionItemsButtonDown, ButtonDown);
-        EventDispatcher.RemoveListener(Events.OnPlayerActionItemsButtonUp, ButtonUp);
+        EventDispatcher.Addlistener(ListScript.UIManager, Events.OnPlayerActionItemsButtonDown, OnButtonDown);
+        EventDispatcher.Addlistener(ListScript.UIManager, Events.OnPlayerActionItemsButtonUp, OnButtonUp);
     }
-
+    private void RemoveEvent()
+    {
+        EventDispatcher.RemoveEvent(ListScript.UIManager, Events.OnPlayerActionItemsButtonDown);
+        EventDispatcher.RemoveEvent(ListScript.UIManager, Events.OnPlayerActionItemsButtonUp);
+    }
+    private void SwitchImageButton(string value)
+    {
+        buttonActionE.SwitchImageButton(value);
+    }
     private void UpdateText(string str)
     {
         buttonActionE.UpdateText(str);
@@ -40,39 +42,12 @@ public class UIManager : MonoBehaviour
     {
         buttonActionE.ResetButton();
     }
-    private void ButtonDown()
+    private void OnButtonDown()
     {
-        fillIncreaseAction = FillIncreaseAction(buttonActionE.FillValue());
-        if (fillReduceAction != null)
-            StopCoroutine(fillReduceAction);
-        StartCoroutine(fillIncreaseAction);
-
+        buttonActionE.buttonDown?.Invoke();
     }
-    private void ButtonUp()
+    private void OnButtonUp()
     {
-        StopCoroutine(fillIncreaseAction);
-        fillReduceAction = FillReduceAction(buttonActionE.FillValue());
-        StartCoroutine(fillReduceAction);
-        
-        
-    }
-    IEnumerator FillIncreaseAction(float amount)
-    {
-        while (amount <= 1)
-        {
-            amount += 0.4f * Time.deltaTime;
-            buttonActionE.FillUpdate(amount);
-            yield return null;
-        }
-    }
-    IEnumerator FillReduceAction(float amount)
-    {
-        while (amount > 0)
-        {
-            amount -= 0.4f * Time.deltaTime;
-            buttonActionE.FillUpdate(amount);
-            Debug.Log(amount);
-            yield return null;
-        }
+        buttonActionE.buttonUp?.Invoke();
     }
 }

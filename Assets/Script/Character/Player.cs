@@ -35,11 +35,11 @@ public class Player : CharacterBrain
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            EventDispatcher.TriggerEvent(Events.OnPlayerActionItemsButtonDown);
+            EventDispatcher.Publish(ListScript.UIManager,Events.OnPlayerActionItemsButtonDown);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
-            EventDispatcher.TriggerEvent(Events.OnPlayerActionItemsButtonUp);
+            EventDispatcher.Publish(ListScript.UIManager, Events.OnPlayerActionItemsButtonUp);
         }
 
         if (Horizontal != 0 || Vertical!=0)

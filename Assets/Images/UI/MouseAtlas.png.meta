@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f266745e97c11646982176d5deafb0a
+guid: 090fbfd885d14204d9638cb102d6762c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,22 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sactx-1024x512-Crunch-BerryBush-9328a1ef_0
+      name: MouseAtlas_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 27
         y: 0
-        width: 335
-        height: 340
-      alignment: 9
-      pivot: {x: 0.49322543, y: 0.01494925}
+        width: 187
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 791b08fffcd3e42469cf2485925426dd
-      internalID: -2003827917
+      spriteID: 2a891c4df4c7f5143b5dc385a4b293d4
+      internalID: -1202184560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 301
+        width: 84
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93aa99e107c339544a90346a10960329
+      internalID: -1022516176
       vertices: []
       indices: 
       edges: []
@@ -140,7 +161,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6350c6cfc8b833e458e8b9c60c79ce0f
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sactx-1024x512-Crunch-BerryBush-9328a1ef_0: -2003827917
+      MouseAtlas_0: -1202184560
+      MouseAtlas_1: -1022516176
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
