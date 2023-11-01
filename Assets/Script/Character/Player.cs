@@ -7,8 +7,6 @@ public class Player : CharacterBrain
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
     private bool atkCanDo;
-    
-    
     protected override void Awake()
     {
         base.Awake();
@@ -16,10 +14,14 @@ public class Player : CharacterBrain
     private void Start()
     {
         Init();
+        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, direction);
+    }
+    private void OnEnable()
+    {
     }
     private void Init()
     {
-        SetTypeSlash();
+        SetTypeSlash("Player");
         slash.SetSizeBox(4, 1, 4);
         SetoffSlash();
         characterAnimator.AddStepAni(SetOnSlash, SetoffSlash, StartCombo, FinishAni);
@@ -35,11 +37,15 @@ public class Player : CharacterBrain
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            EventDispatcher.Publish(ListScript.UIManager,Events.OnPlayerActionItemsButtonDown);
+            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
-            EventDispatcher.Publish(ListScript.UIManager, Events.OnPlayerActionItemsButtonUp);
+            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            EventDispatcher.Publish(ListScript.OnTringgerWaitAction, Events.OnTringgerActionItems);
         }
 
         if (Horizontal != 0 || Vertical!=0)
@@ -109,5 +115,9 @@ public class Player : CharacterBrain
     public override void EffectHit(Vector3 dir)
     {
         AssetManager.Instance.InstantiateItems(AssetManager.Instance.SlashHit, transform, dir);
+    }
+    public Transform ReturnTrans()
+    {
+        return direction;
     }
 }

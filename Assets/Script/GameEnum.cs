@@ -1,14 +1,29 @@
 public enum ListScript
 {
-    UIManager
+    Player,
+    CameraFollow,
+    CameraChangeLookAt,
+    OnTringgerWaitAction,
+    OnTringgerAction,
+    UIManager,
+    UIButtonAction,
+    DeathPenaltyPedestal,
+    Bruter
 }
 public enum Events
 {
+    TriggerAction,
+    TriggerAction2,
     AddListener,
     RemoveEvent,
+    Return,
     SwitchImageButton,
     SetDefaultButton,
     UpdateText,
+    UpdateValue,
+    UpdateColor,
+    UpdateTransform,
+    OnTringgerActionItems,
     OnPlayerActionItemsButtonDown,
     OnPlayerActionItemsButtonUp,
 }
