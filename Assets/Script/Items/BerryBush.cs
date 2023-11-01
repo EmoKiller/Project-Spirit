@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BerryBush : OnTringgerAction
+public class BerryBush : OnTringgerWaitAction
 {
     void Awake()
     {
         text = "Pick Berry";
-        imageButton = "Mouse";
+        typeButton = "Mouse";
     }
-    public override void ItemAction()
+    protected override void OnTringgerActionItems()
     {
-        
+        Debug.Log("BerryBush");
     }
 
 }

@@ -16,45 +16,53 @@ public class UIButtonAction : MonoBehaviour
     [SerializeField] private RectTransform rectShowText;
     Coroutine fillIncreaseAction;
     Coroutine fillReduceAction;
-
-    public Action buttonDown;
-    public Action buttonUp;
-
-    //private Coroutine demoCrt = null;
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
     private void OnEnable()
     {
-        buttonDown = ButtonDown;
-        buttonUp = ButtonUp;
+        EventDispatcher.Addlistener<string>(ListScript.UIButtonAction, Events.SwitchImageButton, SwitchImageButton);
+        EventDispatcher.Addlistener<string>(ListScript.UIButtonAction, Events.UpdateText, UpdateText);
+        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.SetDefaultButton, ResetButton);
+        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.AddListener, AddListener);
+        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.RemoveEvent, RemoveEvent);
     }
-    private void OnDisable()
+    private void AddListener()
     {
-        buttonDown = null;
-        buttonUp = null;
+        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown, ButtonDown);
+        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp, ButtonUp);
     }
-    
-    public void SwitchImageButton(string value)
+    private void RemoveEvent()
+    {
+        EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
+        EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
+    }
+
+
+    private void SwitchImageButton(string value)
     {
         if (value == "Button")
             buttonE.gameObject.SetActive(true);
         else if (value == "Mouse")
             mouseClick.gameObject.SetActive(true);
     }
-    public float FillValue()
+    private float FillValue()
     {
         return fill.fillAmount;
     }
-    public void FillUpdate(float amount)
+    private void FillUpdate(float amount)
     {
         fill.fillAmount = amount;
     }
-    public void UpdateText(string str)
+    private void UpdateText(string str)
     {
         gameObject.SetActive(true);
         rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 25), 110);
         rectShowText.sizeDelta = rectButton.sizeDelta;
         text.text = str;
     }
-    public void ResetButton()
+    private void ResetButton()
     {
         gameObject.SetActive(false);
         rectButton.sizeDelta = new Vector2(125, 110);
@@ -80,7 +88,7 @@ public class UIButtonAction : MonoBehaviour
         while (amount <= 1)
         {
             amount += 0.4f * Time.deltaTime;
-            //EventDispatcher.TriggerEvent(Events.FillAmount, amount);
+            EventDispatcher.Publish(ListScript.DeathPenaltyPedestal,Events.UpdateValue, amount);
             FillUpdate(amount);
             yield return null;
         }
@@ -90,6 +98,7 @@ public class UIButtonAction : MonoBehaviour
         while (amount > 0)
         {
             amount -= 0.4f * Time.deltaTime;
+            EventDispatcher.Publish(ListScript.DeathPenaltyPedestal, Events.UpdateValue, amount);
             FillUpdate(amount);
             yield return null;
         }

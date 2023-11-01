@@ -29,9 +29,9 @@ public abstract class CharacterBrain : MonoBehaviour
         characterAttack.Initialized();
         characterName = gameObject.name;
     }
-    protected void SetTypeSlash()
+    protected void SetTypeSlash(string value)
     {
-        slash.SetType(GetType().ToString());
+        slash.SetType(value);
     }
     protected virtual void SetOnSlash()
     {

@@ -8,40 +8,27 @@ public class Enemy : CharacterBrain
     [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 15f;
     [SerializeField] protected bool arried = false;
+    [SerializeField] protected bool OnAction = false;
     [SerializeField] protected bool onFollowPlayer = false;
 
-    [SerializeField] private Transform tranformOfAni;
-    [SerializeField] private HealthBar healthBar;
+    [SerializeField] protected Transform tranformOfAni;
+    [SerializeField] protected HealthBar healthBar;
 
-    
+    protected Action action;
     protected override void Awake()
     {
         base.Awake();
+        
     }
-    private void Start()
+    protected virtual void Start()
     {
-        Init();
-    }
-    private void Init()
-    {
-        maxHealth = 100;
+        SetTypeSlash("Enemy");
         //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
-        health = maxHealth;
-        healthBar.SetHealh(maxHealth);
-        SetTypeSlash();
-        slash.SetSizeBox(4, 1, 4);
-        SetoffSlash();
-        characterAnimator.AddStepAni(StartAni, SetOnSlash, SetoffSlash, FinishAni);
-        slash.AddActionAttack(OnAttackHit);
-        deadAction = Dead;
     }
-
-    void Update()
+    protected virtual void Update()
     {
-
         if (arried || !Alive)
             return;
-
         if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniAttck ||
             direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniAttck)
         {
@@ -62,11 +49,39 @@ public class Enemy : CharacterBrain
         //    onArried?.Invoke();
 
     }
+    public void Push()
+    {
+        if (Distance() <= characterAttack.AttackRange)
+        {
+            characterAnimator.SetTrigger("Attack");
+        }
+    }
+    public void SetAction(Action action)
+    {
+        this.action = action;
+        this.action?.Invoke();
+    }
     public void SetTarget(Transform target)
     {
         direction = target;
     }
-    private float Distance()
+    public void SetStay()
+    {
+        arried = true; 
+        EnemyRotation();
+    }
+    public void SetMoveWayPoint(Transform wayPoint)
+    {
+        arried = true;
+        this.LoopDelayCall(2, () =>
+        {
+            EnemyMove(wayPoint.position);
+            EnemyRotation();
+            characterAnimator.SetFloat("horizontal", 1);
+        });
+        
+    }
+    public float Distance()
     {
         return Vector3.Distance(transform.position, direction.transform.position);
     }
@@ -119,18 +134,16 @@ public class Enemy : CharacterBrain
         healthBar.SetActive();
         healthBar.UpdateHealth(health);
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
 
-    }
-
+    //}
     public override void Dead(bool a)
     {
 
         Destroy(gameObject);
     }
-
     public override void EffectHit(Vector3 dir)
     {
         AssetManager.Instance.InstantiateItems(AssetManager.Instance.SlashHit,transform, dir);
