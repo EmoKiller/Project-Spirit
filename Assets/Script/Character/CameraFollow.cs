@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform target;
+    [SerializeField] private Transform player;
     [SerializeField] private float smooth;
     [SerializeField] private Vector3 offset;
     Camera _camera => GetComponent<Camera>();
@@ -40,11 +41,12 @@ public class CameraFollow : MonoBehaviour
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
         //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
     }
+    
     private void CameraNomal()
     {
         offset = new Vector3(0,22,-28);
         transform.eulerAngles = new Vector3(37,0,0);
-        SetSmooth(0.3f);
+        SetSmooth(0.4f);
     }
     private void CameraZoom()
     {

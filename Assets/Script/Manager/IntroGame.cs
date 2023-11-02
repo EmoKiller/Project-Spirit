@@ -13,9 +13,8 @@ public class IntroGame : MonoBehaviour
     [SerializeField] GameObject hideWall;
     [SerializeField] List<Enemy> enemy = new List<Enemy>();
     [SerializeField] WayPoint waypoint;
-    [SerializeField] WayPoint pointInTalk;
-    [SerializeField] List<string> OutTalk;
-    [SerializeField] private int count = 0;
+
+    
 
     Color32 inMap1 = new Color32(0, 0, 0, 255);
     Color32 inMap2 = new Color32(242, 236, 222, 255);
@@ -23,39 +22,16 @@ public class IntroGame : MonoBehaviour
     private void Start()
     {
         EventDispatcher.Addlistener(ListScript.Bruter, Events.TriggerAction2, GotoMap2);
-        EventDispatcher.Addlistener(ListScript.IntroGame, Events.AddListener, AddListenerBoxTalk);
         foreach (Enemy enemy in enemy)
             enemy.SetStay();
     }
-    private void AddListenerBoxTalk()
-    {
-        EventDispatcher.Addlistener(ListScript.IntroGame, Events.OpenBoxTalk, TalkingText);
-    }
+    
     private void SetWalk()
     {
         enemy[0].SetMoveWayPoint(waypoint.points[0]);
         enemy[1].SetMoveWayPoint(waypoint.points[1]);
     }
-    private void TalkingText()
-    {
-        if (count >= 4)
-        {
-            EndTalk();
-            return;
-        }
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.SetSmooth,0.8f);
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, pointInTalk.points[count]);
-        EventDispatcher.Publish(ListScript.TalkTime, Events.OpenBoxTalk, OutTalk[count]);
-        count++;
-        
-    }
-    private void EndTalk()
-    {
-        objChangeTarget.ReturnTransPlayer();
-        EventDispatcher.Publish(ListScript.TalkTime, Events.Close);
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.CameraZoom);
-        EventDispatcher.Publish(ListScript.Bruter, Events.TriggerAction);
-    }
+    
     private void Push()
     {
         enemy[0].Push();
@@ -75,5 +51,17 @@ public class IntroGame : MonoBehaviour
         map1.SetActive(true);
         map2.SetActive(false);
         EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateColor, inMap1);
+    }
+    public void EndTalk()
+    {
+        EventDispatcher.Publish(ListScript.CameraFollow, Events.CameraZoom);
+        EventDispatcher.Publish(ListScript.Player, Events.TriggerAction);
+        EventDispatcher.Publish(ListScript.Bruter, Events.TriggerAction);
+        this.DelayCall(9.9f, () =>
+        {
+            EventDispatcher.Publish(ListScript.CameraFollow, Events.CameraNomal);
+            EventDispatcher.Publish(ListScript.TalkTime, Events.Close);
+        });
+
     }
 }
