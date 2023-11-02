@@ -10,7 +10,8 @@ public enum ListScript
     DeathPenaltyPedestal,
     Bruter,
     TalkTime,
-    IntroGame
+    IntroGame,
+    Talking
 }
 public enum Events
 {

@@ -15,6 +15,7 @@ public class Player : CharacterBrain
     {
         Init();
         EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, direction);
+        EventDispatcher.Addlistener(ListScript.Player,Events.TriggerAction, Detention);
     }
     private void OnEnable()
     {
@@ -40,7 +41,7 @@ public class Player : CharacterBrain
         if (Input.GetKeyDown(KeyCode.E))
         {
             EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
-            EventDispatcher.Publish(ListScript.IntroGame, Events.OpenBoxTalk);
+            EventDispatcher.Publish(ListScript.Talking, Events.OpenBoxTalk);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
@@ -61,6 +62,10 @@ public class Player : CharacterBrain
             characterAnimator.SetFloat("vertical", Vertical);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
         }
+    }
+    private void Detention()
+    {
+        characterAnimator.SetTrigger("Detention");
     }
     private void OnAttack()
     {

@@ -115,7 +115,6 @@ public class CharacterAnimator : MonoBehaviour
     {
         step4ani?.Invoke();
     }
-    
 
 
 
