@@ -25,9 +25,12 @@ public class DeathPenaltyPedestal : OnTringgerWaitAction
     }
     protected override void OnTringgerActionItems()
     {
+        if (actioned)
+            return;
         if (num >= 1)
         {
-            EventDispatcher.Publish(ListScript.Bruter, Events.TriggerAction);
+            EventDispatcher.Publish(ListScript.IntroGame, Events.AddListener);
+            EventDispatcher.Publish(ListScript.IntroGame, Events.OpenBoxTalk);
             actioned = true;
             RemoveEvents();
         }

@@ -30,6 +30,8 @@ public class Player : CharacterBrain
     }
     private void Update()
     {
+        if (OnAction)
+            return;
         if (Input.GetMouseButtonDown(0) && !atkCanDo)
         {
             OnAttack();
@@ -38,6 +40,7 @@ public class Player : CharacterBrain
         if (Input.GetKeyDown(KeyCode.E))
         {
             EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
+            EventDispatcher.Publish(ListScript.IntroGame, Events.OpenBoxTalk);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
@@ -52,6 +55,7 @@ public class Player : CharacterBrain
         {
             if (onAniAttck)
                 return;
+            Rotation();
             direction.position = new Vector3(Horizontal, 0, Vertical).normalized + transform.position;
             characterAnimator.SetFloat("horizontal", Horizontal);
             characterAnimator.SetFloat("vertical", Vertical);
@@ -68,7 +72,10 @@ public class Player : CharacterBrain
             direction.position = transform.position + (raycastHit.point - transform.position).normalized;
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
-        characterAnimator.SetFloat("Dir", direction.localPosition.x);
+        Rotation();
+        characterAnimator.SetFloat("horizontal", 0);
+        characterAnimator.SetFloat("vertical", 0);
+        //characterAnimator.SetFloat("Dir", direction.localPosition.x);
         characterAnimator.SetTrigger("" + combo);
         Vector3 vec = direction.position - transform.position;
         
@@ -83,7 +90,6 @@ public class Player : CharacterBrain
     {
         return characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)];
     }
-
     private void StartCombo()
     {
         atkCanDo = false;
@@ -104,9 +110,9 @@ public class Player : CharacterBrain
     }
     public override void TakeDamage(float damage)
     {
+        base.TakeDamage(damage);
         //Debug.Log("Player takeDamage" + damage);
     }
-
     public override void Dead(bool isDead)
     {
         throw new System.NotImplementedException();
