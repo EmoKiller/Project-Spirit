@@ -10,15 +10,16 @@ public class CameraChangeLookAt : MonoBehaviour
     {
         Player p = other.GetComponent<Player>();
         savetrans = p.ReturnTrans();
+        EventDispatcher.Publish(ListScript.CameraFollow, Events.SetSmooth,0.8f);
         EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, _transform);
-        Debug.Log("CameraChangeLookAt");
     }
     protected void OnTriggerExit(Collider other)
     {
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, savetrans);
+        ReturnTransPlayer();
     }
     public void ReturnTransPlayer()
     {
         EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, savetrans);
+        EventDispatcher.Publish(ListScript.CameraFollow, Events.SetSmooth, 0.3f);
     }
 }

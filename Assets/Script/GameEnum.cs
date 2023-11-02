@@ -8,7 +8,9 @@ public enum ListScript
     UIManager,
     UIButtonAction,
     DeathPenaltyPedestal,
-    Bruter
+    Bruter,
+    TalkTime,
+    IntroGame
 }
 public enum Events
 {
@@ -16,9 +18,15 @@ public enum Events
     TriggerAction2,
     AddListener,
     RemoveEvent,
+    CameraNomal,
+    CameraZoom,
+    SetSmooth,
     Return,
     SwitchImageButton,
     SetDefaultButton,
+    Open,
+    Close,
+    OpenBoxTalk,
     UpdateText,
     UpdateValue,
     UpdateColor,

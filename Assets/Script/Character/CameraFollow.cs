@@ -11,6 +11,10 @@ public class CameraFollow : MonoBehaviour
     {
         EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Events.UpdateTransform, ChangeTarget);
         EventDispatcher.Addlistener<Color32>(ListScript.CameraFollow, Events.UpdateColor, ChangeColorCamera);
+        EventDispatcher.Addlistener<float>(ListScript.CameraFollow, Events.SetSmooth, SetSmooth);
+        EventDispatcher.Addlistener(ListScript.CameraFollow,Events.CameraNomal, CameraNomal);
+        EventDispatcher.Addlistener(ListScript.CameraFollow, Events.CameraZoom, CameraZoom);
+        
     }
     private void Update()
     {
@@ -23,8 +27,8 @@ public class CameraFollow : MonoBehaviour
         //{
         //    smooth += Time.deltaTime * 0.4f;
         //}
-        //else
-        //{
+        //else    Rotation -    30
+        //{       ofset 0,10,-15
         //    smooth -= Time.deltaTime * 0.16f;
         //    if (smooth <= 0)
         //    {
@@ -36,6 +40,18 @@ public class CameraFollow : MonoBehaviour
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
         //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
     }
+    private void CameraNomal()
+    {
+        offset = new Vector3(0,22,-28);
+        transform.eulerAngles = new Vector3(37,0,0);
+        SetSmooth(0.3f);
+    }
+    private void CameraZoom()
+    {
+        SetSmooth(0.6f);
+        offset = new Vector3(0, 6, -8.5f);
+        transform.eulerAngles = new Vector3(30, 0, 0);
+    }
     private void ChangeTarget(Transform target)
     {
         this.target = target;
@@ -43,6 +59,10 @@ public class CameraFollow : MonoBehaviour
     private void ChangeColorCamera(Color32 color)
     {
         _camera.backgroundColor = color;
+    }
+    private void SetSmooth(float value)
+    {
+        smooth = value;
     }
 
 }

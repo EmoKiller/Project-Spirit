@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,14 +6,8 @@ public class Enemy : CharacterBrain
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 15f;
-    [SerializeField] protected bool arried = false;
-    [SerializeField] protected bool OnAction = false;
     [SerializeField] protected bool onFollowPlayer = false;
-
-    [SerializeField] protected Transform tranformOfAni;
     [SerializeField] protected HealthBar healthBar;
-
-    protected Action action;
     protected override void Awake()
     {
         base.Awake();
@@ -27,19 +20,19 @@ public class Enemy : CharacterBrain
     }
     protected virtual void Update()
     {
-        if (arried || !Alive)
+        if (arried || !Alive || OnAction)
             return;
         if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniAttck ||
             direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniAttck)
         {
             onFollowPlayer = true;
             EnemyMove(direction.transform.position);
-            EnemyRotation();
+            Rotation();
             return;
         }
         if (onFollowPlayer && Distance() <= characterAttack.AttackRange)
         {
-            EnemyRotation();
+            Rotation();
             characterAnimator.SetTrigger("Attack");
             return;
         }
@@ -56,42 +49,19 @@ public class Enemy : CharacterBrain
             characterAnimator.SetTrigger("Attack");
         }
     }
-    public void SetAction(Action action)
-    {
-        this.action = action;
-        this.action?.Invoke();
-    }
-    public void SetTarget(Transform target)
-    {
-        direction = target;
-    }
-    public void SetStay()
-    {
-        arried = true; 
-        EnemyRotation();
-    }
     public void SetMoveWayPoint(Transform wayPoint)
     {
         arried = true;
         this.LoopDelayCall(2, () =>
         {
             EnemyMove(wayPoint.position);
-            EnemyRotation();
+            Rotation();
             characterAnimator.SetFloat("horizontal", 1);
         });
-        
     }
     public float Distance()
     {
         return Vector3.Distance(transform.position, direction.transform.position);
-    }
-    private void EnemyRotation()
-    {
-        Vector3 dir = direction.transform.position - transform.position;
-        if (dir.normalized.x > 0)
-            tranformOfAni.rotation = Quaternion.Euler(-20, 180, 0);
-        else if (dir.normalized.x < 0)
-            tranformOfAni.rotation = Quaternion.Euler(0, 0, 0);
     }
     private void EnemyMove(Vector3 direction)
     {
@@ -129,6 +99,7 @@ public class Enemy : CharacterBrain
     }
     public override void TakeDamage(float damage)
     {
+        base.TakeDamage(damage);
         health -= damage;
         Debug.Log($"health: {health}\ntake damage: {damage}");
         healthBar.SetActive();
@@ -141,7 +112,6 @@ public class Enemy : CharacterBrain
     //}
     public override void Dead(bool a)
     {
-
         Destroy(gameObject);
     }
     public override void EffectHit(Vector3 dir)

@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,260 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: DeathBig_0
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 0
+        width: 173
+        height: 187
+      alignment: 9
+      pivot: {x: 0.9541573, y: 0.49059337}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71aa63e06ed6e2348bb301d5cf4b51cd
+      internalID: -777155359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 422
+      alignment: 9
+      pivot: {x: 0.9746281, y: 0.5276852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99eecd4293e687f48af741bd38d0c1f4
+      internalID: 1830720023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_2
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 49
+        width: 278
+        height: 292
+      alignment: 9
+      pivot: {x: 0.52721226, y: 0.18392748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b4cfdf1e07b17409c0a70b56bd2ff6
+      internalID: -1398415005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_3
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 787
+        width: 250
+        height: 233
+      alignment: 9
+      pivot: {x: 0.59078026, y: 0.24675047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae18d2d85cd73c1479e3a27dcbfe1633
+      internalID: -1208745408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_4
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 0
+        width: 202
+        height: 227
+      alignment: 9
+      pivot: {x: 0.028122704, y: 0.6133085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad15c303d8700f6448e7f6fa231ce1bd
+      internalID: 738468505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_5
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 795
+        width: 206
+        height: 229
+      alignment: 9
+      pivot: {x: 0.9627146, y: 0.5858908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4bad285d78cd74394d4a1f88b296c2
+      internalID: -1703006250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_6
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 702
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c3352af2a438944abf26ec0d015980
+      internalID: -2013138009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 837
+        width: 209
+        height: 171
+      alignment: 9
+      pivot: {x: 0.11959678, y: 0.52415174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc384de331bab94ea9e8043b2c4dc77
+      internalID: -1987545677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 674
+        width: 518
+        height: 34
+      alignment: 9
+      pivot: {x: 0.0056907623, y: 0.4999982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b6f7263e61e8f45999a14aa0f73e67
+      internalID: -1408548353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_9
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 709
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450f8b7b86a0cd04cb1455ffab11623d
+      internalID: -393646534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathBig_10
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 342
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b439cbfdff510414388a51c94756fe68
+      internalID: 1131060515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6ee0d4514c105684199fb5c3a8a7abd5
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DeathBig_4: 738468505
+      DeathBig_0: -777155359
+      DeathBig_7: -1987545677
+      DeathBig_6: -2013138009
+      DeathBig_9: -393646534
+      DeathBig_10: 1131060515
+      DeathBig_2: -1398415005
+      DeathBig_8: -1408548353
+      DeathBig_3: -1208745408
+      DeathBig_5: -1703006250
+      DeathBig_1: 1830720023
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

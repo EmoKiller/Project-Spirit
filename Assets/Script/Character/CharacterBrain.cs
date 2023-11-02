@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public abstract class CharacterBrain : MonoBehaviour
 {
@@ -12,16 +9,19 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected CharacterAttack characterAttack = null;
     [SerializeField] protected Slash slash = null;
     [SerializeField] protected Transform direction;
+    [SerializeField] protected Transform tranformOfAni;
     [SerializeField] protected AnimationCurve forceCurve;
+    [SerializeField] protected bool arried = false;
+    [SerializeField] protected bool OnAction = false;
+    protected Action action;
     //BaseCharacter
     protected string characterName {get; set;}
     protected float health { get; set; }
     protected float maxHealth { get; set; }
-    protected bool onAniAttck = false;
+    [SerializeField] protected bool onAniAttck = false;
     protected Action<bool> deadAction = null;
     public bool Alive => health >= 0;
     public virtual string Name => characterName;
-    
     protected virtual void Awake()
     {
         agent.Initialized();
@@ -50,6 +50,14 @@ public abstract class CharacterBrain : MonoBehaviour
         characterAnimator.ResetTrigger();
         onAniAttck = false;
     }
+    protected void Rotation()
+    {
+        Vector3 dir = direction.transform.position - transform.position;
+        if (dir.normalized.x > 0)
+            tranformOfAni.rotation = Quaternion.Euler(-10, 180, 0);
+        else if (dir.normalized.x < 0)
+            tranformOfAni.rotation = Quaternion.Euler(10, 0, 0);
+    }
     protected virtual void OnAttackHit(CharacterBrain target)
     {
         Vector3 dir = transform.position - target.transform.position;
@@ -65,7 +73,15 @@ public abstract class CharacterBrain : MonoBehaviour
             //EventDispatcher.TriggerEvent(Events.OnEnemyDead);
         }
     }
-    public abstract void TakeDamage(float damage);
+    public virtual void TakeDamage(float damage) 
+    {
+        OnAction = true;
+        onAniAttck = false;
+        this.DelayCall(0.6f, () =>
+        {
+            OnAction = false;
+        });
+    }
     public abstract void EffectHit(Vector3 dir);
     public abstract void Dead(bool isDead);
     public void ImpactForce(Vector3 dir)
@@ -75,14 +91,18 @@ public abstract class CharacterBrain : MonoBehaviour
             agent.AgentBody.Move(dir * Time.deltaTime);
         });
     }
-
-    //private void CheckImpactForce(CharacterBrain target)
-    //{
-    //    Vector3 vec = transform.position - target.transform.position;
-    //    float force = target.characterAttack.Weight - characterAttack.PowerForce;
-    //    if (force > 0)
-    //        agent.AgentBody.Move(vec.normalized * force);
-    //    else
-    //        target.agent.AgentBody.Move(vec.normalized * force);
-    //}
+    public void SetAction(Action action)
+    {
+        this.action = action;
+        this.action?.Invoke();
+    }
+    public void SetTarget(Transform target)
+    {
+        direction = target;
+    }
+    public void SetStay()
+    {
+        arried = true;
+        Rotation();
+    }
 }
