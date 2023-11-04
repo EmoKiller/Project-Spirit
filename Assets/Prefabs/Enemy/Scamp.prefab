@@ -915,7 +915,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 2}
+  m_SizeDelta: {x: 5, y: 1.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237099639931083602
 MonoBehaviour:
@@ -1266,18 +1266,20 @@ MonoBehaviour:
   characterAttack: {fileID: 1873784280435111056}
   slash: {fileID: 1237099638525442306}
   direction: {fileID: 0}
+  tranformOfAni: {fileID: 1237099640159292173}
   forceCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  arried: 0
+  OnAction: 0
+  onAniAttck: 0
   wayPoints: []
   currentWaypointIndex: 0
   playerDetectionRange: 20
-  arried: 0
   onFollowPlayer: 0
-  tranformOfAni: {fileID: 1237099640159292173}
   healthBar: {fileID: 1237099639221227188}
 --- !u!114 &1873784280435111057
 MonoBehaviour:

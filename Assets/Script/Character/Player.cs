@@ -41,7 +41,7 @@ public class Player : CharacterBrain
         if (Input.GetKeyDown(KeyCode.E))
         {
             EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
-            EventDispatcher.Publish(ListScript.Talking, Events.OpenBoxTalk);
+            EventDispatcher.Publish(ListScript.PopUpTalk, Events.OpenTalkBox);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {

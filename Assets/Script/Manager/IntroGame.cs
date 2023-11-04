@@ -13,9 +13,6 @@ public class IntroGame : MonoBehaviour
     [SerializeField] GameObject hideWall;
     [SerializeField] List<Enemy> enemy = new List<Enemy>();
     [SerializeField] WayPoint waypoint;
-
-    
-
     Color32 inMap1 = new Color32(0, 0, 0, 255);
     Color32 inMap2 = new Color32(242, 236, 222, 255);
 
@@ -37,6 +34,7 @@ public class IntroGame : MonoBehaviour
         enemy[0].Push();
         enemy[1].Push();
     }
+
     private void GotoMap2()
     {
         objChangeTarget.ReturnTransPlayer();
