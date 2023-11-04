@@ -21,5 +21,5 @@ public class EneScamp : Enemy
         slash.AddActionAttack(OnAttackHit);
         deadAction = Dead;
     }
-
+    
 }

@@ -15,7 +15,7 @@ public class TalkTime : MonoBehaviour
     {
         EventDispatcher.Addlistener(ListScript.TalkTime, Events.Open, Open);
         EventDispatcher.Addlistener(ListScript.TalkTime, Events.Close, Close);
-        EventDispatcher.Addlistener<string>(ListScript.TalkTime, Events.OpenBoxTalk, OpenBoxTalk);
+        EventDispatcher.Addlistener<string>(ListScript.TalkTime, Events.OpenTalkBox, OpenBoxTalk);
     }
     private void OpenBoxTalk(string text)
     {

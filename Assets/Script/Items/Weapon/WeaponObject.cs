@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewWeapon" , menuName = "Weapon/CreateWeapon")]
+[CreateAssetMenu(fileName = "NewWeapon" , menuName = "GameUtilities/CreateWeapon")]
 public class WeaponObject : ScriptableObject
 {
     [Header("Object Reference")]

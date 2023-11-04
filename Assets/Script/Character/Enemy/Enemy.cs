@@ -40,7 +40,6 @@ public class Enemy : CharacterBrain
         //characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
         //if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
         //    onArried?.Invoke();
-
     }
     public void Push()
     {

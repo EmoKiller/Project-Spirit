@@ -11,7 +11,7 @@ public enum ListScript
     Bruter,
     TalkTime,
     IntroGame,
-    Talking
+    PopUpTalk
 }
 public enum Events
 {
@@ -27,7 +27,7 @@ public enum Events
     SetDefaultButton,
     Open,
     Close,
-    OpenBoxTalk,
+    OpenTalkBox,
     UpdateText,
     UpdateValue,
     UpdateColor,
