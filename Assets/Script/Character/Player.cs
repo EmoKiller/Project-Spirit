@@ -27,7 +27,8 @@ public class Player : CharacterBrain
         SetTypeSlash("Player");
         slash.SetSizeBox(4, 1, 4);
         SetoffSlash();
-        characterAnimator.AddStepAni(SetOnSlash, SetoffSlash, StartCombo, FinishAni);
+        characterAnimator.AddStepAniAtk(SetOnSlash, SetoffSlash, StartCombo, FinishAniAtk);
+        characterAnimator.AddStFishAni(StartAni,StopAni);
         slash.AddActionAttack(OnAttackHit);
         deadAction = Dead;
     }
@@ -64,7 +65,7 @@ public class Player : CharacterBrain
     private void OnAttack()
     {
         atkCanDo = true;
-        StartAni();
+        StartAniAtk();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
@@ -97,13 +98,13 @@ public class Player : CharacterBrain
             combo++;
         }
     }
-    protected override void StartAni()
+    protected override void StartAniAtk()
     {
-        base.StartAni();
+        base.StartAniAtk();
     }
-    protected override void FinishAni()
+    protected override void FinishAniAtk()
     {
-        base.FinishAni();
+        base.FinishAniAtk();
         atkCanDo = false;
         combo = 0;
     }
@@ -116,7 +117,14 @@ public class Player : CharacterBrain
     {
         throw new System.NotImplementedException();
     }
-
+    public void StartAni()
+    {
+        OnAction = true;
+    }
+    public void StopAni()
+    {
+        OnAction = false;
+    }
     public override void EffectHit(Vector3 dir)
     {
         AssetManager.Instance.InstantiateItems(AssetManager.Instance.SlashHit, transform, dir);

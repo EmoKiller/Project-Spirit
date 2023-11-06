@@ -54,13 +54,13 @@ public class Enemy : CharacterBrain
     {
         return Vector3.Distance(transform.position, direction.transform.position);
     }
-    protected override void StartAni()
+    protected override void StartAniAtk()
     {
-        base.StartAni();
+        base.StartAniAtk();
     }
-    protected override void FinishAni()
+    protected override void FinishAniAtk()
     {
-        base.FinishAni();
+        base.FinishAniAtk();
     }
     protected virtual void OnArried()
     {

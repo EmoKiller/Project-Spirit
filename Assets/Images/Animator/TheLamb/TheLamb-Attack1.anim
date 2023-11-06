@@ -3286,28 +3286,28 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: Step1Ani
+    functionName: Step1AniAtk
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.016666668
-    functionName: Step2Ani
+    functionName: Step2AniAtk
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.16666667
-    functionName: Step3Ani
+    functionName: Step3AniAtk
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.5833333
-    functionName: Step4Ani
+    functionName: Step4AniAtk
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
