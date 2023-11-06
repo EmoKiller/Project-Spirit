@@ -16,6 +16,7 @@ public class Enemy : CharacterBrain
     protected virtual void Start()
     {
         SetTypeSlash("Enemy");
+        
         //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
     }
     protected virtual void Update()
@@ -26,7 +27,7 @@ public class Enemy : CharacterBrain
             direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniAttck)
         {
             onFollowPlayer = true;
-            EnemyMove(direction.transform.position);
+            MoveTo(direction.transform.position);
             Rotation();
             return;
         }
@@ -48,26 +49,10 @@ public class Enemy : CharacterBrain
             characterAnimator.SetTrigger("Attack");
         }
     }
-    public void SetMoveWayPoint(Transform wayPoint)
-    {
-        arried = true;
-        this.LoopDelayCall(2, () =>
-        {
-            EnemyMove(wayPoint.position);
-            Rotation();
-            characterAnimator.SetFloat("horizontal", 1);
-        });
-    }
+    
     public float Distance()
     {
         return Vector3.Distance(transform.position, direction.transform.position);
-    }
-    private void EnemyMove(Vector3 direction)
-    {
-        Vector3 dir = direction - transform.position;
-        agent.MoveToDirection(dir.normalized);
-        characterAnimator.SetFloat("horizontal", dir.normalized.x);
-        characterAnimator.SetFloat("vertical", dir.normalized.z);
     }
     protected override void StartAni()
     {

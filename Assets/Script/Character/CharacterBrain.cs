@@ -50,6 +50,22 @@ public abstract class CharacterBrain : MonoBehaviour
         characterAnimator.ResetTrigger();
         onAniAttck = false;
     }
+    public void MoveTo(Vector3 direction)
+    {
+        Vector3 dir = direction - transform.position;
+        agent.MoveToDirection(dir.normalized);
+        characterAnimator.SetFloat("horizontal", dir.normalized.x);
+        characterAnimator.SetFloat("vertical", dir.normalized.z);
+    }
+    public virtual void SetMoveWayPoint(Transform wayPoint,float time)
+    {
+        arried = true;
+        this.LoopDelayCall(time, () =>
+        {
+            MoveTo(wayPoint.position);
+            Rotation();
+        });
+    }
     protected void Rotation()
     {
         Vector3 dir = direction.transform.position - transform.position;
@@ -100,9 +116,17 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         direction = target;
     }
+    public void SetArried(bool value)
+    {
+        arried = value;
+    }
     public void SetStay()
     {
         arried = true;
         Rotation();
+    }
+    public void TriggerAni(string str)
+    {
+        characterAnimator.SetTrigger(str);
     }
 }

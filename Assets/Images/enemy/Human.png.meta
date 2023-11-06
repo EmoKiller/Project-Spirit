@@ -440,7 +440,7 @@ TextureImporter:
         width: 33
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -448,6 +448,27 @@ TextureImporter:
       bones: []
       spriteID: 6838291826ad1404fa8e6ca76351208f
       internalID: 1102243393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_1
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 475
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf1c692d986f4a4ca46e0e19af3d0d7
+      internalID: -1664588811
       vertices: []
       indices: 
       edges: []
@@ -468,6 +489,7 @@ TextureImporter:
       Scamp_Head_Bac: 1300820393
       Swordsman_Body_font: 1802780893
       Scamp_Head_Back: 316544033
+      Human_1: -1664588811
       Swordsman_Weapon: -142764730
       eyes-2: 1102243393
       Swordsman_Head_Back: -1175125773

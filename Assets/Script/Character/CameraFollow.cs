@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -6,17 +7,20 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float smooth;
     [SerializeField] private Vector3 offset;
+    
     Camera _camera => GetComponent<Camera>();
     private Vector3 vecref = Vector3.zero;
     private void Awake()
     {
+        EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Events.UpdateTransformPlayer, TargetPlayer);
         EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Events.UpdateTransform, ChangeTarget);
         EventDispatcher.Addlistener<Color32>(ListScript.CameraFollow, Events.UpdateColor, ChangeColorCamera);
         EventDispatcher.Addlistener<float>(ListScript.CameraFollow, Events.SetSmooth, SetSmooth);
+        EventDispatcher.Addlistener(ListScript.CameraFollow, Events.ReturnTargetPlayer, ReturnTargetPlayer);
         EventDispatcher.Addlistener(ListScript.CameraFollow,Events.CameraNomal, CameraNomal);
         EventDispatcher.Addlistener(ListScript.CameraFollow, Events.CameraZoom, CameraZoom);
-        
     }
+
     private void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
@@ -41,7 +45,10 @@ public class CameraFollow : MonoBehaviour
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
         //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
     }
-    
+    //private void AddListenerVideo()
+    //{
+    //    EventDispatcher.Addlistener<bool>(ListScript.VideoPlayer, Events.UpdateValue, SetPlayVideos);
+    //}
     private void CameraNomal()
     {
         offset = new Vector3(0,22,-28);
@@ -53,6 +60,14 @@ public class CameraFollow : MonoBehaviour
         SetSmooth(0.6f);
         offset = new Vector3(0, 6, -8.5f);
         transform.eulerAngles = new Vector3(30, 0, 0);
+    }
+    public void ReturnTargetPlayer()
+    {
+        target = player;
+    }
+    private void TargetPlayer(Transform target)
+    {
+        player = target;
     }
     private void ChangeTarget(Transform target)
     {

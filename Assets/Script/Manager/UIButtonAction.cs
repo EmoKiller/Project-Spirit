@@ -20,9 +20,24 @@ public class UIButtonAction : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            EventDispatcher.Publish(ListScript.OnTringgerWaitAction, Events.OnTringgerActionItems);
+        }
+    }
     private void OnEnable()
     {
-        EventDispatcher.Addlistener<string>(ListScript.UIButtonAction, Events.SwitchImageButton, SwitchImageButton);
+        EventDispatcher.Addlistener<TypeShowButton>(ListScript.UIButtonAction, Events.SwitchImageButton, SwitchImageButton);
         EventDispatcher.Addlistener<string>(ListScript.UIButtonAction, Events.UpdateText, UpdateText);
         EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.SetDefaultButton, ResetButton);
         EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.AddListener, AddListener);
@@ -38,13 +53,11 @@ public class UIButtonAction : MonoBehaviour
         EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
         EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
     }
-
-
-    private void SwitchImageButton(string value)
+    private void SwitchImageButton(TypeShowButton value)
     {
-        if (value == "Button")
+        if (value == TypeShowButton.Button)
             buttonE.gameObject.SetActive(true);
-        else if (value == "Mouse")
+        else if (value == TypeShowButton.Mouse)
             mouseClick.gameObject.SetActive(true);
     }
     private float FillValue()

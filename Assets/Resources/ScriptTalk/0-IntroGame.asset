@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f87eb8a8f49fd1468b185609bc264b5, type: 3}
   m_Name: 0-IntroGame
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
+  projectTile: {fileID: 2729271864944868109, guid: 8a805fd5b1ad7134588dbff977a3907c, type: 3}
+  ListText:
+  - a
+  - b
+  - c
+  - d

@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,106 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: fire_soft_blank_0
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 78
+        width: 237
+        height: 353
+      alignment: 9
+      pivot: {x: 0.51106167, y: 0.15466058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa53dc8a310b2e4b9080f12a85dd8ff
+      internalID: 1073239987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_soft_blank_1
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 90
+        width: 241
+        height: 371
+      alignment: 9
+      pivot: {x: 0.53263456, y: 0.18554819}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d5c99280bc0e148a551d6cb8c614fc
+      internalID: 413626511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_soft_blank_2
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 644
+        width: 284
+        height: 242
+      alignment: 9
+      pivot: {x: 0.49538454, y: 0.37000293}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae6793f17cf0a44f9c1c7abc2434ab0
+      internalID: -1254406827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_soft_blank_3
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 589
+        width: 292
+        height: 324
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.29691765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfbc08df25224344a9f1cdc3a21b7d2
+      internalID: 1066101978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6870b9cb74b04cd46b6f27af0fbeef83
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fire_soft_blank_3: 1066101978
+      fire_soft_blank_0: 1073239987
+      fire_soft_blank_1: 413626511
+      fire_soft_blank_2: -1254406827
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
