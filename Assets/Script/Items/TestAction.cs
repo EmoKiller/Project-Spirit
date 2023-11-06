@@ -4,24 +4,25 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class TestAction : OnTringgerAction
+public class TestAction : MonoBehaviour
 {
     [SerializeField] GameObject obj;
     bool isOpen = false;
     [SerializeField] UnityEvent push;
-    protected override void OnTriggerExit(Collider other)
+    protected void OnTriggerExit(Collider other)
     {
         if (isOpen)
             return;
         TringgerAction();
+        EventDispatcher.Publish(ListScript.IntroGame, Events.TriggerAction);
     }
     private void OnTriggerStay(Collider other)
     {
         push?.Invoke();
     }
-    protected override void TringgerAction()
+    protected void TringgerAction()
     {
-        events?.Invoke();
+        //events?.Invoke();
         obj.gameObject.SetActive(true);
         isOpen = true;
     }

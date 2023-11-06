@@ -8,33 +8,46 @@ public enum ListScript
     UIManager,
     UIButtonAction,
     DeathPenaltyPedestal,
-    Bruter,
-    TalkTime,
     IntroGame,
-    PopUpTalk
+    PopUpTalkManager,
+    PopUpTalk,
+    VideoPlayer,
+    WhoWait,
+    Bruter
 }
 public enum Events
 {
     TriggerAction,
     TriggerAction2,
+    TriggerAni,
+    MoveTo,
     AddListener,
     RemoveEvent,
     CameraNomal,
     CameraZoom,
     SetSmooth,
     Return,
+    ReturnTargetPlayer,
     SwitchImageButton,
     SetDefaultButton,
     Open,
     Close,
-    OpenTalkBox,
+    OpenPopup,
+    ClosePopup,
+    UiSelect,
     UpdateText,
     UpdateValue,
     UpdateColor,
     UpdateTransform,
+    UpdateTransformPlayer,
     OnTringgerActionItems,
     OnPlayerActionItemsButtonDown,
     OnPlayerActionItemsButtonUp,
+}
+public enum TypeShowButton
+{
+    Button,
+    Mouse
 }
 public enum AttributeTypeOfHero
 {

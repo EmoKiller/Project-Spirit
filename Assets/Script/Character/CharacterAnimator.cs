@@ -80,6 +80,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         currentTrigger = "";
     }
+    
     public void SetBool(string param, bool value)
     {
         Ator.SetBool(param, value);

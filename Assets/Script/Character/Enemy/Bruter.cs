@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bruter : MonoBehaviour
@@ -17,6 +15,6 @@ public class Bruter : MonoBehaviour
     public void InvokeAction()
     {
         EventDispatcher.Publish(ListScript.Bruter, Events.TriggerAction2);
-        Debug.Log("invoke");
+        Destroy(gameObject);
     }
 }

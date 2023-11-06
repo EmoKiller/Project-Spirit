@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 
 public class Player : CharacterBrain
@@ -14,8 +13,11 @@ public class Player : CharacterBrain
     private void Start()
     {
         Init();
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, direction);
+        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransformPlayer, direction);
+        EventDispatcher.Publish(ListScript.CameraFollow, Events.ReturnTargetPlayer);
         EventDispatcher.Addlistener(ListScript.Player,Events.TriggerAction, Detention);
+        EventDispatcher.Addlistener<string>(ListScript.Player, Events.TriggerAni, TriggerAni);
+        EventDispatcher.Addlistener<Transform,float>(ListScript.Player, Events.MoveTo, SetMoveWayPoint);
     }
     private void OnEnable()
     {
@@ -38,20 +40,6 @@ public class Player : CharacterBrain
             OnAttack();
             return;
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
-            EventDispatcher.Publish(ListScript.PopUpTalk, Events.OpenTalkBox);
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-            EventDispatcher.Publish(ListScript.OnTringgerWaitAction, Events.OnTringgerActionItems);
-        }
-
         if (Horizontal != 0 || Vertical!=0)
         {
             if (onAniAttck)
@@ -62,6 +50,12 @@ public class Player : CharacterBrain
             characterAnimator.SetFloat("vertical", Vertical);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
         }
+    }
+    public override void SetMoveWayPoint(Transform wayPoint, float time)
+    {
+        Vector3 dir = wayPoint.position - transform.position;
+        direction.position = dir.normalized + transform.position;
+        base.SetMoveWayPoint(wayPoint, time);
     }
     private void Detention()
     {

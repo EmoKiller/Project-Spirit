@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class OnTringgerWaitAction : MonoBehaviour
 {
-    protected string text = "";
-    protected string typeButton = "";
+    public string text = "";
+    public TypeShowButton typeButton;
     protected bool actioned = false;
     protected virtual void OnTriggerEnter(Collider other)
     {
