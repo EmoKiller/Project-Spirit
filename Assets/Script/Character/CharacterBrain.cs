@@ -41,15 +41,16 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         slash.SetActiveSlash(false);
     }
-    protected virtual void StartAni()
+    protected virtual void StartAniAtk()
     {
         onAniAttck = true;
     }
-    protected virtual void FinishAni()
+    protected virtual void FinishAniAtk()
     {
         characterAnimator.ResetTrigger();
         onAniAttck = false;
     }
+
     public void MoveTo(Vector3 direction)
     {
         Vector3 dir = direction - transform.position;
@@ -125,8 +126,10 @@ public abstract class CharacterBrain : MonoBehaviour
         arried = true;
         Rotation();
     }
+    
     public void TriggerAni(string str)
     {
         characterAnimator.SetTrigger(str);
     }
+
 }

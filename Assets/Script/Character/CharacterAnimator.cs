@@ -13,10 +13,12 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackType currentAttackType;
     //[SerializeField] protected AttackStep currentAttackStep;
-    Action step1ani = null;
-    Action step2ani = null;
-    Action step3ani = null;
-    Action step4ani = null;
+    Action step1aniAtk = null;
+    Action step2aniAtk = null;
+    Action step3aniAtk = null;
+    Action step4aniAtk = null;
+    Action StartAni = null;
+    Action FinishAni = null;
     public string currentTrigger = "";
     public Animator Ator
     {
@@ -93,28 +95,41 @@ public class CharacterAnimator : MonoBehaviour
     {
         Ator.SetInteger(param, value);
     }
-    public void AddStepAni(Action step1ani, Action step2ani, Action step3ani, Action step4ani)
+    public void AddStepAniAtk(Action step1ani, Action step2ani, Action step3ani, Action step4ani)
     {
-        this.step1ani = step1ani;
-        this.step2ani = step2ani;
-        this.step3ani = step3ani;
-        this.step4ani = step4ani;
+        this.step1aniAtk = step1ani;
+        this.step2aniAtk = step2ani;
+        this.step3aniAtk = step3ani;
+        this.step4aniAtk = step4ani;
     }
-    public void Step1Ani()
+    public void AddStFishAni(Action StartAni, Action FinishAni)
     {
-        step1ani?.Invoke();
+        this.StartAni = StartAni;
+        this.FinishAni = FinishAni;
     }
-    public void Step2Ani()
+    public void StartAnimation()
     {
-        step2ani?.Invoke();
+        StartAni?.Invoke();
     }
-    public void Step3Ani()
+    public void FinishAnimation()
     {
-        step3ani?.Invoke();
+        FinishAni?.Invoke();
     }
-    public void Step4Ani()
+    public void Step1AniAtk()
     {
-        step4ani?.Invoke();
+        step1aniAtk?.Invoke();
+    }
+    public void Step2AniAtk()
+    {
+        step2aniAtk?.Invoke();
+    }
+    public void Step3AniAtk()
+    {
+        step3aniAtk?.Invoke();
+    }
+    public void Step4AniAtk()
+    {
+        step4aniAtk?.Invoke();
     }
 
 

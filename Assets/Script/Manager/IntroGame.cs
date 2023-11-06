@@ -24,8 +24,6 @@ public class IntroGame : MonoBehaviour
         EventDispatcher.Addlistener(ListScript.WhoWait, Events.TriggerAction2, GotoMap1);
         foreach (Enemy enemy in enemy)
             enemy.SetStay();
-        //enemy[4].SetAction(enemy[4].EneTriggerAni);
-        //enemy[4].EneTriggerAni();
     }
     private void SetWalk()
     {
@@ -44,6 +42,8 @@ public class IntroGame : MonoBehaviour
         objChangeTarget.ReturnTransPlayer();
         objChangeTarget.gameObject.SetActive(false);
         clutLeaders.SetActive(false);
+        hideWall.SetActive(false);
+
         map1.SetActive(false);
         map2.SetActive(true);
         
@@ -89,10 +89,16 @@ public class IntroGame : MonoBehaviour
             EventDispatcher.Publish(ListScript.Player, Events.TriggerAni,"TakeWeapon");
             for (int i = 4; i <= 8; i++)
                 enemy[i].TriggerAni("PrayFear");
+
             this.DelayCall(1.5f, () =>
             {
+                enemy[0].SetArried(false);
+                enemy[1].SetArried(false);
+                enemy[2].SetArried(false);
+                enemy[3].SetArried(false);
                 EventDispatcher.Publish(ListScript.CameraFollow, Events.CameraNomal);
                 EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.Close);
+
             });
         });
     }
