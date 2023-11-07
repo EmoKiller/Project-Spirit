@@ -115,7 +115,9 @@ public class Player : CharacterBrain
     }
     public override void Dead(bool isDead)
     {
+        Debug.Log("Player Dead");
         throw new System.NotImplementedException();
+        
     }
     public void StartAni()
     {

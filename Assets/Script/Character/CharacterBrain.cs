@@ -20,7 +20,7 @@ public abstract class CharacterBrain : MonoBehaviour
     protected float maxHealth { get; set; }
     [SerializeField] protected bool onAniAttck = false;
     protected Action<bool> deadAction = null;
-    public bool Alive => health >= 0;
+    public bool Alive => health > 0;
     public virtual string Name => characterName;
     protected virtual void Awake()
     {
@@ -78,23 +78,24 @@ public abstract class CharacterBrain : MonoBehaviour
     protected virtual void OnAttackHit(CharacterBrain target)
     {
         Vector3 dir = transform.position - target.transform.position;
+        if (!target.Alive)
+        {
+            target.deadAction?.Invoke(true);
+            return;
+        }
         float force = target.characterAttack.Weight - characterAttack.PowerForce;
         if (force > 0)
             ImpactForce(dir.normalized * force);
         else
             target.ImpactForce(dir.normalized * force);
         target.EffectHit(dir.normalized + target.transform.position);
-        //EventDispatcher.TriggerEvent(Events.OnEnemyHit);
-        if (!target.Alive)
-        {
-            //EventDispatcher.TriggerEvent(Events.OnEnemyDead);
-        }
+
     }
     public virtual void TakeDamage(float damage) 
     {
         OnAction = true;
         onAniAttck = false;
-        this.DelayCall(0.6f, () =>
+        this.DelayCall(0.5f, () =>
         {
             OnAction = false;
         });

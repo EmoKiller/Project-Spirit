@@ -16,7 +16,8 @@ MonoBehaviour:
   AttackRange: 2
   PowerForce: 25
   weight: 20
-  FirstHit: 1
-  SecondHit: 1
-  ThirdHit: 1
-  FourHit: 1
+  ListDamage:
+  - 1
+  - 1
+  - 1
+  - 1
