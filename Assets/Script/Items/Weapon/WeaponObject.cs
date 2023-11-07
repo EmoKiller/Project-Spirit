@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewWeapon" , menuName = "GameUtilities/CreateWeapon")]
@@ -10,11 +11,7 @@ public class WeaponObject : ScriptableObject
     public float AttackRange = 2f;
     public float PowerForce = 2f;
     public float weight = 1f;
-    public float FirstHit = 1f;
-    public float SecondHit = 1f;
-    public float ThirdHit = 1f;
-    public float FourHit = 1f;
-
+    public List<float> ListDamage = new List<float>();
     public WeaponObject()
     {
 

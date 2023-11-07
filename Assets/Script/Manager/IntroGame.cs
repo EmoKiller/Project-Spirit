@@ -7,6 +7,7 @@ public class IntroGame : MonoBehaviour
     [SerializeField] GameObject map1;
     [SerializeField] GameObject map2;
     [SerializeField] GameObject clutLeaders;
+    [SerializeField] GameObject bloodImage;
     [SerializeField] CameraChangeLookAt objChangeTarget;
     [SerializeField] GameObject hideWall;
     [SerializeField] List<Enemy> enemy = new List<Enemy>();
@@ -53,6 +54,7 @@ public class IntroGame : MonoBehaviour
     {
         map1.SetActive(true);
         map2.SetActive(false);
+        bloodImage.SetActive(true);
         EventDispatcher.Publish(ListScript.CameraFollow, Events.ReturnTargetPlayer);
         EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateColor, inMap1);
     }
@@ -92,10 +94,14 @@ public class IntroGame : MonoBehaviour
 
             this.DelayCall(1.5f, () =>
             {
-                enemy[0].SetArried(false);
-                enemy[1].SetArried(false);
-                enemy[2].SetArried(false);
-                enemy[3].SetArried(false);
+                foreach (Enemy enemy in enemy)
+                    enemy.SetArried(false);
+                for (int i = 4; i <= 8; i++)
+                {
+                    enemy[i].TriggerAni("PrayFear");
+                    enemy[i].SetStay();
+                }
+                    
                 EventDispatcher.Publish(ListScript.CameraFollow, Events.CameraNomal);
                 EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.Close);
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4249,7 +4249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
-  CurrentHit: []
 --- !u!114 &278240055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9227,6 +9226,7 @@ MonoBehaviour:
   map1: {fileID: 1509244756}
   map2: {fileID: 1101986771}
   clutLeaders: {fileID: 33837835}
+  bloodImage: {fileID: 772603462}
   objChangeTarget: {fileID: 1431493644}
   hideWall: {fileID: 224506818}
   enemy:
@@ -11605,6 +11605,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &772603462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 928481221297160395, guid: 8a805fd5b1ad7134588dbff977a3907c, type: 3}
+  m_PrefabInstance: {fileID: 2729271866667397431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &773742425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 564586223339608904, guid: 7cb94a13c2d35bc43ba0a5ee6a20b91f, type: 3}
@@ -30679,7 +30684,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
-  CurrentHit: []
 --- !u!1 &429933364971830311
 GameObject:
   m_ObjectHideFlags: 0
@@ -31236,6 +31240,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 928481221297160395, guid: 8a805fd5b1ad7134588dbff977a3907c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2729271864944868104, guid: 8a805fd5b1ad7134588dbff977a3907c, type: 3}
       propertyPath: text
       value: Knell to be Sacrificed

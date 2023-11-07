@@ -12,7 +12,7 @@ public class EneScamp : Enemy
     }
     private void Init()
     {
-        maxHealth = 100;
+        maxHealth = 2;
         health = maxHealth;
         healthBar.SetHealh(maxHealth);
         slash.SetSizeBox(4, 1, 4);

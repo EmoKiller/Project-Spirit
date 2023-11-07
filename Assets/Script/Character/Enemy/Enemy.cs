@@ -96,6 +96,7 @@ public class Enemy : CharacterBrain
     //}
     public override void Dead(bool a)
     {
+        
         Destroy(gameObject);
     }
     public override void EffectHit(Vector3 dir)
