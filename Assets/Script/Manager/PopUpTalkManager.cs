@@ -11,6 +11,7 @@ public class PopUpTalkManager : MonoBehaviour
     [SerializeField] TMP_Text showText;
     [SerializeField] GameObject boxTalk;
     [SerializeField] GameObject uiSelect;
+    [SerializeField] GameObject infoWeapon;
     private void Start()
     {
         gameObject.SetActive(false);
@@ -25,6 +26,7 @@ public class PopUpTalkManager : MonoBehaviour
         EventDispatcher.Addlistener<string>(ListScript.PopUpTalkManager, Events.OpenPopup, OpenBoxTalk);
         EventDispatcher.Addlistener(ListScript.PopUpTalkManager, Events.ClosePopup, CloseBoxTalk);
         EventDispatcher.Addlistener<bool>(ListScript.PopUpTalkManager, Events.UiSelect, SetUiSelect);
+        EventDispatcher.Addlistener<bool>(ListScript.PopUpTalkManager, Events.SetInfoWeapon, SetInfoWeapon);
     }
     private void Removed()
     {
@@ -36,6 +38,10 @@ public class PopUpTalkManager : MonoBehaviour
         {
             EventDispatcher.Publish(ListScript.PopUpTalk, Events.OpenPopup);
         }
+    }
+    private void SetInfoWeapon(bool value)
+    {
+        infoWeapon.SetActive(value);
     }
     private void SetUiSelect(bool value)
     {
@@ -52,6 +58,8 @@ public class PopUpTalkManager : MonoBehaviour
     }
     private void Open()
     {
+        top.gameObject.SetActive(true);
+        bottom.gameObject.SetActive(true);
         top.DOAnchorPos3DY(-38f,2);
         bottom.DOAnchorPos3DY(38,2);
     }
@@ -59,6 +67,11 @@ public class PopUpTalkManager : MonoBehaviour
     {
         top.DOAnchorPos3DY(38f, 2);
         bottom.DOAnchorPos3DY(-38, 2);
+        this.DelayCall(2f, () =>
+        {
+            top.gameObject.SetActive(false);
+            bottom.gameObject.SetActive(false);
+        });
     }
     
 }

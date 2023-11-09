@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
+  m_Name: 0-Crusader's Blade
+  m_EditorClassIdentifier: 
+  projectTile: {fileID: 8133739704888670026, guid: 38b77e0b194c53a46a820438c474bf7d, type: 3}
+  NameWeapon: Crusader's Blade
+  QuoteWeapon: Stalwart companion to the wandering warrior.
+  DescriptionWeapon: A well balanced blade dealing moderate damage.
+  Speed: 1
+  SizeSlashBox: {x: 4, y: 1, z: 4}
+  AttackRange: 2
+  ListDamage:
+  - 1
+  - 1
+  - 1

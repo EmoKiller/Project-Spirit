@@ -9,7 +9,7 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected CharacterAttack characterAttack = null;
     [SerializeField] protected Slash slash = null;
     [SerializeField] protected Transform direction;
-    [SerializeField] protected Transform tranformOfAni;
+    [SerializeField] protected GameObject tranformOfAni;
     [SerializeField] protected AnimationCurve forceCurve;
     [SerializeField] protected bool arried = false;
     [SerializeField] protected bool OnAction = false;
@@ -19,7 +19,7 @@ public abstract class CharacterBrain : MonoBehaviour
     protected float health { get; set; }
     protected float maxHealth { get; set; }
     [SerializeField] protected bool onAniAttck = false;
-    protected Action<bool> deadAction = null;
+    protected Action deadAction = null;
     public bool Alive => health > 0;
     public virtual string Name => characterName;
     protected virtual void Awake()
@@ -71,16 +71,17 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         Vector3 dir = direction.transform.position - transform.position;
         if (dir.normalized.x > 0)
-            tranformOfAni.rotation = Quaternion.Euler(-10, 180, 0);
+            tranformOfAni.transform.rotation = Quaternion.Euler(-10, 180, 0);
         else if (dir.normalized.x < 0)
-            tranformOfAni.rotation = Quaternion.Euler(10, 0, 0);
+            tranformOfAni.transform.rotation = Quaternion.Euler(10, 0, 0);
     }
     protected virtual void OnAttackHit(CharacterBrain target)
     {
         Vector3 dir = transform.position - target.transform.position;
         if (!target.Alive)
         {
-            target.deadAction?.Invoke(true);
+            target.ImpactForce(dir.normalized * -20);
+            target.deadAction?.Invoke();
             return;
         }
         float force = target.characterAttack.Weight - characterAttack.PowerForce;
@@ -101,10 +102,10 @@ public abstract class CharacterBrain : MonoBehaviour
         });
     }
     public abstract void EffectHit(Vector3 dir);
-    public abstract void Dead(bool isDead);
+    public abstract void Dead();
     public void ImpactForce(Vector3 dir)
     {
-        this.LoopDelayCall(0.3f, () =>
+        this.LoopDelayCall(0.4f, () =>
         {
             agent.AgentBody.Move(dir * Time.deltaTime);
         });

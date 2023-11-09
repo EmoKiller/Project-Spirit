@@ -12,7 +12,7 @@ public class EneScamp : Enemy
     }
     private void Init()
     {
-        maxHealth = 2;
+        maxHealth = characterAttack.HP;
         health = maxHealth;
         healthBar.SetHealh(maxHealth);
         slash.SetSizeBox(4, 1, 4);
@@ -20,6 +20,7 @@ public class EneScamp : Enemy
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         slash.AddActionAttack(OnAttackHit);
         deadAction = Dead;
+        deadBody.SetActive(false);
     }
     
 }

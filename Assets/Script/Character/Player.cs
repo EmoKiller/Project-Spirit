@@ -73,13 +73,14 @@ public class Player : CharacterBrain
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
         Rotation();
-        characterAnimator.SetFloat("horizontal", 0);
-        characterAnimator.SetFloat("vertical", 0);
-        //characterAnimator.SetFloat("Dir", direction.localPosition.x);
         characterAnimator.SetTrigger("" + combo);
         Vector3 vec = direction.position - transform.position;
-        
-        agent.AgentBody.Move(vec.normalized * 0);
+        this.LoopDelayCall(0.1f, () =>
+        {
+            MoveTo(vec.normalized + transform.position);
+            characterAnimator.SetFloat("horizontal", 0);
+            characterAnimator.SetFloat("vertical", 0);
+        });
     }
     protected override void OnAttackHit(CharacterBrain target)
     {
@@ -113,10 +114,10 @@ public class Player : CharacterBrain
         base.TakeDamage(damage);
         //Debug.Log("Player takeDamage" + damage);
     }
-    public override void Dead(bool isDead)
+    public override void Dead()
     {
         Debug.Log("Player Dead");
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
         
     }
     public void StartAni()

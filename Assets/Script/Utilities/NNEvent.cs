@@ -74,3 +74,17 @@ public class NNEvent<T1, T2, T3, T4> : NNCommond
         act((T1)args[0], (T2)args[1], (T3)args[2], (T4)args[3]);
     }
 }
+public class NNEvent<T1, T2, T3, T4, T5> : NNCommond
+{
+    private Action<T1, T2, T3, T4, T5> act;
+    public NNEvent(Action<T1, T2, T3, T4, T5> act, Action<Exception> onException = null)
+        : base(onException)
+    {
+        this.act = act;
+    }
+
+    protected override void Publish(object[] args)
+    {
+        act((T1)args[0], (T2)args[1], (T3)args[2], (T4)args[3], (T5)args[4]);
+    }
+}
