@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
+  m_Name: 3-Vampiric Axe
+  m_EditorClassIdentifier: 
+  projectTile: {fileID: 0}
+  NameWeapon: Vampiric Axe
+  QuoteWeapon: Consumer of the blood it spills
+  DescriptionWeapon: Chance to heal the wielder using the life force of a slain foe.
+  Speed: 1
+  SizeSlashBox: {x: 4, y: 1, z: 4}
+  AttackRange: 2
+  ListDamage:
+  - 2
+  - 2
+  - 2

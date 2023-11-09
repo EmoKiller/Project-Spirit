@@ -6,7 +6,7 @@ public class DeathPenaltyPedestal : OnTringgerWaitAction
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        EventDispatcher.Addlistener<float>(ListScript.DeathPenaltyPedestal,Events.UpdateValue, UpdateValue);
+        EventDispatcher.Addlistener<float>(ListScript.TypeButton,Events.UpdateValue, UpdateValue);
     }
     protected override void OnTriggerExit(Collider other)
     {

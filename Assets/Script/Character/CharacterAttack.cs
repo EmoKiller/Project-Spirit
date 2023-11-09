@@ -9,8 +9,7 @@ public class CharacterAttack : MonoBehaviour
     public string NameWeapon => currentWeapon.weaponObject.NameWeapon;
     public string QuoteWeapon => currentWeapon.weaponObject.QuoteWeapon;
     public string DescriptionWeapon => currentWeapon.weaponObject.DescriptionWeapon;
-
-    public float Damage = 0;
+    public float Speed => currentWeapon.weaponObject.Speed;
     public float AttackRange => currentWeapon.weaponObject.AttackRange;
     public float HP => HPObject.HP;
     public float PowerForce => HPObject.PowerForce;
@@ -19,11 +18,18 @@ public class CharacterAttack : MonoBehaviour
     public void Initialized()
     {
         currentWeapon = GetComponentInChildren<Weapon>();
-        Damage = currentWeapon.weaponObject.TotalDamage();
+    }
+    public void Initialized(Weapon weapon)
+    {
+        currentWeapon = weapon;
     }
     public void Attack(Vector3 target)
     {
         currentWeapon.Attack(target);
+    }
+    public float TotalDamage()
+    {
+        return currentWeapon.weaponObject.TotalDamage();
     }
     
 

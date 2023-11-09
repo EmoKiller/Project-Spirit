@@ -18,7 +18,7 @@ public class Enemy : CharacterBrain
     protected virtual void Start()
     {
         SetTypeSlash("Enemy");
-        
+        characterAttack.Initialized();
         //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
     }
     protected virtual void Update()
@@ -101,6 +101,7 @@ public class Enemy : CharacterBrain
         deadBody.SetActive(true);
         healthBar.gameObject.SetActive(false);
         tranformOfAni.SetActive(false);
+        slash.gameObject.SetActive(false);
         deadBody.transform.DOLocalMoveY(1.5f, 0.1f).OnComplete(() =>
         {
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>

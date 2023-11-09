@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : CharacterBrain
 {
+    [SerializeField]private GameObject hand;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
@@ -31,6 +32,7 @@ public class Player : CharacterBrain
         characterAnimator.AddStFishAni(StartAni,StopAni);
         slash.AddActionAttack(OnAttackHit);
         deadAction = Dead;
+        characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
     }
     private void Update()
     {

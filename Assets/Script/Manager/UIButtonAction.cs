@@ -109,7 +109,7 @@ public class UIButtonAction : MonoBehaviour
         while (amount <= 1)
         {
             amount += 1f * Time.deltaTime;
-            EventDispatcher.Publish(ListScript.DeathPenaltyPedestal,Events.UpdateValue, amount);
+            EventDispatcher.Publish(ListScript.TypeButton, Events.UpdateValue, amount);
             FillUpdate(amount);
             yield return null;
         }
@@ -119,7 +119,7 @@ public class UIButtonAction : MonoBehaviour
         while (amount > 0)
         {
             amount -= 1f * Time.deltaTime;
-            EventDispatcher.Publish(ListScript.DeathPenaltyPedestal, Events.UpdateValue, amount);
+            EventDispatcher.Publish(ListScript.TypeButton, Events.UpdateValue, amount);
             FillUpdate(amount);
             yield return null;
         }

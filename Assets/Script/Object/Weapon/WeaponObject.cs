@@ -27,6 +27,6 @@ public class WeaponObject : ScriptableObject
         {
             a += Damage;
         }
-        return a;
+        return a/ListDamage.Count;
     }
 }

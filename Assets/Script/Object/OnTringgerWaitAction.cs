@@ -14,7 +14,6 @@ public class OnTringgerWaitAction : MonoBehaviour
         EventDispatcher.Publish(ListScript.UIButtonAction, Events.SwitchImageButton, typeButton);
         EventDispatcher.Addlistener(ListScript.OnTringgerWaitAction, Events.OnTringgerActionItems, OnTringgerActionItems);
         EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.AddListener);
-        Debug.Log(text);
     }
     protected virtual void OnTriggerExit(Collider other)
     {
