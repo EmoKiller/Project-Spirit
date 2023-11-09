@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
 
 public static class EventDispatcher
 {
@@ -91,6 +88,22 @@ public static class EventDispatcher
         else
         {
             Events[scriptName].Add(eventName, new NNEvent<T1, T2, T3, T4>(act, exception));
+        }
+    }
+    public static void Addlistener<T1, T2, T3, T4, T5>(Enum scriptName, Enum eventName, Action<T1, T2, T3, T4, T5> act, Action<Exception> exception = null)
+    {
+        if (!Events.ContainsKey(scriptName))
+        {
+            Events.Add(scriptName, new Dictionary<Enum, NNCommond>());
+        }
+
+        if (Events[scriptName].ContainsKey(eventName))
+        {
+            Events[scriptName][eventName] = new NNEvent<T1, T2, T3, T4, T5>(act, exception);
+        }
+        else
+        {
+            Events[scriptName].Add(eventName, new NNEvent<T1, T2, T3, T4, T5>(act, exception));
         }
     }
 
@@ -231,6 +244,33 @@ public static class EventDispatcher
         {
             if (eventOnScript.Value.ContainsKey(eventName))
                 eventOnScript.Value[eventName].Act(arg1, arg2, arg3, arg4);
+        }
+    }
+    public static void Publish<T1, T2, T3, T4 ,T5>(Enum scriptName, Events eventName, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+    {
+        if (Events.ContainsKey(scriptName))
+        {
+            if (Events[scriptName].ContainsKey(eventName))
+            {
+                Events[scriptName][eventName].Act(arg1, arg2, arg3, arg4, arg5);
+            }
+            else
+            {
+                LogTool.LogErrorEditorOnly($"{scriptName.ToString()} không có event {eventName}");
+            }
+        }
+        else
+        {
+            LogTool.LogErrorEditorOnly($"{scriptName.ToString()} chưa được đăng ký");
+        }
+    }
+
+    public static void Publish<T1, T2, T3, T4, T5>(Events eventName, T1 arg1, T2 arg2, T3 arg3, T4 arg4,T5 arg5)
+    {
+        foreach (KeyValuePair<Enum, Dictionary<Enum, NNCommond>> eventOnScript in Events)
+        {
+            if (eventOnScript.Value.ContainsKey(eventName))
+                eventOnScript.Value[eventName].Act(arg1, arg2, arg3, arg4, arg5);
         }
     }
     #endregion

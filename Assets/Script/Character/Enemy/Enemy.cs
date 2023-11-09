@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class Enemy : CharacterBrain
     [SerializeField] protected float playerDetectionRange = 15f;
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected HealthBar healthBar;
+    [SerializeField] protected GameObject deadBody;
     protected override void Awake()
     {
         base.Awake();
@@ -94,10 +96,19 @@ public class Enemy : CharacterBrain
     //    Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
 
     //}
-    public override void Dead(bool a)
+    public override void Dead()
     {
-        
-        Destroy(gameObject);
+        deadBody.SetActive(true);
+        healthBar.gameObject.SetActive(false);
+        tranformOfAni.SetActive(false);
+        deadBody.transform.DOLocalMoveY(1.5f, 0.1f).OnComplete(() =>
+        {
+            deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
+            {
+                //Instantiate(deadBody, transform.position,deadBody.transform.rotation);
+                //Destroy(gameObject);
+            });
+        });
     }
     public override void EffectHit(Vector3 dir)
     {

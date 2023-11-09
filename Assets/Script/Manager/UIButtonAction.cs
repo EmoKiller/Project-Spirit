@@ -55,10 +55,18 @@ public class UIButtonAction : MonoBehaviour
     }
     private void SwitchImageButton(TypeShowButton value)
     {
-        if (value == TypeShowButton.Button)
-            buttonE.gameObject.SetActive(true);
-        else if (value == TypeShowButton.Mouse)
-            mouseClick.gameObject.SetActive(true);
+        switch (value)
+        {
+            case TypeShowButton.Talk:
+                buttonE.gameObject.SetActive(true);
+                break;
+            case TypeShowButton.Items:
+                mouseClick.gameObject.SetActive(true);
+                break;
+            case TypeShowButton.TakeWeapon:
+                buttonE.gameObject.SetActive(true);
+                break;
+        }
     }
     private float FillValue()
     {
@@ -71,7 +79,7 @@ public class UIButtonAction : MonoBehaviour
     private void UpdateText(string str)
     {
         gameObject.SetActive(true);
-        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 25), 110);
+        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 33), 110);
         rectShowText.sizeDelta = rectButton.sizeDelta;
         text.text = str;
     }

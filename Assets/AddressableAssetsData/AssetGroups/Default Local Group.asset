@@ -37,10 +37,6 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Object/HitFX_0.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 9f44054b5a275f645b0e027c82da64b1
-    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_0.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 7d74b11433f2b064f86775125eb99995
     m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_1.prefab
     m_ReadOnly: 0

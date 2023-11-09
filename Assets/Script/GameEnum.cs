@@ -1,6 +1,8 @@
 public enum ListScript
 {
     Player,
+    InfoWeapon,
+    WeaponPodium,
     CameraFollow,
     CameraChangeLookAt,
     OnTringgerWaitAction,
@@ -40,14 +42,16 @@ public enum Events
     UpdateColor,
     UpdateTransform,
     UpdateTransformPlayer,
+    SetInfoWeapon,
     OnTringgerActionItems,
     OnPlayerActionItemsButtonDown,
     OnPlayerActionItemsButtonUp,
 }
 public enum TypeShowButton
 {
-    Button,
-    Mouse
+    Talk,
+    Items,
+    TakeWeapon
 }
 public enum AttributeTypeOfHero
 {

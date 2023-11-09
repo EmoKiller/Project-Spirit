@@ -2143,7 +2143,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5833333
+  - time: 0.48333332
     functionName: Step4AniAtk
     data: 
     objectReferenceParameter: {fileID: 0}
