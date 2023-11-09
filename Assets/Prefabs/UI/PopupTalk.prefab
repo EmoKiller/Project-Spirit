@@ -1083,7 +1083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2536185998235716080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1119,6 +1119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageL: {fileID: 0}
   imageR: {fileID: 0}
+  imageUpDownDamage: {fileID: 0}
+  imageUpDownSpeed: {fileID: 0}
   textNameWeapon: {fileID: 0}
   textQuoteWeapon: {fileID: 0}
   textDescriptionWeapon: {fileID: 0}

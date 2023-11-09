@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
+  m_Name: 0-Apostate'sCleaver 1
+  m_EditorClassIdentifier: 
+  projectTile: {fileID: 2891819677680002082, guid: b8e5901594fbcb741b7f7f533016414c, type: 3}
+  NameWeapon: Apostate's Cleaver
+  QuoteWeapon: A mighty tool of unstoppable brutality.
+  DescriptionWeapon: Swing with intent.
+  Speed: 0.9
+  SizeSlashBox: {x: 4, y: 1, z: 4}
+  AttackRange: 2
+  ListDamage:
+  - 2
+  - 2
+  - 2

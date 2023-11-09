@@ -15,7 +15,8 @@ public enum ListScript
     PopUpTalk,
     VideoPlayer,
     WhoWait,
-    Bruter
+    Bruter,
+    TypeButton
 }
 public enum Events
 {
