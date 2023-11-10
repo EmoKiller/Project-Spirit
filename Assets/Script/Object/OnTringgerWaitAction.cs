@@ -4,7 +4,7 @@ public class OnTringgerWaitAction : MonoBehaviour
 {
     public string text = "";
     public TypeShowButton typeButton;
-    protected bool actioned = false;
+    [SerializeField]protected bool actioned = false;
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (actioned)
@@ -21,7 +21,8 @@ public class OnTringgerWaitAction : MonoBehaviour
     }
     protected virtual void OnTringgerActionItems()
     {
-
+        if (actioned)
+            return;
     }
     protected void RemoveEvents()
     {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WeaponPodium : OnTringgerWaitAction
 {
@@ -13,6 +14,8 @@ public class WeaponPodium : OnTringgerWaitAction
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
+        if (actioned)
+            return;
         GetDamagePlayer(other);
         EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.SetInfoWeapon, true);
         EventDispatcher.Addlistener<float>(ListScript.TypeButton, Events.UpdateValue, UpdateValue);
@@ -22,11 +25,25 @@ public class WeaponPodium : OnTringgerWaitAction
     {
         base.OnTriggerExit(other);
         EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.SetInfoWeapon, false);
+        EventDispatcher.Publish(ListScript.InfoWeapon, Events.SetDefault);
     }
     protected override void OnTringgerActionItems()
     {
-        if(num>=1)
-            Debug.Log("Action");
+        base.OnTringgerActionItems();
+        if (actioned)
+        {
+            return;
+        }
+        if (num >= 1)
+        {
+            EventDispatcher.Publish(ListScript.Player,Events.ChangeWeapon,weapon);
+            EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.SetInfoWeapon, false);
+            EventDispatcher.Publish(ListScript.UIButtonAction, Events.SetDefaultButton);
+            weapon.gameObject.SetActive(false);
+            actioned = true;
+
+        }
+            
     }
     private void UpdateValue(float value)
     {

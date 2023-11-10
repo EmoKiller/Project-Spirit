@@ -47,3 +47,5 @@ MonoBehaviour:
   Weapon: Assets/Prefabs/Weapon/Sword/AdvancedShortSword.prefab
   ShowHPEnemy: Assets/Prefabs/UI/ShowHPEnemy.prefab
   Enemy: Assets/Prefabs/Enemy/EnemyHuman.prefab
+  SlashHit: 
+  hearts: Assets/Prefabs/UI/Heart/Size/0-Heart_Nomal.prefab

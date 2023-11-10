@@ -113,6 +113,7 @@ public class Enemy : CharacterBrain
     }
     public override void EffectHit(Vector3 dir)
     {
-        AssetManager.Instance.InstantiateItems(AssetManager.Instance.SlashHit,transform, dir);
+        Debug.Log(GameConstants.Slash);
+        AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
 }

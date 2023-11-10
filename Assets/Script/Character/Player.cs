@@ -19,6 +19,7 @@ public class Player : CharacterBrain
         EventDispatcher.Addlistener(ListScript.Player,Events.TriggerAction, Detention);
         EventDispatcher.Addlistener<string>(ListScript.Player, Events.TriggerAni, TriggerAni);
         EventDispatcher.Addlistener<Transform,float>(ListScript.Player, Events.MoveTo, SetMoveWayPoint);
+        EventDispatcher.Addlistener<Weapon>(ListScript.Player,Events.ChangeWeapon, ChangeWeapon);
     }
     private void OnEnable()
     {
@@ -48,11 +49,24 @@ public class Player : CharacterBrain
             if (onAniAttck)
                 return;
             Rotation();
-            direction.position = new Vector3(Horizontal, 0, Vertical).normalized + transform.position;
-            characterAnimator.SetFloat("horizontal", Horizontal);
+            direction.localPosition = new Vector3(Horizontal, 0, Vertical).normalized;
             characterAnimator.SetFloat("vertical", Vertical);
+            characterAnimator.SetFloat("horizontal", Horizontal);
+            characterAnimator.SetFloat("UpDown", direction.transform.localPosition.z);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
         }
+    }
+    
+    private void ChangeWeapon(Weapon weapon)
+    {
+        Weapon wp = hand.GetComponentInChildren<Weapon>();
+        if (wp != null)
+        {
+            Instantiate(wp,transform.position,transform.rotation);
+            Destroy(wp.gameObject);
+        }
+        Instantiate(weapon, hand.transform);
+
     }
     public override void SetMoveWayPoint(Transform wayPoint, float time)
     {
@@ -132,7 +146,8 @@ public class Player : CharacterBrain
     }
     public override void EffectHit(Vector3 dir)
     {
-        AssetManager.Instance.InstantiateItems(AssetManager.Instance.SlashHit, transform, dir);
+        Debug.Log(GameConstants.Slash);
+        AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
     public Transform ReturnTrans()
     {

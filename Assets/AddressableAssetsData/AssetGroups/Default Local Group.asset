@@ -17,26 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d93c371f3cd853c4f9aa4bdf16db8744
   m_SerializeEntries:
-  - m_GUID: 257f82ee30dcce649aefb9ab0cfe362e
-    m_Address: Assets/Prefabs/UI/Heart/Heart_Large.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b37d7addbcee43b49948f4f020900002
-    m_Address: Assets/Prefabs/UI/Heart/Heart_Nomal.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a37f4634697c43b4ea5dc4b62e538163
-    m_Address: Assets/Prefabs/UI/Heart/Heart_Nomal_hafl.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 6df02edf5ba863846b4cab0020aa8839
-    m_Address: Assets/Prefabs/Object/SlashHit.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 11699c587010fde46bf0580559aca284
-    m_Address: Assets/Prefabs/Object/HitFX_0.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 7d74b11433f2b064f86775125eb99995
     m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_1.prefab
     m_ReadOnly: 0
@@ -47,6 +27,82 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: ed90832800c3ce44ab3d85e28d457504
     m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 11699c587010fde46bf0580559aca284
+    m_Address: Assets/Prefabs/Object/Slash/HitFX_0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ce171bf5f05a66749863f7cf860842ee
+    m_Address: Assets/Prefabs/UI/Hearts/Red/Empty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1f91125a4de379a42a46ae8386758f2b
+    m_Address: Assets/Prefabs/UI/Hearts/Red/Full.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9ce901f309f1c7f4f866ee03192e3f08
+    m_Address: Assets/Prefabs/UI/Hearts/Red/Half.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7b62a5cc2040d746b2f26d91951a9f8
+    m_Address: Assets/Prefabs/UI/Hearts/RedHalf/Empty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b6475df73c451f743bb8edca86ffa0ea
+    m_Address: Assets/Prefabs/UI/Hearts/RedHalf/Half.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5865f233ce4690544809503da61da77e
+    m_Address: Assets/Prefabs/UI/Hearts/Blue/Empty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 418204121f7d335489fa55290d5069d1
+    m_Address: Assets/Prefabs/UI/Hearts/Blue/Full.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8fa8f0637e98fa8439f1ec0675350dbf
+    m_Address: Assets/Prefabs/UI/Hearts/Blue/Half.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 34d60150f78dba340b60e79d63c13089
+    m_Address: Assets/Prefabs/UI/Hearts/Black/Empty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 54aa069054b74974e976db5bdb4b2405
+    m_Address: Assets/Prefabs/UI/Hearts/Black/Half.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 534cbf8bd19a9984e8253b7c5e1263fd
+    m_Address: Assets/Prefabs/UI/Hearts/AddHalf/Empty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 00413636c81ae934ba73db1243bcfb8a
+    m_Address: Assets/Prefabs/UI/Hearts/AddHalf/Half.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eaa10cf5a09f86a4abd2a47b4f65a5ae
+    m_Address: Assets/Prefabs/UI/Hearts/Add/Empty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a0fc29ca2c0fd284e947c6b4989fbce1
+    m_Address: Assets/Prefabs/UI/Hearts/Add/Full.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ba10e50bd87c02440b2d71b19ae6d6d2
+    m_Address: Assets/Prefabs/UI/Hearts/Add/Half.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b37d7addbcee43b49948f4f020900002
+    m_Address: Assets/Prefabs/UI/Hearts/Size/HeartObj.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ea0469ec4e26c54ca87263531369a47
+    m_Address: Assets/Prefabs/UI/Hearts/BlueHalf/Empty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 23deecbe7e92e2544a6145022db63d72
+    m_Address: Assets/Prefabs/UI/Hearts/BlueHalf/Half.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

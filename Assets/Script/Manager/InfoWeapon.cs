@@ -1,5 +1,6 @@
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,10 +18,11 @@ public class InfoWeapon : MonoBehaviour
     private void OnEnable()
     {
         EventDispatcher.Addlistener<string, string, string, float, float>(ListScript.InfoWeapon, Events.UpdateValue, UpdateInfoWeapon);
+        EventDispatcher.Addlistener(ListScript.InfoWeapon, Events.SetDefault, SetDefault);
     }
     private void UpdateInfoWeapon(string nameWeapon,string quoteWeapon,string descriptionWeapon, float damage, float speed)
     {
-        imageL.anchoredPosition = new Vector2(nameWeapon.Length * -12, 0); ;
+        imageL.anchoredPosition = new Vector2(nameWeapon.Length * -12, 0);
         imageR.anchoredPosition = new Vector2(nameWeapon.Length * 12, 0);
         textNameWeapon.text = nameWeapon;
         textQuoteWeapon.text = quoteWeapon;
@@ -31,6 +33,14 @@ public class InfoWeapon : MonoBehaviour
         SetUpDownValue(imageUpDownSpeed, speed);
 
     }
+    private void SetDefault()
+    {
+        imageL.anchoredPosition = new Vector2(0, 0);
+        imageR.anchoredPosition = new Vector2(0, 0);
+        imageUpDownDamage.transform.DORotate(new Vector3(0,0,0),0);
+        imageUpDownSpeed.transform.DORotate(new Vector3(0, 0, 0), 0);
+        
+    }
     private void SetUpDownValue(GameObject trans, float damage)
     {
         Image img = trans.GetComponent<Image>();
@@ -39,11 +49,15 @@ public class InfoWeapon : MonoBehaviour
         {
             trans.transform.DORotate(new Vector3(0, 0, -90), 0);
             img.color = Color.green;
+            return;
         }
         else if (damage < 0)
         {
             trans.transform.DORotate(new Vector3(0, 0, 90), 0);
             img.color = Color.red;
+            return;
         }
+        else
+            img.color = Color.white;
     }
 }

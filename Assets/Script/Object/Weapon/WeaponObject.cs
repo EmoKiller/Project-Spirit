@@ -8,6 +8,7 @@ public class WeaponObject : ScriptableObject
     public GameObject projectTile = null;
 
     [Header("Comfinguration")]
+    public string LevelWeapon = "";
     public string NameWeapon = "";
     public string QuoteWeapon = "";
     public string DescriptionWeapon = "";
