@@ -15,6 +15,7 @@ public class AssetManager : MonoBehaviour
     public string ShowHPEnemy;
     public string Enemy;
     public string SlashHit;
+    public string hearts;
     //public void SpawnItems(Vector3 position, Quaternion quaternion)
     //{
     //    Weapon.InstantiateAsync(position, quaternion);
@@ -42,6 +43,17 @@ public class AssetManager : MonoBehaviour
             GameObject obj = Instantiate(item, pos);
             obj.transform.position = dir + new Vector3(0, 1f, 0);
         };
+    }
+    public Sprite Instantia()
+    {
+        //Debug.Log("Assets/Prefabs/UI/Heart/Size/0-Heart_Nomal.prefab");
+        Sprite item = null;
+        Addressables.LoadAssetAsync<Sprite>("Assets/Prefabs/UI/Hearts/Red/Empty.asset").Completed += (handle) =>
+        {
+            item = handle.Result;
+            
+        };
+        return item;
     }
     private void OnDestroy()
     {

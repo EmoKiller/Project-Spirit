@@ -389,6 +389,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IconTexture_0
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 735
+        width: 102
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8497e8ea55c1f7241959463858fba535
+      internalID: -400725843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_1
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 771
+        width: 72
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5d7a7b949985b478a8687ca4ba1b29
+      internalID: -915333926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_2
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 832
+        width: 84
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08998518a6593844bb4b8695e580c534
+      internalID: -226527653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_3
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 835
+        width: 86
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe89b636e8b94ab4b8d55a8401980357
+      internalID: -24547254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_4
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 728
+        width: 89
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb730ec4b2b15b4b856adbb3ce9a3d3
+      internalID: 1243476249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_5
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 546
+        width: 112
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc6bf8ce8fdc13e4383d5e68ed089937
+      internalID: -1101967534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_6
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1164
+        width: 65
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73addf17fc37a34468dce7cd57be6b76
+      internalID: 1349627391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -400,6 +547,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      IconTexture_6: 1349627391
+      IconTexture_4: 1243476249
+      IconTexture_5: -1101967534
       Heart_Haft_Empty: 704378473
       Heart_Blue_full: 1885248175
       Heart_Empty: -728717398
@@ -408,10 +558,14 @@ TextureImporter:
       Heart_Red_Half_HL: 845212517
       Heart_Red_Half_empty_HL: 1210785852
       Heart_Red_Half_empty: 1098774387
+      IconTexture_1: -915333926
       Heart_Red_Half: 1756483838
       Heart_Haft_Empty_HL: 1469014962
+      IconTexture_3: -24547254
       Heart_Red_full_HL: -376282679
+      IconTexture_0: -400725843
       Heart_Empty_HL: 2135175801
+      IconTexture_2: -226527653
       Heart_Red_full: -1710007018
   spritePackingTag: 
   pSDRemoveMatte: 0

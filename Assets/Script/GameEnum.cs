@@ -20,6 +20,7 @@ public enum ListScript
 }
 public enum Events
 {
+    SetDefault,
     TriggerAction,
     TriggerAction2,
     TriggerAni,
@@ -37,6 +38,7 @@ public enum Events
     Close,
     OpenPopup,
     ClosePopup,
+    ChangeWeapon,
     UiSelect,
     UpdateText,
     UpdateValue,

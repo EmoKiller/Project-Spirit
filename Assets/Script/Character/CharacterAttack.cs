@@ -6,6 +6,7 @@ public class CharacterAttack : MonoBehaviour
 {
     [SerializeField] private Weapon currentWeapon = null;
     [SerializeField] private HPObject HPObject = null;
+    public string LevelWeapon => currentWeapon.weaponObject.LevelWeapon;
     public string NameWeapon => currentWeapon.weaponObject.NameWeapon;
     public string QuoteWeapon => currentWeapon.weaponObject.QuoteWeapon;
     public string DescriptionWeapon => currentWeapon.weaponObject.DescriptionWeapon;

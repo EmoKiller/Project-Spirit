@@ -18,8 +18,11 @@ public class DeathPenaltyPedestal : OnTringgerWaitAction
     }
     protected override void OnTringgerActionItems()
     {
+        base.OnTringgerActionItems();
         if (actioned)
+        {
             return;
+        }
         if (num >= 1)
         {
             actioned = true;
