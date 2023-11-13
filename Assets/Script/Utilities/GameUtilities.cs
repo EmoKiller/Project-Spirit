@@ -33,4 +33,9 @@ public static class GameUtilities
             yield return null;
         }
     }
+    public static void ReSetTransform(this Transform trans)
+    {
+        trans.position = Vector3.zero;
+        trans.eulerAngles = new Vector3(15,0,0);
+    }
 }
