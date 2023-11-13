@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
   m_Name: 6-Godly Axe
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
+  projectTile: {fileID: 1425156324384342684, guid: 07a6368cc3c32ea4b9ae06c3f0e4882b, type: 3}
+  IconWeapon: {fileID: -840916217, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Godly Axe
   QuoteWeapon: The blade that severed the Lands of the Old Faith from the world.
   DescriptionWeapon: Deal significantly more damage than mortal weapons.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 3
   - 3

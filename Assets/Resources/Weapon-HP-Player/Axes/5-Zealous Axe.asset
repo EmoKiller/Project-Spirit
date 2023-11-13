@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
   m_Name: 5-Zealous Axe
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
+  projectTile: {fileID: 280421074899777835, guid: 2fb6b8adc9f1a5c42b971c1521a3a9a1, type: 3}
+  IconWeapon: {fileID: 1775588204, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Zealous Axe
   QuoteWeapon: Used by the great Fanatic to execute heretics.
   DescriptionWeapon: Collected fervor will also increase the divine inspiration bar.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2

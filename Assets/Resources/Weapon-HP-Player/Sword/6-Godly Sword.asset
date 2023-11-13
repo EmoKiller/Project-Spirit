@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 6-Godly Sword
   m_EditorClassIdentifier: 
   projectTile: {fileID: 4556754418376368234, guid: 701ad12d06847a04e9eb418de6b8565e, type: 3}
+  IconWeapon: {fileID: 1566554370, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Godly Sword
   QuoteWeapon: Once used to draw Godly blood...
   DescriptionWeapon: Deal significantly more damage than mortal weapons.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2

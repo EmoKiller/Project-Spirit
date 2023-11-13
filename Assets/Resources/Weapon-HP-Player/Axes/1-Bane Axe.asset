@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
   m_Name: 1-Bane Axe
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
+  projectTile: {fileID: 4474555231763220490, guid: f6eb4eb53963e9f499777e2a6bc48fca, type: 3}
+  IconWeapon: {fileID: 634892512, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Bane Axe
   QuoteWeapon: Once struck by the toxins, one begs for the blade.
   DescriptionWeapon: Chance of poisoning enemies when attacking.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2

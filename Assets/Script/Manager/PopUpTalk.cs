@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.tvOS;
 
 public class PopUpTalk : MonoBehaviour
 {
@@ -22,7 +21,6 @@ public class PopUpTalk : MonoBehaviour
     {
         if (Count >= popup.ListText.Count)
         {
-            Debug.Log("Events");
             events?.Invoke();
             EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.ClosePopup);
             EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.UiSelect, false);

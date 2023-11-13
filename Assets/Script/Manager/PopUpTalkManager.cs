@@ -34,7 +34,7 @@ public class PopUpTalkManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !infoWeapon)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             EventDispatcher.Publish(ListScript.PopUpTalk, Events.OpenPopup);
         }

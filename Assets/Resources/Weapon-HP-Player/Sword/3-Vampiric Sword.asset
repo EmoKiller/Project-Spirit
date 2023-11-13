@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 3-Vampiric Sword
   m_EditorClassIdentifier: 
   projectTile: {fileID: 2035612416735341301, guid: 80fa2e6cf2c32d64daf9c50abb740002, type: 3}
+  IconWeapon: {fileID: -1014418662, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Vampiric Sword
   QuoteWeapon: Vitality to those bold enough to take it.
   DescriptionWeapon: Chance to heal the wielder using the life force of a slain foe.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 1
   - 1

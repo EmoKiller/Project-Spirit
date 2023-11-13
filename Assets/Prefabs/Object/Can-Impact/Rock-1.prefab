@@ -348,7 +348,9 @@ GameObject:
   - component: {fileID: 1635935518877544839}
   - component: {fileID: 1635935518877544856}
   - component: {fileID: 1635935518877544837}
-  m_Layer: 0
+  - component: {fileID: 6422834158360615853}
+  - component: {fileID: -4533412317694549740}
+  m_Layer: 9
   m_Name: Rock-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,3 +442,31 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &6422834158360615853
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635935518877544858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-4533412317694549740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635935518877544858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99652b99b044a654e961742d75bbec71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpObject: {fileID: 11400000, guid: d99492d9a43dd5547adbaa81994e1a91, type: 2}
+  _animator: {fileID: 0}
+  currentHp: 0

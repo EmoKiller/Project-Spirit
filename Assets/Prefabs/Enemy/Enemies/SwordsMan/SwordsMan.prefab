@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
-  HPObject: {fileID: 11400000, guid: 69a871e574e62c0489eaf882dfc81440, type: 2}
+  hpObject: {fileID: 11400000, guid: 69a871e574e62c0489eaf882dfc81440, type: 2}
 --- !u!195 &452100598757916091
 NavMeshAgent:
   m_ObjectHideFlags: 0

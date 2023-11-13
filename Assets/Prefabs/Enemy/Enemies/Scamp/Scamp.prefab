@@ -841,7 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
-  HPObject: {fileID: 11400000, guid: 272f679190ca7824ca1a3ebdc5c986ac, type: 2}
+  hpObject: {fileID: 11400000, guid: 272f679190ca7824ca1a3ebdc5c986ac, type: 2}
 --- !u!195 &1873784280435111062
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1052,6 +1052,10 @@ PrefabInstance:
     - target: {fileID: 1314605244482068444, guid: c9b4e10987a0e4d4bbc2c69a92e52dd1, type: 3}
       propertyPath: m_Name
       value: Dead_Humans
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314605244482068444, guid: c9b4e10987a0e4d4bbc2c69a92e52dd1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b4e10987a0e4d4bbc2c69a92e52dd1, type: 3}

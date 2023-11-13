@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 0-Apostate'sCleaver 1
   m_EditorClassIdentifier: 
   projectTile: {fileID: 2891819677680002082, guid: b8e5901594fbcb741b7f7f533016414c, type: 3}
+  IconWeapon: {fileID: 188978791, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Apostate's Cleaver
   QuoteWeapon: A mighty tool of unstoppable brutality.
   DescriptionWeapon: Swing with intent.
   Speed: 0.9
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2

@@ -513,7 +513,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9176417377037823991}
-  m_Layer: 0
+  - component: {fileID: 6117741827748399916}
+  - component: {fileID: 6939994865381790602}
+  m_Layer: 9
   m_Name: Grass-Dungeon1-gr-aton0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,6 +544,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!65 &6117741827748399916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176417377037823989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6939994865381790602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176417377037823989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99652b99b044a654e961742d75bbec71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpObject: {fileID: 11400000, guid: 79121e34105b8a34b8bcbfc3f96c25c2, type: 2}
+  _animator: {fileID: 0}
+  currentHp: 0
 --- !u!1 &9176417377079635471
 GameObject:
   m_ObjectHideFlags: 0
