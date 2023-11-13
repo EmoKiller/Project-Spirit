@@ -14,6 +14,7 @@ public class UIButtonAction : MonoBehaviour
     [SerializeField] private Image fill;
     [SerializeField] private RectTransform rectButton => GetComponent<RectTransform>();
     [SerializeField] private RectTransform rectShowText;
+    [SerializeField] private RectTransform thisTransform;
     Coroutine fillIncreaseAction;
     Coroutine fillReduceAction;
     private void Start()
@@ -79,9 +80,10 @@ public class UIButtonAction : MonoBehaviour
     private void UpdateText(string str)
     {
         gameObject.SetActive(true);
-        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 33), 110);
+        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 24), 110);
         rectShowText.sizeDelta = rectButton.sizeDelta;
         text.text = str;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(thisTransform);
     }
     private void ResetButton()
     {

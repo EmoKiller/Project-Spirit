@@ -40,6 +40,7 @@ public class Chaser : Enemy
     }
     private void MoveToWards(Transform transA,Transform transB)
     {
+        //transA.position = new Vector3(direction);
         if (Vector3.Distance(transA.position, transB.position) > distance)
         {
             transA.position = Vector3.MoveTowards(transA.position, transB.position, Time.deltaTime * 25);

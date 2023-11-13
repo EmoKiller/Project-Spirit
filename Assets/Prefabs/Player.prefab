@@ -1060,8 +1060,8 @@ MonoBehaviour:
   - {fileID: 6020437238072771947}
   - {fileID: 6020437237139571013}
   m_Bounds:
-    m_Center: {x: 0.4140412, y: -0.032340527, z: 0.025957262}
-    m_Extent: {x: 0.2926034, y: 0.13668174, z: 0.003922714}
+    m_Center: {x: 0.4140411, y: -0.032340527, z: 0.025957977}
+    m_Extent: {x: 0.2926033, y: 0.13668174, z: 0.003922714}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   - {fileID: 6020437237553006157}
   - {fileID: 6020437237657868810}
   m_Bounds:
-    m_Center: {x: 0.43869197, y: -0.043925077, z: 0.031982444}
+    m_Center: {x: 0.43869203, y: -0.043925077, z: 0.031982683}
     m_Extent: {x: 0.2850889, y: 0.13664138, z: 0.0036525857}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2168,8 +2168,8 @@ MonoBehaviour:
   - {fileID: 6020437239192444889}
   - {fileID: 6020437239249244293}
   m_Bounds:
-    m_Center: {x: 0.029805064, y: 0.4879695, z: 0.005638903}
-    m_Extent: {x: 0.7177901, y: 0.48141694, z: 0.0057405867}
+    m_Center: {x: 0.029805064, y: 0.4879694, z: 0.0056391465}
+    m_Extent: {x: 0.7177901, y: 0.48141694, z: 0.0057408204}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2721,7 +2721,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.12
+  m_Time: 0.17
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2

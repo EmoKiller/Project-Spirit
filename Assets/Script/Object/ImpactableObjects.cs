@@ -11,7 +11,6 @@ public class ImpactableObjects : MonoBehaviour
     private void Start()
     {
         currentHp = hp;
-        Debug.Log(currentHp);
     }
     private void OnTriggerEnter(Collider other)
     {

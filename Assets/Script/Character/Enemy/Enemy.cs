@@ -44,6 +44,10 @@ public class Enemy : CharacterBrain
         //if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
         //    onArried?.Invoke();
     }
+    public void DirectionToTarget()
+    {
+
+    }
     public void Push()
     {
         if (Distance() <= characterAttack.AttackRange)

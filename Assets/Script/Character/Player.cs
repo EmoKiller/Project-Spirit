@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : CharacterBrain
@@ -62,8 +63,8 @@ public class Player : CharacterBrain
         Weapon wp = hand.GetComponentInChildren<Weapon>();
         if (wp != null)
         {
-            Instantiate(wp,transform.position,transform.rotation);
-            Destroy(wp.gameObject);
+            wp.transform.SetParent(null);
+            wp.transform.ReSetTransform();
         }
         Instantiate(weapon, hand.transform);
 
