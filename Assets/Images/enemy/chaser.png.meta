@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,282 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: chaser_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 184
+        height: 197
+      alignment: 9
+      pivot: {x: 0.48036966, y: 0.029401982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84008f9d8a4c4f341b58dfbd99eb6303
+      internalID: 1947601636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 0
+        width: 170
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5070824, y: 0.04850093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a232f3103649b4f4c8f19dbbaccd5977
+      internalID: -329729273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 0
+        width: 166
+        height: 187
+      alignment: 9
+      pivot: {x: 0.97507155, y: 0.5160963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043ea148cbb7ecc49a08b9d4cf149cc7
+      internalID: 1806656093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_3
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 0
+        width: 133
+        height: 142
+      alignment: 9
+      pivot: {x: 0.44115844, y: 0.054860093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b5ae781cb9f5a488f1f64022f95a95
+      internalID: 958307104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_4
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 0
+        width: 88
+        height: 90
+      alignment: 9
+      pivot: {x: 0.4931599, y: 0.07191205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b98a2aa6ad4c24badb2fec464937d8
+      internalID: -1074161629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 102
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88454d11581112449a41d973310886e4
+      internalID: -1403205581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_6
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 198
+        width: 68
+        height: 58
+      alignment: 9
+      pivot: {x: 0.18129483, y: 0.21975945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584c7d050f8cb6b4f8dbd41221657d72
+      internalID: -809674152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_7
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 194
+        width: 107
+        height: 62
+      alignment: 9
+      pivot: {x: 0.888205, y: 0.3058073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b357abb57aab0eb418e6e06ecc0c07be
+      internalID: 555660649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_8
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 194
+        width: 68
+        height: 62
+      alignment: 9
+      pivot: {x: 0.88952905, y: 0.83012885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65b2e530853ad644865984c20148b77
+      internalID: 1645655466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_9
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 189
+        width: 63
+        height: 67
+      alignment: 9
+      pivot: {x: 0.44266716, y: 0.89534295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0068d0c3f18ee14fb406dbea5b4dcc0
+      internalID: 820951001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_10
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 141
+        width: 113
+        height: 115
+      alignment: 9
+      pivot: {x: 0.9261944, y: 0.8821386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eafb556502b018e4b8475b04ef758b6b
+      internalID: -23886833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaser_11
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 140
+        width: 70
+        height: 109
+      alignment: 9
+      pivot: {x: 0.91279995, y: 0.8258528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4be4b22c24ffd347b98d67f2a5b2edb
+      internalID: -937959322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bc298b4dedf452648b8702ad6f9565c0
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chaser_5: -1403205581
+      chaser_9: 820951001
+      chaser_6: -809674152
+      chaser_1: -329729273
+      chaser_2: 1806656093
+      chaser_4: -1074161629
+      chaser_10: -23886833
+      chaser_11: -937959322
+      chaser_7: 555660649
+      chaser_0: 1947601636
+      chaser_8: 1645655466
+      chaser_3: 958307104
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

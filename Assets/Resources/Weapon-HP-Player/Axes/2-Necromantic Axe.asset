@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
   m_Name: 2-Necromantic Axe
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
+  projectTile: {fileID: 2058045170614270837, guid: 71b5549edd88a0240b1f8136de877a90, type: 3}
+  IconWeapon: {fileID: 762611402, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Necromantic Axe
   QuoteWeapon: Severed heads still may talk.
   DescriptionWeapon: When slaying a foe summon a ghost that will attack nearby enemies.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2

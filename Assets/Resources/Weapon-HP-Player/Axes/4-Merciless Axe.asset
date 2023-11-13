@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
   m_Name: 4-Merciless Axe
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
+  projectTile: {fileID: 5913413593029785157, guid: 54c863d689148644fb83c22305684baa, type: 3}
+  IconWeapon: {fileID: 45256147, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Merciless Axe
   QuoteWeapon: Once borne by the executioners of old.
   DescriptionWeapon: Chance to deal a Critical Hit when attacking enemies.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2

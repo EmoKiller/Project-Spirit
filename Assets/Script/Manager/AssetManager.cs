@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -16,6 +17,8 @@ public class AssetManager : MonoBehaviour
     public string Enemy;
     public string SlashHit;
     public string hearts;
+
+    public Dictionary<Enemys,GameObject> weapons = null;
     //public void SpawnItems(Vector3 position, Quaternion quaternion)
     //{
     //    Weapon.InstantiateAsync(position, quaternion);

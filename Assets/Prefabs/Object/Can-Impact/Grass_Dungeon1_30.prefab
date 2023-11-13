@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8099913861097641744}
   - component: {fileID: 104634846691916790}
-  m_Layer: 0
+  - component: {fileID: 8707920230261661308}
+  - component: {fileID: -5364749052894800561}
+  m_Layer: 9
   m_Name: Grass_Dungeon1_30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,3 +86,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &8707920230261661308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065930603100195629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-5364749052894800561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065930603100195629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99652b99b044a654e961742d75bbec71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpObject: {fileID: 11400000, guid: bcb72e7bcf69a3a408279d6396475825, type: 2}
+  _animator: {fileID: 0}
+  currentHp: 0

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
+  m_Name: ChaserWeapon
+  m_EditorClassIdentifier: 
+  projectTile: {fileID: 5494008423771109411, guid: d01d2db614a1c4e468f2ee2ac908792c, type: 3}
+  IconWeapon: {fileID: 0}
+  LevelWeapon: 
+  NameWeapon: 
+  QuoteWeapon: 
+  DescriptionWeapon: 
+  Speed: 1
+  AttackRange: 2
+  SizeSlashBox: {x: 0, y: 0, z: 0}
+  ListDamage:
+  - 0

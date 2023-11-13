@@ -18,6 +18,10 @@ public enum ListScript
     Bruter,
     TypeButton
 }
+public enum Enemys
+{
+    Chaser
+}
 public enum Events
 {
     SetDefault,

@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
   m_Name: 3-Vampiric Axe
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 0}
+  projectTile: {fileID: 8699840935373294594, guid: b27676f5df2e5e741b0f8ebc1a7c4727, type: 3}
+  IconWeapon: {fileID: -82055526, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
+  LevelWeapon: 
   NameWeapon: Vampiric Axe
   QuoteWeapon: Consumer of the blood it spills
   DescriptionWeapon: Chance to heal the wielder using the life force of a slain foe.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SizeSlashBox: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2
