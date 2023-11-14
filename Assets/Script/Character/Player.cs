@@ -66,7 +66,8 @@ public class Player : CharacterBrain
             wp.transform.SetParent(null);
             wp.transform.ReSetTransform();
         }
-        Instantiate(weapon, hand.transform);
+        Weapon obj =  Instantiate(weapon, hand.transform);
+        characterAttack.Initialized(obj);
 
     }
     public override void SetMoveWayPoint(Transform wayPoint, float time)
