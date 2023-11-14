@@ -6,7 +6,7 @@ public class Chaser : Enemy
     [SerializeField] Transform body2;
     [SerializeField] Transform body3;
     [SerializeField] Transform body4;
-    float distance = 0.85f;
+    float distance = 0.7f;
     protected override void Start()
     {
         base.Start();
@@ -23,6 +23,10 @@ public class Chaser : Enemy
         slash.AddActionAttack(OnAttackHit);
         deadAction = Dead;
         deadBody.SetActive(false);
+
+        body2.transform.SetParent(null);
+        body3.transform.SetParent(null);
+        body4.transform.SetParent(null);
     }
     protected override void Update()
     {
@@ -40,10 +44,12 @@ public class Chaser : Enemy
     }
     private void MoveToWards(Transform transA,Transform transB)
     {
+        //Vector3 dirs = transB.position - dir.position;
+        //transA.position = dirs.normalized + transB.position;
         //transA.position = new Vector3(direction);
         if (Vector3.Distance(transA.position, transB.position) > distance)
         {
-            transA.position = Vector3.MoveTowards(transA.position, transB.position, Time.deltaTime * 25);
+            transA.position = Vector3.MoveTowards(transA.position, transB.position, Time.deltaTime * agent.moveSpeed);
         }
     }
 }

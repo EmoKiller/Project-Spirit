@@ -23,6 +23,7 @@ public class CharacterAttack : MonoBehaviour
     public void Initialized(Weapon weapon)
     {
         currentWeapon = weapon;
+        EventDispatcher.Publish(ListScript.UiDungeonManager,Events.UpdateIconWeapon, currentWeapon.weaponObject.IconWeapon);
     }
     public void Attack(Vector3 target)
     {
@@ -32,6 +33,4 @@ public class CharacterAttack : MonoBehaviour
     {
         return currentWeapon.weaponObject.TotalDamage();
     }
-    
-
 }
