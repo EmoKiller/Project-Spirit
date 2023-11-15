@@ -57,6 +57,13 @@ public enum Events
     OnPlayerActionItemsButtonDown,
     OnPlayerActionItemsButtonUp,
 }
+public enum TypeTabInfomation
+{
+    Inventory,
+    Player,
+    Clut,
+    Quest
+}
 public enum TypeShowButton
 {
     Talk,
