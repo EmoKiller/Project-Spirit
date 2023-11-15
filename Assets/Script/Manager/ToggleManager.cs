@@ -1,26 +1,27 @@
 using System;
 using UnityEngine;
 
-public class ToggleManager : MonoBehaviour
+public class TogglePanel<T> : MonoBehaviour where T : UIToggle
 {
-    public static Action<UIToggle> ToggleAction;
-    [SerializeField] private UIToggle current = null;
+    public static Action<T> ToggleAction;
+    [SerializeField] private T current = null;
     [SerializeField] protected Sprite img;
     [SerializeField] protected Sprite imgNull;
-    private void Awake()
+    [SerializeField] protected Color color;
+    [SerializeField] protected Color colorNull;
+    private void Start()
     {
         ToggleAction = onHanger;
         current.uiImg.sprite = img;
-        current.text.color = Color.white;
     }
-    public virtual void onHanger(UIToggle Tog)
+    public virtual void onHanger(T Tog)
     {
         if (Tog != current)
         {
             Tog.uiImg.sprite = img;
-            Tog.text.color = Color.white;
+            Tog.text.color = color;
             current.uiImg.sprite = imgNull;
-            current.text.color = new Color32(20, 73, 45, 255);
+            current.text.color = colorNull;
             current = Tog;
         }
     }

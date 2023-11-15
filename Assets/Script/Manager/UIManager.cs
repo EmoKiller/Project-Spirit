@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+
     [SerializeField] RectTransform WayBlack;
-    [SerializeField] GameObject WayWhite;
+    [SerializeField] GameObject GruopMenuEsc;
+    [SerializeField] GameObject InventoryTab;
     bool ToggleValue = false;
 
     private void Update()
@@ -13,6 +15,11 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleTab();
+            //InventoryTab
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //GruopMenuEsc
         }
     }
     private void ToggleTab()
@@ -22,9 +29,9 @@ public class UIManager : MonoBehaviour
         if (ToggleValue)
         {
             WayBlack.gameObject.SetActive(ToggleValue);
-            WayBlack.DOAnchorPos(new Vector2(550,0),1);
+            WayBlack.DOAnchorPos(new Vector2(0,0),1);
         }else
-            WayBlack.DOAnchorPos(new Vector2(-550,0), 1).OnComplete(() =>
+            WayBlack.DOAnchorPos(new Vector2(-1200,0), 1).OnComplete(() =>
             {
                 WayBlack.gameObject.SetActive(ToggleValue);
             });
