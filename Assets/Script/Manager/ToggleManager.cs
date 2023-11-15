@@ -9,6 +9,7 @@ public class TogglePanel<T> : MonoBehaviour where T : UIToggle
     [SerializeField] protected Sprite imgNull;
     [SerializeField] protected Color color;
     [SerializeField] protected Color colorNull;
+
     private void Start()
     {
         ToggleAction = onHanger;
