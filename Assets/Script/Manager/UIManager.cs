@@ -1,10 +1,8 @@
 using DG.Tweening;
-using System;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-
     [SerializeField] RectTransform WayBlack;
     [SerializeField] GameObject GruopMenuEsc;
     [SerializeField] GameObject InventoryTab;

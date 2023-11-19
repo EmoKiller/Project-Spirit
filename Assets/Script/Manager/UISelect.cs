@@ -29,6 +29,6 @@ public class UISelect : MonoBehaviour
     }
     private void Rotation(Vector3 value)
     {
-        arrow.DORotate(value,1f,RotateMode.Fast);
+        arrow.DORotate(value,0.5f,RotateMode.Fast);
     }
 }

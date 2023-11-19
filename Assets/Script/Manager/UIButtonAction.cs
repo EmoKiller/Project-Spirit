@@ -20,6 +20,8 @@ public class UIButtonAction : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
+        buttonE.SetActive(false);
+        mouseClick.SetActive(false);
     }
     private void Update()
     {
@@ -54,9 +56,9 @@ public class UIButtonAction : MonoBehaviour
         EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
         EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
     }
-    private void SwitchImageButton(TypeShowButton value)
+    private void SwitchImageButton(TypeShowButton type)
     {
-        switch (value)
+        switch (type)
         {
             case TypeShowButton.Talk:
                 buttonE.gameObject.SetActive(true);
@@ -80,7 +82,7 @@ public class UIButtonAction : MonoBehaviour
     private void UpdateText(string str)
     {
         gameObject.SetActive(true);
-        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 24), 110);
+        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 30), 110);
         rectShowText.sizeDelta = rectButton.sizeDelta;
         text.text = str;
         LayoutRebuilder.ForceRebuildLayoutImmediate(thisTransform);
@@ -88,7 +90,7 @@ public class UIButtonAction : MonoBehaviour
     private void ResetButton()
     {
         gameObject.SetActive(false);
-        rectButton.sizeDelta = new Vector2(125, 110);
+        rectButton.sizeDelta = new Vector2(0, 110);
         rectShowText.sizeDelta = rectButton.sizeDelta;
         fill.fillAmount = 0f;
         buttonE.gameObject.SetActive(false);

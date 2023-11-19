@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.tvOS;
 
 public class DeathPenaltyPedestal : OnTringgerWaitAction
 {
@@ -11,6 +12,7 @@ public class DeathPenaltyPedestal : OnTringgerWaitAction
     protected override void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
+        EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.RemoveEvent);
     }
     private void UpdateValue(float value)
     {

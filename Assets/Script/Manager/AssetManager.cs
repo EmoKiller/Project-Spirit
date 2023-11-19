@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using static UnityEditor.PlayerSettings;
+using static UnityEditor.Progress;
 
 public class AssetManager : MonoBehaviour
 {
@@ -19,27 +21,24 @@ public class AssetManager : MonoBehaviour
     public string hearts;
 
     public Dictionary<Enemys,GameObject> weapons = null;
-    //public void SpawnItems(Vector3 position, Quaternion quaternion)
-    //{
-    //    Weapon.InstantiateAsync(position, quaternion);
-    //}
+
+    public GameObject ObjDrop;
+    public Dictionary<ChestType,GameObject> Chest;
+
+    private void Start()
+    {
+        
+    }
+    public void InstantiateObj()
+    {
+        Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/ObjectDrop/ItemDrop.prefab").Completed += (handle) =>
+        {
+            ObjDrop = handle.Result;
+        };
+    }
     public void InstantiateItems(string str, Transform pos , Vector3 dir)
     {
-        //GameObject weaponObj = Resources.Load<GameObject>(string.Format(GameConstants.Sword, "AdvancedShortSword"));
-        //Instantiate();
         GameObject item = null;
-        //Addressables.InstantiateAsync("Assets/Prefabs/Weapon/Sword/AdvancedShortSword.prefab").Completed += (handle) => 
-        //{
-        //    handle.Result
-        //    //Instantiate(weapon, hand);
-        //};
-        
-        //Addressables.LoadAssetAsync<GameObject>(str).Completed += (handle) =>
-        //{
-        //    item = handle.Result;
-        //    GameObject obj = Instantiate(item, pos);
-        //    obj.transform.position = dir + new Vector3(0,1f,0);
-        //};
         Addressables.LoadAssetAsync<GameObject>(str).Completed += (handle) =>
         {
             item = handle.Result;
@@ -49,12 +48,10 @@ public class AssetManager : MonoBehaviour
     }
     public Sprite Instantia()
     {
-        //Debug.Log("Assets/Prefabs/UI/Heart/Size/0-Heart_Nomal.prefab");
         Sprite item = null;
         Addressables.LoadAssetAsync<Sprite>("Assets/Prefabs/UI/Hearts/Red/Empty.asset").Completed += (handle) =>
         {
             item = handle.Result;
-            
         };
         return item;
     }

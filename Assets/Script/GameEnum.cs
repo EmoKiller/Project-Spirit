@@ -19,6 +19,20 @@ public enum ListScript
     Bruter,
     TypeButton
 }
+public enum ChestType
+{
+    Wood,
+    Platium,
+    Gold,
+    KillBoss
+}
+public enum TypeMenuTab
+{
+    Inventory,
+    Player,
+    Clut,
+    Quests
+}
 public enum Enemys
 {
     Chaser
@@ -83,7 +97,7 @@ public enum AttributeType
 public enum ItemsType
 {
     Weapon,
-    cloth
+    Items
 }
 public enum MenuType
 {
