@@ -15,6 +15,9 @@ public class PopUpTalkManager : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
+        boxTalk.SetActive(false);
+        uiSelect.SetActive(false);
+        infoWeapon.SetActive(false);
         EventDispatcher.Addlistener(ListScript.PopUpTalkManager, Events.AddListener, AddListener);
         EventDispatcher.Addlistener(ListScript.PopUpTalkManager, Events.RemoveEvent, Removed);
     }

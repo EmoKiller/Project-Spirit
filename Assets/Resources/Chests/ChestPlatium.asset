@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cd5e2f812f13d41bd2249195ea2d60, type: 3}
+  m_Name: ChestPlatium
+  m_EditorClassIdentifier: 
+  projectTile: {fileID: 4964703722162753127, guid: 7f4db2c39169dee4e9edb2a91ed6d842, type: 3}
+  Coin: {fileID: 3599110730457811676, guid: 4c2f37c04d2974a4d9efbca770264c6e, type: 3}
+  SeedFervor: {fileID: 0}
+  Tarot: {fileID: 0}
+  Necklace: {fileID: 0}
+  BluePrint: {fileID: 0}
+  CommandmentStone: {fileID: 0}
