@@ -6,16 +6,13 @@ public class GameManager : MonoBehaviour
     [Header("Dungeon Infomation")]
     public string NameDungeon = "";
     public string NamePhase = "";
-    [Header("Enemy")]
-    public List<Enemy> enemies = null;
-    public List<WayPoint> enemyWayPoints = null;
-
-
-
-
     private void Awake()
     {
 
+    }
+    private void Start()
+    {
+        
     }
     private void OnEnable()
     {
@@ -27,7 +24,8 @@ public class GameManager : MonoBehaviour
 
     private void ChestBonus()
     {
-
+        ChestBonus obj = Resources.Load<ChestBonus>("Chests/Chest_Wood");
+        Instantiate(obj);
     }
 
 
