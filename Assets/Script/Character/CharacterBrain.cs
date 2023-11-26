@@ -84,6 +84,7 @@ public abstract class CharacterBrain : MonoBehaviour
         }
         tranformOfAni.transform.localScale = new Vector3(1, 1, 1);
     }
+    protected abstract void Rolling();
     protected virtual void OnAttackHit(CharacterBrain target)
     {
         Vector3 dir = transform.position - target.transform.position;

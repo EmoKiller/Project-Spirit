@@ -109,4 +109,9 @@ public class Enemy : CharacterBrain
         //Debug.Log(GameConstants.Slash);
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
+
+    protected override void Rolling()
+    {
+        throw new System.NotImplementedException();
+    }
 }

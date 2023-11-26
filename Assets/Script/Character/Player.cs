@@ -55,7 +55,6 @@ public class Player : CharacterBrain
         }
         if (Horizontal != 0 || Vertical!=0)
         {
-            
             Rotation();
             direction.localPosition = new Vector3(Horizontal, 0, Vertical).normalized;
             characterAnimator.SetFloat("vertical", Vertical);
@@ -64,6 +63,15 @@ public class Player : CharacterBrain
             characterAnimator.SetFloat("RightLeft", direction.transform.localPosition.x);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
         }
+    }
+    protected override void Rolling()
+    {
+        Vector3 dir = direction.position - transform.position;
+        this.LoopDelayCall(0.3f, () =>
+        {
+            agent.MoveToDirection(dir * 3.5f);
+            Rotation();
+        });
     }
     private void ChangeWeapon(Weapon weapon)
     {
@@ -75,16 +83,6 @@ public class Player : CharacterBrain
         }
         Weapon obj =  Instantiate(weapon, hand.transform);
         characterAttack.Initialized(obj);
-    }
-    private void Rolling()
-    {
-        Vector3 dir = direction.position - transform.position;
-        this.LoopDelayCall(0.3f, () =>
-        {
-            agent.MoveToDirection(dir*3.5f);
-            Rotation();
-        });
-
     }
     public override void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
