@@ -105,8 +105,8 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/Hearts/BlueHalf/Half.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ec8c33396f0deb141ad903139219fafd
-    m_Address: Assets/Prefabs/ObjectDrop/ItemDrop.prefab
+  - m_GUID: 4c2f37c04d2974a4d9efbca770264c6e
+    m_Address: Assets/Prefabs/Object/ItemDropObject.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -1,8 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using static UnityEditor.PlayerSettings;
-using static UnityEditor.Progress;
 
 public class AssetManager : MonoBehaviour
 {
@@ -14,27 +11,28 @@ public class AssetManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-    public string Weapon;
-    public string ShowHPEnemy;
-    public string Enemy;
-    public string SlashHit;
-    public string hearts;
-
-    public Dictionary<Enemys,GameObject> weapons = null;
-
-    public GameObject ObjDrop;
-    public Dictionary<ChestType,GameObject> Chest;
+    public string ack;
+    private GameObject ItemDropObject;
+    public GameObject ItemDropPrefab
+    {
+        get { return ItemDropObject; }
+    }
 
     private void Start()
     {
-        
+        InstantiateObj2();
     }
     public void InstantiateObj()
     {
-        Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/ObjectDrop/ItemDrop.prefab").Completed += (handle) =>
+        Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Object/ItemDropObject.prefab").Completed += (handle) =>
         {
-            ObjDrop = handle.Result;
+            ItemDropObject = handle.Result;
         };
+    }
+    public void InstantiateObj2()
+    {
+        ItemDropObject = Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Object/ItemDropObject.prefab").WaitForCompletion();
+        
     }
     public void InstantiateItems(string str, Transform pos , Vector3 dir)
     {

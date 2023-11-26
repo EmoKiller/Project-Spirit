@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SwordsManHP
   m_EditorClassIdentifier: 
   projectTile: {fileID: 452100598757916092, guid: c27f1ac61fc775c4699752b180558415, type: 3}
-  HP: 2
+  HP: 10
   PowerForce: 30
-  weight: 30
+  weight: 25

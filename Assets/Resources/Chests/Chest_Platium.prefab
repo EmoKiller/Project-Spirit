@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4964703722162753128}
   - component: {fileID: 4964703722162753129}
+  - component: {fileID: 5594678522209748490}
   m_Layer: 0
   m_Name: Chest_Platium
   m_TagString: Untagged
@@ -131,6 +132,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   chest: {fileID: 11400000, guid: af64613c4a9b172409466d94f509696f, type: 2}
+--- !u!210 &5594678522209748490
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964703722162753127}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &7316550124788968564
 GameObject:
   m_ObjectHideFlags: 0

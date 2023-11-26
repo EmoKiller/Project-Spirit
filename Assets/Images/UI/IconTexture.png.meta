@@ -957,7 +957,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IconTexture_27
+      name: BerryBushSeed
       rect:
         serializedVersion: 2
         x: 1694
@@ -1065,7 +1065,7 @@ TextureImporter:
       name: IconTexture_32
       rect:
         serializedVersion: 2
-        x: 1815
+        x: 1812
         y: 139
         width: 123
         height: 102
@@ -1775,6 +1775,615 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IconTexture_5
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 202
+        width: 107
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f04309abaec75a4a9a3e423ad79e6c0
+      internalID: -1936392613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_7
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 291
+        width: 120
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56b5f33603cb25428ad247ad1a68222
+      internalID: -254660128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_14
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 370
+        width: 107
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14e471a5d19cf64f80f67edcb466d95
+      internalID: -1160604316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_66
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 455
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0623dcc28c31caf4094f07338f96782c
+      internalID: 755796800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_67
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 547
+        width: 91
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a385f52202bbf9d41846ad6ebc079653
+      internalID: 2130499940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_68
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 646
+        width: 95
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0562bc1db68c0a48bbd04e14845f094
+      internalID: 1212075918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_69
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 762
+        width: 132
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34deae572cfffb54caacbcac5203364b
+      internalID: -659928116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_70
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 172
+        width: 108
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5922e8de19c4c45b552f4a77ba3397
+      internalID: -1779551340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_71
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 271
+        width: 129
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d218728609c28d4a8d2e03c824f38a8
+      internalID: 875762757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_72
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 380
+        width: 128
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88704122a6eec0a4caedc2ccfc756f18
+      internalID: 654818929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_73
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 480
+        width: 125
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c14f39e3520614b83dd69f0d946644
+      internalID: 1887672763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_74
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 591
+        width: 117
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb68c6f0961bdd499de881c1c739a17
+      internalID: 645441491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_75
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 685
+        width: 128
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3528a6e02e20a874dafa705ad4998233
+      internalID: 1049320705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_76
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 769
+        width: 125
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1b88a962ae6b64b9c289a043840a1b
+      internalID: 1567105933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_27
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1488
+        width: 118
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fa2ff6c6de8f64d9f77dcf5e815086
+      internalID: 596955140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_77
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1485
+        width: 122
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc25b615ef115f4a97d2dab59acdc21
+      internalID: 2087936268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_78
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1487
+        width: 113
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f50c5521dfb2a48b6744a9749b6250
+      internalID: 1255523851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_79
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1488
+        width: 111
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d54ddf943f0327489eb0f7dab0ba54e
+      internalID: 1310339189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_80
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 1485
+        width: 110
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ac67e7416cf1e47a11e818472d8760
+      internalID: 1030349317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_81
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1485
+        width: 118
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ede6c30369375458c00ceca054937a
+      internalID: -107902946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_82
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 1488
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628f5ce665c344a48a67e70127516805
+      internalID: 1796431938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_83
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 1490
+        width: 113
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a90b88a3830374fbde6997dd46bdb9
+      internalID: 1167596791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_84
+      rect:
+        serializedVersion: 2
+        x: 1926
+        y: 1488
+        width: 116
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276f54b0901fb6e418406788a7a8c074
+      internalID: -2087538732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconTexture_85
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1155
+        width: 133
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62c7b8f9a4a90a47b06a3c70503c30d
+      internalID: 1780024318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlowerNecklace
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 643
+        width: 90
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5ad22d099772344bcbf7cc6580f5ef
+      internalID: -1412934645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeatherNecklace
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 635
+        width: 79
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89e460a2363f754cbe58fbadfd4960f
+      internalID: -2000735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullNecklace
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 636
+        width: 76
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5543f6ca63d24d43a42f3c740e1e826
+      internalID: -754902272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaturesNecklace
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 635
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50d650b90eab4b47a7d88c7c47b9f34
+      internalID: -1796213822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonNecklace
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 640
+        width: 73
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a31b1a9d420b743af567a77753cbe8
+      internalID: 453310736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1787,84 +2396,113 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       IconTexture_46: -1973914133
-      IconTexture_54: -1136265473
       IconTexture_55: -143567818
-      IconTexture_18: -1632143273
-      IconTexture_56: -801054000
-      IconTexture_58: -1842322788
-      IconTexture_15: -1688163726
       IconTexture_38: 1744307127
-      Heart_Blue_full: 1885248175
+      FeatherNecklace: -2000735
       Heart_Empty: -728717398
-      IconTexture_23: -1884941412
       IconTexture_44: 190767596
-      IconTexture_31: -420179882
-      IconTexture_51: -1846692104
-      IconTexture_59: -1430287190
+      IconTexture_75: 1049320705
+      BerryBushSeed: 1934220688
       IconTexture_32: -190478072
       Heart_Red_Half_HL: 845212517
       IconTexture_37: -1384739913
       IconTexture_52: 21074496
       FullHeartRed: -825365607
+      IconTexture_66: 755796800
       Coin: -1101967534
       IconTexture_1: -915333926
+      IconTexture_71: 875762757
       IconTexture_22: 1443845399
-      IconTexture_26: -1085718704
+      IconTexture_72: 654818929
       Heart_Red_Half: 1756483838
       Heart_Haft_Empty_HL: 1469014962
       IconTexture_11: 1612600629
-      IconTexture_47: -116728976
+      FlowerNecklace: -1412934645
       IconTexture_65: -1665761819
       IconTexture_45: -1840635987
-      IconTexture_24: 438404064
-      Heart_Red_full_HL: -376282679
-      IconTexture_27: 1934220688
-      IconTexture_13: -1918359111
-      IconTexture_19: 1944492893
+      IconTexture_20: 1815021756
       IconTexture_0: -400725843
+      IconTexture_27: 596955140
+      IconTexture_24: 438404064
       Heart_Red_full: -1710007018
-      IconTexture_53: -1075631565
-      Heart_Empty_HL: 2135175801
       IconTexture_41: -334221576
       IconTexture_4: 1243476249
-      IconTexture_9: -2026416776
       IconTexture_49: 946323514
-      IconTexture_63: -2090670544
-      Heart_Haft_Empty: 704378473
+      IconTexture_80: 1030349317
       IconTexture_29: -1308884855
       IconTexture_40: -1482358307
-      IconTexture_20: 1815021756
-      IconTexture_28: -188812726
+      IconTexture_69: -659928116
       IconTexture_21: 323374936
-      IconTexture_36: 2105215552
-      IconTexture_30: 1988433267
       IconTexture_34: 92739614
+      IconTexture_7: -254660128
       IconTexture_39: 191052699
       IconTexture_48: -956305551
       IconTexture_16: 215508837
       Heart_Blue_Haft: 1865055561
+      IconTexture_82: 1796431938
+      IconTexture_61: -1597569712
+      IconTexture_25: -192913241
+      IconTexture_57: -1652607557
+      IconTexture_70: -1779551340
+      IconTexture_73: 1887672763
+      IconTexture_10: 938216649
+      IconTexture_62: 619693439
+      IconTexture_6: 1349627391
+      IconTexture_17: -1040930733
+      IconTexture_58: -1842322788
+      IconTexture_18: -1632143273
+      IconTexture_2: -226527653
+      IconTexture_54: -1136265473
+      IconTexture_74: 645441491
+      IconTexture_77: 2087936268
+      IconTexture_56: -801054000
+      IconTexture_76: 1567105933
+      IconTexture_15: -1688163726
+      Heart_Blue_full: 1885248175
+      IconTexture_23: -1884941412
+      IconTexture_31: -420179882
+      IconTexture_85: 1780024318
+      IconTexture_51: -1846692104
+      NaturesNecklace: -1796213822
+      IconTexture_59: -1430287190
+      IconTexture_68: 1212075918
+      IconTexture_26: -1085718704
+      IconTexture_47: -116728976
+      Heart_Red_full_HL: -376282679
+      IconTexture_13: -1918359111
+      IconTexture_19: 1944492893
+      Heart_Empty_HL: 2135175801
+      IconTexture_9: -2026416776
+      IconTexture_53: -1075631565
+      MoonNecklace: 453310736
+      IconTexture_5: -1936392613
+      IconTexture_63: -2090670544
+      IconTexture_67: 2130499940
+      Heart_Haft_Empty: 704378473
+      IconTexture_28: -188812726
+      IconTexture_36: 2105215552
+      IconTexture_30: 1988433267
+      IconTexture_81: -107902946
       Heart_cru: -1189616015
       IconTexture_64: -124079015
       IconTexture_35: 673472648
+      IconTexture_79: 1310339189
       Heart_Red_Half_empty_HL: 1210785852
       Wood: 274643201
       Heart_Red_Half_empty: 1098774387
-      IconTexture_61: -1597569712
-      IconTexture_25: -192913241
+      IconTexture_14: -1160604316
+      SkullNecklace: -754902272
       IconTexture_12: -1818832808
       IconTexture_50: -1133119551
-      IconTexture_57: -1652607557
-      IconTexture_10: 938216649
       IconTexture_8: 1705964635
+      IconTexture_84: -2087538732
       IconTexture_3: -24547254
-      IconTexture_62: 619693439
       IconTexture_60: 332415029
-      IconTexture_6: 1349627391
-      IconTexture_17: -1040930733
+      IconTexture_78: 1255523851
+      IconTexture_83: 1167596791
       IconTexture_33: 1161104671
       IconTexture_43: -728564842
       IconTexture_42: -179421199
-      IconTexture_2: -226527653
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

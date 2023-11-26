@@ -40,7 +40,6 @@ public class PopUpTalkManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && infoWeapon.activeSelf == false)
         {
             EventDispatcher.Publish(ListScript.PopUpTalk, Events.OpenPopup);
-
         }
     }
     private void SetInfoWeapon(bool value)

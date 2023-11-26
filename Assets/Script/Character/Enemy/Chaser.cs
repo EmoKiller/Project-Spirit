@@ -21,7 +21,7 @@ public class Chaser : Enemy
         SetoffSlash();
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         slash.AddActionAttack(OnAttackHit);
-        deadAction = Dead;
+        //deadAction = Dead;
         deadBody.SetActive(false);
 
         body2.transform.SetParent(null);

@@ -28,8 +28,8 @@ public class IntroGame : MonoBehaviour
     }
     private void SetWalk()
     {
-        enemy[0].SetMoveWayPoint(waypoint.points[0],1.1f);
-        enemy[1].SetMoveWayPoint(waypoint.points[1],1.1f);
+        enemy[0].SetMoveWayPoint(waypoint.points[0].position,1.1f);
+        enemy[1].SetMoveWayPoint(waypoint.points[1].position,1.1f);
         for (int i = 4;i<=8;i++)
             enemy[i].TriggerAni("Pray");
     }
@@ -60,7 +60,7 @@ public class IntroGame : MonoBehaviour
     }
     public void EndTalk4()
     {
-        EventDispatcher.Publish(ListScript.Player, Events.MoveTo, ponitDead, 1f);
+        EventDispatcher.Publish(ListScript.Player, Events.MoveTo, ponitDead.position, 1f);
         EventDispatcher.Publish(ListScript.CameraFollow, Events.ReturnTargetPlayer);
         EventDispatcher.Publish(ListScript.CameraFollow, Events.CameraZoom);
         EventDispatcher.Publish(ListScript.Player, Events.TriggerAction);
@@ -77,7 +77,7 @@ public class IntroGame : MonoBehaviour
     }
     public void EndTalkWhitWhoWaits()
     {
-        EventDispatcher.Publish(ListScript.Player, Events.MoveTo, ponitDead,8f);
+        EventDispatcher.Publish(ListScript.Player, Events.MoveTo, ponitDead.position,8f);
         EventDispatcher.Publish(ListScript.WhoWait, Events.TriggerAction);
     }
     private void SetPlayVideos(bool value)
@@ -95,7 +95,7 @@ public class IntroGame : MonoBehaviour
             this.DelayCall(1.5f, () =>
             {
                 foreach (Enemy enemy in enemy)
-                    enemy.SetArried(false);
+                    enemy.SetAction(false);
                 for (int i = 4; i <= 8; i++)
                 {
                     enemy[i].TriggerAni("PrayFear");

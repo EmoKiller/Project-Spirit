@@ -1,5 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.UI;
 
 public class ChestBonus : MonoBehaviour
 {
@@ -12,57 +14,15 @@ public class ChestBonus : MonoBehaviour
     }
     private void DropItems()
     {
-        switch (type)
+        foreach (var item in ConfigDataHelper.GameConfig.ChestConfig[type].itemsCanDrop)
         {
-            case ChestType.Wood:
-                RatioDropWood();
-                break;
-            case ChestType.Platium:
-                RatioDropPlatium();
-                break;
-            case ChestType.Gold:
-                RatioDropGold();
-                break;
-            case ChestType.KillBoss:
-                RatioDropKillBoss();
-                break;
+            //AssetManager.Instance.ItemDropPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(string.Format(GameConstants.Items, item.Key));
+            AssetManager.Instance.ItemDropPrefab.GetComponent<ObjectDropOnWorld>().UpdateSprite(item.Key.ToString());
+            for (int i = 0; i < item.Value.value; i++)
+            {
+                GameObject _obj = Instantiate(AssetManager.Instance.ItemDropPrefab, transform.position, transform.rotation);
+                _obj.transform.DOJump(new Vector3(Random.Range(-2f, 2f), 0.5f, Random.Range(-0.1f, -2f)) + transform.position, Random.Range(0.5f, 4f), 1, 0.3f);
+            }
         }
-    }
-    private void RatioDropWood()
-    {
-        ObjQuantity(chest.Coin,3);
-        ObjQuantity(chest.HeartBlue, 1);
-        ObjQuantity(chest.HeartRed, 1);
-    }
-    private void RatioDropPlatium()
-    {
-        ObjQuantity(chest.Coin, 10);
-        ObjQuantity(chest.HeartBlue, 1);
-        ObjQuantity(chest.HeartRed, 1);
-    }
-    private void RatioDropGold()
-    {
-        ObjQuantity(chest.Coin, 18);
-        ObjQuantity(chest.Tarot, 1);
-        ObjQuantity(chest.Necklace, 1);
-        ObjQuantity(chest.BluePrint, 1);
-    }
-    private void RatioDropKillBoss()
-    {
-        ObjQuantity(chest.Coin, 25);
-        ObjQuantity(chest.Bone, 12);
-        ObjQuantity(chest.CommandmentStone, 1);
-        ObjQuantity(chest.BluePrint, 1);
-        ObjQuantity(chest.Necklace, 1);
-    }
-    private void ObjQuantity(GameObject obj,int quantity)
-    {
-        if (obj == null || quantity == 0)
-            return;
-        this.WaitDelayCall(quantity, 0f, () =>
-        {
-            GameObject _obj = Instantiate(obj, transform.position, transform.rotation);
-            _obj.transform.DOJump(new Vector3(Random.Range(-2f, 2f), 0.5f, Random.Range(-0.1f, -2f)) + transform.position, Random.Range(0.5f, 4f), 1, 0.3f);
-        });
     }
 }

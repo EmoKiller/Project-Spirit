@@ -15,4 +15,4 @@ MonoBehaviour:
   projectTile: {fileID: 6231730481428099861, guid: df1cabce29737cc4cbaf85dc5e372604, type: 3}
   HP: 1
   PowerForce: 30
-  weight: 30
+  weight: 25

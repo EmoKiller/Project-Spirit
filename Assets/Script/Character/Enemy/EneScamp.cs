@@ -15,7 +15,7 @@ public class EneScamp : Enemy
         SetoffSlash();
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         slash.AddActionAttack(OnAttackHit);
-        deadAction = Dead;
+        //deadAction = Dead;
         deadBody.SetActive(false);
     }
     

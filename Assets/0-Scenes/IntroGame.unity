@@ -3175,11 +3175,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4941561293138258207, guid: 3e94671029a20e844a9d26dcbcd5524a, type: 3}
   m_PrefabInstance: {fileID: 210056911}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &219983688 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2729271864944868108, guid: 8a805fd5b1ad7134588dbff977a3907c, type: 3}
-  m_PrefabInstance: {fileID: 2729271866667397431}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &224506818
 GameObject:
   m_ObjectHideFlags: 0
@@ -8287,7 +8282,7 @@ MonoBehaviour:
     points:
     - {fileID: 1620796755}
     - {fileID: 279890034}
-  ponitDead: {fileID: 219983688}
+  ponitDead: {fileID: 1346362819}
   video: {fileID: 647939041}
 --- !u!4 &640777871
 Transform:
@@ -28959,7 +28954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6231730481428099857, guid: df1cabce29737cc4cbaf85dc5e372604, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.4
+      value: 74.7
       objectReference: {fileID: 0}
     - target: {fileID: 6231730481428099857, guid: df1cabce29737cc4cbaf85dc5e372604, type: 3}
       propertyPath: m_LocalRotation.w

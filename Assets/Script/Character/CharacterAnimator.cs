@@ -114,6 +114,7 @@ public class CharacterAnimator : MonoBehaviour
     public void FinishAnimation()
     {
         FinishAni?.Invoke();
+        ResetTrigger();
     }
     public void Step1AniAtk()
     {

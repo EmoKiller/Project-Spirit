@@ -15,10 +15,11 @@ public class ChestObject : ScriptableObject
     public GameObject Bone = null;
     public GameObject HeartRed = null;
     public GameObject HeartBlue = null;
-    public Dictionary<GameObject,int> ItemsDrop = null;
+    
+
     public ChestObject()
     {
-
+        
     }
 
 }

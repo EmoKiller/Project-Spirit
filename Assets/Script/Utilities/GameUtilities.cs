@@ -35,7 +35,7 @@ public static class GameUtilities
     }
     public static IEnumerator IEWaitDelayCall(int repeat, float waittime, Action callBack)
     {
-        float Current = 0;
+        int Current = 0;
         while (Current < repeat)
         {
             callBack?.Invoke();

@@ -1,13 +1,35 @@
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    
     [SerializeField] RectTransform WayBlack;
     [SerializeField] GameObject GruopMenuEsc;
     [SerializeField] GameObject InventoryTab;
+    Dictionary<TypeFIll, IFill> listFIll = new Dictionary<TypeFIll, IFill>();
+    Dictionary<TypeAmount, IMountValue> listMount = new Dictionary<TypeAmount, IMountValue>();
     bool ToggleValue = false;
+    private void OnEnable()
+    {
+        
+    }
+    private void Awake()
+    {
+        List<IFill> listfills = GetComponentsInChildren<IFill>().ToList();
+        foreach (IFill fill in listfills)
+        {
+            listFIll.Add(fill.Type,fill);
+        }
+        List<IMountValue> listMounts = GetComponentsInChildren<IMountValue>().ToList();
+        foreach (IMountValue mount in listMounts)
+        {
+            listMount.Add(mount.Type, mount);
+        }
 
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -20,6 +42,10 @@ public class UIManager : MonoBehaviour
             //GruopMenuEsc
         }
     }
+    private void UpdateMount(string str)
+    {
+
+    }
     private void ToggleTab()
     {
         ToggleValue = !ToggleValue;
@@ -28,10 +54,11 @@ public class UIManager : MonoBehaviour
         {
             WayBlack.gameObject.SetActive(ToggleValue);
             WayBlack.DOAnchorPos(new Vector2(0,0),1);
-        }else
-            WayBlack.DOAnchorPos(new Vector2(-1200,0), 1).OnComplete(() =>
-            {
-                WayBlack.gameObject.SetActive(ToggleValue);
-            });
+            return;
+        }
+        WayBlack.DOAnchorPos(new Vector2(-1200, 0), 1).OnComplete(() =>
+        {
+            WayBlack.gameObject.SetActive(ToggleValue);
+        });
     }
 }

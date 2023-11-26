@@ -1,5 +1,6 @@
 public enum ListScript
 {
+    GameManager,
     Player,
     InfoWeapon,
     WeaponPodium,
@@ -19,12 +20,45 @@ public enum ListScript
     Bruter,
     TypeButton
 }
+public enum TypeFIll
+{
+    Angry,
+    Faith,
+    Hygiene,
+    Hunger
+}
+public enum TypeAmount
+{
+    Coin,
+    Followers
+}
+public enum ListCharacterAction
+{
+    Actions,
+    Attack,
+    OnDead
+}
+public enum TypeItemsCanDrop
+{
+    Coin,
+    TarotCard,
+    BerryBushSeed,
+    Necklace
+}
 public enum ChestType
 {
-    Wood,
-    Platium,
-    Gold,
-    KillBoss
+    Common,
+    UnCommon,
+    Race,
+    EndOfFloor
+}
+public enum SpaceState
+{
+    TheBase,
+    DarkWood,
+    Anura,
+    AnchorDeep,
+    SilkCradle
 }
 public enum TypeMenuTab
 {

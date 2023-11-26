@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222817320954364465}
   - component: {fileID: 1222817320954364466}
+  - component: {fileID: 7323049168824962854}
   m_Layer: 0
   m_Name: Chest_Gold
   m_TagString: Untagged
@@ -47,6 +48,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   chest: {fileID: 11400000, guid: 4e58e1d6cc9990b4ab525e9c3790d9ce, type: 2}
+--- !u!210 &7323049168824962854
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222817320954364464}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &2563579690698308400
 GameObject:
   m_ObjectHideFlags: 0

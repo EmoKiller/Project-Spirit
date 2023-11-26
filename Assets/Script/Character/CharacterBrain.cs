@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public abstract class CharacterBrain : MonoBehaviour
 {
@@ -10,16 +12,23 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected Slash slash = null;
     [SerializeField] protected Transform direction;
     [SerializeField] protected GameObject tranformOfAni;
-    [SerializeField] protected AnimationCurve forceCurve;
-    [SerializeField] protected bool arried = false;
-    [SerializeField] protected bool OnAction = false;
-    protected Action action;
+    [SerializeField] private bool m_Action = false;
+    protected bool OnAction 
+    {
+        get
+        {
+            return m_Action;
+        }
+        set
+        {
+            Set(value);
+        }
+    }
     //BaseCharacter
-    protected string characterName {get; set;}
+    private string characterName;
     protected float health { get; set; }
     protected float maxHealth { get; set; }
     [SerializeField] protected bool onAniAttck = false;
-    protected Action deadAction = null;
     public bool Alive => health > 0;
     public virtual string Name => characterName;
     protected virtual void Awake()
@@ -50,7 +59,6 @@ public abstract class CharacterBrain : MonoBehaviour
         characterAnimator.ResetTrigger();
         onAniAttck = false;
     }
-
     public void MoveTo(Vector3 direction)
     {
         Vector3 dir = direction - transform.position;
@@ -58,12 +66,11 @@ public abstract class CharacterBrain : MonoBehaviour
         characterAnimator.SetFloat("horizontal", dir.normalized.x);
         characterAnimator.SetFloat("vertical", dir.normalized.z);
     }
-    public virtual void SetMoveWayPoint(Transform wayPoint,float time)
+    public virtual void SetMoveWayPoint(Vector3 wayPoint,float time)
     {
-        arried = true;
         this.LoopDelayCall(time, () =>
         {
-            MoveTo(wayPoint.position);
+            MoveTo(wayPoint);
             Rotation();
         });
     }
@@ -71,32 +78,28 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         Vector3 dir = direction.transform.position - transform.position;
         if (dir.normalized.x > 0)
-            tranformOfAni.transform.rotation = Quaternion.Euler(-10, 180, 0);
-        else if (dir.normalized.x < 0)
-            tranformOfAni.transform.rotation = Quaternion.Euler(10, 0, 0);
+        {
+            tranformOfAni.transform.localScale = new Vector3(-1, 1, 1);
+            return;
+        }
+        tranformOfAni.transform.localScale = new Vector3(1, 1, 1);
     }
     protected virtual void OnAttackHit(CharacterBrain target)
     {
         Vector3 dir = transform.position - target.transform.position;
-        if (!target.Alive)
-        {
-            target.ImpactForce(dir.normalized * -20);
-            target.deadAction?.Invoke();
-            return;
-        }
         float force = target.characterAttack.Weight - characterAttack.PowerForce;
         if (force > 0)
+        {
             ImpactForce(dir.normalized * force);
-        else
-            target.ImpactForce(dir.normalized * force);
-        target.EffectHit(dir.normalized + target.transform.position);
-
+            return;
+        }
+        target.ImpactForce(dir.normalized * force);
     }
     public virtual void TakeDamage(float damage) 
     {
         OnAction = true;
         onAniAttck = false;
-        this.DelayCall(0.5f, () =>
+        this.DelayCall(0.3f, () =>
         {
             OnAction = false;
         });
@@ -105,27 +108,22 @@ public abstract class CharacterBrain : MonoBehaviour
     public abstract void Dead();
     public void ImpactForce(Vector3 dir)
     {
-        this.LoopDelayCall(0.4f, () =>
+        this.LoopDelayCall(0.3f, () =>
         {
             agent.AgentBody.Move(dir * Time.deltaTime);
         });
-    }
-    public void SetAction(Action action)
-    {
-        this.action = action;
-        this.action?.Invoke();
     }
     public void SetTarget(Transform target)
     {
         direction = target;
     }
-    public void SetArried(bool value)
+    public void SetAction(bool value)
     {
-        arried = value;
+        OnAction = value;
     }
     public void SetStay()
     {
-        arried = true;
+        OnAction = true;
         Rotation();
     }
     
@@ -133,5 +131,8 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         characterAnimator.SetTrigger(str);
     }
-
+    private void Set(bool value)
+    {
+        m_Action = value;
+    }
 }

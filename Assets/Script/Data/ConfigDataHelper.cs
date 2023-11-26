@@ -13,36 +13,47 @@ public class ConfigDataHelper
             return gameConfig;
         }
     }
-    private static UserData userData = null;
-    public static UserData UserData
+    private static ChestConfig chestConfig = null;
+    public static ChestConfig ChestConfig
     {
         get
         {
-            if (!ES3.KeyExists(GameConstants.USERDATA))
-            {
-                userData = GetHeroClassData();
-                ES3.Save(GameConstants.USERDATA, userData);
-            }
-            else
-                userData = ES3.Load<UserData>(GameConstants.USERDATA);
-            return userData;
+            if (chestConfig == null)
+                chestConfig = JsonConvert.DeserializeObject<ChestConfig>(Resources.Load<TextAsset>("").text);
+            return chestConfig;
         }
-        set => ES3.Save(GameConstants.USERDATA, value);
     }
+    //private static UserData userData = null;
+    //public static UserData UserData
+    //{
+    //    get
+    //    {
+    //        if (!ES3.KeyExists(GameConstants.USERDATA))
+    //        {
+    //            userData = GetHeroClassData();
+    //            ES3.Save(GameConstants.USERDATA, userData);
+    //        }
+    //        else
+    //            userData = ES3.Load<UserData>(GameConstants.USERDATA);
+    //        return userData;
+    //    }
+    //    set => ES3.Save(GameConstants.USERDATA, value);
+    //}
+    //private static Chest
     
 
-    private static UserData GetHeroClassData()
-    {
-        UserData user = new UserData();
-        user.data.Add("Hero1", GetHeroData());
-        return user;
-    }
-    private static HeroData GetHeroData()
-    {
-        HeroData hero1 = new HeroData();
-        //hero1.heroClass = GameConfig.heroConfig.heroClass;
-        //Debug.Log(hero1.heroClass.Values);
-        //hero1.attributes = GameConfig.heroConfig.heroClass.
-        return hero1;
-    }
+    //private static UserData GetHeroClassData()
+    //{
+    //    UserData user = new UserData();
+    //    user.data.Add("Hero1", GetHeroData());
+    //    return user;
+    //}
+    //private static HeroData GetHeroData()
+    //{
+    //    HeroData hero1 = new HeroData();
+    //    //hero1.heroClass = GameConfig.heroConfig.heroClass;
+    //    //Debug.Log(hero1.heroClass.Values);
+    //    //hero1.attributes = GameConfig.heroConfig.heroClass.
+    //    return hero1;
+    //}
 }

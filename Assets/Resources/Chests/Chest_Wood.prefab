@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5511124906241614877}
   - component: {fileID: 5511124906241614878}
+  - component: {fileID: 6055529412296510065}
   m_Layer: 0
   m_Name: Chest_Wood
   m_TagString: Untagged
@@ -251,6 +252,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   chest: {fileID: 11400000, guid: 277c778e26dea5e4e82e18b43c24ca90, type: 2}
+--- !u!210 &6055529412296510065
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511124906241614876}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &6417927834298800972
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,30 +1,70 @@
 {
-	"PlayerConfig" : {
-		"SaveGame1" : {}
+	"ListSaveGame" : {
+		"SaveGame1" : {
+			"Level" : 0,
+			"Exp" : 0,
+			"AmountFollowers" : 0,
+			"AmountOfCoin" : 0
+		},
+		"SaveGame2" : {},
+		"SaveGame3" : {}
 	},
-	"EnemyConfigs" : {
-		"1" : {
-			"levelIndex" : 0,
-			"levelName" : "Intro\r\n",
-			"monsters" : {
-				"Monster1" : {
-					"position" : {
-						"x" : 6.43,
-						"y" : 1.77,
-						"z" : 0.0
-					},
-					"heroData" : {
-						"name" : "Monster1",
-						"level" : 1,
-						"rarity" : 0
-					}
+	"GamePlayConfigs" : {
+		"GameIndex" : {}
+	},
+	"ChestConfig" : {
+		"Common" : {
+			"ItemsCanDrop" : {
+				"Coin" : {
+					"Type" : 0,
+					"Value" : 3,
+					"Ratio" : "100"
+				}
+			}
+		},
+		"UnCommon" : {
+			"ItemsCanDrop" : {
+				"Coin" : {
+					"Type" : 0,
+					"Value" : 10,
+					"Ratio" : "100"
+				},
+				"BerryBushSeed" : {
+					"Type" : 2,
+					"Value" : 1,
+					"Ratio" : "50"
+				},
+				"Necklace" : {
+					"Type" : 3,
+					"Value" : 1,
+					"Ratio" : "25"
+				}
+			}
+		},
+		"Race" : {
+			"ItemsCanDrop" : {
+				"Coin" : {
+					"Type" : 0,
+					"Value" : 18,
+					"Ratio" : "100"
+				},
+				"TarotCard" : {
+					"Type" : 1,
+					"Value" : 1,
+					"Ratio" : "100"
+				}
+			}
+		},
+		"EndOfFloor" : {
+			"ItemsCanDrop" : {
+				"Coin" : {
+					"Type" : 0,
+					"Value" : 25,
+					"Ratio" : "100"
 				}
 			}
 		}
 	},
-	"Dungeon" : {
-		"NameDungeon" : {
-			"Intro" : ""
-		}
-	}
+	"ListItems" : {},
+	"<add name>" : ""
 }

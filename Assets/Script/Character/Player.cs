@@ -19,11 +19,8 @@ public class Player : CharacterBrain
         EventDispatcher.Publish(ListScript.CameraFollow, Events.ReturnTargetPlayer);
         EventDispatcher.Addlistener(ListScript.Player,Events.TriggerAction, Detention);
         EventDispatcher.Addlistener<string>(ListScript.Player, Events.TriggerAni, TriggerAni);
-        EventDispatcher.Addlistener<Transform,float>(ListScript.Player, Events.MoveTo, SetMoveWayPoint);
+        EventDispatcher.Addlistener<Vector3,float>(ListScript.Player, Events.MoveTo, SetMoveWayPoint);
         EventDispatcher.Addlistener<Weapon>(ListScript.Player,Events.ChangeWeapon, ChangeWeapon);
-    }
-    private void OnEnable()
-    {
     }
     private void Init()
     {
@@ -33,31 +30,41 @@ public class Player : CharacterBrain
         characterAnimator.AddStepAniAtk(SetOnSlash, SetoffSlash, StartCombo, FinishAniAtk);
         characterAnimator.AddStFishAni(StartAni,StopAni);
         slash.AddActionAttack(OnAttackHit);
-        deadAction = Dead;
         characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
     }
     private void Update()
     {
         if (OnAction)
+        {
+            characterAnimator.SetFloat("vertical", Vertical);
+            characterAnimator.SetFloat("horizontal", Horizontal);
             return;
+        }
         if (Input.GetMouseButtonDown(0) && !atkCanDo)
         {
             OnAttack();
             return;
         }
+        if (onAniAttck)
+            return;
+        if (Input.GetKeyDown(KeyCode.Space) && !atkCanDo)
+        {
+            Rolling();
+            characterAnimator.SetTrigger("Rolling");
+            return;
+        }
         if (Horizontal != 0 || Vertical!=0)
         {
-            if (onAniAttck)
-                return;
+            
             Rotation();
             direction.localPosition = new Vector3(Horizontal, 0, Vertical).normalized;
             characterAnimator.SetFloat("vertical", Vertical);
             characterAnimator.SetFloat("horizontal", Horizontal);
             characterAnimator.SetFloat("UpDown", direction.transform.localPosition.z);
+            characterAnimator.SetFloat("RightLeft", direction.transform.localPosition.x);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
         }
     }
-    
     private void ChangeWeapon(Weapon weapon)
     {
         Weapon wp = hand.GetComponentInChildren<Weapon>();
@@ -68,11 +75,20 @@ public class Player : CharacterBrain
         }
         Weapon obj =  Instantiate(weapon, hand.transform);
         characterAttack.Initialized(obj);
+    }
+    private void Rolling()
+    {
+        Vector3 dir = direction.position - transform.position;
+        this.LoopDelayCall(0.3f, () =>
+        {
+            agent.MoveToDirection(dir*3.5f);
+            Rotation();
+        });
 
     }
-    public override void SetMoveWayPoint(Transform wayPoint, float time)
+    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
-        Vector3 dir = wayPoint.position - transform.position;
+        Vector3 dir = wayPoint - transform.position;
         direction.position = dir.normalized + transform.position;
         base.SetMoveWayPoint(wayPoint, time);
     }
@@ -130,13 +146,10 @@ public class Player : CharacterBrain
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        //Debug.Log("Player takeDamage" + damage);
     }
     public override void Dead()
     {
         Debug.Log("Player Dead");
-        //throw new System.NotImplementedException();
-        
     }
     public void StartAni()
     {
@@ -148,8 +161,8 @@ public class Player : CharacterBrain
     }
     public override void EffectHit(Vector3 dir)
     {
-        Debug.Log(GameConstants.Slash);
-        AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
+        //Debug.Log(GameConstants.Slash);
+        //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
     public Transform ReturnTrans()
     {

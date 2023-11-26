@@ -13,7 +13,6 @@ public class Enemy : CharacterBrain
     protected override void Awake()
     {
         base.Awake();
-        
     }
     protected virtual void Start()
     {
@@ -23,7 +22,7 @@ public class Enemy : CharacterBrain
     }
     protected virtual void Update()
     {
-        if (arried || !Alive || OnAction)
+        if (!Alive || OnAction)
             return;
         if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniAttck ||
             direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniAttck)
@@ -39,14 +38,6 @@ public class Enemy : CharacterBrain
             characterAnimator.SetTrigger("Attack");
             return;
         }
-        //SetDestination(wayPoints[currentWaypointIndex]);
-        //characterAnimator.SetMovement(CharacterAnimator.MovementType.Run);
-        //if (Vector3.Distance(transform.position, wayPoints[currentWaypointIndex]) <= agent.agentBody.radius)
-        //    onArried?.Invoke();
-    }
-    public void DirectionToTarget()
-    {
-
     }
     public void Push()
     {
@@ -55,7 +46,6 @@ public class Enemy : CharacterBrain
             characterAnimator.SetTrigger("Attack");
         }
     }
-    
     public float Distance()
     {
         return Vector3.Distance(transform.position, direction.transform.position);
@@ -71,7 +61,7 @@ public class Enemy : CharacterBrain
     protected virtual void OnArried()
     {
         agent.AgentBody.isStopped = true;
-        arried = true;
+        OnAction = true;
         characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
         this.DelayCall(2, () =>
         {
@@ -79,7 +69,7 @@ public class Enemy : CharacterBrain
             if (currentWaypointIndex >= wayPoints.Count)
                 currentWaypointIndex = 0;
 
-            arried = false;
+            OnAction = false;
         });
     }
     protected override void OnAttackHit(CharacterBrain target)
@@ -91,17 +81,17 @@ public class Enemy : CharacterBrain
     {
         base.TakeDamage(damage);
         health -= damage;
-        Debug.Log($"health: {health}\ntake damage: {damage}");
         healthBar.SetActive();
         healthBar.UpdateHealth(health);
+        if (health <= 0)
+        {
+            Dead();
+        }
     }
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireSphere(transform.position, playerDetectionRange);
-
-    //}
     public override void Dead()
     {
+        Vector3 dir = transform.position - direction.position;
+        ImpactForce(dir.normalized * 20);
         deadBody.SetActive(true);
         healthBar.gameObject.SetActive(false);
         tranformOfAni.SetActive(false);
@@ -110,14 +100,13 @@ public class Enemy : CharacterBrain
         {
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
             {
-                //Instantiate(deadBody, transform.position,deadBody.transform.rotation);
-                //Destroy(gameObject);
+                
             });
         });
     }
     public override void EffectHit(Vector3 dir)
     {
-        Debug.Log(GameConstants.Slash);
-        AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
+        //Debug.Log(GameConstants.Slash);
+        //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
 }
