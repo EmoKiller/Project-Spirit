@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SaveGame1
   m_EditorClassIdentifier: 
   level: 0
-  Exp: 0
+  CurrentExp: 0
   AmountFollowers: 0
   AmountOfCoin: 0

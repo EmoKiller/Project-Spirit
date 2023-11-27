@@ -20,6 +20,13 @@ public enum ListScript
     Bruter,
     TypeButton
 }
+public enum TypeSave
+{
+    Level,
+    Exp,
+    AmountFollowers,
+    AmountOfCoin
+}
 public enum TypeFIll
 {
     Angry,

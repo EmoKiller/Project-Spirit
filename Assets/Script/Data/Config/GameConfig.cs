@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class GameConfig
 {
-    public PlayerConfig HeroConfig = null;
     public Dictionary<ChestType, ChestConfig> ChestConfig = null;
+    public Dictionary<TypeSave, SaveGameIndex> SaveGames = new Dictionary <TypeSave,SaveGameIndex>();
     public GameConfig()
     {
 

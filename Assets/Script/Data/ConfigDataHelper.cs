@@ -13,16 +13,23 @@ public class ConfigDataHelper
             return gameConfig;
         }
     }
-    private static ChestConfig chestConfig = null;
-    public static ChestConfig ChestConfig
-    {
-        get
-        {
-            if (chestConfig == null)
-                chestConfig = JsonConvert.DeserializeObject<ChestConfig>(Resources.Load<TextAsset>("").text);
-            return chestConfig;
-        }
-    }
+    //private static SaveGames saveGame = null;
+    //public static SaveGames SaveGame
+    //{
+    //    get
+    //    {
+    //        if (!ES3.KeyExists("SaveGame"))
+    //        {
+    //            ES3.Save("SaveGame", saveGame);
+    //        }
+    //        else
+    //        {
+    //            saveGame = ES3.Load<SaveGames>("SaveGame");
+    //        }
+    //        return saveGame;
+    //    }
+    //    set => ES3.Save("SaveGame", value);
+    //}
     //private static UserData userData = null;
     //public static UserData UserData
     //{

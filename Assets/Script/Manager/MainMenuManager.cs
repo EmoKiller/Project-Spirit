@@ -41,9 +41,7 @@ public class MainMenuManager : MonoBehaviour
         buttonCredits.onClick.AddListener(Credits);
         buttonRoadmap.onClick.AddListener(RoadMap);
         buttonQuit.onClick.AddListener(Quit);
-
         buttonBack.onClick.AddListener(BackToMenu);
-
         buttonOnQuitAccept.onClick.AddListener(ExitGame);
         buttonOnQuitBack.onClick.AddListener(BackToMenu);
         backOnStartMenu.onClick.AddListener(BackToMenu);
