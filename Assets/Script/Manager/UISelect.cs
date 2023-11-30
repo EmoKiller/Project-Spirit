@@ -7,6 +7,10 @@ public class UISelect : MonoBehaviour
     [SerializeField] RectTransform arrow;
     [SerializeField] TMP_Text yes;
     [SerializeField] TMP_Text absolutely;
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -20,11 +24,6 @@ public class UISelect : MonoBehaviour
             Rotation(new Vector3(0, 0, -89.9f));
             yes.color = Color.white;
             absolutely.color = new Color32(252, 240, 211, 255);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            EventDispatcher.Publish(ListScript.OnTringgerAction, Events.OpenPopup);
-            EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.UiSelect, false);
         }
     }
     private void Rotation(Vector3 value)

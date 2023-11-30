@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class InfoWeapon : MonoBehaviour
 {
+    public enum Script
+    {
+        InfoWeapon
+    }
     [SerializeField] RectTransform imageL;
     [SerializeField] RectTransform imageR;
     [SerializeField] GameObject imageUpDownDamage;
@@ -15,10 +19,14 @@ public class InfoWeapon : MonoBehaviour
     [SerializeField] TMP_Text textDescriptionWeapon;
     [SerializeField] TMP_Text texrDamage;
     [SerializeField] TMP_Text textSpeed;
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
     private void OnEnable()
     {
-        EventDispatcher.Addlistener<string, string, string, float, float>(ListScript.InfoWeapon, Events.UpdateValue, UpdateInfoWeapon);
-        EventDispatcher.Addlistener(ListScript.InfoWeapon, Events.SetDefault, SetDefault);
+        EventDispatcher.Addlistener<string, string, string, float, float>(Script.InfoWeapon, Events.UpdateInfoWeapon, UpdateInfoWeapon);
+        EventDispatcher.Addlistener(Script.InfoWeapon, Events.SetDefault, SetDefault);
     }
     private void UpdateInfoWeapon(string nameWeapon,string quoteWeapon,string descriptionWeapon, float damage, float speed)
     {

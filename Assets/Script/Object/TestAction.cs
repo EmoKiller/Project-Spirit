@@ -14,7 +14,7 @@ public class TestAction : MonoBehaviour
         if (isOpen)
             return;
         TringgerAction();
-        EventDispatcher.Publish(ListScript.IntroGame, Events.TriggerAction);
+        EventDispatcher.Publish(IntroGame.Script.IntroGame, Events.EnemyGoToWayPoint);
     }
     private void OnTriggerStay(Collider other)
     {

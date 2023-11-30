@@ -5,21 +5,13 @@ using UnityEngine;
 public class CameraChangeLookAt : MonoBehaviour
 {
     [SerializeField] Transform _transform;
-    [SerializeField] Transform savetrans;
     protected void OnTriggerEnter(Collider other)
     {
-        Player p = other.GetComponent<Player>();
-        savetrans = p.ReturnTrans();
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.SetSmooth,0.8f);
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, _transform);
+        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, _transform);
     }
     protected void OnTriggerExit(Collider other)
     {
-        ReturnTransPlayer();
+        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
     }
-    public void ReturnTransPlayer()
-    {
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransform, savetrans);
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.SetSmooth, 0.3f);
-    }
+    
 }

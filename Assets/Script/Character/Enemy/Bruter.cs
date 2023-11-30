@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Bruter : MonoBehaviour
 {
+    public enum Script
+    {
+        Bruter
+    }
     [SerializeField] Animator _animator;
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        EventDispatcher.Addlistener(ListScript.Bruter,Events.TriggerAction, SetAniKill);
+        EventDispatcher.Addlistener(Script.Bruter,Events.BruterTriggerAni, SetAniKill);
     }
     private void SetAniKill()
     {
@@ -14,7 +18,7 @@ public class Bruter : MonoBehaviour
     }
     public void InvokeAction()
     {
-        EventDispatcher.Publish(ListScript.Bruter, Events.TriggerAction2);
+        EventDispatcher.Publish(IntroGame.Script.IntroGame, Events.GoToMap2);
         Destroy(gameObject);
     }
 }

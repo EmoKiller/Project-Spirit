@@ -18,3 +18,8 @@ MonoBehaviour:
   - b
   - c
   - d
+  pointTalk:
+  - {fileID: 7700122972231842862, guid: a74338e88e864f24fa572742344c3900, type: 3}
+  - {fileID: 2875256109337911561, guid: c3916bda06a58344e8ca56e394f88bc7, type: 3}
+  - {fileID: 5028750721094166161, guid: 6682b2ae4e98dd74ead1540cb2468dcf, type: 3}
+  - {fileID: 8140886370709535885, guid: 1eb9df3c7cef0324b878e75981409728, type: 3}

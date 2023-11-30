@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class UiDungeonManager : MonoBehaviour
 {
+    public enum Script
+    {
+        UiDungeonManager
+    }
     [SerializeField] Image iconWeapon;
     [SerializeField] Image iconCurses;
     private void OnEnable()
     {
-        EventDispatcher.Addlistener<Sprite>(ListScript.UiDungeonManager,Events.UpdateIconWeapon, UpdateIconWeapon);
-        EventDispatcher.Addlistener<Sprite>(ListScript.UiDungeonManager, Events.UpdateIconCurses, UpdateIconCurses);
+        EventDispatcher.Addlistener<Sprite>(Script.UiDungeonManager,Events.UpdateIconWeapon, UpdateIconWeapon);
+        EventDispatcher.Addlistener<Sprite>(Script.UiDungeonManager, Events.UpdateIconCurses, UpdateIconCurses);
     }
     private void Start()
     {

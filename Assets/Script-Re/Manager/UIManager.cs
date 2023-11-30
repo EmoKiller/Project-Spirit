@@ -13,10 +13,7 @@ public class UIManager : MonoBehaviour
     Dictionary<TypeFIll, IFill> listFIll = new Dictionary<TypeFIll, IFill>();
     Dictionary<TypeAmount, IMountValue> listMount = new Dictionary<TypeAmount, IMountValue>();
     bool ToggleValue = false;
-    private void OnEnable()
-    {
-        
-    }
+    
     private void Awake()
     {
         //HideBar
@@ -31,6 +28,11 @@ public class UIManager : MonoBehaviour
             listMount.Add(mount.Type, mount);
         }
         //HideBar
+    }
+    private void Start()
+    {
+        GruopMenuEsc.SetActive(false);
+        InventoryTab.SetActive(false);
     }
     private void Update()
     {

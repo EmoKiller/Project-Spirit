@@ -1,14 +1,14 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIButtonAction : MonoBehaviour
 {
-
+    public enum Script
+    {
+        UIButtonAction
+    }
     [SerializeField] private GameObject buttonE;
     [SerializeField] private GameObject mouseClick;
     [SerializeField] private TMP_Text text;
@@ -19,45 +19,33 @@ public class UIButtonAction : MonoBehaviour
     Coroutine fillIncreaseAction;
     Coroutine fillReduceAction;
     private void Start()
-    {
+    { 
         gameObject.SetActive(false);
         buttonE.SetActive(false);
         mouseClick.SetActive(false);
+        EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIButtonAction, Events.UIButtonOpen, UIButtonOpen);
+        EventDispatcher.Addlistener(Script.UIButtonAction, Events.UIButtonReset, ResetButton);
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
+            ButtonDown();
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
-            //EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
+            ButtonUp();
         }
-        if (Input.GetKey(KeyCode.E))
+        if (FillValue() >= 1)
         {
-            //EventDispatcher.Publish(ListScript.OnTringgerWaitAction, Events.OnTringgerActionItems);
+            EventDispatcher.Publish(TriggerWaitAction.Script.TriggerWaitAction, Events.OnTringgerWaitAction);
         }
     }
     private void OnEnable()
     {
-        //EventDispatcher.Addlistener<TypeShowButton>(ListScript.UIButtonAction, Events.SwitchImageButton, SwitchImageButton);
-        //EventDispatcher.Addlistener<string>(ListScript.UIButtonAction, Events.UpdateText, UpdateText);
-        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.SetDefaultButton, ResetButton);
-        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.AddListener, AddListener);
-        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.RemoveEvent, RemoveEvent);
+        
     }
-    private void AddListener()
-    {
-        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown, ButtonDown);
-        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp, ButtonUp);
-    }
-    private void RemoveEvent()
-    {
-        //EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
-        //EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
-    }
-    private void SwitchImageButton(TypeShowButton type)
+    private void UIButtonOpen(TypeShowButton type,string str)
     {
         switch (type)
         {
@@ -71,6 +59,11 @@ public class UIButtonAction : MonoBehaviour
                 buttonE.gameObject.SetActive(true);
                 break;
         }
+        gameObject.SetActive(true);
+        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 30), 110);
+        rectShowText.sizeDelta = rectButton.sizeDelta;
+        text.text = str;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(thisTransform);
     }
     private float FillValue()
     {
@@ -80,15 +73,7 @@ public class UIButtonAction : MonoBehaviour
     {
         fill.fillAmount = amount;
     }
-    private void UpdateText(string str)
-    {
-        gameObject.SetActive(true);
-        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 30), 110);
-        rectShowText.sizeDelta = rectButton.sizeDelta;
-        text.text = str;
-        LayoutRebuilder.ForceRebuildLayoutImmediate(thisTransform);
-    }
-    private void ResetButton()
+    private void ResetButton()  
     {
         gameObject.SetActive(false);
         rectButton.sizeDelta = new Vector2(0, 110);
@@ -114,7 +99,6 @@ public class UIButtonAction : MonoBehaviour
         while (amount <= 1)
         {
             amount += 1f * Time.deltaTime;
-            EventDispatcher.Publish(ListScript.TypeButton, Events.UpdateValue, amount);
             FillUpdate(amount);
             yield return null;
         }
@@ -124,7 +108,6 @@ public class UIButtonAction : MonoBehaviour
         while (amount > 0)
         {
             amount -= 1f * Time.deltaTime;
-            EventDispatcher.Publish(ListScript.TypeButton, Events.UpdateValue, amount);
             FillUpdate(amount);
             yield return null;
         }

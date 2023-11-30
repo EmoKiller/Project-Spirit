@@ -8,8 +8,10 @@ public class PopUpTalkObject : ScriptableObject
     public GameObject projectTile = null;
     [Header("Comfinguration")]
     public List<string> ListText = null;
+    public List<Transform> pointTalk = null;
     public PopUpTalkObject()
     {
         
     }
+
 }

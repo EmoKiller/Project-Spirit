@@ -1,59 +1,41 @@
-public enum ListScript
-{
-    GameManager,
-    Player,
-    InfoWeapon,
-    WeaponPodium,
-    CameraFollow,
-    CameraChangeLookAt,
-    OnTringgerWaitAction,
-    OnTringgerAction,
-    UiDungeonManager,
-    UIManager,
-    UIButtonAction,
-    DeathPenaltyPedestal,
-    IntroGame,
-    PopUpTalkManager,
-    PopUpTalk,
-    VideoPlayer,
-    WhoWait,
-    Bruter,
-    TypeButton
-}
+
 public enum Events
 {
-    test22,
-    SetDefault,
-    TriggerAction,
-    TriggerAction2,
-    TriggerAni,
-    MoveTo,
-    AddListener,
-    RemoveEvent,
-    CameraNomal,
-    CameraZoom,
-    SetSmooth,
-    Return,
-    ReturnTargetPlayer,
-    SwitchImageButton,
-    SetDefaultButton,
-    Open,
-    Close,
-    OpenPopup,
-    ClosePopup,
-    ChangeWeapon,
-    UiSelect,
-    UpdateText,
-    UpdateValue,
-    UpdateColor,
-    UpdateTransform,
-    UpdateTransformPlayer,
+    //IntroGame
+    GoToMap1,
+    GoToMap2,
+    EnemyGoToWayPoint,
+    BruterTriggerAni,
+    WhoWaitTriggerAni,
+    SetVideoIntro,
+    //player
+    PlayerDirection,//func
+    PlayerTriggerAni,
+    PlayerChangeWeapon,
+    //UiDungeonManager
     UpdateIconWeapon,
     UpdateIconCurses,
-    SetInfoWeapon,
-    OnTringgerActionItems,
-    OnPlayerActionItemsButtonDown,
-    OnPlayerActionItemsButtonUp,
+    //UIManager
+    UpdateInfoWeapon,
+    //Cammera
+    CameraChangeColorBackGround,
+    CameraDefault,
+    CameraFocus,
+    CameraChangeTarget,
+    CameraTargetPlayer,
+    //UIButtonAction
+    UIButtonOpen,
+    UIButtonUpdateText,
+    UIButtonReset,
+    //OnTringgerWaitAction
+    OnTringgerWaitAction,
+    //TriggerTalk
+    TriggerWaitUpdateValue,//trgertalk,WeaponPodium
+
+    MoveToWaypoint,
+    SetDefault,
+    
+    
 }
 public enum TypeSave
 {

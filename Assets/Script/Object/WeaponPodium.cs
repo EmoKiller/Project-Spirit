@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WeaponPodium : OnTringgerWaitAction
+public class WeaponPodium : TriggerWaitAction
 {
     [SerializeField] Weapon weapon = null;
     float damagePlayer = 0;
@@ -10,41 +10,7 @@ public class WeaponPodium : OnTringgerWaitAction
     {
         weapon = GetComponentInChildren<Weapon>();
     }
-    protected override void OnTriggerEnter(Collider other)
-    {
-        base.OnTriggerEnter(other);
-        if (actioned)
-            return;
-        GetDamagePlayer(other);
-        EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.SetInfoWeapon, true);
-        EventDispatcher.Addlistener<float>(ListScript.TypeButton, Events.UpdateValue, UpdateValue);
-        ShowInfoWeaponPodium();
-    }
-    protected override void OnTriggerExit(Collider other)
-    {
-        base.OnTriggerExit(other);
-        EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.SetInfoWeapon, false);
-        EventDispatcher.Publish(ListScript.InfoWeapon, Events.SetDefault);
-        EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.RemoveEvent);
-    }
-    protected override void OnTringgerPlayer()
-    {
-        base.OnTringgerPlayer();
-        if (actioned)
-        {
-            return;
-        }
-        if (num >= 1)
-        {
-            EventDispatcher.Publish(ListScript.Player,Events.ChangeWeapon,weapon);
-            EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.SetInfoWeapon, false);
-            EventDispatcher.Publish(ListScript.UIButtonAction, Events.SetDefaultButton);
-            weapon.gameObject.SetActive(false);
-            actioned = true;
-
-        }
-            
-    }
+    
     private void UpdateValue(float value)
     {
         num = value;
@@ -67,7 +33,7 @@ public class WeaponPodium : OnTringgerWaitAction
     }
     private void ShowInfoWeaponPodium()
     {
-        EventDispatcher.Publish(ListScript.InfoWeapon, Events.UpdateValue,
+        EventDispatcher.Publish(InfoWeapon.Script.InfoWeapon, Events.UpdateInfoWeapon,
             weapon.weaponObject.NameWeapon,
             weapon.weaponObject.QuoteWeapon,
             weapon.weaponObject.DescriptionWeapon,

@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BerryBush : OnTringgerWaitAction
+public class BerryBush : TriggerWaitAction
 {
-    protected override void OnTringgerPlayer()
-    {
-        Debug.Log("BerryBush");
-    }
-
+    
 }

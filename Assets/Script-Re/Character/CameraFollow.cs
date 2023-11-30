@@ -3,17 +3,11 @@ using UnityEngine.Video;
 
 public class CameraFollow : MonoBehaviour
 {
-    public enum Eventss
+    public enum Script
     {
-        TargetPlayer,
-        ChangeTarget,
-        ChangeColorBackGround,
-        ReturnTargetPlayer,
-        CameraDefault,
-        CameraFocus
+        CameraFollow
     }
     [SerializeField] private Transform target;
-    [SerializeField] private Transform player;
     [SerializeField] private float smooth;
     [SerializeField] private Vector3 offset;
     
@@ -21,26 +15,47 @@ public class CameraFollow : MonoBehaviour
     private Vector3 vecref = Vector3.zero;
     private void Awake()
     {
-        
-        //EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Eventss.TargetPlayer, TargetPlayer);
-        //EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Eventss.ChangeTarget, ChangeTarget);
-        EventDispatcher.Addlistener<Color32>(ListScript.CameraFollow, Eventss.ChangeColorBackGround, ChangeColorBackGround);
-        
-        EventDispatcher.Addlistener(ListScript.CameraFollow, Eventss.ReturnTargetPlayer, ReturnTargetPlayer);
-        EventDispatcher.Addlistener(ListScript.CameraFollow,Eventss.CameraDefault, CameraDefault);
-        EventDispatcher.Addlistener(ListScript.CameraFollow, Eventss.CameraFocus, CameraFocus);
+        EventDispatcher.Addlistener<Color32>(Script.CameraFollow, Events.CameraChangeColorBackGround, ChangeColorBackGround);
+        EventDispatcher.Addlistener<Transform>(Script.CameraFollow, Events.CameraChangeTarget, CameraChangeTarget);
+        EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraTargetPlayer, TargetPlayer);
+        EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraDefault, CameraDefault);
+        EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraFocus, CameraFocus);
     }
     private void Start()
     {
-        
+        TargetPlayer();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            target = (Transform)EventDispatcher.Call(ListScript.CameraFollow, Events.test22);
-        }
         transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
+    }
+    private void CameraDefault()
+    {
+        offset = new Vector3(0,22,-28);
+        transform.eulerAngles = new Vector3(38,0,0);
+        SetSmooth(0.4f);
+    }
+    private void CameraFocus()
+    {
+        SetSmooth(0.6f);
+        offset = new Vector3(0, 6, -8.5f);
+        transform.eulerAngles = new Vector3(30, 0, 0);
+    }
+    private void CameraChangeTarget(Transform target)
+    {
+        this.target = target;
+    }
+    private void TargetPlayer()
+    {
+        target = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerDirection);
+    }
+    private void ChangeColorBackGround(Color32 color)
+    {
+        _camera.backgroundColor = color;
+    }
+    private void SetSmooth(float value)
+    {
+        smooth = value;
     }
     private void FixedUpdate()
     {
@@ -61,38 +76,6 @@ public class CameraFollow : MonoBehaviour
         //targetpos.x = Mathf.Clamp(targetpos.x, minX, maxX);
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
         //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
-    }
-    private void CameraDefault()
-    {
-        offset = new Vector3(0,22,-28);
-        transform.eulerAngles = new Vector3(37,0,0);
-        SetSmooth(0.4f);
-    }
-    private void CameraFocus()
-    {
-        SetSmooth(0.6f);
-        offset = new Vector3(0, 6, -8.5f);
-        transform.eulerAngles = new Vector3(30, 0, 0);
-    }
-    private void ReturnTargetPlayer()
-    {
-        target = player;
-    }
-    private void TargetPlayer(Transform target)
-    {
-        player = target;
-    }
-    private void ChangeTarget(Transform target)
-    {
-        this.target = target;
-    }
-    private void ChangeColorBackGround(Color32 color)
-    {
-        _camera.backgroundColor = color;
-    }
-    private void SetSmooth(float value)
-    {
-        smooth = value;
     }
 
 }

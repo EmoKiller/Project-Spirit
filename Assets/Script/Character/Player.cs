@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class Player : CharacterBrain
 {
-    public enum Eventss
+    public enum Script
     {
-        TriggerAni,
-        Detention,
-        MoveToWaypoint,
-        ChangeWeapon,
-        test
+        Player
     }
     [SerializeField]private GameObject hand;
     private float Horizontal => Input.GetAxis("Horizontal");
@@ -24,13 +20,10 @@ public class Player : CharacterBrain
     private void Start()
     {
         Init();
-        EventDispatcher.Register(ListScript.CameraFollow, Events.test22,() => direction);
-        //EventDispatcher.Publish(ListScript.CameraFollow, direction);
-        EventDispatcher.Publish(ListScript.CameraFollow, CameraFollow.Eventss.TargetPlayer, direction);
-        EventDispatcher.Publish(ListScript.CameraFollow, CameraFollow.Eventss.ReturnTargetPlayer);
-        EventDispatcher.Addlistener<string>(ListScript.Player, Eventss.TriggerAni, TriggerAni);
-        EventDispatcher.Addlistener<Vector3,float>(ListScript.Player, Eventss.MoveToWaypoint, SetMoveWayPoint);
-        EventDispatcher.Addlistener<Weapon>(ListScript.Player,Events.ChangeWeapon, ChangeWeapon);
+        EventDispatcher.Register(Script.Player, Events.PlayerDirection, () => direction);
+        EventDispatcher.Addlistener<string>(Script.Player, Events.PlayerTriggerAni, TriggerAni);
+        EventDispatcher.Addlistener<Vector3,float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
+        EventDispatcher.Addlistener<Weapon>(Script.Player,Events.PlayerChangeWeapon, ChangeWeapon);
     }
     private void Init()
     {
