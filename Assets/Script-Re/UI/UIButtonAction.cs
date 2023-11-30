@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class UIButtonAction : MonoBehaviour
 {
+
     [SerializeField] private GameObject buttonE;
     [SerializeField] private GameObject mouseClick;
     [SerializeField] private TMP_Text text;
@@ -27,34 +28,34 @@ public class UIButtonAction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
+            //EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
-            EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
+            //EventDispatcher.Publish(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
         }
         if (Input.GetKey(KeyCode.E))
         {
-            EventDispatcher.Publish(ListScript.OnTringgerWaitAction, Events.OnTringgerActionItems);
+            //EventDispatcher.Publish(ListScript.OnTringgerWaitAction, Events.OnTringgerActionItems);
         }
     }
     private void OnEnable()
     {
-        EventDispatcher.Addlistener<TypeShowButton>(ListScript.UIButtonAction, Events.SwitchImageButton, SwitchImageButton);
-        EventDispatcher.Addlistener<string>(ListScript.UIButtonAction, Events.UpdateText, UpdateText);
-        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.SetDefaultButton, ResetButton);
-        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.AddListener, AddListener);
-        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.RemoveEvent, RemoveEvent);
+        //EventDispatcher.Addlistener<TypeShowButton>(ListScript.UIButtonAction, Events.SwitchImageButton, SwitchImageButton);
+        //EventDispatcher.Addlistener<string>(ListScript.UIButtonAction, Events.UpdateText, UpdateText);
+        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.SetDefaultButton, ResetButton);
+        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.AddListener, AddListener);
+        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.RemoveEvent, RemoveEvent);
     }
     private void AddListener()
     {
-        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown, ButtonDown);
-        EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp, ButtonUp);
+        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown, ButtonDown);
+        //EventDispatcher.Addlistener(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp, ButtonUp);
     }
     private void RemoveEvent()
     {
-        EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
-        EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
+        //EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonDown);
+        //EventDispatcher.RemoveEvent(ListScript.UIButtonAction, Events.OnPlayerActionItemsButtonUp);
     }
     private void SwitchImageButton(TypeShowButton type)
     {

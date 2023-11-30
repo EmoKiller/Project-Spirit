@@ -107,7 +107,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish(Enum scriptName, Events eventName)
+    public static void Publish(Enum scriptName, Enum eventName)
     {
         if (Events.ContainsKey(scriptName))
         {
@@ -126,7 +126,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish(Events eventName)
+    public static void Publish(Enum eventName)
     {
         foreach (KeyValuePair<Enum, Dictionary<Enum, NNCommond>> eventOnScript in Events)
         {
@@ -135,7 +135,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish<T1>(Enum scriptName, Events eventName, T1 arg1)
+    public static void Publish<T1>(Enum scriptName, Enum eventName, T1 arg1)
     {
         if (Events.ContainsKey(scriptName))
         {
@@ -154,7 +154,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish<T1>(Events eventName, T1 arg1)
+    public static void Publish<T1>(Events eventName, T1 arg1 )
     {
         foreach (KeyValuePair<Enum, Dictionary<Enum, NNCommond>> eventOnScript in Events)
         {
@@ -163,7 +163,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish<T1, T2>(Enum scriptName, Events eventName, T1 arg1, T2 arg2)
+    public static void Publish<T1, T2>(Enum scriptName, Enum eventName, T1 arg1, T2 arg2)
     {
         if (Events.ContainsKey(scriptName))
         {
@@ -191,7 +191,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish<T1, T2, T3>(Enum scriptName, Events eventName, T1 arg1, T2 arg2, T3 arg3)
+    public static void Publish<T1, T2, T3>(Enum scriptName, Enum eventName, T1 arg1, T2 arg2, T3 arg3)
     {
         if (Events.ContainsKey(scriptName))
         {
@@ -219,7 +219,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish<T1, T2, T3, T4>(Enum scriptName, Events eventName, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+    public static void Publish<T1, T2, T3, T4>(Enum scriptName, Enum eventName, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
     {
         if (Events.ContainsKey(scriptName))
         {
@@ -246,7 +246,7 @@ public static class EventDispatcher
                 eventOnScript.Value[eventName].Act(arg1, arg2, arg3, arg4);
         }
     }
-    public static void Publish<T1, T2, T3, T4 ,T5>(Enum scriptName, Events eventName, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+    public static void Publish<T1, T2, T3, T4 ,T5>(Enum scriptName, Enum eventName, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
     {
         if (Events.ContainsKey(scriptName))
         {

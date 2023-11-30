@@ -1,8 +1,17 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class Player : CharacterBrain
 {
+    public enum Eventss
+    {
+        TriggerAni,
+        Detention,
+        MoveToWaypoint,
+        ChangeWeapon,
+        test
+    }
     [SerializeField]private GameObject hand;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
@@ -15,11 +24,12 @@ public class Player : CharacterBrain
     private void Start()
     {
         Init();
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.UpdateTransformPlayer, direction);
-        EventDispatcher.Publish(ListScript.CameraFollow, Events.ReturnTargetPlayer);
-        EventDispatcher.Addlistener(ListScript.Player,Events.TriggerAction, Detention);
-        EventDispatcher.Addlistener<string>(ListScript.Player, Events.TriggerAni, TriggerAni);
-        EventDispatcher.Addlistener<Vector3,float>(ListScript.Player, Events.MoveTo, SetMoveWayPoint);
+        EventDispatcher.Register(ListScript.CameraFollow, Events.test22,() => direction);
+        //EventDispatcher.Publish(ListScript.CameraFollow, direction);
+        EventDispatcher.Publish(ListScript.CameraFollow, CameraFollow.Eventss.TargetPlayer, direction);
+        EventDispatcher.Publish(ListScript.CameraFollow, CameraFollow.Eventss.ReturnTargetPlayer);
+        EventDispatcher.Addlistener<string>(ListScript.Player, Eventss.TriggerAni, TriggerAni);
+        EventDispatcher.Addlistener<Vector3,float>(ListScript.Player, Eventss.MoveToWaypoint, SetMoveWayPoint);
         EventDispatcher.Addlistener<Weapon>(ListScript.Player,Events.ChangeWeapon, ChangeWeapon);
     }
     private void Init()

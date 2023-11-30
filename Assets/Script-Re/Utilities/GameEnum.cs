@@ -20,6 +20,41 @@ public enum ListScript
     Bruter,
     TypeButton
 }
+public enum Events
+{
+    test22,
+    SetDefault,
+    TriggerAction,
+    TriggerAction2,
+    TriggerAni,
+    MoveTo,
+    AddListener,
+    RemoveEvent,
+    CameraNomal,
+    CameraZoom,
+    SetSmooth,
+    Return,
+    ReturnTargetPlayer,
+    SwitchImageButton,
+    SetDefaultButton,
+    Open,
+    Close,
+    OpenPopup,
+    ClosePopup,
+    ChangeWeapon,
+    UiSelect,
+    UpdateText,
+    UpdateValue,
+    UpdateColor,
+    UpdateTransform,
+    UpdateTransformPlayer,
+    UpdateIconWeapon,
+    UpdateIconCurses,
+    SetInfoWeapon,
+    OnTringgerActionItems,
+    OnPlayerActionItemsButtonDown,
+    OnPlayerActionItemsButtonUp,
+}
 public enum TypeSave
 {
     Level,
@@ -78,40 +113,7 @@ public enum Enemys
 {
     Chaser
 }
-public enum Events
-{
-    SetDefault,
-    TriggerAction,
-    TriggerAction2,
-    TriggerAni,
-    MoveTo,
-    AddListener,
-    RemoveEvent,
-    CameraNomal,
-    CameraZoom,
-    SetSmooth,
-    Return,
-    ReturnTargetPlayer,
-    SwitchImageButton,
-    SetDefaultButton,
-    Open,
-    Close,
-    OpenPopup,
-    ClosePopup,
-    ChangeWeapon,
-    UiSelect,
-    UpdateText,
-    UpdateValue,
-    UpdateColor,
-    UpdateTransform,
-    UpdateTransformPlayer,
-    UpdateIconWeapon,
-    UpdateIconCurses,
-    SetInfoWeapon,
-    OnTringgerActionItems,
-    OnPlayerActionItemsButtonDown,
-    OnPlayerActionItemsButtonUp,
-}
+
 public enum TypeTabInfomation
 {
     Inventory,

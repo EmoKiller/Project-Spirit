@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     
+    [Header("HideBar")]
     [SerializeField] RectTransform WayBlack;
     [SerializeField] GameObject GruopMenuEsc;
     [SerializeField] GameObject InventoryTab;
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
     }
     private void Awake()
     {
+        //HideBar
         List<IFill> listfills = GetComponentsInChildren<IFill>().ToList();
         foreach (IFill fill in listfills)
         {
@@ -28,13 +30,13 @@ public class UIManager : MonoBehaviour
         {
             listMount.Add(mount.Type, mount);
         }
-
+        //HideBar
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            ToggleTab();
+            ToggleTabHideBar();
             //InventoryTab
         }
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -42,11 +44,7 @@ public class UIManager : MonoBehaviour
             //GruopMenuEsc
         }
     }
-    private void UpdateMount(string str)
-    {
-
-    }
-    private void ToggleTab()
+    private void ToggleTabHideBar()
     {
         ToggleValue = !ToggleValue;
         

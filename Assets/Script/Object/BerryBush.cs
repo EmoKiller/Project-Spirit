@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BerryBush : OnTringgerWaitAction
 {
-    protected override void OnTringgerActionItems()
+    protected override void OnTringgerPlayer()
     {
         Debug.Log("BerryBush");
     }

@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.tvOS;
-using UnityEngine.UIElements;
 
 public class WeaponPodium : OnTringgerWaitAction
 {
@@ -29,9 +27,9 @@ public class WeaponPodium : OnTringgerWaitAction
         EventDispatcher.Publish(ListScript.InfoWeapon, Events.SetDefault);
         EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.RemoveEvent);
     }
-    protected override void OnTringgerActionItems()
+    protected override void OnTringgerPlayer()
     {
-        base.OnTringgerActionItems();
+        base.OnTringgerPlayer();
         if (actioned)
         {
             return;

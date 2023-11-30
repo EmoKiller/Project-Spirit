@@ -3,6 +3,15 @@ using UnityEngine.Video;
 
 public class CameraFollow : MonoBehaviour
 {
+    public enum Eventss
+    {
+        TargetPlayer,
+        ChangeTarget,
+        ChangeColorBackGround,
+        ReturnTargetPlayer,
+        CameraDefault,
+        CameraFocus
+    }
     [SerializeField] private Transform target;
     [SerializeField] private Transform player;
     [SerializeField] private float smooth;
@@ -12,17 +21,25 @@ public class CameraFollow : MonoBehaviour
     private Vector3 vecref = Vector3.zero;
     private void Awake()
     {
-        EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Events.UpdateTransformPlayer, TargetPlayer);
-        EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Events.UpdateTransform, ChangeTarget);
-        EventDispatcher.Addlistener<Color32>(ListScript.CameraFollow, Events.UpdateColor, ChangeColorCamera);
-        EventDispatcher.Addlistener<float>(ListScript.CameraFollow, Events.SetSmooth, SetSmooth);
-        EventDispatcher.Addlistener(ListScript.CameraFollow, Events.ReturnTargetPlayer, ReturnTargetPlayer);
-        EventDispatcher.Addlistener(ListScript.CameraFollow,Events.CameraNomal, CameraNomal);
-        EventDispatcher.Addlistener(ListScript.CameraFollow, Events.CameraZoom, CameraZoom);
+        
+        //EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Eventss.TargetPlayer, TargetPlayer);
+        //EventDispatcher.Addlistener<Transform>(ListScript.CameraFollow, Eventss.ChangeTarget, ChangeTarget);
+        EventDispatcher.Addlistener<Color32>(ListScript.CameraFollow, Eventss.ChangeColorBackGround, ChangeColorBackGround);
+        
+        EventDispatcher.Addlistener(ListScript.CameraFollow, Eventss.ReturnTargetPlayer, ReturnTargetPlayer);
+        EventDispatcher.Addlistener(ListScript.CameraFollow,Eventss.CameraDefault, CameraDefault);
+        EventDispatcher.Addlistener(ListScript.CameraFollow, Eventss.CameraFocus, CameraFocus);
     }
-
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            target = (Transform)EventDispatcher.Call(ListScript.CameraFollow, Events.test22);
+        }
         transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
     }
     private void FixedUpdate()
@@ -45,23 +62,19 @@ public class CameraFollow : MonoBehaviour
         //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
         //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
     }
-    //private void AddListenerVideo()
-    //{
-    //    EventDispatcher.Addlistener<bool>(ListScript.VideoPlayer, Events.UpdateValue, SetPlayVideos);
-    //}
-    private void CameraNomal()
+    private void CameraDefault()
     {
         offset = new Vector3(0,22,-28);
         transform.eulerAngles = new Vector3(37,0,0);
         SetSmooth(0.4f);
     }
-    private void CameraZoom()
+    private void CameraFocus()
     {
         SetSmooth(0.6f);
         offset = new Vector3(0, 6, -8.5f);
         transform.eulerAngles = new Vector3(30, 0, 0);
     }
-    public void ReturnTargetPlayer()
+    private void ReturnTargetPlayer()
     {
         target = player;
     }
@@ -73,7 +86,7 @@ public class CameraFollow : MonoBehaviour
     {
         this.target = target;
     }
-    private void ChangeColorCamera(Color32 color)
+    private void ChangeColorBackGround(Color32 color)
     {
         _camera.backgroundColor = color;
     }
