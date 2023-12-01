@@ -7,7 +7,9 @@ public class UIPopup : MonoBehaviour
     [Header("Line")]
     [SerializeField] RectTransform lineTop;
     [SerializeField] RectTransform lineBottom;
-    
+    [SerializeField] PopUpTalkObject talkList;
+
+
     private void Removed()
     {
         gameObject.SetActive(false);

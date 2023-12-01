@@ -3,12 +3,7 @@ using UnityEngine.tvOS;
 
 public class TriggerTalk : TriggerWaitAction
 {
-    public enum Script
-    {
-        TriggerTalk
-    }
     
-    [SerializeField] PopUpTalkObject talkList;
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);

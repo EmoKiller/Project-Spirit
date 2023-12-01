@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ChestBonus : MonoBehaviour
 {
     public ChestType type;
-    [SerializeField] ChestObject chest;
     private ObjectAnimator ObjAnimator => GetComponentInChildren<ObjectAnimator>();
     private void Start()
     {
