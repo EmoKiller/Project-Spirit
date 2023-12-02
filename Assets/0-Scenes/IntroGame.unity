@@ -6053,6 +6053,7 @@ GameObject:
   - component: {fileID: 453465096}
   - component: {fileID: 453465095}
   - component: {fileID: 453465094}
+  - component: {fileID: 453465099}
   m_Layer: 8
   m_Name: Death Penalty Pedestal (1)
   m_TagString: Untagged
@@ -6171,6 +6172,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &453465099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453465093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb89d8308a4d29e40be4c349d4ba4c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
 --- !u!1 &463387345
 GameObject:
   m_ObjectHideFlags: 0
@@ -11802,7 +11824,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37314
+  m_Name: pb_Mesh33588
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15665,7 +15687,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36660
+  m_Name: pb_Mesh32852
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20985,6 +21007,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d7ad2981dcce04096a6e4c0a0c91da, type: 3}
+--- !u!1 &1680134583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1680134585}
+  - component: {fileID: 1680134584}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1680134584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680134583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb89d8308a4d29e40be4c349d4ba4c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+--- !u!4 &1680134585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680134583}
+  m_LocalRotation: {x: 0.7068599, y: -0, z: -0, w: 0.7073536}
+  m_LocalPosition: {x: 0, y: 0.5787628, z: 128.04251}
+  m_LocalScale: {x: 1, y: 1.0000612, z: 0.99969476}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681896219
 GameObject:
   m_ObjectHideFlags: 0
@@ -22287,7 +22362,6 @@ GameObject:
   - component: {fileID: 2082442196}
   - component: {fileID: 2082442199}
   - component: {fileID: 2082442198}
-  - component: {fileID: 2082442197}
   m_Layer: 8
   m_Name: TalkWhitWhoWaits
   m_TagString: Untagged
@@ -27818,38 +27892,6 @@ Transform:
   m_Father: {fileID: 1101986772}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2082442197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748068864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fadc04672cb952242840a40ccff2ac93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popup: {fileID: 11400000, guid: 7d9e3e6e01b60b147a8c9ec19ce0de9e, type: 2}
-  pointTalk:
-  - {fileID: 860799108}
-  - {fileID: 860799108}
-  - {fileID: 860799108}
-  events:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640777870}
-        m_TargetAssemblyTypeName: IntroGame, Assembly-CSharp
-        m_MethodName: EndTalkWhitWhoWaits
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2082442198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50691,7 +50733,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1023
 --- !u!114 &6392468116273080929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51394,7 +51436,7 @@ GameObject:
   - component: {fileID: 6392468116832223181}
   - component: {fileID: 6392468116832223184}
   m_Layer: 5
-  m_Name: Popup
+  m_Name: PopupDialogBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51436,7 +51478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineTop: {fileID: 6392468118184826744}
   lineBottom: {fileID: 6392468117195286388}
-  talkList: {fileID: 0}
+  talkScript: {fileID: 0}
 --- !u!1 &6392468116898752753
 GameObject:
   m_ObjectHideFlags: 0

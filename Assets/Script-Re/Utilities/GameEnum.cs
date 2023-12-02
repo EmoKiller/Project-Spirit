@@ -1,6 +1,17 @@
+public enum ListScripTs
+{
+    TestScript
+}
+public enum TalkScript
+{
+    IntroGame1,
+    IntroGame2,
+    IntroGame3
+}
 
 public enum Events
 {
+    DebugAction,
     //IntroGame
     GoToMap1,
     GoToMap2,

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f87eb8a8f49fd1468b185609bc264b5, type: 3}
-  m_Name: 2-IntroGame
+  m_Name: IntroGame3
   m_EditorClassIdentifier: 
   projectTile: {fileID: 162668727199688271, guid: 9eeba12fa9907bf4cab2043260fc7cde, type: 3}
   ListText:

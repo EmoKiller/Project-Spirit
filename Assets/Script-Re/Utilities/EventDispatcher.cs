@@ -154,7 +154,7 @@ public static class EventDispatcher
         }
     }
 
-    public static void Publish<T1>(Events eventName, T1 arg1 )
+    public static void Publish<T1>(Enum eventName, T1 arg1 )
     {
         foreach (KeyValuePair<Enum, Dictionary<Enum, NNCommond>> eventOnScript in Events)
         {

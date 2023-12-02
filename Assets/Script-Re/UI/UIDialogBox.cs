@@ -2,14 +2,31 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-public class UIPopup : MonoBehaviour
+public class UIDialogBox : MonoBehaviour
 {
+    public enum Script
+    {
+        UIDialogBox
+    }
     [Header("Line")]
     [SerializeField] RectTransform lineTop;
     [SerializeField] RectTransform lineBottom;
-    [SerializeField] PopUpTalkObject talkList;
-
-
+    [SerializeField] PopUpTalkObject talkScript;
+    private void Start()
+    {
+        
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            
+        }
+    }
+    private void ChangeTalkScript(string nameScript)
+    {
+        talkScript = Resources.Load<PopUpTalkObject>(string.Format("ScriptTalk/{0}", nameScript));
+    }
     private void Removed()
     {
         gameObject.SetActive(false);

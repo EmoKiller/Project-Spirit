@@ -37,6 +37,7 @@ public class Player : CharacterBrain
     }
     private void Update()
     {
+        
         if (OnAction)
         {
             characterAnimator.SetFloat("vertical", Vertical);
