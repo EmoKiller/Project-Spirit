@@ -8,6 +8,7 @@ public class IntroGame : MonoBehaviour
     {
         IntroGame
     }
+    public TalkScript indexScript;
     [SerializeField] GameObject map1;
     [SerializeField] GameObject map2;
     [SerializeField] GameObject clutLeaders;
@@ -45,7 +46,21 @@ public class IntroGame : MonoBehaviour
         enemy[0].Push();
         enemy[1].Push();
     }
-    private void GotoMap2()
+    
+    
+    public void EndTalk4()
+    {
+        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 1f);
+        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
+        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraFocus);
+        EventDispatcher.Publish(Player.Script.Player, Events.PlayerTriggerAni, "Detention");
+        EventDispatcher.Publish(Bruter.Script.Bruter, Events.BruterTriggerAni);
+        this.DelayCall(9.9f, () =>
+        {
+            EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraDefault);
+        });
+    }
+    public void GotoMap2()
     {
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
         clutLeaders.SetActive(false);
@@ -54,35 +69,23 @@ public class IntroGame : MonoBehaviour
         map2.SetActive(true);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeColorBackGround, inMap2);
     }
-    private void GotoMap1()
+    public void EndTalkWhitWhoWaits()
+    {
+        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 8f);
+        //EventDispatcher.Publish(ListScript.WhoWait, Events.TriggerAction);
+    }
+    //public void ScriptTalkEnds()
+    //{
+    //    EventDispatcher.Publish(UIDialogBox.Script.UIDialogBox, Events.DialogBoxChangeTalkScript, indexScript.ToString());
+    //    EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
+    //}
+    public void GotoMap1()
     {
         map1.SetActive(true);
         map2.SetActive(false);
         bloodImage.SetActive(true);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeColorBackGround, inMap1);
-    }
-    public void EndTalk4()
-    {
-        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 1f);
-        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
-        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraFocus);
-        //EventDispatcher.Publish(ListScript.Player, Events.TriggerAction);
-        //EventDispatcher.Publish(ListScript.Bruter, Events.TriggerAction);
-        this.DelayCall(9.9f, () =>
-        {
-            EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraDefault);
-            //EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.Close);
-            this.DelayCall(1.5f, () =>
-            {
-                //EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.RemoveEvent);
-            });
-        });
-    }
-    public void EndTalkWhitWhoWaits()
-    {
-        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 8f);
-        //EventDispatcher.Publish(ListScript.WhoWait, Events.TriggerAction);
     }
     private void SetPlayVideos(bool value)
     {

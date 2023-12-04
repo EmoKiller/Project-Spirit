@@ -5,7 +5,8 @@ public class TriggerWaitAction : MonoBehaviour
 {
     public enum Script
     {
-        TriggerWaitAction
+        TriggerWaitAction,
+        TriggerTalk
     }
     public string text = "";
     public TypeShowButton typeButton;
@@ -13,7 +14,11 @@ public class TriggerWaitAction : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (actioned)
-            return; 
+            return;
+        if (typeButton == TypeShowButton.None)
+        {
+            OnTringgerWaitAction();
+        }
         EventDispatcher.Addlistener(Script.TriggerWaitAction, Events.OnTringgerWaitAction, OnTringgerWaitAction);
         EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonOpen, typeButton, text);
     }

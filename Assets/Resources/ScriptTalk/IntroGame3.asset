@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: IntroGame3
   m_EditorClassIdentifier: 
   projectTile: {fileID: 162668727199688271, guid: 9eeba12fa9907bf4cab2043260fc7cde, type: 3}
-  ListText:
-  - e
-  - f
-  - g
+  TextList:
+  - eqwead
+  - cscss
+  - cascw
+  pointTalk: []

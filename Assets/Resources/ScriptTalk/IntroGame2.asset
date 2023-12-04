@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: IntroGame2
   m_EditorClassIdentifier: 
   projectTile: {fileID: 162668727199688271, guid: 9eeba12fa9907bf4cab2043260fc7cde, type: 3}
-  ListText:
-  - a
-  - b
-  - c
-  - d
-  - d
+  TextList:
+  - wcwascas
+  - cascascevr
+  - erberbeb
+  - rbrbrrbe
+  pointTalk: []

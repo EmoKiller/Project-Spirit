@@ -94,10 +94,6 @@ public class Player : CharacterBrain
         direction.position = dir.normalized + transform.position;
         base.SetMoveWayPoint(wayPoint, time);
     }
-    private void Detention()
-    {
-        characterAnimator.SetTrigger("Detention");
-    }
     private void OnAttack()
     {
         atkCanDo = true;

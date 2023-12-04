@@ -10,7 +10,7 @@ public class TestScript : SerializedMonoBehaviour
     //[SerializeField, PreviewField(100)] private Sprite test;    
     private void Awake()
     {
-        EventDispatcher.Addlistener(ListScripTs.TestScript,Events.DebugAction, Testss);
+        
     }
     // Update is called once per frame
     void Update()
@@ -19,10 +19,6 @@ public class TestScript : SerializedMonoBehaviour
         //{
             
         //}
-    }
-    private void Testss()
-    {
-        Debug.Log("ACtion");
     }
     //[Button("test")]
     //public void testdfasdfdsa(int a)

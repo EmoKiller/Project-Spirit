@@ -1,7 +1,4 @@
-public enum ListScripTs
-{
-    TestScript
-}
+
 public enum TalkScript
 {
     IntroGame1,
@@ -34,6 +31,8 @@ public enum Events
     CameraFocus,
     CameraChangeTarget,
     CameraTargetPlayer,
+    // UIDialogBox
+    DialogBoxChangeTalkScript,
     //UIButtonAction
     UIButtonOpen,
     UIButtonUpdateText,
@@ -41,7 +40,7 @@ public enum Events
     //OnTringgerWaitAction
     OnTringgerWaitAction,
     //TriggerTalk
-    TriggerWaitUpdateValue,//trgertalk,WeaponPodium
+    TheScriptTalkEnd,
 
     MoveToWaypoint,
     SetDefault,
@@ -118,7 +117,8 @@ public enum TypeShowButton
 {
     Talk,
     Items,
-    TakeWeapon
+    TakeWeapon,
+    None
 }
 public enum AttributeTypeOfHero
 {

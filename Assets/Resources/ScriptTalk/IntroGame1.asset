@@ -13,13 +13,29 @@ MonoBehaviour:
   m_Name: IntroGame1
   m_EditorClassIdentifier: 
   projectTile: {fileID: 2729271864944868109, guid: 8a805fd5b1ad7134588dbff977a3907c, type: 3}
-  ListText:
-  - a
-  - b
-  - c
-  - d
+  TextList:
+  - Before us stands the last for its kind. All others we have hunted down and put
+    to the blade.
+  - Whit this final sacrifice, the prophecy will be impossible to fulfill.
+  - The heretic who lies bound below will be condemned to eternal captivity.
+  - And the Old Faith shall be preserved.
   pointTalk:
-  - {fileID: 7700122972231842862, guid: a74338e88e864f24fa572742344c3900, type: 3}
-  - {fileID: 2875256109337911561, guid: c3916bda06a58344e8ca56e394f88bc7, type: 3}
-  - {fileID: 5028750721094166161, guid: 6682b2ae4e98dd74ead1540cb2468dcf, type: 3}
-  - {fileID: 8140886370709535885, guid: 1eb9df3c7cef0324b878e75981409728, type: 3}
+  - {fileID: 598372138143201524, guid: a74338e88e864f24fa572742344c3900, type: 3}
+  - {fileID: 749330184778458944, guid: 6682b2ae4e98dd74ead1540cb2468dcf, type: 3}
+  - {fileID: 4580036374686898393, guid: c3916bda06a58344e8ca56e394f88bc7, type: 3}
+  - {fileID: 338690246782368807, guid: 1eb9df3c7cef0324b878e75981409728, type: 3}
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 407337330896331510, guid: 5f88a07b20e2177409f2f088303f7d53, type: 3}
+        m_TargetAssemblyTypeName: IntroGame, Assembly-CSharp
+        m_MethodName: EndTalk4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
