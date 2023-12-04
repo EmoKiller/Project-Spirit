@@ -20,6 +20,6 @@ MonoBehaviour:
   DescriptionWeapon: 
   Speed: 1
   AttackRange: 2
-  SizeSlashBox: {x: 0, y: 0, z: 0}
+  SlashBoxSize: {x: 4, y: 0, z: 4}
   ListDamage:
   - 0

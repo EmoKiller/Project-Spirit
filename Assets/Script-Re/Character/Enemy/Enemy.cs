@@ -10,22 +10,19 @@ public class Enemy : CharacterBrain
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
-    protected override void Awake()
+    protected override void Start()
     {
-        base.Awake();
-    }
-    protected virtual void Start()
-    {
-        SetTypeSlash("Enemy");
+        base.Start();
         characterAttack.Initialized();
+        direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
         //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
     }
     protected virtual void Update()
     {
         if (!Alive || OnAction)
             return;
-        if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniAttck ||
-            direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniAttck)
+        if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniATK ||
+            direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniATK)
         {
             onFollowPlayer = true;
             MoveTo(direction.transform.position);
@@ -39,17 +36,6 @@ public class Enemy : CharacterBrain
             return;
         }
     }
-    public void Push()
-    {
-        if (Distance() <= characterAttack.AttackRange)
-        {
-            characterAnimator.SetTrigger("Attack");
-        }
-    }
-    public float Distance()
-    {
-        return Vector3.Distance(transform.position, direction.transform.position);
-    }
     protected override void StartAniAtk()
     {
         base.StartAniAtk();
@@ -58,11 +44,14 @@ public class Enemy : CharacterBrain
     {
         base.FinishAniAtk();
     }
+    protected override void Rolling()
+    {
+        throw new System.NotImplementedException();
+    }
     protected virtual void OnArried()
     {
         agent.AgentBody.isStopped = true;
         OnAction = true;
-        characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle);
         this.DelayCall(2, () =>
         {
             currentWaypointIndex++;
@@ -76,6 +65,17 @@ public class Enemy : CharacterBrain
     {
         target.TakeDamage(characterAttack.CurrentHit[0]);
         base.OnAttackHit(target);
+    }
+    public void Push()
+    {
+        if (Distance() <= characterAttack.AttackRange)
+        {
+            characterAnimator.SetTrigger("Attack");
+        }
+    }
+    public float Distance()
+    {
+        return Vector3.Distance(transform.position, direction.transform.position);
     }
     public override void TakeDamage(float damage)
     {
@@ -100,7 +100,7 @@ public class Enemy : CharacterBrain
         {
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
             {
-                
+
             });
         });
     }
@@ -108,10 +108,5 @@ public class Enemy : CharacterBrain
     {
         //Debug.Log(GameConstants.Slash);
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
-    }
-
-    protected override void Rolling()
-    {
-        throw new System.NotImplementedException();
     }
 }

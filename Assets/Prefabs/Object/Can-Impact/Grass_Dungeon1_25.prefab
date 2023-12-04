@@ -111,6 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99652b99b044a654e961742d75bbec71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpObject: {fileID: 11400000, guid: 501c2225a5f466c41b9b3caffb43a3b4, type: 2}
+  hpObject: {fileID: 11400000, guid: 0a13bbeae47d405489bb5f94ef91ea66, type: 2}
   _animator: {fileID: 0}
   currentHp: 0

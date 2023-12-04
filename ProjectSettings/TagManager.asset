@@ -16,10 +16,10 @@ TagManager:
   - Water
   - UI
   - Player
-  - Slash
+  - SlashPlayer
+  - SlashEnemy
   - ItemsAction
   - ImpactableObjects
-  - 
   - 
   - 
   - 

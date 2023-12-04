@@ -3,16 +3,14 @@ using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    public enum AnimationState { Movement, Attack }
+    public enum AnimationState { Movement, Attack, Rolling }
     public enum MovementType { Idle, Run }
-    public enum AttackType { nomal, power }
-    public enum AttackStep { step1 , step2, step3 }
-    
+    public enum AttackStep { step1, step2, step3, step4 }
+
     private Animator ator = null;
     [SerializeField] protected AnimationState currentAnimationState;
     [SerializeField] protected MovementType currentMovementType;
-    [SerializeField] protected AttackType currentAttackType;
-    //[SerializeField] protected AttackStep currentAttackStep;
+    [SerializeField] protected AttackStep comboATK;
     Action step1aniAtk = null;
     Action step2aniAtk = null;
     Action step3aniAtk = null;
@@ -27,46 +25,34 @@ public class CharacterAnimator : MonoBehaviour
             if (ator == null)
                 GetComponent<Animator>();
             return ator;
-        }                                                          
+        }
     }
     public void Initialized()
     {
         ator = GetComponent<Animator>();
     }
-    public void SetMovement(MovementType type)
+    public void SetRolling(AnimationState type)
     {
-        if (currentAnimationState == AnimationState.Movement && currentMovementType == type)
-            return;
-
-        //SetFloat("MovementType", (int)type);
-        //SetTrigger("Movement");
-        SetFloat("Speed", (float)type);
-
+        SetTrigger(type.ToString());
+        currentAnimationState = type;
+    }
+    public void SetMovement(MovementType type,float Vertical,float Horizontal)
+    {
+        SetFloat("vertical", Vertical);
+        SetFloat("horizontal", Horizontal);
         currentAnimationState = AnimationState.Movement;
         currentMovementType = type;
     }
-
-    public void SetAttack(AttackType type)
+    public void SetDirection(float x, float z)
     {
-        if (currentAnimationState == AnimationState.Attack && currentAttackType == type)
-            return;
-
-        SetFloat("AttackType", (int)type);
-        SetTrigger("Attack");
-
-        currentAnimationState = AnimationState.Attack;
-        currentAttackType = type;
+        SetFloat("RightLeft", x);
+        SetFloat("UpDown", z);
     }
-    public void SetComboAttack(AttackType type, float step)
+    public void SetComboAttack(int step)
     {
-        
-        if (currentAnimationState == AnimationState.Attack && currentAttackType == type)
-            return;
-
-        SetFloat("Attack", step);
-
+        SetTrigger(step.ToString());
         currentAnimationState = AnimationState.Attack;
-        currentAttackType = type;
+        comboATK = (AttackStep)step;
     }
     public void SetTrigger(string param)
     {
@@ -82,7 +68,6 @@ public class CharacterAnimator : MonoBehaviour
     {
         currentTrigger = "";
     }
-    
     public void SetBool(string param, bool value)
     {
         Ator.SetBool(param, value);

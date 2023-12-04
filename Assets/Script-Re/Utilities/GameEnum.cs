@@ -16,7 +16,9 @@ public enum Events
     BruterTriggerAni,
     WhoWaitTriggerAni,
     SetVideoIntro,
+    PlayTalkScript3,
     //player
+    PlayerTransform,
     PlayerDirection,//func
     PlayerTriggerAni,
     PlayerChangeWeapon,

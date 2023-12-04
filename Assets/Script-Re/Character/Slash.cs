@@ -3,25 +3,24 @@ using UnityEngine;
 
 public class Slash : MonoBehaviour
 {
-    private string typeSlash = "";
-    public string ThisType => typeSlash;
     BoxCollider BoxCollider => gameObject.GetComponent<BoxCollider>();
     protected Action<CharacterBrain> attack;
     private void OnTriggerEnter(Collider other)
     {
+        attack?.Invoke(other.GetComponent<CharacterBrain>());
 
-        if (typeSlash != "Enemy" & IsEnemy(other))
-        {
-            Enemy ene = other.GetComponent<Enemy>();
-            attack?.Invoke(ene);
-            Debug.Log("hit Enemy");
-        }
-        if (typeSlash != "Player" && IsPlayer(other))
-        {
-            Player player = other.GetComponent<Player>();
-            attack?.Invoke(player);
-            Debug.Log("hit Player");
-        }
+        //if (typeSlash != "Enemy" & IsEnemy(other))
+        //{
+        //    Enemy ene = other.GetComponent<Enemy>();
+        //    attack?.Invoke(ene);
+        //    Debug.Log("hit Enemy");
+        //}
+        //if (typeSlash != "Player" && IsPlayer(other))
+        //{
+        //    Player player = other.GetComponent<Player>();
+        //    attack?.Invoke(player);
+        //    Debug.Log("hit Player");
+        //}
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -41,17 +40,13 @@ public class Slash : MonoBehaviour
     {
         attack += action;
     }
-    public void SetType(string type)
-    {
-        typeSlash = type;
-    }
     public void SetActiveSlash(bool set)
     {
         gameObject.SetActive(set);
     }
-    public void SetSizeBox(float x, float y, float z)
+    public void SetSizeBox(Vector3 vector)
     {
-        BoxCollider.size = new Vector3(x, y, z);
+        BoxCollider.size = vector;
     }
 
 }

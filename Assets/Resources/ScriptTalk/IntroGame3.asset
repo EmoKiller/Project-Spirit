@@ -17,4 +17,7 @@ MonoBehaviour:
   - eqwead
   - cscss
   - cascw
-  pointTalk: []
+  pointTalk:
+  - {fileID: 4853821747393510412, guid: f3f7817c50b0f3d42aa8d676a1130efb, type: 3}
+  - {fileID: 4853821747393510412, guid: f3f7817c50b0f3d42aa8d676a1130efb, type: 3}
+  - {fileID: 4853821747393510412, guid: f3f7817c50b0f3d42aa8d676a1130efb, type: 3}

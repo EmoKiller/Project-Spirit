@@ -13,60 +13,54 @@ public class Player : CharacterBrain
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
     private bool atkCanDo;
-    protected override void Awake()
+    protected override void Start()
     {
-        base.Awake();
-    }
-    private void Start()
-    {
+        base.Start();
         Init();
         EventDispatcher.Register(Script.Player, Events.PlayerDirection, () => direction);
+        EventDispatcher.Register(Script.Player, Events.PlayerTransform, () => transform);
         EventDispatcher.Addlistener<string>(Script.Player, Events.PlayerTriggerAni, TriggerAni);
-        EventDispatcher.Addlistener<Vector3,float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
-        EventDispatcher.Addlistener<Weapon>(Script.Player,Events.PlayerChangeWeapon, ChangeWeapon);
+        EventDispatcher.Addlistener<Vector3, float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
+        EventDispatcher.Addlistener<Weapon>(Script.Player, Events.PlayerChangeWeapon, ChangeWeapon);
     }
     private void Init()
     {
-        SetTypeSlash("Player");
-        slash.SetSizeBox(4, 1, 4);
         SetoffSlash();
         characterAnimator.AddStepAniAtk(SetOnSlash, SetoffSlash, StartCombo, FinishAniAtk);
-        characterAnimator.AddStFishAni(StartAni,StopAni);
+        characterAnimator.AddStFishAni(StartAni, StopAni);
         slash.AddActionAttack(OnAttackHit);
         characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
+        slash.SetSizeBox(characterAttack.SlashBoxSize);
     }
     private void Update()
     {
-        
         if (OnAction)
-        {
-            characterAnimator.SetFloat("vertical", Vertical);
-            characterAnimator.SetFloat("horizontal", Horizontal);
             return;
-        }
-        if (Input.GetMouseButtonDown(0) && !atkCanDo)
+        if (Input.GetMouseButtonDown(0) && !atkCanDo && characterAttack.BoolWeaponEquip())
         {
             OnAttack();
             return;
         }
-        if (onAniAttck)
+        if (onAniATK)
             return;
-        if (Input.GetKeyDown(KeyCode.Space) && !atkCanDo)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Rolling();
-            characterAnimator.SetTrigger("Rolling");
+            //characterAnimator.SetTrigger("Rolling");
+
+            characterAnimator.SetRolling(CharacterAnimator.AnimationState.Rolling);
             return;
         }
         if (Horizontal != 0 || Vertical!=0)
         {
             Rotation();
             direction.localPosition = new Vector3(Horizontal, 0, Vertical).normalized;
-            characterAnimator.SetFloat("vertical", Vertical);
-            characterAnimator.SetFloat("horizontal", Horizontal);
-            characterAnimator.SetFloat("UpDown", direction.transform.localPosition.z);
-            characterAnimator.SetFloat("RightLeft", direction.transform.localPosition.x);
+            characterAnimator.SetMovement(CharacterAnimator.MovementType.Run, Vertical, Horizontal);
+            characterAnimator.SetDirection(direction.transform.localPosition.x, direction.transform.localPosition.z);
             agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
+            return;
         }
+        characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle, Vertical, Horizontal);
     }
     protected override void Rolling()
     {
@@ -77,59 +71,10 @@ public class Player : CharacterBrain
             Rotation();
         });
     }
-    private void ChangeWeapon(Weapon weapon)
-    {
-        Weapon wp = hand.GetComponentInChildren<Weapon>();
-        if (wp != null)
-        {
-            wp.transform.SetParent(null);
-            wp.transform.ReSetTransform();
-        }
-        Weapon obj =  Instantiate(weapon, hand.transform);
-        characterAttack.Initialized(obj);
-    }
-    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
-    {
-        Vector3 dir = wayPoint - transform.position;
-        direction.position = dir.normalized + transform.position;
-        base.SetMoveWayPoint(wayPoint, time);
-    }
-    private void OnAttack()
-    {
-        atkCanDo = true;
-        StartAniAtk();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit raycastHit))
-        {
-            direction.position = transform.position + (raycastHit.point - transform.position).normalized;
-            slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
-        }
-        Rotation();
-        characterAnimator.SetTrigger("" + combo);
-        Vector3 vec = direction.position - transform.position;
-        this.LoopDelayCall(0.1f, () =>
-        {
-            MoveTo(vec.normalized + transform.position);
-            characterAnimator.SetFloat("horizontal", 0);
-            characterAnimator.SetFloat("vertical", 0);
-        });
-    }
     protected override void OnAttackHit(CharacterBrain target)
     {
         target.TakeDamage(GetDamageCombo());
         base.OnAttackHit(target);
-    }
-    private float GetDamageCombo()
-    {
-        return characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)];
-    }
-    private void StartCombo()
-    {
-        atkCanDo = false;
-        if (combo < 3)
-        {
-            combo++;
-        }
     }
     protected override void StartAniAtk()
     {
@@ -140,6 +85,14 @@ public class Player : CharacterBrain
         base.FinishAniAtk();
         atkCanDo = false;
         combo = 0;
+    }
+
+    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
+    {
+        characterAnimator.SetMovement(CharacterAnimator.MovementType.Run, Vertical, Horizontal);
+        Vector3 dir = wayPoint - transform.position;
+        direction.position = dir.normalized + transform.position;
+        base.SetMoveWayPoint(wayPoint, time);
     }
     public override void TakeDamage(float damage)
     {
@@ -162,8 +115,48 @@ public class Player : CharacterBrain
         //Debug.Log(GameConstants.Slash);
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
-    public Transform ReturnTrans()
+    private void OnAttack()
     {
-        return direction;
+        atkCanDo = true;
+        StartAniAtk();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit))
+        {
+            direction.position = transform.position + (raycastHit.point - transform.position).normalized;
+            slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
+        }
+        Rotation();
+        //characterAnimator.SetTrigger("" + combo);
+        characterAnimator.SetComboAttack(combo);
+        Vector3 vec = direction.position - transform.position;
+        this.LoopDelayCall(0.1f, () =>
+        {
+            MoveTo(vec.normalized + transform.position);
+            characterAnimator.SetFloat("horizontal", 0);
+            characterAnimator.SetFloat("vertical", 0);
+        });
+    }
+    private void ChangeWeapon(Weapon weapon)
+    {
+        Weapon wp = hand.GetComponentInChildren<Weapon>();
+        if (wp != null)
+        {
+            wp.transform.SetParent(null);
+            wp.transform.ReSetTransform();
+        }
+        Weapon obj = Instantiate(weapon, hand.transform);
+        characterAttack.Initialized(obj);
+    }
+    private float GetDamageCombo()
+    {
+        return characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)];
+    }
+    private void StartCombo()
+    {
+        atkCanDo = false;
+        if (combo < 3)
+        {
+            combo++;
+        }
     }
 }

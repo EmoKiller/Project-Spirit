@@ -25,23 +25,26 @@ public abstract class CharacterBrain : MonoBehaviour
         }
     }
     //BaseCharacter
-    private string characterName;
+    private string characterName { get; set; }
     protected float health { get; set; }
     protected float maxHealth { get; set; }
-    [SerializeField] protected bool onAniAttck = false;
+    [SerializeField] protected bool onAniATK = false;
     public bool Alive => health > 0;
     public virtual string Name => characterName;
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         agent.Initialized();
         characterAnimator.Initialized();
         characterAttack.Initialized();
         characterName = gameObject.name;
+        if (characterAttack.BoolWeaponEquip())
+        {
+            slash.SetSizeBox(characterAttack.SlashBoxSize);
+        }
     }
-    protected void SetTypeSlash(string value)
-    {
-        slash.SetType(value);
-    }
+    public abstract void EffectHit(Vector3 dir);
+    public abstract void Dead();
+    protected abstract void Rolling();
     protected virtual void SetOnSlash()
     {
         slash.SetActiveSlash(true);
@@ -52,27 +55,12 @@ public abstract class CharacterBrain : MonoBehaviour
     }
     protected virtual void StartAniAtk()
     {
-        onAniAttck = true;
+        onAniATK = true;
     }
     protected virtual void FinishAniAtk()
     {
         characterAnimator.ResetTrigger();
-        onAniAttck = false;
-    }
-    public void MoveTo(Vector3 direction)
-    {
-        Vector3 dir = direction - transform.position;
-        agent.MoveToDirection(dir.normalized);
-        characterAnimator.SetFloat("horizontal", dir.normalized.x);
-        characterAnimator.SetFloat("vertical", dir.normalized.z);
-    }
-    public virtual void SetMoveWayPoint(Vector3 wayPoint,float time)
-    {
-        this.LoopDelayCall(time, () =>
-        {
-            MoveTo(wayPoint);
-            Rotation();
-        });
+        onAniATK = false;
     }
     protected void Rotation()
     {
@@ -84,7 +72,6 @@ public abstract class CharacterBrain : MonoBehaviour
         }
         tranformOfAni.transform.localScale = new Vector3(1, 1, 1);
     }
-    protected abstract void Rolling();
     protected virtual void OnAttackHit(CharacterBrain target)
     {
         Vector3 dir = transform.position - target.transform.position;
@@ -96,27 +83,36 @@ public abstract class CharacterBrain : MonoBehaviour
         }
         target.ImpactForce(dir.normalized * force);
     }
+    public void MoveTo(Vector3 direction)
+    {
+        Vector3 dir = direction - transform.position;
+        agent.MoveToDirection(dir.normalized);
+        characterAnimator.SetFloat("horizontal", dir.normalized.x);
+        characterAnimator.SetFloat("vertical", dir.normalized.z);
+    }
+    public virtual void SetMoveWayPoint(Vector3 wayPoint, float time)
+    {
+        this.LoopDelayCall(time, () =>
+        {
+            MoveTo(wayPoint);
+            Rotation();
+        });
+    }
     public virtual void TakeDamage(float damage) 
     {
         OnAction = true;
-        onAniAttck = false;
+        onAniATK = false;
         this.DelayCall(0.3f, () =>
         {
             OnAction = false;
         });
     }
-    public abstract void EffectHit(Vector3 dir);
-    public abstract void Dead();
     public void ImpactForce(Vector3 dir)
     {
         this.LoopDelayCall(0.3f, () =>
         {
             agent.AgentBody.Move(dir * Time.deltaTime);
         });
-    }
-    public void SetTarget(Transform target)
-    {
-        direction = target;
     }
     public void SetAction(bool value)
     {
@@ -127,7 +123,6 @@ public abstract class CharacterBrain : MonoBehaviour
         OnAction = true;
         Rotation();
     }
-    
     public void TriggerAni(string str)
     {
         characterAnimator.SetTrigger(str);

@@ -18,6 +18,8 @@ public class TriggerWaitAction : MonoBehaviour
         if (typeButton == TypeShowButton.None)
         {
             OnTringgerWaitAction();
+            EventDispatcher.Addlistener(Script.TriggerWaitAction, Events.OnTringgerWaitAction, OnTringgerWaitAction);
+            return;
         }
         EventDispatcher.Addlistener(Script.TriggerWaitAction, Events.OnTringgerWaitAction, OnTringgerWaitAction);
         EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonOpen, typeButton, text);

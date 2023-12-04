@@ -13,5 +13,8 @@ public class CameraChangeLookAt : MonoBehaviour
     {
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
     }
-    
+    public void Removed()
+    {
+        gameObject.SetActive(false);
+    }
 }

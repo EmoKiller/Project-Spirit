@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99652b99b044a654e961742d75bbec71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpObject: {fileID: 11400000, guid: 1fe9af25b51e83b48b8b2c8436064e6f, type: 2}
+  hpObject: {fileID: 11400000, guid: 0a13bbeae47d405489bb5f94ef91ea66, type: 2}
   _animator: {fileID: 0}
   currentHp: 0
 --- !u!1 &6040108351005747525

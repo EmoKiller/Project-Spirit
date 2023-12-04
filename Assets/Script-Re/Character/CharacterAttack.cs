@@ -16,6 +16,7 @@ public class CharacterAttack : MonoBehaviour
     public float PowerForce => hpObject.PowerForce;
     public float Weight => hpObject.weight;
     public List<float> CurrentHit => currentWeapon.weaponObject.ListDamage;
+    public Vector3 SlashBoxSize => currentWeapon.weaponObject.SlashBoxSize;
     public void Initialized()
     {
         currentWeapon = GetComponentInChildren<Weapon>();
@@ -24,6 +25,10 @@ public class CharacterAttack : MonoBehaviour
     {
         currentWeapon = weapon;
         EventDispatcher.Publish(UiDungeonManager.Script.UiDungeonManager, Events.UpdateIconWeapon, currentWeapon.weaponObject.IconWeapon);
+    }
+    public bool BoolWeaponEquip()
+    {
+        return currentWeapon is not null;
     }
     public void Attack(Vector3 target)
     {

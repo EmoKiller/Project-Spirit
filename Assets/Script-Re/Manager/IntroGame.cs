@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.Video;
 
 public class IntroGame : MonoBehaviour
@@ -18,19 +19,19 @@ public class IntroGame : MonoBehaviour
     [SerializeField] WayPoint waypoint;
     [SerializeField] Transform ponitDead;
     [SerializeField] GameObject video = null;
+    [SerializeField] GameObject ObjuiChoose = null;
+    [SerializeField] Transform UImanager = null;
+    [SerializeField] Transform TargetCrown = null;
     Color32 inMap1 = new Color32(0, 0, 0, 255);
     Color32 inMap2 = new Color32(242, 236, 222, 255);
 
     private void Start()
     {
         EventDispatcher.Addlistener(Script.IntroGame, Events.EnemyGoToWayPoint, EnemyGoToWayPoint);
-
         EventDispatcher.Addlistener(Script.IntroGame, Events.GoToMap2, GotoMap2);
         EventDispatcher.Addlistener(Script.IntroGame, Events.GoToMap1, GotoMap1);
+        EventDispatcher.Addlistener(Script.IntroGame, Events.PlayTalkScript3, TalkScript3);
         EventDispatcher.Addlistener<bool>(Script.IntroGame, Events.SetVideoIntro, SetPlayVideos);
-        //EventDispatcher.Addlistener(ListScript.IntroGame, Events.TriggerAction, SetWalk);
-        //EventDispatcher.Addlistener(ListScript.Bruter, Events.TriggerAction2, GotoMap2);
-        //EventDispatcher.Addlistener(ListScript.WhoWait, Events.TriggerAction2, GotoMap1);
         foreach (Enemy enemy in enemy)
             enemy.SetStay();
     }
@@ -46,8 +47,6 @@ public class IntroGame : MonoBehaviour
         enemy[0].Push();
         enemy[1].Push();
     }
-    
-    
     public void EndTalk4()
     {
         EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 1f);
@@ -60,6 +59,7 @@ public class IntroGame : MonoBehaviour
             EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraDefault);
         });
     }
+
     public void GotoMap2()
     {
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
@@ -69,16 +69,23 @@ public class IntroGame : MonoBehaviour
         map2.SetActive(true);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeColorBackGround, inMap2);
     }
+    public void OpenUIchoose()
+    {
+        Instantiate(ObjuiChoose, UImanager);
+    }
+    public void TalkScript3()
+    {
+        EventDispatcher.Publish(UIDialogBox.Script.UIDialogBox, Events.DialogBoxChangeTalkScript, indexScript.ToString());
+        EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
+        EventDispatcher.Addlistener(TriggerWaitAction.Script.TriggerTalk, Events.TheScriptTalkEnd, EndTalkWhitWhoWaits);
+    }
     public void EndTalkWhitWhoWaits()
     {
+        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, TargetCrown);
         EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 8f);
-        //EventDispatcher.Publish(ListScript.WhoWait, Events.TriggerAction);
+        EventDispatcher.Publish(WhoWait.Script.WhoWait, Events.WhoWaitTriggerAni);
+
     }
-    //public void ScriptTalkEnds()
-    //{
-    //    EventDispatcher.Publish(UIDialogBox.Script.UIDialogBox, Events.DialogBoxChangeTalkScript, indexScript.ToString());
-    //    EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
-    //}
     public void GotoMap1()
     {
         map1.SetActive(true);
@@ -98,7 +105,6 @@ public class IntroGame : MonoBehaviour
             EventDispatcher.Publish(Player.Script.Player, Events.PlayerTriggerAni, "TakeWeapon");
             for (int i = 4; i <= 8; i++)
                 enemy[i].TriggerAni("PrayFear");
-
             this.DelayCall(1.5f, () =>
             {
                 foreach (Enemy enemy in enemy)
@@ -108,10 +114,7 @@ public class IntroGame : MonoBehaviour
                     enemy[i].TriggerAni("PrayFear");
                     enemy[i].SetStay();
                 }
-
                 EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraDefault);
-                //EventDispatcher.Publish(ListScript.PopUpTalkManager, Events.Close);
-
             });
         });
     }

@@ -20,7 +20,7 @@ MonoBehaviour:
   DescriptionWeapon: When slaying a foe summon a ghost that will attack nearby enemies.
   Speed: 1
   AttackRange: 2
-  SizeSlashBox: {x: 4, y: 1, z: 4}
+  SlashBoxSize: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2

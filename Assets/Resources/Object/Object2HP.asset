@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dee15b41efdf2594ba7f78d5b5ef258a, type: 3}
-  m_Name: Grass-Dungeon1-gr-aton1HP
+  m_Name: Object2HP
   m_EditorClassIdentifier: 
-  projectTile: {fileID: 6015126780929543241, guid: 092ca54bf1f5f68449cf23b4d07735d0, type: 3}
-  HP: 1
+  projectTile: {fileID: 0}
+  HP: 2
   PowerForce: 30
   weight: 30

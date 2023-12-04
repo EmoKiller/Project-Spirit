@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: SwordsManWeapon
   m_EditorClassIdentifier: 
   projectTile: {fileID: 2986279092836468111, guid: 94eeaf8a95718b44591b364f25697e44, type: 3}
+  IconWeapon: {fileID: 0}
+  LevelWeapon: 
+  NameWeapon: 
+  QuoteWeapon: 
+  DescriptionWeapon: 
+  Speed: 1
   AttackRange: 2
-  PowerForce: 25
-  weight: 27
+  SlashBoxSize: {x: 4, y: 0, z: 4}
   ListDamage:
   - 1
   - 1

@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 6-Godly Dagger
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
+  IconWeapon: {fileID: 0}
+  LevelWeapon: 
   NameWeapon: Godly Dagger
   QuoteWeapon: Stolen from the tomb of one of the Old Gods.
   DescriptionWeapon: Deal significantly more damage than mortal weapons.
   Speed: 1
-  SizeSlashBox: {x: 4, y: 1, z: 4}
   AttackRange: 2
+  SlashBoxSize: {x: 4, y: 1, z: 4}
   ListDamage:
   - 1.7
   - 1.7
