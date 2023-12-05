@@ -15,7 +15,6 @@ public class ChestBonus : MonoBehaviour
     {
         foreach (var item in ConfigDataHelper.GameConfig.ChestConfig[type].itemsCanDrop)
         {
-            //AssetManager.Instance.ItemDropPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(string.Format(GameConstants.Items, item.Key));
             AssetManager.Instance.ItemDropPrefab.GetComponent<ObjectDropOnWorld>().UpdateSprite(item.Key.ToString());
             for (int i = 0; i < item.Value.value; i++)
             {

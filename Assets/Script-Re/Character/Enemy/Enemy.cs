@@ -36,6 +36,10 @@ public class Enemy : CharacterBrain
             return;
         }
     }
+    protected void ChangeFollowPlayer()
+    {
+        onFollowPlayer = !onFollowPlayer;
+    }
     protected override void StartAniAtk()
     {
         base.StartAniAtk();

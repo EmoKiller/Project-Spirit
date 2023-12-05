@@ -1,5 +1,7 @@
 using Newtonsoft.Json;
+using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ConfigDataHelper 
 {
@@ -63,4 +65,8 @@ public class ConfigDataHelper
     //    //hero1.attributes = GameConfig.heroConfig.heroClass.
     //    return hero1;
     //}
+    public void Save(Dictionary<string,string> data)
+    {
+        //PlayerPrefs.se
+    }
 }

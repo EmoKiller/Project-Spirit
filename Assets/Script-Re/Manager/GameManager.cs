@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         //}
         //string json = JsonConvert.SerializeObject(ConfigDataHelper.GameConfig);
         //System.IO.File.WriteAllText("Assets/Resources/Data/GameConfig.json", json);
+        //JsonUtility.ToJson(json);
     }
     private void Update()
     {

@@ -28,8 +28,8 @@ public class TriggerTalk : TriggerWaitAction
         if (actioned)
             return;
         EventDispatcher.Publish(UIDialogBox.Script.UIDialogBox, Events.DialogBoxChangeTalkScript, indexScript.ToString());
-        EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
-        actioned = true;
+        
+        base.OnTringgerWaitAction();
     }
     protected void TheScriptTalkEnd()
     {

@@ -9,7 +9,6 @@ public class IntroGame : MonoBehaviour
     {
         IntroGame
     }
-    public TalkScript indexScript;
     [SerializeField] GameObject map1;
     [SerializeField] GameObject map2;
     [SerializeField] GameObject clutLeaders;
@@ -75,16 +74,10 @@ public class IntroGame : MonoBehaviour
     }
     public void TalkScript3()
     {
-        EventDispatcher.Publish(UIDialogBox.Script.UIDialogBox, Events.DialogBoxChangeTalkScript, indexScript.ToString());
         EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
-        EventDispatcher.Addlistener(TriggerWaitAction.Script.TriggerTalk, Events.TheScriptTalkEnd, EndTalkWhitWhoWaits);
-    }
-    public void EndTalkWhitWhoWaits()
-    {
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, TargetCrown);
         EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 8f);
         EventDispatcher.Publish(WhoWait.Script.WhoWait, Events.WhoWaitTriggerAni);
-
     }
     public void GotoMap1()
     {

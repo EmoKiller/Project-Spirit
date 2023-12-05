@@ -10,6 +10,7 @@ public class PopUpTalkObject : ScriptableObject
     [Header("Object Reference")]
     public GameObject projectTile = null;
     [Header("Comfinguration")]
+    public string NameSpeaking = null;
     public List<string> TextList = null;
     public List<Transform> pointTalk = null;
     public PopUpTalkObject()

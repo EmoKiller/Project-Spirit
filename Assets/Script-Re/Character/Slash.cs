@@ -7,34 +7,13 @@ public class Slash : MonoBehaviour
     protected Action<CharacterBrain> attack;
     private void OnTriggerEnter(Collider other)
     {
+        if (IsItems(other))
+            return;
         attack?.Invoke(other.GetComponent<CharacterBrain>());
-
-        //if (typeSlash != "Enemy" & IsEnemy(other))
-        //{
-        //    Enemy ene = other.GetComponent<Enemy>();
-        //    attack?.Invoke(ene);
-        //    Debug.Log("hit Enemy");
-        //}
-        //if (typeSlash != "Player" && IsPlayer(other))
-        //{
-        //    Player player = other.GetComponent<Player>();
-        //    attack?.Invoke(player);
-        //    Debug.Log("hit Player");
-        //}
     }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private bool IsItems(Collider other)
     {
-        
-    }
-    
-    private bool IsEnemy(Collider other)
-    {
-        return other.gameObject.layer.Equals(3);
-    }
-    private bool IsPlayer(Collider other)
-    {
-        return other.gameObject.layer.Equals(6);
+        return other.gameObject.layer.Equals(9);
     }
     public void AddActionAttack(Action<CharacterBrain> action) 
     {

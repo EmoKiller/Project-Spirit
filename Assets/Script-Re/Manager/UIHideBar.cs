@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIHideBar : MonoBehaviour
 {
     
     [Header("HideBar")]
@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour
         {
             WayBlack.gameObject.SetActive(ToggleValue);
             WayBlack.DOAnchorPos(new Vector2(0,0),1);
+            InventoryTab.gameObject.SetActive(ToggleValue);
             return;
         }
         WayBlack.DOAnchorPos(new Vector2(-1200, 0), 1).OnComplete(() =>

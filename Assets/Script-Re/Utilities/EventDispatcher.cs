@@ -380,6 +380,7 @@ public static class EventDispatcher
         else
         {
             LogTool.LogErrorEditorOnly($"{scriptName.ToString()} chưa được đăng ký");
+            LogTool.LogErrorEditorOnly($"{eventName.ToString()} chưa được đăng ký");
             return null;
         }
     }

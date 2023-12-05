@@ -22,14 +22,12 @@ public class InfoWeapon : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
-    }
-    private void OnEnable()
-    {
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.InfoWeapon, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener(Script.InfoWeapon, Events.SetDefault, SetDefault);
     }
     private void UpdateInfoWeapon(string nameWeapon,string quoteWeapon,string descriptionWeapon, float damage, float speed)
     {
+        gameObject.SetActive(true);
         imageL.anchoredPosition = new Vector2(nameWeapon.Length * -12, 0);
         imageR.anchoredPosition = new Vector2(nameWeapon.Length * 12, 0);
         textNameWeapon.text = nameWeapon;
@@ -43,6 +41,7 @@ public class InfoWeapon : MonoBehaviour
     }
     private void SetDefault()
     {
+        gameObject.SetActive(false);
         imageL.anchoredPosition = new Vector2(0, 0);
         imageR.anchoredPosition = new Vector2(0, 0);
         imageUpDownDamage.transform.DORotate(new Vector3(0,0,0),0);
@@ -59,13 +58,12 @@ public class InfoWeapon : MonoBehaviour
             img.color = Color.green;
             return;
         }
-        else if (damage < 0)
+        if (damage < 0)
         {
             trans.transform.DORotate(new Vector3(0, 0, 90), 0);
             img.color = Color.red;
             return;
         }
-        else
-            img.color = Color.white;
+        img.color = Color.white;
     }
 }

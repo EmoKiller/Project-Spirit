@@ -30,6 +30,7 @@ public class TriggerWaitAction : MonoBehaviour
     }
     protected virtual void OnTringgerWaitAction()
     {
-        
+        actioned = true;
+        EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
     }
 }
