@@ -60,8 +60,8 @@ public class UIButtonAction : MonoBehaviour
                 break;
         }
         gameObject.SetActive(true);
-        rectButton.sizeDelta = new Vector2(rectButton.sizeDelta.x + (str.Length * 30), 110);
-        rectShowText.sizeDelta = rectButton.sizeDelta;
+        rectButton.sizeDelta += new Vector2(100,0);
+        rectButton.sizeDelta += new Vector2((str.Length * 25), 0);
         text.text = str;
         LayoutRebuilder.ForceRebuildLayoutImmediate(thisTransform);
     }

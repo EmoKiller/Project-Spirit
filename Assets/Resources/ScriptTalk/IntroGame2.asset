@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: IntroGame2
   m_EditorClassIdentifier: 
   projectTile: {fileID: 162668727199688271, guid: 9eeba12fa9907bf4cab2043260fc7cde, type: 3}
+  NameSpeaking: The One Who Waits
   TextList:
-  - wcwascas
-  - cascascevr
-  - erberbeb
-  - rbrbrrbe
+  - Come Closer. Fear not, for though you are already dead, I still have need of
+    you.
+  - those foolish Bishops thought they could keep you from me in deadth. But instead
+    they sent you straight to me.
+  - I will give you LIFE again, but at a PRICE!
+  - All I ask is for you to start a Clut in my name. Do we have a deal?
   pointTalk:
   - {fileID: 4853821747393510412, guid: f3f7817c50b0f3d42aa8d676a1130efb, type: 3}
   - {fileID: 4853821747393510412, guid: f3f7817c50b0f3d42aa8d676a1130efb, type: 3}

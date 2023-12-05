@@ -7,11 +7,11 @@ public class Slash : MonoBehaviour
     protected Action<CharacterBrain> attack;
     private void OnTriggerEnter(Collider other)
     {
-        if (IsItems(other))
+        if (IsObj(other))
             return;
         attack?.Invoke(other.GetComponent<CharacterBrain>());
     }
-    private bool IsItems(Collider other)
+    private bool IsObj(Collider other)
     {
         return other.gameObject.layer.Equals(9);
     }
