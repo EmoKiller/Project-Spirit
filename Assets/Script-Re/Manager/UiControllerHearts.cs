@@ -4,11 +4,21 @@ using UnityEngine.AddressableAssets;
 
 public class UiControllerHearts : MonoBehaviour
 {
-    [SerializeField] int numberHp;
+    public enum Script
+    {
+        UiControllerHearts
+    }
+    [SerializeField] int MaxHp;
     [SerializeField] int Heart;
     [SerializeField] int currentHp;
     [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
-
+    private void Start()
+    {
+        BaseStartGame baseStart = (BaseStartGame)EventDispatcher.Call(GameManager.Script.GameManager,Events.BaseStartGame);
+        MaxHp = baseStart.BaseHP;
+        UpdateHearts();
+        EventDispatcher.Addlistener(Script.UiControllerHearts,Events.PlayerTakeDamage, TakeDamage);
+    }
     private void CreateNewHeart(EnemGrHeart grHearts, EnemGrPriteHeart grSprite)
     {
         GameObject obj = Addressables.LoadAssetAsync<GameObject>(GameConstants.UIHeart).WaitForCompletion();
@@ -21,9 +31,9 @@ public class UiControllerHearts : MonoBehaviour
     }
     public void UpdateHearts()
     {
-        currentHp = numberHp;
+        currentHp = MaxHp;
         Heart = currentHp / 2;
-        if (numberHp % 2 == 0)
+        if (MaxHp % 2 == 0)
             UpdateHeart();
         else
         {

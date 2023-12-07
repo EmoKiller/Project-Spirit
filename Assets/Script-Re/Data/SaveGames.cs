@@ -1,11 +1,14 @@
 using System;
-using System.Collections.Generic;
-
-public class SaveGames
+[System.Serializable]
+public class BaseStartGame
 {
-    
-    public Dictionary<TypeSave,SaveGameIndex> SaveGame = new Dictionary<TypeSave,SaveGameIndex>();
-    public SaveGames()
+    public int BaseHP = 6;
+    public int level = 0;
+    public int ExpMaxOfLevel = 0;
+    public int CurrentExp = 0;
+    public int AmountFollowers = 0;
+    public int AmountOfCoin = 0;
+    public BaseStartGame()
     {
         
     }

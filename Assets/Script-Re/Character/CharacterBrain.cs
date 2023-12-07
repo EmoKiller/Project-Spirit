@@ -102,14 +102,14 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         OnAction = true;
         onAniATK = false;
-        this.DelayCall(0.3f, () =>
+        this.DelayCall(0.2f, () =>
         {
             OnAction = false;
         });
     }
     public void ImpactForce(Vector3 dir)
     {
-        this.LoopDelayCall(0.3f, () =>
+        this.LoopDelayCall(0.2f, () =>
         {
             agent.AgentBody.Move(dir * Time.deltaTime);
         });

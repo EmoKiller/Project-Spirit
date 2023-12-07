@@ -12,8 +12,9 @@ public class Chaser : Enemy
         base.Start();
         Init();
     }
-    private void Init()
+    public override void Init()
     {
+        base.Init();
         maxHealth = characterAttack.HP;
         health = maxHealth;
         healthBar.SetHealh(maxHealth);

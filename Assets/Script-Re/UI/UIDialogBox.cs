@@ -17,6 +17,7 @@ public class UIDialogBox : MonoBehaviour
     [SerializeField] RectTransform dialogBox;
     [SerializeField] PopUpTalkObject talkScript = null;
     [SerializeField] int index = 0;
+    string saveText = "";
     private void Start()
     {
         dialogBox.gameObject.SetActive(false);
@@ -35,7 +36,8 @@ public class UIDialogBox : MonoBehaviour
                 return;
             }
             StopAllCoroutines();
-            showText.text = talkScript.TextList[index];
+            FullText();
+            //showText.text = talkScript.TextList[index];
         }
     }
     private void ChangeTalkScript(string nameScript)
@@ -90,11 +92,39 @@ public class UIDialogBox : MonoBehaviour
     }
     IEnumerator TypeLine()
     {
+        bool isTextColor = false;
         foreach (char c in talkScript.TextList[index].ToCharArray())
         {
+            if(c == '*') isTextColor = !isTextColor;
+            if (c == '*') continue;
+            if(isTextColor)
+            {
+                string textColor = $"<color=orange>{c}</color>";
+                showText.text += textColor;
+                yield return new WaitForSeconds(0.1f);
+                continue;
+            }
             showText.text += c;
             yield return new WaitForSeconds(0.1f);
         }
+    }
+    private void FullText()
+    {
+        showText.text = string.Empty;
+        bool isTextColor = false;
+        foreach (char c in talkScript.TextList[index].ToCharArray())
+        {
+            if (c == '*') isTextColor = !isTextColor;
+            if (c == '*') continue;
+            if (isTextColor)
+            {
+                string textColor = $"<color=orange>{c}</color>";
+                showText.text += textColor;
+                continue;
+            }
+            showText.text += c;
+        }
+        
     }
     private void Open()
     {
@@ -114,4 +144,3 @@ public class UIDialogBox : MonoBehaviour
         });
     }
 }
-

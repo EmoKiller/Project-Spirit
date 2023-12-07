@@ -46,8 +46,10 @@ public enum Events
 
     MoveToWaypoint,
     SetDefault,
-    
-    
+    //GameManager
+    BaseStartGame, //Func
+    //UiControllerHearts
+    PlayerTakeDamage
 }
 public enum TypeSave
 {

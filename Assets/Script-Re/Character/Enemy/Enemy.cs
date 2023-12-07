@@ -2,11 +2,11 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : CharacterBrain
+public class Enemy : CharacterBrain , IOrderable
 {
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
-    [SerializeField] protected float playerDetectionRange = 15f;
+    [SerializeField] protected float playerDetectionRange = 10f;
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
@@ -14,13 +14,22 @@ public class Enemy : CharacterBrain
     {
         base.Start();
         characterAttack.Initialized();
-        direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
+        
         //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
+    }
+    public virtual void Init()
+    {
+        direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
     }
     protected virtual void Update()
     {
         if (!Alive || OnAction)
             return;
+        if (!onFollowPlayer)
+        {
+
+        }
+
         if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniATK ||
             direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniATK)
         {
@@ -36,6 +45,10 @@ public class Enemy : CharacterBrain
             return;
         }
     }
+    protected override void Rolling()
+    {
+        throw new System.NotImplementedException();
+    }
     protected void ChangeFollowPlayer()
     {
         onFollowPlayer = !onFollowPlayer;
@@ -47,10 +60,6 @@ public class Enemy : CharacterBrain
     protected override void FinishAniAtk()
     {
         base.FinishAniAtk();
-    }
-    protected override void Rolling()
-    {
-        throw new System.NotImplementedException();
     }
     protected virtual void OnArried()
     {
@@ -113,4 +122,10 @@ public class Enemy : CharacterBrain
         //Debug.Log(GameConstants.Slash);
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
+
+  
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(transform.position , playerDetectionRange);
+    //}
 }

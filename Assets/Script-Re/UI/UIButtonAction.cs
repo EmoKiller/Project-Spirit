@@ -9,6 +9,7 @@ public class UIButtonAction : MonoBehaviour
     {
         UIButtonAction
     }
+
     [SerializeField] private GameObject buttonE;
     [SerializeField] private GameObject mouseClick;
     [SerializeField] private TMP_Text text;

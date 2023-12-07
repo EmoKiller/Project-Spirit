@@ -2,13 +2,13 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 
-public class Player : CharacterBrain
+public class Player : CharacterBrain , IOrderable
 {
     public enum Script
     {
         Player
     }
-    [SerializeField]private GameObject hand;
+    [SerializeField] private GameObject hand;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
@@ -16,14 +16,8 @@ public class Player : CharacterBrain
     protected override void Start()
     {
         base.Start();
-        Init();
-        EventDispatcher.Register(Script.Player, Events.PlayerDirection, () => direction);
-        EventDispatcher.Register(Script.Player, Events.PlayerTransform, () => transform);
-        EventDispatcher.Addlistener<string>(Script.Player, Events.PlayerTriggerAni, TriggerAni);
-        EventDispatcher.Addlistener<Vector3, float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
-        EventDispatcher.Addlistener<Weapon>(Script.Player, Events.PlayerChangeWeapon, ChangeWeapon);
     }
-    private void Init()
+    public void Init()
     {
         SetoffSlash();
         characterAnimator.AddStepAniAtk(SetOnSlash, SetoffSlash, StartCombo, FinishAniAtk);
@@ -31,6 +25,11 @@ public class Player : CharacterBrain
         slash.AddActionAttack(OnAttackHit);
         characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
         slash.SetSizeBox(characterAttack.SlashBoxSize);
+        EventDispatcher.Register(Script.Player, Events.PlayerDirection, () => direction);
+        EventDispatcher.Register(Script.Player, Events.PlayerTransform, () => transform);
+        EventDispatcher.Addlistener<string>(Script.Player, Events.PlayerTriggerAni, TriggerAni);
+        EventDispatcher.Addlistener<Vector3, float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
+        EventDispatcher.Addlistener<Weapon>(Script.Player, Events.PlayerChangeWeapon, ChangeWeapon);
     }
     private void Update()
     {
@@ -97,6 +96,7 @@ public class Player : CharacterBrain
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
+        EventDispatcher.Publish(UiControllerHearts.Script.UiControllerHearts, Events.PlayerTakeDamage);
     }
     public override void Dead()
     {

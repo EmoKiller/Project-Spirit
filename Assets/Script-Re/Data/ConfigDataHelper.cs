@@ -15,23 +15,26 @@ public class ConfigDataHelper
             return gameConfig;
         }
     }
-    //private static SaveGames saveGame = null;
-    //public static SaveGames SaveGame
-    //{
-    //    get
-    //    {
-    //        if (!ES3.KeyExists("SaveGame"))
-    //        {
-    //            ES3.Save("SaveGame", saveGame);
-    //        }
-    //        else
-    //        {
-    //            saveGame = ES3.Load<SaveGames>("SaveGame");
-    //        }
-    //        return saveGame;
-    //    }
-    //    set => ES3.Save("SaveGame", value);
-    //}
+    /// <summary>
+    /// save game for RoomTest
+    /// </summary>
+    private static BaseStartGame saveGame = null;
+    public static BaseStartGame SaveGame
+    {
+        get
+        {
+            if (!ES3.KeyExists(GameConstants.BaseStartGame))
+            {
+                ES3.Save(GameConstants.BaseStartGame, saveGame);
+            }
+            else
+            {
+                saveGame = ES3.Load<BaseStartGame>(GameConstants.BaseStartGame);
+            }
+            return saveGame;
+        }
+        set => ES3.Save(GameConstants.BaseStartGame, value);
+    }
     //private static UserData userData = null;
     //public static UserData UserData
     //{
@@ -49,7 +52,7 @@ public class ConfigDataHelper
     //    set => ES3.Save(GameConstants.USERDATA, value);
     //}
     //private static Chest
-    
+
 
     //private static UserData GetHeroClassData()
     //{
@@ -65,8 +68,8 @@ public class ConfigDataHelper
     //    //hero1.attributes = GameConfig.heroConfig.heroClass.
     //    return hero1;
     //}
-    public void Save(Dictionary<string,string> data)
-    {
-        //PlayerPrefs.se
-    }
+    //public void Save(Dictionary<string,string> data)
+    //{
+    //    //PlayerPrefs.se
+    //}
 }

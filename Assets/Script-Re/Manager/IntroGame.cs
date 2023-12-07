@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Video;
 
-public class IntroGame : MonoBehaviour
+public class IntroGame : MonoBehaviour 
 {
     public enum Script
     {
