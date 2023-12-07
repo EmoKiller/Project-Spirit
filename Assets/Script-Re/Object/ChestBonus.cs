@@ -13,8 +13,10 @@ public class ChestBonus : MonoBehaviour
     }
     private void DropItems()
     {
+        Debug.Log("Chest Type " + " " + type);
         foreach (var item in ConfigDataHelper.GameConfig.ChestConfig[type].itemsCanDrop)
         {
+            Debug.Log(item.Key);
             AssetManager.Instance.ItemDropPrefab.GetComponent<ObjectDropOnWorld>().UpdateSprite(item.Key.ToString());
             for (int i = 0; i < item.Value.value; i++)
             {
