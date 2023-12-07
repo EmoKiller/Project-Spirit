@@ -9,6 +9,7 @@ public class TriggerTalk : TriggerWaitAction
     
     public TalkScript indexScript;
     public UnityEvent Event;
+    public Action test;
     private void Start()
     {
         EventDispatcher.Addlistener(Script.TriggerTalk,Events.TheScriptTalkEnd, TheScriptTalkEnd);

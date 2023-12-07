@@ -59,7 +59,6 @@ public class UIManager : MonoBehaviour
     {
         get => this.TryGetMonoComponentInChildren(ref _UIButtonAction);
     }
-
     private void Awake()
     {
         EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);

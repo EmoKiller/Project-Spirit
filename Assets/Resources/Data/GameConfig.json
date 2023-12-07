@@ -1,1 +1,73 @@
-{"ChestConfig":{"Common":{"itemsCanDrop":{"Coin":{"type":0,"value":3.0,"ratio":100.0}}},"UnCommon":{"itemsCanDrop":{"Coin":{"type":0,"value":10.0,"ratio":100.0},"BerryBushSeed":{"type":2,"value":1.0,"ratio":50.0},"Necklace":{"type":3,"value":1.0,"ratio":25.0}}},"Race":{"itemsCanDrop":{"Coin":{"type":0,"value":18.0,"ratio":100.0},"TarotCard":{"type":1,"value":1.0,"ratio":100.0}}},"EndOfFloor":{"itemsCanDrop":{"Coin":{"type":0,"value":25.0,"ratio":100.0}}}},"SaveGames":{"Level":{"Type":0,"Value":10.0},"Exp":{"Type":0,"Value":10.0},"AmountFollowers":{"Type":0,"Value":10.0},"AmountOfCoin":{"Type":0,"Value":10.0}}}
+{
+	"ChestConfig" : {
+		"Common" : {
+			"itemsCanDrop" : {
+				"Coin" : {
+					"type" : 0,
+					"value" : 3.0,
+					"ratio" : 100.0
+				}
+			}
+		},
+		"UnCommon" : {
+			"itemsCanDrop" : {
+				"Coin" : {
+					"type" : 0,
+					"value" : 10.0,
+					"ratio" : 100.0
+				},
+				"BerryBushSeed" : {
+					"type" : 2,
+					"value" : 1.0,
+					"ratio" : 50.0
+				},
+				"Necklace" : {
+					"type" : 3,
+					"value" : 1.0,
+					"ratio" : 25.0
+				}
+			}
+		},
+		"Race" : {
+			"itemsCanDrop" : {
+				"Coin" : {
+					"type" : 0,
+					"value" : 18.0,
+					"ratio" : 100.0
+				},
+				"TarotCard" : {
+					"type" : 1,
+					"value" : 1.0,
+					"ratio" : 100.0
+				}
+			}
+		},
+		"EndOfFloor" : {
+			"itemsCanDrop" : {
+				"Coin" : {
+					"type" : 0,
+					"value" : 25.0,
+					"ratio" : 100.0
+				}
+			}
+		}
+	},
+	"SaveGames" : {
+		"Level" : {
+			"Type" : 0,
+			"Value" : 10.0
+		},
+		"Exp" : {
+			"Type" : 0,
+			"Value" : 10.0
+		},
+		"AmountFollowers" : {
+			"Type" : 0,
+			"Value" : 10.0
+		},
+		"AmountOfCoin" : {
+			"Type" : 0,
+			"Value" : 10.0
+		}
+	}
+}
