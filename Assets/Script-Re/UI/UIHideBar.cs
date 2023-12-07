@@ -21,11 +21,25 @@ public class UIHideBar : MonoBehaviour
             ToggleTabHideBar(value);
         }
     }
-    
+    public void Test()
+    {
+        Debug.Log("test");
+    }
     private void Start()
     {
         GruopMenuEsc.SetActive(false);
         InventoryTab.SetActive(false);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            IsOnTab = !IsOnTab;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //GruopMenuEsc
+        }
     }
     private void ToggleTabHideBar(bool value)
     {

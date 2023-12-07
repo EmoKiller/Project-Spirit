@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,23 +11,36 @@ public class UIButtonAction : MonoBehaviour
     {
         UIButtonAction
     }
-
-    [SerializeField] private GameObject buttonE;
-    [SerializeField] private GameObject mouseClick;
+    private Dictionary<TypeUIButton, UITypeButton> m_TypeButton = new Dictionary<TypeUIButton, UITypeButton>();
+    public Dictionary<TypeUIButton, UITypeButton> TypeButton
+    {
+        get
+        {
+            if (m_TypeButton.Count == 0)
+            {
+                List<UITypeButton> type = GetComponentsInChildren<UITypeButton>().ToList();
+                foreach (var item in type)
+                {
+                    m_TypeButton.Add(item.Type, item);
+                }
+            }
+            return m_TypeButton;
+        }
+    }
     [SerializeField] private TMP_Text text;
-    [SerializeField] private Image fill;
-    [SerializeField] private RectTransform rectButton => GetComponent<RectTransform>();
+    [SerializeField] public RectTransform rectButton => GetComponent<RectTransform>();
     [SerializeField] private RectTransform rectShowText;
-    [SerializeField] private RectTransform thisTransform;
     Coroutine fillIncreaseAction;
     Coroutine fillReduceAction;
+
     private void Start()
-    { 
-        gameObject.SetActive(false);
-        buttonE.SetActive(false);
-        mouseClick.SetActive(false);
-        EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIButtonAction, Events.UIButtonOpen, UIButtonOpen);
-        EventDispatcher.Addlistener(Script.UIButtonAction, Events.UIButtonReset, ResetButton);
+    {
+        
+        //gameObject.SetActive(false);
+        TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
+        TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
+        //EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIButtonAction, Events.UIButtonOpen, UIButtonOpen);
+        //EventDispatcher.Addlistener(Script.UIButtonAction, Events.UIButtonReset, ResetButton);
     }
     private void Update()
     {
@@ -42,46 +57,40 @@ public class UIButtonAction : MonoBehaviour
             EventDispatcher.Publish(TriggerWaitAction.Script.TriggerWaitAction, Events.OnTringgerWaitAction);
         }
     }
-    private void OnEnable()
-    {
-        
-    }
-    private void UIButtonOpen(TypeShowButton type,string str)
+    public void SwitchTypeButton(TypeShowButton type)
     {
         switch (type)
         {
             case TypeShowButton.Talk:
-                buttonE.gameObject.SetActive(true);
+            case TypeShowButton.TakeWeapon:
+                TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
                 break;
             case TypeShowButton.Items:
-                mouseClick.gameObject.SetActive(true);
-                break;
-            case TypeShowButton.TakeWeapon:
-                buttonE.gameObject.SetActive(true);
+                TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
                 break;
         }
-        gameObject.SetActive(true);
-        rectButton.sizeDelta += new Vector2(100,0);
-        rectButton.sizeDelta += new Vector2((str.Length * 25), 0);
+    }
+    public float FillValue()
+    {
+        return TypeButton[TypeUIButton.ButtonE].FillAmount;
+    }
+    public void FillUpdate(float amount)
+    {
+        TypeButton[TypeUIButton.ButtonE].FillAmount = amount;
+    }
+    public void UpdateText(string str)
+    {
         text.text = str;
-        LayoutRebuilder.ForceRebuildLayoutImmediate(thisTransform);
     }
-    private float FillValue()
-    {
-        return fill.fillAmount;
-    }
-    private void FillUpdate(float amount)
-    {
-        fill.fillAmount = amount;
-    }
+    
     private void ResetButton()  
     {
         gameObject.SetActive(false);
         rectButton.sizeDelta = new Vector2(0, 110);
         rectShowText.sizeDelta = rectButton.sizeDelta;
-        fill.fillAmount = 0f;
-        buttonE.gameObject.SetActive(false);
-        mouseClick.gameObject.SetActive(false);
+        TypeButton[TypeUIButton.ButtonE].FillAmount = 0f;
+        TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
+        TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
     }
     private void ButtonDown()
     {

@@ -1,4 +1,8 @@
-
+public enum TypeUIButton
+{
+    ButtonE,
+    Mouse
+}
 public enum TalkScript
 {
     IntroGame1,
@@ -8,6 +12,15 @@ public enum TalkScript
 
 public enum Events
 {
+    //Cammera
+    CameraChangeColorBackGround,
+    CameraDefault,
+    CameraFocus,
+    CameraChangeTarget,
+    CameraTargetPlayer,
+    /// <summary>
+    /// /
+    /// </summary>
     DebugAction,
     //IntroGame
     GoToMap1,
@@ -27,17 +40,11 @@ public enum Events
     UpdateIconCurses,
     //UIManager
     UpdateInfoWeapon,
-    //Cammera
-    CameraChangeColorBackGround,
-    CameraDefault,
-    CameraFocus,
-    CameraChangeTarget,
-    CameraTargetPlayer,
+    
     // UIDialogBox
     DialogBoxChangeTalkScript,
     //UIButtonAction
     UIButtonOpen,
-    UIButtonUpdateText,
     UIButtonReset,
     //OnTringgerWaitAction
     OnTringgerWaitAction,
@@ -105,10 +112,6 @@ public enum TypeMenuTab
     Clut,
     Quests
 }
-public enum Enemys
-{
-    Chaser
-}
 
 public enum TypeTabInfomation
 {
@@ -123,21 +126,6 @@ public enum TypeShowButton
     Items,
     TakeWeapon,
     None
-}
-public enum AttributeTypeOfHero
-{
-    baseAttribute,
-}
-public enum AttributeType
-{
-    HP,
-    MP,
-    SP
-}
-public enum ItemsType
-{
-    Weapon,
-    Items
 }
 public enum MenuType
 {
