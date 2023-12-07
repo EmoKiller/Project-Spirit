@@ -17,7 +17,7 @@ public class UIDialogBox : MonoBehaviour
     [SerializeField] RectTransform dialogBox;
     [SerializeField] PopUpTalkObject talkScript = null;
     [SerializeField] int index = 0;
-    string saveText = "";
+    [SerializeField] string saveText = "";
     private void Start()
     {
         dialogBox.gameObject.SetActive(false);
@@ -28,16 +28,14 @@ public class UIDialogBox : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (showText.text == talkScript.TextList[index])
+            if (showText.text == saveText)
             {
                 ResetSizeDialogBox();
-                Debug.Log(talkScript.TextList[index].Length);
                 NextScript();
                 return;
             }
             StopAllCoroutines();
-            FullText();
-            //showText.text = talkScript.TextList[index];
+            showText.text = saveText;
         }
     }
     private void ChangeTalkScript(string nameScript)
@@ -49,6 +47,7 @@ public class UIDialogBox : MonoBehaviour
         CheckStringLength();
         nameSpeaking.text = talkScript.NameSpeaking;
         showText.text = string.Empty;
+        FullText();
         StartCoroutine(TypeLine());
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, talkScript.pointTalk[index]);
     }
@@ -61,8 +60,9 @@ public class UIDialogBox : MonoBehaviour
             return;
         }
         showText.text = string.Empty;
-        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, talkScript.pointTalk[index]);
         index++;
+        EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, talkScript.pointTalk[index]);
+        FullText();
         StartCoroutine(TypeLine());
         CheckStringLength();
     }
@@ -110,7 +110,7 @@ public class UIDialogBox : MonoBehaviour
     }
     private void FullText()
     {
-        showText.text = string.Empty;
+        saveText = string.Empty;
         bool isTextColor = false;
         foreach (char c in talkScript.TextList[index].ToCharArray())
         {
@@ -119,10 +119,10 @@ public class UIDialogBox : MonoBehaviour
             if (isTextColor)
             {
                 string textColor = $"<color=orange>{c}</color>";
-                showText.text += textColor;
+                saveText += textColor;
                 continue;
             }
-            showText.text += c;
+            saveText += c;
         }
         
     }

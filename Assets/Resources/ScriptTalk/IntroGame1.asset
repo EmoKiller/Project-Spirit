@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: IntroGame1
   m_EditorClassIdentifier: 
   projectTile: {fileID: 2729271864944868109, guid: 8a805fd5b1ad7134588dbff977a3907c, type: 3}
+  NameSpeaking: 
   TextList:
   - Before us stands the last for its kind. All others we have hunted down and put
     to the blade.
   - Whit this final sacrifice, the prophecy will be impossible to fulfill.
   - The heretic who lies bound below will be condemned to eternal captivity.
-  - And the <color=orange>Old Faith</color> shall be preserved.
+  - And the *Old Faith* shall be preserved.
   pointTalk:
   - {fileID: 598372138143201524, guid: a74338e88e864f24fa572742344c3900, type: 3}
   - {fileID: 749330184778458944, guid: 6682b2ae4e98dd74ead1540cb2468dcf, type: 3}

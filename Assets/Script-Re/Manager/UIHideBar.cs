@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,56 +11,34 @@ public class UIHideBar : MonoBehaviour
     [SerializeField] RectTransform WayBlack;
     [SerializeField] GameObject GruopMenuEsc;
     [SerializeField] GameObject InventoryTab;
-    Dictionary<TypeFIll, IFill> listFIll = new Dictionary<TypeFIll, IFill>();
-    Dictionary<TypeAmount, IMountValue> listMount = new Dictionary<TypeAmount, IMountValue>();
-    bool ToggleValue = false;
-    
-    private void Awake()
+    bool _isOnTab = false;
+    public bool IsOnTab
     {
-        //HideBar
-        List<IFill> listfills = GetComponentsInChildren<IFill>().ToList();
-        foreach (IFill fill in listfills)
+        get { return _isOnTab; }
+        set 
         {
-            listFIll.Add(fill.Type,fill);
+            _isOnTab = value;
+            ToggleTabHideBar(value);
         }
-        List<IMountValue> listMounts = GetComponentsInChildren<IMountValue>().ToList();
-        foreach (IMountValue mount in listMounts)
-        {
-            listMount.Add(mount.Type, mount);
-        }
-        //HideBar
     }
+    
     private void Start()
     {
         GruopMenuEsc.SetActive(false);
         InventoryTab.SetActive(false);
     }
-    private void Update()
+    private void ToggleTabHideBar(bool value)
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (_isOnTab)
         {
-            ToggleTabHideBar();
-            //InventoryTab
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //GruopMenuEsc
-        }
-    }
-    private void ToggleTabHideBar()
-    {
-        ToggleValue = !ToggleValue;
-        
-        if (ToggleValue)
-        {
-            WayBlack.gameObject.SetActive(ToggleValue);
-            WayBlack.DOAnchorPos(new Vector2(0,0),1);
-            InventoryTab.gameObject.SetActive(ToggleValue);
+            WayBlack.gameObject.SetActive(_isOnTab);
+            WayBlack.DOAnchorPos(new Vector2(0, 0), 1);
+            InventoryTab.gameObject.SetActive(_isOnTab);
             return;
         }
         WayBlack.DOAnchorPos(new Vector2(-1200, 0), 1).OnComplete(() =>
         {
-            WayBlack.gameObject.SetActive(ToggleValue);
+            WayBlack.gameObject.SetActive(_isOnTab);
         });
     }
 }
