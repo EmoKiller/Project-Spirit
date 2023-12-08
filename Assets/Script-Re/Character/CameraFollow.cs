@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraDefault, CameraDefault);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraFocus, CameraFocus);
     }
-    private void Start()
+    public void Init()
     {
         TargetPlayer();
     }

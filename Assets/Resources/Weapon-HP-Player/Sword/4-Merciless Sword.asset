@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 4883390993534700315, guid: d769ba106cf8f294e9fe398b4e92c147, type: 3}
   IconWeapon: {fileID: 1499332722, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Merciless Sword
   QuoteWeapon: Grant no mercy, take no chances.
   DescriptionWeapon: Chance to deal a Critical Hit when attacking enemies.

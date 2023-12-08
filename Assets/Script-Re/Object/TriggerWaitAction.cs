@@ -22,15 +22,15 @@ public class TriggerWaitAction : MonoBehaviour
             return;
         }
         EventDispatcher.Addlistener(Script.TriggerWaitAction, Events.OnTringgerWaitAction, OnTringgerWaitAction);
-        EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonOpen, typeButton, text);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.UIButtonOpen, typeButton, text);
     }
     protected virtual void OnTriggerExit(Collider other)
     {
-        EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.UIButtonReset);
     }
     protected virtual void OnTringgerWaitAction()
     {
         actioned = true;
-        EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.UIButtonReset);
     }
 }

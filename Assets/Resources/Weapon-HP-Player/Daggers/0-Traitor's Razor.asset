@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
   IconWeapon: {fileID: 0}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Traitor's Razor
   QuoteWeapon: Never given, only taken.
   DescriptionWeapon: A fast blade signed for many cuts, low damage but lightning

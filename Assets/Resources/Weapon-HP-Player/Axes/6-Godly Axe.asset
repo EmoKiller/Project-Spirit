@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 1425156324384342684, guid: 07a6368cc3c32ea4b9ae06c3f0e4882b, type: 3}
   IconWeapon: {fileID: -840916217, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Godly Axe
   QuoteWeapon: The blade that severed the Lands of the Old Faith from the world.
   DescriptionWeapon: Deal significantly more damage than mortal weapons.

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 4476563988138772830, guid: 15b7b57d3e3772545ad68e9fd5ec442a, type: 3}
   IconWeapon: {fileID: 1939771423, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Zealous Sword
   QuoteWeapon: The blade of the great Fanatic.
   DescriptionWeapon: Collected fervor will also increase the divine inspiration bar.

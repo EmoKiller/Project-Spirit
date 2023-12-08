@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 8699840935373294594, guid: b27676f5df2e5e741b0f8ebc1a7c4727, type: 3}
   IconWeapon: {fileID: -82055526, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Vampiric Axe
   QuoteWeapon: Consumer of the blood it spills
   DescriptionWeapon: Chance to heal the wielder using the life force of a slain foe.

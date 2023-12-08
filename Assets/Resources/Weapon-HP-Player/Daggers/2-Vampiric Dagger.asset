@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
   IconWeapon: {fileID: 0}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Vampiric Dagger
   QuoteWeapon: Eerily similar to the canine of some fierce beast...
   DescriptionWeapon: Chance to heal the wielder using the life force of a slain foe.

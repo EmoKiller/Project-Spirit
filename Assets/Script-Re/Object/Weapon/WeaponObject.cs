@@ -9,7 +9,7 @@ public class WeaponObject : ScriptableObject
 
     [Header("Comfinguration")]
     public Sprite IconWeapon;
-    public string LevelWeapon = "";
+    public LevelItems LevelWeapon;
     public string NameWeapon = "";
     public string QuoteWeapon = "";
     public string DescriptionWeapon = "";

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
   IconWeapon: {fileID: 0}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Zealous Dagger
   QuoteWeapon: Used by the Fanatic to give offerings of blood.
   DescriptionWeapon: Collected fervor will also increase the divine inspiration bar.

@@ -12,10 +12,10 @@ public class UiControllerHearts : MonoBehaviour
     [SerializeField] int Heart;
     [SerializeField] int currentHp;
     [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
-    private void Start()
+    
+    public void Init(int baseHP)
     {
-        //BaseStartGame baseStart = (BaseStartGame)EventDispatcher.Call(GameManager.Script.GameManager,Events.BaseStartGame);
-        //MaxHp = baseStart.BaseHP;
+        MaxHp = baseHP;
         UpdateHearts();
         EventDispatcher.Addlistener(Script.UiControllerHearts,Events.PlayerTakeDamage, TakeDamage);
     }

@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAnimationState: 0
   currentMovementType: 0
-  currentAttackType: 0
+  comboATK: 0
   currentTrigger: 
 --- !u!1 &452100597677315019
 GameObject:
@@ -545,15 +545,8 @@ MonoBehaviour:
   slash: {fileID: 8352764248254349580}
   direction: {fileID: 0}
   tranformOfAni: {fileID: 452100597461565272}
-  forceCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  arried: 0
-  OnAction: 0
-  onAniAttck: 0
+  m_Action: 0
+  onAniATK: 0
   wayPoints: []
   currentWaypointIndex: 0
   playerDetectionRange: 15
@@ -923,6 +916,10 @@ PrefabInstance:
     - target: {fileID: 8479387275136142813, guid: 77940722565f486469245a1da00c9ddd, type: 3}
       propertyPath: m_Name
       value: SlashObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479387275136142813, guid: 77940722565f486469245a1da00c9ddd, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8479387275136142816, guid: 77940722565f486469245a1da00c9ddd, type: 3}
       propertyPath: m_RootOrder

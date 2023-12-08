@@ -33,6 +33,8 @@ public class WeaponPodium : TriggerWaitAction
     private void GetDamagePlayer(Collider other)
     {
         CharacterAttack charatk = other.GetComponent<CharacterAttack>();
+        if (charatk != null)
+            return;
         damagePlayer = charatk.TotalDamage();
         speedPlayer = charatk.Speed;
     }

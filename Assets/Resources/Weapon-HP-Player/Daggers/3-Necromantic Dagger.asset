@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
   IconWeapon: {fileID: 0}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Necromantic Dagger
   QuoteWeapon: Only the Gods of Death may cut souls free.
   DescriptionWeapon: When slaying a foe summon a ghost that will attack nearby enemies.

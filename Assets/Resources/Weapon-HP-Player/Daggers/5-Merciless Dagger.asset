@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
   IconWeapon: {fileID: 0}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Merciless Dagger
   QuoteWeapon: Piercer of hearts.
   DescriptionWeapon: Chance to deal a Critical Hit when attacking enemies.

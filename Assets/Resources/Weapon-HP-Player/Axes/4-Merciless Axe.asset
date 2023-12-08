@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 5913413593029785157, guid: 54c863d689148644fb83c22305684baa, type: 3}
   IconWeapon: {fileID: 45256147, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Merciless Axe
   QuoteWeapon: Once borne by the executioners of old.
   DescriptionWeapon: Chance to deal a Critical Hit when attacking enemies.

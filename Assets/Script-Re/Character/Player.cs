@@ -22,14 +22,17 @@ public class Player : CharacterBrain , IOrderable
         SetoffSlash();
         characterAnimator.AddStepAniAtk(SetOnSlash, SetoffSlash, StartCombo, FinishAniAtk);
         characterAnimator.AddStFishAni(StartAni, StopAni);
-        slash.AddActionAttack(OnAttackHit);
-        characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
-        slash.SetSizeBox(characterAttack.SlashBoxSize);
         EventDispatcher.Register(Script.Player, Events.PlayerDirection, () => direction);
         EventDispatcher.Register(Script.Player, Events.PlayerTransform, () => transform);
         EventDispatcher.Addlistener<string>(Script.Player, Events.PlayerTriggerAni, TriggerAni);
         EventDispatcher.Addlistener<Vector3, float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
         EventDispatcher.Addlistener<Weapon>(Script.Player, Events.PlayerChangeWeapon, ChangeWeapon);
+    }
+    public void SetWeapon()
+    {
+        slash.AddActionAttack(OnAttackHit);
+        characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
+        slash.SetSizeBox(characterAttack.SlashBoxSize);
     }
     private void Update()
     {
@@ -45,8 +48,6 @@ public class Player : CharacterBrain , IOrderable
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Rolling();
-            //characterAnimator.SetTrigger("Rolling");
-
             characterAnimator.SetRolling(CharacterAnimator.AnimationState.Rolling);
             return;
         }
@@ -142,7 +143,7 @@ public class Player : CharacterBrain , IOrderable
         if (wp != null)
         {
             wp.transform.SetParent(null);
-            wp.transform.ReSetTransform();
+            wp.transform.ReSetEulerAngle();
         }
         Weapon obj = Instantiate(weapon, hand.transform);
         characterAttack.Initialized(obj);

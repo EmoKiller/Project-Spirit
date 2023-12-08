@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 2058045170614270837, guid: 71b5549edd88a0240b1f8136de877a90, type: 3}
   IconWeapon: {fileID: 762611402, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Necromantic Axe
   QuoteWeapon: Severed heads still may talk.
   DescriptionWeapon: When slaying a foe summon a ghost that will attack nearby enemies.

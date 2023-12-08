@@ -9,26 +9,25 @@ public class GameManager : SerializedMonoBehaviour
         GameManager
     }
     public SpaceState SpaceState;
-    [SerializeField]private BaseStartGame BaseStartGame = null;
-    [SerializeField] Dictionary<int, IOrderable> OrderSoft = new Dictionary<int, IOrderable>();
+    [SerializeField] private Player player = null;
+    [SerializeField] private CameraFollow cameraFollow = null;
+    [SerializeField] private UIManager uiManager = null;
     public float num = 0;
+    [SerializeField] BaseStartGame BaseStart = null;
     private void Awake()
     {
-        BaseStartGame = ConfigDataHelper.SaveGame;
-        EventDispatcher.Register(Script.GameManager, Events.BaseStartGame, () => BaseStartGame);
-        for (int i = 0; i < OrderSoft.Count; i++) 
-        {
-            if (!OrderSoft.ContainsKey(i))
-                continue;
-            OrderSoft[i].Init();
-        }
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollow>();
+        uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
+        ConfigDataHelper.GetStartGameDataBase();
     }
-
     private void Start()
     {
-
+        //BaseStart = ConfigDataHelper.BaseStartGame;
+        player.Init();
+        cameraFollow.Init();
+        uiManager.Init(BaseStart.BaseHP);
     }
-
     private void ChestBonus()
     {
         ChestBonus obj = Resources.Load<ChestBonus>("Chests/Chest_Wood");

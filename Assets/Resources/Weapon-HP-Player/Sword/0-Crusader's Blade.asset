@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 8133739704888670026, guid: 38b77e0b194c53a46a820438c474bf7d, type: 3}
   IconWeapon: {fileID: -42888344, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Crusader's Blade
   QuoteWeapon: Stalwart companion to the wandering warrior.
   DescriptionWeapon: A well balanced blade dealing moderate damage.

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 4474555231763220490, guid: f6eb4eb53963e9f499777e2a6bc48fca, type: 3}
   IconWeapon: {fileID: 634892512, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Bane Axe
   QuoteWeapon: Once struck by the toxins, one begs for the blade.
   DescriptionWeapon: Chance of poisoning enemies when attacking.

@@ -18,41 +18,29 @@ public class ConfigDataHelper
     /// <summary>
     /// save game for RoomTest
     /// </summary>
-    private static BaseStartGame saveGame = null;
-    public static BaseStartGame SaveGame
+    private static BaseStartGame baseStartGame = null;
+    public static BaseStartGame BaseStartGame
     {
         get
         {
             if (!ES3.KeyExists(GameConstants.BaseStartGame))
             {
-                ES3.Save(GameConstants.BaseStartGame, saveGame);
+                ES3.Save(GameConstants.BaseStartGame, baseStartGame);
             }
             else
             {
-                saveGame = ES3.Load<BaseStartGame>(GameConstants.BaseStartGame);
+                baseStartGame = ES3.Load<BaseStartGame>(GameConstants.BaseStartGame);
             }
-            return saveGame;
+            return baseStartGame;
         }
         set => ES3.Save(GameConstants.BaseStartGame, value);
     }
-    //private static UserData userData = null;
-    //public static UserData UserData
-    //{
-    //    get
-    //    {
-    //        if (!ES3.KeyExists(GameConstants.USERDATA))
-    //        {
-    //            userData = GetHeroClassData();
-    //            ES3.Save(GameConstants.USERDATA, userData);
-    //        }
-    //        else
-    //            userData = ES3.Load<UserData>(GameConstants.USERDATA);
-    //        return userData;
-    //    }
-    //    set => ES3.Save(GameConstants.USERDATA, value);
-    //}
-    //private static Chest
+    public static BaseStartGame GetStartGameDataBase()
+    {
+        BaseStartGame data = BaseStartGame;
 
+        return data;
+    }
 
     //private static UserData GetHeroClassData()
     //{

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 2891819677680002082, guid: b8e5901594fbcb741b7f7f533016414c, type: 3}
   IconWeapon: {fileID: 188978791, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Apostate's Cleaver
   QuoteWeapon: A mighty tool of unstoppable brutality.
   DescriptionWeapon: Swing with intent.

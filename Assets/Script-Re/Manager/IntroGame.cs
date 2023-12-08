@@ -74,7 +74,7 @@ public class IntroGame : MonoBehaviour
     }
     public void TalkScript3()
     {
-        EventDispatcher.Publish(UIButtonAction.Script.UIButtonAction, Events.UIButtonReset);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.UIButtonReset);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, TargetCrown);
         EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 8f);
         EventDispatcher.Publish(WhoWait.Script.WhoWait, Events.WhoWaitTriggerAni);

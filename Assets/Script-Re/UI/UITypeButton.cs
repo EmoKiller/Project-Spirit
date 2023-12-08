@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,20 @@ public class UITypeButton : MonoBehaviour
         set
         {
             img.fillAmount = value;
+        }
+    }
+    private TMP_Text text = null;
+    public string Text 
+    {
+        get
+        {
+            if(text == null)
+                text = GetComponent<TMP_Text>();
+            return text.text;
+        }
+        set
+        {
+            text.text = value;
         }
     }
 

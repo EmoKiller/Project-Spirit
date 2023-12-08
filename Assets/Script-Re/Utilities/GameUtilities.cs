@@ -44,9 +44,8 @@ public static class GameUtilities
         }
     }
 
-    public static void ReSetTransform(this Transform trans)
+    public static void ReSetEulerAngle(this Transform trans)
     {
-        trans.position = Vector3.zero;
         trans.eulerAngles = new Vector3(15,0,0);
     }
     public static T TryGetMonoComponent<T>(this MonoBehaviour mono, ref T tryValue)

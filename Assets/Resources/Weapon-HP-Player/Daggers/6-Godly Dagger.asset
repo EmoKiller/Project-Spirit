@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
   IconWeapon: {fileID: 0}
-  LevelWeapon: 
+  LevelWeapon: 1
   NameWeapon: Godly Dagger
   QuoteWeapon: Stolen from the tomb of one of the Old Gods.
   DescriptionWeapon: Deal significantly more damage than mortal weapons.
