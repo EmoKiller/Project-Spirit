@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-// Những vật thể nào muốn đưa vào pool và để sử dụng trong pooling thì kế thừa interface này
+﻿// Những vật thể nào muốn đưa vào pool và để sử dụng trong pooling thì kế thừa interface này
 public interface IPool
 {
     public string objectName { get; }
