@@ -31,8 +31,8 @@ public class ObjectPooling : MonoBehaviour
 
         OnObjectPooled?.Invoke(objectToPop);
         return objectToPop;
-    } 
-    
+    }
+
     public void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
     {
 

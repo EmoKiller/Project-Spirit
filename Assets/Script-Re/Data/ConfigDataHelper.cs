@@ -25,7 +25,8 @@ public class ConfigDataHelper
         {
             if (!ES3.KeyExists(GameConstants.BaseStartGame))
             {
-                ES3.Save(GameConstants.BaseStartGame, baseStartGame);
+                baseStartGame = GetDefautData();
+                ES3.Save(GameConstants.BaseStartGame, GetDefautData());
             }
             else
             {
@@ -35,10 +36,9 @@ public class ConfigDataHelper
         }
         set => ES3.Save(GameConstants.BaseStartGame, value);
     }
-    public static BaseStartGame GetStartGameDataBase()
+    private static BaseStartGame GetDefautData()
     {
-        BaseStartGame data = BaseStartGame;
-
+        BaseStartGame data = new BaseStartGame();
         return data;
     }
 

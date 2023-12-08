@@ -1,6 +1,5 @@
-using UnityEngine;
 using Sirenix.OdinInspector;
-using System.Collections.Generic;
+using UnityEngine;
 
 public class GameManager : SerializedMonoBehaviour
 {
@@ -13,20 +12,17 @@ public class GameManager : SerializedMonoBehaviour
     [SerializeField] private CameraFollow cameraFollow = null;
     [SerializeField] private UIManager uiManager = null;
     public float num = 0;
-    [SerializeField] BaseStartGame BaseStart = null;
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent<CameraFollow>();
-        uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
-        ConfigDataHelper.GetStartGameDataBase();
+        
+        
     }
     private void Start()
     {
-        //BaseStart = ConfigDataHelper.BaseStartGame;
+        BaseStartGame  a = ConfigDataHelper.BaseStartGame;
         player.Init();
         cameraFollow.Init();
-        uiManager.Init(BaseStart.BaseHP);
+        uiManager.Init(a.BaseHP);
     }
     private void ChestBonus()
     {

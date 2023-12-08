@@ -1,15 +1,10 @@
-using System;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.tvOS;
 
 public class TriggerTalk : TriggerWaitAction
 {
-    
     public TalkScript indexScript;
     public UnityEvent Event;
-    public Action test;
     private void Start()
     {
         EventDispatcher.Addlistener(Script.TriggerTalk,Events.TheScriptTalkEnd, TheScriptTalkEnd);
@@ -18,11 +13,9 @@ public class TriggerTalk : TriggerWaitAction
     {
         base.OnTriggerEnter(other);
     }
-    
     protected override void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
-        
     }
     protected override void OnTringgerWaitAction()
     {
