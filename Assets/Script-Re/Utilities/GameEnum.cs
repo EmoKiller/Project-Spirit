@@ -10,6 +10,12 @@ public enum TalkScript
     IntroGame2,
     IntroGame3
 }
+public enum TypeEnemy
+{
+    Scamp,
+    SwordsMan,
+    Chaser
+}
 public enum LevelItems
 {
     I = 1,

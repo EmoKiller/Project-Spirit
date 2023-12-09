@@ -2,7 +2,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : CharacterBrain , IOrderable
+public class Enemy : CharacterBrain , IPool
 {
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
@@ -10,6 +10,9 @@ public class Enemy : CharacterBrain , IOrderable
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
+
+    public string objectName => gameObject.name;
+
     protected override void Start()
     {
         base.Start();
@@ -123,7 +126,19 @@ public class Enemy : CharacterBrain , IOrderable
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
 
-  
+    public void Show()
+    {
+        Debug.Log("Show");
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        Debug.Log("Hide");
+        gameObject.SetActive(false);
+    }
+
+
     //private void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(transform.position , playerDetectionRange);

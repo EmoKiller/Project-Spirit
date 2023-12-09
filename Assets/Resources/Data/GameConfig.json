@@ -69,5 +69,15 @@
 			"Type" : 0,
 			"Value" : 10.0
 		}
+	},
+	"GameLevelConfig" : {
+		"Level1" : {
+			"Round0" : {
+				"Scamp" : {
+					"Type" : 0,
+					"Value" : 3
+				}
+			}
+		}
 	}
 }
