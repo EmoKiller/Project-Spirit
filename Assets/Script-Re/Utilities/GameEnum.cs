@@ -1,3 +1,4 @@
+
 public enum TypeUIButton
 {
     ButtonE,
@@ -62,9 +63,6 @@ public enum Events
     
     // UIDialogBox
     DialogBoxChangeTalkScript,
-    //UIButtonAction
-    UIButtonOpen,
-    UIButtonReset,
     //OnTringgerWaitAction
     OnTringgerWaitAction,
     //TriggerTalk
@@ -74,8 +72,12 @@ public enum Events
     SetDefault,
     //GameManager
     BaseStartGame, //Func
-    //UiControllerHearts
-    PlayerTakeDamage
+    //UIManager
+    PlayerTakeDamage,
+    CreateNewHeart,
+    UIButtonOpen,
+    UIButtonReset,
+
 }
 public enum TypeSave
 {
@@ -159,6 +161,39 @@ public enum MenuType
     Back,
     DeleteSaveGame
 }
-
+public enum UIsizeObj
+{
+    Nomal,
+    Large,
+    Half
+}
+public enum EnemGrHeart
+{
+    Red,
+    Add,
+    Blue,
+    Black
+}
+public enum EnemGrPriteHeart
+{
+    Red,
+    RedHalf,
+    Add,
+    AddHalf,
+    Blue,
+    BlueHalf,
+    Black
+}
+public enum HeartType
+{
+    Half = 1,
+    Full = 2
+}
+public enum HeartInfo
+{
+    Empty,
+    Half,
+    Full
+}
 
 

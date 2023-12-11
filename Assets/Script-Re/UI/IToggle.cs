@@ -8,13 +8,8 @@ public class IToggle : MonoBehaviour
     protected Image image = null;
     protected Toggle _toggle = null;
     public Toggle Toggle 
-    { 
-        get 
-        { 
-            if (_toggle == null)
-                _toggle = GetComponent<Toggle>();
-            return _toggle;
-        } 
+    {
+        get => this.TryGetMonoComponent(ref _toggle);
     }
     public Action<IToggle,bool> OnChangedEvent = null;
     private void Awake()
@@ -26,8 +21,10 @@ public class IToggle : MonoBehaviour
     {
         OnChangedEvent?.Invoke(this, value);
         if (Toggle.isOn == true)
+        {
             image.sprite = Toggle.spriteState.selectedSprite;
-        else
-            image.sprite = Toggle.spriteState.disabledSprite;
+            return;
+        }
+        image.sprite = Toggle.spriteState.disabledSprite;
     }
 }

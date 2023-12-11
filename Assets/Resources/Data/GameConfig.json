@@ -71,11 +71,19 @@
 		}
 	},
 	"GameLevelConfig" : {
-		"Level1" : {
-			"Round0" : {
-				"Scamp" : {
-					"Type" : 0,
-					"Value" : 3
+		"1" : {
+			"Round" : {
+				"1" : {
+					"ConfigEnemyRound" : {
+						"SwordsMan" : {
+							"Type" : 1,
+							"Value" : 3
+						},
+						"Scamp" : {
+							"Type" : 0,
+							"Value" : 3
+						}
+					}
 				}
 			}
 		}

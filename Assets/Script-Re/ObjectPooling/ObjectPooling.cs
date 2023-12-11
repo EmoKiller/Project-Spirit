@@ -5,21 +5,21 @@ using UnityEngine.Events;
 public class ObjectPooling : MonoBehaviour
 {
     
-    public List<GunBullet> gunBulletsPool = new List<GunBullet>();
+    public List<Enemy> ListEnemy = new List<Enemy>();
     public static UnityEvent<IPool> OnObjectPooled = new UnityEvent<IPool>();
 
 
 
     private void Awake()
     {
-        GunBullet bullet = PopFromPool<GunBullet>("Bullet1", gunBulletsPool);
-        bullet.Show();
-        bullet.Hide();
+        //GunBullet bullet = PopFromPool<GunBullet>("Bullet1", ListEnemy);
+        //bullet.Show();
+        //bullet.Hide();
     }
 
-    public GunBullet PopGunBullet(string bulletName)
+    public Enemy PopEnemy(string EnemyName)
     {
-        return PopFromPool(bulletName, gunBulletsPool);
+        return PopFromPool(EnemyName, ListEnemy);
     }
 
 

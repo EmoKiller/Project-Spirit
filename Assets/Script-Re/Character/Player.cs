@@ -97,7 +97,7 @@ public class Player : CharacterBrain , IOrderable
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        EventDispatcher.Publish(UiControllerHearts.Script.UiControllerHearts, Events.PlayerTakeDamage);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.PlayerTakeDamage);
     }
     public override void Dead()
     {

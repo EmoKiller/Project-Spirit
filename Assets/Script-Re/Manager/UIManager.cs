@@ -1,48 +1,113 @@
-using System.Collections;
-using UnityEngine;
 using Sirenix.OdinInspector;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+
 public class UIManager : SerializedMonoBehaviour
 {
     public enum Script
     {
         UIManager
     }
-    [SerializeField] UiControllerHearts _UIControllerHeart = null;
-    public UiControllerHearts UiControllerHearts
+    public void Init(int baseHP)
     {
-        get => this.TryGetMonoComponentInChildren(ref _UIControllerHeart);
+        //UiControllerHearts
+        MaxHp = baseHP;
+        foreach (var item in grHeart)
+        {
+            item.CreateNewHeart = CreateNewHeart;
+        }
+        EventDispatcher.Addlistener(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
+        EventDispatcher.Addlistener<EnemGrPriteHeart>(Script.UIManager, Events.CreateNewHeart, AddHeart);
+        //UIButtonAction
+        EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);
+        EventDispatcher.Addlistener(Script.UIManager, Events.UIButtonReset, ResetButton);
+        UIButtonAction.OnButtonDown = ButtonDown;
+        UIButtonAction.OnButtonUp = ButtonUp;
+        UIButtonAction.OnTriggerUpdateFillValue = OnTriggerUpdateFillValue;
+        UIButtonAction.gameObject.SetActive(false);
+        UIButtonAction.TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
+        UIButtonAction.TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
     }
-    //Dictionary<TypeFIll, IFill> _listFill = new Dictionary<TypeFIll, IFill>();
-    //Dictionary<TypeAmount, IMountValue> _listMount = new Dictionary<TypeAmount, IMountValue>();
-    //public Dictionary<TypeFIll, IFill> ListFill
-    //{
-    //    get
-    //    {
-    //        if (_listFill.Count == 0)
-    //        {
-    //            List<IFill> listfills = GetComponentsInChildren<IFill>().ToList();
-    //            foreach (IFill fill in listfills)
-    //            {
-    //                _listFill.Add(fill.Type, fill);
-    //            }
-    //        }
-    //        return _listFill;
-    //    }
-    //}
-    //public Dictionary<TypeAmount, IMountValue> ListMount
-    //{
-    //    get
-    //    {
-    //        if (_listMount.Count == 0)
-    //        {
-    //            List<IMountValue> listMounts = GetComponentsInChildren<IMountValue>().ToList();
-    //            foreach (IMountValue mount in listMounts)
-    //            {
-    //                _listMount.Add(mount.Type, mount);
-    //            }
-    //        }
-    //        return _listMount;
-    //    }
+    /// <summary>
+    /// UiControllerHearts
+    /// </summary>
+    [SerializeField] int maxHp;
+    public int MaxHp
+    {
+        get { return maxHp; }
+        set
+        {
+            maxHp = value;
+        }
+    }
+    [SerializeField] int Heart;
+    [SerializeField] int currentHp;
+    [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
+    private void AddHeart(EnemGrPriteHeart grSprite)
+    {
+        EnemGrHeart grHearts = ConvertGrSpriteToGrHeart(grSprite);
+        foreach (Transform item in grHeart[(int)grHearts].rectGr)
+            Destroy(item.gameObject);
+        grHeart[(int)grHearts].MaxHP += ConvertInt(grSprite);
+    }
+    private void CreateNewHeart(EnemGrPriteHeart grSprite)
+    {
+        GameObject obj = Addressables.LoadAssetAsync<GameObject>(GameConstants.UIHeart).WaitForCompletion();
+        UIHeart uiHeart = obj.GetComponent<UIHeart>();
+        uiHeart.SetNewTypeHeart(grSprite);
+        EnemGrHeart grHearts = ConvertGrSpriteToGrHeart(grSprite);
+        UIHeart obj2 = Instantiate(uiHeart, grHeart[(int)grHearts].rectGr).GetComponent<UIHeart>();
+        grHeart[(int)grHearts].Add(obj2);
+    }
+    private int ConvertInt(EnemGrPriteHeart grSprite)
+    {
+        switch (grSprite)
+        {
+            case EnemGrPriteHeart.Red:
+            case EnemGrPriteHeart.Add:
+            case EnemGrPriteHeart.Blue:
+            case EnemGrPriteHeart.Black:
+                return 2;
+            case EnemGrPriteHeart.RedHalf:
+            case EnemGrPriteHeart.AddHalf:
+            case EnemGrPriteHeart.BlueHalf:
+                return 1;
+            default:
+                throw new ArgumentOutOfRangeException();
+        } 
+    }
+    private EnemGrHeart ConvertGrSpriteToGrHeart(EnemGrPriteHeart grSprite)
+    {
+        switch (grSprite)
+        {
+            case EnemGrPriteHeart.Red:
+            case EnemGrPriteHeart.RedHalf:
+                return EnemGrHeart.Red;
+            case EnemGrPriteHeart.Add:
+            case EnemGrPriteHeart.AddHalf:
+                return EnemGrHeart.Add;
+            case EnemGrPriteHeart.Blue:
+            case EnemGrPriteHeart.BlueHalf:
+                return EnemGrHeart.Blue;
+            case EnemGrPriteHeart.Black:
+                return EnemGrHeart.Black;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+    public void TakeDamage()
+    {
+        bool isTake = false;
+        for (int i = grHeart.Count - 1; i > -1; i--)
+        {
+            grHeart[i].TalkeDamage(ref isTake);
+            if (isTake)
+                break;
+        }
+    }
     //}
     /// <summary>
     /// UIHider {
@@ -60,18 +125,7 @@ public class UIManager : SerializedMonoBehaviour
     {
         get => this.TryGetMonoComponentInChildren(ref _UIButtonAction);
     }
-    public void Init(int baseHP)
-    {
-        EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);
-        EventDispatcher.Addlistener(Script.UIManager, Events.UIButtonReset, ResetButton);
-        UIButtonAction.OnButtonDown = ButtonDown;
-        UIButtonAction.OnButtonUp = ButtonUp;
-        UIButtonAction.OnTriggerUpdateFillValue = OnTriggerUpdateFillValue;
-        UIButtonAction.gameObject.SetActive(false);
-        UIButtonAction.TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
-        UIButtonAction.TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
-        UiControllerHearts.Init(baseHP);
-    }
+
     private void UIButtonOpen(TypeShowButton type, string str)
     {
         switch (type)
@@ -87,7 +141,6 @@ public class UIManager : SerializedMonoBehaviour
         UIButtonAction.gameObject.SetActive(true);
         UIButtonAction.rectButton.sizeDelta += new Vector2(100, 0);
         UIButtonAction.rectButton.sizeDelta += new Vector2((str.Length * 25), 0);
-        Debug.Log(UIButtonAction.TypeButton[TypeUIButton.TextShow].Text);
         UIButtonAction.UpdateText(str);
     }
     private void ResetButton()
@@ -132,4 +185,20 @@ public class UIManager : SerializedMonoBehaviour
             yield return null;
         }
     }
+    /// <summary>
+    /// PopUp ui
+    /// </summary>
+    /// 
+
+
+
+
+
+    private UIExp uiExp = null;
+    public UIExp UIExp
+    {
+        get => this.TryGetMonoComponentInChildren(ref uiExp);
+    }
+
+
 }

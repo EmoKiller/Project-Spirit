@@ -1,18 +1,18 @@
-public class RoundConfig 
+public class ConfigEnemyRound
 {
     public TypeEnemy type;
     public float value;
-    public RoundConfig()
+    public ConfigEnemyRound()
     {
 
     }
-    public RoundConfig(TypeEnemy type, float value)
+    public ConfigEnemyRound(TypeEnemy type, float value)
     {
         this.type = type;
         this.value = value;
     }
 
-    public RoundConfig(RoundConfig obj)
+    public ConfigEnemyRound(ConfigEnemyRound obj)
     {
         this.type = obj.type;
         this.value = obj.value;

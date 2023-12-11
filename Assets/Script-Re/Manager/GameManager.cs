@@ -29,6 +29,12 @@ public class GameManager : SerializedMonoBehaviour
         ChestBonus obj = Resources.Load<ChestBonus>("Chests/Chest_Wood");
         Instantiate(obj);
     }
+    [Button("SpawnExp")]
+    private void SpawnExp()
+    {
+        GameObject obj = Resources.Load<GameObject>("Object/Exp");
+        Instantiate(obj);
+    }
 
 
 }

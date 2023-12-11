@@ -29,13 +29,11 @@ public class UITypeButton : MonoBehaviour
             img.fillAmount = value;
         }
     }
-    private TMP_Text text = null;
+    private TMP_Text text => GetComponent<TMP_Text>();
     public string Text 
     {
         get
         {
-            if(text == null)
-                text = GetComponent<TMP_Text>();
             return text.text;
         }
         set

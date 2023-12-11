@@ -3,14 +3,20 @@ using UnityEngine.UI;
 
 public class UIExp : MonoBehaviour
 {
-    private Slider _slider;
-    
-    private void Awake()
+    private Slider _slider => GetComponent<Slider>();
+    public float MaxValue
     {
-        _slider = GetComponent<Slider>();
+        get { return _slider.maxValue; }
+        set { OnMaxValueChange(value); }
     }
-    private void UpdateValue()
+    public float Value
     {
-        
+        get { return _slider.value; }
+        set { _slider.value += value; }
+    }
+    private void OnMaxValueChange(float value)
+    {
+        _slider.maxValue = value;
+        Value = 0;
     }
 }

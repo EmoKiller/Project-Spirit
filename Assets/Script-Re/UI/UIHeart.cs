@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class UIHeart : MonoBehaviour
 {
@@ -11,7 +8,7 @@ public class UIHeart : MonoBehaviour
     public HeartType heartType;
     [SerializeField] Image imageHeart;
     [SerializeField] RectTransform rectHeart;
-    [SerializeField] float Current = 0;
+    [SerializeField] int Current = 0;
 
     public void UpdateHeart()
     {
@@ -39,16 +36,17 @@ public class UIHeart : MonoBehaviour
         else
             heartType = HeartType.Full;
         
-        Current = (float)heartType;
+        Current = (int)heartType;
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
-    public float ReturnCurrent()
+    public int ReturnCurrent()
     {
         return Current;
     }
-    public void TakeDamage(float dmg)
+    public void TakeDamage(int dmg)
     {
         Current -= dmg;
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
+
 }

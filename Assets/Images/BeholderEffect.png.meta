@@ -125,7 +125,7 @@ TextureImporter:
         width: 1030
         height: 950
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,6 +133,111 @@ TextureImporter:
       bones: []
       spriteID: 36f20e71a01123442bc937dd235829cc
       internalID: -1860789779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeholderEffect_1
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 62
+        width: 788
+        height: 795
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0121bfa9d23449438263bfd9e133c09
+      internalID: -779192717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeholderEffect_2
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 928
+        width: 95
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ba6f8da98f8c643a322149727be053
+      internalID: 835605910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeholderEffect_3
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 877
+        width: 137
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d5842c65b88214bb0c68c420a291a2
+      internalID: 1316517337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeholderEffect_4
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 879
+        width: 146
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77fcdeec8d6ee1149bb94348d23c81ab
+      internalID: -284423013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeholderEffect_5
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 879
+        width: 153
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff838127b38106419d6195062e31e36
+      internalID: -2059558090
       vertices: []
       indices: 
       edges: []
@@ -148,7 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BeholderEffect_5: -2059558090
+      BeholderEffect_4: -284423013
+      BeholderEffect_1: -779192717
       BeholderEffect_0: -1860789779
+      BeholderEffect_2: 835605910
+      BeholderEffect_3: 1316517337
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
