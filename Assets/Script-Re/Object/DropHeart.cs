@@ -3,10 +3,10 @@ using UnityEngine;
 public class DropHeart : DropAniDotWeen
 {
     public EnemGrPriteHeart Type;
-    private bool isTake = false;
+    [SerializeField] private bool isTake = false;
     private void Start()
     {
-        isTake = true;
+        isTake = false;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +19,7 @@ public class DropHeart : DropAniDotWeen
         {
             EventDispatcher.Publish(UIManager.Script.UIManager, Events.CreateNewHeart, Type);
             isTake = true;
+            active =false;
             gameObject.SetActive(false);
         }
     }

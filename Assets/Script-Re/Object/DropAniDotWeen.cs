@@ -9,7 +9,7 @@ public class DropAniDotWeen : MonoBehaviour
     public float TimeMoveY = 1;
     [Header("SetEase")]
     public Ease EaseType;
-    bool active = false;
+    [SerializeField]protected bool active = false;
     protected virtual void EventOnTrigger()
     {
         transform.DOMoveY(MoveY, TimeMoveY).SetEase(EaseType).OnComplete(() =>

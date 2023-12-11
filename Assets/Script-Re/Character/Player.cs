@@ -36,6 +36,11 @@ public class Player : CharacterBrain , IOrderable
     }
     private void Update()
     {
+        if (Input.GetMouseButton(1))
+        {
+            Debug.Log("Right");
+            return;
+        }
         if (OnAction)
             return;
         if (Input.GetMouseButtonDown(0) && !atkCanDo && characterAttack.BoolWeaponEquip())
