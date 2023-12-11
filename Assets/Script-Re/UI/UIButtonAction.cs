@@ -28,6 +28,10 @@ public class UIButtonAction : SerializedMonoBehaviour
     public Action OnButtonDown = null;
     public Action OnButtonUp = null;
     public Action OnTriggerUpdateFillValue = null;
+    private void Awake()
+    {
+        
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

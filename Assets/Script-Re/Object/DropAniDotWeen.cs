@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 public class DropAniDotWeen : MonoBehaviour
@@ -8,32 +9,19 @@ public class DropAniDotWeen : MonoBehaviour
     public float TimeMoveY = 1;
     [Header("SetEase")]
     public Ease EaseType;
-    [Header("MoveToPlayer")]
-    public float MoveSpeed = 0.5f;
-    [Header("Distance")]
-    public float Distance = 0.5f;
     bool active = false;
-    protected virtual void EventOnTrigger(Transform other)
+    protected virtual void EventOnTrigger()
     {
         transform.DOMoveY(MoveY, TimeMoveY).SetEase(EaseType).OnComplete(() =>
         {
-            var moteTween = transform.DOMove(other.position, MoveSpeed, false);
-
-            moteTween.OnUpdate(() =>
-            {
-                var moteTweens = moteTween.ChangeEndValue(other.position, true);
-                if (Vector3.Distance(transform.position, other.position) < Distance)
-                {
-                    moteTween.Pause();
-                    if (active == true)
-                        return;
-                    Event();
-                    active = true;
-                    gameObject.SetActive(false);
-
-                }
-            });
+            active = true;
         });
+    }
+    private void Update()
+    {
+        if (!active)
+            return;
+        Event();
     }
     protected virtual void Event()
     {

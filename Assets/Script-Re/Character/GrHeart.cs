@@ -15,19 +15,16 @@ public class GrHeart
             UpdateHearts();
         }
     }
-
     public int CurrentHeart = 0;
     public RectTransform rectGr = null;
     public List<UIHeart> heart = null;
     public EnemGrPriteHeart typeFull;
     public EnemGrPriteHeart typeHalf;
     public Action<EnemGrPriteHeart> CreateNewHeart = null;
-
     public GrHeart()
     {
 
     }
-
     public void Add(UIHeart uiHeart)
     {
         heart.Add(uiHeart);

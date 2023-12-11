@@ -11,6 +11,15 @@ public class UIManager : SerializedMonoBehaviour
     {
         UIManager
     }
+    private void Awake()
+    {
+        UIButtonAction.OnButtonDown = ButtonDown;
+        UIButtonAction.OnButtonUp = ButtonUp;
+        UIButtonAction.OnTriggerUpdateFillValue = OnTriggerUpdateFillValue;
+        UIButtonAction.gameObject.SetActive(false);
+        UIButtonAction.TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
+        UIButtonAction.TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
+    }
     public void Init(int baseHP)
     {
         //UiControllerHearts
@@ -24,12 +33,6 @@ public class UIManager : SerializedMonoBehaviour
         //UIButtonAction
         EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);
         EventDispatcher.Addlistener(Script.UIManager, Events.UIButtonReset, ResetButton);
-        UIButtonAction.OnButtonDown = ButtonDown;
-        UIButtonAction.OnButtonUp = ButtonUp;
-        UIButtonAction.OnTriggerUpdateFillValue = OnTriggerUpdateFillValue;
-        UIButtonAction.gameObject.SetActive(false);
-        UIButtonAction.TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
-        UIButtonAction.TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
     }
     /// <summary>
     /// UiControllerHearts

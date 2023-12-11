@@ -8,32 +8,48 @@ using UnityEngine.UI;
 public class UITypeButton : MonoBehaviour
 {
     public TypeUIButton Type;
-    private Image img = null;
-    public float FillAmount
+    private Image _img = null;
+    public Image Img
     {
-        get
+        get 
         {
-            if (img == null)
+            if (_img == null)
             {
                 List<Image> list = GetComponentsInChildren<Image>().ToList();
                 foreach (var items in list)
                 {
                     if (items.type == Image.Type.Filled)
-                        img = items;
+                        _img = items;
                 }
             }
-            return img.fillAmount;
-        }
-        set
-        {
-            img.fillAmount = value;
+            return _img; 
         }
     }
-    private TMP_Text text => GetComponent<TMP_Text>();
-    public string Text 
+    public float FillAmount
     {
         get
         {
+            return Img.fillAmount;
+        }
+        set
+        {
+            _img.fillAmount = value;
+        }
+    }
+    private TMP_Text _text = null;
+    public TMP_Text text 
+    {
+        get
+        {
+            if (_text == null)
+                _text = GetComponent<TMP_Text>();
+            return _text;
+        }
+    }
+    public string Text 
+    {
+        get
+        { 
             return text.text;
         }
         set

@@ -44,6 +44,7 @@ public static class GameUtilities
         }
     }
 
+
     public static void ReSetEulerAngle(this Transform trans)
     {
         trans.eulerAngles = new Vector3(15,0,0);

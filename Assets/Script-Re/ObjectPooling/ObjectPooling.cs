@@ -26,11 +26,13 @@ public class ObjectPooling : MonoBehaviour
     public T PopFromPool<T>(string objectName, List<T> pool) where T : MonoBehaviour, IPool, new()
     {
         // Logic để lấy 1 vật thể từ pool ra
-
-        T objectToPop = new T();
-
-        OnObjectPooled?.Invoke(objectToPop);
-        return objectToPop;
+        T obj = pool.Find(e => e.name.Equals(objectName));
+        if (obj == null)
+        {
+            Instantiate(obj);
+            return obj;
+        }
+        return obj;
     }
 
     public void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
