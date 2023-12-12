@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,414 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BreakableResourceStone_0
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 334
+        width: 151
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083aa06a683ad8a4385d99f14d8a3e7a
+      internalID: -421750979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 314
+        width: 147
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a21ddaafcc7794da674b7c9d5ad49e
+      internalID: 1081001874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 106
+        width: 241
+        height: 206
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67f6556f71a0c54282d310c2201b8c0
+      internalID: 1151384948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_3
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 92
+        width: 273
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e93b5de08925864fb086cdcb03292e8
+      internalID: -1015148259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_4
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 171
+        width: 63
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7796bd940ed974c8fb9c14a1e1e169
+      internalID: -821943386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_5
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 239
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6a8d2c3ebba5d4abe3191b52fa8606
+      internalID: 1155776491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_6
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 255
+        width: 48
+        height: 50
+      alignment: 9
+      pivot: {x: 0.49999747, y: 0.47224852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2969a1d2dcad3824d90f394ebabae0e5
+      internalID: 1344805253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_7
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 186
+        width: 67
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3618e593229ca4aa66cd5c65fad4cc
+      internalID: -437126626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_8
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 120
+        width: 74
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86af84e183ebcdb4cb577832318b529e
+      internalID: 533152143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_9
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 108
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0ca094eed6c024aa3a246af3b06903
+      internalID: 1361592511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_10
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 208
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e066999473f2504f91eda04647a0129
+      internalID: 266668116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_11
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 400
+        width: 90
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca7f882c6cdf5545898d64f22807769
+      internalID: -926371414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_12
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 399
+        width: 77
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669fcc10a013f1448bd12a6ddafe7e68
+      internalID: 1170701521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_13
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 397
+        width: 59
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d3bfa5dbf5e56478aceb20d2afe386
+      internalID: 1024880249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_14
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 355
+        width: 56
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4226edf5695e56d4fba967cc9306d32a
+      internalID: -133876968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_15
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 352
+        width: 48
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f567586e5e61d45b7ad8bab362b101
+      internalID: 649576424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_16
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 402
+        width: 48
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945e430dd2240b84f8fe2fc4dc3847e7
+      internalID: 478883334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableResourceStone_17
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 401
+        width: 60
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c67e96b66c9ac4e8f4e0775de4f2a3
+      internalID: 1359745038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9ea60dcb198835e4b98727da6690484a
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BreakableResourceStone_3: -1015148259
+      BreakableResourceStone_8: 533152143
+      BreakableResourceStone_1: 1081001874
+      BreakableResourceStone_5: 1155776491
+      BreakableResourceStone_2: 1151384948
+      BreakableResourceStone_6: 1344805253
+      BreakableResourceStone_13: 1024880249
+      BreakableResourceStone_9: 1361592511
+      BreakableResourceStone_10: 266668116
+      BreakableResourceStone_0: -421750979
+      BreakableResourceStone_14: -133876968
+      BreakableResourceStone_4: -821943386
+      BreakableResourceStone_11: -926371414
+      BreakableResourceStone_16: 478883334
+      BreakableResourceStone_17: 1359745038
+      BreakableResourceStone_7: -437126626
+      BreakableResourceStone_15: 649576424
+      BreakableResourceStone_12: 1170701521
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

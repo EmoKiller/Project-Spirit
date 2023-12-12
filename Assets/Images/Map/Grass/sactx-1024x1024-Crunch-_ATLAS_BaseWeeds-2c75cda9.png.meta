@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 847
+        width: 120
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa046b8823ae8a4abbc28ae2e6c5177
+      internalID: -633417823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 851
+        width: 119
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15333937a1b83a245811486a59a9bd21
+      internalID: 857068499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 746
+        width: 170
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcbe3da43818924ea597b4173a40c7e
+      internalID: -1199767904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_3
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 707
+        width: 104
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14fdabc471dbd24ea3071380707c738
+      internalID: 1643995952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_4
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 715
+        width: 92
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0c402bc645190459ed429b56b803c6
+      internalID: 1608715115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 169
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889cc49f24389bd48a86d8742b20bf71
+      internalID: -87899088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_6
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 606
+        width: 166
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec42ced032c24fc43b63691655d0a9f5
+      internalID: -654337361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 155
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbb92ad4af416d4f975f9087d032a66
+      internalID: -1421492394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_8
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 693
+        width: 93
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d0101d0e2dda14eb226cd317efaae4
+      internalID: -476694422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 175
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac123e3b9992ab44189fb6ac9e6c4939
+      internalID: -490416273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_10
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 444
+        width: 116
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d54fbace149a043bae47b7e3c507ea
+      internalID: -760424751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171
+        width: 173
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a701ac3350fe6254caf2cc8d9ea5211e
+      internalID: 1438457042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 175
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe386c95f0e3169438a1c9e5ac013fbe
+      internalID: -147823495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 194
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a145de27cd257874289e90b1824e5713
+      internalID: -81501684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_14
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 128
+        width: 152
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d5c0710481e0045851b72619c765f4
+      internalID: -1980242144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_15
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 127
+        width: 157
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc94e2177dc3c3a4882320f1ff2c66a2
+      internalID: 591848463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_16
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19eadf45e3daa1e4b81481876c34d233
+      internalID: 975011034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_17
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 0
+        width: 125
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b3ead4c26289e4f936d33da846ed95
+      internalID: 820019437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_18
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 88
+        width: 92
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf9dcd30768e8c47bbf1e75f27725e9
+      internalID: 2027670591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_19
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 277
+        width: 121
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2215879d5f321a479ad75c4016438c0
+      internalID: 2113953442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_20
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 453
+        width: 91
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2469407da6f6a974db8fee90a86c14bc
+      internalID: 1049513059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +567,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_7: -1421492394
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_13: -81501684
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_17: 820019437
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_11: 1438457042
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_6: -654337361
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_19: 2113953442
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_1: 857068499
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_0: -633417823
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_20: 1049513059
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_4: 1608715115
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_8: -476694422
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_15: 591848463
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_18: 2027670591
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_9: -490416273
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_14: -1980242144
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_5: -87899088
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_2: -1199767904
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_10: -760424751
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_16: 975011034
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_3: 1643995952
+      sactx-1024x1024-Crunch-_ATLAS_BaseWeeds-2c75cda9_12: -147823495
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

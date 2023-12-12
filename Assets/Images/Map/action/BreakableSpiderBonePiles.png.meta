@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,612 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 704
+        width: 341
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3254b6795a238d4f91414ad27f61191
+      internalID: 997897295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 699
+        width: 252
+        height: 170
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7bcb38590da424dbcfe16885b687f3
+      internalID: 2005460353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_2
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 706
+        width: 205
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88077b39f5f8f8e45a4e03b8a1b8b39d
+      internalID: 1334067596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_3
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 431
+        width: 346
+        height: 233
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59a063d92a7f1c4aa9329eaca9ca65a
+      internalID: 489205406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_4
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 436
+        width: 240
+        height: 209
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356b9c88cb59aac44989b89c9fa357b2
+      internalID: -1784393050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_5
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 562
+        width: 201
+        height: 117
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba07f776aaedc0942a796f9afeb193e9
+      internalID: -428081688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_6
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 429
+        width: 196
+        height: 115
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce1c6ec3e9e5a24e99803d0b94762c1
+      internalID: -983456046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_7
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 193
+        width: 284
+        height: 204
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0acb9786df6db4c871d2da77ce7db9
+      internalID: -2009989842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_8
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 202
+        width: 71
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b07e595d1e3e5c4899dd500bb8b2ea9
+      internalID: -228513885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_9
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 253
+        width: 54
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b19f4ff9e5dcf641bcf18ce9968e544
+      internalID: 83302283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_10
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 282
+        width: 69
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a67f126a53cd184783d611fd0544a76
+      internalID: -483959317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_11
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 327
+        width: 66
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd40e20a6590bf4d9de7cfda54d2f03
+      internalID: -1021861957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_12
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 330
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b78037eb87b2f2409e613390d85509c
+      internalID: -493451734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_13
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 323
+        width: 94
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db96dc5015b1e934dbbf165c6e9ed2d8
+      internalID: 987558519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_14
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 268
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c5e498834423249b920a8c6f343658
+      internalID: 964711283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_15
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 268
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae039da48ddb96b49a2abac4b770b24c
+      internalID: 1415302244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_16
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 270
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217edded3c13fbd4985017ac383255f8
+      internalID: -313213457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_17
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 200
+        width: 63
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd72bd0a0489b94419f0c9140fbc7093
+      internalID: -1807923746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_18
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 200
+        width: 74
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726063fcc5c9a2b4993c1b40a571ba8a
+      internalID: 233550880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_19
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 341
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47997111a4b6924e99d9280084f3067
+      internalID: -483706946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_20
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 340
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8527e414097261a4a99fb1fe88d78a77
+      internalID: 160682402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_21
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 349
+        width: 63
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ce98a3b17264c40b897801acb2d9e6
+      internalID: 1354221119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_22
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 281
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65ac8918cc5de94fb07218d9fdef9c5
+      internalID: -1819395492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_23
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 220
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a891b5a2a6dc4c946be3b6cd6d5778ea
+      internalID: -1483234512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_24
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 276
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e238b078b2cda774aa61c36bd73b0711
+      internalID: -2100307926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_25
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 317
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707c97617d18018469e24acf1fd4a7a5
+      internalID: -207324557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BreakableSpiderBonePiles_26
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 293
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f53b0dfc4c8f14a9faf627b17f0c8e
+      internalID: -1029591384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: df53983ae14b54b4bb4a2f6bff6e01e4
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BreakableSpiderBonePiles_19: -483706946
+      BreakableSpiderBonePiles_6: -983456046
+      BreakableSpiderBonePiles_10: -483959317
+      BreakableSpiderBonePiles_4: -1784393050
+      BreakableSpiderBonePiles_15: 1415302244
+      BreakableSpiderBonePiles_9: 83302283
+      BreakableSpiderBonePiles_16: -313213457
+      BreakableSpiderBonePiles_2: 1334067596
+      BreakableSpiderBonePiles_14: 964711283
+      BreakableSpiderBonePiles_11: -1021861957
+      BreakableSpiderBonePiles_18: 233550880
+      BreakableSpiderBonePiles_22: -1819395492
+      BreakableSpiderBonePiles_12: -493451734
+      BreakableSpiderBonePiles_3: 489205406
+      BreakableSpiderBonePiles_1: 2005460353
+      BreakableSpiderBonePiles_7: -2009989842
+      BreakableSpiderBonePiles_24: -2100307926
+      BreakableSpiderBonePiles_5: -428081688
+      BreakableSpiderBonePiles_21: 1354221119
+      BreakableSpiderBonePiles_25: -207324557
+      BreakableSpiderBonePiles_8: -228513885
+      BreakableSpiderBonePiles_26: -1029591384
+      BreakableSpiderBonePiles_17: -1807923746
+      BreakableSpiderBonePiles_13: 987558519
+      BreakableSpiderBonePiles_23: -1483234512
+      BreakableSpiderBonePiles_0: 997897295
+      BreakableSpiderBonePiles_20: 160682402
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

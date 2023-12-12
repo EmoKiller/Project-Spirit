@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Grass_Dungeon4_0
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 174
+        width: 109
+        height: 266
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be6f5572d4d0e04caa105f5199aba75
+      internalID: 1009000335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_1
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 148
+        width: 98
+        height: 287
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64933f57e72f79643ac627f9d507d687
+      internalID: 1875525290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_2
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 159
+        width: 73
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5070fe1030d9540baeb63f8e8db023
+      internalID: 317726756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_3
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 173
+        width: 99
+        height: 313
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ed060c5a2464b498ed9826ca523238
+      internalID: -759991216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_4
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 189
+        width: 84
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9ec7dad3ed0fe47820b83bf4f0b4a4
+      internalID: 919861646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_5
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 167
+        width: 104
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b698ac084c716240a2367885084a76a
+      internalID: 2137760553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_6
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 177
+        width: 92
+        height: 324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45ad12b037468448b4bd75b3af4afcb
+      internalID: 297154112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_7
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 26
+        width: 37
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af05da61341448b4b8777f5fc5ab8fc4
+      internalID: -33087006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 23
+        width: 34
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf717573fe6d1a04fa4df4ab8a362313
+      internalID: -1752224928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_9
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 30
+        width: 35
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e91c5be550dfe49aad6427b569b073
+      internalID: -1847178490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 22
+        width: 96
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e3b16b0a50f8c41b8a7b63042eae3b
+      internalID: -123010020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_11
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 25
+        width: 98
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad8cbfdcabc6684fabc80336807af0d
+      internalID: 1381361476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_12
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 28
+        width: 42
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db621f05b7210048bd568a0da1cde28
+      internalID: -1796220195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_13
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 23
+        width: 46
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e84e3b5d7eb0f4dac1f05e89ffc7a6
+      internalID: -1599111911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Dungeon4_14
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 21
+        width: 44
+        height: 102
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4fe00cff27a0a14a99ba6ef2c47bab0
+      internalID: 96250293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +441,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grass_Dungeon4_13: -1599111911
+      Grass_Dungeon4_6: 297154112
+      Grass_Dungeon4_1: 1875525290
+      Grass_Dungeon4_10: -123010020
+      Grass_Dungeon4_7: -33087006
+      Grass_Dungeon4_4: 919861646
+      Grass_Dungeon4_8: -1752224928
+      Grass_Dungeon4_3: -759991216
+      Grass_Dungeon4_14: 96250293
+      Grass_Dungeon4_9: -1847178490
+      Grass_Dungeon4_12: -1796220195
+      Grass_Dungeon4_2: 317726756
+      Grass_Dungeon4_5: 2137760553
+      Grass_Dungeon4_11: 1381361476
+      Grass_Dungeon4_0: 1009000335
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

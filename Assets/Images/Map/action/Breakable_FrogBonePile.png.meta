@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,436 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 461
+        width: 303
+        height: 478
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2581795c9969b7a428ac74f07af0a487
+      internalID: -1486026954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_1
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 456
+        width: 255
+        height: 425
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639cfa62bf9589846aebccfd2372815d
+      internalID: -2090309687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_2
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 452
+        width: 242
+        height: 454
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacf7639df35ec7499040dd9042ad86b
+      internalID: -359160745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_3
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 440
+        width: 237
+        height: 497
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7d8c6804149374c89c34cb914ce19d
+      internalID: 635292420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 147
+        width: 141
+        height: 239
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d604d4b05d13b543a74395c6ea8dbd2
+      internalID: -513708066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 147
+        width: 140
+        height: 168
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1310e50d9f37305479ffd8b2451d1218
+      internalID: 1355542419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_6
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 150
+        width: 216
+        height: 245
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cc987d3e07d8a43a32c8df87a8e899
+      internalID: 1832515460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_7
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 153
+        width: 250
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a733b60fd5d6664459ce62a119652a0d
+      internalID: -1197627985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_8
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 146
+        width: 281
+        height: 249
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678a552bf692b204282d7ceb64c16799
+      internalID: -108362731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_9
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 925
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80de5baad0eb8f441994ed0808f476bd
+      internalID: -985453584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_10
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 882
+        width: 169
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa5d90fad9ae34448839d19d83a822d
+      internalID: 1986075271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_11
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 831
+        width: 103
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c088e3aed3a9113489592f670745c34b
+      internalID: 294812225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_12
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 763
+        width: 156
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc9799d8a90f0942926f6b99dcdcc9a
+      internalID: -1227611481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_13
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 710
+        width: 133
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1fbd2903b41b3641b81cbcac0386bf3
+      internalID: -1753961824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_14
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 631
+        width: 132
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6719e0cb57368d4387852b0a5d9d1f0
+      internalID: 871756532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_15
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 726
+        width: 76
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a640d06a49318b42a6960d6ebad2b5c
+      internalID: 344517891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_16
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 802
+        width: 58
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5876521183598c84a8c4fba0b80ed22e
+      internalID: 1883363176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_17
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 790
+        width: 68
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a25ad32026316944805cc30d62050ed
+      internalID: 1717493671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breakable_FrogBonePile_18
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 796
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c700f722d74c740b521d4dd3b02d03
+      internalID: 1687834334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c597e0e51b6308349b83f34c770dcdd8
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Breakable_FrogBonePile_1: -2090309687
+      Breakable_FrogBonePile_3: 635292420
+      Breakable_FrogBonePile_18: 1687834334
+      Breakable_FrogBonePile_6: 1832515460
+      Breakable_FrogBonePile_13: -1753961824
+      Breakable_FrogBonePile_14: 871756532
+      Breakable_FrogBonePile_12: -1227611481
+      Breakable_FrogBonePile_15: 344517891
+      Breakable_FrogBonePile_11: 294812225
+      Breakable_FrogBonePile_9: -985453584
+      Breakable_FrogBonePile_7: -1197627985
+      Breakable_FrogBonePile_16: 1883363176
+      Breakable_FrogBonePile_2: -359160745
+      Breakable_FrogBonePile_10: 1986075271
+      Breakable_FrogBonePile_8: -108362731
+      Breakable_FrogBonePile_4: -513708066
+      Breakable_FrogBonePile_17: 1717493671
+      Breakable_FrogBonePile_0: -1486026954
+      Breakable_FrogBonePile_5: 1355542419
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
