@@ -5,21 +5,20 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 public class UIButtonAction : SerializedMonoBehaviour
 {
-    [SerializeField] private Dictionary<TypeUIButton, UITypeButton> m_TypeButton = new Dictionary<TypeUIButton, UITypeButton>();
+    [SerializeField] private Dictionary<TypeUIButton, UITypeButton> _TypeButton = new Dictionary<TypeUIButton, UITypeButton>();
     public Dictionary<TypeUIButton, UITypeButton> TypeButton
     {
         get
         {
-            if (m_TypeButton.Count == 0)
+            if (_TypeButton.Count == 0)
             {
                 List<UITypeButton> type = GetComponentsInChildren<UITypeButton>().ToList();
-                m_TypeButton = new Dictionary<TypeUIButton, UITypeButton>();
                 foreach (var item in type)
                 {
-                    m_TypeButton.Add(item.Type, item);
+                    _TypeButton.Add(item.Type, item);
                 }
             }
-            return m_TypeButton;
+            return _TypeButton;
         }
     }
     public RectTransform rectButton => GetComponent<RectTransform>();
@@ -28,10 +27,6 @@ public class UIButtonAction : SerializedMonoBehaviour
     public Action OnButtonDown = null;
     public Action OnButtonUp = null;
     public Action OnTriggerUpdateFillValue = null;
-    private void Awake()
-    {
-        
-    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

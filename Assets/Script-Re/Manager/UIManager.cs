@@ -1,9 +1,11 @@
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.UI;
 
 public class UIManager : SerializedMonoBehaviour
 {
@@ -33,6 +35,10 @@ public class UIManager : SerializedMonoBehaviour
         //UIButtonAction
         EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);
         EventDispatcher.Addlistener(Script.UIManager, Events.UIButtonReset, ResetButton);
+        //PopUp
+        InfoWeapon.gameObject.SetActive(false);
+        EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
+        EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
     }
     /// <summary>
     /// UiControllerHearts
@@ -191,12 +197,53 @@ public class UIManager : SerializedMonoBehaviour
     /// <summary>
     /// PopUp ui
     /// </summary>
-    /// 
+    /// InfoWeapon
+    private InfoWeapon _InfoWeapon = null;
+    public InfoWeapon InfoWeapon
+    {
+        get => this.TryGetMonoComponentInChildren(ref _InfoWeapon);
+    }
+    private void UpdateInfoWeapon(string nameWeapon, string quoteWeapon, string descriptionWeapon, float damage, float speed)
+    {
+        InfoWeapon.gameObject.SetActive(true);
+        InfoWeapon.SetSizeImgRL(new Vector2(nameWeapon.Length * 12, 0));
+        InfoWeapon.SetTextName(TypeInfoWeapon.NameWeapon, nameWeapon);
+        InfoWeapon.SetTextName(TypeInfoWeapon.QueteWeapon, quoteWeapon);
+        InfoWeapon.SetTextName(TypeInfoWeapon.Description, descriptionWeapon);
+        InfoWeapon.SetTextName(TypeInfoWeapon.Damage, damage.ToString());
+        InfoWeapon.SetTextName(TypeInfoWeapon.Speed, speed.ToString());
+        SetUpDownValue(InfoWeapon.imageUpDownDamage, damage);
+        SetUpDownValue(InfoWeapon.imageUpDownSpeed, speed);
 
+    }
+    private void SetDefault()
+    {
+        InfoWeapon.gameObject.SetActive(false);
+        InfoWeapon.SetSizeImgRL(Vector2.zero);
+        InfoWeapon.imageUpDownDamage.transform.DORotate(Vector3.zero,0);
+        InfoWeapon.imageUpDownSpeed.transform.DORotate(Vector3.zero, 0);
+    }
+    private void SetUpDownValue(GameObject trans, float damage)
+    {
+        Image img = trans.GetComponent<Image>();
 
-
-
-
+        if (damage > 0)
+        {
+            trans.transform.DORotate(new Vector3(0, 0, -90), 0);
+            img.color = Color.green;
+            return;
+        }
+        if (damage < 0)
+        {
+            trans.transform.DORotate(new Vector3(0, 0, 90), 0);
+            img.color = Color.red;
+            return;
+        }
+        img.color = Color.white;
+    }
+    /// <summary>
+    /// Exp
+    /// </summary>
     private UIExp uiExp = null;
     public UIExp UIExp
     {

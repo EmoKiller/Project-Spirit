@@ -17,6 +17,22 @@ public enum TypeEnemy
     SwordsMan,
     Chaser
 }
+public enum TypeInfoWeapon
+{
+    NameWeapon,
+    QueteWeapon,
+    Description,
+    Damage,
+    Speed
+}
+public enum TypeCurses
+{
+    Fireballs,
+    Blasts,
+    Slashes,
+    Splatters,
+    Tentacles
+}
 public enum LevelItems
 {
     I = 1,
@@ -60,7 +76,8 @@ public enum Events
     UpdateIconCurses,
     //UIManager
     UpdateInfoWeapon,
-    
+    //popup
+
     // UIDialogBox
     DialogBoxChangeTalkScript,
     //OnTringgerWaitAction

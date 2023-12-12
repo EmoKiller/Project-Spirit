@@ -18,13 +18,13 @@ public class WeaponPodium : TriggerWaitAction
     protected override void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
-        EventDispatcher.Publish(InfoWeapon.Script.InfoWeapon, Events.SetDefault);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.SetDefault);
     }
     protected override void OnTringgerWaitAction()
     {
         if (actioned)
             return;
-        EventDispatcher.Publish(InfoWeapon.Script.InfoWeapon, Events.SetDefault);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.SetDefault);
         EventDispatcher.Publish(Player.Script.Player, Events.PlayerChangeWeapon, weapon);
         weapon.gameObject.SetActive(false);
         enabled = false;
@@ -40,7 +40,7 @@ public class WeaponPodium : TriggerWaitAction
     }
     private void ShowInfoWeaponPodium()
     {
-        EventDispatcher.Publish(InfoWeapon.Script.InfoWeapon, Events.UpdateInfoWeapon,
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.UpdateInfoWeapon,
             weapon.weaponObject.NameWeapon,
             weapon.weaponObject.QuoteWeapon,
             weapon.weaponObject.DescriptionWeapon,

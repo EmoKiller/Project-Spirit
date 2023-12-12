@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WeaponCard_0
+      name: Shield of Faith
       rect:
         serializedVersion: 2
         x: 3136
@@ -125,7 +125,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_1
+      name: Fervour's Harvest
       rect:
         serializedVersion: 2
         x: 2822
@@ -146,7 +146,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_2
+      name: Ichor Lingered
       rect:
         serializedVersion: 2
         x: 2509
@@ -167,7 +167,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_3
+      name: Gift From Below
       rect:
         serializedVersion: 2
         x: 2195
@@ -188,7 +188,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_4
+      name: The Bomb
       rect:
         serializedVersion: 2
         x: 1880
@@ -209,7 +209,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,7 +230,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_6
+      name: The Hearts II
       rect:
         serializedVersion: 2
         x: 1252
@@ -251,7 +251,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_7
+      name: Nature's Boon
       rect:
         serializedVersion: 2
         x: 938
@@ -272,7 +272,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_8
+      name: Hands of Rage
       rect:
         serializedVersion: 2
         x: 626
@@ -293,7 +293,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,7 +314,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,7 +335,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,7 +356,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_12
+      name: Weeping Moon
       rect:
         serializedVersion: 2
         x: 627
@@ -377,7 +377,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_13
+      name: The Hearts I
       rect:
         serializedVersion: 2
         x: 941
@@ -398,7 +398,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_14
+      name: The Lovers II
       rect:
         serializedVersion: 2
         x: 1254
@@ -419,7 +419,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -440,7 +440,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -453,7 +453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_16
+      name: True Sight
       rect:
         serializedVersion: 2
         x: 1881
@@ -461,7 +461,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -474,7 +474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_17
+      name: Ichor Earned
       rect:
         serializedVersion: 2
         x: 2198
@@ -482,7 +482,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -495,15 +495,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_18
+      name: Master of the Art
       rect:
         serializedVersion: 2
-        x: 2509
+        x: 2512
         y: 543
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -516,7 +516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_19
+      name: Divine Strength
       rect:
         serializedVersion: 2
         x: 2824
@@ -524,7 +524,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_20
+      name: The Path
       rect:
         serializedVersion: 2
         x: 2824
@@ -545,7 +545,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -558,7 +558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_21
+      name: Fortune's Blessing
       rect:
         serializedVersion: 2
         x: 2509
@@ -566,7 +566,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -579,7 +579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_22
+      name: Blazing Trail
       rect:
         serializedVersion: 2
         x: 2195
@@ -587,7 +587,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -600,7 +600,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_23
+      name: Death's Door
       rect:
         serializedVersion: 2
         x: 1881
@@ -608,7 +608,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -629,7 +629,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -642,7 +642,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_25
+      name: The Lovers I
       rect:
         serializedVersion: 2
         x: 1254
@@ -650,7 +650,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -663,7 +663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_26
+      name: Telescope
       rect:
         serializedVersion: 2
         x: 941
@@ -671,7 +671,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -692,7 +692,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -705,7 +705,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_28
+      name: The Arachnid
       rect:
         serializedVersion: 2
         x: 313
@@ -713,7 +713,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -726,7 +726,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_29
+      name: The Burning Dead
       rect:
         serializedVersion: 2
         x: 0
@@ -734,7 +734,7 @@ TextureImporter:
         width: 315
         height: 503
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -747,7 +747,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_30
+      name: Diseased Heart
       rect:
         serializedVersion: 2
         x: 0
@@ -755,7 +755,7 @@ TextureImporter:
         width: 317
         height: 502
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -768,7 +768,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_31
+      name: All Seeing Sun
       rect:
         serializedVersion: 2
         x: 314
@@ -776,7 +776,7 @@ TextureImporter:
         width: 315
         height: 499
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -789,7 +789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_32
+      name: Ambrosia
       rect:
         serializedVersion: 2
         x: 629
@@ -797,7 +797,7 @@ TextureImporter:
         width: 315
         height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -810,7 +810,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_33
+      name: The Hearts III
       rect:
         serializedVersion: 2
         x: 943
@@ -818,7 +818,7 @@ TextureImporter:
         width: 315
         height: 499
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -831,7 +831,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_34
+      name: Strength from Within
       rect:
         serializedVersion: 2
         x: 1256
@@ -839,7 +839,7 @@ TextureImporter:
         width: 315
         height: 499
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -852,7 +852,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_35
+      name: Rabbit's Foot
       rect:
         serializedVersion: 2
         x: 1569
@@ -860,7 +860,7 @@ TextureImporter:
         width: 315
         height: 504
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -881,7 +881,7 @@ TextureImporter:
         width: 315
         height: 501
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -894,7 +894,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeaponCard_37
+      name: Gift From Top
       rect:
         serializedVersion: 2
         x: 2199
@@ -902,7 +902,7 @@ TextureImporter:
         width: 315
         height: 498
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -923,7 +923,7 @@ TextureImporter:
         width: 315
         height: 495
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -944,7 +944,7 @@ TextureImporter:
         width: 315
         height: 498
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -967,46 +967,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      The Arachnid: 653958759
       WeaponCard_10: 1770287105
       WeaponCard_11: -1880659541
-      WeaponCard_36: -591918105
-      WeaponCard_35: 70105716
-      WeaponCard_6: 855965079
-      WeaponCard_8: -1830990117
-      WeaponCard_37: 933951253
+      Master of the Art: -592036285
+      Fervour's Harvest: 971077786
+      The Path: 270416628
+      The Hearts III: -307343442
+      Ichor Earned: 1573842911
+      Blazing Trail: -704009884
+      Ambrosia: 186363033
+      Strength from Within: 70105716
       WeaponCard_39: 1496460333
-      WeaponCard_3: 369243472
       WeaponCard_9: 141091393
-      WeaponCard_31: 1528432457
-      WeaponCard_23: -704009884
-      WeaponCard_25: -426050743
-      WeaponCard_34: -307343442
-      WeaponCard_22: 351345622
+      Nature's Boon: -1830990117
+      True Sight: -4184924
+      Rabbit's Foot: -591918105
+      Gift From Top: 1873607699
+      WeaponCard_36: -591918105
       WeaponCard_5: 1137709399
-      WeaponCard_2: 971077786
       WeaponCard_15: 931961484
       WeaponCard_27: 1728918587
-      WeaponCard_1: -173207541
-      WeaponCard_18: 1573842911
+      Diseased Heart: 1528432457
+      Shield of Faith: -1736752613
       WeaponCard_38: 1873607699
-      WeaponCard_17: -4184924
-      WeaponCard_4: 661535285
-      WeaponCard_19: -592036285
-      WeaponCard_20: -510777450
-      WeaponCard_21: 270416628
-      WeaponCard_32: -1087872093
-      WeaponCard_28: 1108047969
-      WeaponCard_14: -43287497
-      WeaponCard_29: 653958759
+      Fortune's Blessing: 351345622
+      Death's Door: -1253390589
+      The Hearts II: -771805169
+      The Hearts I: -43287497
+      Ichor Lingered: 369243472
+      Gift From Below: 661535285
+      Telescope: 1728918587
       WeaponCard_24: -1253390589
-      WeaponCard_30: -1199407642
-      WeaponCard_13: -1667381797
-      WeaponCard_33: 186363033
-      WeaponCard_12: 1959900992
-      WeaponCard_26: 911337017
-      WeaponCard_7: -771805169
-      WeaponCard_0: -1736752613
-      WeaponCard_16: -713040047
+      The Bomb: 1137709399
+      The Burning Dead: -1199407642
+      Weeping Moon: -1667381797
+      All Seeing Sun: -1087872093
+      Divine Strength: -510777450
+      The Lovers II: 931961484
+      The Lovers I: 911337017
+      Hands of Rage: 141091393
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,68 +1,49 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InfoWeapon : MonoBehaviour
+public class InfoWeapon : SerializedMonoBehaviour
 {
-    public enum Script
-    {
-        InfoWeapon
-    }
-    [SerializeField] RectTransform imageL;
-    [SerializeField] RectTransform imageR;
-    [SerializeField] GameObject imageUpDownDamage;
-    [SerializeField] GameObject imageUpDownSpeed;
-    [SerializeField] TMP_Text textNameWeapon;
-    [SerializeField] TMP_Text textQuoteWeapon;
-    [SerializeField] TMP_Text textDescriptionWeapon;
-    [SerializeField] TMP_Text texrDamage;
-    [SerializeField] TMP_Text textSpeed;
-    private void Start()
-    {
-        gameObject.SetActive(false);
-        EventDispatcher.Addlistener<string, string, string, float, float>(Script.InfoWeapon, Events.UpdateInfoWeapon, UpdateInfoWeapon);
-        EventDispatcher.Addlistener(Script.InfoWeapon, Events.SetDefault, SetDefault);
-    }
-    private void UpdateInfoWeapon(string nameWeapon,string quoteWeapon,string descriptionWeapon, float damage, float speed)
-    {
-        gameObject.SetActive(true);
-        imageL.anchoredPosition = new Vector2(nameWeapon.Length * -12, 0);
-        imageR.anchoredPosition = new Vector2(nameWeapon.Length * 12, 0);
-        textNameWeapon.text = nameWeapon;
-        textQuoteWeapon.text = quoteWeapon;
-        textDescriptionWeapon.text = descriptionWeapon;
-        texrDamage.text = damage.ToString();
-        SetUpDownValue(imageUpDownDamage, damage);
-        textSpeed.text = speed.ToString();
-        SetUpDownValue(imageUpDownSpeed, speed);
 
-    }
-    private void SetDefault()
+    [SerializeField] RectTransform imageRL;
+    public readonly GameObject imageUpDownDamage;
+    public readonly GameObject imageUpDownSpeed;
+
+    [SerializeField]private Dictionary<TypeInfoWeapon,Itext> _ListText = new Dictionary<TypeInfoWeapon,Itext>();
+    public Dictionary<TypeInfoWeapon, Itext> ListText
     {
-        gameObject.SetActive(false);
-        imageL.anchoredPosition = new Vector2(0, 0);
-        imageR.anchoredPosition = new Vector2(0, 0);
-        imageUpDownDamage.transform.DORotate(new Vector3(0,0,0),0);
-        imageUpDownSpeed.transform.DORotate(new Vector3(0, 0, 0), 0);
-        
+        get
+        {
+            return _ListText;
+        }
     }
-    private void SetUpDownValue(GameObject trans, float damage)
+    private void Awake()
     {
-        Image img = trans.GetComponent<Image>();
-        
-        if (damage > 0)
+        if(_ListText.Count == 0)
         {
-            trans.transform.DORotate(new Vector3(0, 0, -90), 0);
-            img.color = Color.green;
-            return;
+            List<Itext> list = GetComponentsInChildren<Itext>().ToList();
+            foreach (var item in list)
+            {
+                _ListText.Add(item.Type, item);
+            }
         }
-        if (damage < 0)
-        {
-            trans.transform.DORotate(new Vector3(0, 0, 90), 0);
-            img.color = Color.red;
-            return;
-        }
-        img.color = Color.white;
     }
+    public void SetSizeImgRL(Vector2 value)
+    {
+        imageRL.sizeDelta = value;
+    }
+    public void SetTextName(TypeInfoWeapon type, string str)
+    {
+        ListText[type].Text = str;
+    }
+    public void TurnOffObj(TypeInfoWeapon type, bool value)
+    {
+        ListText[type].gameObject.SetActive(value);
+    }
+    
+    
 }

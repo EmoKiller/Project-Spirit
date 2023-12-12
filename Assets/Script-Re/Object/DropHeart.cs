@@ -23,5 +23,10 @@ public class DropHeart : DropAniDotWeen
             gameObject.SetActive(false);
         }
     }
+    private void OnDisable()
+    {
+        isTake = false;
+        active = true;
+    }
 
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -9,7 +8,7 @@ public class UITypeButton : MonoBehaviour
 {
     public TypeUIButton Type;
     private Image _img = null;
-    public Image Img
+    private Image Img
     {
         get 
         {
@@ -37,14 +36,9 @@ public class UITypeButton : MonoBehaviour
         }
     }
     private TMP_Text _text = null;
-    public TMP_Text text 
+    private TMP_Text text 
     {
-        get
-        {
-            if (_text == null)
-                _text = GetComponent<TMP_Text>();
-            return _text;
-        }
+        get => this.TryGetMonoComponent(ref _text);
     }
     public string Text 
     {
