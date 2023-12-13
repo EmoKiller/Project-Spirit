@@ -566,7 +566,7 @@ TextureImporter:
         width: 33
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -587,7 +587,7 @@ TextureImporter:
         width: 34
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -595,6 +595,27 @@ TextureImporter:
       bones: []
       spriteID: 3db029c1683af5c45b260306a40be8e4
       internalID: 963973986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eyes-UseSkill
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 893
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c24dba2a251c504c99904b45815fbe3
+      internalID: -1884682951
       vertices: []
       indices: 
       edges: []
@@ -633,6 +654,7 @@ TextureImporter:
       player-main_7: -653041266
       player-main_16: 1386090396
       player-main_15: -1410740306
+      Eyes-UseSkill: -1884682951
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -11,6 +11,7 @@ public class GameManager : SerializedMonoBehaviour
     [SerializeField] private Player player = null;
     [SerializeField] private CameraFollow cameraFollow = null;
     [SerializeField] private UIManager uiManager = null;
+    [SerializeField] private IntroGame introGame = null;
     public float num = 0;
     private void Awake()
     {

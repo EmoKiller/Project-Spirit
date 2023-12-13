@@ -1,4 +1,12 @@
-
+public enum TypeInfomation
+{
+    Angry,
+    IconWeapon,
+    IconCurses,
+    CardTarot,
+    Coin,
+    Hunger
+}
 public enum TypeUIButton
 {
     ButtonE,
@@ -71,11 +79,13 @@ public enum Events
     PlayerDirection,//func
     PlayerTriggerAni,
     PlayerChangeWeapon,
+    SetWeapon,
     //UiDungeonManager
     UpdateIconWeapon,
     UpdateIconCurses,
     //UIManager
     UpdateInfoWeapon,
+    UpdateInfoCurses,
     //popup
 
     // UIDialogBox

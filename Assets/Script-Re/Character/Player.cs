@@ -27,6 +27,8 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<string>(Script.Player, Events.PlayerTriggerAni, TriggerAni);
         EventDispatcher.Addlistener<Vector3, float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
         EventDispatcher.Addlistener<Weapon>(Script.Player, Events.PlayerChangeWeapon, ChangeWeapon);
+        EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
+
     }
     public void SetWeapon()
     {
@@ -38,7 +40,12 @@ public class Player : CharacterBrain , IOrderable
     {
         if (Input.GetMouseButton(1))
         {
-            Debug.Log("Right");
+            UseSkill();
+            return;
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            
             return;
         }
         if (OnAction)
@@ -53,7 +60,6 @@ public class Player : CharacterBrain , IOrderable
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Rolling();
-            characterAnimator.SetRolling(CharacterAnimator.AnimationState.Rolling);
             return;
         }
         if (Horizontal != 0 || Vertical!=0)
@@ -67,8 +73,17 @@ public class Player : CharacterBrain , IOrderable
         }
         characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle, Vertical, Horizontal);
     }
+    protected void UseSkill()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Rolling();
+            Debug.Log("Cancel");
+        }
+    }
     protected override void Rolling()
     {
+        characterAnimator.SetRolling(CharacterAnimator.AnimationState.Rolling);
         Vector3 dir = direction.position - transform.position;
         this.LoopDelayCall(0.3f, () =>
         {

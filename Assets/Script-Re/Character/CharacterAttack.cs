@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterAttack : MonoBehaviour
 {
     [SerializeField] private Weapon currentWeapon = null;
+    [SerializeField] private CursesEquip currentCurses = null;
     [SerializeField] private HPObject hpObject = null;
     public LevelItems LevelWeapon => currentWeapon.weaponObject.LevelWeapon;
     public string NameWeapon => currentWeapon.weaponObject.NameWeapon;
@@ -24,7 +25,12 @@ public class CharacterAttack : MonoBehaviour
     public void Initialized(Weapon weapon)
     {
         currentWeapon = weapon;
-        EventDispatcher.Publish(UiDungeonManager.Script.UiDungeonManager, Events.UpdateIconWeapon, currentWeapon.weaponObject.IconWeapon);
+        //EventDispatcher.Publish(UiDungeonManager.Script.UiDungeonManager, Events.UpdateIconWeapon, currentWeapon.weaponObject.IconWeapon);
+    }
+    public void Initialized(CursesEquip curses)
+    {
+        currentCurses = curses;
+
     }
     public bool BoolWeaponEquip()
     {

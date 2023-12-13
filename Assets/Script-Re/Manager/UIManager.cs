@@ -24,6 +24,9 @@ public class UIManager : SerializedMonoBehaviour
     }
     public void Init(int baseHP)
     {
+        // UI Infomation
+        //EventDispatcher.Addlistener<Sprite>(Script.UiDungeonManager,Events.UpdateIconWeapon, UpdateIconWeapon);
+        //EventDispatcher.Addlistener<Sprite>(Script.UiDungeonManager, Events.UpdateIconCurses, UpdateIconCurses);
         //UiControllerHearts
         MaxHp = baseHP;
         foreach (var item in grHeart)
@@ -39,6 +42,29 @@ public class UIManager : SerializedMonoBehaviour
         InfoWeapon.gameObject.SetActive(false);
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
+    }
+    /// <summary>
+    /// UI Infomation
+    /// </summary>
+    private UiInfomation _UIInfomation = null;
+    public UiInfomation UIInfomation
+    {
+        get
+        {
+            if (_UIInfomation == null)
+            {
+                _UIInfomation = GetComponentInChildren<UiInfomation>();
+            }
+            return _UIInfomation;
+        }
+    }
+    private void UpdateIconWeapon(Sprite spr)
+    {
+        //iconWeapon.sprite = spr;
+    }
+    private void UpdateIconCurses(Sprite spr)
+    {
+        //iconCurses.sprite = spr;
     }
     /// <summary>
     /// UiControllerHearts
@@ -203,6 +229,7 @@ public class UIManager : SerializedMonoBehaviour
     {
         get => this.TryGetMonoComponentInChildren(ref _InfoWeapon);
     }
+
     private void UpdateInfoWeapon(string nameWeapon, string quoteWeapon, string descriptionWeapon, float damage, float speed)
     {
         InfoWeapon.gameObject.SetActive(true);

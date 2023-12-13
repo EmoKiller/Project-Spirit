@@ -31,8 +31,8 @@ public class IntroGame : MonoBehaviour
         EventDispatcher.Addlistener(Script.IntroGame, Events.GoToMap1, GotoMap1);
         EventDispatcher.Addlistener(Script.IntroGame, Events.PlayTalkScript3, TalkScript3);
         EventDispatcher.Addlistener<bool>(Script.IntroGame, Events.SetVideoIntro, SetPlayVideos);
-        foreach (Enemy enemy in enemy)
-            enemy.SetStay();
+        //foreach (Enemy enemy in enemy)
+        //    enemy.SetStay();
     }
     private void EnemyGoToWayPoint()
     {
@@ -96,6 +96,7 @@ public class IntroGame : MonoBehaviour
         {
             video.SetActive(false);
             EventDispatcher.Publish(Player.Script.Player, Events.PlayerTriggerAni, "TakeWeapon");
+            EventDispatcher.Publish(Player.Script.Player, Events.SetWeapon);
             for (int i = 4; i <= 8; i++)
                 enemy[i].TriggerAni("PrayFear");
             this.DelayCall(1.5f, () =>

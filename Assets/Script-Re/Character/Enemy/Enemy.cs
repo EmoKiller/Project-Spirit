@@ -28,25 +28,15 @@ public class Enemy : CharacterBrain , IPool
     {
         if (!Alive || OnAction)
             return;
-        if (!onFollowPlayer)
-        {
-
-        }
-
-        if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniATK ||
-            direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniATK)
-        {
-            onFollowPlayer = true;
-            MoveTo(direction.transform.position);
-            Rotation();
-            return;
-        }
-        if (onFollowPlayer && Distance() <= characterAttack.AttackRange)
-        {
-            Rotation();
-            characterAnimator.SetTrigger("Attack");
-            return;
-        }
+        //if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniATK ||
+        //    direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniATK)
+        //{
+        //    onFollowPlayer = true;
+        //    MoveTo(direction.transform.position);
+        //    Rotation();
+        //    return;
+        //}
+        
     }
     protected override void Rolling()
     {

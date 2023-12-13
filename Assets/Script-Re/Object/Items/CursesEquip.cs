@@ -5,5 +5,8 @@ using UnityEngine;
 public class CursesEquip : MonoBehaviour
 {
     public CursesObject Curses = null;
+    public void UseSkill()
+    {
 
+    }
 }
