@@ -15,7 +15,7 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected bool OnDashAtk = false;
     [SerializeField] protected bool randomMove = false;
     [SerializeField] protected bool enemyThinking = false;
-    [SerializeField] protected bool OnEvent = false;
+    
 
     public string objectName => gameObject.name;
 

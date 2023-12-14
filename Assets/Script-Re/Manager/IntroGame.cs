@@ -53,14 +53,17 @@ public class IntroGame : MonoBehaviour
     }
     public void EndTalk4()
     {
-        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 0.2f);
+        
+        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 1f);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraFocus);
         EventDispatcher.Publish(Player.Script.Player, Events.PlayerTriggerAni, "Detention");
         EventDispatcher.Publish(Bruter.Script.Bruter, Events.BruterTriggerAni);
+        EventDispatcher.Publish(Player.Script.Player, Events.SetOnEvent, true);
         this.DelayCall(9.9f, () =>
         {
             EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraDefault);
+            EventDispatcher.Publish(Player.Script.Player, Events.SetOnEvent, false);
         });
     }
 
@@ -81,6 +84,7 @@ public class IntroGame : MonoBehaviour
     {
         EventDispatcher.Publish(UIManager.Script.UIManager, Events.UIButtonReset);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeTarget, TargetCrown);
+        EventDispatcher.Publish(Player.Script.Player, Events.SetOnEvent, true);
         EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 8f);
         EventDispatcher.Publish(WhoWait.Script.WhoWait, Events.WhoWaitTriggerAni);
     }
@@ -116,6 +120,7 @@ public class IntroGame : MonoBehaviour
                     enemy[i].SetStay();
                 }
                 EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraDefault);
+                EventDispatcher.Publish(Player.Script.Player, Events.SetOnEvent, false);
             });
         });
     }

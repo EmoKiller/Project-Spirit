@@ -25,6 +25,7 @@ public class WeaponPodium : TriggerWaitAction
         if (actioned)
             return;
         EventDispatcher.Publish(UIManager.Script.UIManager, Events.SetDefault);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.UpdateIconWeapon,weapon.weaponObject.IconWeapon);
         EventDispatcher.Publish(Player.Script.Player, Events.PlayerChangeWeapon, weapon);
         weapon.gameObject.SetActive(false);
         enabled = false;

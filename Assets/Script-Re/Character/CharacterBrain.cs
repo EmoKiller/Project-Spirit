@@ -22,6 +22,7 @@ public abstract class CharacterBrain : MonoBehaviour
             Set(value);
         }
     }
+    [SerializeField] protected bool OnEvent = false;
     //BaseCharacter
     private string characterName { get; set; }
     protected float health { get; set; }
@@ -121,6 +122,10 @@ public abstract class CharacterBrain : MonoBehaviour
     public void SetAction(bool value)
     {
         OnAction = value;
+    }
+    public void SetEvent(bool value)
+    {
+        OnEvent = value;
     }
     public void SetStay()
     {

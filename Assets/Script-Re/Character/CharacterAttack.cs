@@ -7,10 +7,6 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] private Weapon currentWeapon = null;
     [SerializeField] private CursesEquip currentCurses = null;
     [SerializeField] private HPObject hpObject = null;
-    public LevelItems LevelWeapon => currentWeapon.weaponObject.LevelWeapon;
-    public string NameWeapon => currentWeapon.weaponObject.NameWeapon;
-    public string QuoteWeapon => currentWeapon.weaponObject.QuoteWeapon;
-    public string DescriptionWeapon => currentWeapon.weaponObject.DescriptionWeapon;
     public float Speed => currentWeapon.weaponObject.Speed;
     public float AttackRange => currentWeapon.weaponObject.AttackRange;
     public float HP => hpObject.HP;
@@ -25,16 +21,19 @@ public class CharacterAttack : MonoBehaviour
     public void Initialized(Weapon weapon)
     {
         currentWeapon = weapon;
-        //EventDispatcher.Publish(UiDungeonManager.Script.UiDungeonManager, Events.UpdateIconWeapon, currentWeapon.weaponObject.IconWeapon);
     }
     public void Initialized(CursesEquip curses)
     {
         currentCurses = curses;
-
+        currentCurses.Init(curses.CursesObject.TypeCurses);
     }
     public bool BoolWeaponEquip()
     {
         return currentWeapon is not null;
+    }
+    public bool BoolCursesEquip()
+    {
+        return currentCurses is not null;
     }
     public void Attack(Vector3 target)
     {

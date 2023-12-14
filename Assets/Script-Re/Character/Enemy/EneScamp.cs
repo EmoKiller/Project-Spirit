@@ -17,7 +17,7 @@ public class EneScamp : Enemy
         healthBar.SetHealh(maxHealth);
         SetoffSlash();
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
-        //characterAnimator.AddDashAtk();
+        characterAnimator.AddDashAtk(EventInDashAtks);
         slash.AddActionAttack(OnAttackHit);
         deadBody.SetActive(false);
         
@@ -65,7 +65,12 @@ public class EneScamp : Enemy
     {
         OnDashAtk = true;
         characterAnimator.SetTrigger("DashAttack");
+    }
+    private void EventInDashAtks()
+    {
+        agent.moveSpeed = 10;
         SetMoveWayPoint(direction.transform.position, 2);
+        //agent.MoveToDirection(direction.transform.position);
     }
     private void RandomMove()
     {

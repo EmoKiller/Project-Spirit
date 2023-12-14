@@ -9,13 +9,16 @@ public class Player : CharacterBrain , IOrderable
         Player
     }
     [SerializeField] private GameObject hand;
+    [SerializeField] private GameObject handCurses;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
     private bool atkCanDo;
+    private bool isUseSkill = false;
     protected override void Start()
     {
         base.Start();
+        health = 999;
     }
     public void Init()
     {
@@ -27,7 +30,9 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<string>(Script.Player, Events.PlayerTriggerAni, TriggerAni);
         EventDispatcher.Addlistener<Vector3, float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
         EventDispatcher.Addlistener<Weapon>(Script.Player, Events.PlayerChangeWeapon, ChangeWeapon);
+        EventDispatcher.Addlistener<CursesEquip>(Script.Player, Events.PlayerChangeCurses, ChangeCurses);
         EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
+        EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
 
     }
     public void SetWeapon()
@@ -38,6 +43,8 @@ public class Player : CharacterBrain , IOrderable
     }
     private void Update()
     {
+        if (OnAction|| OnEvent)
+            return;
         if (Input.GetMouseButton(1))
         {
             UseSkill();
@@ -45,10 +52,10 @@ public class Player : CharacterBrain , IOrderable
         }
         if (Input.GetMouseButtonUp(1))
         {
-            
+            isUseSkill = false;
             return;
         }
-        if (OnAction)
+        if (isUseSkill)
             return;
         if (Input.GetMouseButtonDown(0) && !atkCanDo && characterAttack.BoolWeaponEquip())
         {
@@ -75,6 +82,7 @@ public class Player : CharacterBrain , IOrderable
     }
     protected void UseSkill()
     {
+        isUseSkill = true;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Rolling();
@@ -165,6 +173,17 @@ public class Player : CharacterBrain , IOrderable
             wp.transform.ReSetEulerAngle();
         }
         Weapon obj = Instantiate(weapon, hand.transform);
+        characterAttack.Initialized(obj);
+    }
+    private void ChangeCurses(CursesEquip curses)
+    {
+        CursesEquip cur = handCurses.GetComponentInChildren<CursesEquip>();
+        if (cur != null)
+        {
+            cur.transform.SetParent(null);
+            cur.transform.ReSetEulerAngle();
+        }
+        CursesEquip obj = Instantiate(curses, handCurses.transform);
         characterAttack.Initialized(obj);
     }
     private float GetDamageCombo()

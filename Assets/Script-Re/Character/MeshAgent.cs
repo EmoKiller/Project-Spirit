@@ -21,6 +21,7 @@ public class MeshAgent : MonoBehaviour
     {
         AgentBody.Move(direction * moveSpeed * Time.deltaTime);
     }
+    
     private void OnDrawGizmos()
     {
         if (!showPath || path == null)

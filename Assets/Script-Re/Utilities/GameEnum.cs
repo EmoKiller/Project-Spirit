@@ -79,13 +79,14 @@ public enum Events
     PlayerDirection,//func
     PlayerTriggerAni,
     PlayerChangeWeapon,
+    PlayerChangeCurses,
     SetWeapon,
-    //UiDungeonManager
-    UpdateIconWeapon,
-    UpdateIconCurses,
+    SetOnEvent,
     //UIManager
     UpdateInfoWeapon,
     UpdateInfoCurses,
+    UpdateIconWeapon,
+    UpdateIconCurses,
     //popup
 
     // UIDialogBox

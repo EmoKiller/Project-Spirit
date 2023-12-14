@@ -25,8 +25,8 @@ public class UIManager : SerializedMonoBehaviour
     public void Init(int baseHP)
     {
         // UI Infomation
-        //EventDispatcher.Addlistener<Sprite>(Script.UiDungeonManager,Events.UpdateIconWeapon, UpdateIconWeapon);
-        //EventDispatcher.Addlistener<Sprite>(Script.UiDungeonManager, Events.UpdateIconCurses, UpdateIconCurses);
+        EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
+        EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconCurses, UpdateIconCurses);
         //UiControllerHearts
         MaxHp = baseHP;
         foreach (var item in grHeart)
@@ -41,6 +41,7 @@ public class UIManager : SerializedMonoBehaviour
         //PopUp
         InfoWeapon.gameObject.SetActive(false);
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
+        EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
     }
     /// <summary>
@@ -60,11 +61,15 @@ public class UIManager : SerializedMonoBehaviour
     }
     private void UpdateIconWeapon(Sprite spr)
     {
-        //iconWeapon.sprite = spr;
+        UIInfomation.IconWeapon.sprite = spr;
     }
     private void UpdateIconCurses(Sprite spr)
     {
-        //iconCurses.sprite = spr;
+        UIInfomation.IconCurses.sprite = spr;
+    }
+    private void UpdateValueMaxAngry(float value)
+    {
+        UIInfomation.ImgFillAngry.fillAmount = value;
     }
     /// <summary>
     /// UiControllerHearts
@@ -233,7 +238,7 @@ public class UIManager : SerializedMonoBehaviour
     private void UpdateInfoWeapon(string nameWeapon, string quoteWeapon, string descriptionWeapon, float damage, float speed)
     {
         InfoWeapon.gameObject.SetActive(true);
-        InfoWeapon.SetSizeImgRL(new Vector2(nameWeapon.Length * 12, 0));
+        InfoWeapon.SetSizeImgRL(new Vector2(nameWeapon.Length * 25, 0));
         InfoWeapon.SetTextName(TypeInfoWeapon.NameWeapon, nameWeapon);
         InfoWeapon.SetTextName(TypeInfoWeapon.QueteWeapon, quoteWeapon);
         InfoWeapon.SetTextName(TypeInfoWeapon.Description, descriptionWeapon);
@@ -241,7 +246,16 @@ public class UIManager : SerializedMonoBehaviour
         InfoWeapon.SetTextName(TypeInfoWeapon.Speed, speed.ToString());
         SetUpDownValue(InfoWeapon.imageUpDownDamage, damage);
         SetUpDownValue(InfoWeapon.imageUpDownSpeed, speed);
-
+    }
+    private void UpdateInfoCurses(string nameWeapon, string quoteWeapon, string descriptionWeapon)
+    {
+        InfoWeapon.gameObject.SetActive(true);
+        InfoWeapon.SetSizeImgRL(new Vector2(nameWeapon.Length * 25, 0));
+        InfoWeapon.SetTextName(TypeInfoWeapon.NameWeapon, nameWeapon);
+        InfoWeapon.SetTextName(TypeInfoWeapon.QueteWeapon, quoteWeapon);
+        InfoWeapon.SetTextName(TypeInfoWeapon.Description, descriptionWeapon);
+        InfoWeapon.imageUpDownDamage.gameObject.SetActive(false);
+        InfoWeapon.imageUpDownSpeed.gameObject.SetActive(false);
     }
     private void SetDefault()
     {

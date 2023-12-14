@@ -24,7 +24,7 @@ public class CharacterAnimator : MonoBehaviour
         get { return comboATK; }
     }
 
-
+    Action dashAtk = null;
     Action step1aniAtk = null;
     Action step2aniAtk = null;
     Action step3aniAtk = null;
@@ -110,6 +110,10 @@ public class CharacterAnimator : MonoBehaviour
         this.StartAni = StartAni;
         this.FinishAni = FinishAni;
     }
+    public void AddDashAtk(Action dashAtk)
+    {
+        this.dashAtk = dashAtk;
+    }
     public void StartAnimation()
     {
         StartAni?.Invoke();
@@ -135,7 +139,10 @@ public class CharacterAnimator : MonoBehaviour
     {
         step4aniAtk?.Invoke();
     }
-
+    public void DashAtk()
+    {
+        dashAtk?.Invoke();
+    }
 
 
 }
