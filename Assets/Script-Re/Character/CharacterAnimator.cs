@@ -11,6 +11,21 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] protected AnimationState currentAnimationState;
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackStep comboATK;
+    public AnimationState CurrentAnimationState 
+    { 
+        get { return currentAnimationState; }
+    }
+    public MovementType CurrentMovementType
+    {
+        get { return currentMovementType; }
+    }
+    public AttackStep ComboATK
+    {
+        get { return comboATK; }
+    }
+
+
+    Action dashAtk = null;
     Action step1aniAtk = null;
     Action step2aniAtk = null;
     Action step3aniAtk = null;
@@ -30,6 +45,10 @@ public class CharacterAnimator : MonoBehaviour
     public void Initialized()
     {
         ator = GetComponent<Animator>();
+    }
+    public void SetAtk()
+    {
+
     }
     public void SetRolling(AnimationState type)
     {
@@ -92,6 +111,10 @@ public class CharacterAnimator : MonoBehaviour
         this.StartAni = StartAni;
         this.FinishAni = FinishAni;
     }
+    public void AddDashAtk(Action runAtk)
+    {
+        this.dashAtk = runAtk;
+    }
     public void StartAnimation()
     {
         StartAni?.Invoke();
@@ -117,7 +140,10 @@ public class CharacterAnimator : MonoBehaviour
     {
         step4aniAtk?.Invoke();
     }
-
+    public void DashAtk()
+    {
+        dashAtk?.Invoke();
+    }
 
 
 

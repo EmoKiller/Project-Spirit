@@ -31,13 +31,15 @@ public class IntroGame : MonoBehaviour
         EventDispatcher.Addlistener(Script.IntroGame, Events.GoToMap1, GotoMap1);
         EventDispatcher.Addlistener(Script.IntroGame, Events.PlayTalkScript3, TalkScript3);
         EventDispatcher.Addlistener<bool>(Script.IntroGame, Events.SetVideoIntro, SetPlayVideos);
-        //foreach (Enemy enemy in enemy)
-        //    enemy.SetStay();
+        foreach (Enemy enemy in enemy)
+            enemy.SetStay();
     }
     private void EnemyGoToWayPoint()
     {
         enemy[0].SetMoveWayPoint(waypoint.points[0].position, 1.1f);
+        enemy[0].SetOnEvent(true);
         enemy[1].SetMoveWayPoint(waypoint.points[1].position, 1.1f);
+        enemy[1].SetOnEvent(true);
         for (int i = 4; i <= 8; i++)
             enemy[i].TriggerAni("Pray");
     }
@@ -48,7 +50,7 @@ public class IntroGame : MonoBehaviour
     }
     public void EndTalk4()
     {
-        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 1f);
+        EventDispatcher.Publish(Player.Script.Player, Events.MoveToWaypoint, ponitDead.position, 0.2f);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraFocus);
         EventDispatcher.Publish(Player.Script.Player, Events.PlayerTriggerAni, "Detention");
@@ -101,6 +103,8 @@ public class IntroGame : MonoBehaviour
                 enemy[i].TriggerAni("PrayFear");
             this.DelayCall(1.5f, () =>
             {
+                enemy[0].SetOnEvent(false);
+                enemy[1].SetOnEvent(false);
                 foreach (Enemy enemy in enemy)
                     enemy.SetAction(false);
                 for (int i = 4; i <= 8; i++)

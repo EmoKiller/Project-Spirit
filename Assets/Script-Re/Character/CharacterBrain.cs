@@ -10,6 +10,7 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected Transform direction;
     [SerializeField] protected GameObject tranformOfAni;
     [SerializeField] private bool m_Action = false;
+
     protected bool OnAction 
     {
         get
@@ -80,19 +81,23 @@ public abstract class CharacterBrain : MonoBehaviour
         }
         target.ImpactForce(dir.normalized * force);
     }
-    public void MoveTo(Vector3 direction)
+    public virtual void MoveTo(Vector3 direction)
     {
         Vector3 dir = direction - transform.position;
         agent.MoveToDirection(dir.normalized);
-        characterAnimator.SetFloat("horizontal", dir.normalized.x);
-        characterAnimator.SetFloat("vertical", dir.normalized.z);
     }
     public virtual void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
+        float i = 0;
         this.LoopDelayCall(time, () =>
         {
             MoveTo(wayPoint);
             Rotation();
+            i++;
+            if (i >= time-0.5f)
+            {
+                OnAction = false;
+            }
         });
     }
     public virtual void TakeDamage(float damage) 

@@ -24,6 +24,7 @@ public class GameManager : SerializedMonoBehaviour
         player.Init();
         cameraFollow.Init();
         uiManager.Init(a.BaseHP);
+        
     }
     private void ChestBonus()
     {

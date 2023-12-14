@@ -106,12 +106,12 @@ public class Player : CharacterBrain , IOrderable
         atkCanDo = false;
         combo = 0;
     }
-
     public override void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
         characterAnimator.SetMovement(CharacterAnimator.MovementType.Run, Vertical, Horizontal);
         Vector3 dir = wayPoint - transform.position;
         direction.position = dir.normalized + transform.position;
+        OnAction = true;
         base.SetMoveWayPoint(wayPoint, time);
     }
     public override void TakeDamage(float damage)
@@ -147,7 +147,6 @@ public class Player : CharacterBrain , IOrderable
             slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
         }
         Rotation();
-        //characterAnimator.SetTrigger("" + combo);
         characterAnimator.SetComboAttack(combo);
         Vector3 vec = direction.position - transform.position;
         this.LoopDelayCall(0.1f, () =>
@@ -170,7 +169,7 @@ public class Player : CharacterBrain , IOrderable
     }
     private float GetDamageCombo()
     {
-        return characterAttack.CurrentHit[int.Parse(characterAnimator.currentTrigger)];
+        return characterAttack.CurrentHit[(int)characterAnimator.ComboATK];
     }
     private void StartCombo()
     {

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class Enemy : CharacterBrain , IPool
 {
@@ -11,33 +12,35 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
 
+    [SerializeField] protected bool randomMove = false;
+    [SerializeField] protected bool enemyThinking = false;
+    [SerializeField] protected bool OnEvent = false;
+
     public string objectName => gameObject.name;
 
     protected override void Start()
     {
         base.Start();
         characterAttack.Initialized();
-        
         //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
     }
     public virtual void Init()
     {
-        direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
+        if (direction == null)
+        {
+            direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
+        }
     }
+        
     protected virtual void Update()
     {
-        if (!Alive || OnAction)
-            return;
-        //if (onFollowPlayer && Distance() > characterAttack.AttackRange && !onAniATK ||
-        //    direction != null && Distance() <= playerDetectionRange && Distance() > characterAttack.AttackRange && !onAniATK)
-        //{
-        //    onFollowPlayer = true;
-        //    MoveTo(direction.transform.position);
-        //    Rotation();
-        //    return;
-        //}
         
     }
+    public void SetOnEvent(bool value)
+    {
+        OnEvent = value;
+    }
+
     protected override void Rolling()
     {
         throw new System.NotImplementedException();
@@ -49,24 +52,16 @@ public class Enemy : CharacterBrain , IPool
     protected override void StartAniAtk()
     {
         base.StartAniAtk();
+        agent.moveSpeed = 4;
     }
     protected override void FinishAniAtk()
     {
         base.FinishAniAtk();
     }
-    protected virtual void OnArried()
-    {
-        agent.AgentBody.isStopped = true;
-        OnAction = true;
-        this.DelayCall(2, () =>
-        {
-            currentWaypointIndex++;
-            if (currentWaypointIndex >= wayPoints.Count)
-                currentWaypointIndex = 0;
-
-            OnAction = false;
-        });
-    }
+    //protected void SpeedUP()
+    //{
+    //    agent.moveSpeed = 5.5f;
+    //}
     protected override void OnAttackHit(CharacterBrain target)
     {
         target.TakeDamage(characterAttack.CurrentHit[0]);
@@ -127,10 +122,4 @@ public class Enemy : CharacterBrain , IPool
         Debug.Log("Hide");
         gameObject.SetActive(false);
     }
-
-
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireSphere(transform.position , playerDetectionRange);
-    //}
 }

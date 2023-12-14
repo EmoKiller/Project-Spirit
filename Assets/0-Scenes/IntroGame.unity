@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1580,7 +1580,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh265826
+  m_Name: pb_Mesh44462
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4528,6 +4528,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 1634256728}
   deadBody: {fileID: 1218639933}
+  randomMove: 1
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!1 &279890033
 GameObject:
   m_ObjectHideFlags: 0
@@ -19567,7 +19570,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh265144
+  m_Name: pb_Mesh43768
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29977,6 +29980,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 883059336}
   deadBody: {fileID: 380256466}
+  randomMove: 1
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!224 &827139224889209960
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38470,6 +38476,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 347334555}
   deadBody: {fileID: 338542909}
+  randomMove: 0
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!114 &1873784280281348448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38600,6 +38609,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 989036453}
   deadBody: {fileID: 284529898}
+  randomMove: 0
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!4 &1873784280351168401
 Transform:
   m_ObjectHideFlags: 0
@@ -38717,6 +38729,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 1101996746}
   deadBody: {fileID: 685663341}
+  randomMove: 1
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!65 &1873784280351168411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38860,6 +38875,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 383060148}
   deadBody: {fileID: 1169496738}
+  randomMove: 0
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!195 &1873784280723758240
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -38977,6 +38995,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 235833296}
   deadBody: {fileID: 1903690357}
+  randomMove: 0
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!65 &1873784280723758255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39016,6 +39037,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 1260692746}
   deadBody: {fileID: 1011215297}
+  randomMove: 1
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!65 &1873784281050899315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39250,6 +39274,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 1547745250}
   deadBody: {fileID: 1463490389}
+  randomMove: 0
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!114 &1873784282122038868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39276,6 +39303,9 @@ MonoBehaviour:
   onFollowPlayer: 0
   healthBar: {fileID: 1875464234}
   deadBody: {fileID: 1842918127}
+  randomMove: 1
+  enemyThinking: 0
+  OnEvent: 0
 --- !u!65 &1873784282122038869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48010,7 +48040,7 @@ MonoBehaviour:
   player: {fileID: 5338725570166075790}
   cameraFollow: {fileID: 4713990173890318313}
   uiManager: {fileID: 6722323460461679254}
-  introGame: {fileID: 0}
+  introGame: {fileID: 640777870}
   num: 0
 --- !u!1 &4678887582854399805
 GameObject:
