@@ -34,6 +34,9 @@ public class IntroGame : MonoBehaviour
         foreach (Enemy enemy in enemy)
             enemy.SetStay();
     }
+    public void Init()
+    {
+    }
     private void EnemyGoToWayPoint()
     {
         enemy[0].SetMoveWayPoint(waypoint.points[0].position, 1.1f);

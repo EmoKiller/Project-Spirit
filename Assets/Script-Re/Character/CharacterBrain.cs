@@ -91,6 +91,8 @@ public abstract class CharacterBrain : MonoBehaviour
         float i = 0;
         this.LoopDelayCall(time, () =>
         {
+            if (!Alive)
+                return;
             MoveTo(wayPoint);
             Rotation();
             i++;

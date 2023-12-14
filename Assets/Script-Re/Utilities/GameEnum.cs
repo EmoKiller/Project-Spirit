@@ -145,14 +145,6 @@ public enum ChestType
     Race,
     EndOfFloor
 }
-public enum SpaceState
-{
-    TheBase,
-    DarkWood,
-    Anura,
-    AnchorDeep,
-    SilkCradle
-}
 public enum TypeMenuTab
 {
     Inventory,

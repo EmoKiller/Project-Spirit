@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : SerializedMonoBehaviour
@@ -7,11 +8,10 @@ public class GameManager : SerializedMonoBehaviour
     {
         GameManager
     }
-    public SpaceState SpaceState;
+
     [SerializeField] private Player player = null;
     [SerializeField] private CameraFollow cameraFollow = null;
     [SerializeField] private UIManager uiManager = null;
-    [SerializeField] private IntroGame introGame = null;
     public float num = 0;
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class GameManager : SerializedMonoBehaviour
         player.Init();
         cameraFollow.Init();
         uiManager.Init(a.BaseHP);
-        
+
     }
     private void ChestBonus()
     {

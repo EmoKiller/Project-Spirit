@@ -19,13 +19,12 @@ public class EneScamp : Enemy
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         //characterAnimator.AddDashAtk();
         slash.AddActionAttack(OnAttackHit);
-        //deadAction = Dead;
         deadBody.SetActive(false);
         
     }
     protected override void Update()
     {
-        if (OnAction || OnEvent)
+        if (OnAction || OnEvent || !Alive)
         {
             return;
         }
@@ -33,29 +32,28 @@ public class EneScamp : Enemy
             return;
         if (Distance() > playerDetectionRange)
         {
-            EnemyThinking(30);
+            EnemyThinking(25);
         }
+        if (onFollowPlayer && Distance() < DashAttackRange && OnDashAtk)
+        {
+            DashAtk();
+            return;
+        }
+        if (OnDashAtk)
+            return;
         if (Distance() <= playerDetectionRange - 1 && Distance() <= playerDetectionRange + 1 && randomMove)
         {
             RandomMove();
             return;
         }
-        if (onFollowPlayer && Distance() > characterAttack.AttackRange && !randomMove)
+        if (onFollowPlayer && Distance() > characterAttack.AttackRange && !randomMove )
         {
             randomMove = false;
             MoveTo(direction.transform.position);
             Rotation();
             return;
         }
-        //if (onFollowPlayer && Distance() <= characterAttack.AttackRange + 2)
-        //{
-        //    int i = Random.Range(0, 100);
-        //    if (i < 50)
-        //    {
-        //        characterAnimator.AddDashAtk(DashAtk);
-        //        Debug.Log("DaskATK");
-        //    }
-        //}
+        
         if (onFollowPlayer && Distance() <= characterAttack.AttackRange)
         {
             Rotation();
@@ -65,8 +63,9 @@ public class EneScamp : Enemy
     }
     private void DashAtk()
     {
-        characterAnimator.SetTrigger("Attack");
-        SetMoveWayPoint(direction.transform.position * 2, 2);
+        OnDashAtk = true;
+        characterAnimator.SetTrigger("DashAttack");
+        SetMoveWayPoint(direction.transform.position, 2);
     }
     private void RandomMove()
     {
@@ -91,14 +90,15 @@ public class EneScamp : Enemy
     protected override void FinishAniAtk()
     {
         base.FinishAniAtk();
-        EnemyThinking(80);
+        agent.moveSpeed = 4;
+        EnemyThinking(75);
     }
     private void EnemyThinking(int ratioRandomMove)
     {
         if (enemyThinking)
             return;
         enemyThinking = true;
-        characterAnimator.AddDashAtk(null);
+        OnDashAtk = false;
         this.DelayCall(2, () =>
         {
             int i = Random.Range(0, 100);
@@ -111,6 +111,7 @@ public class EneScamp : Enemy
             IsFollowAtK();
         });
     }
+    
     private void IsRandomMove()
     {
         randomMove = true;
@@ -124,9 +125,15 @@ public class EneScamp : Enemy
         if (i < 50)
         {
             characterAnimator.SetTrigger("RunFollow");
-            agent.moveSpeed = 5.5f;
+            agent.moveSpeed = 8f;
+            return;
         }
-
+        OnDashAtk = true;
+        Debug.Log("Dash Atk");
+    }
+    public override void Dead()
+    {
+        base.Dead();
     }
 
 }

@@ -8,10 +8,11 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 10f;
+    [SerializeField] protected float DashAttackRange = 5f;
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
-
+    [SerializeField] protected bool OnDashAtk = false;
     [SerializeField] protected bool randomMove = false;
     [SerializeField] protected bool enemyThinking = false;
     [SerializeField] protected bool OnEvent = false;
@@ -52,7 +53,6 @@ public class Enemy : CharacterBrain , IPool
     protected override void StartAniAtk()
     {
         base.StartAniAtk();
-        agent.moveSpeed = 4;
     }
     protected override void FinishAniAtk()
     {
@@ -101,7 +101,7 @@ public class Enemy : CharacterBrain , IPool
         {
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
             {
-
+                enabled = false;
             });
         });
     }
