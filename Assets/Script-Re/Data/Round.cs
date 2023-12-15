@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 
-public class Round 
+public class RoundConfig 
 {
-    public Dictionary<TypeEnemy, ConfigEnemyRound> ConfigEnemyRound = new Dictionary<TypeEnemy, ConfigEnemyRound>();
-    public Round()
+    public Dictionary<TypeEnemy, ConfigEnemy> enemies = null;
+    public int goldReward;
+
+
+    public RoundConfig()
     {
 
     }

@@ -10,7 +10,8 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected Transform direction;
     [SerializeField] protected GameObject tranformOfAni;
     [SerializeField] private bool m_Action = false;
-
+    [SerializeField] protected bool onAniATK = false;
+    [SerializeField] protected bool OnEvent = false;
     protected bool OnAction 
     {
         get
@@ -22,12 +23,12 @@ public abstract class CharacterBrain : MonoBehaviour
             Set(value);
         }
     }
-    [SerializeField] protected bool OnEvent = false;
+    
     //BaseCharacter
     private string characterName { get; set; }
     protected float health { get; set; }
     protected float maxHealth { get; set; }
-    [SerializeField] protected bool onAniATK = false;
+    
     public bool Alive => health > 0;
     public virtual string Name => characterName;
     protected virtual void Start()

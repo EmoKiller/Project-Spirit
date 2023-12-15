@@ -30,11 +30,11 @@ public class EneScamp : Enemy
         }
         if (onAniATK)
             return;
-        if (Distance() > playerDetectionRange)
+        if (Distance() > playerDetectionRange && !enemyRunFollow)
         {
-            EnemyThinking(25);
+            EnemyThinking(1,25);
         }
-        if (onFollowPlayer && Distance() < DashAttackRange && OnDashAtk)
+        if (onFollowPlayer && Distance() < DashAttackRange && OnDashAtk && !enemyRunFollow)
         {
             DashAtk();
             return;
@@ -70,7 +70,6 @@ public class EneScamp : Enemy
     {
         agent.moveSpeed = 10;
         SetMoveWayPoint(direction.transform.position, 2);
-        //agent.MoveToDirection(direction.transform.position);
     }
     private void RandomMove()
     {
@@ -78,10 +77,10 @@ public class EneScamp : Enemy
         randomMove = false;
         characterAnimator.SetTrigger("Idie");
         Vector3 vec = Random.onUnitSphere;
-        Vector3 point = vec.normalized * 4  + transform.position;
+        Vector3 point = vec.normalized * 5  + transform.position;
         OnAction = true;
-        SetMoveWayPoint(point, 2);
-        EnemyThinking(70);
+        SetMoveWayPoint(point, 3);
+        EnemyThinking(3,70);
     }
     public override void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
@@ -90,21 +89,23 @@ public class EneScamp : Enemy
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        EnemyThinking(80);
+        EnemyThinking(1,80);
     }
     protected override void FinishAniAtk()
     {
         base.FinishAniAtk();
         agent.moveSpeed = 4;
-        EnemyThinking(75);
+        EnemyThinking(1.3f,75);
     }
-    private void EnemyThinking(int ratioRandomMove)
+    private void EnemyThinking(float TimeThink, int ratioRandomMove)
     {
-        if (enemyThinking)
+        if (enemyThinking || !Alive)
             return;
         enemyThinking = true;
         OnDashAtk = false;
-        this.DelayCall(2, () =>
+        onFollowPlayer = false;
+        enemyRunFollow = false;
+        this.DelayCall(TimeThink, () =>
         {
             int i = Random.Range(0, 100);
             enemyThinking = false;
@@ -131,9 +132,11 @@ public class EneScamp : Enemy
         {
             characterAnimator.SetTrigger("RunFollow");
             agent.moveSpeed = 8f;
+            enemyRunFollow = true;
             return;
         }
         OnDashAtk = true;
+        characterAnimator.SetTrigger("Idie");
         Debug.Log("Dash Atk");
     }
     public override void Dead()

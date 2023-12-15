@@ -33,6 +33,8 @@ public class IntroGame : MonoBehaviour
         EventDispatcher.Addlistener<bool>(Script.IntroGame, Events.SetVideoIntro, SetPlayVideos);
         foreach (Enemy enemy in enemy)
             enemy.SetStay();
+        enemy[10].gameObject.SetActive(false);
+        enemy[11].gameObject.SetActive(false);
     }
     public void Init()
     {
@@ -101,6 +103,8 @@ public class IntroGame : MonoBehaviour
         video.SetActive(value);
         VideoPlayer videoPlayer = video.GetComponent<VideoPlayer>();
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraFocus);
+        enemy[10].gameObject.SetActive(true);
+        enemy[11].gameObject.SetActive(true);
         this.DelayCall((float)videoPlayer.length, () =>
         {
             video.SetActive(false);

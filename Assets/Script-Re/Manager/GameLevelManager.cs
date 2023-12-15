@@ -6,13 +6,13 @@ public class GameLevelManager : MonoBehaviour
     int round = 1;
     private void Start()
     {
+        SpawnEnemy();
     }
     private void SpawnEnemy()
     {
-        foreach (var item in ConfigDataHelper.GameConfig.GameLevelConfig[level].Round[round].ConfigEnemyRound)
+        foreach (var item in ConfigDataHelper.GameConfig.GameLevelConfig[level].rounds[round].enemies)
         {
-            Debug.Log(item.Key + " " + item.Value.value);
-            //Instantiate();
+            Debug.Log(item);
             
         }
     }

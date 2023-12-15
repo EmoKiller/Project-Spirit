@@ -1019,6 +1019,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Grass_Cut
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 81
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d177609a54d71499a53ed5425a1984
+      internalID: 2063106496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Cut2
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 427
+        width: 91
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56184a79c798db47b86af8b5e355299
+      internalID: 994641456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Cut1
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 443
+        width: 67
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafec656e7626eb478834e03a1f5f7d0
+      internalID: 1916721478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Cut4
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 345
+        width: 77
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89cada3c1b284fd449bf565fd9f94291
+      internalID: -53004048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Cut6
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 385
+        width: 56
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8468944bf09138b4ab86605ad7c666b5
+      internalID: 1715562160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1035,18 +1140,22 @@ TextureImporter:
       Grass_Dungeon1_9: 477410106
       Grass_Dungeon1_32: -488751668
       Grass_Dungeon1_42: 1939714314
+      Grass_Cut6: 1715562160
       Grass_Dungeon1_39: 1060576181
       Grass_Dungeon1_3: 1993489570
+      Grass_Cut2: 994641456
       Grass_Dungeon1_30: 1790136011
       Grass_Dungeon1_28: 1426297499
       Grass_Dungeon1_11: -1086339799
       Grass_Dungeon1_36: -1347329023
+      Grass_Cut: 2063106496
       Grass_Dungeon1_12: -1212724204
       Grass_Dungeon1_0: -1077410501
       Grass_Dungeon1_24: -143506294
       Grass_Dungeon1_5: 363908635
       Grass_Dungeon1_25: -1405993380
       Grass_Dungeon1_4: 476470398
+      Grass_Cut4: -53004048
       Grass_Dungeon1_27: -2064315386
       Grass_Dungeon1_38: 1993143259
       Grass_Dungeon1_33: -771463596
@@ -1067,6 +1176,7 @@ TextureImporter:
       Grass_Dungeon1_26: -898090328
       Grass_Dungeon1_14: -346148704
       Grass_Dungeon1_7: -1526080088
+      Grass_Cut1: 1916721478
       Grass_Dungeon1_37: -1639654996
       Grass_Dungeon1_8: -1402202979
       Grass_Dungeon1_2: -845887297

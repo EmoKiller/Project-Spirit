@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WeaponPodium : TriggerWaitAction
+public class WeaponPodium : TriggerWaitAction 
 {
     [SerializeField] Weapon weapon = null;
     float damagePlayer = 0;

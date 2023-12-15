@@ -13,9 +13,9 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
     [SerializeField] protected bool OnDashAtk = false;
-    [SerializeField] protected bool randomMove = false;
+    [SerializeField] protected bool randomMove = true;
     [SerializeField] protected bool enemyThinking = false;
-    
+    [SerializeField] protected bool enemyRunFollow = false;
 
     public string objectName => gameObject.name;
 

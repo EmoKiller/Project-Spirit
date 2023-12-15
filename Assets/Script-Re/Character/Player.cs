@@ -10,11 +10,18 @@ public class Player : CharacterBrain , IOrderable
     }
     [SerializeField] private GameObject hand;
     [SerializeField] private GameObject handCurses;
+    [SerializeField] private CursesEquip currentCurses = null;
+    [SerializeField] private Transform aimingRecticule;
+    [SerializeField] private Transform fillAimingRecticule;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
     private bool atkCanDo;
     private bool isUseSkill = false;
+    private void Awake()
+    {
+        currentCurses = GetComponent<CursesEquip>();
+    }
     protected override void Start()
     {
         base.Start();
@@ -33,7 +40,7 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<CursesEquip>(Script.Player, Events.PlayerChangeCurses, ChangeCurses);
         EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
         EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
-
+        
     }
     public void SetWeapon()
     {
@@ -45,14 +52,16 @@ public class Player : CharacterBrain , IOrderable
     {
         if (OnAction|| OnEvent)
             return;
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && !onAniATK)
         {
+            characterAnimator.SetTrigger("UseSkill");
             UseSkill();
             return;
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && !onAniATK)
         {
             isUseSkill = false;
+            characterAnimator.SetTrigger("Idie");
             return;
         }
         if (isUseSkill)
@@ -184,7 +193,16 @@ public class Player : CharacterBrain , IOrderable
             cur.transform.ReSetEulerAngle();
         }
         CursesEquip obj = Instantiate(curses, handCurses.transform);
-        characterAttack.Initialized(obj);
+        InitCurses(obj);
+    }
+    private void InitCurses(CursesEquip curses)
+    {
+        currentCurses = curses;
+        currentCurses.Init(curses.CursesObject.TypeCurses);
+    }
+    private bool BoolCursesEquip()
+    {
+        return currentCurses is not null;
     }
     private float GetDamageCombo()
     {

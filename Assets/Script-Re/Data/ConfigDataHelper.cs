@@ -41,7 +41,10 @@ public class ConfigDataHelper
         BaseStartGame data = new BaseStartGame();
         return data;
     }
-
+    //public static Round ReturnRound(int level, int round)
+    //{
+    //    return GameConfig.GameLevelConfig[level][round];
+    //}
     //private static UserData GetHeroClassData()
     //{
     //    UserData user = new UserData();

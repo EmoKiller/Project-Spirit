@@ -5,7 +5,6 @@ using UnityEngine;
 public class CharacterAttack : MonoBehaviour
 {
     [SerializeField] private Weapon currentWeapon = null;
-    [SerializeField] private CursesEquip currentCurses = null;
     [SerializeField] private HPObject hpObject = null;
     public float Speed => currentWeapon.weaponObject.Speed;
     public float AttackRange => currentWeapon.weaponObject.AttackRange;
@@ -22,18 +21,9 @@ public class CharacterAttack : MonoBehaviour
     {
         currentWeapon = weapon;
     }
-    public void Initialized(CursesEquip curses)
-    {
-        currentCurses = curses;
-        currentCurses.Init(curses.CursesObject.TypeCurses);
-    }
     public bool BoolWeaponEquip()
     {
         return currentWeapon is not null;
-    }
-    public bool BoolCursesEquip()
-    {
-        return currentCurses is not null;
     }
     public void Attack(Vector3 target)
     {

@@ -72,18 +72,17 @@
 	},
 	"GameLevelConfig" : {
 		"1" : {
-			"Round" : {
+			"levelIndex" : 1,
+			"levelName" : "Dungeon",
+			"rounds" : {
 				"1" : {
-					"ConfigEnemyRound" : {
-						"SwordsMan" : {
-							"Type" : 1,
-							"Value" : 3
-						},
+					"enemies" : {
 						"Scamp" : {
-							"Type" : 0,
-							"Value" : 3
+							"value" : 10,
+							"type" : 0
 						}
-					}
+					},
+					"goldReward" : 100
 				}
 			}
 		}
