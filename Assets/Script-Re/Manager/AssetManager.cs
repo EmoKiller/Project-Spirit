@@ -1,40 +1,43 @@
+using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.U2D;
 
-public class AssetManager : MonoBehaviour
+public class AssetManager : SerializedMonoBehaviour
 {
     public static AssetManager Instance = null;
+    public Dictionary<ListTypeEffects, GameObject> ListEffect = new Dictionary<ListTypeEffects, GameObject>();
+    public Dictionary<TypeEnemy, GameObject> ListEnemy = new Dictionary<TypeEnemy, GameObject>();
+    public Dictionary<ListDropItems, GameObject> DropItems = new Dictionary<ListDropItems, GameObject>();
+    public SpriteAtlas SpriteAtlasItems;
+    public GameObject HeartObj;
+    public GameObject ObjDropExp;
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
-    }
-    public string ack;
-    private GameObject ItemDropObject;
-    public GameObject ItemDropPrefab
-    {
-        get { return ItemDropObject; }
-    }
 
+    }
     private void Start()
     {
-        InstantiateObj2();
+       
     }
-    public void InstantiateObj()
-    {
-        Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Object/ItemDropObject.prefab").Completed += (handle) =>
-        {
-            ItemDropObject = handle.Result;
-        };
-    }
-    public void InstantiateObj2()
-    {
-        ItemDropObject = Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Object/ItemDropObject.prefab").WaitForCompletion();
-        
-    }
-    public void InstantiateItems(string str, Transform pos , Vector3 dir)
+    //public void InstantiateObj()
+    //{
+    //    Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Object/ItemDropObject.prefab").Completed += (handle) =>
+    //    {
+    //        ItemDropObject = handle.Result;
+    //    };
+    //}
+    //public void InstantiateObj2()
+    //{
+    //    ItemDropObject = Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Object/ItemDropObject.prefab").WaitForCompletion();
+
+    //}
+    public void InstantiateItems(string str, Transform pos, Vector3 dir)
     {
         GameObject item = null;
         Addressables.LoadAssetAsync<GameObject>(str).Completed += (handle) =>

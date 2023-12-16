@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1209606227224015301}
   - component: {fileID: 5374808277724991796}
-  m_Layer: 0
+  - component: {fileID: -283535448686748198}
+  - component: {fileID: 5345719108032034269}
+  m_Layer: 9
   m_Name: Dead_Humans_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,3 +86,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-283535448686748198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583232849564310339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99652b99b044a654e961742d75bbec71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TypeMaterial: 2
+  hpObject: {fileID: 11400000, guid: 0a13bbeae47d405489bb5f94ef91ea66, type: 2}
+  _animator: {fileID: 0}
+  currentHp: 0
+--- !u!65 &5345719108032034269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583232849564310339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.93, y: 0.83000016, z: 0.20000002}
+  m_Center: {x: 0.0075648427, y: -0.39338112, z: -0.000000011723668}

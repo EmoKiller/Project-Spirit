@@ -1,10 +1,8 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 public class UIManager : SerializedMonoBehaviour
@@ -24,17 +22,27 @@ public class UIManager : SerializedMonoBehaviour
     }
     public void Init(int baseHP)
     {
-        // UI Infomation
+        //UI Infomation
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueAngry, UpdateValueAngry);
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconCurses, UpdateIconCurses);
+        EventDispatcher.Addlistener<string>(Script.UIManager, Events.UpdateUICoin, UpdateUICoin);
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueHunger, UpdateValueHunger);
         //UiControllerHearts
         MaxHp = baseHP;
         foreach (var item in grHeart)
         {
             item.CreateNewHeart = CreateNewHeart;
         }
-        EventDispatcher.Addlistener(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
-        EventDispatcher.Addlistener<EnemGrPriteHeart>(Script.UIManager, Events.CreateNewHeart, AddHeart);
+        
+        grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP(MaxHp);
+        EventDispatcher.Addlistener<int>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
+        EventDispatcher.Addlistener<EnemGrPriteHeart>(Script.UIManager, Events.AddHeartAndRestoreFull, AddHeartAndRestoreFull);
+        EventDispatcher.Addlistener<EnemGrHeart,int>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
+        EventDispatcher.Register<EnemGrHeart, bool>(Script.UIManager, Events.CheckCurrentHP, CheckCurrentHP);
+        //UIExp
+        SetMaxExpOfLevel(10);
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueExp, UpdateValueExp);
         //UIButtonAction
         EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);
         EventDispatcher.Addlistener(Script.UIManager, Events.UIButtonReset, ResetButton);
@@ -59,22 +67,34 @@ public class UIManager : SerializedMonoBehaviour
             return _UIInfomation;
         }
     }
+    private void UpdateValueAngry(float value)
+    {
+        UIInfomation.ImgFillAngry = value;
+    }
     private void UpdateIconWeapon(Sprite spr)
     {
-        UIInfomation.IconWeapon.sprite = spr;
+        UIInfomation.IconWeapon = spr;
     }
     private void UpdateIconCurses(Sprite spr)
     {
-        UIInfomation.IconCurses.sprite = spr;
+        UIInfomation.IconCurses = spr;
     }
-    private void UpdateValueMaxAngry(float value)
+    private void UpdateUICoin(string text)
     {
-        UIInfomation.ImgFillAngry.fillAmount = value;
+        UIInfomation.Coin = text;
     }
+    private void UpdateValueHunger(float value)
+    {
+        UIInfomation.ImgFillHunger = value;
+    }
+
     /// <summary>
     /// UiControllerHearts
     /// </summary>
-    [SerializeField] int maxHp;
+    [SerializeField] private int maxHp;
+    
+    [SerializeField] private int heart;
+    [SerializeField] private int currentHp;
     public int MaxHp
     {
         get { return maxHp; }
@@ -83,72 +103,57 @@ public class UIManager : SerializedMonoBehaviour
             maxHp = value;
         }
     }
-    [SerializeField] int Heart;
-    [SerializeField] int currentHp;
+    public int Heart => heart;
+    public int CurrentHp => currentHp;
     [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
-    private void AddHeart(EnemGrPriteHeart grSprite)
+    private void AddHeartAndRestoreFull(EnemGrPriteHeart grSprite)
     {
-        EnemGrHeart grHearts = ConvertGrSpriteToGrHeart(grSprite);
-        foreach (Transform item in grHeart[(int)grHearts].rectGr)
-            Destroy(item.gameObject);
-        grHeart[(int)grHearts].MaxHP += ConvertInt(grSprite);
+        EnemGrHeart grHearts = GameUtilities.ConvertGrSpriteToGrHeart(grSprite);
+        grHeart[(int)grHearts].AddHeartAndRestoreFull(GameUtilities.ConvertInt(grSprite));
     }
     private void CreateNewHeart(EnemGrPriteHeart grSprite)
     {
-        GameObject obj = Addressables.LoadAssetAsync<GameObject>(GameConstants.UIHeart).WaitForCompletion();
-        UIHeart uiHeart = obj.GetComponent<UIHeart>();
+        EnemGrHeart grHearts = GameUtilities.ConvertGrSpriteToGrHeart(grSprite);
+        UIHeart uiHeart = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.HeartObj, "UIHeart");
+        uiHeart.Show();
         uiHeart.SetNewTypeHeart(grSprite);
-        EnemGrHeart grHearts = ConvertGrSpriteToGrHeart(grSprite);
-        UIHeart obj2 = Instantiate(uiHeart, grHeart[(int)grHearts].rectGr).GetComponent<UIHeart>();
-        grHeart[(int)grHearts].Add(obj2);
+        uiHeart.transform.SetParent(grHeart[(int)grHearts].rectGr,true);
+        grHeart[(int)grHearts].Add(uiHeart);
     }
-    private int ConvertInt(EnemGrPriteHeart grSprite)
+    [Button]
+    public void TakeDamage(int valueHit)
     {
-        switch (grSprite)
-        {
-            case EnemGrPriteHeart.Red:
-            case EnemGrPriteHeart.Add:
-            case EnemGrPriteHeart.Blue:
-            case EnemGrPriteHeart.Black:
-                return 2;
-            case EnemGrPriteHeart.RedHalf:
-            case EnemGrPriteHeart.AddHalf:
-            case EnemGrPriteHeart.BlueHalf:
-                return 1;
-            default:
-                throw new ArgumentOutOfRangeException();
-        } 
-    }
-    private EnemGrHeart ConvertGrSpriteToGrHeart(EnemGrPriteHeart grSprite)
-    {
-        switch (grSprite)
-        {
-            case EnemGrPriteHeart.Red:
-            case EnemGrPriteHeart.RedHalf:
-                return EnemGrHeart.Red;
-            case EnemGrPriteHeart.Add:
-            case EnemGrPriteHeart.AddHalf:
-                return EnemGrHeart.Add;
-            case EnemGrPriteHeart.Blue:
-            case EnemGrPriteHeart.BlueHalf:
-                return EnemGrHeart.Blue;
-            case EnemGrPriteHeart.Black:
-                return EnemGrHeart.Black;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-    }
-    public void TakeDamage()
-    {
-        bool isTake = false;
         for (int i = grHeart.Count - 1; i > -1; i--)
         {
-            grHeart[i].TalkeDamage(ref isTake);
-            if (isTake)
+            grHeart[i].TalkeDamage(ref valueHit);
+            if (valueHit == 0)
                 break;
         }
     }
-    //}
+    public void RestoreHeart(EnemGrHeart gr, int valueRestore)
+    {
+        grHeart[(int)gr].RestoreHeart(valueRestore);
+    }
+    public bool CheckCurrentHP(EnemGrHeart gr)
+    {
+        return grHeart[(int)gr].CheckCurrentHP();
+    }
+    /// <summary>
+    /// UIExp
+    /// </summary>
+    [SerializeField] private UIExp _UIExp = null;
+    public UIExp UIExp
+    {
+        get => this.TryGetMonoComponentInChildren(ref _UIExp);
+    }
+    private void SetMaxExpOfLevel(float value)
+    {
+        UIExp.MaxValue = value;
+    }
+    private void UpdateValueExp(float exp)
+    {
+        UIExp.Value = _UIExp.Value + exp;
+    }
     /// <summary>
     /// UIHider {
     /// </summary>
@@ -282,14 +287,4 @@ public class UIManager : SerializedMonoBehaviour
         }
         img.color = Color.white;
     }
-    /// <summary>
-    /// Exp
-    /// </summary>
-    private UIExp uiExp = null;
-    public UIExp UIExp
-    {
-        get => this.TryGetMonoComponentInChildren(ref uiExp);
-    }
-
-
 }

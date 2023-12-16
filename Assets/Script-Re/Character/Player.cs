@@ -40,7 +40,6 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<CursesEquip>(Script.Player, Events.PlayerChangeCurses, ChangeCurses);
         EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
         EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
-        
     }
     public void SetWeapon()
     {
@@ -134,7 +133,7 @@ public class Player : CharacterBrain , IOrderable
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        EventDispatcher.Publish(UIManager.Script.UIManager, Events.PlayerTakeDamage);
+        EventDispatcher.Publish(UIManager.Script.UIManager, Events.PlayerTakeDamage, damage);
     }
     public override void Dead()
     {

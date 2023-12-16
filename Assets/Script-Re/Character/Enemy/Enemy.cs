@@ -8,7 +8,7 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 10f;
-    [SerializeField] protected float DashAttackRange = 5f;
+    [SerializeField] protected float DashAttackRange = 6f;
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
@@ -58,10 +58,6 @@ public class Enemy : CharacterBrain , IPool
     {
         base.FinishAniAtk();
     }
-    //protected void SpeedUP()
-    //{
-    //    agent.moveSpeed = 5.5f;
-    //}
     protected override void OnAttackHit(CharacterBrain target)
     {
         target.TakeDamage(characterAttack.CurrentHit[0]);
@@ -80,6 +76,16 @@ public class Enemy : CharacterBrain , IPool
     }
     public override void TakeDamage(float damage)
     {
+        if (!Alive)
+        {
+            EffectDestroyObject effect = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.EffectDestroyObj, ListTypeEffects.EffectDestroySkeleton.ToString());
+            if (direction.transform.position.x > transform.position.x)
+                effect.transform.DORotate(new Vector3(0, -180, 0),0);
+            effect.transform.position = transform.position + new Vector3(0,2,0);
+            effect.Show();
+            Hide();
+            return;
+        }
         base.TakeDamage(damage);
         health -= damage;
         healthBar.SetActive();
@@ -101,7 +107,7 @@ public class Enemy : CharacterBrain , IPool
         {
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
             {
-                enabled = false;
+                agent.AgentBody.enabled = false;
             });
         });
     }

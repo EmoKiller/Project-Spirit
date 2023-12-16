@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIExp : MonoBehaviour
 {
-    private Slider _slider => GetComponent<Slider>();
+    [SerializeField] private Slider _slider;
+    [SerializeField] private TMP_Text _TextExp;
     public float MaxValue
     {
         get { return _slider.maxValue; }
@@ -12,7 +14,20 @@ public class UIExp : MonoBehaviour
     public float Value
     {
         get { return _slider.value; }
-        set { _slider.value += value; }
+        set
+        { 
+            _slider.value = Mathf.Clamp(value, 0, MaxValue);
+            TextExp = Value.ToString();
+        }
+    }
+    public string TextExp
+    {
+        get { return _TextExp.text; }
+        set { _TextExp.text = value + " / " + MaxValue.ToString(); }
+    }
+    public bool MaxExp()
+    {
+        return Value >= MaxValue;
     }
     private void OnMaxValueChange(float value)
     {

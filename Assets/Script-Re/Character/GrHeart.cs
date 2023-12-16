@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
+
 [System.Serializable]
 public class GrHeart
 {
     public EnemGrHeart Type;
-    public int maxHP = 0;
+    [SerializeField] private int maxHP = 0;
     public int MaxHP
     {
         get { return maxHP; }
@@ -15,7 +18,16 @@ public class GrHeart
             UpdateHearts();
         }
     }
-    public int CurrentHeart = 0;
+    [SerializeField] private int currentHP = 0;
+    public int CurrentHP
+    {
+        get { return currentHP; }
+        set
+        {
+            currentHP = Math.Clamp(value, 0, maxHP);
+        }
+    }
+    [SerializeField] private int CurrentHeart = 0;
     public RectTransform rectGr = null;
     public List<UIHeart> heart = null;
     public EnemGrPriteHeart typeFull;
@@ -30,22 +42,44 @@ public class GrHeart
         heart.Add(uiHeart);
         rectGr.sizeDelta = new Vector2(rectGr.sizeDelta.x + 45, 0);
     }
-    public bool TalkeDamage(ref bool value)
+    public int TalkeDamage(ref int valueHit)
     {
         for (int i = heart.Count - 1; i > -1; i--)
         {
-            if (heart[i].ReturnCurrent() > 0)
+            while (heart[i].ReturnCurrent() > 0)
             {
                 heart[i].TakeDamage(1);
-                value = true;
-                break;
+                valueHit--;
+                CurrentHP--;
+                if (valueHit == 0)
+                    break;
             }
+            if (valueHit == 0)
+                break;
         }
-        return value;
+        return valueHit;
+    }
+    public void RestoreHeart(int valueRestore)
+    {
+        for (int i = 0; i < heart.Count; i++)
+        {
+            while (heart[i].ReturnCurrent() < (int)heart[i].heartType)
+            {
+                heart[i].RestoreHeart(1);
+                valueRestore--;
+                CurrentHP++;
+                if (valueRestore == 0)
+                    break;
+            }
+            if (valueRestore == 0)
+                break;
+        }
     }
     public void UpdateHearts()
     {
         rectGr.sizeDelta = new Vector2(0, 0);
+        foreach (UIHeart item in heart)
+            item.Hide();
         heart.Clear();
         CurrentHeart = maxHP / 2;
         if (maxHP % 2 == 0)
@@ -58,10 +92,25 @@ public class GrHeart
     }
     public void UpdateHeart()
     {
-        heart.Clear();
         for (int i = 0; i < CurrentHeart; i++)
         {
             CreateNewHeart.Invoke(typeFull);
         }
     }
+    public void SetStartMaxCurrentHP(int maxHP)
+    {
+        MaxHP = maxHP;
+        CurrentHP = MaxHP;
+    }
+    public void AddHeartAndRestoreFull(int value)
+    {
+        MaxHP += value;
+        CurrentHP = MaxHP;
+    }
+    public bool CheckCurrentHP()
+    {
+        return CurrentHP == MaxHP;
+    }
+
+
 }

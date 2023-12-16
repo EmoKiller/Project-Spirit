@@ -68,8 +68,8 @@ public class EneScamp : Enemy
     }
     private void EventInDashAtks()
     {
-        agent.moveSpeed = 10;
-        SetMoveWayPoint(direction.transform.position, 2);
+        agent.moveSpeed = 14;
+        SetMoveWayPoint(direction.transform.position, 3.5f);
     }
     private void RandomMove()
     {
@@ -89,7 +89,7 @@ public class EneScamp : Enemy
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        EnemyThinking(1,80);
+        EnemyThinking(1,60);
     }
     protected override void FinishAniAtk()
     {
@@ -101,6 +101,7 @@ public class EneScamp : Enemy
     {
         if (enemyThinking || !Alive)
             return;
+        characterAnimator.SetTrigger("Idie");
         enemyThinking = true;
         OnDashAtk = false;
         onFollowPlayer = false;
@@ -136,8 +137,6 @@ public class EneScamp : Enemy
             return;
         }
         OnDashAtk = true;
-        characterAnimator.SetTrigger("Idie");
-        Debug.Log("Dash Atk");
     }
     public override void Dead()
     {

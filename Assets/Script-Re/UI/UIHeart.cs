@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
-public class UIHeart : MonoBehaviour
+public class UIHeart : MonoBehaviour , IPool
 {
     public EnemGrPriteHeart TypeHearts;
     public HeartType heartType;
@@ -10,6 +10,7 @@ public class UIHeart : MonoBehaviour
     [SerializeField] RectTransform rectHeart;
     [SerializeField] int Current = 0;
 
+    public string objectName => GetType().Name;
     public void UpdateHeart()
     {
         
@@ -48,5 +49,19 @@ public class UIHeart : MonoBehaviour
         Current -= dmg;
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
+    public void RestoreHeart(int value)
+    {
+        Current += value;
+        UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
+    }
 
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 }

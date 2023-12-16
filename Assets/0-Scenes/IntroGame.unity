@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67384,6 +67384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListEnemy: []
+  EffectDestroyObj: []
 --- !u!1 &2165318006538109311
 GameObject:
   m_ObjectHideFlags: 0
@@ -67428,7 +67429,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055cdf11383220f4fb45f0b06e202c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ack: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 328732488109468730, guid: 08cb6486fa9a422408e792e5d6422cb3, type: 3}
+    - {fileID: 5082756344252499761, guid: 65dc231cd0273124da727c7013c93e7b, type: 3}
+    - {fileID: 9144808168364803032, guid: f7755bb2969e98d47898fabaf40bb74b, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: ListEffect
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[ListTypeEffects, Assembly-CSharp],[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ListTypeEffects,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1 &2165318006615417195
 GameObject:
   m_ObjectHideFlags: 0

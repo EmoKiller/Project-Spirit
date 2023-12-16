@@ -74,6 +74,8 @@ public abstract class CharacterBrain : MonoBehaviour
     }
     protected virtual void OnAttackHit(CharacterBrain target)
     {
+        if (!target.Alive)
+            return;
         Vector3 dir = transform.position - target.transform.position;
         float force = target.characterAttack.Weight - characterAttack.PowerForce;
         if (force > 0)

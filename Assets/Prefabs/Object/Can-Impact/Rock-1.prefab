@@ -467,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99652b99b044a654e961742d75bbec71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TypeMaterial: 3
   hpObject: {fileID: 11400000, guid: d99492d9a43dd5547adbaa81994e1a91, type: 2}
   _animator: {fileID: 0}
   currentHp: 0

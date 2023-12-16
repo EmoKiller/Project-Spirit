@@ -1,3 +1,22 @@
+public enum ListDropItems
+{
+    Exp,
+    Coin,
+    Heart
+}
+public enum TypeCoins
+{
+    Coin1 = 1,
+    Coin2 = 2,
+    Coin3 = 3
+}
+public enum ListTypeEffects
+{
+    None,
+    EffectDestroyGrass,
+    EffectDestroySkeleton,
+    EffectDestroyStone
+}
 public enum TypeInfomation
 {
     Angry,
@@ -83,10 +102,20 @@ public enum Events
     SetWeapon,
     SetOnEvent,
     //UIManager
+    UpdateValueAngry,
     UpdateInfoWeapon,
     UpdateInfoCurses,
     UpdateIconWeapon,
     UpdateIconCurses,
+    UpdateUICoin,
+    UpdateValueHunger,
+    UpdateValueExp,
+    PlayerTakeDamage,
+    AddHeartAndRestoreFull,
+    RestoreHeart,
+    CheckCurrentHP,
+    UIButtonOpen,
+    UIButtonReset,
     //popup
 
     // UIDialogBox
@@ -100,11 +129,6 @@ public enum Events
     SetDefault,
     //GameManager
     BaseStartGame, //Func
-    //UIManager
-    PlayerTakeDamage,
-    CreateNewHeart,
-    UIButtonOpen,
-    UIButtonReset,
 
 }
 public enum TypeSave
@@ -114,24 +138,7 @@ public enum TypeSave
     AmountFollowers,
     AmountOfCoin
 }
-public enum TypeFIll
-{
-    Angry,
-    Faith,
-    Hygiene,
-    Hunger
-}
-public enum TypeAmount
-{
-    Coin,
-    Followers
-}
-public enum ListCharacterAction
-{
-    Actions,
-    Attack,
-    OnDead
-}
+
 public enum TypeItemsCanDrop
 {
     Coin,
@@ -180,12 +187,6 @@ public enum MenuType
     SaveGame3,
     Back,
     DeleteSaveGame
-}
-public enum UIsizeObj
-{
-    Nomal,
-    Large,
-    Half
 }
 public enum EnemGrHeart
 {

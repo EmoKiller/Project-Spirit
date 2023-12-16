@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class GameUtilities
@@ -43,8 +44,6 @@ public static class GameUtilities
             yield return new WaitForSeconds(waittime);
         }
     }
-
-
     public static void ReSetEulerAngle(this Transform trans)
     {
         trans.eulerAngles = new Vector3(15,0,0);
@@ -66,5 +65,41 @@ public static class GameUtilities
         if (tryValue == null)
             tryValue = mono.GetComponentsInChildren<T>().ToList();
         return tryValue;
+    }
+    public static int ConvertInt(EnemGrPriteHeart grSprite)
+    {
+        switch (grSprite)
+        {
+            case EnemGrPriteHeart.Red:
+            case EnemGrPriteHeart.Add:
+            case EnemGrPriteHeart.Blue:
+            case EnemGrPriteHeart.Black:
+                return 2;
+            case EnemGrPriteHeart.RedHalf:
+            case EnemGrPriteHeart.AddHalf:
+            case EnemGrPriteHeart.BlueHalf:
+                return 1;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+    public static EnemGrHeart ConvertGrSpriteToGrHeart(EnemGrPriteHeart grSprite)
+    {
+        switch (grSprite)
+        {
+            case EnemGrPriteHeart.Red:
+            case EnemGrPriteHeart.RedHalf:
+                return EnemGrHeart.Red;
+            case EnemGrPriteHeart.Add:
+            case EnemGrPriteHeart.AddHalf:
+                return EnemGrHeart.Add;
+            case EnemGrPriteHeart.Blue:
+            case EnemGrPriteHeart.BlueHalf:
+                return EnemGrHeart.Blue;
+            case EnemGrPriteHeart.Black:
+                return EnemGrHeart.Black;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 }
