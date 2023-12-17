@@ -7,15 +7,11 @@ public class ObjDropCoin : ObjectDropOnWorld, IPool
     [Header("TypeHeart")]
     public TypeCoins TypeCoins;
 
-    public string objectName => GetType().ToString();
+    public string objectName => GetType().Name;
 
-    private void Awake()
-    {
-        pubLish = PublishEvent;
-    }
     protected override void PublishEvent()
     {
-        //EventDispatcher.Publish(UIManager.Script.UIManager, Events.CreateNewHeart, TypeHeart);
+        EventDispatcher.Publish(Events.UpdateUICoin, (int)TypeCoins);
     }
 
     public void Show()

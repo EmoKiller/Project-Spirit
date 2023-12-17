@@ -12,6 +12,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     public List<ObjDropHeart> ObjDropHeart = new List<ObjDropHeart>();
     public List<UIHeart> HeartObj = new List<UIHeart>();
     public List<ObjDropExp> ObjDropExp = new List<ObjDropExp>();
+    public List<ObjDropCoin> ObjDropCoins = new List<ObjDropCoin>();
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class ObjectPooling : SerializedMonoBehaviour
         PoolInstantiateObj(ObjDropHeart, AssetManager.Instance.DropItems[ListDropItems.Heart], transform);
         PoolInstantiateObj(HeartObj, AssetManager.Instance.HeartObj, transform, 15);
         PoolInstantiateObj(ObjDropExp, AssetManager.Instance.ObjDropExp, transform, 5);
+        PoolInstantiateObj(ObjDropCoins, AssetManager.Instance.ObjDropCoins, transform, 10);
     }
     public void PoolInstantiateObj<T>(List<T> pool,GameObject gameObject,Transform tranform)
     {

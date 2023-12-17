@@ -1,13 +1,20 @@
 using System;
+using System.Collections.Generic;
+
 [System.Serializable]
 public class BaseStartGame
 {
-    public int BaseHP = 2;
-    public int level = 0;
-    public int ExpMaxOfLevel = 0;
+    public int MaxHP = 2;
+    public int CurrentHP = 0;
+    public int Level = 1;
+    public int MaxEXPOfLevel = 3;
     public int CurrentExp = 0;
-    public int AmountFollowers = 0;
-    public int AmountOfCoin = 0;
+    public float MaxValueAngry = 100;
+    public float CurrentAngry = 0;
+    public int CurrentCoin = 0;
+    public float MaxValueHunger = 100;
+    public float CurrentHugner = 0;
+    
     public BaseStartGame()
     {
         

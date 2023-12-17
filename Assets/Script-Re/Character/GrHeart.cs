@@ -48,7 +48,7 @@ public class GrHeart
         {
             while (heart[i].ReturnCurrent() > 0)
             {
-                heart[i].TakeDamage(1);
+                heart[i].TakeDamage();
                 valueHit--;
                 CurrentHP--;
                 if (valueHit == 0)
@@ -65,7 +65,7 @@ public class GrHeart
         {
             while (heart[i].ReturnCurrent() < (int)heart[i].heartType)
             {
-                heart[i].RestoreHeart(1);
+                heart[i].RestoreHeart();
                 valueRestore--;
                 CurrentHP++;
                 if (valueRestore == 0)

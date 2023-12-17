@@ -44,14 +44,14 @@ public class UIHeart : MonoBehaviour , IPool
     {
         return Current;
     }
-    public void TakeDamage(int dmg)
+    public void TakeDamage()
     {
-        Current -= dmg;
+        Current--;
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
-    public void RestoreHeart(int value)
+    public void RestoreHeart()
     {
-        Current += value;
+        Current++;
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
 

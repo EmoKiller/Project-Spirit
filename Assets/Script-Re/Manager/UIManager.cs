@@ -11,39 +11,35 @@ public class UIManager : SerializedMonoBehaviour
     {
         UIManager
     }
+    public static UIManager Instance = null;
     private void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(Instance);
+        //UiControllerHearts
+        foreach (var item in grHeart)
+        {
+            item.CreateNewHeart = CreateNewHeart;
+        }
+        EventDispatcher.Addlistener<int>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
+        EventDispatcher.Addlistener<EnemGrPriteHeart>(Script.UIManager, Events.AddHeartAndRestoreFull, AddHeartAndRestoreFull);
+        EventDispatcher.Addlistener<EnemGrHeart, int>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
+
+        //UI Infomation
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueAngry, UpdateValueAngry);
+        EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
+        EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconCurses, UpdateIconCurses);
+        EventDispatcher.Addlistener(Script.UIManager, Events.UpdateUICoin, UpdateUICoin);
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueHunger, UpdateValueHunger);
+        //UIButtonAction
         UIButtonAction.OnButtonDown = ButtonDown;
         UIButtonAction.OnButtonUp = ButtonUp;
         UIButtonAction.OnTriggerUpdateFillValue = OnTriggerUpdateFillValue;
         UIButtonAction.gameObject.SetActive(false);
         UIButtonAction.TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
         UIButtonAction.TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
-    }
-    public void Init(int baseHP)
-    {
-        //UI Infomation
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueAngry, UpdateValueAngry);
-        EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
-        EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconCurses, UpdateIconCurses);
-        EventDispatcher.Addlistener<string>(Script.UIManager, Events.UpdateUICoin, UpdateUICoin);
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueHunger, UpdateValueHunger);
-        //UiControllerHearts
-        MaxHp = baseHP;
-        foreach (var item in grHeart)
-        {
-            item.CreateNewHeart = CreateNewHeart;
-        }
-        
-        grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP(MaxHp);
-        EventDispatcher.Addlistener<int>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
-        EventDispatcher.Addlistener<EnemGrPriteHeart>(Script.UIManager, Events.AddHeartAndRestoreFull, AddHeartAndRestoreFull);
-        EventDispatcher.Addlistener<EnemGrHeart,int>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
-        EventDispatcher.Register<EnemGrHeart, bool>(Script.UIManager, Events.CheckCurrentHP, CheckCurrentHP);
-        //UIExp
-        SetMaxExpOfLevel(10);
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueExp, UpdateValueExp);
-        //UIButtonAction
         EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);
         EventDispatcher.Addlistener(Script.UIManager, Events.UIButtonReset, ResetButton);
         //PopUp
@@ -51,6 +47,22 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
+        //UIExp
+        //EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueExp, UpdateValueExp);
+    }
+    private void Start()
+    {
+        
+    }
+    public void Init()
+    {
+        //UiControllerHearts
+        grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP(InfomationPlayerManager.Instance.MaxHP);
+        EventDispatcher.Register<EnemGrHeart, bool>(Script.UIManager, Events.CheckCurrentHP, CheckCurrentHP);
+        //UIExp
+        InfomationPlayerManager.Instance.Level = 1;
+
+
     }
     /// <summary>
     /// UI Infomation
@@ -79,9 +91,9 @@ public class UIManager : SerializedMonoBehaviour
     {
         UIInfomation.IconCurses = spr;
     }
-    private void UpdateUICoin(string text)
+    private void UpdateUICoin()
     {
-        UIInfomation.Coin = text;
+        UIInfomation.Coin = InfomationPlayerManager.Instance.CurrentCoin.ToString();
     }
     private void UpdateValueHunger(float value)
     {
@@ -91,20 +103,6 @@ public class UIManager : SerializedMonoBehaviour
     /// <summary>
     /// UiControllerHearts
     /// </summary>
-    [SerializeField] private int maxHp;
-    
-    [SerializeField] private int heart;
-    [SerializeField] private int currentHp;
-    public int MaxHp
-    {
-        get { return maxHp; }
-        set
-        {
-            maxHp = value;
-        }
-    }
-    public int Heart => heart;
-    public int CurrentHp => currentHp;
     [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
     private void AddHeartAndRestoreFull(EnemGrPriteHeart grSprite)
     {
@@ -119,6 +117,13 @@ public class UIManager : SerializedMonoBehaviour
         uiHeart.SetNewTypeHeart(grSprite);
         uiHeart.transform.SetParent(grHeart[(int)grHearts].rectGr,true);
         grHeart[(int)grHearts].Add(uiHeart);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            AddHeartAndRestoreFull(EnemGrPriteHeart.Red);
+        }
     }
     [Button]
     public void TakeDamage(int valueHit)
@@ -146,13 +151,13 @@ public class UIManager : SerializedMonoBehaviour
     {
         get => this.TryGetMonoComponentInChildren(ref _UIExp);
     }
-    private void SetMaxExpOfLevel(float value)
+    public void SetMaxExpOfLevel()
     {
-        UIExp.MaxValue = value;
+        UIExp.MaxValue = InfomationPlayerManager.Instance.MaxEXPOfLevel;
     }
-    private void UpdateValueExp(float exp)
+    public void UpdateValueExp()
     {
-        UIExp.Value = _UIExp.Value + exp;
+        UIExp.Value = InfomationPlayerManager.Instance.CurrnetExp;
     }
     /// <summary>
     /// UIHider {

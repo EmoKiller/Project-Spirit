@@ -9,14 +9,18 @@ public class UIExp : MonoBehaviour
     public float MaxValue
     {
         get { return _slider.maxValue; }
-        set { OnMaxValueChange(value); }
+        set 
+        { 
+            _slider.maxValue = value;
+            Value = 0;
+        }
     }
     public float Value
     {
         get { return _slider.value; }
         set
-        { 
-            _slider.value = Mathf.Clamp(value, 0, MaxValue);
+        {
+            _slider.value = value;
             TextExp = Value.ToString();
         }
     }
@@ -24,14 +28,5 @@ public class UIExp : MonoBehaviour
     {
         get { return _TextExp.text; }
         set { _TextExp.text = value + " / " + MaxValue.ToString(); }
-    }
-    public bool MaxExp()
-    {
-        return Value >= MaxValue;
-    }
-    private void OnMaxValueChange(float value)
-    {
-        _slider.maxValue = value;
-        Value = 0;
     }
 }

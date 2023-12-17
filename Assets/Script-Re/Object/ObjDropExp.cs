@@ -1,14 +1,12 @@
-using DG.Tweening;
-using UnityEngine;
-
 public class ObjDropExp : ObjectDropOnWorld, IPool
 {
     public string objectName => GetType().Name;
 
     protected override void PublishEvent()
     {
-        EventDispatcher.Publish(UIManager.Script.UIManager, Events.UpdateValueExp, 1f);
+        //EventDispatcher.Publish(UIManager.Script.UIManager, Events.UpdateValueExp, 1f);
         //uplevel
+        InfomationPlayerManager.Instance.CurrnetExp += 1;
     }
     protected override void Event()
     {

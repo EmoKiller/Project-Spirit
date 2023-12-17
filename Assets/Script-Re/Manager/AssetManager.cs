@@ -13,6 +13,7 @@ public class AssetManager : SerializedMonoBehaviour
     public SpriteAtlas SpriteAtlasItems;
     public GameObject HeartObj;
     public GameObject ObjDropExp;
+    public GameObject ObjDropCoins;
     private void Awake()
     {
         if (Instance == null)

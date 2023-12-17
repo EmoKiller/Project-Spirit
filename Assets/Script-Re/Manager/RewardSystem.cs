@@ -12,19 +12,25 @@ public class RewardSystem : SerializedMonoBehaviour
 
 
     [Button]
-    public void DropHeart()
+    private void DropHeart()
     {
         ObjDropHeart obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropHeart, "ObjDropHeart");
         obj.UpdateSprite(TypeHeart.ToString());
         obj.TypeHeart = TypeHeart;
         obj.Show();
     }
-    [Button("SpawnExp")]
-    private void SpawnExp()
+    [Button]
+    private void DropExp()
     {
         ObjDropExp obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropExp, "ObjDropExp");
         obj.Show();
         //Instantiate(obj);
+    }
+    [Button]
+    private void DropCoin()
+    {
+        ObjDropCoin obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropCoins, "ObjDropCoin");
+        obj.Show();
     }
     private void ChestBonus()
     {
