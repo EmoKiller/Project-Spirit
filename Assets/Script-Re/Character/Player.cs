@@ -26,6 +26,7 @@ public class Player : CharacterBrain , IOrderable
     {
         base.Start();
         health = 999;
+        SetWeapon();
     }
     public void Init()
     {
@@ -46,6 +47,7 @@ public class Player : CharacterBrain , IOrderable
         slash.AddActionAttack(OnAttackHit);
         characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
         slash.SetSizeBox(characterAttack.SlashBoxSize);
+        Debug.Log(characterAttack.TotalDamage());
     }
     private void Update()
     {

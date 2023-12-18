@@ -14,6 +14,7 @@ public class AssetManager : SerializedMonoBehaviour
     public GameObject HeartObj;
     public GameObject ObjDropExp;
     public GameObject ObjDropCoins;
+    public GameObject ObjDropAngry;
     private void Awake()
     {
         if (Instance == null)

@@ -51,7 +51,7 @@ public class WeaponPodium : TriggerWaitAction
     }
     private float CompareDamage()
     {
-        float dmg = weapon.weaponObject.TotalDamage() - damagePlayer;
+        float dmg = weapon.TotalDamage() - damagePlayer;
         return dmg;
     }
     private float CompareSpeed()

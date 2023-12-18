@@ -28,11 +28,11 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<EnemGrHeart, int>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
 
         //UI Infomation
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueAngry, UpdateValueAngry);
+        //EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueAngry, UpdateValueAngry);
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconCurses, UpdateIconCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.UpdateUICoin, UpdateUICoin);
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.UpdateValueHunger, UpdateValueHunger);
+        //EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueHunger, UpdateValueHunger);
         //UIButtonAction
         UIButtonAction.OnButtonDown = ButtonDown;
         UIButtonAction.OnButtonUp = ButtonUp;
@@ -67,6 +67,7 @@ public class UIManager : SerializedMonoBehaviour
     /// <summary>
     /// UI Infomation
     /// </summary>
+    [Header("UI Infomation")]
     private UiInfomation _UIInfomation = null;
     public UiInfomation UIInfomation
     {
@@ -79,9 +80,9 @@ public class UIManager : SerializedMonoBehaviour
             return _UIInfomation;
         }
     }
-    private void UpdateValueAngry(float value)
+    public void UpdateValueAngry()
     {
-        UIInfomation.ImgFillAngry = value;
+        UIInfomation.ImgFillAngry = InfomationPlayerManager.Instance.CurretAngry;
     }
     private void UpdateIconWeapon(Sprite spr)
     {
@@ -95,14 +96,32 @@ public class UIManager : SerializedMonoBehaviour
     {
         UIInfomation.Coin = InfomationPlayerManager.Instance.CurrentCoin.ToString();
     }
-    private void UpdateValueHunger(float value)
+    public void UpdateValueHunger()
     {
-        UIInfomation.ImgFillHunger = value;
+        UIInfomation.ImgFillHunger = InfomationPlayerManager.Instance.CurrentHunger;
+    }
+    /// <summary>
+    /// UIExp
+    /// </summary>
+    [Header("Exp")]
+    [SerializeField] private UIExp _UIExp = null;
+    public UIExp UIExp
+    {
+        get => this.TryGetMonoComponentInChildren(ref _UIExp);
+    }
+    public void SetMaxExpOfLevel()
+    {
+        UIExp.MaxValue = InfomationPlayerManager.Instance.MaxEXPOfLevel;
+    }
+    public void UpdateValueExp()
+    {
+        UIExp.Value = InfomationPlayerManager.Instance.CurrnetExp;
     }
 
     /// <summary>
     /// UiControllerHearts
     /// </summary>
+    [Header("Gr Heart")]
     [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
     private void AddHeartAndRestoreFull(EnemGrPriteHeart grSprite)
     {
@@ -143,25 +162,11 @@ public class UIManager : SerializedMonoBehaviour
     {
         return grHeart[(int)gr].CheckCurrentHP();
     }
-    /// <summary>
-    /// UIExp
-    /// </summary>
-    [SerializeField] private UIExp _UIExp = null;
-    public UIExp UIExp
-    {
-        get => this.TryGetMonoComponentInChildren(ref _UIExp);
-    }
-    public void SetMaxExpOfLevel()
-    {
-        UIExp.MaxValue = InfomationPlayerManager.Instance.MaxEXPOfLevel;
-    }
-    public void UpdateValueExp()
-    {
-        UIExp.Value = InfomationPlayerManager.Instance.CurrnetExp;
-    }
+
     /// <summary>
     /// UIHider {
     /// </summary>
+    [Header("Hide Bar")]
     [SerializeField] UIHideBar _UIHideBar = null;
     public UIHideBar UIShowBar
     {
@@ -170,6 +175,7 @@ public class UIManager : SerializedMonoBehaviour
     /// <summary>
     ///  ButtonAction
     /// </summary>
+    [Header("UI Button")]
     [SerializeField] UIButtonAction _UIButtonAction;
     public UIButtonAction UIButtonAction
     {
@@ -238,7 +244,7 @@ public class UIManager : SerializedMonoBehaviour
     /// <summary>
     /// PopUp ui
     /// </summary>
-    /// InfoWeapon
+    [Header("UI PopUp")]
     private InfoWeapon _InfoWeapon = null;
     public InfoWeapon InfoWeapon
     {
@@ -291,5 +297,31 @@ public class UIManager : SerializedMonoBehaviour
             return;
         }
         img.color = Color.white;
+    }
+    [Header("ShowUp TarotCard")]
+    ///ShowUpTarotCard
+    [SerializeField] List<UICard> listCard = new List<UICard>();
+    [Button]
+    private void SetNumberOfEnabledCard(int number)
+    {
+        for (int i = 0; i < listCard.Count; i++)
+        {
+            TurnOffCard();
+            if (i < number)
+            {
+                listCard[i].gameObject.SetActive(true);
+                //lay thong tin tu RewardSystem
+            }
+            else
+                listCard[i].gameObject.SetActive(false);
+
+        }
+    }
+    private void TurnOffCard()
+    {
+        for (int i = 0; i < listCard.Count; i++)
+        {
+            listCard[i].gameObject.SetActive(false);
+        }
     }
 }

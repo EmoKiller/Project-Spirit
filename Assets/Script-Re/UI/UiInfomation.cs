@@ -8,13 +8,13 @@ public class UiInfomation : MonoBehaviour
     public float ImgFillAngry
     {
         get { return _ImgFillAngry.fillAmount; }
-        set { _ImgFillAngry.fillAmount = value; }
+        set { _ImgFillAngry.fillAmount = value / 100; }
     }
     [SerializeField] private Image _IconWeapon;
     public Sprite IconWeapon
     {
         get { return _IconWeapon.sprite; }
-        set { _IconWeapon.sprite = value; } 
+        set { _IconWeapon.sprite = value; }
     }
     [SerializeField] private Image _IconCurses;
     public Sprite IconCurses
@@ -32,7 +32,7 @@ public class UiInfomation : MonoBehaviour
     public float ImgFillHunger
     {
         get { return _ImgFillHunger.fillAmount; }
-        set { _ImgFillHunger.fillAmount = value; }
+        set { _ImgFillHunger.fillAmount = value / 100; }
     }
 
 }

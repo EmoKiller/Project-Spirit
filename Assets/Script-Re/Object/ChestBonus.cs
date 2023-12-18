@@ -1,10 +1,12 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class ChestBonus : MonoBehaviour
 {
     public ChestType type;
     private ObjectAnimator ObjAnimator => GetComponentInChildren<ObjectAnimator>();
+    public Action OnDropItems = null;
     private void Start()
     {
         ObjAnimator.ActionOne = DropItems;

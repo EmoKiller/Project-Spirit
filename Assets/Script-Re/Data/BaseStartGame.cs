@@ -13,7 +13,7 @@ public class BaseStartGame
     public float CurrentAngry = 0;
     public int CurrentCoin = 0;
     public float MaxValueHunger = 100;
-    public float CurrentHugner = 0;
+    public float CurrentHugner = 100;
     
     public BaseStartGame()
     {

@@ -5,14 +5,9 @@ using Sirenix.OdinInspector;
 
 public class RewardSystem : SerializedMonoBehaviour
 {
-    public EnemGrPriteHeart TypeHeart;
-
-
-
-
 
     [Button]
-    private void DropHeart()
+    private void DropHeart(EnemGrPriteHeart TypeHeart)
     {
         ObjDropHeart obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropHeart, "ObjDropHeart");
         obj.UpdateSprite(TypeHeart.ToString());
@@ -30,6 +25,12 @@ public class RewardSystem : SerializedMonoBehaviour
     private void DropCoin()
     {
         ObjDropCoin obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropCoins, "ObjDropCoin");
+        obj.Show();
+    }
+    [Button]
+    private void DropAngry()
+    {
+        ObjDropAngry obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropAngry, "ObjDropAngry");
         obj.Show();
     }
     private void ChestBonus()

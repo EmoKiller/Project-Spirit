@@ -20,15 +20,6 @@ public class WeaponObject : ScriptableObject
     public List<float> ListPowerForce = new List<float>();
     public WeaponObject()
     {
-
     }
-    public float TotalDamage()
-    {
-        float a = 0;
-        foreach (float Damage in ListDamage)
-        {
-            a += Damage;
-        }
-        return a/ListDamage.Count;
-    }
+    
 }

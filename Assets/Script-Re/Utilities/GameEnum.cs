@@ -1,3 +1,7 @@
+public enum ListDropInPool
+{
+
+}
 public enum ListDropItems
 {
     Exp,
@@ -141,8 +145,10 @@ public enum TypeSave
 
 public enum TypeItemsCanDrop
 {
-    Coin,
-    TarotCard,
+    ObjDropCoin,
+    ObjDropTarotCard,
+    ObjDropAngry,
+    ObjDropHeart,
     BerryBushSeed,
     Necklace
 }

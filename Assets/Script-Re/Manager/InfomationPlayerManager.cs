@@ -65,6 +65,7 @@ public class InfomationPlayerManager : MonoBehaviour
         set
         {
             DataNewGame.CurrentAngry = Math.Clamp(value, 0, MaxValueAngry);
+            UIManager.Instance.UpdateValueAngry();
         }
     }
     public int CurrentCoin
@@ -82,6 +83,7 @@ public class InfomationPlayerManager : MonoBehaviour
         set
         {
             DataNewGame.CurrentHugner = Math.Clamp(value, 0, MaxValueHunger);
+            UIManager.Instance.UpdateValueHunger();
         }
     }
     private void Awake()
@@ -96,14 +98,18 @@ public class InfomationPlayerManager : MonoBehaviour
     }
     private void Start()
     {
-        
+        DataNewGame = ConfigDataHelper.BaseStartGame;
     }
     public void Init()
     {
         
     }
-    public void UpdateUICoin(int Value)
+    private void UpdateUICoin(int Value)
     {
         DataNewGame.CurrentCoin += Value;
+    }
+    private void SaveGame()
+    {
+        ConfigDataHelper.BaseStartGame = DataNewGame;
     }
 }
