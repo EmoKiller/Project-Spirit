@@ -1,5 +1,33 @@
-public enum ListDropInPool
+public enum SaveGameSlot
 {
+    Slot1,
+    Slot2,
+    Slot3
+}
+public enum AttributeType
+{
+    Level,
+    MaxHP,
+    CurrentHP,
+    MaxExpOfLevel,
+    CurrentExp,
+    MaxValueAngry,
+    CurrentAngry,
+    CurrentCoin,
+    MaxValueHunger,
+    CurrentHunger
+}
+
+public enum CardType
+{
+    HPDrain,
+    Power
+}
+public enum ListObjInPool
+{
+    EffectDestroyObject,
+    ObjDropHeart,
+    UIHeart,
 
 }
 public enum ListDropItems

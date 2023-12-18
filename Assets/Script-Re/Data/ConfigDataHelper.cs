@@ -63,4 +63,10 @@ public class ConfigDataHelper
     //{
     //    //PlayerPrefs.se
     //}
+
+    public static HeroData HeroData
+    {
+        get => ES3.Load<HeroData>("HeroData");
+        set => ES3.Save("HeroData", value);
+    }
 }

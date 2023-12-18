@@ -60,6 +60,7 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
         //transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
+        //transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
         //if (player.isRolling || player.isJump)
         //{
         //    smooth += Time.deltaTime * 0.4f;

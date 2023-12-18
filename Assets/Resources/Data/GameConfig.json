@@ -57,22 +57,46 @@
 			}
 		}
 	},
-	"SaveGames" : {
+	"HeroData" : {
 		"Level" : {
-			"Type" : 0,
-			"Value" : 10.0
+			"Type" : "Level",
+			"Value" : 0
 		},
-		"Exp" : {
-			"Type" : 0,
-			"Value" : 10.0
+		"MaxHP" : {
+			"Type" : "MaxHP",
+			"Value" : 2
 		},
-		"AmountFollowers" : {
-			"Type" : 0,
-			"Value" : 10.0
+		"CurrentHP" : {
+			"Type" : "CurrentHP",
+			"Value" : 2
 		},
-		"AmountOfCoin" : {
-			"Type" : 0,
-			"Value" : 10.0
+		"MaxExpOfLevel" : {
+			"Type" : "MaxExpOfLevel",
+			"Value" : 4
+		},
+		"CurrentExp" : {
+			"Type" : "CurrentExp",
+			"Value" : 0
+		},
+		"MaxValueAngry" : {
+			"Type" : "MaxValueAngry",
+			"Value" : 100
+		},
+		"CurrentAngry" : {
+			"Type" : "CurrentAngry",
+			"Value" : 0
+		},
+		"CurrentCoin" : {
+			"Type" : "CurrentCoin",
+			"Value" : 0
+		},
+		"MaxValueHunger" : {
+			"Type" : "MaxValueHunger",
+			"Value" : 100
+		},
+		"CurrentHunger" : {
+			"Type" : "CurrentHunger",
+			"Value" : 0
 		}
 	},
 	"GameLevelConfig" : {
@@ -90,6 +114,13 @@
 					"goldReward" : 100
 				}
 			}
+		}
+	},
+	"CardsConfig" : {
+		"HPDrain" : {
+			"type" : "HPDrain",
+			"attributeAdded" : "HP",
+			"valueAdded" : 10
 		}
 	}
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class InfomationPlayerManager : MonoBehaviour
 {
+    public Dictionary<AttributeType, BaseAttribute> attributes = new Dictionary<AttributeType, BaseAttribute>();
+
+
     public enum Script
     {
         InfomationPlayerManager
@@ -92,13 +95,17 @@ public class InfomationPlayerManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-
+        DataNewGame = ConfigDataHelper.BaseStartGame;
         EventDispatcher.Addlistener<int>(Script.InfomationPlayerManager, Events.UpdateUICoin, UpdateUICoin);
         
     }
     private void Start()
     {
-        DataNewGame = ConfigDataHelper.BaseStartGame;
+        HeroData newdata = ConfigDataHelper.HeroData;
+        foreach (var item in newdata.attributes[0])
+        {
+            Debug.Log(item.Key + " " + item.Value);
+        }
     }
     public void Init()
     {
@@ -107,6 +114,7 @@ public class InfomationPlayerManager : MonoBehaviour
     private void UpdateUICoin(int Value)
     {
         DataNewGame.CurrentCoin += Value;
+        Debug.Log(GetType().Name + " " + DataNewGame.CurrentCoin);
     }
     private void SaveGame()
     {

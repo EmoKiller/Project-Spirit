@@ -95,6 +95,7 @@ public class UIManager : SerializedMonoBehaviour
     private void UpdateUICoin()
     {
         UIInfomation.Coin = InfomationPlayerManager.Instance.CurrentCoin.ToString();
+        Debug.Log(GetType().Name + " " + UIInfomation.Coin);
     }
     public void UpdateValueHunger()
     {

@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 
 [System.Serializable]
 public class BaseStartGame
 {
+    public int Level = 1;
     public int MaxHP = 2;
     public int CurrentHP = 0;
-    public int Level = 1;
     public int MaxEXPOfLevel = 3;
     public int CurrentExp = 0;
     public float MaxValueAngry = 100;
@@ -17,6 +18,7 @@ public class BaseStartGame
     
     public BaseStartGame()
     {
-        
+
     }
 }
+

@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -41,7 +42,7 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
     }
     private void OnEnable()
     {
-        transform.DORotate(new Vector3(0, -90, 0), 0.8f).OnComplete(() =>
+        transform.DORotate(new Vector3(0, -90, 0), 0.8f,RotateMode.Fast).OnComplete(() =>
         {
             _CradFont.enabled = enabled;
             transform.DORotate(new Vector3(0, 0, 0), 0.8f);
@@ -75,5 +76,14 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
         //transform.DOScale(new Vector3(0.3f,0.3f,0),0.8f);
         //transform.DOLocalMoveX(2,0.8f);
         OnActiveCard?.Invoke();
+
+
+    }
+
+    public void DoCardValue(CardType type)
+    {
+        //AttributeType attribute = ConfigDataHelper.GameConfig.cardsConfig[type].AttributeAdded;
+        //float value = ConfigDataHelper.GameConfig.cardsConfig[type].valueAdded;
+        //attributes[attribute].value += value;
     }
 }
