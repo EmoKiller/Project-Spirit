@@ -6,8 +6,8 @@ using UnityEngine;
 public class GrHeart
 {
     public EnemGrHeart Type;
-    [SerializeField] private int maxHP = 0;
-    public int MaxHP
+    [SerializeField] private float maxHP = 0;
+    public float MaxHP
     {
         get { return maxHP; }
         set
@@ -16,8 +16,8 @@ public class GrHeart
             UpdateHearts();
         }
     }
-    [SerializeField] private int currentHP = 0;
-    public int CurrentHP
+    [SerializeField] private float currentHP = 0;
+    public float CurrentHP
     {
         get { return currentHP; }
         set
@@ -25,7 +25,7 @@ public class GrHeart
             currentHP = Math.Clamp(value, 0, maxHP);
         }
     }
-    [SerializeField] private int CurrentHeart = 0;
+    [SerializeField] private float CurrentHeart = 0;
     public RectTransform rectGr = null;
     public List<UIHeart> heart = null;
     public EnemGrPriteHeart typeFull;
@@ -41,7 +41,7 @@ public class GrHeart
         heart.Add(uiHeart);
         rectGr.sizeDelta = new Vector2(rectGr.sizeDelta.x + 45, 0);
     }
-    public int TalkeDamage(ref int valueHit)
+    public float TalkeDamage(ref float valueHit)
     {
         for (int i = heart.Count - 1; i > -1; i--)
         {
@@ -58,7 +58,7 @@ public class GrHeart
         }
         return valueHit;
     }
-    public void RestoreHeart(int valueRestore)
+    public void RestoreHeart(float valueRestore)
     {
         for (int i = 0; i < heart.Count; i++)
         {
@@ -96,12 +96,12 @@ public class GrHeart
             CreateNewHeart.Invoke(typeFull);
         }
     }
-    public void SetStartMaxCurrentHP(int maxHP)
+    public void SetStartMaxCurrentHP(float maxHP)
     {
         MaxHP = maxHP;
         CurrentHP = MaxHP;
     }
-    public void AddHeartAndRestoreFull(int value)
+    public void AddHeartAndRestoreFull(float value)
     {
         MaxHP += value;
         CurrentHP = MaxHP;

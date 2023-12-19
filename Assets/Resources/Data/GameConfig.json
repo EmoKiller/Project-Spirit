@@ -121,6 +121,30 @@
 		"CurrentBlackHeart" : {
 			"type" : "CurrentBlackHeart",
 			"value" : 0
+		},
+		"CriticalHit" : {
+			"type" : "CriticalHit",
+			"value" : 0
+		},
+		"AttackRate" : {
+			"type" : "AttackRate",
+			"value" : 1
+		},
+		"IncreasedMovementSpeed" : {
+			"type" : "IncreasedMovementSpeed",
+			"value" : 1
+		},
+		"ChanceOfHealing" : {
+			"type" : "ChanceOfHealing",
+			"value" : 0
+		},
+		"ChanceOfNegatingDamage" : {
+			"type" : "ChanceOfHealing",
+			"value" : 0
+		},
+		"LuckyChest" : {
+			"type" : "ChanceOfHealing",
+			"value" : 0
 		}
 	},
 	"GameLevelConfig" : {
@@ -146,35 +170,84 @@
 			"attributeAdded" : "MaxRedHeart",
 			"valueAdded" : 1,
 			"quote" : "A minor remedy.",
-			"description" : "Gain an extra Half Red Heart"
+			"description" : "Gain an extra <sprite index=36> Half Red Heart"
 		},
 		"TheHeartsII" : {
 			"type" : "TheHeartsII",
 			"attributeAdded" : "MaxRedHeart",
 			"valueAdded" : 2,
 			"quote" : "A remedy.",
-			"description" : "Gain an extra Red Heart"
+			"description" : "Gain an extra <sprite index=45> Red Heart"
 		},
 		"TheHeartsIII" : {
 			"type" : "TheHeartsIII",
 			"attributeAdded" : "MaxRedHeart",
 			"valueAdded" : 4,
 			"quote" : "A major remedy.",
-			"description" : "Gain an extra two Red Heart"
+			"description" : "Gain an extra two <sprite index=45> Red Heart"
 		},
 		"TheLoversI" : {
 			"type" : "TheLoversI",
 			"attributeAdded" : "MaxBlueHeart",
 			"valueAdded" : 2,
 			"quote" : "A heart offered, a vow made.",
-			"description" : "Gain an extra Blue Heart"
+			"description" : "Gain an extra <sprite index=37> Blue Heart"
 		},
 		"TheLoversII" : {
 			"type" : "TheLoversII",
 			"attributeAdded" : "MaxBlueHeart",
 			"valueAdded" : 4,
 			"quote" : "Fidelity demands sacrifice.",
-			"description" : "Gain 2 extra Blue Heart"
+			"description" : "Gain 2 extra <sprite index=46> Blue Heart"
+		},
+		"DiseasedHeart" : {
+			"type" : "DiseasedHeart",
+			"attributeAdded" : "MaxBlackHeart",
+			"valueAdded" : 2,
+			"quote" : "A heart rife with vicious corruption.",
+			"description" : "Gain an extra <sprite index=118> Diseased Heart"
+		},
+		"TrueSight" : {
+			"type" : "TrueSight",
+			"attributeAdded" : "CriticalHit",
+			"valueAdded" : 10,
+			"quote" : "Weakness begs exploitation.",
+			"description" : "10% chance of dealing a critical hit."
+		},
+		"DivineStrength" : {
+			"type" : "DivineStrength",
+			"attributeAdded" : "AttackRate",
+			"valueAdded" : 1.25,
+			"quote" : "The vigour of the Great Ones course through you.",
+			"description" : "Attack rate increased by 1.25x"
+		},
+		"ThePath" : {
+			"type" : "ThePath",
+			"attributeAdded" : "IncreasedMovementSpeed",
+			"valueAdded" : 1.25,
+			"quote" : "Banish fear! Banish doubt! Move forth unhesistant..",
+			"description" : "Increased movement speed by 1.25x"
+		},
+		"SoulSnatcher" : {
+			"type" : "SoulSnatcher",
+			"attributeAdded" : "ChanceOfHealing",
+			"valueAdded" : 10,
+			"quote" : "One's loss is the gain of another.",
+			"description" : "When killing an enemy 10% chance of healing <sprite index=36> half red heart"
+		},
+		"ShieldOfFaith" : {
+			"type" : "ShieldOfFaith",
+			"attributeAdded" : "ChanceOfNegatingDamage",
+			"valueAdded" : 10,
+			"quote" : "Take refuge in your devotion.",
+			"description" : "When attacked 10% chance of negating damage"
+		},
+		"RabbitsFoot" : {
+			"type" : "RabbitsFoot",
+			"attributeAdded" : "LuckyChest",
+			"valueAdded" : 10,
+			"quote" : "Feels lucky ...and fluffy.",
+			"description" : "Increases the chance to spawn better chests."
 		}
 	}
 }

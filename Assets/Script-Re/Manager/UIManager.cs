@@ -24,7 +24,7 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.CreateNewHeart = CreateNewHeart;
         }
-        EventDispatcher.Addlistener<int>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
         EventDispatcher.Addlistener<EnemGrHeart, int>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
 
         //UI Infomation
@@ -127,6 +127,10 @@ public class UIManager : SerializedMonoBehaviour
     {
         get { return grHeart; }
     }
+    public void UpdateHeartOfGroup(EnemGrHeart Group, AttributeType typeHeart)
+    {
+        GroupHeart[(int)Group].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(typeHeart));
+    }
     private void CreateNewHeart(EnemGrPriteHeart grSprite)
     {
         EnemGrHeart grHearts = GameUtilities.ConvertGrSpriteToGrHeart(grSprite);
@@ -137,7 +141,7 @@ public class UIManager : SerializedMonoBehaviour
         grHeart[(int)grHearts].Add(uiHeart);
     }
     [Button]
-    public void TakeDamage(int valueHit)
+    private void TakeDamage(float valueHit)
     {
         for (int i = grHeart.Count - 1; i > -1; i--)
         {
@@ -146,11 +150,11 @@ public class UIManager : SerializedMonoBehaviour
                 break;
         }
     }
-    public void RestoreHeart(EnemGrHeart gr, int valueRestore)
+    private void RestoreHeart(EnemGrHeart gr, int valueRestore)
     {
         grHeart[(int)gr].RestoreHeart(valueRestore);
     }
-    public bool CheckCurrentHP(EnemGrHeart gr)
+    private bool CheckCurrentHP(EnemGrHeart gr)
     {
         return grHeart[(int)gr].CheckCurrentHP();
     }

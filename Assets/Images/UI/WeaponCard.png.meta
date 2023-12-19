@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fervour's Harvest
+      name: FervoursHarvest
       rect:
         serializedVersion: 2
         x: 2822
@@ -453,7 +453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: True Sight
+      name: TrueSight
       rect:
         serializedVersion: 2
         x: 1881
@@ -495,7 +495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Master of the Art
+      name: MasterOfTheArt
       rect:
         serializedVersion: 2
         x: 2512
@@ -516,7 +516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Divine Strength
+      name: DivineStrength
       rect:
         serializedVersion: 2
         x: 2824
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Path
+      name: ThePath
       rect:
         serializedVersion: 2
         x: 2824
@@ -747,7 +747,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Diseased Heart
+      name: DiseasedHeart
       rect:
         serializedVersion: 2
         x: 0
@@ -852,7 +852,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rabbit's Foot
+      name: RabbitsFoot
       rect:
         serializedVersion: 2
         x: 1569
@@ -894,7 +894,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GiftFromTop
+      name: SoulSnatcher
       rect:
         serializedVersion: 2
         x: 2199
@@ -970,43 +970,43 @@ TextureImporter:
       Strength from Within: 70105716
       WeaponCard_10: 1770287105
       WeaponCard_11: -1880659541
-      Fervour's Harvest: 971077786
-      GiftFromTop: 1873607699
-      The Path: 270416628
-      Master of the Art: -592036285
+      DiseasedHeart: 1528432457
+      RabbitsFoot: -591918105
       TheHeartsIII: -307343442
       Ambrosia: 186363033
       Ichor Earned: 1573842911
       Blazing Trail: -704009884
       TheHeartsII: -771805169
-      Rabbit's Foot: -591918105
       WeaponCard_39: 1496460333
       WeaponCard_9: 141091393
       Nature's Boon: -1830990117
-      True Sight: -4184924
       TheLoversI: 911337017
+      TrueSight: -4184924
       TheHeartsI: -43287497
       WeaponCard_36: -591918105
       WeaponCard_5: 1137709399
       WeaponCard_15: 931961484
       WeaponCard_27: 1728918587
-      Diseased Heart: 1528432457
       Shield of Faith: -1736752613
       WeaponCard_38: 1873607699
       Fortune's Blessing: 351345622
       Death's Door: -1253390589
+      ThePath: 270416628
       GiftFromBelow: 661535285
+      FervoursHarvest: 971077786
       Ichor Lingered: 369243472
+      DivineStrength: -510777450
       Telescope: 1728918587
       WeaponCard_24: -1253390589
       The Bomb: 1137709399
       The Burning Dead: -1199407642
       Weeping Moon: -1667381797
       All Seeing Sun: -1087872093
-      Divine Strength: -510777450
       TheLoversII: 931961484
+      MasterOfTheArt: -592036285
       Hands of Rage: 141091393
       The Arachnid: 653958759
+      SoulSnatcher: 1873607699
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

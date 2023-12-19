@@ -22,7 +22,12 @@ public enum AttributeType
     CurrentCoin,
     MaxValueHunger,
     CurrentHunger,
-
+    CriticalHit,
+    AttackRate,
+    IncreasedMovementSpeed,
+    ChanceOfHealing,
+    ChanceOfNegatingDamage,
+    LuckyChest
 }
 
 public enum CardType
@@ -38,7 +43,7 @@ public enum CardType
     ThePath,
     FervoursHarvest,
     SoulSnatcher,
-    ShieldofFaith,
+    ShieldOfFaith,
     TheBomb,
     DivineCurse,
     FortuneBlessing,
@@ -46,6 +51,7 @@ public enum CardType
     RabbitsFoot,
     Ambrosia,
     GiftFromBelow,
+    TrueSight
 }
 public enum ListObjInPool
 {

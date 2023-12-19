@@ -8,7 +8,7 @@ public class UIHeart : MonoBehaviour , IPool
     public HeartType heartType;
     [SerializeField] Image imageHeart;
     [SerializeField] RectTransform rectHeart;
-    [SerializeField] int Current = 0;
+    [SerializeField] float Current = 0;
 
     public string objectName => GetType().Name;
     public void UpdateHeart()
@@ -40,7 +40,7 @@ public class UIHeart : MonoBehaviour , IPool
         Current = (int)heartType;
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
-    public int ReturnCurrent()
+    public float ReturnCurrent()
     {
         return Current;
     }

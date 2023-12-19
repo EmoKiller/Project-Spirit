@@ -23,13 +23,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             Destroy(gameObject);
 
         EventDispatcher.Addlistener<int>(Script.InfomationPlayerManager, Events.UpdateUICoin, UpdateUICoin);
-    }
-    private void Start()
-    {
-
-    }
-    public void Init()
-    {
         heroData = (HeroData)ConfigDataHelper.HeroData.Clone();
         heroData.attributes[SaveSlot][AttributeType.Level].OnValueChange = UpdateLevel;
         heroData.attributes[SaveSlot][AttributeType.MaxRedHeart].OnValueChange = UpdateMaxRedHeart;
@@ -47,6 +40,10 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         heroData.attributes[SaveSlot][AttributeType.CurrentCoin].OnValueChange = UpdateCurrentCoin;
         heroData.attributes[SaveSlot][AttributeType.MaxValueHunger].OnValueChange = UpdateMaxValueHunger;
         heroData.attributes[SaveSlot][AttributeType.CurrentHunger].OnValueChange = UpdateCurrentHunger;
+    }
+    public void Init()
+    {
+        
         //SaveGame();
     }
     public float GetValueAtribute(AttributeType type)
@@ -75,7 +72,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     private void UpdateLevel(float value)
     {
         IncreaseValueOf(AttributeType.Level, value);
-        //MaxEXPOfLevel = Mathf.RoundToInt(MaxExpPerLevelCurve.Evaluate(Level));
+        int MaxEXPOfLevelvalue = Mathf.RoundToInt(MaxExpPerLevelCurve.Evaluate(GetValueAtribute(AttributeType.Level)));
     }
     private void UpdateCurrentExp(float value)
     {
@@ -89,23 +86,22 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     }
     private void UpdateMaxEXPOfLevel(float value)
     {
-        IncreaseValueOf(AttributeType.MaxExpOfLevel, value);
+        UpdateValueOf(AttributeType.MaxExpOfLevel, value);
         UIManager.Instance.SetMaxExpOfLevel();
     }
     private void UpdateMaxRedHeart(float value)
     {
         IncreaseValueOf(AttributeType.MaxRedHeart, value);
-        UIManager.Instance.GroupHeart[(int)EnemGrHeart.Red].SetStartMaxCurrentHP((int)GetValueAtribute(AttributeType.MaxRedHeart));
+        UIManager.Instance.UpdateHeartOfGroup(EnemGrHeart.Red, AttributeType.MaxRedHeart);
     }
     private void UpdateCurrentRedHeart(float value)
     {
         IncreaseValueOf(AttributeType.CurrentRedHeart, value);
-        //MaxEXPOfLevel = Mathf.RoundToInt(MaxExpPerLevelCurve.Evaluate(Level));
     }
     private void UpdateMaxRedAddHeart(float value)
     {
         IncreaseValueOf(AttributeType.MaxRedAddHeart, value);
-        UIManager.Instance.GroupHeart[(int)EnemGrHeart.Add].SetStartMaxCurrentHP((int)GetValueAtribute(AttributeType.MaxRedAddHeart));
+        UIManager.Instance.UpdateHeartOfGroup(EnemGrHeart.Add, AttributeType.MaxRedAddHeart);
     }
     private void UpdateCurrentRedAddHeart(float value)
     {
@@ -115,7 +111,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     private void UpdateMaxBlueHeart(float value)
     {
         IncreaseValueOf(AttributeType.MaxBlueHeart, value);
-        UIManager.Instance.GroupHeart[(int)EnemGrHeart.Blue].SetStartMaxCurrentHP((int)GetValueAtribute(AttributeType.MaxBlueHeart));
+        UIManager.Instance.UpdateHeartOfGroup(EnemGrHeart.Blue, AttributeType.MaxBlueHeart);
     }
     private void UpdateCurrentBlueHeart(float value)
     {
@@ -125,7 +121,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     private void UpdateMaxBlackHeart(float value)
     {
         IncreaseValueOf(AttributeType.MaxBlackHeart, value);
-        UIManager.Instance.GroupHeart[(int)EnemGrHeart.Black].SetStartMaxCurrentHP((int)GetValueAtribute(AttributeType.MaxBlackHeart));
+        UIManager.Instance.UpdateHeartOfGroup(EnemGrHeart.Black, AttributeType.MaxBlackHeart);
     }
     private void UpdateCurrentBlackHeart(float value)
     {
