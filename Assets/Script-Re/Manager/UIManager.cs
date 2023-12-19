@@ -28,11 +28,11 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<EnemGrHeart, int>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
 
         //UI Infomation
-        //EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueAngry, UpdateValueAngry);
+        EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueAngry, UpdateValueAngry);
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconCurses, UpdateIconCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.UpdateUICoin, UpdateUICoin);
-        //EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueHunger, UpdateValueHunger);
+        EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueHunger, UpdateValueHunger);
         //UIButtonAction
         UIButtonAction.OnButtonDown = ButtonDown;
         UIButtonAction.OnButtonUp = ButtonUp;
@@ -48,7 +48,7 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
         //UIExp
-        //EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueExp, UpdateValueExp);
+        EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueExp, UpdateValueExp);
     }
     private void Start()
     {
@@ -57,12 +57,9 @@ public class UIManager : SerializedMonoBehaviour
     public void Init()
     {
         //UiControllerHearts
-        grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP(InfomationPlayerManager.Instance.MaxHP);
+        grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxHP));
         EventDispatcher.Register<EnemGrHeart, bool>(Script.UIManager, Events.CheckCurrentHP, CheckCurrentHP);
         //UIExp
-        InfomationPlayerManager.Instance.Level = 1;
-
-
     }
     /// <summary>
     /// UI Infomation

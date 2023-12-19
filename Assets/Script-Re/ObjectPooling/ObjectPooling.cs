@@ -1,6 +1,8 @@
-﻿using Sirenix.OdinInspector;
+﻿using DG.Tweening;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +16,6 @@ public class ObjectPooling : SerializedMonoBehaviour
     public List<ObjDropExp> ObjDropExp = new List<ObjDropExp>();
     public List<ObjDropCoin> ObjDropCoins = new List<ObjDropCoin>();
     public List<ObjDropAngry> ObjDropAngry = new List<ObjDropAngry>();
-    public List<IPool> pools = new List<IPool>();
 
     private void Awake()
     {
@@ -26,17 +27,11 @@ public class ObjectPooling : SerializedMonoBehaviour
     private void Start()
     {
         PoolInstantiateDictionaryObj(EffectDestroyObj, AssetManager.Instance.ListEffect, transform);
-        PoolInstantiateObj(ObjDropHeart, AssetManager.Instance.DropItems[ListDropItems.Heart], transform);
-        PoolInstantiateObj(HeartObj, AssetManager.Instance.HeartObj, transform, 15);
+        PoolInstantiateObj(ObjDropHeart, AssetManager.Instance.DropItems[ListDropItems.Heart], transform,1);
+        PoolInstantiateObj(HeartObj, AssetManager.Instance.HeartObj, transform, 10);
         PoolInstantiateObj(ObjDropExp, AssetManager.Instance.ObjDropExp, transform, 5);
         PoolInstantiateObj(ObjDropCoins, AssetManager.Instance.ObjDropCoins, transform, 10);
         PoolInstantiateObj(ObjDropAngry, AssetManager.Instance.ObjDropAngry, transform, 10);
-    }
-    public void PoolInstantiateObj<T>(List<T> pool,GameObject gameObject,Transform tranform)
-    {
-        GameObject obj = Instantiate(gameObject, tranform);
-        T scr = obj.GetComponent<T>();
-        pool.Add(scr);
     }
     public void PoolInstantiateObj<T>(List<T> pool, GameObject gameObject, Transform tranform,int Quantity)
     {
@@ -74,9 +69,17 @@ public class ObjectPooling : SerializedMonoBehaviour
         return obj;
     }
 
-    //public T PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
-    //{
+    public T PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
+    {
 
-    //    return 
-    //}
+        T obj = pool.Find(e => e.objectName.Equals(objectToPush) && e.isActiveAndEnabled == false);
+        if (obj == null)
+        {
+            T obj2 = pool.Find(e => e.objectName.Equals(objectToPush));
+            T obj3 = Instantiate(obj2, transform);
+            pool.Add(obj3);
+            return obj3;
+        }
+        return obj;
+    }
 }

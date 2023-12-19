@@ -15,58 +15,28 @@ public class ConfigDataHelper
             return gameConfig;
         }
     }
-    /// <summary>
-    /// save game for RoomTest
-    /// </summary>
-    private static BaseStartGame baseStartGame = null;
-    public static BaseStartGame BaseStartGame
+    private static HeroData heroData = null;
+    public static HeroData HeroData
     {
         get
         {
-            if (!ES3.KeyExists(GameConstants.BaseStartGame))
+            if (!ES3.KeyExists("HeroDatas"))
             {
-                baseStartGame = GetDefautData();
-                ES3.Save(GameConstants.BaseStartGame, GetDefautData());
+                heroData = GetHeroData();
+                ES3.Save("HeroDatas", GetHeroData());
             }
             else
             {
-                baseStartGame = ES3.Load<BaseStartGame>(GameConstants.BaseStartGame);
+                heroData = ES3.Load<HeroData>("HeroDatas");
             }
-            return baseStartGame;
+            return heroData;
         }
-        set => ES3.Save(GameConstants.BaseStartGame, value);
+        set => ES3.Save("HeroDatas", value);
     }
-    private static BaseStartGame GetDefautData()
+    private static HeroData GetHeroData()
     {
-        BaseStartGame data = new BaseStartGame();
-        return data;
-    }
-    //public static Round ReturnRound(int level, int round)
-    //{
-    //    return GameConfig.GameLevelConfig[level][round];
-    //}
-    //private static UserData GetHeroClassData()
-    //{
-    //    UserData user = new UserData();
-    //    user.data.Add("Hero1", GetHeroData());
-    //    return user;
-    //}
-    //private static HeroData GetHeroData()
-    //{
-    //    HeroData hero1 = new HeroData();
-    //    //hero1.heroClass = GameConfig.heroConfig.heroClass;
-    //    //Debug.Log(hero1.heroClass.Values);
-    //    //hero1.attributes = GameConfig.heroConfig.heroClass.
-    //    return hero1;
-    //}
-    //public void Save(Dictionary<string,string> data)
-    //{
-    //    //PlayerPrefs.se
-    //}
+        HeroData data = new HeroData();
 
-    public static HeroData HeroData
-    {
-        get => ES3.Load<HeroData>("HeroData");
-        set => ES3.Save("HeroData", value);
+        return data;
     }
 }

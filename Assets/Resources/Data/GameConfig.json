@@ -57,46 +57,46 @@
 			}
 		}
 	},
-	"HeroData" : {
+	"HeroBaseData" : {
 		"Level" : {
-			"Type" : "Level",
-			"Value" : 0
+			"type" : "Level",
+			"value" : 0
 		},
 		"MaxHP" : {
-			"Type" : "MaxHP",
-			"Value" : 2
+			"type" : "MaxHP",
+			"value" : 2
 		},
 		"CurrentHP" : {
-			"Type" : "CurrentHP",
-			"Value" : 2
+			"type" : "CurrentHP",
+			"value" : 2
 		},
 		"MaxExpOfLevel" : {
-			"Type" : "MaxExpOfLevel",
-			"Value" : 4
+			"type" : "MaxExpOfLevel",
+			"value" : 4
 		},
 		"CurrentExp" : {
-			"Type" : "CurrentExp",
-			"Value" : 0
+			"type" : "CurrentExp",
+			"value" : 0
 		},
 		"MaxValueAngry" : {
-			"Type" : "MaxValueAngry",
-			"Value" : 100
+			"type" : "MaxValueAngry",
+			"value" : 100
 		},
 		"CurrentAngry" : {
-			"Type" : "CurrentAngry",
-			"Value" : 0
+			"type" : "CurrentAngry",
+			"value" : 0
 		},
 		"CurrentCoin" : {
-			"Type" : "CurrentCoin",
-			"Value" : 0
+			"type" : "CurrentCoin",
+			"value" : 0
 		},
 		"MaxValueHunger" : {
-			"Type" : "MaxValueHunger",
-			"Value" : 100
+			"type" : "MaxValueHunger",
+			"value" : 100
 		},
 		"CurrentHunger" : {
-			"Type" : "CurrentHunger",
-			"Value" : 0
+			"type" : "CurrentHunger",
+			"value" : 0
 		}
 	},
 	"GameLevelConfig" : {

@@ -26,7 +26,7 @@ public class Player : CharacterBrain , IOrderable
     {
         base.Start();
         health = 999;
-        SetWeapon();
+        //SetWeapon();
     }
     public void Init()
     {

@@ -51,6 +51,7 @@ MonoBehaviour:
   EaseType: 0
   Ontrigger: 0
   spriteRenderer: {fileID: 0}
+  NumEXP: 3
 --- !u!65 &4760643428487060234
 BoxCollider:
   m_ObjectHideFlags: 0

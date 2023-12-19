@@ -2,90 +2,87 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
-public class InfomationPlayerManager : MonoBehaviour
+public class InfomationPlayerManager : SerializedMonoBehaviour
 {
-    public Dictionary<AttributeType, BaseAttribute> attributes = new Dictionary<AttributeType, BaseAttribute>();
-
-
     public enum Script
     {
         InfomationPlayerManager
     }
     public static InfomationPlayerManager Instance = null;
-    [SerializeField] BaseStartGame DataNewGame = null;
-    [SerializeField] private AnimationCurve MaxExpPerLevelCurve;
-    public int MaxHP
+    public SaveGameSlot SaveSlot;
+    [SerializeField] private HeroData heroData = null;
+    public HeroData HeroData
     {
-        get { return DataNewGame.MaxHP; }
-        set { DataNewGame.MaxHP = value; }
+        get
+        {
+            if (heroData == null)
+                heroData = (HeroData)ConfigDataHelper.HeroData.Clone();
+            return heroData;
+        }
     }
+    [SerializeField] private AnimationCurve MaxExpPerLevelCurve;
+
     public int CurrentHP
     {
-        get { return DataNewGame.CurrentHP; }
-        set { DataNewGame.CurrentHP = value; }
+        get { return (int)HeroData.attributes[SaveSlot][AttributeType.CurrentHP].value; }
     }
-    public int Level
+    private int Level
     {
-        get { return DataNewGame.Level; }
+        get { return (int)HeroData.attributes[SaveSlot][AttributeType.Level].value; }
         set
         {
-            DataNewGame.Level = value;
+            HeroData.attributes[SaveSlot][AttributeType.Level].value = value;
             MaxEXPOfLevel = Mathf.RoundToInt(MaxExpPerLevelCurve.Evaluate(Level));
         }
     }
     public int MaxEXPOfLevel
     {
-        get { return DataNewGame.MaxEXPOfLevel; }
+        get { return (int)HeroData.attributes[SaveSlot][AttributeType.MaxExpOfLevel].value; }
         set
         {
-            DataNewGame.MaxEXPOfLevel = value;
+            HeroData.attributes[SaveSlot][AttributeType.MaxExpOfLevel].value = value;
             UIManager.Instance.SetMaxExpOfLevel();
         }
     }
     public int CurrnetExp
     {
-        get { return DataNewGame.CurrentExp; }
+        get { return (int)HeroData.attributes[SaveSlot][AttributeType.CurrentExp].value; }
         set
         {
-            DataNewGame.CurrentExp = Math.Clamp(value, 0, MaxEXPOfLevel);
-            if (CurrnetExp >= MaxEXPOfLevel)
-            {
-                Level++;
-                DataNewGame.CurrentExp = 0;
-            }
-            UIManager.Instance.UpdateValueExp();
+            HeroData.attributes[SaveSlot][AttributeType.CurrentExp].value = Math.Clamp(value, 0, MaxEXPOfLevel);
         }
     }
     public float MaxValueAngry
     {
-        get { return DataNewGame.MaxValueAngry; }
+        get { return HeroData.attributes[SaveSlot][AttributeType.MaxValueAngry].value; }
         set { }
     }
     public float CurretAngry
     {
-        get { return DataNewGame.CurrentAngry; }
+        get { return HeroData.attributes[SaveSlot][AttributeType.CurrentAngry].value; }
         set
         {
-            DataNewGame.CurrentAngry = Math.Clamp(value, 0, MaxValueAngry);
+            HeroData.attributes[SaveSlot][AttributeType.CurrentAngry].value = Math.Clamp(value, 0, MaxValueAngry);
             UIManager.Instance.UpdateValueAngry();
         }
     }
     public int CurrentCoin
     {
-        get { return DataNewGame.CurrentCoin; }
+        get { return (int)HeroData.attributes[SaveSlot][AttributeType.CurrentCoin].value; }
     }
     public float MaxValueHunger
     {
-        get { return DataNewGame.MaxValueHunger; }
+        get { return HeroData.attributes[SaveSlot][AttributeType.MaxValueHunger].value; }
         set { }
     }
     public float CurrentHunger
     {
-        get { return DataNewGame.CurrentHugner; }
+        get { return HeroData.attributes[SaveSlot][AttributeType.CurrentHunger].value; }
         set
         {
-            DataNewGame.CurrentHugner = Math.Clamp(value, 0, MaxValueHunger);
+            HeroData.attributes[SaveSlot][AttributeType.CurrentHunger].value = Math.Clamp(value, 0, MaxValueHunger);
             UIManager.Instance.UpdateValueHunger();
         }
     }
@@ -95,29 +92,62 @@ public class InfomationPlayerManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-        DataNewGame = ConfigDataHelper.BaseStartGame;
+
         EventDispatcher.Addlistener<int>(Script.InfomationPlayerManager, Events.UpdateUICoin, UpdateUICoin);
-        
+        heroData = (HeroData)ConfigDataHelper.HeroData.Clone();
+
     }
     private void Start()
     {
-        HeroData newdata = ConfigDataHelper.HeroData;
-        foreach (var item in newdata.attributes[0])
-        {
-            Debug.Log(item.Key + " " + item.Value);
-        }
+        Level = 1;
+
+
     }
     public void Init()
     {
-        
+        heroData.attributes[SaveSlot][AttributeType.CurrentExp].OnValueChange = UpdateCurrentExp;
+    }
+    public float GetValueAtribute(AttributeType type)
+    {
+        return HeroData.attributes[SaveSlot][type].value;
+    }
+    public void IncreaseAttribute(AttributeType type, float value)
+    {
+        HeroData.attributes[SaveSlot][type].OnValueChange?.Invoke(value);
+    }
+    private void IncreaseValueOf(AttributeType type, float value)
+    {
+        HeroData.attributes[SaveSlot][type].value += value;
+    }
+    private void UpdateValueOf(AttributeType type, float value)
+    {
+        HeroData.attributes[SaveSlot][type].value = value;
+    }
+    //private void CurrentHP()
+    //{
+
+    //}
+
+    private void UpdateCurrentExp(float value)
+    {
+        IncreaseValueOf(AttributeType.CurrentExp, value);
+        if (CurrnetExp >= MaxEXPOfLevel)
+        {
+            Level++;
+            UpdateValueOf(AttributeType.CurrentExp, 0);
+        }
+        UIManager.Instance.UpdateValueExp();
+    }
+    public void StartGame()
+    {
+        Level = 1;
     }
     private void UpdateUICoin(int Value)
     {
-        DataNewGame.CurrentCoin += Value;
-        Debug.Log(GetType().Name + " " + DataNewGame.CurrentCoin);
+        heroData.attributes[SaveSlot][AttributeType.CurrentCoin].value += Value;
     }
     private void SaveGame()
     {
-        ConfigDataHelper.BaseStartGame = DataNewGame;
+        ConfigDataHelper.HeroData = HeroData;
     }
 }
