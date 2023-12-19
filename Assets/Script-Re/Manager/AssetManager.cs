@@ -11,6 +11,7 @@ public class AssetManager : SerializedMonoBehaviour
     public Dictionary<TypeEnemy, GameObject> ListEnemy = new Dictionary<TypeEnemy, GameObject>();
     public Dictionary<ListDropItems, GameObject> DropItems = new Dictionary<ListDropItems, GameObject>();
     public SpriteAtlas SpriteAtlasItems;
+    public SpriteAtlas spriteAtlasTarotCard;
     public GameObject HeartObj;
     public GameObject ObjDropExp;
     public GameObject ObjDropCoins;

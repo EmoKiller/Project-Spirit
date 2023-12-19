@@ -62,12 +62,12 @@
 			"type" : "Level",
 			"value" : 0
 		},
-		"MaxHP" : {
-			"type" : "MaxHP",
+		"MaxRedHeart" : {
+			"type" : "MaxRedHeart",
 			"value" : 2
 		},
-		"CurrentHP" : {
-			"type" : "CurrentHP",
+		"CurrentRedHeart" : {
+			"type" : "CurrentRedHeart",
 			"value" : 2
 		},
 		"MaxExpOfLevel" : {
@@ -97,6 +97,30 @@
 		"CurrentHunger" : {
 			"type" : "CurrentHunger",
 			"value" : 0
+		},
+		"MaxRedAddHeart" : {
+			"type" : "MaxRedAddHeart",
+			"value" : 0
+		},
+		"CurrentRedAddHeart" : {
+			"type" : "CurrentRedAddHeart",
+			"value" : 0
+		},
+		"MaxBlueHeart" : {
+			"type" : "MaxBlueHeart",
+			"value" : 0
+		},
+		"CurrentBlueHeart" : {
+			"type" : "CurrentBlueHeart",
+			"value" : 0
+		},
+		"MaxBlackHeart" : {
+			"type" : "MaxBlackHeart",
+			"value" : 0
+		},
+		"CurrentBlackHeart" : {
+			"type" : "CurrentBlackHeart",
+			"value" : 0
 		}
 	},
 	"GameLevelConfig" : {
@@ -117,10 +141,40 @@
 		}
 	},
 	"CardsConfig" : {
-		"HPDrain" : {
-			"type" : "HPDrain",
-			"attributeAdded" : "HP",
-			"valueAdded" : 10
+		"TheHeartsI" : {
+			"type" : "TheHeartsI",
+			"attributeAdded" : "MaxRedHeart",
+			"valueAdded" : 1,
+			"quote" : "A minor remedy.",
+			"description" : "Gain an extra Half Red Heart"
+		},
+		"TheHeartsII" : {
+			"type" : "TheHeartsII",
+			"attributeAdded" : "MaxRedHeart",
+			"valueAdded" : 2,
+			"quote" : "A remedy.",
+			"description" : "Gain an extra Red Heart"
+		},
+		"TheHeartsIII" : {
+			"type" : "TheHeartsIII",
+			"attributeAdded" : "MaxRedHeart",
+			"valueAdded" : 4,
+			"quote" : "A major remedy.",
+			"description" : "Gain an extra two Red Heart"
+		},
+		"TheLoversI" : {
+			"type" : "TheLoversI",
+			"attributeAdded" : "MaxBlueHeart",
+			"valueAdded" : 2,
+			"quote" : "A heart offered, a vow made.",
+			"description" : "Gain an extra Blue Heart"
+		},
+		"TheLoversII" : {
+			"type" : "TheLoversII",
+			"attributeAdded" : "MaxBlueHeart",
+			"valueAdded" : 4,
+			"quote" : "Fidelity demands sacrifice.",
+			"description" : "Gain 2 extra Blue Heart"
 		}
 	}
 }

@@ -20,11 +20,11 @@ public class GameManager : SerializedMonoBehaviour
     }
     private void Start()
     {
-        
+        InfomationPlayerManager.Instance.Init();
         player.Init();
         cameraFollow.Init();
         uiManager.Init();
-        InfomationPlayerManager.Instance.Init();
+        
     }
 }
 

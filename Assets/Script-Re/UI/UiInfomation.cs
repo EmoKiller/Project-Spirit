@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class UiInfomation : MonoBehaviour
 {
     [SerializeField] private Image _ImgFillAngry;
+    public float MaxValueAngry = 100f;
+    public float MaxValueHunger = 100f;
     public float ImgFillAngry
     {
         get { return _ImgFillAngry.fillAmount; }
-        set { _ImgFillAngry.fillAmount = value / 100; }
+        set { _ImgFillAngry.fillAmount = value / MaxValueAngry; }
     }
     [SerializeField] private Image _IconWeapon;
     public Sprite IconWeapon
@@ -32,7 +34,8 @@ public class UiInfomation : MonoBehaviour
     public float ImgFillHunger
     {
         get { return _ImgFillHunger.fillAmount; }
-        set { _ImgFillHunger.fillAmount = value / 100; }
+        set { _ImgFillHunger.fillAmount = value / MaxValueHunger; }
     }
+    
 
 }

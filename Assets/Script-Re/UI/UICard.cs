@@ -14,11 +14,11 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
         get { return _nameCard.text; }
         set { _nameCard.text = value; }
     }
-    [SerializeField] private TMP_Text _queteCard;
-    public string QueteCard
+    [SerializeField] private TMP_Text _quoteCard;
+    public string QuoteCard
     {
-        get { return _queteCard.text; }
-        set { _queteCard.text = value; }
+        get { return _quoteCard.text; }
+        set { _quoteCard.text = value; }
     }
     [SerializeField] private TMP_Text _descriptionCard;
     public string DescriptionCard
@@ -33,8 +33,8 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
         set { _CradFont.sprite = value; }
     }
     [SerializeField] private GameObject _gameObjectCard;
-    public Action OnUpdateInfomationCard = null;
     public Action OnActiveCard = null;
+
     private Sequence sequenceLoop;
     private void Awake()
     {
@@ -56,9 +56,7 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log(gameObject.name);
         _gameObjectCard.transform.DOScale(new Vector3(1.2f,1.2f,1),0.5f);
-        
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -80,10 +78,5 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
 
     }
 
-    public void DoCardValue(CardType type)
-    {
-        //AttributeType attribute = ConfigDataHelper.GameConfig.cardsConfig[type].AttributeAdded;
-        //float value = ConfigDataHelper.GameConfig.cardsConfig[type].valueAdded;
-        //attributes[attribute].value += value;
-    }
+    
 }

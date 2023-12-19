@@ -20,15 +20,18 @@ public class ConfigDataHelper
     {
         get
         {
-            if (!ES3.KeyExists("HeroDatas"))
-            {
-                heroData = GetHeroData();
-                ES3.Save("HeroDatas", GetHeroData());
-            }
-            else
-            {
-                heroData = ES3.Load<HeroData>("HeroDatas");
-            }
+            heroData = GetHeroData();
+            ES3.Save("HeroDatas", GetHeroData());
+
+            //if (!ES3.KeyExists("HeroDatas"))
+            //{
+            //    heroData = GetHeroData();
+            //    ES3.Save("HeroDatas", GetHeroData());
+            //}
+            //else
+            //{
+            //    heroData = ES3.Load<HeroData>("HeroDatas");
+            //}
             return heroData;
         }
         set => ES3.Save("HeroDatas", value);
@@ -36,7 +39,9 @@ public class ConfigDataHelper
     private static HeroData GetHeroData()
     {
         HeroData data = new HeroData();
-
+        data.attributes.Add(SaveGameSlot.Slot1, GameConfig.HeroBaseData);
+        data.attributes.Add(SaveGameSlot.Slot2, GameConfig.HeroBaseData);
+        data.attributes.Add(SaveGameSlot.Slot3, GameConfig.HeroBaseData);
         return data;
     }
 }

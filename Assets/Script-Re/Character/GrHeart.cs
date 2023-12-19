@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.ProBuilder.Shapes;
 
 [System.Serializable]
 public class GrHeart
@@ -33,6 +31,7 @@ public class GrHeart
     public EnemGrPriteHeart typeFull;
     public EnemGrPriteHeart typeHalf;
     public Action<EnemGrPriteHeart> CreateNewHeart = null;
+    public Action SpecialHeart = null;
     public GrHeart()
     {
 

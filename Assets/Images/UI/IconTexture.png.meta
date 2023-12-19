@@ -2384,6 +2384,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BlackHalf
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 359
+        width: 98
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f250df29632df4eaad24b0f5145696
+      internalID: -715464519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2468,6 +2489,7 @@ TextureImporter:
       IconTexture_68: 1212075918
       IconTexture_26: -1085718704
       IconTexture_47: -116728976
+      BlackHalf: -715464519
       Heart_Red_full_HL: -376282679
       IconTexture_13: -1918359111
       IconTexture_19: 1944492893

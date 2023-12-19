@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,6 @@ public class UIManager : SerializedMonoBehaviour
             item.CreateNewHeart = CreateNewHeart;
         }
         EventDispatcher.Addlistener<int>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
-        EventDispatcher.Addlistener<EnemGrPriteHeart>(Script.UIManager, Events.AddHeartAndRestoreFull, AddHeartAndRestoreFull);
         EventDispatcher.Addlistener<EnemGrHeart, int>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
 
         //UI Infomation
@@ -37,13 +37,12 @@ public class UIManager : SerializedMonoBehaviour
         UIButtonAction.OnButtonDown = ButtonDown;
         UIButtonAction.OnButtonUp = ButtonUp;
         UIButtonAction.OnTriggerUpdateFillValue = OnTriggerUpdateFillValue;
-        UIButtonAction.gameObject.SetActive(false);
+        
         UIButtonAction.TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
         UIButtonAction.TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
         EventDispatcher.Addlistener<TypeShowButton, string>(Script.UIManager, Events.UIButtonOpen, UIButtonOpen);
         EventDispatcher.Addlistener(Script.UIManager, Events.UIButtonReset, ResetButton);
         //PopUp
-        InfoWeapon.gameObject.SetActive(false);
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
@@ -52,19 +51,23 @@ public class UIManager : SerializedMonoBehaviour
     }
     private void Start()
     {
-        
+        UIButtonAction.gameObject.SetActive(false);
+        InfoWeapon.gameObject.SetActive(false);
+        ShowUpTarot.gameObject.SetActive(false);
     }
     public void Init()
     {
         //UiControllerHearts
-        grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxHP));
+        //grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxRedHeart));
         EventDispatcher.Register<EnemGrHeart, bool>(Script.UIManager, Events.CheckCurrentHP, CheckCurrentHP);
+        
         //UIExp
     }
     /// <summary>
     /// UI Infomation
     /// </summary>
     [Header("UI Infomation")]
+    
     private UiInfomation _UIInfomation = null;
     public UiInfomation UIInfomation
     {
@@ -79,7 +82,7 @@ public class UIManager : SerializedMonoBehaviour
     }
     public void UpdateValueAngry()
     {
-        UIInfomation.ImgFillAngry = InfomationPlayerManager.Instance.CurretAngry;
+        UIInfomation.ImgFillAngry = InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.CurrentAngry);
     }
     private void UpdateIconWeapon(Sprite spr)
     {
@@ -91,12 +94,11 @@ public class UIManager : SerializedMonoBehaviour
     }
     private void UpdateUICoin()
     {
-        UIInfomation.Coin = InfomationPlayerManager.Instance.CurrentCoin.ToString();
-        Debug.Log(GetType().Name + " " + UIInfomation.Coin);
+        UIInfomation.Coin = InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.CurrentCoin).ToString();
     }
     public void UpdateValueHunger()
     {
-        UIInfomation.ImgFillHunger = InfomationPlayerManager.Instance.CurrentHunger;
+        UIInfomation.ImgFillHunger = InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.CurrentHunger);
     }
     /// <summary>
     /// UIExp
@@ -109,11 +111,11 @@ public class UIManager : SerializedMonoBehaviour
     }
     public void SetMaxExpOfLevel()
     {
-        UIExp.MaxValue = InfomationPlayerManager.Instance.MaxEXPOfLevel;
+        UIExp.MaxValue = InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxExpOfLevel);
     }
     public void UpdateValueExp()
     {
-        UIExp.Value = InfomationPlayerManager.Instance.CurrnetExp;
+        UIExp.Value = InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.CurrentExp);
     }
 
     /// <summary>
@@ -121,10 +123,9 @@ public class UIManager : SerializedMonoBehaviour
     /// </summary>
     [Header("Gr Heart")]
     [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
-    private void AddHeartAndRestoreFull(EnemGrPriteHeart grSprite)
+    public List<GrHeart> GroupHeart
     {
-        EnemGrHeart grHearts = GameUtilities.ConvertGrSpriteToGrHeart(grSprite);
-        grHeart[(int)grHearts].AddHeartAndRestoreFull(GameUtilities.ConvertInt(grSprite));
+        get { return grHeart; }
     }
     private void CreateNewHeart(EnemGrPriteHeart grSprite)
     {
@@ -134,13 +135,6 @@ public class UIManager : SerializedMonoBehaviour
         uiHeart.SetNewTypeHeart(grSprite);
         uiHeart.transform.SetParent(grHeart[(int)grHearts].rectGr,true);
         grHeart[(int)grHearts].Add(uiHeart);
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            AddHeartAndRestoreFull(EnemGrPriteHeart.Red);
-        }
     }
     [Button]
     public void TakeDamage(int valueHit)
@@ -298,28 +292,59 @@ public class UIManager : SerializedMonoBehaviour
     }
     [Header("ShowUp TarotCard")]
     ///ShowUpTarotCard
-    [SerializeField] List<UICard> listCard = new List<UICard>();
-    [Button]
-    private void SetNumberOfEnabledCard(int number)
+    [SerializeField] private ShowUpTarot _ShowUpTarotCard = null;
+    public ShowUpTarot ShowUpTarot
     {
-        for (int i = 0; i < listCard.Count; i++)
+        get => this.TryGetMonoComponentInChildren(ref _ShowUpTarotCard);
+    }
+    [Button]
+    public void ShowTarotCard(int Quanty)
+    {
+        TurnOffCard();
+        ShowUpTarot.gameObject.SetActive(true);
+        for (int i = 0; i < ShowUpTarot.ListCard.Count; i++)
         {
-            TurnOffCard();
-            if (i < number)
+            if (i < Quanty)
             {
-                listCard[i].gameObject.SetActive(true);
-                //lay thong tin tu RewardSystem
+                int random = UnityEngine.Random.Range(0, 5);
+                ShowUpTarot.ListCard[i].gameObject.SetActive(true);
+                CardConfig Card = ConfigDataHelper.GameConfig.cardsConfig[(CardType)random];
+                ShowUpTarot.ListCard[i].NameCard = Card.Type.ToString();
+                ShowUpTarot.ListCard[i].QuoteCard = Card.quote;
+                ShowUpTarot.ListCard[i].DescriptionCard = Card.description;
+                ShowUpTarot.ListCard[i].CradFontSprite = AssetManager.Instance.spriteAtlasTarotCard.GetSprite(Card.Type.ToString());
+                ShowUpTarot.ListCard[i].OnActiveCard = () =>
+                {
+                    InfomationPlayerManager.Instance.IncreaseAttributeOnChange(Card.AttributeAdded, Card.valueAdded);
+                };
             }
             else
-                listCard[i].gameObject.SetActive(false);
-
+            {
+                ShowUpTarot.ListCard[i].gameObject.SetActive(false);
+            }
         }
     }
+    //[Button]
+    //private void SetNumberOfEnabledCard(int number)
+    //{
+    //    for (int i = 0; i < listCard.Count; i++)
+    //    {
+    //        TurnOffCard();
+    //        if (i < number)
+    //        {
+    //            listCard[i].gameObject.SetActive(true);
+    //            //lay thong tin tu RewardSystem
+    //        }
+    //        else
+    //            listCard[i].gameObject.SetActive(false);
+
+    //    }
+    //}
     private void TurnOffCard()
     {
-        for (int i = 0; i < listCard.Count; i++)
+        for (int i = 0; i < ShowUpTarot.ListCard.Count; i++)
         {
-            listCard[i].gameObject.SetActive(false);
+            ShowUpTarot.ListCard[i].gameObject.SetActive(false);
         }
     }
 }

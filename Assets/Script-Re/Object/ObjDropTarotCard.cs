@@ -1,18 +1,22 @@
-using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class ObjDropAngry : ObjectDropOnWorld , IPool
+public class ObjDropTarotCard : ObjectDropOnWorld , IPool
 {
-    public int NumAngry = 1;
+    public int NumberCard;
     public string objectName => GetType().Name;
 
     protected override void PublishEvent()
     {
-        InfomationPlayerManager.Instance.IncreaseAttributeOnChange(AttributeType.CurrentAngry, NumAngry);
+        //EventDispatcher.Publish(Events.UpdateUICoin, (int)TypeCoins);
     }
+
     public void Show()
     {
         gameObject.SetActive(true);
     }
+
     public void Hide()
     {
         gameObject.SetActive(false);

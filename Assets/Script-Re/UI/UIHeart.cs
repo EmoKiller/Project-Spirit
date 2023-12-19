@@ -30,7 +30,7 @@ public class UIHeart : MonoBehaviour , IPool
     public void SetNewTypeHeart(EnemGrPriteHeart TypeHearts)
     {
         this.TypeHearts = TypeHearts;
-        if (TypeHearts == EnemGrPriteHeart.RedHalf || TypeHearts == EnemGrPriteHeart.AddHalf || TypeHearts == EnemGrPriteHeart.BlueHalf || TypeHearts == EnemGrPriteHeart.Black)
+        if (TypeHearts == EnemGrPriteHeart.RedHalf || TypeHearts == EnemGrPriteHeart.AddHalf || TypeHearts == EnemGrPriteHeart.BlueHalf)
         {
             heartType = HeartType.Half;
         }

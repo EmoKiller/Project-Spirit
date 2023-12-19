@@ -7,21 +7,45 @@ public enum SaveGameSlot
 public enum AttributeType
 {
     Level,
-    MaxHP,
-    CurrentHP,
+    MaxRedHeart,
+    CurrentRedHeart,
+    MaxRedAddHeart,
+    CurrentRedAddHeart,
+    MaxBlueHeart,
+    CurrentBlueHeart,
+    MaxBlackHeart,
+    CurrentBlackHeart,
     MaxExpOfLevel,
     CurrentExp,
     MaxValueAngry,
     CurrentAngry,
     CurrentCoin,
     MaxValueHunger,
-    CurrentHunger
+    CurrentHunger,
+
 }
 
 public enum CardType
 {
-    HPDrain,
-    Power
+    TheHeartsI,
+    TheHeartsII,
+    TheHeartsIII,
+    TheLoversI,
+    TheLoversII,
+    DiseasedHeart,
+    TheArachnid,
+    DivineStrength,
+    ThePath,
+    FervoursHarvest,
+    SoulSnatcher,
+    ShieldofFaith,
+    TheBomb,
+    DivineCurse,
+    FortuneBlessing,
+    DeathsDoor,
+    RabbitsFoot,
+    Ambrosia,
+    GiftFromBelow,
 }
 public enum ListObjInPool
 {

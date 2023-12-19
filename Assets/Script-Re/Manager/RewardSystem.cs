@@ -5,6 +5,14 @@ using Sirenix.OdinInspector;
 
 public class RewardSystem : SerializedMonoBehaviour
 {
+    [Button]
+    private void DropTarotCard()
+    {
+        //ObjDropHeart obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropHeart, "ObjDropHeart");
+        //obj.UpdateSprite(TypeHeart.ToString());
+        //obj.TypeHeart = TypeHeart;
+        //obj.Show();
+    }
 
     [Button]
     private void DropHeart(EnemGrPriteHeart TypeHeart)
