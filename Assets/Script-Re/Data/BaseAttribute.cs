@@ -5,7 +5,6 @@ public class BaseAttribute
     public string type;
     public float value;
     public AttributeType Type => (AttributeType)Enum.Parse(typeof(AttributeType), type);
-    public Action<float> OnValueChange = null;
     public BaseAttribute()
     {
 

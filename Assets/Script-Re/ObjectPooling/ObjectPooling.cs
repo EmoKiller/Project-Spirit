@@ -2,8 +2,12 @@
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Net.Sockets;
 using UnityEditor;
+using UnityEditor.EditorTools;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 public class ObjectPooling : SerializedMonoBehaviour
@@ -16,6 +20,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     public List<ObjDropExp> ObjDropExp = new List<ObjDropExp>();
     public List<ObjDropCoin> ObjDropCoins = new List<ObjDropCoin>();
     public List<ObjDropAngry> ObjDropAngry = new List<ObjDropAngry>();
+    public Dictionary<ChestType, ChestBonus> ObjectChestBonus = new Dictionary<ChestType, ChestBonus>();
 
     private void Awake()
     {
@@ -26,13 +31,14 @@ public class ObjectPooling : SerializedMonoBehaviour
     }
     private void Start()
     {
-        PoolInstantiateDictionaryObj(EffectDestroyObj, AssetManager.Instance.ListEffect, transform);
-        PoolInstantiateObj(ObjDropHeart, AssetManager.Instance.DropItems[ListDropItems.Heart], transform,1);
-        PoolInstantiateObj(HeartObj, AssetManager.Instance.HeartObj, transform, 10);
-        PoolInstantiateObj(ObjDropExp, AssetManager.Instance.ObjDropExp, transform, 5);
-        PoolInstantiateObj(ObjDropCoins, AssetManager.Instance.ObjDropCoins, transform, 10);
-        PoolInstantiateObj(ObjDropAngry, AssetManager.Instance.ObjDropAngry, transform, 10);
+        
     }
+
+    public ObjDropHeart PopDropHeart(string objName, bool show = false)
+    {
+        return PopObjectFormPool<ObjDropHeart>(ObjDropHeart, objName, GameConstants.Object, show);
+    }
+
     public void PoolInstantiateObj<T>(List<T> pool, GameObject gameObject, Transform tranform,int Quantity)
     {
         for (int i = 0; i < Quantity; i++)
@@ -51,35 +57,29 @@ public class ObjectPooling : SerializedMonoBehaviour
             pool.Add(scr);
         }
     }
-    public T PopObjectFormPool<T>(List<T> pool,string Name) where T : MonoBehaviour, IPool, new()
+    public T PopObjectFormPool<T>(List<T> pool,string Name, string path, bool show) where T : MonoBehaviour, IPool, new()
     {
-        return PopFromPool(Name, pool);
+        return PopFromPool(pool, Name, path, show);
     }
-    private T PopFromPool<T>(string objectName, List<T> pool) where T : MonoBehaviour, IPool, new()
+    private T PopFromPool<T>(List<T> pool, string objectName, string path, bool show) where T : MonoBehaviour, IPool, new()
     {
         // Logic để lấy 1 vật thể từ pool ra
-        T obj = pool.Find(e => e.objectName.Equals(objectName) && e.isActiveAndEnabled == false);
+
+        T obj = pool.Find(e => e.objectName.Equals(objectName));
         if (obj == null)
         {
-            T obj2 = pool.Find(e => e.objectName.Equals(objectName));
-            T obj3 = Instantiate(obj2, transform);
-            pool.Add(obj3);
-            return obj3;
+            GameObject objAsset = Addressables.LoadAssetAsync<GameObject>(string.Format(path, objectName)).WaitForCompletion();
+            GameObject newObj = Instantiate(objAsset, transform);
+            T value = newObj.GetComponent<T>();
+            if (show)
+                value.Show();
+            return value;
         }
         return obj;
     }
-
-    public T PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
+    public void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
     {
-
-        T obj = pool.Find(e => e.objectName.Equals(objectToPush) && e.isActiveAndEnabled == false);
-        if (obj == null)
-        {
-            T obj2 = pool.Find(e => e.objectName.Equals(objectToPush));
-            T obj3 = Instantiate(obj2, transform);
-            pool.Add(obj3);
-            return obj3;
-        }
-        return obj;
+        objectToPush.transform.SetParent(transform,true);
+        pool.Add(objectToPush);
     }
 }

@@ -27,11 +27,11 @@ public class ImpactableObjects : MonoBehaviour
         {
             if (TypeMaterial != ListTypeEffects.None)
             {
-                EffectDestroyObject effect = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.EffectDestroyObj, TypeMaterial.ToString());
-                if (trans.position.x > transform.position.x)
-                    effect.transform.DORotate(new Vector3(0, -180, 0), 0);
-                effect.transform.position = transform.position + new Vector3(0, 2, 0);
-                effect.Show();
+                //EffectDestroyObject effect = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.EffectDestroyObj, TypeMaterial.ToString());
+                //if (trans.position.x > transform.position.x)
+                //    effect.transform.DORotate(new Vector3(0, -180, 0), 0);
+                //effect.transform.position = transform.position + new Vector3(0, 2, 0);
+                //effect.Show();
             }
             Destroy(gameObject);
         }   

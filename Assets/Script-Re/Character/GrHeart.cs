@@ -25,7 +25,7 @@ public class GrHeart
             currentHP = Math.Clamp(value, 0, maxHP);
         }
     }
-    [SerializeField] private float CurrentHeart = 0;
+    [SerializeField] private int CurrentHeart = 0;
     public RectTransform rectGr = null;
     public List<UIHeart> heart = null;
     public EnemGrPriteHeart typeFull;
@@ -78,9 +78,11 @@ public class GrHeart
     {
         rectGr.sizeDelta = new Vector2(0, 0);
         foreach (UIHeart item in heart)
+        {
             item.Hide();
+        }
         heart.Clear();
-        CurrentHeart = maxHP / 2;
+        CurrentHeart = (int)(maxHP / 2);
         if (maxHP % 2 == 0)
             UpdateHeart();
         else

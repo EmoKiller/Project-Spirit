@@ -109,10 +109,42 @@ public class Player : CharacterBrain , IOrderable
             Rotation();
         });
     }
+    private void AttackRate()
+    {
+        characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.AttackRate));
+    }
+    private void IncreasedMovementSpeed()
+    {
+        agent.moveSpeed *= InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.IncreasedMovementSpeed);
+    }
+    private void MovementSpeed()
+    {
+        agent.moveSpeed = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.MovementSpeed);
+    }
+    
     protected override void OnAttackHit(CharacterBrain target)
     {
-        target.TakeDamage(GetDamageCombo());
+        float Crit = 1;
+        CritHit(ref Crit);
+        target.TakeDamage(GetDamageCombo() * Crit);
         base.OnAttackHit(target);
+    }
+    protected float CritHit(ref float value)
+    {
+        int i = UnityEngine.Random.Range(0, 100);
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CriticalHit))
+        {
+            value *= 2;
+        }
+        return value;
+    }
+    protected void ChanceOfHealing()
+    {
+        int i = UnityEngine.Random.Range(0, 100);
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfHealing))
+        {
+            //InfomationPlayerManager.Instance.AttributeOnChange(AttributeType.CurrentRedHeart,1);
+        }
     }
     protected override void StartAniAtk()
     {
@@ -135,7 +167,8 @@ public class Player : CharacterBrain , IOrderable
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        EventDispatcher.Publish(UIManager.Script.UIManager, Events.PlayerTakeDamage, damage);
+        //InfomationPlayerManager.Instance.AttributeOnChange(AttributeType.CurrentRedHeart, -damage);
+        EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDamage, damage);
     }
     public override void Dead()
     {

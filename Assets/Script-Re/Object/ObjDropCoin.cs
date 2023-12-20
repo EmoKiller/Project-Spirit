@@ -11,7 +11,7 @@ public class ObjDropCoin : ObjectDropOnWorld, IPool
 
     protected override void PublishEvent()
     {
-        EventDispatcher.Publish(Events.UpdateUICoin, (int)TypeCoins);
+        //InfomationPlayerManager.Instance.AttributeOnChange(AttributeType.CurrentCoin,(float)TypeCoins);
     }
 
     public void Show()

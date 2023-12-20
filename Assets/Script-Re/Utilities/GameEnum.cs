@@ -6,7 +6,6 @@ public enum SaveGameSlot
 }
 public enum AttributeType
 {
-    Level,
     MaxRedHeart,
     CurrentRedHeart,
     MaxRedAddHeart,
@@ -27,7 +26,8 @@ public enum AttributeType
     IncreasedMovementSpeed,
     ChanceOfHealing,
     ChanceOfNegatingDamage,
-    LuckyChest
+    LuckyChest,
+    MovementSpeed
 }
 
 public enum CardType
@@ -53,13 +53,6 @@ public enum CardType
     GiftFromBelow,
     TrueSight
 }
-public enum ListObjInPool
-{
-    EffectDestroyObject,
-    ObjDropHeart,
-    UIHeart,
-
-}
 public enum ListDropItems
 {
     Exp,
@@ -78,15 +71,6 @@ public enum ListTypeEffects
     EffectDestroyGrass,
     EffectDestroySkeleton,
     EffectDestroyStone
-}
-public enum TypeInfomation
-{
-    Angry,
-    IconWeapon,
-    IconCurses,
-    CardTarot,
-    Coin,
-    Hunger
 }
 public enum TypeUIButton
 {
@@ -163,6 +147,7 @@ public enum Events
     PlayerChangeCurses,
     SetWeapon,
     SetOnEvent,
+    UpdateAttackRate,
     //UIManager
     UpdateValueAngry,
     UpdateInfoWeapon,
@@ -200,22 +185,18 @@ public enum TypeSave
     AmountFollowers,
     AmountOfCoin
 }
-
 public enum TypeItemsCanDrop
 {
     ObjDropCoin,
     ObjDropTarotCard,
     ObjDropAngry,
     ObjDropHeart,
-    BerryBushSeed,
-    Necklace
 }
 public enum ChestType
 {
     Common,
     UnCommon,
-    Race,
-    EndOfFloor
+    Race
 }
 public enum TypeMenuTab
 {

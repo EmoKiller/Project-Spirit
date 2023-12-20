@@ -78,11 +78,11 @@ public class Enemy : CharacterBrain , IPool
     {
         if (!Alive)
         {
-            EffectDestroyObject effect = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.EffectDestroyObj, ListTypeEffects.EffectDestroySkeleton.ToString());
-            if (direction.transform.position.x > transform.position.x)
-                effect.transform.DORotate(new Vector3(0, -180, 0),0);
-            effect.transform.position = transform.position + new Vector3(0,2,0);
-            effect.Show();
+            //EffectDestroyObject effect = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.EffectDestroyObj, ListTypeEffects.EffectDestroySkeleton.ToString());
+            //if (direction.transform.position.x > transform.position.x)
+            //    effect.transform.DORotate(new Vector3(0, -180, 0),0);
+            //effect.transform.position = transform.position + new Vector3(0,2,0);
+            //effect.Show();
             Hide();
             return;
         }

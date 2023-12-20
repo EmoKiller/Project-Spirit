@@ -113,6 +113,54 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/Hearts/Black/Half.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 4c2f37c04d2974a4d9efbca770264c6e
+    m_Address: Assets/Prefabs/Object/ObjectDropHeart.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9ae5754830aab3e4697fcc235fe184e9
+    m_Address: Assets/Prefabs/Object/ObjectDropFood.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7d8c6b1233609f4dbc98d6668a2a6be
+    m_Address: Assets/Prefabs/Object/ObjectDropExp.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe963c3e8283f484da5c4a3d08ce1fc6
+    m_Address: Assets/Prefabs/Object/ObjectDropCoin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 21969b111cdb85e46bcb96ecfa9558c4
+    m_Address: Assets/Prefabs/Object/ObjectDropCardTarot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f0d192a0b364508448379268965e57af
+    m_Address: Assets/Prefabs/Object/ObjectDropAngry.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 08cb6486fa9a422408e792e5d6422cb3
+    m_Address: Assets/Prefabs/Effect/EffectDestroyGrass.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 65dc231cd0273124da727c7013c93e7b
+    m_Address: Assets/Prefabs/Effect/EffectDestroySkeleton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f7755bb2969e98d47898fabaf40bb74b
+    m_Address: Assets/Prefabs/Effect/EffectDestroyStone.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4d7b90a9a1aaadb4c9e72a2ae477024d
+    m_Address: Assets/Prefabs/Effect/EffectExp.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7d1ab43471278e543ae4446a867859ea
+    m_Address: Assets/Prefabs/Effect/HitObject.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fd0929db8ed105948970208a186c7b60
+    m_Address: Assets/Prefabs/Effect/SpawnEnemyEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:
