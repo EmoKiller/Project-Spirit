@@ -8,7 +8,6 @@ public class UIFillAttribute : UI_Attribute
     {
         base.Awake();
     }
-
     protected override void OnValueChanged(AttributeType type, float newValue)
     {
         if (type != this.type)

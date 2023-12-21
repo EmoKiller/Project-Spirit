@@ -94,7 +94,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b37d7addbcee43b49948f4f020900002
-    m_Address: Assets/Prefabs/UI/HeartObj.prefab
+    m_Address: Assets/Prefabs/UI/UIHeart.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 4ea0469ec4e26c54ca87263531369a47
@@ -159,6 +159,10 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: fd0929db8ed105948970208a186c7b60
     m_Address: Assets/Prefabs/Effect/SpawnEnemyEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f7b52e144ebd2b44685e26de7bb5c173
+    m_Address: Assets/Prefabs/SpriteAlas/SpriteAtlasTarotCard.spriteatlasv2
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

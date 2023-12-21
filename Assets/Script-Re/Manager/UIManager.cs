@@ -3,7 +3,10 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class UIManager : SerializedMonoBehaviour
@@ -19,14 +22,7 @@ public class UIManager : SerializedMonoBehaviour
             Instance = this;
         else
             Destroy(Instance);
-        //UiControllerHearts
-        foreach (var item in grHeart)
-        {
-            item.CreateNewHeart = CreateNewHeart;
-        }
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
-        EventDispatcher.Addlistener<EnemGrHeart, float>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
-
+        
         //UI Infomation
 
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
@@ -58,9 +54,18 @@ public class UIManager : SerializedMonoBehaviour
     public void Init()
     {
         //UiControllerHearts
+        foreach (var item in grHeart)
+        {
+            item.CreateNewHeart = CreateNewHeart;
+            ObseverConstants.OnAttributeValueChanged.AddListener(item.SetStartMaxCurrentHP);
+            item.SetStartMaxCurrentHP(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
+        }
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
+        EventDispatcher.Addlistener<EnemGrHeart, float>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
+
+        //UiControllerHearts
         //grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxRedHeart));
-        EventDispatcher.Register<EnemGrHeart, bool>(Script.UIManager, Events.CheckCurrentHP, CheckCurrentHP);
-        
+
         //UIExp
     }
     /// <summary>
@@ -116,18 +121,14 @@ public class UIManager : SerializedMonoBehaviour
     {
         get { return grHeart; }
     }
-    public void UpdateHeartOfGroup(EnemGrHeart Group, AttributeType typeHeart)
-    {
-        GroupHeart[(int)Group].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAttribute(typeHeart));
-    }
     private void CreateNewHeart(EnemGrPriteHeart grSprite)
     {
         EnemGrHeart grHearts = GameUtilities.ConvertGrSpriteToGrHeart(grSprite);
-        //ObjectPooling.Instance.PopDropHeart();
-        //uiHeart.Show();
-        //uiHeart.SetNewTypeHeart(grSprite);
-        //uiHeart.transform.SetParent(grHeart[(int)grHearts].rectGr, true);
-        //grHeart[(int)grHearts].Add(uiHeart);
+        UIHeart obj = ObjectPooling.Instance.PopUIpHeart("UIHeart");
+        obj.Show();
+        obj.SetNewTypeHeart(grSprite);
+        obj.transform.SetParent(grHeart[(int)grHearts].rectGr, true);
+        grHeart[(int)grHearts].Add(obj);
     }
     [Button]
     public void TakeDamage(float valueHit)
@@ -144,10 +145,6 @@ public class UIManager : SerializedMonoBehaviour
     public void RestoreHeart(EnemGrHeart gr, float valueRestore)
     {
         grHeart[(int)gr].RestoreHeart(valueRestore);
-    }
-    private bool CheckCurrentHP(EnemGrHeart gr)
-    {
-        return grHeart[(int)gr].CheckCurrentHP();
     }
 
     /// <summary>
@@ -307,10 +304,10 @@ public class UIManager : SerializedMonoBehaviour
                 ShowUpTarot.ListCard[i].NameCard = Card.Type.ToString();
                 ShowUpTarot.ListCard[i].QuoteCard = Card.quote;
                 ShowUpTarot.ListCard[i].DescriptionCard = Card.description;
-                //ShowUpTarot.ListCard[i].CradFontSprite = AssetManager.Instance.spriteAtlasTarotCard.GetSprite(Card.Type.ToString());
+                ShowUpTarot.ListCard[i].CradFontSprite = ObjectPooling.Instance.spriteAtlasTarotCard.GetSprite(Card.Type.ToString());
                 ShowUpTarot.ListCard[i].OnActiveCard = () =>
                 {
-                    //InfomationPlayerManager.Instance.AttributeOnChange(Card.AttributeAdded, Card.valueAdded);
+                    InfomationPlayerManager.Instance.IncreaseValueOf(Card.AttributeAdded, Card.valueAdded);
                 };
             }
             else
