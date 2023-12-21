@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class GrHeart
 {
-    public EnemGrHeart Type;
+    public AttributeType TypeHeart;
+    public AttributeType TypeCurrentHeart;
     [SerializeField] private float maxHP = 0;
     public float MaxHP
     {
@@ -34,7 +35,7 @@ public class GrHeart
     public Action SpecialHeart = null;
     public GrHeart()
     {
-
+        
     }
     public void Add(UIHeart uiHeart)
     {
@@ -98,19 +99,12 @@ public class GrHeart
             CreateNewHeart.Invoke(typeFull);
         }
     }
-    public void SetStartMaxCurrentHP(float maxHP)
+    public void SetStartMaxCurrentHP(AttributeType type, float maxHP)
     {
+        if (type != this.TypeHeart)
+            return;
         MaxHP = maxHP;
         CurrentHP = MaxHP;
-    }
-    public void AddHeartAndRestoreFull(float value)
-    {
-        MaxHP += value;
-        CurrentHP = MaxHP;
-    }
-    public bool CheckCurrentHP()
-    {
-        return CurrentHP == MaxHP;
     }
 
 
