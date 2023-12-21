@@ -11,9 +11,8 @@ public class ObjDropCoin : ObjectDropOnWorld, IPool
 
     protected override void PublishEvent()
     {
-        //InfomationPlayerManager.Instance.AttributeOnChange(AttributeType.CurrentCoin,(float)TypeCoins);
+        InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentCoin,(float)TypeCoins);
     }
-
     public void Show()
     {
         gameObject.SetActive(true);

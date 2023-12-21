@@ -42,8 +42,6 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
-        //UIExp
-        EventDispatcher.Addlistener(Script.UIManager, Events.UpdateValueExp, UpdateValueExp);
     }
     private void Start()
     {
@@ -58,10 +56,12 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.CreateNewHeart = CreateNewHeart;
             ObseverConstants.OnAttributeValueChanged.AddListener(item.SetStartMaxCurrentHP);
+            ObseverConstants.OnAttributeValueChanged.AddListener(item.RestoreHeart);
             item.SetStartMaxCurrentHP(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
+            
         }
         EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
-        EventDispatcher.Addlistener<EnemGrHeart, float>(Script.UIManager, Events.RestoreHeart, RestoreHeart);
+
 
         //UiControllerHearts
         //grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxRedHeart));
@@ -95,24 +95,6 @@ public class UIManager : SerializedMonoBehaviour
         UIInfomation.IconCurses = spr;
     }
     /// <summary>
-    /// UIExp
-    /// </summary>
-    [Header("Exp")]
-    [SerializeField] private UIExp _UIExp = null;
-    public UIExp UIExp
-    {
-        get => this.TryGetMonoComponentInChildren(ref _UIExp);
-    }
-    public void SetMaxExpOfLevel()
-    {
-        UIExp.MaxValue = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.MaxExpOfLevel);
-    }
-    public void UpdateValueExp()
-    {
-        UIExp.Value = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentExp);
-    }
-
-    /// <summary>
     /// UiControllerHearts
     /// </summary>
     [Header("Gr Heart")]
@@ -124,8 +106,7 @@ public class UIManager : SerializedMonoBehaviour
     private void CreateNewHeart(EnemGrPriteHeart grSprite)
     {
         EnemGrHeart grHearts = GameUtilities.ConvertGrSpriteToGrHeart(grSprite);
-        UIHeart obj = ObjectPooling.Instance.PopUIpHeart("UIHeart");
-        obj.Show();
+        UIHeart obj = ObjectPooling.Instance.PopUIpHeart("UIHeart", true);
         obj.SetNewTypeHeart(grSprite);
         obj.transform.SetParent(grHeart[(int)grHearts].rectGr, true);
         grHeart[(int)grHearts].Add(obj);
@@ -135,17 +116,17 @@ public class UIManager : SerializedMonoBehaviour
     {
         for (int i = grHeart.Count - 1; i > -1; i--)
         {
-            grHeart[i].TalkeDamage(ref valueHit);
+            grHeart[i].TakeDamage(ref valueHit);
             if (valueHit == 0)
             {
                 break;
             }   
         }
     }
-    public void RestoreHeart(EnemGrHeart gr, float valueRestore)
-    {
-        grHeart[(int)gr].RestoreHeart(valueRestore);
-    }
+    //public void RestoreHeart(EnemGrHeart gr, float valueRestore)
+    //{
+    //    grHeart[(int)gr].RestoreHeart(valueRestore);
+    //}
 
     /// <summary>
     /// UIHider {

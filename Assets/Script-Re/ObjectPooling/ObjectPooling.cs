@@ -26,38 +26,31 @@ public class ObjectPooling : SerializedMonoBehaviour
         else
             Destroy(Instance);
     }
-    private void Start()
-    {
-        
-    }
 
     public ObjDropHeart PopDropHeart(string objName, bool show = false)
     {
         return PopObjectFormPool<ObjDropHeart>(ObjDropHeart, objName, GameConstants.Object, show);
     }
+    public ObjDropExp PopObjDropExp(string objName, bool show = false)
+    {
+        return PopObjectFormPool<ObjDropExp>(ObjDropExp, objName, GameConstants.Object, show);
+    }
+    public ObjDropCoin PopObjDropCoins(string objName, bool show = false)
+    {
+        return PopObjectFormPool<ObjDropCoin>(ObjDropCoins, objName, GameConstants.Object, show);
+    }
+    public ObjDropAngry PopObjDropAngry(string objName, bool show = false)
+    {
+        return PopObjectFormPool<ObjDropAngry>(ObjDropAngry, objName, GameConstants.Object, show);
+    }
     public UIHeart PopUIpHeart(string objName, bool show = false)
     {
         return PopObjectFormPool<UIHeart>(HeartObj, objName, GameConstants.UIObject, show);
     }
-
-    //public void PoolInstantiateObj<T>(List<T> pool, GameObject gameObject, Transform tranform,int Quantity)
-    //{
-    //    for (int i = 0; i < Quantity; i++)
-    //    {
-    //        GameObject obj = Instantiate(gameObject, tranform);
-    //        T scr = obj.GetComponent<T>();
-    //        pool.Add(scr);
-    //    }
-    //}
-    //public void PoolInstantiateDictionaryObj<T,T2>(List<T> pool, Dictionary<T2, GameObject> listGameObject, Transform tranform) where T2 : Enum
-    //{
-    //    foreach (var item in listGameObject)
-    //    {
-    //        GameObject obj = Instantiate(item.Value, tranform);
-    //        T scr = obj.GetComponent<T>();
-    //        pool.Add(scr);
-    //    }
-    //}
+    public void PushToPoolHeart(UIHeart uiheart)
+    {
+        PushToPool(uiheart, HeartObj);
+    }
     public T PopObjectFormPool<T>(List<T> pool,string Name, string path, bool show) where T : MonoBehaviour, IPool, new()
     {
         return PopFromPool(pool, Name, path, show);
@@ -76,6 +69,8 @@ public class ObjectPooling : SerializedMonoBehaviour
                 value.Show();
             return value;
         }
+        if (show)
+            obj.Show();
         return obj;
     }
     public void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()

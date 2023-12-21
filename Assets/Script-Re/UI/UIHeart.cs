@@ -57,13 +57,13 @@ public class UIHeart : MonoBehaviour , IPool
 
     public void Show()
     {
-        gameObject.SetActive(true);
         ObjectPooling.Instance.HeartObj.Remove(this);
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        ObjectPooling.Instance.PushToPool(this, ObjectPooling.Instance.HeartObj);
+        ObjectPooling.Instance.PushToPoolHeart(this);
         gameObject.SetActive(false);
     }
 }

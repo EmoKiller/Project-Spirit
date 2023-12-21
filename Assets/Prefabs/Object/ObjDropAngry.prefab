@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 7284408695445947237}
   - component: {fileID: 7284408695445947236}
   m_Layer: 11
-  m_Name: ObjectDropAngry
+  m_Name: ObjDropAngry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

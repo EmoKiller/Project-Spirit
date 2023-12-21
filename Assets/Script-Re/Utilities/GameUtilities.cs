@@ -102,4 +102,42 @@ public static class GameUtilities
                 throw new ArgumentOutOfRangeException();
         }
     }
+    public static AttributeType ConvertGrSpriteToAttributeCurrent(EnemGrPriteHeart grSprite)
+    {
+        switch (grSprite)
+        {
+            case EnemGrPriteHeart.Red:
+            case EnemGrPriteHeart.RedHalf:
+                return AttributeType.CurrentRedHeart;
+            case EnemGrPriteHeart.Add:
+            case EnemGrPriteHeart.AddHalf:
+                return AttributeType.CurrentRedAddHeart;
+            case EnemGrPriteHeart.Blue:
+            case EnemGrPriteHeart.BlueHalf:
+                return AttributeType.CurrentBlueHeart;
+            case EnemGrPriteHeart.Black:
+                return AttributeType.CurrentBlackHeart;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+    public static AttributeType ConvertGrSpriteToAttributeMax(EnemGrPriteHeart grSprite)
+    {
+        switch (grSprite)
+        {
+            case EnemGrPriteHeart.Red:
+            case EnemGrPriteHeart.RedHalf:
+                return AttributeType.MaxRedHeart;
+            case EnemGrPriteHeart.Add:
+            case EnemGrPriteHeart.AddHalf:
+                return AttributeType.MaxRedAddHeart;
+            case EnemGrPriteHeart.Blue:
+            case EnemGrPriteHeart.BlueHalf:
+                return AttributeType.MaxBlueHeart;
+            case EnemGrPriteHeart.Black:
+                return AttributeType.MaxBlackHeart;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
 }

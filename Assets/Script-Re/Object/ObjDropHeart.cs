@@ -8,7 +8,7 @@ public class ObjDropHeart : ObjectDropOnWorld , IPool
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if ((bool)EventDispatcher.Call(UIManager.Script.UIManager, Events.CheckCurrentHP, GameUtilities.ConvertGrSpriteToGrHeart(TypeHeart)))
+        if (InfomationPlayerManager.Instance.CompareCurrentNMaxAttributes(GameUtilities.ConvertGrSpriteToAttributeCurrent(TypeHeart), GameUtilities.ConvertGrSpriteToAttributeMax(TypeHeart)))
         {
             return;
         }
@@ -16,7 +16,7 @@ public class ObjDropHeart : ObjectDropOnWorld , IPool
     }
     protected override void PublishEvent()
     {
-        EventDispatcher.Publish(UIManager.Script.UIManager, Events.RestoreHeart, GameUtilities.ConvertGrSpriteToGrHeart(TypeHeart), GameUtilities.ConvertInt(TypeHeart));
+        InfomationPlayerManager.Instance.IncreaseValueOf(GameUtilities.ConvertGrSpriteToAttributeCurrent(TypeHeart), GameUtilities.ConvertInt(TypeHeart));
     }
     public void Show()
     {

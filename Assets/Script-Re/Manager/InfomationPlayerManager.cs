@@ -25,7 +25,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     }
     public void Init()
     {
-        
         //AttributeOnChange(AttributeType.Level,1);
         //AttributeOnChange(AttributeType.MaxRedHeart, 0);
         //SaveGame();
@@ -41,12 +40,23 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
     }
     [Button]
+    public void MinusValueOf(AttributeType type, float value)
+    {
+        heroData.attributes[SaveSlot][type].value -= value;
+        ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
+    }
+    [Button]
     public void UpdateValueOf(AttributeType type, float value)
     {
         heroData.attributes[SaveSlot][type].value = value;
         ObseverConstants.OnAttributeValueChanged?.Invoke(type, value);
     }
-    
+    public bool CompareCurrentNMaxAttributes(AttributeType Current, AttributeType Max)
+    {
+        return heroData.attributes[SaveSlot][Current].value == heroData.attributes[SaveSlot][Max].value;
+    }
+
+
     public void StartGame()
     {
         

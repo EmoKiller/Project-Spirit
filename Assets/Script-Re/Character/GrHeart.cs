@@ -32,6 +32,7 @@ public class GrHeart
     public EnemGrPriteHeart typeFull;
     public EnemGrPriteHeart typeHalf;
     public Action<EnemGrPriteHeart> CreateNewHeart = null;
+    public Action<AttributeType> OnRestoreHeart= null;
     public Action SpecialHeart = null;
     public GrHeart()
     {
@@ -42,7 +43,7 @@ public class GrHeart
         heart.Add(uiHeart);
         rectGr.sizeDelta = new Vector2(rectGr.sizeDelta.x + 45, 0);
     }
-    public float TalkeDamage(ref float valueHit)
+    public float TakeDamage(ref float valueHit)
     {
         for (int i = heart.Count - 1; i > -1; i--)
         {
@@ -59,8 +60,10 @@ public class GrHeart
         }
         return valueHit;
     }
-    public void RestoreHeart(float valueRestore)
+    public void RestoreHeart(AttributeType type,float valueRestore)
     {
+        if (type != this.TypeHeart)
+            return;
         for (int i = 0; i < heart.Count; i++)
         {
             while (heart[i].ReturnCurrent() < (int)heart[i].heartType)

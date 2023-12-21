@@ -7,7 +7,7 @@ public class ObjDropAngry : ObjectDropOnWorld , IPool
 
     protected override void PublishEvent()
     {
-        //InfomationPlayerManager.Instance.AttributeOnChange(AttributeType.CurrentAngry, NumAngry);
+        InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentAngry, NumAngry);
     }
     public void Show()
     {
