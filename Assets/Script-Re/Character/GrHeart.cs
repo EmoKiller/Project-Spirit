@@ -78,9 +78,13 @@ public class GrHeart
     public void UpdateHearts()
     {
         rectGr.sizeDelta = new Vector2(0, 0);
-        foreach (UIHeart item in heart)
+        //foreach (UIHeart item in heart)
+        //{
+        //    item.Hide();
+        //}
+        for (int i = 0; i< heart.Count; i++)
         {
-            item.Hide();
+            heart[i].Hide();
         }
         heart.Clear();
         CurrentHeart = (int)(maxHP / 2);
