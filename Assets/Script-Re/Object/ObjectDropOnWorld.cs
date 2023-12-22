@@ -24,7 +24,7 @@ public class ObjectDropOnWorld : MonoBehaviour
     }
     public void UpdateSprite(string spriteName)
     {
-        //spriteRenderer.sprite = AssetManager.Instance.SpriteAtlasItems.GetSprite(spriteName);
+        spriteRenderer.sprite = ObjectPooling.Instance.SpriteAtlasItems.GetSprite(spriteName);
     }
     protected virtual void EventOnTrigger()
     {

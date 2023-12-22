@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class CursesEquip : MonoBehaviour
 {
-    public CursesObject CursesObject = null;
+    private CursesObject _cursesObject = null;
+    public CursesObject CursesObject 
+    {
+        get { return _cursesObject; }
+    }
     public Action useSkill = null;
     public void Init(TypeCurses type)
     {
@@ -30,6 +34,10 @@ public class CursesEquip : MonoBehaviour
                 Debug.Log(TypeCurses.Tentacles);
                 return;
         }
+    }
+    public bool BoolCursesEquip()
+    {
+        return _cursesObject != null;
     }
     public void UseSkill()
     {

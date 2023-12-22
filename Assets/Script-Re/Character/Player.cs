@@ -41,6 +41,7 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<CursesEquip>(Script.Player, Events.PlayerChangeCurses, ChangeCurses);
         EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
         EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
+        slash.AddActionAttack(OnAttackHit);
     }
     public void SetWeapon()
     {
@@ -53,13 +54,13 @@ public class Player : CharacterBrain , IOrderable
     {
         if (OnAction|| OnEvent)
             return;
-        if (Input.GetMouseButton(1) && !onAniATK)
+        if (Input.GetMouseButton(1) && !onAniATK && currentCurses.BoolCursesEquip())
         {
             characterAnimator.SetTrigger("UseSkill");
             UseSkill();
             return;
         }
-        if (Input.GetMouseButtonUp(1) && !onAniATK)
+        if (Input.GetMouseButtonUp(1) && !onAniATK && currentCurses.BoolCursesEquip())
         {
             isUseSkill = false;
             characterAnimator.SetTrigger("Idie");
@@ -126,6 +127,7 @@ public class Player : CharacterBrain , IOrderable
     {
         float Crit = 1;
         CritHit(ref Crit);
+        Debug.Log("PlayerHitEne");
         target.TakeDamage(GetDamageCombo() * Crit);
         base.OnAttackHit(target);
     }
@@ -167,8 +169,8 @@ public class Player : CharacterBrain , IOrderable
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        //InfomationPlayerManager.Instance.AttributeOnChange(AttributeType.CurrentRedHeart, -damage);
-        EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDamage, damage);
+        
+        EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDmg, damage);
     }
     public override void Dead()
     {
@@ -217,6 +219,8 @@ public class Player : CharacterBrain , IOrderable
         }
         Weapon obj = Instantiate(weapon, hand.transform);
         characterAttack.Initialized(obj);
+        slash.SetSizeBox(characterAttack.SlashBoxSize);
+
     }
     private void ChangeCurses(CursesEquip curses)
     {

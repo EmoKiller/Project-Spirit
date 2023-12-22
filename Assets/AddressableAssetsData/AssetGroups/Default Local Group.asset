@@ -130,7 +130,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 21969b111cdb85e46bcb96ecfa9558c4
-    m_Address: Assets/Prefabs/Object/ObjectDropCardTarot.prefab
+    m_Address: Assets/Prefabs/Object/ObjDropTarotCard.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 4c2f37c04d2974a4d9efbca770264c6e

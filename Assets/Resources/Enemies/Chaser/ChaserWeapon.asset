@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectTile: {fileID: 5494008423771109411, guid: d01d2db614a1c4e468f2ee2ac908792c, type: 3}
   IconWeapon: {fileID: 0}
-  LevelWeapon: 
+  LevelWeapon: 0
   NameWeapon: 
   QuoteWeapon: 
   DescriptionWeapon: 
@@ -22,4 +22,5 @@ MonoBehaviour:
   AttackRange: 2
   SlashBoxSize: {x: 4, y: 0, z: 4}
   ListDamage:
-  - 0
+  - 1
+  ListPowerForce: []

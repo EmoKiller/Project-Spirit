@@ -4,10 +4,9 @@ public class ObjDropAngry : ObjectDropOnWorld , IPool
 {
     public int NumAngry = 1;
     public string objectName => GetType().Name;
-
     protected override void PublishEvent()
     {
-        InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentAngry, NumAngry);
+        InfomationPlayerManager.Instance.CurrentAngry += NumAngry;
     }
     public void Show()
     {

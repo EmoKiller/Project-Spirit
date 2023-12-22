@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.ProBuilder;
 
 public class Enemy : CharacterBrain , IPool
 {
@@ -23,7 +22,7 @@ public class Enemy : CharacterBrain , IPool
     {
         base.Start();
         characterAttack.Initialized();
-        //wayPoints = GameManager.Instance.enemyWayPoints.Find(w => w.targetEnemy.Equals(Name))?.points.Select(p => p.position).ToList();
+        slash.SetSizeBox(characterAttack.SlashBoxSize);
     }
     public virtual void Init()
     {
@@ -60,7 +59,7 @@ public class Enemy : CharacterBrain , IPool
     }
     protected override void OnAttackHit(CharacterBrain target)
     {
-        target.TakeDamage(characterAttack.CurrentHit[0]);
+        target.TakeDamage(characterAttack.DamageEnemy);
         base.OnAttackHit(target);
     }
     public void Push()
@@ -76,6 +75,8 @@ public class Enemy : CharacterBrain , IPool
     }
     public override void TakeDamage(float damage)
     {
+        Debug.Log("Enemy Hit");
+
         if (!Alive)
         {
             //EffectDestroyObject effect = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.EffectDestroyObj, ListTypeEffects.EffectDestroySkeleton.ToString());

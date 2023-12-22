@@ -1,12 +1,9 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class UIManager : SerializedMonoBehaviour
@@ -56,12 +53,16 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.CreateNewHeart = CreateNewHeart;
             ObseverConstants.OnAttributeValueChanged.AddListener(item.SetStartMaxCurrentHP);
-            ObseverConstants.OnAttributeValueChanged.AddListener(item.RestoreHeart);
+            ObseverConstants.OnIncreaseAttributeValue.AddListener(item.RestoreHeart);
             item.SetStartMaxCurrentHP(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
             
         }
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDamage, TakeDamage);
-
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
+        List<UI_Attribute> _UI_Attribute = GetComponentsInChildren<UI_Attribute>().ToList();
+        foreach (var item in _UI_Attribute)
+        {
+            item.Init();
+        }
 
         //UiControllerHearts
         //grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxRedHeart));
@@ -106,7 +107,7 @@ public class UIManager : SerializedMonoBehaviour
     private void CreateNewHeart(EnemGrPriteHeart grSprite)
     {
         EnemGrHeart grHearts = GameUtilities.ConvertGrSpriteToGrHeart(grSprite);
-        UIHeart obj = ObjectPooling.Instance.PopUIpHeart("UIHeart", true);
+        UIHeart obj = ObjectPooling.Instance.PopUIpHeart(true);
         obj.SetNewTypeHeart(grSprite);
         obj.transform.SetParent(grHeart[(int)grHearts].rectGr, true);
         grHeart[(int)grHearts].Add(obj);
@@ -285,10 +286,11 @@ public class UIManager : SerializedMonoBehaviour
                 ShowUpTarot.ListCard[i].NameCard = Card.Type.ToString();
                 ShowUpTarot.ListCard[i].QuoteCard = Card.quote;
                 ShowUpTarot.ListCard[i].DescriptionCard = Card.description;
-                ShowUpTarot.ListCard[i].CradFontSprite = ObjectPooling.Instance.spriteAtlasTarotCard.GetSprite(Card.Type.ToString());
+                ShowUpTarot.ListCard[i].CradFontSprite = ObjectPooling.Instance.SpriteAtlasTarotCard.GetSprite(Card.Type.ToString());
                 ShowUpTarot.ListCard[i].OnActiveCard = () =>
                 {
                     InfomationPlayerManager.Instance.IncreaseValueOf(Card.AttributeAdded, Card.valueAdded);
+                    TurnOffCard();
                 };
             }
             else

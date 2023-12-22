@@ -13,6 +13,7 @@ public class CharacterAttack : MonoBehaviour
     public float PowerForce => hpObject.PowerForce;
     public float Weight => hpObject.weight;
     public List<float> CurrentHit => currentWeapon.CurrentHit;
+    public float DamageEnemy => currentWeapon.weaponObject.ListDamage[0];
     public Vector3 SlashBoxSize => currentWeapon.weaponObject.SlashBoxSize;
     public List<float> Damage = null;
 

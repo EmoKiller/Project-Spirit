@@ -15,7 +15,7 @@ public class RewardSystem : SerializedMonoBehaviour
     [Button]
     private void DropHeart(EnemGrPriteHeart TypeHeart)
     {
-        ObjDropHeart obj = ObjectPooling.Instance.PopDropHeart("ObjDropHeart");
+        ObjDropHeart obj = ObjectPooling.Instance.PopDropHeart();
         obj.UpdateSprite(TypeHeart.ToString());
         obj.TypeHeart = TypeHeart;
         obj.Show();
@@ -23,20 +23,20 @@ public class RewardSystem : SerializedMonoBehaviour
     [Button]
     private void DropExp()
     {
-        ObjDropExp obj = ObjectPooling.Instance.PopObjDropExp("ObjDropExp");
+        ObjDropExp obj = ObjectPooling.Instance.PopObjDropExp();
         obj.Show();
         //Instantiate(obj);
     }
     [Button]
     private void DropCoin()
     {
-        ObjDropCoin obj = ObjectPooling.Instance.PopObjDropCoins("ObjDropCoin");
+        ObjDropCoin obj = ObjectPooling.Instance.PopObjDropCoins();
         obj.Show();
     }
     [Button]
     private void DropAngry()
     {
-        ObjDropAngry obj = ObjectPooling.Instance.PopObjDropAngry("ObjDropAngry");
+        ObjDropAngry obj = ObjectPooling.Instance.PopObjDropAngry();
         obj.Show();
     }
     [Button]
@@ -47,9 +47,7 @@ public class RewardSystem : SerializedMonoBehaviour
     [Button]
     private void DropTarotCard()
     {
-        //ObjDropHeart obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjDropHeart, "ObjDropHeart");
-        //obj.UpdateSprite(TypeHeart.ToString());
-        //obj.TypeHeart = TypeHeart;
-        //obj.Show();
+        ObjDropTarotCard obj = ObjectPooling.Instance.PopObjDropTarotCard();
+        obj.Show();
     }
 }

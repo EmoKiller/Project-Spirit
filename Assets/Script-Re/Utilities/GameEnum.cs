@@ -6,6 +6,7 @@ public enum SaveGameSlot
 }
 public enum AttributeType
 {
+    Level,
     MaxRedHeart,
     CurrentRedHeart,
     MaxRedAddHeart,
@@ -127,10 +128,6 @@ public enum Events
     CameraFocus,
     CameraChangeTarget,
     CameraTargetPlayer,
-    /// <summary>
-    /// /
-    /// </summary>
-    DebugAction,
     //IntroGame
     GoToMap1,
     GoToMap2,
@@ -148,6 +145,7 @@ public enum Events
     SetWeapon,
     SetOnEvent,
     UpdateAttackRate,
+    PlayerTakeDmg,
     //UIManager
     UpdateValueAngry,
     UpdateInfoWeapon,
@@ -157,7 +155,6 @@ public enum Events
     UpdateUICoin,
     UpdateValueHunger,
     UpdateValueExp,
-    PlayerTakeDamage,
     AddHeartAndRestoreFull,
     RestoreHeart,
     CheckCurrentHP,

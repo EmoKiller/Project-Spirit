@@ -7,6 +7,7 @@ using UnityEngine;
 
 public static class GameUtilities
 {
+    
     public static void DelayCall(this MonoBehaviour mono, float time, Action callBack)
     {
         mono.StartCoroutine(IEDelayCall(time,callBack));

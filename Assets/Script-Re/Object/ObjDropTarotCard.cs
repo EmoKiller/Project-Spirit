@@ -1,15 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjDropTarotCard : ObjectDropOnWorld , IPool
+public class ObjDropTarotCard : ObjectDropOnWorld, IPool
 {
-    public int NumberCard;
+    private int _numberCard = 1;
+    public int NumberCard
+    {
+        get { return _numberCard; }
+        set { _numberCard = Mathf.Clamp(value, 1, 3); }
+    }
     public string objectName => GetType().Name;
 
     protected override void PublishEvent()
     {
-        //EventDispatcher.Publish(Events.UpdateUICoin, (int)TypeCoins);
+        UIManager.Instance.ShowTarotCard(_numberCard);
+        Hide();
     }
 
     public void Show()
@@ -19,6 +23,7 @@ public class ObjDropTarotCard : ObjectDropOnWorld , IPool
 
     public void Hide()
     {
+        ObjectPooling.Instance.PushToPoolDropTarotCard(this);
         gameObject.SetActive(false);
     }
 }

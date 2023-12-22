@@ -58,11 +58,12 @@ public class GrHeart
             if (valueHit == 0)
                 break;
         }
+        InfomationPlayerManager.Instance.UpdateValueOf(TypeCurrentHeart, currentHP);
         return valueHit;
     }
     public void RestoreHeart(AttributeType type,float valueRestore)
     {
-        if (type != this.TypeHeart)
+        if (type != this.TypeCurrentHeart)
             return;
         for (int i = 0; i < heart.Count; i++)
         {
@@ -77,6 +78,7 @@ public class GrHeart
             if (valueRestore == 0)
                 break;
         }
+        InfomationPlayerManager.Instance.UpdateValueOf(TypeCurrentHeart, currentHP);
     }
     public void UpdateHearts()
     {
@@ -112,6 +114,7 @@ public class GrHeart
             return;
         MaxHP = maxHP;
         CurrentHP = MaxHP;
+        InfomationPlayerManager.Instance.UpdateValueOf(TypeCurrentHeart, currentHP);
     }
 
 

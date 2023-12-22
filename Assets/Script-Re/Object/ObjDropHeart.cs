@@ -22,7 +22,6 @@ public class ObjDropHeart : ObjectDropOnWorld , IPool
     {
         gameObject.SetActive(true);
     }
-
     public void Hide()
     {
         gameObject.SetActive(false);

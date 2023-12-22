@@ -65,7 +65,7 @@
 		},
 		"CurrentCoin" : {
 			"type" : "CurrentCoin",
-			"value" : 100
+			"value" : 0
 		},
 		"MaxValueHunger" : {
 			"type" : "MaxValueHunger",
@@ -73,7 +73,7 @@
 		},
 		"CurrentHunger" : {
 			"type" : "CurrentHunger",
-			"value" : 0
+			"value" : 100
 		},
 		"MaxRedAddHeart" : {
 			"type" : "MaxRedAddHeart",
@@ -125,6 +125,10 @@
 		},
 		"MovementSpeed" : {
 			"type" : "MovementSpeed",
+			"value" : 0
+		},
+		"Level" : {
+			"type" : "Level",
 			"value" : 0
 		}
 	},

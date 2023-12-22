@@ -7,7 +7,7 @@ public class ObjDropExp : ObjectDropOnWorld, IPool
 
     protected override void PublishEvent()
     {
-        InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentExp, NumEXP);
+        InfomationPlayerManager.Instance.CurrentExp += NumEXP;
     }
     public void Show()
     {

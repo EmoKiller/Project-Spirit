@@ -15,6 +15,10 @@ public class Weapon : MonoBehaviour
             CurrentHit.Add(num);
         }
     }
+    public void InitEnemy()
+    {
+        CurrentHit[0] = weaponObject.ListDamage[0];
+    }
     public virtual void Attack(Vector3 target)
     {
 
