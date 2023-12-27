@@ -16,6 +16,8 @@ public class ChestBonus : MonoBehaviour , IPool
     }
     private void DropItems()
     {
+        Debug.Log("**********************************");
+        Debug.Log(type);
         foreach (var item in ConfigDataHelper.GameConfig.ChestConfig[type].itemsCanDrop)
         {
             //AssetManager.Instance.ItemDropPrefab.GetComponent<ObjectDropOnWorld>().UpdateSprite(item.Key.ToString());
@@ -24,7 +26,9 @@ public class ChestBonus : MonoBehaviour , IPool
             //    GameObject _obj = Instantiate(AssetManager.Instance.ItemDropPrefab, transform.position, transform.rotation);
             //    _obj.transform.DOJump(new Vector3(Random.Range(-2f, 2f), 0.5f, Random.Range(-0.1f, -2f)) + transform.position, Random.Range(0.5f, 4f), 1, 0.3f);
             //}
+            Debug.Log(item);
         }
+        Debug.Log("**********************************");
     }
 
     public void Show()

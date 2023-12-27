@@ -21,7 +21,6 @@ public class ObjectPooling : SerializedMonoBehaviour
     {
         get { return spriteAtlasItems; }
     }
-
     [SerializeField] private List<EffectDestroyObject> EffectDestroyObj = new List<EffectDestroyObject>();
     [SerializeField] private List<ObjDropHeart> ObjDropHeart = new List<ObjDropHeart>();
     [SerializeField] private List<UIHeart> heartObj = new List<UIHeart>();
@@ -42,7 +41,6 @@ public class ObjectPooling : SerializedMonoBehaviour
         else
             Destroy(Instance);
     }
-
     public ObjDropHeart PopDropHeart(bool show = false)
     {
         return PopObjectFormPool<ObjDropHeart>(ObjDropHeart, "ObjDropHeart", GameConstants.Object, show);

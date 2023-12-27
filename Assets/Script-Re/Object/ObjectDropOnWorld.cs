@@ -2,7 +2,7 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 
-public class ObjectDropOnWorld : MonoBehaviour
+public class ObjectDropOnWorld : MonoBehaviour 
 {
     [Header("Tranform DOMoveY")]
     public float MoveY = 1;
