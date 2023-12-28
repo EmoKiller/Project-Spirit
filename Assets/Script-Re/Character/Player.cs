@@ -96,7 +96,6 @@ public class Player : CharacterBrain , IOrderable
         isUseSkill = true;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Rolling();
             Debug.Log("Cancel");
         }
     }
@@ -193,12 +192,7 @@ public class Player : CharacterBrain , IOrderable
     {
         atkCanDo = true;
         StartAniAtk();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit raycastHit))
-        {
-            direction.position = transform.position + (raycastHit.point - transform.position).normalized;
-            slash.transform.position = transform.position + (raycastHit.point - transform.position).normalized * 2f;
-        }
+        GameUtilities.ScreenRayCastOnWorld(DirSlash);
         Rotation();
         characterAnimator.SetComboAttack(combo);
         Vector3 vec = direction.position - transform.position;
@@ -208,6 +202,11 @@ public class Player : CharacterBrain , IOrderable
             characterAnimator.SetFloat("horizontal", 0);
             characterAnimator.SetFloat("vertical", 0);
         });
+    }
+    public void DirSlash(Vector3 targetPos)
+    {
+        direction.position = transform.position + (targetPos - transform.position).normalized;
+        slash.transform.position = transform.position + (targetPos - transform.position).normalized * 2f;
     }
     private void ChangeWeapon(Weapon weapon)
     {

@@ -226,8 +226,8 @@ public class UIManager : SerializedMonoBehaviour
         InfoWeapon.SetTextName(TypeInfoWeapon.Description, descriptionWeapon);
         InfoWeapon.SetTextName(TypeInfoWeapon.Damage, damage.ToString());
         InfoWeapon.SetTextName(TypeInfoWeapon.Speed, speed.ToString());
-        SetUpDownValue(InfoWeapon.imageUpDownDamage, damage);
-        SetUpDownValue(InfoWeapon.imageUpDownSpeed, speed);
+        SetUpDownValue(InfoWeapon.imageArrowDamage, damage);
+        SetUpDownValue(InfoWeapon.imageArrowSpeed, speed);
     }
     private void UpdateInfoCurses(string nameWeapon, string quoteWeapon, string descriptionWeapon)
     {
@@ -236,15 +236,15 @@ public class UIManager : SerializedMonoBehaviour
         InfoWeapon.SetTextName(TypeInfoWeapon.NameWeapon, nameWeapon);
         InfoWeapon.SetTextName(TypeInfoWeapon.QueteWeapon, quoteWeapon);
         InfoWeapon.SetTextName(TypeInfoWeapon.Description, descriptionWeapon);
-        InfoWeapon.imageUpDownDamage.gameObject.SetActive(false);
-        InfoWeapon.imageUpDownSpeed.gameObject.SetActive(false);
+        InfoWeapon.ObjNumberDamge.gameObject.SetActive(false);
+        InfoWeapon.ObjNumberSpeed.gameObject.SetActive(false);
     }
     private void SetDefault()
     {
         InfoWeapon.gameObject.SetActive(false);
         InfoWeapon.SetSizeImgRL(Vector2.zero);
-        InfoWeapon.imageUpDownDamage.transform.DORotate(Vector3.zero,0);
-        InfoWeapon.imageUpDownSpeed.transform.DORotate(Vector3.zero, 0);
+        InfoWeapon.imageArrowDamage.transform.DORotate(Vector3.zero,0);
+        InfoWeapon.imageArrowSpeed.transform.DORotate(Vector3.zero, 0);
     }
     private void SetUpDownValue(GameObject trans, float damage)
     {

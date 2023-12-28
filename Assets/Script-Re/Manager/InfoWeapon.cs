@@ -10,8 +10,10 @@ public class InfoWeapon : SerializedMonoBehaviour
 {
 
     [SerializeField] RectTransform imageRL;
-    public readonly GameObject imageUpDownDamage;
-    public readonly GameObject imageUpDownSpeed;
+    public readonly GameObject imageArrowDamage;
+    public readonly GameObject imageArrowSpeed;
+    public readonly GameObject ObjNumberDamge;
+    public readonly GameObject ObjNumberSpeed;
 
     [SerializeField]private Dictionary<TypeInfoWeapon,Itext> _ListText = new Dictionary<TypeInfoWeapon,Itext>();
     public Dictionary<TypeInfoWeapon, Itext> ListText

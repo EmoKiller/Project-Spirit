@@ -67,6 +67,14 @@ public static class GameUtilities
             tryValue = mono.GetComponentsInChildren<T>().ToList();
         return tryValue;
     }
+    public static void ScreenRayCastOnWorld(Action<Vector3> action)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit))
+        {
+            action?.Invoke(raycastHit.point);
+        }
+    }
     public static int ConvertInt(EnemGrPriteHeart grSprite)
     {
         switch (grSprite)

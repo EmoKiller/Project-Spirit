@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CursesEquip : MonoBehaviour
 {
-    private CursesObject _cursesObject = null;
+    [SerializeField] private CursesObject _cursesObject = null;
     public CursesObject CursesObject 
     {
         get { return _cursesObject; }
