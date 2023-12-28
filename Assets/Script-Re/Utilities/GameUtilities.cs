@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 
 public static class GameUtilities
 {
@@ -66,6 +67,10 @@ public static class GameUtilities
         if (tryValue == null)
             tryValue = mono.GetComponentsInChildren<T>().ToList();
         return tryValue;
+    }
+    public static void AniDropItem(this Transform trans)
+    {
+        trans.transform.DOJump(new Vector3(UnityEngine.Random.Range(-2f, 2f), 0.5f, UnityEngine.Random.Range(-0.1f, -2f)) + trans.transform.position, UnityEngine.Random.Range(0.5f, 4f), 1, 0.3f);
     }
     public static void ScreenRayCastOnWorld(Action<Vector3> action)
     {

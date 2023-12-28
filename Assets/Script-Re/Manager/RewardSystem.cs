@@ -10,10 +10,8 @@ public class RewardSystem : SerializedMonoBehaviour
     {
         Instance = this;
     }
-
-
     [Button]
-    private void DropHeart(EnemGrPriteHeart TypeHeart)
+    public void DropHeart(EnemGrPriteHeart TypeHeart)
     {
         ObjDropHeart obj = ObjectPooling.Instance.PopDropHeart();
         obj.UpdateSprite(TypeHeart.ToString());
@@ -21,33 +19,40 @@ public class RewardSystem : SerializedMonoBehaviour
         obj.Show();
     }
     [Button]
-    private void DropExp()
+    public void DropExp(Vector3 vec3)
     {
         ObjDropExp obj = ObjectPooling.Instance.PopObjDropExp();
+        obj.transform.position = vec3;
+        obj.transform.AniDropItem();
         obj.Show();
-        //Instantiate(obj);
     }
     [Button]
-    private void DropCoin()
+    public void DropCoin(Vector3 vec3)
     {
         ObjDropCoin obj = ObjectPooling.Instance.PopObjDropCoins();
+        obj.transform.position = vec3;
+        obj.transform.AniDropItem();
         obj.Show();
     }
     [Button]
-    private void DropAngry()
+    public void DropAngry(Vector3 vec3)
     {
         ObjDropAngry obj = ObjectPooling.Instance.PopObjDropAngry();
+        obj.transform.position = vec3;
+        obj.transform.AniDropItem();
         obj.Show();
     }
     [Button]
-    private void SpawnChestBonus(ChestType type)
+    public void SpawnChestBonus(ChestType type)
     {
         //ChestBonus obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjectChestBonus,"");
     }
     [Button]
-    private void DropTarotCard()
+    public void DropTarotCard(Vector3 vec3)
     {
         ObjDropTarotCard obj = ObjectPooling.Instance.PopObjDropTarotCard();
+        obj.transform.position = vec3;
+        obj.transform.AniDropItem();
         obj.Show();
     }
 }

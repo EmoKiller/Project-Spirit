@@ -8,7 +8,7 @@
 					"ratio" : 100.0
 				},
 				"ObjDropAngry" : {
-					"type" : 3,
+					"type" : 2,
 					"value" : 25,
 					"ratio" : 100.0
 				}
@@ -41,7 +41,7 @@
 	"HeroBaseData" : {
 		"MaxRedHeart" : {
 			"type" : "MaxRedHeart",
-			"value" : 3
+			"value" : 2
 		},
 		"CurrentRedHeart" : {
 			"type" : "CurrentRedHeart",
@@ -77,7 +77,7 @@
 		},
 		"MaxRedAddHeart" : {
 			"type" : "MaxRedAddHeart",
-			"value" : 3
+			"value" : 0
 		},
 		"CurrentRedAddHeart" : {
 			"type" : "CurrentRedAddHeart",
@@ -85,7 +85,7 @@
 		},
 		"MaxBlueHeart" : {
 			"type" : "MaxBlueHeart",
-			"value" : 3
+			"value" : 0
 		},
 		"CurrentBlueHeart" : {
 			"type" : "CurrentBlueHeart",
@@ -93,7 +93,7 @@
 		},
 		"MaxBlackHeart" : {
 			"type" : "MaxBlackHeart",
-			"value" : 4
+			"value" : 0
 		},
 		"CurrentBlackHeart" : {
 			"type" : "CurrentBlackHeart",

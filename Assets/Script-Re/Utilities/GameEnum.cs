@@ -188,6 +188,7 @@ public enum TypeItemsCanDrop
     ObjDropTarotCard,
     ObjDropAngry,
     ObjDropHeart,
+    ObjDropExp,
 }
 public enum ChestType
 {

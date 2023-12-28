@@ -54,8 +54,8 @@ public class UIManager : SerializedMonoBehaviour
             item.CreateNewHeart = CreateNewHeart;
             ObseverConstants.OnAttributeValueChanged.AddListener(item.SetStartMaxCurrentHP);
             ObseverConstants.OnIncreaseAttributeValue.AddListener(item.RestoreHeart);
-            item.SetStartMaxCurrentHP(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
-            
+            //item.SetStartMaxCurrentHP(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
+            InfomationPlayerManager.Instance.UpdateValueOf(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
         }
         EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
         List<UI_Attribute> _UI_Attribute = GetComponentsInChildren<UI_Attribute>().ToList();

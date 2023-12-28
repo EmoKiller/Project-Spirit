@@ -11,7 +11,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     public static ObjectPooling Instance = null;
     public static UnityEvent<IPool> OnObjectPooled = new UnityEvent<IPool>();
 
-    [SerializeField]private SpriteAtlas spriteAtlasTarotCard;
+    [SerializeField] private SpriteAtlas spriteAtlasTarotCard;
     public SpriteAtlas SpriteAtlasTarotCard
     {
         get { return spriteAtlasTarotCard; }
@@ -26,7 +26,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     [SerializeField] private List<UIHeart> heartObj = new List<UIHeart>();
     public List<UIHeart> HeartObj
     {
-        get { return heartObj;}
+        get { return heartObj; }
     }
     [SerializeField] private List<ObjDropExp> ObjDropExp = new List<ObjDropExp>();
     [SerializeField] private List<ObjDropCoin> ObjDropCoins = new List<ObjDropCoin>();
@@ -73,8 +73,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     {
         PushToPool(uiheart, HeartObj);
     }
-
-    public T PopObjectFormPool<T>(List<T> pool,string Name, string path, bool show) where T : MonoBehaviour, IPool, new()
+    public T PopObjectFormPool<T>(List<T> pool, string Name, string path, bool show) where T : MonoBehaviour, IPool, new()
     {
         return PopFromPool(pool, Name, path, show);
     }
@@ -98,7 +97,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     }
     private void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
     {
-        objectToPush.transform.SetParent(transform,true);
+        objectToPush.transform.SetParent(transform, true);
         pool.Add(objectToPush);
     }
 

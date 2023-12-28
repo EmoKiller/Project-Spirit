@@ -91,6 +91,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         heroData.attributes[SaveSlot][type].value += value;
         ObseverConstants.OnIncreaseAttributeValue?.Invoke(type, GetValueAttribute(type));
+        ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
     }
     [Button]
     public void MinusValueOf(AttributeType type, float value)
