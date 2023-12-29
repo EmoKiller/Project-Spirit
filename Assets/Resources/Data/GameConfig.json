@@ -139,9 +139,13 @@
 			"rounds" : {
 				"1" : {
 					"enemies" : {
-						"Scamp" : {
-							"value" : 10,
+						"EneScamp" : {
+							"value" : 3,
 							"type" : 0
+						},
+						"SwordsMan" : {
+							"value" : 5,
+							"type" : 1
 						}
 					},
 					"goldReward" : 100

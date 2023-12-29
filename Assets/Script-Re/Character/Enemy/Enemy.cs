@@ -16,7 +16,7 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected bool enemyThinking = false;
     [SerializeField] protected bool enemyRunFollow = false;
 
-    public string objectName => gameObject.name;
+    public virtual string objectName => gameObject.name;
 
     protected override void Start()
     {
@@ -120,13 +120,13 @@ public class Enemy : CharacterBrain , IPool
 
     public void Show()
     {
-        Debug.Log("Show");
         gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        Debug.Log("Hide");
+        GameLevelManager.Instance.RemoveinList(this);
+        ObjectPooling.Instance.PushToPoolEnemy(this);
         gameObject.SetActive(false);
     }
 }

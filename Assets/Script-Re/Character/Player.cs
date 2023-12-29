@@ -126,7 +126,7 @@ public class Player : CharacterBrain , IOrderable
     {
         float Crit = 1;
         CritHit(ref Crit);
-        Debug.Log("PlayerHitEne");
+        Debug.Log("PlayerHitEne" + " " + GetDamageCombo() * Crit);
         target.TakeDamage(GetDamageCombo() * Crit);
         base.OnAttackHit(target);
     }
@@ -219,7 +219,6 @@ public class Player : CharacterBrain , IOrderable
         Weapon obj = Instantiate(weapon, hand.transform);
         characterAttack.Initialized(obj);
         slash.SetSizeBox(characterAttack.SlashBoxSize);
-
     }
     private void ChangeCurses(CursesEquip curses)
     {

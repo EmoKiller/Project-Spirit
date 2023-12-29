@@ -57,7 +57,6 @@ public class UIHeart : MonoBehaviour , IPool
 
     public void Show()
     {
-        ObjectPooling.Instance.HeartObj.Remove(this);
         gameObject.SetActive(true);
     }
 

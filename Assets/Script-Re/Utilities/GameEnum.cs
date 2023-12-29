@@ -87,7 +87,7 @@ public enum TalkScript
 }
 public enum TypeEnemy
 {
-    Scamp,
+    EneScamp,
     SwordsMan,
     Chaser
 }

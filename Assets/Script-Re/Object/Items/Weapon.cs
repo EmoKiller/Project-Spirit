@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     public void Init()
     {
         CurrentHit.Clear();
-        for (int i = 0; i < weaponObject.ListDamage.Count - 1; i++)
+        for (int i = 0; i < weaponObject.ListDamage.Count; i++)
         {
             float num = weaponObject.ListDamage[i] * (1 + (0.13f + 0.07f * (int)weaponObject.LevelWeapon)) ;
             //+ [Tarot Card multiplier] + [Fleece multiplier] + [Run Damage multiplier] × [Difficulty modifier]

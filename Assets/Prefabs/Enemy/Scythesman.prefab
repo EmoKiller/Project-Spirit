@@ -792,7 +792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97574445697252314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.57, y: 0.5, z: -4.47}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -863,6 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
   hpObject: {fileID: 11400000, guid: 69a871e574e62c0489eaf882dfc81440, type: 2}
+  Damage: []
 --- !u!195 &97574445697252317
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -996,6 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObject: {fileID: 11400000, guid: c563e59fb3469784bb6f5756dd360b01, type: 2}
+  CurrentHit: []
 --- !u!1001 &97574444255166738
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ public class ObjectPooling : SerializedMonoBehaviour
 {
     public static ObjectPooling Instance = null;
     public static UnityEvent<IPool> OnObjectPooled = new UnityEvent<IPool>();
-
     [SerializeField] private SpriteAtlas spriteAtlasTarotCard;
     public SpriteAtlas SpriteAtlasTarotCard
     {
@@ -24,16 +23,14 @@ public class ObjectPooling : SerializedMonoBehaviour
     [SerializeField] private List<EffectDestroyObject> EffectDestroyObj = new List<EffectDestroyObject>();
     [SerializeField] private List<ObjDropHeart> ObjDropHeart = new List<ObjDropHeart>();
     [SerializeField] private List<UIHeart> heartObj = new List<UIHeart>();
-    public List<UIHeart> HeartObj
-    {
-        get { return heartObj; }
-    }
-    [SerializeField] private List<ObjDropExp> ObjDropExp = new List<ObjDropExp>();
-    [SerializeField] private List<ObjDropCoin> ObjDropCoins = new List<ObjDropCoin>();
-    [SerializeField] private List<ObjDropAngry> ObjDropAngry = new List<ObjDropAngry>();
-    [SerializeField] private List<ObjDropTarotCard> ObjDropTarotCard = new List<ObjDropTarotCard>();
-    [SerializeField] private Dictionary<ChestType, ChestBonus> ObjectChestBonus = new Dictionary<ChestType, ChestBonus>();
+    //[SerializeField] private List<ObjDropExp> ObjDropExp = new List<ObjDropExp>();
+    //[SerializeField] private List<ObjDropCoin> ObjDropCoins = new List<ObjDropCoin>();
+    //[SerializeField] private List<ObjDropAngry> ObjDropAngry = new List<ObjDropAngry>();
+    //[SerializeField] private List<ObjDropTarotCard> ObjDropTarotCard = new List<ObjDropTarotCard>();
+    //[SerializeField] private Dictionary<ChestType, ChestBonus> ObjectChestBonus = new Dictionary<ChestType, ChestBonus>();
 
+    [SerializeField] private List<ObjectDropOnWorld> objectDropOnWorld = new List<ObjectDropOnWorld>();
+    [SerializeField] private List<Enemy> eneScamps = new List<Enemy>();
     private void Awake()
     {
         if (Instance == null)
@@ -41,37 +38,40 @@ public class ObjectPooling : SerializedMonoBehaviour
         else
             Destroy(Instance);
     }
+    public Enemy PopEnemy(string name,bool show = false)
+    {
+        return PopObjectFormPool<Enemy>(eneScamps, name, GameConstants.Enemy, show);
+    }
+    public void PushToPoolEnemy(Enemy ene)
+    {
+        PushToPool(ene, eneScamps);
+    }
+
+
+
+    public ObjectDropOnWorld PopObjectDrop(string name, bool show = false)
+    {
+        return PopObjectFormPool<ObjectDropOnWorld>(objectDropOnWorld, name, GameConstants.Object, show);
+    }
+    public void PushToPoolObjectDrop(ObjectDropOnWorld ObjectDrop)
+    {
+        PushToPool(ObjectDrop, objectDropOnWorld);
+    }
+
+
     public ObjDropHeart PopDropHeart(bool show = false)
     {
         return PopObjectFormPool<ObjDropHeart>(ObjDropHeart, "ObjDropHeart", GameConstants.Object, show);
     }
-    public ObjDropExp PopObjDropExp(bool show = false)
-    {
-        return PopObjectFormPool<ObjDropExp>(ObjDropExp, "ObjDropExp", GameConstants.Object, show);
-    }
-    public ObjDropCoin PopObjDropCoins(bool show = false)
-    {
-        return PopObjectFormPool<ObjDropCoin>(ObjDropCoins, "ObjDropCoin", GameConstants.Object, show);
-    }
-    public ObjDropAngry PopObjDropAngry(bool show = false)
-    {
-        return PopObjectFormPool<ObjDropAngry>(ObjDropAngry, "ObjDropAngry", GameConstants.Object, show);
-    }
-    public ObjDropTarotCard PopObjDropTarotCard(bool show = false)
-    {
-        return PopObjectFormPool<ObjDropTarotCard>(ObjDropTarotCard, "ObjDropTarotCard", GameConstants.Object, show);
-    }
-    public void PushToPoolDropTarotCard(ObjDropTarotCard DropTarotCard)
-    {
-        PushToPool(DropTarotCard, ObjDropTarotCard);
-    }
+
     public UIHeart PopUIpHeart(bool show = false)
     {
-        return PopObjectFormPool<UIHeart>(HeartObj, "UIHeart", GameConstants.UIObject, show);
+        return PopObjectFormPool<UIHeart>(heartObj, "UIHeart", GameConstants.UIObject, show);
     }
+
     public void PushToPoolHeart(UIHeart uiheart)
     {
-        PushToPool(uiheart, HeartObj);
+        PushToPool(uiheart, heartObj);
     }
     public T PopObjectFormPool<T>(List<T> pool, string Name, string path, bool show) where T : MonoBehaviour, IPool, new()
     {
@@ -89,10 +89,12 @@ public class ObjectPooling : SerializedMonoBehaviour
             T value = newObj.GetComponent<T>();
             if (show)
                 value.Show();
+            pool.Remove(obj);
             return value;
         }
         if (show)
             obj.Show();
+        pool.Remove(obj);
         return obj;
     }
     private void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()

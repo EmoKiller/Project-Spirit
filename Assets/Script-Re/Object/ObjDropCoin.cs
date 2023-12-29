@@ -2,26 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjDropCoin : ObjectDropOnWorld, IPool
+public class ObjDropCoin : ObjectDropOnWorld
 {
     [Header("TypeHeart")]
     public TypeCoins TypeCoins;
 
-    public string objectName => GetType().Name;
+    public override string objectName => GetType().Name;
 
     protected override void PublishEvent()
     {
         InfomationPlayerManager.Instance.CurrentCoins += (int)TypeCoins;
     }
-    public void Show()
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-    
+    //public override void Hide()
+    //{
+    //    ObjectPooling.Instance.PushToPoolObjectDrop(this);
+    //}
 
 }

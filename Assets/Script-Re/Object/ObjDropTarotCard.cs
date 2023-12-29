@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjDropTarotCard : ObjectDropOnWorld, IPool
+public class ObjDropTarotCard : ObjectDropOnWorld
 {
     private int _numberCard = 1;
     public int NumberCard
@@ -8,7 +8,7 @@ public class ObjDropTarotCard : ObjectDropOnWorld, IPool
         get { return _numberCard; }
         set { _numberCard = Mathf.Clamp(value, 1, 3); }
     }
-    public string objectName => GetType().Name;
+    public override string objectName => GetType().Name;
 
     protected override void PublishEvent()
     {
@@ -16,14 +16,4 @@ public class ObjDropTarotCard : ObjectDropOnWorld, IPool
         Hide();
     }
 
-    public void Show()
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        ObjectPooling.Instance.PushToPoolDropTarotCard(this);
-        gameObject.SetActive(false);
-    }
 }

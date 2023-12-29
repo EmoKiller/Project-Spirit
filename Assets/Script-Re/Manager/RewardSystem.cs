@@ -1,11 +1,11 @@
-using System.Collections;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 public class RewardSystem : SerializedMonoBehaviour
 {
     public static RewardSystem Instance = null;
+    [SerializeField] private List<ObjectDropOnWorld> ObjectDropOnWorld = new List<ObjectDropOnWorld>();
     private void Awake()
     {
         Instance = this;
@@ -19,40 +19,22 @@ public class RewardSystem : SerializedMonoBehaviour
         obj.Show();
     }
     [Button]
-    public void DropExp(Vector3 vec3)
-    {
-        ObjDropExp obj = ObjectPooling.Instance.PopObjDropExp();
-        obj.transform.position = vec3;
-        obj.transform.AniDropItem();
-        obj.Show();
-    }
-    [Button]
-    public void DropCoin(Vector3 vec3)
-    {
-        ObjDropCoin obj = ObjectPooling.Instance.PopObjDropCoins();
-        obj.transform.position = vec3;
-        obj.transform.AniDropItem();
-        obj.Show();
-    }
-    [Button]
-    public void DropAngry(Vector3 vec3)
-    {
-        ObjDropAngry obj = ObjectPooling.Instance.PopObjDropAngry();
-        obj.transform.position = vec3;
-        obj.transform.AniDropItem();
-        obj.Show();
-    }
-    [Button]
     public void SpawnChestBonus(ChestType type)
     {
         //ChestBonus obj = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.ObjectChestBonus,"");
     }
     [Button]
-    public void DropTarotCard(Vector3 vec3)
+    public void DropObject(TypeItemsCanDrop type , Vector3 vec3)
     {
-        ObjDropTarotCard obj = ObjectPooling.Instance.PopObjDropTarotCard();
+        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString());
+        obj.transform.SetParent(transform,true);
         obj.transform.position = vec3;
         obj.transform.AniDropItem();
         obj.Show();
+        ObjectDropOnWorld.Add(obj);
+    }
+    public void RemoveFromListObj(ObjectDropOnWorld obj)
+    {
+        ObjectDropOnWorld.Remove(obj);
     }
 }

@@ -165,6 +165,26 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/SpriteAlas/SpriteAtlasTarotCard.spriteatlasv2
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: df21008023c43c84c8cd2adf63975b9b
+    m_Address: Assets/Prefabs/Enemy/Scythesman.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dedef06cfd04f4944a7a9a77f8b54754
+    m_Address: Assets/Prefabs/Enemy/EneScamp.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: acd4c27d8d40c354b8bf135e3179a6ab
+    m_Address: Assets/Prefabs/Enemy/Spider.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c27f1ac61fc775c4699752b180558415
+    m_Address: Assets/Prefabs/Enemy/SwordsMan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 94ecd0febd73f314ea8a23d951366e6c
+    m_Address: Assets/Prefabs/Enemy/chaser.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:

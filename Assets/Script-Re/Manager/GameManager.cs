@@ -24,7 +24,7 @@ public class GameManager : SerializedMonoBehaviour
         player.Init();
         cameraFollow.Init();
         uiManager.Init();
-        
+        GameLevelManager.Instance.Init();
     }
 }
 

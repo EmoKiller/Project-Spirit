@@ -6,5 +6,7 @@ public class GameConstants
     public const string UIObject = "Assets/Prefabs/UI/{0}.prefab";
     public const string Object = "Assets/Prefabs/Object/{0}.prefab";
     public const string Effect = "Assets/Prefabs/Effect/{0}.prefab";
-    
+    public const string Enemy = "Assets/Prefabs/Enemy/{0}.prefab";
+
+
 }

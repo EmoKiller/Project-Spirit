@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ObjDropHeart : ObjectDropOnWorld , IPool
+public class ObjDropHeart : ObjectDropOnWorld
 {
     [Header("TypeHeart")]
     public EnemGrPriteHeart TypeHeart;
-    public string objectName => GetType().Name;
+    public override string objectName => GetType().Name;
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -18,11 +18,11 @@ public class ObjDropHeart : ObjectDropOnWorld , IPool
     {
         InfomationPlayerManager.Instance.IncreaseValueOf(GameUtilities.ConvertGrSpriteToAttributeCurrent(TypeHeart), GameUtilities.ConvertInt(TypeHeart));
     }
-    public void Show()
+    public override void Show()
     {
         gameObject.SetActive(true);
     }
-    public void Hide()
+    public override void Hide()
     {
         gameObject.SetActive(false);
     }

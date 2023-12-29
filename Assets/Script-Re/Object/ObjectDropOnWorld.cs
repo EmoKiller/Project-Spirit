@@ -2,7 +2,7 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 
-public class ObjectDropOnWorld : MonoBehaviour 
+public class ObjectDropOnWorld : MonoBehaviour, IPool
 {
     [Header("Tranform DOMoveY")]
     public float MoveY = 1;
@@ -14,6 +14,9 @@ public class ObjectDropOnWorld : MonoBehaviour
     [Header("Sprite")]
     [SerializeField] SpriteRenderer spriteRenderer;
     protected Action pubLish = null;
+
+    public virtual string objectName => GetType().Name;
+
     private void Awake()
     {
         pubLish = PublishEvent;
@@ -51,12 +54,23 @@ public class ObjectDropOnWorld : MonoBehaviour
         if (Vector3.Distance(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position) < 0.5f)
         {
             pubLish?.Invoke();
-            gameObject.SetActive(false);
-            
+            Hide();
         }
     }
     protected virtual void PublishEvent()
     {
         
+    }
+
+    public virtual void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public virtual void Hide()
+    {
+        RewardSystem.Instance.RemoveFromListObj(this);
+        ObjectPooling.Instance.PushToPoolObjectDrop(this);
+        gameObject.SetActive(false);
     }
 }
