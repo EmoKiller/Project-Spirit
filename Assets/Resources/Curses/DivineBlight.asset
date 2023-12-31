@@ -16,8 +16,13 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 1
   LevelCurses: 0
+  TypeNameCurses: 6
   NameCurses: DivineBlight
   QuoteCurses: Omen of great ill-fortune.
   DescriptionCurses: Knocks back and poisons enemies.
+  TimeUseSKill: 1
+  Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

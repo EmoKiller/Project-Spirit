@@ -3,7 +3,12 @@ guid: 3fc8f8088d95be84eba3d8f2b1243f96
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mesh_ArrowPlayer_Head_0Mat
+    second: {fileID: 2100000, guid: a8d74096fa1d38a4d97db50cec2b97c7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

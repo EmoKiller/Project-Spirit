@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: ChaserHP
   m_EditorClassIdentifier: 
   projectTile: {fileID: 5052013510952478824, guid: 94ecd0febd73f314ea8a23d951366e6c, type: 3}
+  LevelEnemy: 1
   HP: 7
   PowerForce: 30
   weight: 25
+  ExpDrop: 2

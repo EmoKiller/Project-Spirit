@@ -16,8 +16,13 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 1
   LevelCurses: 0
+  TypeNameCurses: 3
   NameCurses: DivineBlast
   QuoteCurses: A curse against those unworthy of your presence.
   DescriptionCurses: Knocks back enemies in your range while also damaging them.
+  TimeUseSKill: 1
+  Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

@@ -23,14 +23,20 @@ public class ChestBonus : MonoBehaviour, IPool
                 RewardSystem.Instance.DropObject(item.Value.type, transform.position);
             }
         }
+        this.DelayCall(20, () =>
+        {
+            Hide();
+        });
     }
     public void Show()
     {
-        throw new NotImplementedException();
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        throw new NotImplementedException();
+        RewardSystem.Instance.RemoveFromListChestBonus(this);
+        ObjectPooling.Instance.PushToPoolChestBonus(this);
+        gameObject.SetActive(false);
     }
 }

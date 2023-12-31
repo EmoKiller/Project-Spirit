@@ -16,8 +16,12 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 0
   LevelCurses: 0
+  TypeNameCurses: 2
   NameCurses: HoundsOfFate
   QuoteCurses: Seek and strike those who dare doubt.
   DescriptionCurses: Shoots multiple projectiles that seek out enemies.
-  Speed: 1
-  AttackRange: 2
+  TimeUseSKill: 1
+  Damage: 2
+  Speed: 15
+  AttackRange: 5
+  UseAngry: 10

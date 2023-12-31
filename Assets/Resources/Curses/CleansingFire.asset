@@ -16,8 +16,11 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 0
   LevelCurses: 0
+  TypeNameCurses: 1
   NameCurses: CleansingFire
   QuoteCurses: Flames of cleansing burn thrice as bright.
   DescriptionCurses: Shoots 3 projectiles at once.
-  Speed: 1
-  AttackRange: 2
+  TimeUseSKill: 1
+  Damage: 2
+  Speed: 5
+  AttackRange: 35

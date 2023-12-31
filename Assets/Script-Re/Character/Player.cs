@@ -10,14 +10,14 @@ public class Player : CharacterBrain , IOrderable
     }
     [SerializeField] private GameObject hand;
     [SerializeField] private GameObject handCurses;
-    [SerializeField] private CursesEquip currentCurses = null;
+    [SerializeField] private CursesEquip currentCurses;
     [SerializeField] private Transform aimingRecticule;
     [SerializeField] private Transform fillAimingRecticule;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
     private bool atkCanDo;
-    private bool isUseSkill = false;
+
     private void Awake()
     {
         currentCurses = GetComponent<CursesEquip>();
@@ -26,7 +26,6 @@ public class Player : CharacterBrain , IOrderable
     {
         base.Start();
         health = 999;
-        //SetWeapon();
     }
     public void Init()
     {
@@ -54,20 +53,30 @@ public class Player : CharacterBrain , IOrderable
     {
         if (OnAction|| OnEvent)
             return;
-        if (Input.GetMouseButton(1) && !onAniATK && currentCurses.BoolCursesEquip())
+        if (Input.GetMouseButton(1) && !onAniATK && currentCurses.CursesObject is not null && !OnAction && InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentAngry) > currentCurses.UseAngry)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Rolling();
+                currentCurses.ResetTime();
+                return;
+            }
+            currentCurses.OnUseSkill = true;
+            currentCurses.CountTime();
+            fillAimingRecticule.transform.localScale = new Vector3(currentCurses.TimeUseSkill, 1, 1);
+            GameUtilities.ScreenRayCastOnWorld(AimingRecticule);
             characterAnimator.SetTrigger("UseSkill");
-            UseSkill();
             return;
         }
-        if (Input.GetMouseButtonUp(1) && !onAniATK && currentCurses.BoolCursesEquip())
+        if (Input.GetMouseButtonUp(1) && !onAniATK && currentCurses.CursesObject is not null)
         {
-            isUseSkill = false;
+            UseSkill(direction.position - transform.position);
+            currentCurses.OnUseSkill = false;
             characterAnimator.SetTrigger("Idie");
+            currentCurses.ResetTime();
+            StopAni();
             return;
         }
-        if (isUseSkill)
-            return;
         if (Input.GetMouseButtonDown(0) && !atkCanDo && characterAttack.BoolWeaponEquip())
         {
             OnAttack();
@@ -91,17 +100,28 @@ public class Player : CharacterBrain , IOrderable
         }
         characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle, Vertical, Horizontal);
     }
-    protected void UseSkill()
+
+    
+    /// <summary>
+    /// Use For Skill FireBall
+    /// </summary>
+    /// <param name="targetPos"></param>
+    protected void AimingRecticule(Vector3 targetPos)
     {
-        isUseSkill = true;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Cancel");
-        }
+        direction.position = transform.position + (targetPos - transform.position).normalized;
+        aimingRecticule.DORotateQuaternion(Quaternion.LookRotation((targetPos - transform.position).normalized, Vector3.up), 0.3f);
     }
+    protected void UseSkill(Vector3 foward)
+    {
+        currentCurses.UseSkill(foward);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     protected override void Rolling()
     {
-        characterAnimator.SetRolling(CharacterAnimator.AnimationState.Rolling);
+        characterAnimator.SetTrigger(CharacterAnimator.AnimationState.Rolling);
         Vector3 dir = direction.position - transform.position;
         this.LoopDelayCall(0.3f, () =>
         {
@@ -171,7 +191,7 @@ public class Player : CharacterBrain , IOrderable
         
         EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDmg, damage);
     }
-    public override void Dead()
+    protected override void Dead()
     {
         Debug.Log("Player Dead");
     }
@@ -183,7 +203,7 @@ public class Player : CharacterBrain , IOrderable
     {
         OnAction = false;
     }
-    public override void EffectHit(Vector3 dir)
+    protected override void EffectHit(Vector3 dir)
     {
         //Debug.Log(GameConstants.Slash);
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
@@ -227,6 +247,8 @@ public class Player : CharacterBrain , IOrderable
         {
             cur.transform.SetParent(null);
             cur.transform.ReSetEulerAngle();
+            SpriteRenderer spr = cur.GetComponent<SpriteRenderer>();
+            spr.enabled = true;
         }
         CursesEquip obj = Instantiate(curses, handCurses.transform);
         InitCurses(obj);
@@ -235,6 +257,8 @@ public class Player : CharacterBrain , IOrderable
     {
         currentCurses = curses;
         currentCurses.Init(curses.CursesObject.TypeCurses);
+        SpriteRenderer spr = curses.GetComponent<SpriteRenderer>();
+        spr.enabled = false;
     }
     private bool BoolCursesEquip()
     {

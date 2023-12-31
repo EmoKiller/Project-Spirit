@@ -2,7 +2,7 @@ using DG.Tweening;
 
 public class ObjDropExp : ObjectDropOnWorld
 {
-    public int NumEXP = 1;
+    public float NumEXP = 1;
     public override string objectName => GetType().Name;
 
     protected override void PublishEvent()

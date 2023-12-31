@@ -61,7 +61,7 @@
 		},
 		"CurrentAngry" : {
 			"type" : "CurrentAngry",
-			"value" : 0
+			"value" : 100
 		},
 		"CurrentCoin" : {
 			"type" : "CurrentCoin",
@@ -140,15 +140,17 @@
 				"1" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 3,
-							"type" : 0
+							"value" : 10,
+							"type" : 0,
+							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
-							"value" : 5,
-							"type" : 1
+							"value" : 4,
+							"type" : 1,
+							"LevelEnemy" : 1
 						}
 					},
-					"goldReward" : 100
+					"chestType" : "Common"
 				}
 			}
 		}

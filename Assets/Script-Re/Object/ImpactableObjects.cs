@@ -1,13 +1,16 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class ImpactableObjects : MonoBehaviour
+public class ImpactableObjects : MonoBehaviour , IPool
 {
     public ListTypeEffects TypeMaterial;
     [SerializeField] HPObject hpObject;
     [SerializeField] Animator _animator;
     private float hp => hpObject.HP;
     private float weight => hpObject.weight;
+
+    public string objectName => gameObject.name;
+
     [SerializeField]private float currentHp = 0;
 
     private void Start()
@@ -33,7 +36,23 @@ public class ImpactableObjects : MonoBehaviour
                 //effect.transform.position = transform.position + new Vector3(0, 2, 0);
                 //effect.Show();
             }
-            Destroy(gameObject);
+            for (int i = 0; i < Random.Range(2,5); i++)
+            {
+                RewardSystem.Instance.DropObject(TypeItemsCanDrop.ObjDropAngry, transform.position);
+            }
+            Hide();
         }   
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        RewardSystem.Instance.RemoveFromListImpactableObj(this);
+        ObjectPooling.Instance.PushToPoolImpactableObjects(this);
+        gameObject.SetActive(false);
     }
 }

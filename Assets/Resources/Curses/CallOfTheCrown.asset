@@ -16,9 +16,14 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 3
   LevelCurses: 0
+  TypeNameCurses: 14
   NameCurses: CallOfTheCrown
   QuoteCurses: You need only issue thy word, and they will obey.
   DescriptionCurses: Hold to aim. A sacred projectile that will possess directly
     hit enemies.
+  TimeUseSKill: 1
+  Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

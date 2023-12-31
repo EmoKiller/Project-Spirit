@@ -23,14 +23,12 @@ public class ObjectPooling : SerializedMonoBehaviour
     [SerializeField] private List<EffectDestroyObject> EffectDestroyObj = new List<EffectDestroyObject>();
     [SerializeField] private List<ObjDropHeart> ObjDropHeart = new List<ObjDropHeart>();
     [SerializeField] private List<UIHeart> heartObj = new List<UIHeart>();
-    //[SerializeField] private List<ObjDropExp> ObjDropExp = new List<ObjDropExp>();
-    //[SerializeField] private List<ObjDropCoin> ObjDropCoins = new List<ObjDropCoin>();
-    //[SerializeField] private List<ObjDropAngry> ObjDropAngry = new List<ObjDropAngry>();
-    //[SerializeField] private List<ObjDropTarotCard> ObjDropTarotCard = new List<ObjDropTarotCard>();
-    //[SerializeField] private Dictionary<ChestType, ChestBonus> ObjectChestBonus = new Dictionary<ChestType, ChestBonus>();
 
     [SerializeField] private List<ObjectDropOnWorld> objectDropOnWorld = new List<ObjectDropOnWorld>();
     [SerializeField] private List<Enemy> eneScamps = new List<Enemy>();
+    [SerializeField] private List<ImpactableObjects> impactableObjects = new List<ImpactableObjects>();
+    [SerializeField] private List<ChestBonus> chestBonus = new List<ChestBonus>();
+    [SerializeField] private List<ObjectSkill> objectSkill = new List<ObjectSkill>();
     private void Awake()
     {
         if (Instance == null)
@@ -38,6 +36,35 @@ public class ObjectPooling : SerializedMonoBehaviour
         else
             Destroy(Instance);
     }
+    public EffectDestroyObject PopChestEffectDestroyObj(string name, bool show = false)
+    {
+        return PopObjectFormPool<EffectDestroyObject>(EffectDestroyObj, name, GameConstants.Effect, show);
+    }
+    public void PushToPoolEffectDestroyObj(EffectDestroyObject chest)
+    {
+        PushToPool(chest, EffectDestroyObj);
+    }
+
+
+
+    public ObjectSkill PopChestObjectSkill(string name, bool show = false)
+    {
+        return PopObjectFormPool<ObjectSkill>(objectSkill, name, GameConstants.EffectSkill, show);
+    }
+    public void PushToPoolObjectSkill(ObjectSkill chest)
+    {
+        PushToPool(chest, objectSkill);
+    }
+
+    public ChestBonus PopChestBonus(string name, bool show = false)
+    {
+        return PopObjectFormPool<ChestBonus>(chestBonus, name, GameConstants.ChestBonus, show);
+    }
+    public void PushToPoolChestBonus(ChestBonus chest)
+    {
+        PushToPool(chest, chestBonus);
+    }
+
     public Enemy PopEnemy(string name,bool show = false)
     {
         return PopObjectFormPool<Enemy>(eneScamps, name, GameConstants.Enemy, show);
@@ -48,7 +75,6 @@ public class ObjectPooling : SerializedMonoBehaviour
     }
 
 
-
     public ObjectDropOnWorld PopObjectDrop(string name, bool show = false)
     {
         return PopObjectFormPool<ObjectDropOnWorld>(objectDropOnWorld, name, GameConstants.Object, show);
@@ -57,6 +83,18 @@ public class ObjectPooling : SerializedMonoBehaviour
     {
         PushToPool(ObjectDrop, objectDropOnWorld);
     }
+
+
+    public ImpactableObjects PopImpactableObjects(string name, bool show = false)
+    {
+        return PopObjectFormPool<ImpactableObjects>(impactableObjects, name, GameConstants.EnemyDead, show);
+    }
+    public void PushToPoolImpactableObjects(ImpactableObjects impactableObject)
+    {
+        PushToPool(impactableObject, impactableObjects);
+    }
+
+
 
 
     public ObjDropHeart PopDropHeart(bool show = false)

@@ -8,12 +8,17 @@ public class CursesObject : ScriptableObject
     [Header("Comfinguration")]
     public Sprite IconCurses;
     public TypeCurses TypeCurses;
-    public LevelItems LevelCurses;
+    public LevelRomanNumerals LevelCurses;
+    public NameCurses TypeNameCurses;
     public string NameCurses = "";
     public string QuoteCurses = "";
     public string DescriptionCurses = "";
-    public float Speed = 1;
-    public float AttackRange = 2f;
+    public float TimeUseSKill = 1f;
+    public float Damage = 2;
+    public float Speed = 10f;
+    public float AttackRange = 30f;
+    public float UseAngry = 10;
+    public float multipleObj = 4;
     public CursesObject()
     {
 

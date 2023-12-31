@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Player-TheLamb
   m_EditorClassIdentifier: 
   projectTile: {fileID: 6231730481428099861, guid: df1cabce29737cc4cbaf85dc5e372604, type: 3}
+  LevelEnemy: 1
   HP: 1
   PowerForce: 30
   weight: 25
+  ExpDrop: 2

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: ScampHP
   m_EditorClassIdentifier: 
   projectTile: {fileID: 1873784280435111060, guid: c3d074dc5640eda4d93ac4fb019b35db, type: 3}
+  LevelEnemy: 1
   HP: 2
   PowerForce: 30
   weight: 25
+  ExpDrop: 2

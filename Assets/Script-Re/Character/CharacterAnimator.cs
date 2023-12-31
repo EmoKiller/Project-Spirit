@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    public enum AnimationState { Movement, Attack, Rolling }
+    public enum AnimationState { Idle, Movement, Attack, Rolling, UseSkill }
     public enum MovementType { Idle, Run }
     public enum AttackStep { step1, step2, step3, step4 }
 
@@ -11,8 +11,8 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] protected AnimationState currentAnimationState;
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackStep comboATK;
-    public AnimationState CurrentAnimationState 
-    { 
+    public AnimationState CurrentAnimationState
+    {
         get { return currentAnimationState; }
     }
     public MovementType CurrentMovementType
@@ -49,12 +49,12 @@ public class CharacterAnimator : MonoBehaviour
     {
 
     }
-    public void SetRolling(AnimationState type)
+    public void SetTrigger(AnimationState type)
     {
         SetTrigger(type.ToString());
         currentAnimationState = type;
     }
-    public void SetMovement(MovementType type,float Vertical,float Horizontal)
+    public void SetMovement(MovementType type, float Vertical, float Horizontal)
     {
         SetFloat("vertical", Vertical);
         SetFloat("horizontal", Horizontal);

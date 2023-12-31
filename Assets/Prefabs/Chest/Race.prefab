@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1222817320954364466}
   - component: {fileID: 7323049168824962854}
   m_Layer: 0
-  m_Name: Chest_Gold
+  m_Name: Race
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

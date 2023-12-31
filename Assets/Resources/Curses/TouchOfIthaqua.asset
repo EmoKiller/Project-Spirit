@@ -16,8 +16,10 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 4
   LevelCurses: 0
+  TypeNameCurses: 18
   NameCurses: TouchOfIthaqua
   QuoteCurses: A call from below that began the Winter Year.
   DescriptionCurses: An eruption of ice pillars that freezes enemies on hit.
+  Damage: 2
   Speed: 1
   AttackRange: 2

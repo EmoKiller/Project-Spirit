@@ -16,9 +16,12 @@ MonoBehaviour:
   IconCurses: {fileID: 862230689, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 0
   LevelCurses: 0
+  TypeNameCurses: 0
   NameCurses: 'Flaming Shot '
   QuoteCurses: Send forth the flame of the Underworld.
   DescriptionCurses: Shoot a piercing bolt of fire. Hold and release at the mark
     to make it explosive.
-  Speed: 1
-  AttackRange: 2
+  TimeUseSKill: 1
+  Damage: 2
+  Speed: 5
+  AttackRange: 35

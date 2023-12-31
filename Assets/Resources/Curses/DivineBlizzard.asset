@@ -16,8 +16,13 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 1
   LevelCurses: 0
+  TypeNameCurses: 5
   NameCurses: DivineBlizzard
   QuoteCurses: The breath of a forgotten God... once stronger than them all.
   DescriptionCurses: Knocks back and freezes enemies.
+  TimeUseSKill: 1
+  Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

@@ -7,7 +7,7 @@ public class GameLevelManager : MonoBehaviour
     public static GameLevelManager Instance;
     int level = 1;
     int round = 1;
-    [SerializeField] private List<Enemy> listEnemys = new List<Enemy>();
+    [SerializeField] public List<Enemy> listEnemys = new List<Enemy>();
     private void Awake()
     {
         if (Instance == null)
@@ -21,14 +21,14 @@ public class GameLevelManager : MonoBehaviour
     }
     public void SpawnEnemy()
     {
-        foreach (var item in ConfigDataHelper.GameConfig.GameLevelConfig[level].rounds[round].enemies)
+        foreach (var item in DataGameLevelConfig())
         {
-            Debug.Log(item.Value.type.ToString());
             for (int i = 0; i < item.Value.value; i++)
             {
                 Enemy ene = ObjectPooling.Instance.PopEnemy(item.Value.type.ToString());
                 ene.transform.position = (UnityEngine.Random.onUnitSphere * 80) + ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position;
                 ene.transform.SetParent(transform, true);
+                ene.SetLevelEnemy(item.Value.LevelEnemy);
                 listEnemys.Add(ene);
             }
         }
@@ -36,7 +36,30 @@ public class GameLevelManager : MonoBehaviour
     public void RemoveinList(Enemy ene)
     {
         listEnemys.Remove(ene);
+        if (listEnemys.Count == 0)
+        {
+            Debug.Log("ClearEnemy");
+            RewardSystem.Instance.SpawnChestBonus(DataGameLevelReward(),transform.position);
+            NextRound();
+            this.DelayCall(20, () =>
+            {
+                SpawnEnemy();
+            });
+        }
     }
+    private void NextRound()
+    {
+        round++;
+    }
+    private Dictionary<TypeEnemy,ConfigEnemy> DataGameLevelConfig()
+    {
+        return ConfigDataHelper.GameConfig.GameLevelConfig[level].rounds[round].enemies;
+    }
+    private ChestType DataGameLevelReward()
+    {
+        return ConfigDataHelper.GameConfig.GameLevelConfig[level].rounds[round].RewardChest;
+    }
+
 
 
 

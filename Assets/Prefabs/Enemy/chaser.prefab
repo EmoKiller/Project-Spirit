@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Action: 0
   onAniATK: 0
   OnEvent: 0
+  LevelEnemy: 0
   wayPoints: []
   currentWaypointIndex: 0
   playerDetectionRange: 15
@@ -980,6 +981,10 @@ PrefabInstance:
     - target: {fileID: 8479387275136142813, guid: 77940722565f486469245a1da00c9ddd, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479387275136142813, guid: 77940722565f486469245a1da00c9ddd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8479387275136142816, guid: 77940722565f486469245a1da00c9ddd, type: 3}
       propertyPath: m_RootOrder

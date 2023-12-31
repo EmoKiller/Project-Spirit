@@ -13,9 +13,5 @@ public class ObjDropCoin : ObjectDropOnWorld
     {
         InfomationPlayerManager.Instance.CurrentCoins += (int)TypeCoins;
     }
-    //public override void Hide()
-    //{
-    //    ObjectPooling.Instance.PushToPoolObjectDrop(this);
-    //}
 
 }

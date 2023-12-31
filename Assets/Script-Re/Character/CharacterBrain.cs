@@ -41,8 +41,8 @@ public abstract class CharacterBrain : MonoBehaviour
             slash.SetSizeBox(characterAttack.SlashBoxSize);
         }
     }
-    public abstract void EffectHit(Vector3 dir);
-    public abstract void Dead();
+    protected abstract void EffectHit(Vector3 dir);
+    protected abstract void Dead();
     protected abstract void Rolling();
     protected virtual void SetOnSlash()
     {

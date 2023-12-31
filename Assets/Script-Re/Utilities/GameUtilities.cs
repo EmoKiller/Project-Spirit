@@ -1,14 +1,13 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
-using DG.Tweening;
 
 public static class GameUtilities
 {
-    
     public static void DelayCall(this MonoBehaviour mono, float time, Action callBack)
     {
         mono.StartCoroutine(IEDelayCall(time,callBack));
@@ -77,7 +76,7 @@ public static class GameUtilities
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            action?.Invoke(raycastHit.point);
+            action?.Invoke(new Vector3(raycastHit.point.x,0, raycastHit.point.z));
         }
     }
     public static int ConvertInt(EnemGrPriteHeart grSprite)

@@ -706,7 +706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &97574445203597771
 Transform:
   m_ObjectHideFlags: 0
@@ -824,6 +824,7 @@ MonoBehaviour:
   m_Action: 0
   onAniATK: 0
   OnEvent: 0
+  LevelEnemy: 0
   wayPoints: []
   currentWaypointIndex: 0
   playerDetectionRange: 10

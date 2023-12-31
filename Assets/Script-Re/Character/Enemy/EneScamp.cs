@@ -12,15 +12,8 @@ public class EneScamp : Enemy
     public override void Init()
     {
         base.Init();
-        maxHealth = characterAttack.HP;
-        health = maxHealth;
-        healthBar.SetHealh(maxHealth);
-        SetoffSlash();
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
-        slash.AddActionAttack(OnAttackHit);
-        deadBody.SetActive(false);
-        
     }
     protected override void Update()
     {
@@ -138,7 +131,7 @@ public class EneScamp : Enemy
         }
         OnDashAtk = true;
     }
-    public override void Dead()
+    protected override void Dead()
     {
         base.Dead();
     }

@@ -16,8 +16,10 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 3
   LevelCurses: 0
+  TypeNameCurses: 14
   NameCurses: PathOfTheRighteous
   QuoteCurses: Walk, and be guided by faith.
   DescriptionCurses: Hold to aim. A projectile that creates a trail of black Ichor.
+  Damage: 2
   Speed: 1
   AttackRange: 2

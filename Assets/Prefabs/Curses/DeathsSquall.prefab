@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4198845416775638411}
   - component: {fileID: 4198845416775638413}
   m_Layer: 0
-  m_Name: Death'sSquall
+  m_Name: DeathsSquall
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

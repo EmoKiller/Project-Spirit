@@ -16,9 +16,14 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 2
   LevelCurses: 0
+  TypeNameCurses: 9
   NameCurses: Death'sAttendant
   QuoteCurses: Retainer of death, attend your master.
   DescriptionCurses: A devastating melee attack that will also summon ghosts from
     slain enemies.
+  TimeUseSKill: 1
+  Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

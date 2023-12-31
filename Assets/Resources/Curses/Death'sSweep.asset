@@ -16,9 +16,11 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 2
   LevelCurses: 0
+  TypeNameCurses: 8
   NameCurses: Death'sSweep
   QuoteCurses: Raze miscreants to the ground.
   DescriptionCurses: A devastating melee attack that can be charged for increased
     power.
+  Damage: 2
   Speed: 1
   AttackRange: 2

@@ -4,6 +4,29 @@ public enum SaveGameSlot
     Slot2,
     Slot3
 }
+public enum NameCurses
+{
+    FlamingShot,
+    CleansingFire,
+    HoundsOfFate,
+    DivineBlast,
+    DivineGuardian,
+    DivineBlizzard,
+    DivineBlight,
+    DeatsSweep,
+    OathOfTheCrown,
+    DeathsAttendant,
+    DeathsSquall,
+    IchorThrown,
+    PointOfCorruption,
+    PathOfTheRighteous,
+    CallOfTheCrown,
+    TouchOfTurua,
+    Maelstrom,
+    TouchOfIthaqua,
+    TouchOfTheRevenant
+
+}
 public enum AttributeType
 {
     Level,
@@ -105,9 +128,10 @@ public enum TypeCurses
     Blasts,
     Slashes,
     Splatters,
-    Tentacles
+    Tentacles,
+    Null
 }
-public enum LevelItems
+public enum LevelRomanNumerals
 {
     I = 1,
     II = 2,
@@ -259,5 +283,4 @@ public enum HeartInfo
     Half,
     Full
 }
-
 

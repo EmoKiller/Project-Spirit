@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : CharacterBrain , IPool
 {
+    public LevelRomanNumerals LevelEnemy;
     [SerializeField] protected List<Vector3> wayPoints = null;
     [SerializeField] protected int currentWaypointIndex = 0;
     [SerializeField] protected float playerDetectionRange = 10f;
@@ -30,11 +31,20 @@ public class Enemy : CharacterBrain , IPool
         {
             direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
         }
+        maxHealth = characterAttack.HP * (float)LevelEnemy;
+        health = maxHealth;
+        
+        healthBar.SetHealh(maxHealth);
+        slash.AddActionAttack(OnAttackHit);
     }
         
     protected virtual void Update()
     {
         
+    }
+    public void SetLevelEnemy(LevelRomanNumerals level)
+    {
+        LevelEnemy = level;
     }
     public void SetOnEvent(bool value)
     {
@@ -75,18 +85,6 @@ public class Enemy : CharacterBrain , IPool
     }
     public override void TakeDamage(float damage)
     {
-        Debug.Log("Enemy Hit");
-
-        if (!Alive)
-        {
-            //EffectDestroyObject effect = ObjectPooling.Instance.PopObjectFormPool(ObjectPooling.Instance.EffectDestroyObj, ListTypeEffects.EffectDestroySkeleton.ToString());
-            //if (direction.transform.position.x > transform.position.x)
-            //    effect.transform.DORotate(new Vector3(0, -180, 0),0);
-            //effect.transform.position = transform.position + new Vector3(0,2,0);
-            //effect.Show();
-            Hide();
-            return;
-        }
         base.TakeDamage(damage);
         health -= damage;
         healthBar.SetActive();
@@ -96,7 +94,7 @@ public class Enemy : CharacterBrain , IPool
             Dead();
         }
     }
-    public override void Dead()
+    protected override void Dead()
     {
         Vector3 dir = transform.position - direction.position;
         ImpactForce(dir.normalized * 20);
@@ -109,10 +107,16 @@ public class Enemy : CharacterBrain , IPool
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
             {
                 agent.AgentBody.enabled = false;
+                Hide();
+                RewardSystem.Instance.DropImpactableObjects(deadBody.gameObject.name, transform.position);
+                RewardSystem.Instance.DropObject(TypeItemsCanDrop.ObjDropExp, transform.position, out ObjectDropOnWorld objout);
+                ObjDropExp objDropExp = objout as ObjDropExp;
+                objDropExp.NumEXP = characterAttack.ExpEnemy * (float)LevelEnemy;
+
             });
         });
     }
-    public override void EffectHit(Vector3 dir)
+    protected override void EffectHit(Vector3 dir)
     {
         //Debug.Log(GameConstants.Slash);
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
@@ -127,6 +131,7 @@ public class Enemy : CharacterBrain , IPool
     {
         GameLevelManager.Instance.RemoveinList(this);
         ObjectPooling.Instance.PushToPoolEnemy(this);
+        deadBody.SetActive(false);
         gameObject.SetActive(false);
     }
 }

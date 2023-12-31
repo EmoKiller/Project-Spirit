@@ -16,8 +16,10 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 4
   LevelCurses: 0
+  TypeNameCurses: 17
   NameCurses: Maelstrom
   QuoteCurses: An Old God may still reside in the depth.
   DescriptionCurses: Tentacles will strike out in four directions.
+  Damage: 2
   Speed: 1
   AttackRange: 2

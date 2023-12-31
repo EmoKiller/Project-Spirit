@@ -16,8 +16,10 @@ MonoBehaviour:
   IconCurses: {fileID: 0}
   TypeCurses: 4
   LevelCurses: 0
+  TypeNameCurses: 16
   NameCurses: TouchOfTurua
   QuoteCurses: Sinker of ships, risen from the deep.
   DescriptionCurses: Convoke a violent eruption of powerful tentacles.
+  Damage: 2
   Speed: 1
   AttackRange: 2

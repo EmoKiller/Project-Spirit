@@ -10,7 +10,7 @@ public class HPObject : ScriptableObject
     public float HP = 1;
     public float PowerForce = 30f;
     public float weight = 30f;
-    public float ExpDrop = 1;
+    public float ExpDrop = 2;
 
     public HPObject() 
     { 

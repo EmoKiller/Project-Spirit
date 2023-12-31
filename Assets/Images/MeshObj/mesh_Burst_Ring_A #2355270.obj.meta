@@ -3,7 +3,12 @@ guid: a5f5eec11cb3c7d48b75f358273d9e5f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mesh_Burst_Ring_A_0Mat
+    second: {fileID: 2100000, guid: 94ddb83f61a3cda40966806d06f26bbd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

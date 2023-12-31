@@ -17,7 +17,7 @@ public class Slash : MonoBehaviour
     }
     public void AddActionAttack(Action<CharacterBrain> action) 
     {
-        attack += action;
+        attack = action;
     }
     public void SetActiveSlash(bool set)
     {

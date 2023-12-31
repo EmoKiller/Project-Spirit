@@ -18,15 +18,15 @@ MonoBehaviour:
   m_GUID: d93c371f3cd853c4f9aa4bdf16db8744
   m_SerializeEntries:
   - m_GUID: 7d74b11433f2b064f86775125eb99995
-    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_1.prefab
+    m_Address: Assets/Prefabs/Enemy/EnmeyDead/Dead_Humans_1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 765db819d0463b24aa9eb3b4f329246f
-    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_2.prefab
+    m_Address: Assets/Prefabs/Enemy/EnmeyDead/Dead_Humans_2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ed90832800c3ce44ab3d85e28d457504
-    m_Address: Assets/Prefabs/Enemy/DeadHuman/Dead_Humans_3.prefab
+    m_Address: Assets/Prefabs/Enemy/EnmeyDead/Dead_Humans_3.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 11699c587010fde46bf0580559aca284
@@ -183,6 +183,34 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 94ecd0febd73f314ea8a23d951366e6c
     m_Address: Assets/Prefabs/Enemy/chaser.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c9b4e10987a0e4d4bbc2c69a92e52dd1
+    m_Address: Assets/Prefabs/Enemy/EnmeyDead/Dead_Humans.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c6d7cf4b1127cde4797d025ae54d65fe
+    m_Address: Assets/Prefabs/Chest/Race.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c528305bf627f141b19eac78554b28d
+    m_Address: Assets/Prefabs/Chest/Common.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f4db2c39169dee4e9edb2a91ed6d842
+    m_Address: Assets/Prefabs/Chest/UnCommon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a8754781b5424ff4c8dede4d8829802b
+    m_Address: Assets/Prefabs/EffectSkill/Fireballs.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bf08aed4d35664c46afb8fa36fb8350e
+    m_Address: Assets/Prefabs/EffectSkill/HoundsofFate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2ba89bed0d025d14eb2ddc929cf19ad7
+    m_Address: Assets/Prefabs/EffectSkill/DivineBlast.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
