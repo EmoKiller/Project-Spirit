@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EneScamp : Enemy
 {
-
     protected override void Start()
     {
         base.Start();
@@ -54,18 +53,9 @@ public class EneScamp : Enemy
             return;
         }
     }
-    private void DashAtk()
-    {
-        OnDashAtk = true;
-        characterAnimator.SetTrigger("DashAttack");
-    }
-    private void EventInDashAtks()
-    {
-        agent.moveSpeed = 14;
-        SetMoveWayPoint(direction.transform.position, 3.5f);
-    }
     private void RandomMove()
     {
+        
         onFollowPlayer = false;
         randomMove = false;
         characterAnimator.SetTrigger("Idie");
@@ -74,10 +64,6 @@ public class EneScamp : Enemy
         OnAction = true;
         SetMoveWayPoint(point, 3);
         EnemyThinking(3,70);
-    }
-    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
-    {
-        base.SetMoveWayPoint(wayPoint, time);
     }
     public override void TakeDamage(float damage)
     {
@@ -130,6 +116,11 @@ public class EneScamp : Enemy
             return;
         }
         OnDashAtk = true;
+    }
+    public override void MoveTo(Vector3 direction)
+    {
+        base.MoveTo(direction);
+        characterAnimator.SetTrigger("OnRun");
     }
     protected override void Dead()
     {

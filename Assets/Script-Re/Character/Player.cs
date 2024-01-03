@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static CharacterAnimator;
 
 public class Player : CharacterBrain , IOrderable
 {
@@ -64,7 +65,6 @@ public class Player : CharacterBrain , IOrderable
                 currentCurses.ResetTime();
                 return;
             }
-            
             currentCurses.OnUseSkill = true;
             currentCurses.CountTime();
             fillAimingRecticule.transform.localScale = new Vector3(currentCurses.TimeUseSkill, 1, 1);
@@ -110,7 +110,10 @@ public class Player : CharacterBrain , IOrderable
         characterAnimator.SetMovement(CharacterAnimator.MovementType.Idle, Vertical, Horizontal);
     }
 
-    
+    private bool CheckState(AnimationStates state)
+    {
+        return characterAnimator.CurrentAnimationState == state;
+    }
     /// <summary>
     /// Use For Skill FireBall
     /// </summary>
@@ -130,7 +133,7 @@ public class Player : CharacterBrain , IOrderable
     /// </summary>
     protected override void Rolling()
     {
-        characterAnimator.SetTrigger(CharacterAnimator.AnimationState.Rolling);
+        characterAnimator.SetTrigger(CharacterAnimator.AnimationStates.Rolling);
         Vector3 dir = direction.position - transform.position;
         this.LoopDelayCall(0.3f, () =>
         {

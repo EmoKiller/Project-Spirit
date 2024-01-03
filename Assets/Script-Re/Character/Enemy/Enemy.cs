@@ -83,6 +83,28 @@ public class Enemy : CharacterBrain , IPool
             characterAnimator.SetTrigger("Attack");
         }
     }
+    protected virtual void DashAtk()
+    {
+        OnDashAtk = true;
+        characterAnimator.SetTrigger("DashAttack");
+    }
+    protected virtual void EventInDashAtks()
+    {
+        agent.moveSpeed = 14;
+        SetMoveWayPoint(direction.transform.position, 3.5f);
+    }
+    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
+    {
+        base.SetMoveWayPoint(wayPoint, time);
+        this.DelayCall(time, () =>
+        {
+            characterAnimator.SetTrigger("Idie");
+        });
+    }
+    public override void MoveTo(Vector3 direction)
+    {
+        base.MoveTo(direction);
+    }
     public float Distance()
     {
         return Vector3.Distance(transform.position, direction.transform.position);

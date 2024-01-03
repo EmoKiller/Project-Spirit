@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    public enum AnimationState { Idle, Movement, Attack, Rolling, UseSkill }
+    public enum AnimationStates { Idle, Movement, Attack, Rolling, UseSkill }
     public enum MovementType { Idle, Run }
     public enum AttackStep { step1, step2, step3, step4 }
 
     private Animator ator = null;
-    [SerializeField] protected AnimationState currentAnimationState;
+    [SerializeField] protected AnimationStates currentAnimationState;
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackStep comboATK;
-    public AnimationState CurrentAnimationState
+    public AnimationStates CurrentAnimationState
     {
         get { return currentAnimationState; }
     }
@@ -49,7 +49,7 @@ public class CharacterAnimator : MonoBehaviour
     {
 
     }
-    public void SetTrigger(AnimationState type)
+    public void SetTrigger(AnimationStates type)
     {
         SetTrigger(type.ToString());
         currentAnimationState = type;
@@ -58,7 +58,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         SetFloat("vertical", Vertical);
         SetFloat("horizontal", Horizontal);
-        currentAnimationState = AnimationState.Movement;
+        currentAnimationState = AnimationStates.Movement;
         currentMovementType = type;
     }
     public void SetDirection(float x, float z)
@@ -69,7 +69,7 @@ public class CharacterAnimator : MonoBehaviour
     public void SetComboAttack(int step)
     {
         SetTrigger(step.ToString());
-        currentAnimationState = AnimationState.Attack;
+        currentAnimationState = AnimationStates.Attack;
         comboATK = (AttackStep)step;
     }
     public void SetTrigger(string param)
