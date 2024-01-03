@@ -23,6 +23,8 @@ public class GameManager : SerializedMonoBehaviour
         InfomationPlayerManager.Instance.Init();
         player.Init();
         cameraFollow.Init();
+        if (InfomationPlayerManager.Instance.PlayerOnScenes() == OnScenes.IntroGame)
+            return;
         uiManager.Init();
         GameLevelManager.Instance.Init();
     }

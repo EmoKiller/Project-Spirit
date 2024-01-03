@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : CharacterBrain , IOrderable
 {
@@ -13,6 +14,7 @@ public class Player : CharacterBrain , IOrderable
     [SerializeField] private CursesEquip currentCurses;
     [SerializeField] private Transform aimingRecticule;
     [SerializeField] private Transform fillAimingRecticule;
+    [SerializeField] private GameObject aiming;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
@@ -26,6 +28,7 @@ public class Player : CharacterBrain , IOrderable
     {
         base.Start();
         health = 999;
+        
     }
     public void Init()
     {
@@ -61,20 +64,26 @@ public class Player : CharacterBrain , IOrderable
                 currentCurses.ResetTime();
                 return;
             }
+            
             currentCurses.OnUseSkill = true;
             currentCurses.CountTime();
             fillAimingRecticule.transform.localScale = new Vector3(currentCurses.TimeUseSkill, 1, 1);
             GameUtilities.ScreenRayCastOnWorld(AimingRecticule);
             characterAnimator.SetTrigger("UseSkill");
+            if (currentCurses.CursesObject.TypeCurses == TypeCurses.Fireballs)
+            {
+                aiming.gameObject.SetActive(true);
+            }
             return;
         }
-        if (Input.GetMouseButtonUp(1) && !onAniATK && currentCurses.CursesObject is not null)
+        if (Input.GetMouseButtonUp(1) && !onAniATK && currentCurses.CursesObject is not null && InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentAngry) > currentCurses.UseAngry)
         {
             UseSkill(direction.position - transform.position);
             currentCurses.OnUseSkill = false;
             characterAnimator.SetTrigger("Idie");
             currentCurses.ResetTime();
             StopAni();
+            aiming.gameObject.SetActive(false);
             return;
         }
         if (Input.GetMouseButtonDown(0) && !atkCanDo && characterAttack.BoolWeaponEquip())

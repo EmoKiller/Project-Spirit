@@ -26,8 +26,8 @@ public abstract class CharacterBrain : MonoBehaviour
     
     //BaseCharacter
     private string characterName { get; set; }
-    protected float health { get; set; }
-    protected float maxHealth { get; set; }
+    protected float health = 0;
+    protected float maxHealth = 0;
     
     public bool Alive => health > 0;
     public virtual string Name => characterName;

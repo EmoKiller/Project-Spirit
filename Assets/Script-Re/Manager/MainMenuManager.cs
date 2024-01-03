@@ -1,92 +1,100 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
+public class MainMenuManager : SerializedMonoBehaviour
 {
-    [SerializeField] private Button buttonPressToPlay;
-    [SerializeField] private Button buttonPlay;
-    [SerializeField] private Button buttonSetting;
-    [SerializeField] private Button buttonCredits;
-    [SerializeField] private Button buttonRoadmap;
-    [SerializeField] private Button buttonQuit;
-    [SerializeField] private Button buttonAccept;
-    [SerializeField] private Button buttonBack;
-    [SerializeField] private Button buttonReset;
-    [SerializeField] private Button buttonOnQuitBack;
-    [SerializeField] private Button buttonOnQuitAccept;
-    [SerializeField] private Button backOnStartMenu;
+    [SerializeField] Dictionary<MenuType, Button> mainMenu ;
+    [SerializeField] Dictionary<MenuType,List<GameObject>> mainMenuObj;
+    [SerializeField] Dictionary<SaveGameSlot, IconCheckSaveGame> saveGame;
     [SerializeField] private Camera cameraMenu;
 
-    [SerializeField] private GameObject menu;
-    [SerializeField] private GameObject save;
-    [SerializeField] private GameObject grMenu;
-    [SerializeField] private GameObject presstost;
     [SerializeField] private GameObject waterway;
-    [SerializeField] private GameObject onStart;
-    [SerializeField] private GameObject onSetting;
-    [SerializeField] private GameObject onCredits;
-    [SerializeField] private GameObject onRoadMap;
-    [SerializeField] private GameObject onQuit;
-    [SerializeField] private GameObject accept;
-    [SerializeField] private GameObject back;
-    [SerializeField] private GameObject reset;
-    [SerializeField] private GameObject bloomBgr;
-
+    [SerializeField] private Image bloomBloom;
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
-        buttonPressToPlay.onClick.AddListener(PressToPlay);
-        buttonPlay.onClick.AddListener(Play);
-        buttonSetting.onClick.AddListener(Setting);
-        buttonCredits.onClick.AddListener(Credits);
-        buttonRoadmap.onClick.AddListener(RoadMap);
-        buttonQuit.onClick.AddListener(Quit);
-        buttonBack.onClick.AddListener(BackToMenu);
-        buttonOnQuitAccept.onClick.AddListener(ExitGame);
-        buttonOnQuitBack.onClick.AddListener(BackToMenu);
-        backOnStartMenu.onClick.AddListener(BackToMenu);
+        mainMenu[MenuType.PressToPlay].onClick.AddListener(PressToPlay);
+        mainMenu[MenuType.Play].onClick.AddListener(Play);
+        mainMenu[MenuType.Settings].onClick.AddListener(Setting);
+        mainMenu[MenuType.Credits].onClick.AddListener(Credits);
+        mainMenu[MenuType.RoadMap].onClick.AddListener(RoadMap);
+        mainMenu[MenuType.Quit].onClick.AddListener(Quit);
+        mainMenu[MenuType.buttonBack].onClick.AddListener(BackToMenu);
+        mainMenu[MenuType.BackToMenu].onClick.AddListener(BackToMenu);
+        mainMenu[MenuType.backOnStartMenu].onClick.AddListener(BackToMenu);
+        mainMenu[MenuType.SaveGame1].onClick.AddListener(SaveGame1);
+        mainMenu[MenuType.SaveGame2].onClick.AddListener(SaveGame2);
+        mainMenu[MenuType.SaveGame3].onClick.AddListener(SaveGame3);
     }
     private void Update()
     {
 
     }
+    private void SaveGame1()
+    {
+        CheckSaveGame(SaveGameSlot.Slot1);
+    }
+    private void SaveGame2()
+    {
+        CheckSaveGame(SaveGameSlot.Slot2);
+    }
+    private void SaveGame3()
+    {
+        CheckSaveGame(SaveGameSlot.Slot3);
+    }
+    private void CheckSaveGame(SaveGameSlot slot)
+    {
+        InfomationPlayerManager.Instance.SaveSlot = slot;
+        LoadSceneExtension.LoadScene(ConfigDataHelper.HeroData.PlayerOnSceness[slot].ToString());
+    }
+
+
+    private void SetActiveObj(MenuType type , bool value)
+    {
+        foreach (var item in mainMenuObj[type])
+        {
+            item.gameObject.SetActive(value);
+        }
+    }
+
     private void PressToPlay()
     {
-        presstost.gameObject.SetActive(false);
+        SetActiveObj(MenuType.PressToPlay,false);
         cameraMenu.transform.DOLocalMoveZ(-20, 3, false).OnComplete(() =>
         {
             cameraMenu.transform.DOLocalMoveZ(-25, 1, false).OnComplete(() =>
             {
-                grMenu.gameObject.SetActive(true);
+                mainMenuObj[MenuType.PressToPlay][1].gameObject.SetActive(true);
             });
         });
     }
     private void Play()
     {
-        menu.gameObject.SetActive(false);
-        save.gameObject.SetActive(true);
+        mainMenuObj[MenuType.Play][0].gameObject.SetActive(false);
+        mainMenuObj[MenuType.Play][1].gameObject.SetActive(true);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     private void Setting()
     {
         WaterWayMove();
-        accept.gameObject.SetActive(true);
-        back.gameObject.SetActive(true);
-        reset.gameObject.SetActive(true);
+        SetActiveObj(MenuType.Settings, true);
     }
     private void Credits()
     {
         WaterWayMove();
-        onCredits.gameObject.SetActive(true);
-        back.gameObject.SetActive(true);
+        SetActiveObj(MenuType.Credits, true);
     }
     private void RoadMap()
     {
-        bloomBgr.gameObject.SetActive(true);
-        Image img = bloomBgr.GetComponent<Image>();
-        img.color = new Color32(0,0,0,225);
-        onRoadMap.gameObject.SetActive(true);
-        back.gameObject.SetActive(true);
+        bloomBloom.color = new Color32(0, 0, 0, 225);
+        SetActiveObj(MenuType.RoadMap, true);
     }
     private void ExitGame()
     {
@@ -94,12 +102,8 @@ public class MainMenuManager : MonoBehaviour
     }
     private void Quit()
     {
-        bloomBgr.gameObject.SetActive(true);
-        onQuit.gameObject.SetActive(true);
-        Image img = bloomBgr.GetComponent<Image>();
-        img.color = new Color32(255, 0, 0, 225);
-        accept.gameObject.SetActive(true);
-        back.gameObject.SetActive(true);
+        bloomBloom.color = new Color32(255, 0, 0, 225);
+        SetActiveObj(MenuType.Quit, true);
     }
     private void WaterWayMove()
     {
@@ -111,16 +115,9 @@ public class MainMenuManager : MonoBehaviour
     }
     private void BackToMenu()
     {
-        bloomBgr.gameObject.SetActive(false);
-        onQuit.gameObject.SetActive(false);
+        SetActiveObj(MenuType.BackToMenu, false);
         WaterWayBack();
-        onRoadMap.gameObject.SetActive(false);
-        accept.gameObject.SetActive(false);
-        back.gameObject.SetActive(false);
-        reset.gameObject.SetActive(false);
-        save.gameObject.SetActive(false);
-        menu.gameObject.SetActive(true);
-        
+        mainMenuObj[MenuType.BackToMenu][7].gameObject.SetActive(true);
     }
 
 

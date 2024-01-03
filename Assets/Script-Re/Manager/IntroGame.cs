@@ -22,6 +22,7 @@ public class IntroGame : MonoBehaviour
     [SerializeField] GameObject ObjuiChoose = null;
     [SerializeField] Transform UImanager = null;
     [SerializeField] Transform TargetCrown = null;
+    [SerializeField] DoorController doorNextScren = null;
     Color32 inMap1 = new Color32(0, 0, 0, 255);
     Color32 inMap2 = new Color32(242, 236, 222, 255);
     private void Start()
@@ -41,9 +42,9 @@ public class IntroGame : MonoBehaviour
     }
     private void EnemyGoToWayPoint()
     {
-        enemy[0].SetMoveWayPoint(waypoint.points[0].position, 1.1f);
+        enemy[0].SetMoveWayPoint(waypoint.points[0].position, 2f);
         enemy[0].SetOnEvent(true);
-        enemy[1].SetMoveWayPoint(waypoint.points[1].position, 1.1f);
+        enemy[1].SetMoveWayPoint(waypoint.points[1].position, 2f);
         enemy[1].SetOnEvent(true);
         for (int i = 4; i <= 8; i++)
             enemy[i].TriggerAni("Pray");
@@ -97,6 +98,7 @@ public class IntroGame : MonoBehaviour
         bloodImage.SetActive(true);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraTargetPlayer);
         EventDispatcher.Publish(CameraFollow.Script.CameraFollow, Events.CameraChangeColorBackGround, inMap1);
+        
     }
     private void SetPlayVideos(bool value)
     {
@@ -114,6 +116,7 @@ public class IntroGame : MonoBehaviour
                 enemy[i].TriggerAni("PrayFear");
             this.DelayCall(1.5f, () =>
             {
+                doorNextScren.SetDoor(false);
                 enemy[0].SetOnEvent(false);
                 enemy[1].SetOnEvent(false);
                 foreach (Enemy enemy in enemy)

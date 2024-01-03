@@ -20,7 +20,7 @@ MonoBehaviour:
   NameCurses: DivineBlast
   QuoteCurses: A curse against those unworthy of your presence.
   DescriptionCurses: Knocks back enemies in your range while also damaging them.
-  TimeUseSKill: 1
+  TimeUseSKill: 0
   Damage: 2
   Speed: 1
   AttackRange: 2

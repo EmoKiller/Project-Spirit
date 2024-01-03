@@ -39,6 +39,7 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
     }
     private void Start()
     {
@@ -57,24 +58,19 @@ public class UIManager : SerializedMonoBehaviour
             //item.SetStartMaxCurrentHP(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
             InfomationPlayerManager.Instance.UpdateValueOf(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
         }
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
         List<UI_Attribute> _UI_Attribute = GetComponentsInChildren<UI_Attribute>().ToList();
         foreach (var item in _UI_Attribute)
         {
             item.Init();
         }
 
-        //UiControllerHearts
-        //grHeart[(int)EnemGrPriteHeart.Red].SetStartMaxCurrentHP((int)InfomationPlayerManager.Instance.GetValueAtribute(AttributeType.MaxRedHeart));
-
-        //UIExp
     }
     /// <summary>
     /// UI Infomation
     /// </summary>
     [Header("UI Infomation")]
     
-    private UiInfomation _UIInfomation = null;
+    [SerializeField] private UiInfomation _UIInfomation = null;
     public UiInfomation UIInfomation
     {
         get
@@ -115,6 +111,8 @@ public class UIManager : SerializedMonoBehaviour
     [Button]
     public void TakeDamage(float valueHit)
     {
+        if (grHeart == null)
+            return;
         for (int i = grHeart.Count - 1; i > -1; i--)
         {
             grHeart[i].TakeDamage(ref valueHit);

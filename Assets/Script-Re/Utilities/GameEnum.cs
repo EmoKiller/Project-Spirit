@@ -1,8 +1,18 @@
+public enum OnScenes
+{
+    IntroGame,
+    VampireSurvivor
+}
 public enum SaveGameSlot
 {
     Slot1,
     Slot2,
     Slot3
+}
+public enum StateSaveGame
+{
+    NewGame,
+    Continue
 }
 public enum NameCurses
 {
@@ -244,16 +254,23 @@ public enum TypeShowButton
 }
 public enum MenuType
 {
+    PressToPlay,
     Play,
     Settings,
     Credits,
     RoadMap,
     Quit,
+    buttonAccept,
+    buttonBack,
+    buttonReset,
+    buttonOnQuitBack,
+    buttonOnQuitAccept,
+    backOnStartMenu,
     SaveGame1,
     SaveGame2,
     SaveGame3,
-    Back,
-    DeleteSaveGame
+    DeleteSaveGame,
+    BackToMenu
 }
 public enum EnemGrHeart
 {

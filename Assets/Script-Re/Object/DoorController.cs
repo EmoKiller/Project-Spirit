@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DoorController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] NavMeshObstacle obstacle;
+    public OnScenes onScenes;
+    private void OnTriggerEnter(Collider other)
     {
-        
+        LoadSceneExtension.LoadScene(onScenes.ToString());
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetDoor(bool value)
     {
-        
+        obstacle.enabled = value;
     }
 }

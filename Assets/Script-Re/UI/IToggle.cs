@@ -11,13 +11,13 @@ public class IToggle : MonoBehaviour
     {
         get => this.TryGetMonoComponent(ref _toggle);
     }
-    public Action<IToggle,bool> OnChangedEvent = null;
+    public Action<IToggle, bool> OnChangedEvent;
     private void Awake()
     {
         image = GetComponent<Image>();
         Toggle.onValueChanged.AddListener(OnValueChanged);
     }
-    protected void OnValueChanged(bool value)
+    protected virtual void OnValueChanged(bool value)
     {
         OnChangedEvent?.Invoke(this, value);
         if (Toggle.isOn == true)

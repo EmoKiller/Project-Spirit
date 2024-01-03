@@ -69,18 +69,28 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     private void Awake()
     {
         if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
             Instance = this;
+        }
         else
             Destroy(gameObject);
         heroData = (HeroData)ConfigDataHelper.HeroData.Clone();
     }
     public void Init()
     {
-        
+        if (PlayerOnScenes() == OnScenes.IntroGame)
+        {
+            return;
+        }
         Level = 1;
         //AttributeOnChange(AttributeType.Level,1);
         //AttributeOnChange(AttributeType.MaxRedHeart, 0);
         //SaveGame();
+    }
+    public OnScenes PlayerOnScenes()
+    {
+        return heroData.PlayerOnSceness[SaveSlot];
     }
     public float GetValueAttribute(AttributeType type)
     {

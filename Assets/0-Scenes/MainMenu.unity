@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -878,9 +878,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 77012355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 69977d8413b982d4fb4141e9603d0e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Slot: 0
+  StateSave: 0
+  newGame: {fileID: 2137833914}
 --- !u!1 &89046052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1404,7 @@ GameObject:
   - component: {fileID: 127042041}
   - component: {fileID: 127042040}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2648,7 +2651,6 @@ GameObject:
   m_Component:
   - component: {fileID: 220800207}
   - component: {fileID: 220800212}
-  - component: {fileID: 220800213}
   - component: {fileID: 220800210}
   - component: {fileID: 220800208}
   m_Layer: 5
@@ -2746,7 +2748,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -1393772868, guid: 867af5d0db204a04ca417faca140f48f, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -2761,18 +2763,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &220800213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220800206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &222430192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,7 +2894,7 @@ GameObject:
   - component: {fileID: 241461634}
   - component: {fileID: 241461633}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3564,7 +3554,6 @@ GameObject:
   m_Component:
   - component: {fileID: 324329766}
   - component: {fileID: 324329771}
-  - component: {fileID: 324329772}
   - component: {fileID: 324329769}
   - component: {fileID: 324329767}
   m_Layer: 5
@@ -3662,7 +3651,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -1393772868, guid: 867af5d0db204a04ca417faca140f48f, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -3677,18 +3666,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &324329772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 324329765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &326254147
 GameObject:
   m_ObjectHideFlags: 0
@@ -7202,7 +7179,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 499497008}
-  - component: {fileID: 499497013}
   - component: {fileID: 499497012}
   - component: {fileID: 499497010}
   - component: {fileID: 499497009}
@@ -7316,18 +7292,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &499497013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499497007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714f237f957f1e747925afdcd457c836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &510988495
 GameObject:
   m_ObjectHideFlags: 0
@@ -11198,7 +11162,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4095
 --- !u!114 &757063133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11283,33 +11247,518 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5bb192dc5e06346a22667d8415da90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressToPlay: {fileID: 1048003059}
-  buttonPlay: {fileID: 1339850301}
-  buttonSetting: {fileID: 220800212}
-  buttonCredits: {fileID: 858109418}
-  buttonRoadmap: {fileID: 993394045}
-  buttonQuit: {fileID: 324329771}
-  buttonAccept: {fileID: 786102802}
-  buttonBack: {fileID: 1650783913}
-  buttonReset: {fileID: 1405429757}
-  buttonOnQuitBack: {fileID: 1381108490}
-  buttonOnQuitAccept: {fileID: 499497012}
-  backOnStartMenu: {fileID: 1866943960}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1048003059}
+    - {fileID: 1339850301}
+    - {fileID: 220800212}
+    - {fileID: 858109418}
+    - {fileID: 993394045}
+    - {fileID: 324329771}
+    - {fileID: 1866943960}
+    - {fileID: 1381108490}
+    - {fileID: 1650783913}
+    - {fileID: 77012361}
+    - {fileID: 1391359249}
+    - {fileID: 945318683}
+    - {fileID: 1107550751}
+    - {fileID: 642023922}
+    - {fileID: 331465987}
+    - {fileID: 788971109}
+    - {fileID: 1254605909}
+    - {fileID: 519000770}
+    - {fileID: 453836660}
+    - {fileID: 858109412}
+    - {fileID: 1773154721}
+    - {fileID: 731669414}
+    - {fileID: 914133089}
+    - {fileID: 77012362}
+    - {fileID: 1391359250}
+    - {fileID: 945318684}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: mainMenu
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[MenuType, Assembly-CSharp],[UnityEngine.UI.Button,
+        UnityEngine.UI]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[MenuType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 16
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 12
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 13
+    - Name: $v
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: mainMenuObj
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[MenuType, Assembly-CSharp],[System.Collections.Generic.List`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 16
+    - Name: $v
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: saveGame
+      Entry: 7
+      Data: 10|System.Collections.Generic.Dictionary`2[[SaveGameSlot, Assembly-CSharp],[IconCheckSaveGame,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 11|System.Collections.Generic.EnumEqualityComparer`1[[SaveGameSlot, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   cameraMenu: {fileID: 460533726}
-  menu: {fileID: 331465987}
-  save: {fileID: 788971109}
-  grMenu: {fileID: 642023922}
-  presstost: {fileID: 1107550751}
   waterway: {fileID: 1534126775}
-  onStart: {fileID: 0}
-  onSetting: {fileID: 220800206}
-  onCredits: {fileID: 858109412}
-  onRoadMap: {fileID: 731669414}
-  onQuit: {fileID: 914133089}
-  accept: {fileID: 1254605909}
-  back: {fileID: 519000770}
-  reset: {fileID: 453836660}
-  bloomBgr: {fileID: 1773154721}
+  bloomBloom: {fileID: 1773154722}
 --- !u!1 &759394913
 GameObject:
   m_ObjectHideFlags: 0
@@ -11395,7 +11844,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 763584832}
-  - component: {fileID: 763584838}
   - component: {fileID: 763584837}
   - component: {fileID: 763584835}
   - component: {fileID: 763584833}
@@ -11509,18 +11957,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &763584838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763584831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &763995704
 GameObject:
   m_ObjectHideFlags: 0
@@ -12055,7 +12491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -135.22}
+  m_AnchoredPosition: {x: 50, y: -37.5}
   m_SizeDelta: {x: 275, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788971111
@@ -12663,7 +13099,6 @@ GameObject:
   m_Component:
   - component: {fileID: 858109413}
   - component: {fileID: 858109418}
-  - component: {fileID: 858109419}
   - component: {fileID: 858109416}
   - component: {fileID: 858109414}
   m_Layer: 5
@@ -12761,7 +13196,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -1393772868, guid: 867af5d0db204a04ca417faca140f48f, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -12776,18 +13211,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &858109419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858109412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &872604228
 GameObject:
   m_ObjectHideFlags: 0
@@ -13303,7 +13726,6 @@ GameObject:
   - component: {fileID: 914133090}
   - component: {fileID: 914133093}
   - component: {fileID: 914133092}
-  - component: {fileID: 914133094}
   m_Layer: 5
   m_Name: OnQuit
   m_TagString: Untagged
@@ -13371,18 +13793,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914133089}
   m_CullTransparentMesh: 1
---- !u!114 &914133094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914133089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4174547543dfdd4c8d70630ecbca134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &916062367
 GameObject:
   m_ObjectHideFlags: 0
@@ -14186,9 +14596,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 945318677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 69977d8413b982d4fb4141e9603d0e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Slot: 2
+  StateSave: 0
+  newGame: {fileID: 241461633}
 --- !u!1 &950183094
 GameObject:
   m_ObjectHideFlags: 0
@@ -14724,7 +15137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 993394040}
   - component: {fileID: 993394045}
-  - component: {fileID: 993394046}
   - component: {fileID: 993394043}
   - component: {fileID: 993394041}
   m_Layer: 5
@@ -14822,7 +15234,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -1393772868, guid: 867af5d0db204a04ca417faca140f48f, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -14837,18 +15249,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &993394046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993394039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &997463268
 GameObject:
   m_ObjectHideFlags: 0
@@ -20027,7 +20427,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1339850295}
   - component: {fileID: 1339850301}
-  - component: {fileID: 1339850302}
   - component: {fileID: 1339850297}
   - component: {fileID: 1339850298}
   m_Layer: 5
@@ -20125,7 +20524,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -1393772868, guid: 867af5d0db204a04ca417faca140f48f, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -20140,18 +20539,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1339850302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339850294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1345135183
 GameObject:
   m_ObjectHideFlags: 0
@@ -20518,7 +20905,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381108486}
-  - component: {fileID: 1381108491}
   - component: {fileID: 1381108490}
   - component: {fileID: 1381108488}
   - component: {fileID: 1381108487}
@@ -20632,18 +21018,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1381108491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381108485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714f237f957f1e747925afdcd457c836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1383550773
 GameObject:
   m_ObjectHideFlags: 0
@@ -20860,9 +21234,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1391359243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 69977d8413b982d4fb4141e9603d0e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Slot: 1
+  StateSave: 0
+  newGame: {fileID: 127042040}
 --- !u!1 &1405173557
 GameObject:
   m_ObjectHideFlags: 0
@@ -22465,6 +22842,67 @@ Transform:
   m_Father: {fileID: 1673805723}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -55.92}
+--- !u!1001 &1454901375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547212, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235880455517547213, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1235880455517547213, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+    - target: {fileID: 1235880455517547215, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
+      propertyPath: m_Name
+      value: InfomationPlayerManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 299352b958d3fda42a021f4affc6f4f3, type: 3}
 --- !u!1 &1455086312
 GameObject:
   m_ObjectHideFlags: 0
@@ -24661,7 +25099,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1613704702}
   - component: {fileID: 1613704703}
-  - component: {fileID: 1613704704}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -24717,18 +25154,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1613704704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613704701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae65e15a5ce92a240b0b6ff87770d820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1615256105
 GameObject:
   m_ObjectHideFlags: 0
@@ -28524,7 +28949,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866943955}
-  - component: {fileID: 1866943961}
   - component: {fileID: 1866943960}
   - component: {fileID: 1866943958}
   - component: {fileID: 1866943956}
@@ -28638,18 +29062,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1866943961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866943954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972bcd1fcd455014bb902bc68b26a0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1868245668
 GameObject:
   m_ObjectHideFlags: 0
@@ -31655,7 +32067,7 @@ GameObject:
   - component: {fileID: 2137833915}
   - component: {fileID: 2137833914}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : CharacterBrain , IPool
 {
@@ -24,6 +25,9 @@ public class Enemy : CharacterBrain , IPool
         base.Start();
         characterAttack.Initialized();
         slash.SetSizeBox(characterAttack.SlashBoxSize);
+        maxHealth = characterAttack.HP * (float)LevelEnemy;
+        health = maxHealth;
+        healthBar.SetHealh(maxHealth);
     }
     public virtual void Init()
     {
@@ -107,6 +111,12 @@ public class Enemy : CharacterBrain , IPool
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
             {
                 agent.AgentBody.enabled = false;
+                if(SceneManager.GetActiveScene().name == "IntroGame")
+                {
+                    RewardSystem.Instance.DropImpactableObjects(deadBody.gameObject.name, transform.position);
+                    gameObject.SetActive(false);
+                    return;
+                }
                 Hide();
                 RewardSystem.Instance.DropImpactableObjects(deadBody.gameObject.name, transform.position);
                 RewardSystem.Instance.DropObject(TypeItemsCanDrop.ObjDropExp, transform.position, out ObjectDropOnWorld objout);
