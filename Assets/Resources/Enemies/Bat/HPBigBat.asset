@@ -9,19 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 956bd04f731c9034fbaffce222a524e7, type: 3}
-  m_Name: BatWeapon
+  m_Script: {fileID: 11500000, guid: dee15b41efdf2594ba7f78d5b5ef258a, type: 3}
+  m_Name: HPBigBat
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconWeapon: {fileID: 0}
-  LevelWeapon: 0
-  NameWeapon: 
-  QuoteWeapon: 
-  DescriptionWeapon: 
-  Speed: 1
-  AttackRange: 15
-  SlashBoxSize: {x: 2, y: 2, z: 2}
-  ListDamage:
-  - 1
-  ListPowerForce:
-  - 1
+  HP: 6
+  PowerForce: 30
+  weight: 30
+  ExpDrop: 3

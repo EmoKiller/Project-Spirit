@@ -229,8 +229,8 @@ TextureImporter:
         y: 103
         width: 31
         height: 65
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48693946, y: 0.045262966}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -347,6 +347,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Enemies_Bat_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 87
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8901e9e7adee9043abe7fe30cbc9f9b
+      internalID: 1274495727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -359,6 +380,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Enemies_Bat_10: 1629690509
+      Enemies_Bat_11: 1274495727
       Enemies_Bat_3: 1621195110
       Enemies_Bat_8: -2074938607
       Enemies_Bat_6: 1849928819

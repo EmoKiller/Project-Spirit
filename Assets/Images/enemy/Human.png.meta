@@ -746,6 +746,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Human_15
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1675
+        width: 228
+        height: 199
+      alignment: 9
+      pivot: {x: 0.45126665, y: 0.14744315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3bedb0e708a4ac4da07100b663585a7
+      internalID: -981032986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_16
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 798
+        width: 127
+        height: 118
+      alignment: 9
+      pivot: {x: 0.36772865, y: 0.047340006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a56fad87e7ddb44b04fc860e1a6b83
+      internalID: 488848303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_17
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 566
+        width: 121
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28395da1075c154799c2a8940fd889e
+      internalID: 1004195981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 153
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0ac240b5e25ef44b9cdc1058dca68c
+      internalID: 1235854269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_19
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 614
+        width: 176
+        height: 77
+      alignment: 9
+      pivot: {x: 0.50441223, y: 0.16868246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160db8d6515647748a20e57c3841b3b7
+      internalID: 551469939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_20
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 505
+        width: 179
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62265d370f8c9e43b0a086370713a1c
+      internalID: 1316404920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -761,18 +887,23 @@ TextureImporter:
       Scamp_Hand: 1643546706
       Scamp_Head_Bac: 1300820393
       Human_9: -1889224111
+      Human_20: 1316404920
       Swordsman_Body_font: 1802780893
       Scamp_Head_Back: 316544033
       Human_1: -1664588811
+      Human_15: -981032986
+      Human_19: 551469939
       Swordsman_Weapon: -142764730
       Human_8: 2058664007
       Human_10: -1209449039
       Human_12: 284861929
       Human_2: 1927893109
+      Human_16: 488848303
       eyes-2: 1102243393
       Human_6: -1447052927
       Human_11: 2134152354
       Human_7: 1231233740
+      Human_18: 1235854269
       Human_3: -729425909
       Swordsman_Head_Back: -1175125773
       Swordsman_Head_font_1: -543830353
@@ -785,6 +916,7 @@ TextureImporter:
       Eyes-0: 642932011
       Human_5: 1182853180
       Human_0: -965484438
+      Human_17: 1004195981
       eyes-1: 1838644133
       Human_13: 1106094029
   spritePackingTag: 

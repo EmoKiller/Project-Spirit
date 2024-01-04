@@ -20,10 +20,16 @@ public class CameraFollow : MonoBehaviour
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraTargetPlayer, TargetPlayer);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraDefault, CameraDefault);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraFocus, CameraFocus);
+
+        EventDispatcher.Addlistener(Script.CameraFollow, Events.OnAttackHitEnemy, vibrateCamera);
     }
     public void Init()
     {
         TargetPlayer();
+    }
+    private void vibrateCamera()
+    {
+        Debug.Log("vibrateCamera");
     }
     private void Update()
     {

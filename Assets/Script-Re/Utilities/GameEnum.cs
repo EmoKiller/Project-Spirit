@@ -122,6 +122,7 @@ public enum TypeEnemy
 {
     EneScamp,
     SwordsMan,
+    EnemyBat,
     Chaser
 }
 public enum TypeInfoWeapon
@@ -171,6 +172,11 @@ public enum Events
     SetVideoIntro,
     PlayTalkScript3,
     //player
+
+    OnAttackHitEnemy,
+
+
+
     PlayerTransform,
     PlayerDirection,//func
     PlayerTriggerAni,

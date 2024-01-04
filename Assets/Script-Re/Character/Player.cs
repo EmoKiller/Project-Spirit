@@ -44,6 +44,9 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<CursesEquip>(Script.Player, Events.PlayerChangeCurses, ChangeCurses);
         EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
         EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
+
+        EventDispatcher.Addlistener(Script.Player, Events.OnAttackHitEnemy, DelayTime);
+
         slash.AddActionAttack(OnAttackHit);
     }
     public void SetWeapon()
@@ -161,6 +164,15 @@ public class Player : CharacterBrain , IOrderable
         Debug.Log("PlayerHitEne" + " " + GetDamageCombo() * Crit);
         target.TakeDamage(GetDamageCombo() * Crit);
         base.OnAttackHit(target);
+        EventDispatcher.Publish(Events.OnAttackHitEnemy);
+    }
+    private void DelayTime()
+    {
+        Time.timeScale = 0.4f;
+        this.DelayCall(0.05f, () =>
+        {
+            Time.timeScale = 1;
+        });
     }
     protected float CritHit(ref float value)
     {

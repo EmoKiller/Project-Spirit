@@ -213,6 +213,22 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/EffectSkill/DivineBlast.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 6b25e207c3894c8499ea3b7fe89be79c
+    m_Address: Assets/Prefabs/Enemy/EnmeyDead/Dead_Horn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9bacf0053e2abdc4cb4e12f013e1d9e5
+    m_Address: Assets/Prefabs/Enemy/EnemyBat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2523c8a5f94fece40a636352138130af
+    m_Address: Assets/Prefabs/Enemy/EnemyBigBat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0e3052d0340737e4b869b7ee2d68ecfb
+    m_Address: Assets/Prefabs/Enemy/EneScampShield.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:
