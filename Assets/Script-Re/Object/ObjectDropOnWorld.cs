@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObjectDropOnWorld : MonoBehaviour, IPool
 {
     [Header("Tranform DOMoveY")]
+    public float TimeMove = 10f;
+    public float TimeMoveMulti = 1;
     public float MoveY = 1;
     public float TimeMoveY = 1;
     [Header("SetEase")]
@@ -50,7 +52,12 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
     }
     protected virtual void Event()
     {
-        transform.position = Vector3.LerpUnclamped(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position, 10 * Time.deltaTime);
+        if (Vector3.Distance(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position) < 1f)
+        {
+            TimeMoveMulti = 2;
+        }
+        transform.position = Vector3.LerpUnclamped(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position, TimeMove* TimeMoveMulti * Time.deltaTime);
+        
         if (Vector3.Distance(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position) < 0.5f)
         {
             pubLish?.Invoke();
@@ -69,6 +76,7 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
 
     public virtual void Hide()
     {
+        TimeMoveMulti = 1;
         RewardSystem.Instance.RemoveFromListObj(this);
         ObjectPooling.Instance.PushToPoolObjectDrop(this);
         gameObject.SetActive(false);

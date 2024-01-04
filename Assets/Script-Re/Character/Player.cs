@@ -168,7 +168,7 @@ public class Player : CharacterBrain , IOrderable
     }
     private void DelayTime()
     {
-        Time.timeScale = 0.4f;
+        Time.timeScale = 0.5f;
         this.DelayCall(0.05f, () =>
         {
             Time.timeScale = 1;

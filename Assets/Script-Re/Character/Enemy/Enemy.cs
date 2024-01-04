@@ -133,18 +133,20 @@ public class Enemy : CharacterBrain , IPool
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
             {
                 agent.AgentBody.enabled = false;
-                if(SceneManager.GetActiveScene().name == "IntroGame")
+                if (deadBody != null)
                 {
+                    if (SceneManager.GetActiveScene().name == "IntroGame")
+                    {
+                        RewardSystem.Instance.DropImpactableObjects(deadBody.gameObject.name, transform.position);
+                        gameObject.SetActive(false);
+                        return;
+                    }
                     RewardSystem.Instance.DropImpactableObjects(deadBody.gameObject.name, transform.position);
-                    gameObject.SetActive(false);
-                    return;
                 }
-                Hide();
-                RewardSystem.Instance.DropImpactableObjects(deadBody.gameObject.name, transform.position);
                 RewardSystem.Instance.DropObject(TypeItemsCanDrop.ObjDropExp, transform.position, out ObjectDropOnWorld objout);
                 ObjDropExp objDropExp = objout as ObjDropExp;
                 objDropExp.NumEXP = characterAttack.ExpEnemy * (float)LevelEnemy;
-
+                Hide();
             });
         });
     }

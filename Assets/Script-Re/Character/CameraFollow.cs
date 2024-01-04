@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -7,11 +8,18 @@ public class CameraFollow : MonoBehaviour
     {
         CameraFollow
     }
+    [Header("Shaker")]
+    [SerializeField] private Vector3 _positonStrength;
+    [SerializeField] private float timeDurationPositonStrength;
+    [SerializeField] private Vector3 _rotationStrength;
+    [SerializeField] private float timeDurationRotationStrength;
+
+    [Header("Component System")]
     [SerializeField] private Transform target;
     [SerializeField] private float smooth;
     [SerializeField] private Vector3 offset;
-    
-    Camera _camera => GetComponent<Camera>();
+
+    [SerializeField] Camera _camera;
     private Vector3 vecref = Vector3.zero;
     private void Awake()
     {
@@ -30,6 +38,11 @@ public class CameraFollow : MonoBehaviour
     private void vibrateCamera()
     {
         Debug.Log("vibrateCamera");
+        _camera.transform.DOComplete();
+        _camera.transform.DOShakePosition(timeDurationPositonStrength, _positonStrength);
+        _camera.transform.DOShakeRotation(timeDurationRotationStrength, _rotationStrength);
+        //gameObject.transform.DOShakePosition()
+
     }
     private void Update()
     {

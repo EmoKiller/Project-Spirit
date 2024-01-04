@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5360845084696028412
 Transform:
   m_ObjectHideFlags: 0
@@ -50,7 +50,6 @@ MonoBehaviour:
   TimeMoveY: 1
   EaseType: 0
   Ontrigger: 0
-  isTake: 0
   spriteRenderer: {fileID: 5360845084696028414}
   TypeHeart: 0
 --- !u!65 &5360845084696028415
