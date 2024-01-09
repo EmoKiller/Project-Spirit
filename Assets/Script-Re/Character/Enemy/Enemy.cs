@@ -1,14 +1,14 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Enemy : CharacterBrain , IPool
 {
     public LevelRomanNumerals LevelEnemy;
-    [SerializeField] protected List<Vector3> wayPoints = null;
-    [SerializeField] protected int currentWaypointIndex = 0;
-    [SerializeField] protected float playerDetectionRange = 10f;
+    [SerializeField] protected float playerDetectionRange = 25f;
     [SerializeField] protected float DashAttackRange = 6f;
     [SerializeField] protected bool onFollowPlayer = false;
     [SerializeField] protected HealthBar healthBar;
@@ -26,7 +26,7 @@ public class Enemy : CharacterBrain , IPool
         characterAttack.Initialized();
         slash.SetSizeBox(characterAttack.SlashBoxSize);
         maxHealth = characterAttack.HP * (float)LevelEnemy;
-        health = maxHealth;
+        CurrentHealth = maxHealth;
         healthBar.SetHealh(maxHealth);
     }
     public virtual void Init()
@@ -36,7 +36,7 @@ public class Enemy : CharacterBrain , IPool
             direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
         }
         maxHealth = characterAttack.HP * (float)LevelEnemy;
-        health = maxHealth;
+        CurrentHealth = maxHealth;
         
         healthBar.SetHealh(maxHealth);
         slash.AddActionAttack(OnAttackHit);
@@ -44,8 +44,116 @@ public class Enemy : CharacterBrain , IPool
         
     protected virtual void Update()
     {
+        if (!Alive || OnAction)
+            return;
+        switch (characterAnimator.CurrentAnimationState)
+        {
+            case CharacterAnimator.AnimationStates.Idle:
+                EnemyIdle();
+                break;
+            case CharacterAnimator.AnimationStates.Movement:
+                EnemyMovement();
+                break;
+            case CharacterAnimator.AnimationStates.RandomMove:
+                EnemyRandomMove();
+                break;
+            case CharacterAnimator.AnimationStates.Chase:
+                EnemyChase();
+                break;
+            case CharacterAnimator.AnimationStates.Attack:
+                EnemyAttack();
+                break;
+            case CharacterAnimator.AnimationStates.RunAtk:
+                EnemyRunAtk();
+                break;
+            case CharacterAnimator.AnimationStates.Rolling:
+                EnemyRolling();
+                break;
+            case CharacterAnimator.AnimationStates.RangeAttack:
+                EnemyRangeAtk();
+                break;
+            case CharacterAnimator.AnimationStates.UseSkill:
+                EnemyUseSkill();
+                break;
+            case CharacterAnimator.AnimationStates.MoveToTarget:
+                EnemyMoveToTarget();
+                break;
+        }
+        CheckTransition();
+    }
+    protected virtual void EnemyIdle()
+    {
         
     }
+    protected virtual void EnemyMovement()
+    {
+
+    }
+    protected virtual void EnemyMoveToTarget()
+    {
+        MoveTo(direction.transform.position);
+        Rotation();
+        if (Distance() < playerDetectionRange)
+            characterAnimator.SetAnimationState(CharacterAnimator.AnimationStates.RandomMove);
+    }
+    protected virtual void EnemyRandomMove()
+    {
+        if (randomMove == true)
+            return;
+
+        randomMove = true;
+        Vector3 vec = Random.onUnitSphere;
+        Vector3 point = vec.normalized * 15 + direction.transform.position;
+        SetMoveWayPoint(point, 4);
+    }
+    protected virtual void EnemyChase()
+    {
+
+    }
+    protected virtual void EnemyAttack()
+    {
+
+    }
+    protected virtual void EnemyRunAtk()
+    {
+
+    }
+    protected virtual void EnemyRolling()
+    {
+
+    }
+    protected virtual void EnemyRangeAtk()
+    {
+
+    }
+    protected virtual void EnemyUseSkill()
+    {
+
+    }
+    protected virtual void CheckTransition()
+    {
+        if (Distance() > playerDetectionRange)
+            characterAnimator.SetAnimationState(CharacterAnimator.AnimationStates.MoveToTarget);
+
+    }
+    protected virtual void EnemyThinking(float TimeThink, int ratioRandomMove , UnityAction Random1, UnityAction random2)
+    {
+        this.DelayCall(TimeThink, () =>
+        {
+            randomMove = false;
+            int i = Random.Range(0, 100);
+            if (i < ratioRandomMove)
+            {
+                Random1?.Invoke();
+                return;
+            }
+            random2?.Invoke();
+        });
+    }
+
+
+
+
     public void SetLevelEnemy(LevelRomanNumerals level)
     {
         LevelEnemy = level;
@@ -55,21 +163,13 @@ public class Enemy : CharacterBrain , IPool
         OnEvent = value;
     }
 
-    protected override void Rolling()
+    public override void Rolling()
     {
         throw new System.NotImplementedException();
     }
     protected void ChangeFollowPlayer()
     {
         onFollowPlayer = !onFollowPlayer;
-    }
-    protected override void StartAniAtk()
-    {
-        base.StartAniAtk();
-    }
-    protected override void FinishAniAtk()
-    {
-        base.FinishAniAtk();
     }
     protected override void OnAttackHit(CharacterBrain target)
     {
@@ -96,10 +196,10 @@ public class Enemy : CharacterBrain , IPool
     public override void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
         base.SetMoveWayPoint(wayPoint, time);
-        this.DelayCall(time, () =>
-        {
-            characterAnimator.SetTrigger("Idie");
-        });
+        //this.DelayCall(time, () =>
+        //{
+        //    characterAnimator.SetTrigger("Idie");
+        //});
     }
     public override void MoveTo(Vector3 direction)
     {
@@ -112,15 +212,15 @@ public class Enemy : CharacterBrain , IPool
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        health -= damage;
+        CurrentHealth -= damage;
         healthBar.SetActive();
-        healthBar.UpdateHealth(health);
-        if (health <= 0)
+        healthBar.UpdateHealth(CurrentHealth);
+        if (CurrentHealth <= 0)
         {
             Dead();
         }
     }
-    protected override void Dead()
+    public override void Dead()
     {
         Vector3 dir = transform.position - direction.position;
         ImpactForce(dir.normalized * 20);
@@ -155,7 +255,14 @@ public class Enemy : CharacterBrain , IPool
         //Debug.Log(GameConstants.Slash);
         //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
-
+    
+    protected virtual void SpawnObject(string name, Vector3 foward)
+    {
+        RewardSystem.Instance.SpawnObjectSkillEnemy(name, transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+        outSkill.Init(1f, 15);
+        outSkill.transform.DOMove(transform.position + (foward * 30) + new Vector3(0, 1.5f, 0), 10);
+    }
+    #region ObjectPooling
     public void Show()
     {
         gameObject.SetActive(true);
@@ -168,4 +275,6 @@ public class Enemy : CharacterBrain , IPool
         deadBody.SetActive(false);
         gameObject.SetActive(false);
     }
+    #endregion
+
 }

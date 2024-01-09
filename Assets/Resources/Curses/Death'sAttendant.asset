@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Death'sAttendant
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconCurses: {fileID: 0}
+  IconCurses: {fileID: 185356583, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 2
   LevelCurses: 0
   TypeNameCurses: 9

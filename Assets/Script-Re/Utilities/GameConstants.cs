@@ -10,5 +10,5 @@ public class GameConstants
     public const string EnemyDead = "Assets/Prefabs/Enemy/EnmeyDead/{0}.prefab";
     public const string ChestBonus = "Assets/Prefabs/Chest/{0}.prefab";
     public const string EffectSkill = "Assets/Prefabs/EffectSkill/{0}.prefab";
-
+    public const string EffectEnemySkill = "Assets/Prefabs/EffectSkillEnemy/{0}.prefab";
 }

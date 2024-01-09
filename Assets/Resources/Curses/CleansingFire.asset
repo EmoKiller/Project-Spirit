@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CleansingFire
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconCurses: {fileID: 0}
+  IconCurses: {fileID: 2080177977, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 0
   LevelCurses: 0
   TypeNameCurses: 1
@@ -24,3 +24,5 @@ MonoBehaviour:
   Damage: 2
   Speed: 5
   AttackRange: 35
+  UseAngry: 10
+  multipleObj: 4

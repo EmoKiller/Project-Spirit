@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DivineBlizzard
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconCurses: {fileID: 0}
+  IconCurses: {fileID: -688988042, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 1
   LevelCurses: 0
   TypeNameCurses: 5

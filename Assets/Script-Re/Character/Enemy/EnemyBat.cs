@@ -120,8 +120,4 @@ public class EnemyBat : Enemy
         randomMove = true;
         onFollowPlayer = false;
     }
-    protected override void Dead()
-    {
-        base.Dead();
-    }
 }

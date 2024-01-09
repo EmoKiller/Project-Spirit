@@ -9,7 +9,6 @@ public class GameManager : SerializedMonoBehaviour
         GameManager
     }
 
-    [SerializeField] private Player player = null;
     [SerializeField] private CameraFollow cameraFollow = null;
     [SerializeField] private UIManager uiManager = null;
     public float num = 0;
@@ -21,7 +20,7 @@ public class GameManager : SerializedMonoBehaviour
     private void Start()
     {
         InfomationPlayerManager.Instance.Init();
-        player.Init();
+        Player.Instance.Init();
         cameraFollow.Init();
         if (InfomationPlayerManager.Instance.PlayerOnScenes() == OnScenes.IntroGame)
             return;

@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: DivineGuardian
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconCurses: {fileID: 0}
+  IconCurses: {fileID: 1526125258, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 1
   LevelCurses: 0
   TypeNameCurses: 5
   NameCurses: DivineGuardian
   QuoteCurses: Under the shadow of wings thou lie protected.
   DescriptionCurses: 2 seconds of invincibility. Deflects projectiles, causing damage.
+  TimeUseSKill: 1
   Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

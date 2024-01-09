@@ -30,6 +30,34 @@ public static class GameUtilities
             yield return null;
         }
     }
+    public static void LoopDelayCall(this MonoBehaviour mono,bool condition ,float endtime, Action callBack)
+    {
+        mono.StartCoroutine(IELoopDelayCall(condition, endtime, callBack));
+    }
+    public static IEnumerator IELoopDelayCall(bool condition,float endtime, Action callBack)
+    {
+        float StartTime = 0;
+        while (StartTime <= endtime)
+        {
+            callBack?.Invoke();
+            StartTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+    public static void LoopCondition(this MonoBehaviour mono, bool condition, Action callBack)
+    {
+        mono.StartCoroutine(IELoopCondition(condition, callBack));
+    }
+    public static IEnumerator IELoopCondition(bool condition, Action callBack)
+    {
+        while (condition)
+        {
+            callBack?.Invoke();
+            yield return null;
+        }
+        Debug.Log("End LoopCondition");
+    }
+
     public static void WaitDelayCall(this MonoBehaviour mono,int repeat, float waittime, Action callBack)
     {
         mono.StartCoroutine(IEWaitDelayCall(repeat, waittime, callBack));

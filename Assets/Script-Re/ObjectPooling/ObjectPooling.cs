@@ -29,6 +29,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     [SerializeField] private List<ImpactableObjects> impactableObjects = new List<ImpactableObjects>();
     [SerializeField] private List<ChestBonus> chestBonus = new List<ChestBonus>();
     [SerializeField] private List<ObjectSkill> objectSkill = new List<ObjectSkill>();
+    [SerializeField] private List<ObjectSkill> objectSkillEnemy = new List<ObjectSkill>();
     private void Awake()
     {
         if (Instance == null)
@@ -54,6 +55,15 @@ public class ObjectPooling : SerializedMonoBehaviour
     public void PushToPoolObjectSkill(ObjectSkill chest)
     {
         PushToPool(chest, objectSkill);
+    }
+
+    public ObjectSkill PopChestObjectSkillEnemy(string name, bool show = false)
+    {
+        return PopObjectFormPool<ObjectSkill>(objectSkillEnemy, name, GameConstants.EffectEnemySkill, show);
+    }
+    public void PushToPoolObjectSkillEnemy(ObjectSkill chest)
+    {
+        PushToPool(chest, objectSkillEnemy);
     }
 
     public ChestBonus PopChestBonus(string name, bool show = false)

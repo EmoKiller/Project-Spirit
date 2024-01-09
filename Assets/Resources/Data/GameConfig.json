@@ -140,7 +140,7 @@
 				"1" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 10,
+							"value" : 5,
 							"type" : 0,
 							"LevelEnemy" : 1
 						},

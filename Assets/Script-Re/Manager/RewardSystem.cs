@@ -9,6 +9,7 @@ public class RewardSystem : SerializedMonoBehaviour
     [SerializeField] private List<ImpactableObjects> impactableObjects = new List<ImpactableObjects>();
     [SerializeField] private List<ChestBonus> chestBonus = new List<ChestBonus>();
     [SerializeField] private List<ObjectSkill> objectSkill = new List<ObjectSkill>();
+    [SerializeField] private List<ObjectSkill> objectSkillEnemy = new List<ObjectSkill>();
     private void Awake()
     {
         Instance = this;
@@ -30,7 +31,6 @@ public class RewardSystem : SerializedMonoBehaviour
     {
         chestBonus.Remove(obj);
     }
-
     [Button]
     public void DropObject(TypeItemsCanDrop type, Vector3 vec3)
     {
@@ -71,6 +71,16 @@ public class RewardSystem : SerializedMonoBehaviour
     public void RemoveFromListObjectSkill(ObjectSkill obj)
     {
         objectSkill.Remove(obj);
+    }
+    public void SpawnObjectSkillEnemy(string type, Vector3 vec3, out ObjectSkill outSkill)
+    {
+        ObjectSkill obj = ObjectPooling.Instance.PopChestObjectSkillEnemy(type, true);
+        SetUpObj(objectSkillEnemy, obj, vec3);
+        outSkill = obj;
+    }
+    public void RemoveFromListObjectSkillEnemy(ObjectSkill obj)
+    {
+        objectSkillEnemy.Remove(obj);
     }
 
     private void SetUpObj<T>(List<T> list, T obj, Vector3 vec3) where T : MonoBehaviour

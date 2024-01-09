@@ -109,4 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bf6086addcd034da01f00ec90cd60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cursesObject: {fileID: 11400000, guid: e8d7f014ac642584fa1846386974e022, type: 2}
+  cursesObject: {fileID: 11400000, guid: e8d7f014ac642584fa1846386974e022, type: 2}

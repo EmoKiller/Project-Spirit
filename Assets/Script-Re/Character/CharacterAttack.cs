@@ -9,12 +9,11 @@ public class CharacterAttack : MonoBehaviour
     public LevelRomanNumerals LevelWeapon => currentWeapon.weaponObject.LevelWeapon;
     public float Speed => currentWeapon.weaponObject.Speed;
     public float AttackRange => currentWeapon.weaponObject.AttackRange;
+    public float AttackRangeBow => currentWeapon.weaponObject.AttackRangeBow;
     public float HP => hpObject.HP;
     public float PowerForce => hpObject.PowerForce;
     public float Weight => hpObject.weight;
     public List<float> CurrentHit => currentWeapon.CurrentHit;
-
-
     public float DamageEnemy => currentWeapon.weaponObject.ListDamage[0];
     public Vector3 SlashBoxSize => currentWeapon.weaponObject.SlashBoxSize;
     public List<float> Damage = null;

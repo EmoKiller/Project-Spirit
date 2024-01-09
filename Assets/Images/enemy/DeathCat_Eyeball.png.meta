@@ -115,18 +115,260 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_0
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 271
+        width: 265
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf47f199c6cf46342b8944218b64a59e
+      internalID: -334316935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_1
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 3
+        width: 264
+        height: 268
+      alignment: 9
+      pivot: {x: 0.9846568, y: 0.5000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdecc8d5f4d935d4fa4ea172f7db1a70
+      internalID: 6678220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 264
+        height: 271
+      alignment: 9
+      pivot: {x: 0.9754546, y: 0.49701208}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4347d0d757a354e870bc2f2186108f
+      internalID: -1429460140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_3
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 271
+        width: 180
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3224ab9cff3e6fb4f95c8b794a5e57ab
+      internalID: 585454655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 124
+        height: 93
+      alignment: 9
+      pivot: {x: 0.199588, y: 0.53483105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fed953ff87469f4e98b4af6f70564c6
+      internalID: 799809846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_5
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 167
+        width: 112
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090447e566216794491436ec83aebb19
+      internalID: -19386342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_6
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 245
+        width: 68
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66165c02cedad142ac8edf0410f1c26
+      internalID: -630828870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_7
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 474
+        width: 157
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fade98fefb11054e8a085e84592b2df
+      internalID: -784363903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_8
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1
+        width: 161
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cffb7aa6162c348b22df84927c3467
+      internalID: 1302811633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 271
+        width: 125
+        height: 124
+      alignment: 9
+      pivot: {x: 0.33803874, y: 0.50000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce50b7227cf3354582c5b2492b324e9
+      internalID: 85965571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathCat_Eyeball_10
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 454
+        width: 133
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29dc87dadbc2ef4b93854b4b4bfae90
+      internalID: -1391857751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bba12c8b135229444a5062dd91298ef3
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DeathCat_Eyeball_10: -1391857751
+      DeathCat_Eyeball_2: -1429460140
+      DeathCat_Eyeball_6: -630828870
+      DeathCat_Eyeball_8: 1302811633
+      DeathCat_Eyeball_1: 6678220
+      DeathCat_Eyeball_7: -784363903
+      DeathCat_Eyeball_3: 585454655
+      DeathCat_Eyeball_5: -19386342
+      DeathCat_Eyeball_9: 85965571
+      DeathCat_Eyeball_0: -334316935
+      DeathCat_Eyeball_4: 799809846
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

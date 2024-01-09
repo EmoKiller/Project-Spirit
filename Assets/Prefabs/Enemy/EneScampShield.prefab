@@ -700,6 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 8519087385612268671}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -1058,19 +1059,17 @@ MonoBehaviour:
   slash: {fileID: 8519087385052038770}
   direction: {fileID: 0}
   tranformOfAni: {fileID: 8519087385612268666}
-  m_Action: 0
+  onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
   healthBar: {fileID: 8519087386000421316}
   deadBody: {fileID: 2973571265234203165}
   OnDashAtk: 0
-  randomMove: 1
+  randomMove: 0
   enemyThinking: 0
   enemyRunFollow: 0
 --- !u!114 &9012806378494938081

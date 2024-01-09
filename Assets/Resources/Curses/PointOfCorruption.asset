@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: PointOfCorruption
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconCurses: {fileID: 0}
+  IconCurses: {fileID: 983562135, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 3
   LevelCurses: 0
   TypeNameCurses: 13
   NameCurses: PointOfCorruption
   QuoteCurses: For none are undeserving of punishment.
   DescriptionCurses: Hold to aim. An explosive projectile.
+  TimeUseSKill: 1
   Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

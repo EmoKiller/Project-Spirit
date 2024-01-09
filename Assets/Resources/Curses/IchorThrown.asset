@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: IchorThrown
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconCurses: {fileID: 0}
+  IconCurses: {fileID: 1069952041, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 3
   LevelCurses: 0
   TypeNameCurses: 12
   NameCurses: IchorThrown
   QuoteCurses: Part the oceans of blood.
   DescriptionCurses: Hold to aim. A projectile that spreads black Ichor upon landing.
+  TimeUseSKill: 1
   Damage: 2
   Speed: 1
   AttackRange: 2
+  UseAngry: 10
+  multipleObj: 4

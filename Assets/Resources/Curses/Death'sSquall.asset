@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Death'sSquall
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  IconCurses: {fileID: 0}
+  IconCurses: {fileID: 1413758304, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 2
   LevelCurses: 0
   TypeNameCurses: 10

@@ -1,3 +1,8 @@
+public enum TypeEffectEnemy
+{
+    ArrowEnemy,
+    FireballsEnemy,
+}
 public enum OnScenes
 {
     IntroGame,

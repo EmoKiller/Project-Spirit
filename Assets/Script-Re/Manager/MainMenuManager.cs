@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class MainMenuManager : SerializedMonoBehaviour
 {
@@ -14,13 +15,15 @@ public class MainMenuManager : SerializedMonoBehaviour
 
     [SerializeField] private GameObject waterway;
     [SerializeField] private Image bloomBloom;
+    [SerializeField] bool PressStart = false;
     private void Awake()
     {
         
     }
     void Start()
     {
-        mainMenu[MenuType.PressToPlay].onClick.AddListener(PressToPlay);
+        mainMenuObj[MenuType.PressToPlay][1].gameObject.SetActive(false);
+        //mainMenu[MenuType.PressToPlay].onClick.AddListener(PressToPlay);
         mainMenu[MenuType.Play].onClick.AddListener(Play);
         mainMenu[MenuType.Settings].onClick.AddListener(Setting);
         mainMenu[MenuType.Credits].onClick.AddListener(Credits);
@@ -35,6 +38,13 @@ public class MainMenuManager : SerializedMonoBehaviour
     }
     private void Update()
     {
+        if (PressStart)
+            return;
+        if (Input.anyKeyDown)
+        {
+            PressStart = true;
+            PressToPlay();
+        }
 
     }
     private void SaveGame1()

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class CharacterBrain : MonoBehaviour
+public abstract class CharacterBrain : MonoBehaviour , IDamageAble
 {
     [Header("Component System")]
     [SerializeField] protected MeshAgent agent = null;
@@ -9,41 +9,71 @@ public abstract class CharacterBrain : MonoBehaviour
     [SerializeField] protected Slash slash = null;
     [SerializeField] protected Transform direction;
     [SerializeField] protected GameObject tranformOfAni;
-    [SerializeField] private bool m_Action = false;
+
+    
+
+    [SerializeField] protected bool onAction = false;
     [SerializeField] protected bool onAniATK = false;
     [SerializeField] protected bool OnEvent = false;
-    protected bool OnAction 
+    private string characterName { get; set; }
+    //public
+    public CharacterAnimator CharacterAni
     {
-        get
-        {
-            return m_Action;
-        }
-        set
-        {
-            Set(value);
-        }
+        get { return characterAnimator; }
+    }
+    public Transform Direction
+    {
+        get { return direction; }
+    }
+    public bool OnAction
+    {
+        get { return onAction; }
+        set { onAction = value; }
+    }
+    public bool OnAniATK
+    {
+        get { return onAniATK; }
     }
     
-    //BaseCharacter
-    private string characterName { get; set; }
-    protected float health = 0;
-    protected float maxHealth = 0;
+    public bool Alive => CurrentHealth > 0;
+    public string Name => characterName;
+
     
-    public bool Alive => health > 0;
-    public virtual string Name => characterName;
+
     protected virtual void Start()
     {
         agent.Initialized();
-        characterAnimator.Initialized();
         characterName = gameObject.name;
         if (characterAttack.BoolWeaponEquip())
         {
             slash.SetSizeBox(characterAttack.SlashBoxSize);
         }
     }
+
+
+
+    #region Health / Die
+
+    public float CurrentHealth { get; set; }
+    public float maxHealth { get; set; }
+    public virtual void TakeDamage(float damage)
+    {
+        OnAction = true;
+        onAniATK = false;
+        this.DelayCall(0.2f, () =>
+        {
+            OnAction = false;
+        });
+    }
+    public virtual void Dead()
+    {
+
+    }
+    #endregion
+
     protected abstract void EffectHit(Vector3 dir);
-    protected abstract void Dead();
-    protected abstract void Rolling();
+    
+    public abstract void Rolling();
     protected virtual void SetOnSlash()
     {
         slash.SetActiveSlash(true);
@@ -89,6 +119,22 @@ public abstract class CharacterBrain : MonoBehaviour
         Vector3 dir = direction - transform.position;
         agent.MoveToDirection(dir.normalized);
     }
+    //public virtual void SetMoveWayPoints(Vector3 wayPoint)
+    //{
+    //    float i = 0;
+    //    this.LoopCondition(Vector3.Distance(transform.position, wayPoint) > 0.1f , () =>
+    //    {
+    //        if (!Alive)
+    //            return;
+    //        MoveTo(wayPoint);
+    //        Rotation();
+    //        i++;
+    //        //if (i >= time - 0.5f)
+    //        //{
+    //        //    OnAction = false;
+    //        //}
+    //    });
+    //}
     public virtual void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
         float i = 0;
@@ -99,21 +145,13 @@ public abstract class CharacterBrain : MonoBehaviour
             MoveTo(wayPoint);
             Rotation();
             i++;
-            if (i >= time-0.5f)
+            if (i >= time - 0.5f)
             {
                 OnAction = false;
             }
         });
     }
-    public virtual void TakeDamage(float damage) 
-    {
-        OnAction = true;
-        onAniATK = false;
-        this.DelayCall(0.2f, () =>
-        {
-            OnAction = false;
-        });
-    }
+    
     public void ImpactForce(Vector3 dir)
     {
         this.LoopDelayCall(0.2f, () =>
@@ -129,6 +167,14 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         OnEvent = value;
     }
+    public void StartAni()
+    {
+        OnAction = true;
+    }
+    public void StopAni()
+    {
+        OnAction = false;
+    }
     public void SetStay()
     {
         OnAction = true;
@@ -138,8 +184,11 @@ public abstract class CharacterBrain : MonoBehaviour
     {
         characterAnimator.SetTrigger(str);
     }
-    private void Set(bool value)
+    public Vector3 GetDirection()
     {
-        m_Action = value;
+        Vector3 dir = direction.position - transform.position;
+        return dir;
     }
+
+    
 }

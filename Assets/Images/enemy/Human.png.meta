@@ -860,7 +860,7 @@ TextureImporter:
         width: 179
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -868,6 +868,27 @@ TextureImporter:
       bones: []
       spriteID: b62265d370f8c9e43b0a086370713a1c
       internalID: 1316404920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_21
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 611
+        width: 173
+        height: 72
+      alignment: 9
+      pivot: {x: 0.9009195, y: 0.45077768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2bd9f005bb7c81478ca218d4a151c43
+      internalID: 683238948
       vertices: []
       indices: 
       edges: []
@@ -914,6 +935,7 @@ TextureImporter:
       Scamp_Body_front: 427227251
       Scamp_Head_front_1: -1058113467
       Eyes-0: 642932011
+      Human_21: 683238948
       Human_5: 1182853180
       Human_0: -965484438
       Human_17: 1004195981

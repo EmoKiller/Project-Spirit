@@ -229,6 +229,14 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Enemy/EneScampShield.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: b6c821ccf6256da438eb3ac1649aea23
+    m_Address: Assets/Prefabs/EffectSkillEnemy/FireballsEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0f7f7d8d43493204cb07837239c2baaf
+    m_Address: Assets/Prefabs/EffectSkillEnemy/ArrowEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:

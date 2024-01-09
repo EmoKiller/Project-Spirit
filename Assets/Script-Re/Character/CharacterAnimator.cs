@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    public enum AnimationStates { Idle, Movement, Attack, Rolling, UseSkill }
+    public enum AnimationStates { Idle, Movement, RandomMove, Chase, Attack, RunAtk, FollowRunAtk, Rolling, RangeAttack, UseSkill, MoveToTarget }
     public enum MovementType { Idle, Run }
     public enum AttackStep { step1, step2, step3, step4 }
 
-    private Animator ator = null;
+    [SerializeField] private Animator ator = null;
     [SerializeField] protected AnimationStates currentAnimationState;
     [SerializeField] protected MovementType currentMovementType;
     [SerializeField] protected AttackStep comboATK;
@@ -23,7 +23,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         get { return comboATK; }
     }
-
+    Action SpawnObj = null;
     Action dashAtk = null;
     Action step1aniAtk = null;
     Action step2aniAtk = null;
@@ -41,13 +41,9 @@ public class CharacterAnimator : MonoBehaviour
             return ator;
         }
     }
-    public void Initialized()
+    public void SetAnimationState(AnimationStates type)
     {
-        ator = GetComponent<Animator>();
-    }
-    public void SetAtk()
-    {
-
+        currentAnimationState = type;
     }
     public void SetTrigger(AnimationStates type)
     {
@@ -114,6 +110,10 @@ public class CharacterAnimator : MonoBehaviour
     {
         this.dashAtk = dashAtk;
     }
+    public void AddSpawnObj(Action SpawnObj)
+    {
+        this.SpawnObj = SpawnObj;
+    }
     public void StartAnimation()
     {
         StartAni?.Invoke();
@@ -143,6 +143,9 @@ public class CharacterAnimator : MonoBehaviour
     {
         dashAtk?.Invoke();
     }
-
+    public void SpawnObjs()
+    {
+        SpawnObj?.Invoke();
+    }
 
 }
