@@ -20,7 +20,7 @@ MonoBehaviour:
   DescriptionWeapon: 
   Speed: 1
   AttackRange: 10
-  AttackRangeBow: 20
+  AttackRangeBow: 30
   SlashBoxSize: {x: 0, y: 0, z: 0}
   ListDamage: []
   ListPowerForce: []

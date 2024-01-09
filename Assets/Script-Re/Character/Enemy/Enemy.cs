@@ -11,6 +11,7 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected float playerDetectionRange = 25f;
     [SerializeField] protected float DashAttackRange = 6f;
     [SerializeField] protected bool onFollowPlayer = false;
+    [SerializeField] protected bool onTargetPlayer = false;
     [SerializeField] protected HealthBar healthBar;
     [SerializeField] protected GameObject deadBody;
     [SerializeField] protected bool OnDashAtk = false;
@@ -44,103 +45,107 @@ public class Enemy : CharacterBrain , IPool
         
     protected virtual void Update()
     {
-        if (!Alive || OnAction)
-            return;
-        switch (characterAnimator.CurrentAnimationState)
-        {
-            case CharacterAnimator.AnimationStates.Idle:
-                EnemyIdle();
-                break;
-            case CharacterAnimator.AnimationStates.Movement:
-                EnemyMovement();
-                break;
-            case CharacterAnimator.AnimationStates.RandomMove:
-                EnemyRandomMove();
-                break;
-            case CharacterAnimator.AnimationStates.Chase:
-                EnemyChase();
-                break;
-            case CharacterAnimator.AnimationStates.Attack:
-                EnemyAttack();
-                break;
-            case CharacterAnimator.AnimationStates.RunAtk:
-                EnemyRunAtk();
-                break;
-            case CharacterAnimator.AnimationStates.Rolling:
-                EnemyRolling();
-                break;
-            case CharacterAnimator.AnimationStates.RangeAttack:
-                EnemyRangeAtk();
-                break;
-            case CharacterAnimator.AnimationStates.UseSkill:
-                EnemyUseSkill();
-                break;
-            case CharacterAnimator.AnimationStates.MoveToTarget:
-                EnemyMoveToTarget();
-                break;
-        }
-        CheckTransition();
+        //if (!Alive || OnAction)
+        //    return;
+        //switch (characterAnimator.CurrentAnimationState)
+        //{
+        //    case CharacterAnimator.AnimationStates.Idle:
+        //        EnemyIdle();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.Movement:
+        //        EnemyMovement();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.RandomMove:
+        //        EnemyRandomMove();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.Chase:
+        //        EnemyChase();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.Attack:
+        //        EnemyAttack();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.RunAtk:
+        //        EnemyRunAtk();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.Rolling:
+        //        EnemyRolling();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.RangeAttack:
+        //        EnemyRangeAtk();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.UseSkill:
+        //        EnemyUseSkill();
+        //        break;
+        //    case CharacterAnimator.AnimationStates.MoveToTarget:
+        //        EnemyMoveToTarget();
+        //        break;
+        //}
+        //CheckTransition();
     }
-    protected virtual void EnemyIdle()
-    {
+    //protected virtual void EnemyIdle()
+    //{
         
-    }
-    protected virtual void EnemyMovement()
-    {
+    //}
+    //protected virtual void EnemyMovement()
+    //{
 
-    }
-    protected virtual void EnemyMoveToTarget()
-    {
-        MoveTo(direction.transform.position);
-        Rotation();
-        if (Distance() < playerDetectionRange)
-            characterAnimator.SetAnimationState(CharacterAnimator.AnimationStates.RandomMove);
-    }
-    protected virtual void EnemyRandomMove()
-    {
-        if (randomMove == true)
-            return;
+    //}
+    //protected virtual void EnemyMoveToTarget()
+    //{
+    //    MoveTo(direction.transform.position);
+    //    Rotation();
+    //    if (Distance() < playerDetectionRange)
+    //        characterAnimator.SetAnimationState(CharacterAnimator.AnimationStates.RandomMove);
+    //}
+    //protected virtual void EnemyRandomMove()
+    //{
+    //    if (randomMove == true)
+    //        return;
 
-        randomMove = true;
-        Vector3 vec = Random.onUnitSphere;
-        Vector3 point = vec.normalized * 15 + direction.transform.position;
-        SetMoveWayPoint(point, 4);
-    }
-    protected virtual void EnemyChase()
-    {
+    //    randomMove = true;
+    //    Vector3 vec = Random.onUnitSphere;
+    //    Vector3 point = vec.normalized * 15 + direction.transform.position;
+    //    SetMoveWayPoint(point, 4);
+    //}
+    //protected virtual void EnemyChase()
+    //{
 
-    }
-    protected virtual void EnemyAttack()
-    {
+    //}
+    //protected virtual void EnemyAttack()
+    //{
 
-    }
-    protected virtual void EnemyRunAtk()
-    {
+    //}
+    //protected virtual void EnemyRunAtk()
+    //{
 
-    }
-    protected virtual void EnemyRolling()
-    {
+    //}
+    //protected virtual void EnemyRolling()
+    //{
 
-    }
-    protected virtual void EnemyRangeAtk()
-    {
+    //}
+    //protected virtual void EnemyRangeAtk()
+    //{
 
-    }
-    protected virtual void EnemyUseSkill()
-    {
+    //}
+    //protected virtual void EnemyUseSkill()
+    //{
 
-    }
-    protected virtual void CheckTransition()
-    {
-        if (Distance() > playerDetectionRange)
-            characterAnimator.SetAnimationState(CharacterAnimator.AnimationStates.MoveToTarget);
+    //}
+    //protected virtual void CheckTransition()
+    //{
+    //    if (Distance() > playerDetectionRange)
+    //        characterAnimator.SetAnimationState(CharacterAnimator.AnimationStates.MoveToTarget);
 
-    }
+    //}
     protected virtual void EnemyThinking(float TimeThink, int ratioRandomMove , UnityAction Random1, UnityAction random2)
     {
+        if (enemyThinking || !Alive)
+            return;
+        enemyThinking = true;
+        randomMove = false;
         this.DelayCall(TimeThink, () =>
         {
-            randomMove = false;
+            enemyThinking = false;
             int i = Random.Range(0, 100);
             if (i < ratioRandomMove)
             {

@@ -221,7 +221,7 @@ MonoBehaviour:
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  playerDetectionRange: 10
+  playerDetectionRange: 25
   DashAttackRange: 6
   onFollowPlayer: 0
   healthBar: {fileID: 1526834411382539167}
