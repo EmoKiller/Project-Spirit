@@ -60,10 +60,11 @@ MonoBehaviour:
   onAction: 0
   onAniATK: 0
   OnEvent: 0
-  LevelEnemy: 0
+  LevelEnemy: 1
   playerDetectionRange: 30
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 8442980105271311899}
   deadBody: {fileID: 0}
   OnDashAtk: 0

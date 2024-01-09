@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public abstract class CharacterBrain : MonoBehaviour , IDamageAble
 {
@@ -105,14 +106,25 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     {
         if (!target.Alive)
             return;
+        CompareImpactForce(target, characterAttack.PowerForce);
+    }
+    protected void CompareImpactForce(CharacterBrain target,float PowerForce)
+    {
         Vector3 dir = transform.position - target.transform.position;
-        float force = target.characterAttack.Weight - characterAttack.PowerForce;
+        float force = target.characterAttack.Weight - PowerForce;
         if (force > 0)
         {
             ImpactForce(dir.normalized * force);
             return;
         }
         target.ImpactForce(dir.normalized * force);
+    }
+    protected void ImpactForce(Vector3 dir)
+    {
+        this.LoopDelayCall(0.2f, () =>
+        {
+            agent.AgentBody.Move(dir * Time.deltaTime);
+        });
     }
     public virtual void MoveTo(Vector3 direction)
     {
@@ -138,12 +150,12 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     public virtual void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
         float i = 0;
+        Rotation();
         this.LoopDelayCall(time, () =>
         {
             if (!Alive)
                 return;
             MoveTo(wayPoint);
-            Rotation();
             i++;
             if (i >= time - 0.5f)
             {
@@ -152,13 +164,7 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
         });
     }
     
-    public void ImpactForce(Vector3 dir)
-    {
-        this.LoopDelayCall(0.2f, () =>
-        {
-            agent.AgentBody.Move(dir * Time.deltaTime);
-        });
-    }
+    
     public void SetAction(bool value)
     {
         OnAction = value;

@@ -92,19 +92,19 @@ public class SkillsPlayer : MonoBehaviour
         {
             case TypeCurses.Fireballs:
                 CheckCursesFireBall();
-                return;
+                break;
             case TypeCurses.Blasts:
                 useSkill = Blasts;
-                return;
+                break;
             case TypeCurses.Slashes:
                 useSkill = Slashes;
-                return;
+                break;
             case TypeCurses.Splatters:
                 useSkill = Splatters;
-                return;
+                break;
             case TypeCurses.Tentacles:
                 useSkill = Tentacles;
-                return;
+                break;
         }
     }
     public void UseSkill(Vector3 foward)

@@ -20,8 +20,17 @@ MonoBehaviour:
   DescriptionWeapon: Deal significantly more damage than mortal weapons.
   Speed: 1
   AttackRange: 2
+  AttackRangeBow: 2
   SlashBoxSize: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2
   - 2
+  ListPowerForce:
+  - 30
+  - 30
+  - 25
+  MoveOnAttack:
+  - 1
+  - 1
+  - 3

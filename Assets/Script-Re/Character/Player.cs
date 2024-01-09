@@ -136,11 +136,13 @@ public class Player : CharacterBrain , IOrderable
     
     protected override void OnAttackHit(CharacterBrain target)
     {
+        if (!target.Alive)
+            return;
         float Crit = 1;
         CritHit(ref Crit);
         Debug.Log("PlayerHitEne" + " " + GetDamageCombo() * Crit);
         target.TakeDamage(GetDamageCombo() * Crit);
-        base.OnAttackHit(target);
+        CompareImpactForce(target, GetForceCombo());
         EventDispatcher.Publish(Events.OnAttackHitEnemy);
     }
     private void DelayTime()
@@ -197,7 +199,7 @@ public class Player : CharacterBrain , IOrderable
         Vector3 vec = direction.position - transform.position;
         this.LoopDelayCall(0.1f, () =>
         {
-            MoveTo(vec.normalized + transform.position);
+            MoveTo((vec.normalized * GetMoveOnAttack()) + transform.position );
             characterAnimator.SetFloat("horizontal", 0);
             characterAnimator.SetFloat("vertical", 0);
         });
@@ -245,6 +247,14 @@ public class Player : CharacterBrain , IOrderable
     private float GetDamageCombo()
     {
         return characterAttack.CurrentHit[(int)characterAnimator.ComboATK];
+    }
+    private float GetForceCombo() 
+    {
+        return characterAttack.ForceCombo[(int)characterAnimator.ComboATK];
+    }
+    private float GetMoveOnAttack()
+    {
+        return characterAttack.MoveOnAttack[(int)characterAnimator.ComboATK];
     }
     private void StartCombo()
     {

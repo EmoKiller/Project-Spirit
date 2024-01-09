@@ -142,6 +142,7 @@ public class Enemy : CharacterBrain , IPool
         if (enemyThinking || !Alive)
             return;
         enemyThinking = true;
+        onFollowPlayer = false;
         randomMove = false;
         this.DelayCall(TimeThink, () =>
         {

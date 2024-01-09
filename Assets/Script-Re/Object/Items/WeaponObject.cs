@@ -19,6 +19,7 @@ public class WeaponObject : ScriptableObject
     public Vector3 SlashBoxSize = new Vector3();
     public List<float> ListDamage = new List<float>();
     public List<float> ListPowerForce = new List<float>();
+    public List<float> MoveOnAttack = new List<float>();
     public WeaponObject()
     {
     }

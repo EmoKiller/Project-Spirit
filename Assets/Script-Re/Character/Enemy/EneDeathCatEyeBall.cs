@@ -35,12 +35,14 @@ public class EneDeathCatEyeBall : Enemy
         {
             randomMove = true;
             onTargetPlayer = true;
+            onFollowPlayer = false;
             return;
         }
         if (onFollowPlayer && !randomMove && Distance() > playerDetectionRange)
         {
             MoveTo(direction.transform.position);
             Rotation();
+            onTargetPlayer = false;
             return;
         }
         if (onTargetPlayer && randomMove && Distance() <= playerDetectionRange)
