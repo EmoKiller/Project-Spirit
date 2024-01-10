@@ -1,13 +1,18 @@
+using System;
+
 public class ConfigEnemy
 {
     public LevelRomanNumerals LevelEnemy;
-    public TypeEnemy type;
+    public string type;
     public float value;
+
+
+    public TypeEnemy Type => (TypeEnemy)Enum.Parse(typeof(TypeEnemy), type);
     public ConfigEnemy()
     {
 
     }
-    public ConfigEnemy(LevelRomanNumerals LevelEnemy, TypeEnemy type, float value)
+    public ConfigEnemy(LevelRomanNumerals LevelEnemy, string type, float value)
     {
         this.LevelEnemy = LevelEnemy;
         this.type = type;

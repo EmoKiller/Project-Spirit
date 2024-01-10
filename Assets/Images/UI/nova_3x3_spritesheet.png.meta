@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 723
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f6df21c80c18f4894d9ec657cfeae0
+      internalID: 2074999954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 721
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4cbc0744191614c841d8eb4d423e32
+      internalID: 1696577355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 723
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f930600c01bb2454694b08e6bab9bd7d
+      internalID: 1251385558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 382
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b1dda485e0a0c499dc2c8d9fde1143
+      internalID: -1876990809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 382
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2655dc670c2724bbbb77a760869604
+      internalID: -351154919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 384
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ef7478acb4c32499e118de4ad11d94
+      internalID: 39121658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 41
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8d8258a47887443a2873142c92e74d
+      internalID: -240057507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 43
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcabfe2caf4b7224b8d2177d315299aa
+      internalID: -527726881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nova_3x3_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 41
+        width: 270
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8abd050537d72c148b507e2b9d576d9e
+      internalID: -952749438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +315,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nova_3x3_spritesheet_2: 1251385558
+      nova_3x3_spritesheet_5: 39121658
+      nova_3x3_spritesheet_7: -527726881
+      nova_3x3_spritesheet_3: -1876990809
+      nova_3x3_spritesheet_1: 1696577355
+      nova_3x3_spritesheet_4: -351154919
+      nova_3x3_spritesheet_8: -952749438
+      nova_3x3_spritesheet_0: 2074999954
+      nova_3x3_spritesheet_6: -240057507
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

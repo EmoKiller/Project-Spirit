@@ -13,6 +13,14 @@ public class UIManager : SerializedMonoBehaviour
         UIManager
     }
     public static UIManager Instance = null;
+
+    private bool isOnUIEndOfLevel = false;
+    public bool IsOnUIEndOfLevel
+    {
+        get { return isOnUIEndOfLevel; }
+    }
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -46,6 +54,7 @@ public class UIManager : SerializedMonoBehaviour
         UIButtonAction.gameObject.SetActive(false);
         InfoWeapon.gameObject.SetActive(false);
         ShowUpTarot.gameObject.SetActive(false);
+        UIEndOfLevel.gameObject.SetActive(false);
     }
     public void Init()
     {
@@ -304,7 +313,34 @@ public class UIManager : SerializedMonoBehaviour
             ShowUpTarot.ListCard[i].gameObject.SetActive(false);
         }
     }
+    //UI EndOfLevel
 
+    [SerializeField] private UIEndOfLevel _UiEndOfLevel = null;
+    public UIEndOfLevel UIEndOfLevel
+    {
+        get => this.TryGetMonoComponentInChildren(ref _UiEndOfLevel);
+    }
+    [Button]
+    public void ShowUIEndOfLevel(Events type)
+    {
+        UIEndOfLevel.gameObject.SetActive(true);
+        isOnUIEndOfLevel = true;
+        if (type == Events.PlayerDied)
+        {
+            UIEndOfLevel.TextTop = "YOU DIED";
+        }
+        if (type == Events.PlayerEndLevel)
+        {
+            UIEndOfLevel.TextTop = "VICTORY";
+        }
 
+        float time = Time.time - InfomationPlayerManager.Instance.GetElapsedTime();
+        int hour = Mathf.FloorToInt(time / 3600);
+        int min = Mathf.FloorToInt((time % 3600)/60);
+        int sec = Mathf.FloorToInt(time % 60);
+        UIEndOfLevel.TextTimeCLock = string.Format("{0:00}:{1:00}:{2:00}", hour, min , sec);
+        UIEndOfLevel.TextTotalKillEnemy = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CountKillEnemy).ToString();
+        //UIEndOfLevel.ButtonContinue.onClick.AddListener
+    }
 
 }

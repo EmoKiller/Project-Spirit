@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class HeroData : ICloneable
 {
-    public float Level = 0;
     public Dictionary<SaveGameSlot, OnScenes> PlayerOnSceness = new Dictionary<SaveGameSlot, OnScenes>();
     public Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>> attributes = new Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>>();
     

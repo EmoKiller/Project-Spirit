@@ -23,6 +23,7 @@ public class ImpactableObjects : MonoBehaviour , IPool
     }
     public void TakeDamage(float damage, Transform trans)
     {
+        RewardSystem.Instance.SpawnObjEffectAnimation(TypeEffectAnimation.HitObject2, transform.position + new Vector3(0,2,0));
         currentHp -= damage;
         if (_animator != null)
             _animator.SetTrigger("HIT");

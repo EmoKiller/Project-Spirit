@@ -38,7 +38,6 @@ public class Enemy : CharacterBrain , IPool
         }
         maxHealth = characterAttack.HP * (float)LevelEnemy;
         CurrentHealth = maxHealth;
-        
         healthBar.SetHealh(maxHealth);
         slash.AddActionAttack(OnAttackHit);
     }
@@ -228,6 +227,7 @@ public class Enemy : CharacterBrain , IPool
     }
     public override void Dead()
     {
+        InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CountKillEnemy, 1);
         Vector3 dir = transform.position - direction.position;
         ImpactForce(dir.normalized * 20);
         deadBody.SetActive(true);
@@ -276,10 +276,25 @@ public class Enemy : CharacterBrain , IPool
 
     public void Hide()
     {
-        GameLevelManager.Instance.RemoveinList(this);
+        onFollowPlayer = false;
+        onTargetPlayer = false;
+        OnDashAtk = false;
+        randomMove = false;
+        enemyThinking = false;
+        enemyRunFollow = false;
+        GameLevelManager.Instance.RemoveInList(this);
         ObjectPooling.Instance.PushToPoolEnemy(this);
         deadBody.SetActive(false);
         gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        if (Distance() < playerDetectionRange)
+        {
+            randomMove = true;
+            onTargetPlayer = true;
+            onFollowPlayer = false;
+        }
     }
     #endregion
 

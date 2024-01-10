@@ -157,10 +157,6 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Effect/HitObject.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: fd0929db8ed105948970208a186c7b60
-    m_Address: Assets/Prefabs/Effect/SpawnEnemyEffect.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: f7b52e144ebd2b44685e26de7bb5c173
     m_Address: Assets/Prefabs/SpriteAlas/SpriteAtlasTarotCard.spriteatlasv2
     m_ReadOnly: 0
@@ -235,6 +231,18 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 0f7f7d8d43493204cb07837239c2baaf
     m_Address: Assets/Prefabs/EffectSkillEnemy/ArrowEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c1801077f6331046aac85dbada522f6
+    m_Address: Assets/Prefabs/Effect/EffectAnimation/HitObject.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: efd702f920bd5b44cbedfbbfd20473e4
+    m_Address: Assets/Prefabs/Effect/EffectAnimation/SpawnEnemyEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 53bdd2ea3277cbd46b611a7b3de2f299
+    m_Address: Assets/Prefabs/Effect/EffectAnimation/HitObject2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

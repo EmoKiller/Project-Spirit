@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class RewardSystem : SerializedMonoBehaviour
 {
+    //SpawnSystem
     public static RewardSystem Instance = null;
     [SerializeField] private List<ObjectDropOnWorld> ObjectDropOnWorld = new List<ObjectDropOnWorld>();
     [SerializeField] private List<ImpactableObjects> impactableObjects = new List<ImpactableObjects>();
     [SerializeField] private List<ChestBonus> chestBonus = new List<ChestBonus>();
     [SerializeField] private List<ObjectSkill> objectSkill = new List<ObjectSkill>();
     [SerializeField] private List<ObjectSkill> objectSkillEnemy = new List<ObjectSkill>();
+    [SerializeField] private List<ObjEffectAnimation> objEffectAnimation = new List<ObjEffectAnimation>();
     private void Awake()
     {
         Instance = this;
+    }
+    private void Start()
+    {
     }
     [Button]
     public void DropHeart(EnemGrPriteHeart TypeHeart)
@@ -30,6 +35,15 @@ public class RewardSystem : SerializedMonoBehaviour
     public void RemoveFromListChestBonus(ChestBonus obj)
     {
         chestBonus.Remove(obj);
+    }
+    public void SpawnObjEffectAnimation(TypeEffectAnimation type, Vector3 vec3)
+    {
+        ObjEffectAnimation obj = ObjectPooling.Instance.PopObjEffectAnimation(type.ToString(), true);
+        SetUpObj(objEffectAnimation, obj, vec3);
+    }
+    public void RemoveFromListObjEffectAnimation(ObjEffectAnimation obj)
+    {
+        objEffectAnimation.Remove(obj);
     }
     [Button]
     public void DropObject(TypeItemsCanDrop type, Vector3 vec3)

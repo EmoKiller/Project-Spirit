@@ -14,6 +14,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     public SaveGameSlot SaveSlot;
     [SerializeField] private HeroData heroData = null;
     [SerializeField] private AnimationCurve MaxExpPerLevelCurve;
+    
     public float Level
     {
         get { return GetValueAttribute(AttributeType.Level); }
@@ -91,6 +92,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         }
         ObseverConstants.OnAttributeValueChanged.AddListener(CheckCurrentRedHeart);
         Level = 1;
+
         //AttributeOnChange(AttributeType.Level,1);
         //AttributeOnChange(AttributeType.MaxRedHeart, 0);
         //SaveGame();
@@ -128,13 +130,28 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     }
     private void CheckCurrentRedHeart(AttributeType type, float value)
     {
-        if (type != AttributeType.CurrentRedHeart)
+        if (type != AttributeType.CurrentRedHeart || UIManager.Instance.IsOnUIEndOfLevel)
             return;
         if (heroData.attributes[SaveSlot][AttributeType.CurrentRedHeart].value == 0)
+        {
             Debug.Log("PlayerDead");
+            UIManager.Instance.ShowUIEndOfLevel(Events.PlayerDied);
+        }
+            
     }
+    
+    public void StartCountTime()
+    {
+        heroData.attributes[SaveSlot][AttributeType.ElapsedTime].value = Time.time;
+    }
+    public float GetElapsedTime()
+    {
+        return heroData.attributes[SaveSlot][AttributeType.ElapsedTime].value;
+    }
+    public void OnContinueGame()
+    {
 
-
+    }
     public void StartGame()
     {
         

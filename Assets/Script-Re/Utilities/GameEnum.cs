@@ -3,6 +3,12 @@ public enum TypeEffectEnemy
     ArrowEnemy,
     FireballsEnemy,
 }
+public enum TypeEffectAnimation
+{
+    HitObject,
+    HitObject2,
+    SpawnEnemyEffect
+}
 public enum OnScenes
 {
     IntroGame,
@@ -66,7 +72,10 @@ public enum AttributeType
     ChanceOfHealing,
     ChanceOfNegatingDamage,
     LuckyChest,
-    MovementSpeed
+    MovementSpeed,
+    ElapsedTime,
+    CountKillEnemy,
+
 }
 
 public enum CardType
@@ -128,7 +137,11 @@ public enum TypeEnemy
     EneScamp,
     SwordsMan,
     EnemyBat,
-    Chaser
+    EnemyBigBat,
+    DeathCatEyeball,
+    EneScampArcher,
+    EneScampShield,
+    Scythesman, 
 }
 public enum TypeInfoWeapon
 {
@@ -187,6 +200,8 @@ public enum Events
     PlayerTriggerAni,
     PlayerChangeWeapon,
     PlayerChangeCurses,
+    PlayerDied,
+    PlayerEndLevel,
     SetWeapon,
     SetOnEvent,
     UpdateAttackRate,

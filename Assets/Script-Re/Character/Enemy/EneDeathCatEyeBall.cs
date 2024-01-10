@@ -10,6 +10,7 @@ public class EneDeathCatEyeBall : Enemy
     {
         base.Start();
         Init();
+        
     }
     public override void Init()
     {
@@ -17,6 +18,7 @@ public class EneDeathCatEyeBall : Enemy
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
         characterAnimator.AddSpawnObj(SpawnObjFireBalls);
+        
     }
     protected override void Update()
     {
@@ -107,9 +109,10 @@ public class EneDeathCatEyeBall : Enemy
         float euler = 0;
         Vector3 vec3 = transform.position;
         List<ObjectSkill> listObj = new List<ObjectSkill>();
+        Quaternion test;
         this.WaitDelayCall(loop, 0.1f, () =>
         {
-            Quaternion test = Quaternion.Euler(0, euler, 0);
+            test = Quaternion.Euler(0, euler, 0);
             Vector3 dir = test * transform.position;
             RewardSystem.Instance.SpawnObjectSkillEnemy(name, vec3 + (dir.normalized * 2) + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
             outSkill.Init(1f, 4);
@@ -118,10 +121,13 @@ public class EneDeathCatEyeBall : Enemy
             euler += 45;
             if (i == loop)
             {
+                euler = 0;
                 for (int j = 0; j < listObj.Count; j++)
                 {
-                    Vector3 direc = (direction.position + new Vector3(0, 1.5f, 0)) - listObj[j].transform.position;
-                    listObj[j].transform.DOMove(listObj[j].transform.position + (direc.normalized * 50), 4f);
+                    test = Quaternion.Euler(0, euler, 0);
+                    Vector3 direc = (test * (direction.position ));
+                    listObj[j].transform.DOMove(((GetDirection().normalized * 40 ) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f);
+                    euler += 45;
                 }
                 OnAction = false;
                 FinishAniAtk();

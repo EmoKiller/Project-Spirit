@@ -30,6 +30,7 @@ public class ObjectPooling : SerializedMonoBehaviour
     [SerializeField] private List<ChestBonus> chestBonus = new List<ChestBonus>();
     [SerializeField] private List<ObjectSkill> objectSkill = new List<ObjectSkill>();
     [SerializeField] private List<ObjectSkill> objectSkillEnemy = new List<ObjectSkill>();
+    [SerializeField] private List<ObjEffectAnimation> objEffectAnimation = new List<ObjEffectAnimation>();
     private void Awake()
     {
         if (Instance == null)
@@ -44,6 +45,14 @@ public class ObjectPooling : SerializedMonoBehaviour
     public void PushToPoolEffectDestroyObj(EffectDestroyObject chest)
     {
         PushToPool(chest, EffectDestroyObj);
+    }
+    public ObjEffectAnimation PopObjEffectAnimation(string name, bool show = false)
+    {
+        return PopObjectFormPool<ObjEffectAnimation>(objEffectAnimation, name, GameConstants.EffectAnimation, show);
+    }
+    public void PushToPoolObjEffectAnimation(ObjEffectAnimation chest)
+    {
+        PushToPool(chest, objEffectAnimation);
     }
 
 

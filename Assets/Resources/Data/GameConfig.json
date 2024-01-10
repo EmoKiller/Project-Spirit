@@ -130,6 +130,14 @@
 		"Level" : {
 			"type" : "Level",
 			"value" : 0
+		},
+		"ElapsedTime" : {
+			"type" : "ElapsedTime",
+			"value" : 0
+		},
+		"CountKillEnemy" : {
+			"type" : "CountKillEnemy",
+			"value" : 0
 		}
 	},
 	"GameLevelConfig" : {
@@ -141,12 +149,12 @@
 					"enemies" : {
 						"EneScamp" : {
 							"value" : 5,
-							"type" : 0,
+							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
 							"value" : 4,
-							"type" : 1,
+							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						}
 					},

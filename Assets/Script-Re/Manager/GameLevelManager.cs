@@ -25,7 +25,7 @@ public class GameLevelManager : MonoBehaviour
         {
             for (int i = 0; i < item.Value.value; i++)
             {
-                Enemy ene = ObjectPooling.Instance.PopEnemy(item.Value.type.ToString());
+                Enemy ene = ObjectPooling.Instance.PopEnemy(item.Value.type);
                 ene.transform.position = (UnityEngine.Random.onUnitSphere * 80) + ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position;
                 ene.transform.SetParent(transform, true);
                 ene.SetLevelEnemy(item.Value.LevelEnemy);
@@ -33,7 +33,7 @@ public class GameLevelManager : MonoBehaviour
             }
         }
     }
-    public void RemoveinList(Enemy ene)
+    public void RemoveInList(Enemy ene)
     {
         listEnemys.Remove(ene);
         if (listEnemys.Count == 0)
