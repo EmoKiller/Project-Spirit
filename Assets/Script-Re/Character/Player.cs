@@ -17,6 +17,7 @@ public class Player : CharacterBrain , IOrderable
     [SerializeField] private GameObject hand;
     [SerializeField] private GameObject handCurses;
     [SerializeField] private SkillsPlayer skills;
+    public override bool Alive => InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentRedHeart) > 0;
     private float Horizontal => Input.GetAxis("Horizontal");
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
@@ -34,11 +35,11 @@ public class Player : CharacterBrain , IOrderable
     protected override void Start()
     {
         base.Start();
-        CurrentHealth = 999;
     }
     public void Init()
     {
-        SetoffSlash();
+        maxHealth = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.MaxRedHeart);
+        CurrentHealth = maxHealth;
         characterAnimator.AddStepAniAtk(SetOnSlash, SetoffSlash, StartCombo, FinishAniAtk);
         characterAnimator.AddStFishAni(StartAni, StopAni);
         EventDispatcher.Register(Script.Player, Events.PlayerDirection, () => direction);
@@ -50,8 +51,8 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
         EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
         EventDispatcher.Addlistener(Script.Player, Events.OnAttackHitEnemy, DelayTime);
-
         slash.AddActionAttack(OnAttackHit);
+        Debug.Log("InitNomal maxHealth: " + maxHealth);
     }
     public void SetWeapon()
     {
@@ -62,7 +63,7 @@ public class Player : CharacterBrain , IOrderable
     }
     private void Update()
     {
-        if (OnAction|| OnEvent || skills.OnUseSkill)
+        if (!Alive ||OnAction|| OnEvent || skills.OnUseSkill)
         {
             return;
         }
@@ -177,7 +178,6 @@ public class Player : CharacterBrain , IOrderable
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        
         EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDmg, damage);
     }
     public override void Dead()

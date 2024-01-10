@@ -77,12 +77,19 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             Destroy(gameObject);
         heroData = (HeroData)ConfigDataHelper.HeroData.Clone();
     }
+    private void OnEnable()
+    {
+        Init();
+    }
     public void Init()
     {
         if (PlayerOnScenes() == OnScenes.IntroGame)
         {
+            heroData.attributes[SaveSlot][AttributeType.MaxRedHeart].value = 999;
+            heroData.attributes[SaveSlot][AttributeType.CurrentRedHeart].value = heroData.attributes[SaveSlot][AttributeType.MaxRedHeart].value;
             return;
         }
+        ObseverConstants.OnAttributeValueChanged.AddListener(CheckCurrentRedHeart);
         Level = 1;
         //AttributeOnChange(AttributeType.Level,1);
         //AttributeOnChange(AttributeType.MaxRedHeart, 0);
@@ -118,6 +125,13 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     public bool CompareCurrentNMaxAttributes(AttributeType Current, AttributeType Max)
     {
         return heroData.attributes[SaveSlot][Current].value == heroData.attributes[SaveSlot][Max].value;
+    }
+    private void CheckCurrentRedHeart(AttributeType type, float value)
+    {
+        if (type != AttributeType.CurrentRedHeart)
+            return;
+        if (heroData.attributes[SaveSlot][AttributeType.CurrentRedHeart].value == 0)
+            Debug.Log("PlayerDead");
     }
 
 

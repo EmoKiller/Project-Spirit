@@ -17665,7 +17665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e504f8fdf42d3a41a4eb952b52b7dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
+  _animator: {fileID: 713566169}
 --- !u!1001 &714427016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32310,17 +32310,14 @@ MonoBehaviour:
   slash: {fileID: 787882204}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 1507540137}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 5
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 854350854}
   deadBody: {fileID: 547933022}
   OnDashAtk: 0
@@ -35120,6 +35117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 1507540140}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -59738,17 +59736,14 @@ MonoBehaviour:
   slash: {fileID: 8861805567897510383}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 1105529235061383099}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 5
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 211807895}
   deadBody: {fileID: 1819186509}
   OnDashAtk: 0
@@ -59871,6 +59866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 1105529234195291580}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -60638,17 +60634,14 @@ MonoBehaviour:
   slash: {fileID: 8861805566616249321}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 1105529234195291581}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 5
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 684561722}
   deadBody: {fileID: 1030723047}
   OnDashAtk: 0
@@ -60888,6 +60881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 1105529235061383098}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -71922,17 +71916,14 @@ MonoBehaviour:
   slash: {fileID: 5682086052938742398}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086054572230774}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 179694507}
   deadBody: {fileID: 868306104}
   OnDashAtk: 0
@@ -72061,17 +72052,14 @@ MonoBehaviour:
   slash: {fileID: 5682086053427669950}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086055019682230}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 83156317}
   deadBody: {fileID: 1154857169}
   OnDashAtk: 0
@@ -72304,17 +72292,14 @@ MonoBehaviour:
   slash: {fileID: 5682086053397819763}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086054985565051}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 2086307184}
   deadBody: {fileID: 220481652}
   OnDashAtk: 0
@@ -72352,17 +72337,14 @@ MonoBehaviour:
   slash: {fileID: 5682086053256948461}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086054856956133}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 807818851}
   deadBody: {fileID: 1118053948}
   OnDashAtk: 0
@@ -72491,17 +72473,14 @@ MonoBehaviour:
   slash: {fileID: 5682086053787906153}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086054310265441}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 1220440175}
   deadBody: {fileID: 1652943255}
   OnDashAtk: 0
@@ -72708,17 +72687,14 @@ MonoBehaviour:
   slash: {fileID: 5682086054020379318}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086053472764094}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 397006468}
   deadBody: {fileID: 850498748}
   OnDashAtk: 0
@@ -72769,17 +72745,14 @@ MonoBehaviour:
   slash: {fileID: 5682086054319158025}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086053792645377}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 1473267379}
   deadBody: {fileID: 709530168}
   OnDashAtk: 0
@@ -72895,17 +72868,14 @@ MonoBehaviour:
   slash: {fileID: 5682086054700721898}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086053075539170}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 728767932}
   deadBody: {fileID: 507060365}
   OnDashAtk: 0
@@ -73034,17 +73004,14 @@ MonoBehaviour:
   slash: {fileID: 5682086054982958574}
   direction: {fileID: 809318947}
   tranformOfAni: {fileID: 5682086053382606822}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
   LevelEnemy: 1
-  wayPoints: []
-  currentWaypointIndex: 0
   playerDetectionRange: 10
   DashAttackRange: 6
   onFollowPlayer: 0
+  onTargetPlayer: 0
   healthBar: {fileID: 104424453}
   deadBody: {fileID: 84411110}
   OnDashAtk: 0
@@ -75111,6 +75078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086053075539175}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -76197,6 +76165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086053382606819}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -76963,6 +76932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086053472764091}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -77641,6 +77611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086053792645380}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -79402,6 +79373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086054310265444}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -80066,6 +80038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086054572230771}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -81185,6 +81158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086054856956128}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -81814,6 +81788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086054985565054}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -81889,6 +81864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5682086055019682227}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -83690,14 +83666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29110bbf1593f234dad0a3f07dd653f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _positonStrength: {x: 0, y: 0, z: 0}
-  timeDurationPositonStrength: 0
-  _rotationStrength: {x: 0, y: 0, z: 0}
-  timeDurationRotationStrength: 0
+  _positonStrength: {x: 0.1, y: 0.1, z: 0.1}
+  timeDurationPositonStrength: 0.1
+  _rotationStrength: {x: 0.1, y: 0.1, z: 0.1}
+  timeDurationRotationStrength: 0.1
   target: {fileID: 0}
   smooth: 0.3
   offset: {x: 0, y: 22, z: -28}
-  _camera: {fileID: 0}
+  _camera: {fileID: 6382284640798585061}
 --- !u!20 &6382284640798585061
 Camera:
   m_ObjectHideFlags: 0

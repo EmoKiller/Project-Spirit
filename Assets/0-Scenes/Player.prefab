@@ -388,8 +388,6 @@ MonoBehaviour:
   slash: {fileID: 5091772204938025335}
   direction: {fileID: 5091772203656239017}
   tranformOfAni: {fileID: 5091772204761643769}
-  health: 0
-  maxHealth: 0
   onAction: 0
   onAniATK: 0
   OnEvent: 0
@@ -722,8 +720,8 @@ MonoBehaviour:
   - {fileID: 5091772203847948237}
   - {fileID: 5091772204533748707}
   m_Bounds:
-    m_Center: {x: 0.41404116, y: -0.032340527, z: 0.0259575}
-    m_Extent: {x: 0.2926035, y: 0.13668174, z: 0.003922714}
+    m_Center: {x: 0.41404116, y: -0.03234051, z: 0.025957262}
+    m_Extent: {x: 0.29260343, y: 0.13668172, z: 0.003922714}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1792,8 +1790,8 @@ MonoBehaviour:
   - {fileID: 5091772204708089215}
   - {fileID: 5091772204755976739}
   m_Bounds:
-    m_Center: {x: 0.029805064, y: 0.48796952, z: 0.0056391465}
-    m_Extent: {x: 0.7177901, y: 0.48141694, z: 0.0057408204}
+    m_Center: {x: 0.029805064, y: 0.4879695, z: 0.0056387815}
+    m_Extent: {x: 0.7177901, y: 0.48141694, z: 0.00574047}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2097,6 +2095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77af6006e73ab2498ffed2a3cabcc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ator: {fileID: 5091772204761643771}
   currentAnimationState: 0
   currentMovementType: 0
   comboATK: 0
@@ -2299,7 +2298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5091772204938025332
 Transform:
   m_ObjectHideFlags: 0
@@ -2538,8 +2537,8 @@ MonoBehaviour:
   - {fileID: 5091772204135060715}
   - {fileID: 5091772204248303788}
   m_Bounds:
-    m_Center: {x: 0.43869227, y: -0.043925077, z: 0.031982683}
-    m_Extent: {x: 0.28508878, y: 0.13664138, z: 0.0036525857}
+    m_Center: {x: 0.43869197, y: -0.043925077, z: 0.031982444}
+    m_Extent: {x: 0.28508887, y: 0.13664138, z: 0.0036525857}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

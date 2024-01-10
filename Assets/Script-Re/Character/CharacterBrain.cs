@@ -36,7 +36,7 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
         get { return onAniATK; }
     }
     
-    public bool Alive => CurrentHealth > 0;
+    public virtual bool Alive { get; }
     public string Name => characterName;
 
     
@@ -72,9 +72,7 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     }
     #endregion
 
-    protected abstract void EffectHit(Vector3 dir);
-    
-    public abstract void Rolling();
+    #region SetupTriggerAni
     protected virtual void SetOnSlash()
     {
         slash.SetActiveSlash(true);
@@ -92,6 +90,21 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
         characterAnimator.ResetTrigger();
         onAniATK = false;
     }
+    public void StartAni()
+    {
+        OnAction = true;
+    }
+    public void StopAni()
+    {
+        OnAction = false;
+    }
+    public void TriggerAni(string str)
+    {
+        characterAnimator.SetTrigger(str);
+    }
+    #endregion
+
+    #region ControllerCharacter
     protected void Rotation()
     {
         Vector3 dir = direction.transform.position - transform.position;
@@ -102,13 +115,51 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
         }
         tranformOfAni.transform.localScale = new Vector3(1, 1, 1);
     }
+    public virtual void SetMoveWayPoint(Vector3 wayPoint, float time)
+    {
+        float i = 0;
+        Rotation();
+        this.LoopDelayCall(time, () =>
+        {
+            if (!Alive)
+                return;
+            MoveTo(wayPoint);
+            i++;
+            if (i >= time - 0.5f)
+            {
+                OnAction = false;
+            }
+        });
+    }
+    public virtual void MoveTo(Vector3 direction)
+    {
+        Vector3 dir = direction - transform.position;
+        agent.MoveToDirection(dir.normalized);
+    }
+    public void SetAction(bool value)
+    {
+        OnAction = value;
+    }
+    public void SetEvent(bool value)
+    {
+        OnEvent = value;
+    }
+
+    public void SetStay()
+    {
+        OnAction = true;
+        Rotation();
+    }
+    #endregion
+
+    #region Combat
     protected virtual void OnAttackHit(CharacterBrain target)
     {
         if (!target.Alive)
             return;
         CompareImpactForce(target, characterAttack.PowerForce);
     }
-    protected void CompareImpactForce(CharacterBrain target,float PowerForce)
+    protected void CompareImpactForce(CharacterBrain target, float PowerForce)
     {
         Vector3 dir = transform.position - target.transform.position;
         float force = target.characterAttack.Weight - PowerForce;
@@ -126,10 +177,15 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
             agent.AgentBody.Move(dir * Time.deltaTime);
         });
     }
-    public virtual void MoveTo(Vector3 direction)
+    protected abstract void EffectHit(Vector3 dir);
+
+    public abstract void Rolling();
+    #endregion
+
+    public Vector3 GetDirection()
     {
-        Vector3 dir = direction - transform.position;
-        agent.MoveToDirection(dir.normalized);
+        Vector3 dir = direction.position - transform.position;
+        return dir;
     }
     //public virtual void SetMoveWayPoints(Vector3 wayPoint)
     //{
@@ -147,54 +203,4 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     //        //}
     //    });
     //}
-    public virtual void SetMoveWayPoint(Vector3 wayPoint, float time)
-    {
-        float i = 0;
-        Rotation();
-        this.LoopDelayCall(time, () =>
-        {
-            if (!Alive)
-                return;
-            MoveTo(wayPoint);
-            i++;
-            if (i >= time - 0.5f)
-            {
-                OnAction = false;
-            }
-        });
-    }
-    
-    
-    public void SetAction(bool value)
-    {
-        OnAction = value;
-    }
-    public void SetEvent(bool value)
-    {
-        OnEvent = value;
-    }
-    public void StartAni()
-    {
-        OnAction = true;
-    }
-    public void StopAni()
-    {
-        OnAction = false;
-    }
-    public void SetStay()
-    {
-        OnAction = true;
-        Rotation();
-    }
-    public void TriggerAni(string str)
-    {
-        characterAnimator.SetTrigger(str);
-    }
-    public Vector3 GetDirection()
-    {
-        Vector3 dir = direction.position - transform.position;
-        return dir;
-    }
-
-    
 }

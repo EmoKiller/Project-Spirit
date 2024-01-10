@@ -304,4 +304,7 @@ public class UIManager : SerializedMonoBehaviour
             ShowUpTarot.ListCard[i].gameObject.SetActive(false);
         }
     }
+
+
+
 }

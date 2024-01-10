@@ -18,7 +18,7 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected bool randomMove = true;
     [SerializeField] protected bool enemyThinking = false;
     [SerializeField] protected bool enemyRunFollow = false;
-
+    public override bool Alive => CurrentHealth > 0;
     public virtual string objectName => gameObject.name;
 
     protected override void Start()
