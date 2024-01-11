@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class IToggle : MonoBehaviour
 {
     public TypeMenuTab TypeMenu;
-    protected Image image = null;
-    protected Toggle _toggle = null;
+    [SerializeField] protected Image image = null;
+    [SerializeField] protected Toggle _toggle = null;
     public Toggle Toggle 
     {
         get => this.TryGetMonoComponent(ref _toggle);
@@ -14,7 +14,6 @@ public class IToggle : MonoBehaviour
     public Action<IToggle, bool> OnChangedEvent;
     private void Awake()
     {
-        image = GetComponent<Image>();
         Toggle.onValueChanged.AddListener(OnValueChanged);
     }
     protected virtual void OnValueChanged(bool value)

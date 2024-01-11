@@ -105,6 +105,12 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         return heroData.attributes[SaveSlot][type].value;
     }
+    public float GetValueTarrotAddAttribute(AttributeType type)
+    {
+        if(heroData.TarrotAddattributes[SaveSlot][type] == null)
+            return 0;
+        return heroData.TarrotAddattributes[SaveSlot][type].value;
+    }
     [Button]
     public void IncreaseValueOf(AttributeType type, float value)
     {
@@ -136,10 +142,16 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         {
             Debug.Log("PlayerDead");
             UIManager.Instance.ShowUIEndOfLevel(Events.PlayerDied);
-        }
-            
+        } 
     }
-    
+    public void TarrotIncreaseValueOf(AttributeType type, float value)
+    {
+        heroData.TarrotAddattributes[SaveSlot][type].value += value;
+        ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
+    }
+
+
+
     public void StartCountTime()
     {
         heroData.attributes[SaveSlot][AttributeType.ElapsedTime].value = Time.time;
@@ -156,8 +168,14 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         
     }
-    private void SaveGame()
+    public void SaveGame()
     {
         ConfigDataHelper.HeroData = heroData;
+    }
+    public void SelectDifficult(TypeLevelDifficult type)
+    {
+        heroData.GameDifficult[SaveSlot] = type;
+        UpdateValueOf(AttributeType.MaxRedHeart, ConfigDataHelper.GameConfig.GameDifficult[type][TypeControlDifficult.MaxRedHeart].value);
+        
     }
 }

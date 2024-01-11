@@ -1,3 +1,14 @@
+public enum TypeLevelDifficult
+{
+    Easy,
+    Medium,
+    Hard,
+    ExtraHard
+}
+public enum TypeControlDifficult
+{
+    MaxRedHeart
+}
 public enum TypeEffectEnemy
 {
     ArrowEnemy,
@@ -202,6 +213,7 @@ public enum Events
     PlayerChangeCurses,
     PlayerDied,
     PlayerEndLevel,
+    BlackHeartbreak,
     SetWeapon,
     SetOnEvent,
     UpdateAttackRate,
@@ -261,7 +273,9 @@ public enum TypeMenuTab
     Inventory,
     Player,
     Clut,
-    Quests
+    Quests,
+    PowerUp,
+    Tarrot
 }
 
 public enum TypeTabInfomation

@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem.iOS;
 using UnityEngine.UI;
 
 public class UIManager : SerializedMonoBehaviour
@@ -19,7 +21,6 @@ public class UIManager : SerializedMonoBehaviour
     {
         get { return isOnUIEndOfLevel; }
     }
-
 
     private void Awake()
     {
@@ -48,6 +49,10 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
         EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
+        //MainSelect
+        PowerUP.Init();
+        PowerUP.ShowButton.onClick.AddListener(OnBuy);
+
     }
     private void Start()
     {
@@ -64,19 +69,22 @@ public class UIManager : SerializedMonoBehaviour
             item.CreateNewHeart = CreateNewHeart;
             ObseverConstants.OnAttributeValueChanged.AddListener(item.SetStartMaxCurrentHP);
             ObseverConstants.OnIncreaseAttributeValue.AddListener(item.RestoreHeart);
-            //item.SetStartMaxCurrentHP(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
             InfomationPlayerManager.Instance.UpdateValueOf(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
         }
+        grHeart[(int)EnemGrHeart.Black].SpecialHeart = BlackHeartBreak;
+
         List<UI_Attribute> _UI_Attribute = GetComponentsInChildren<UI_Attribute>().ToList();
         foreach (var item in _UI_Attribute)
         {
             item.Init();
         }
+        foreach (var item in _difficultButtons)
+        {
+            item.Value.Button.onClick.AddListener(OnSelectButtonLevelDifficult);
+        }
 
     }
-    /// <summary>
-    /// UI Infomation
-    /// </summary>
+    #region UIInfomation
     [Header("UI Infomation")]
     
     [SerializeField] private UiInfomation _UIInfomation = null;
@@ -100,9 +108,9 @@ public class UIManager : SerializedMonoBehaviour
     {
         UIInfomation.IconCurses = spr;
     }
-    /// <summary>
-    /// UiControllerHearts
-    /// </summary>
+    #endregion
+
+    #region UiControllerHearts
     [Header("Gr Heart")]
     [SerializeField] List<GrHeart> grHeart = new List<GrHeart>();
     public List<GrHeart> GroupHeart
@@ -131,23 +139,22 @@ public class UIManager : SerializedMonoBehaviour
             }   
         }
     }
-    //public void RestoreHeart(EnemGrHeart gr, float valueRestore)
-    //{
-    //    grHeart[(int)gr].RestoreHeart(valueRestore);
-    //}
+    private void BlackHeartBreak()
+    {
+        ObseverConstants.OnBlackHeartBreak?.Invoke(2);
+    }
+    #endregion
 
-    /// <summary>
-    /// UIHider {
-    /// </summary>
+    #region UIHider
     [Header("Hide Bar")]
     [SerializeField] UIHideBar _UIHideBar = null;
     public UIHideBar UIShowBar
     {
         get => this.TryGetMonoComponentInChildren(ref _UIHideBar);
     }
-    /// <summary>
-    ///  ButtonAction
-    /// </summary>
+    #endregion
+
+    #region ButtonAction
     [Header("UI Button")]
     [SerializeField] UIButtonAction _UIButtonAction;
     public UIButtonAction UIButtonAction
@@ -214,6 +221,9 @@ public class UIManager : SerializedMonoBehaviour
             yield return null;
         }
     }
+    #endregion
+
+    #region PopUpUi
     /// <summary>
     /// PopUp ui
     /// </summary>
@@ -271,8 +281,10 @@ public class UIManager : SerializedMonoBehaviour
         }
         img.color = Color.white;
     }
+    #endregion
+
+    #region ShowUpTarotCard
     [Header("ShowUp TarotCard")]
-    ///ShowUpTarotCard
     [SerializeField] private ShowUpTarot _ShowUpTarotCard = null;
     public ShowUpTarot ShowUpTarot
     {
@@ -296,7 +308,7 @@ public class UIManager : SerializedMonoBehaviour
                 ShowUpTarot.ListCard[i].CradFontSprite = ObjectPooling.Instance.SpriteAtlasTarotCard.GetSprite(Card.Type.ToString());
                 ShowUpTarot.ListCard[i].OnActiveCard = () =>
                 {
-                    InfomationPlayerManager.Instance.IncreaseValueOf(Card.AttributeAdded, Card.valueAdded);
+                    InfomationPlayerManager.Instance.TarrotIncreaseValueOf(Card.AttributeAdded, Card.valueAdded);
                     TurnOffCard();
                 };
             }
@@ -313,8 +325,10 @@ public class UIManager : SerializedMonoBehaviour
             ShowUpTarot.ListCard[i].gameObject.SetActive(false);
         }
     }
-    //UI EndOfLevel
+    #endregion
 
+    #region UIEndOfLevel
+    [Header("UIEndOfLevel")]
     [SerializeField] private UIEndOfLevel _UiEndOfLevel = null;
     public UIEndOfLevel UIEndOfLevel
     {
@@ -340,7 +354,46 @@ public class UIManager : SerializedMonoBehaviour
         int sec = Mathf.FloorToInt(time % 60);
         UIEndOfLevel.TextTimeCLock = string.Format("{0:00}:{1:00}:{2:00}", hour, min , sec);
         UIEndOfLevel.TextTotalKillEnemy = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CountKillEnemy).ToString();
-        //UIEndOfLevel.ButtonContinue.onClick.AddListener
+        UIEndOfLevel.ButtonContinue.onClick.AddListener(ActiveMainSelect);
     }
+    #endregion
 
+    #region UISelectDifficult
+    [SerializeField] Dictionary<TypeLevelDifficult, IButtonLevelDifficult> _difficultButtons = new Dictionary<TypeLevelDifficult, IButtonLevelDifficult>();
+    public Dictionary<TypeLevelDifficult, IButtonLevelDifficult> DifficultButtons
+    {
+        get { return _difficultButtons; }
+    }
+    [SerializeField] GameObject selectDifficult;
+    public GameObject SelectDifficult { get { return SelectDifficult; } }
+    public void OnSelectButtonLevelDifficult()
+    {
+        SelectDifficult.gameObject.SetActive(false);
+
+    }
+    #endregion
+
+    #region MainSelect
+    [SerializeField] GameObject objMainSelect;
+    public GameObject ObjMainSelect { get { return objMainSelect; } }
+    [Header("PowerUP")]
+    [SerializeField] private PowerUP _PowerUP = null;
+    public PowerUP PowerUP
+    {
+        get => this.TryGetMonoComponentInChildren(ref _PowerUP);
+    }
+    private void ActiveMainSelect()
+    {
+        objMainSelect.SetActive(true);
+    }
+    private void OnBuy()
+    {
+        if (PowerUP.Price > InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentCoin))
+            return;
+        InfomationPlayerManager.Instance.IncreaseValueOf(PowerUP.AttributeAdded, PowerUP.ValueAdded);
+        PowerUP.PopupShow.SetActive(false);
+
+
+    }
+    #endregion
 }

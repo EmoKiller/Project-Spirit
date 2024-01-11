@@ -93,7 +93,7 @@
 		},
 		"MaxBlackHeart" : {
 			"type" : "MaxBlackHeart",
-			"value" : 0
+			"value" : 6
 		},
 		"CurrentBlackHeart" : {
 			"type" : "CurrentBlackHeart",
@@ -116,11 +116,11 @@
 			"value" : 0
 		},
 		"ChanceOfNegatingDamage" : {
-			"type" : "ChanceOfHealing",
+			"type" : "ChanceOfNegatingDamage",
 			"value" : 0
 		},
 		"LuckyChest" : {
-			"type" : "ChanceOfHealing",
+			"type" : "LuckyChest",
 			"value" : 0
 		},
 		"MovementSpeed" : {
@@ -154,7 +154,7 @@
 						},
 						"SwordsMan" : {
 							"value" : 4,
-							"type" : "EneScamp",
+							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						}
 					},
@@ -247,6 +247,86 @@
 			"valueAdded" : 10,
 			"quote" : "Feels lucky ...and fluffy.",
 			"description" : "Increases the chance to spawn better chests."
+		}
+	},
+	"GameDifficult" : {
+		"Easy" : {
+			"MaxRedHeart" : {
+				"type" : "MaxRedHeart",
+				"value" : 8
+			}
+		},
+		"Medium" : {
+			"MaxRedHeart" : {
+				"type" : "MaxRedHeart",
+				"value" : 6
+			}
+		},
+		"Hard" : {
+			"MaxRedHeart" : {
+				"type" : "MaxRedHeart",
+				"value" : 4
+			}
+		},
+		"ExtraHard" : {
+			"MaxRedHeart" : {
+				"type" : "MaxRedHeart",
+				"value" : 2
+			}
+		}
+	},
+	"TarrotAddattributes" : {
+		"MaxRedHeart" : {
+			"type" : "MaxRedHeart",
+			"value" : 0
+		},
+		"MaxValueAngry" : {
+			"type" : "MaxValueAngry",
+			"value" : 0
+		},
+		"MaxBlueHeart" : {
+			"type" : "MaxBlueHeart",
+			"value" : 0
+		},
+		"CurrentBlueHeart" : {
+			"type" : "CurrentBlueHeart",
+			"value" : 0
+		},
+		"MaxBlackHeart" : {
+			"type" : "MaxBlackHeart",
+			"value" : 0
+		},
+		"CurrentBlackHeart" : {
+			"type" : "CurrentBlackHeart",
+			"value" : 0
+		},
+		"CriticalHit" : {
+			"type" : "CriticalHit",
+			"value" : 0
+		},
+		"AttackRate" : {
+			"type" : "AttackRate",
+			"value" : 1
+		},
+		"IncreasedMovementSpeed" : {
+			"type" : "IncreasedMovementSpeed",
+			"value" : 1
+		},
+		"ChanceOfHealing" : {
+			"type" : "ChanceOfHealing",
+			"value" : 0
+		},
+		"ChanceOfNegatingDamage" : {
+			"type" : "ChanceOfNegatingDamage",
+			"value" : 0
+		},
+		"LuckyChest" : {
+			"type" : "LuckyChest",
+			"value" : 0
+		},
+		"MovementSpeed" : {
+			"type" : "MovementSpeed",
+			"value" : 0
 		}
 	}
 }

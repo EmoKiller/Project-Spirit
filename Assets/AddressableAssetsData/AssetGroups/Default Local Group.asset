@@ -161,7 +161,7 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/SpriteAlas/SpriteAtlasTarotCard.spriteatlasv2
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: df21008023c43c84c8cd2adf63975b9b
+  - m_GUID: 50c38e5c2a654e34f9fd57da1755f1cd
     m_Address: Assets/Prefabs/Enemy/Scythesman.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -243,6 +243,14 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 53bdd2ea3277cbd46b611a7b3de2f299
     m_Address: Assets/Prefabs/Effect/EffectAnimation/HitObject2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31fe14f4ac7eed247945b84fa373c985
+    m_Address: Assets/Prefabs/Enemy/EneScampArcher.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8db1bdd766d0c7a47ba6b27157af337a
+    m_Address: Assets/Prefabs/Enemy/DeathCatEyeball.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

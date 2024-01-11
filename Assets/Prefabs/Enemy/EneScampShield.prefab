@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1928b0d2d653604da7f14c7044f7bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 0}
+  currentWeapon: {fileID: 8115232916289014536}
   hpObject: {fileID: 11400000, guid: 94971bd22e7f64c4a8d2afd264bea745, type: 2}
   Damage: []
 --- !u!195 &9012806378494938086

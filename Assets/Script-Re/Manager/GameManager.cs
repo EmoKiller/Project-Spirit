@@ -27,7 +27,6 @@ public class GameManager : SerializedMonoBehaviour
             return;
         }
         uiManager.Init();
-        GameLevelManager.Instance.Init();
     }
 }
 

@@ -17,7 +17,11 @@ public class GameLevelManager : MonoBehaviour
     }
     public void Init()
     {
-        SpawnEnemy();
+        this.DelayCall(10f, () =>
+        {
+            SpawnEnemy();
+        });
+        
     }
     public void SpawnEnemy()
     {
@@ -25,10 +29,12 @@ public class GameLevelManager : MonoBehaviour
         {
             for (int i = 0; i < item.Value.value; i++)
             {
-                Enemy ene = ObjectPooling.Instance.PopEnemy(item.Value.type);
+                Enemy ene = ObjectPooling.Instance.PopEnemy(item.Value.type, false);
                 ene.transform.position = (UnityEngine.Random.onUnitSphere * 80) + ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position;
                 ene.transform.SetParent(transform, true);
                 ene.SetLevelEnemy(item.Value.LevelEnemy);
+                ene.Init();
+                ene.Show();
                 listEnemys.Add(ene);
             }
         }

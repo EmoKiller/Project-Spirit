@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class GrHeart
@@ -33,7 +34,7 @@ public class GrHeart
     public EnemGrPriteHeart typeHalf;
     public Action<EnemGrPriteHeart> CreateNewHeart = null;
     public Action<AttributeType> OnRestoreHeart= null;
-    public Action SpecialHeart = null;
+    public UnityAction SpecialHeart = null;
     public GrHeart()
     {
         
@@ -50,6 +51,7 @@ public class GrHeart
             while (heart[i].ReturnCurrent() > 0)
             {
                 heart[i].TakeDamage();
+                SpecialHeart?.Invoke();
                 valueHit--;
                 CurrentHP--;
                 if (valueHit == 0)

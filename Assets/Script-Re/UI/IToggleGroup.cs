@@ -6,12 +6,12 @@ using UnityEngine.UIElements;
 public class IToggleGroup : MonoBehaviour
 {
     [SerializeField] List<GameObject> listContents;
-    private List<IToggle> _childs = null;
+    [SerializeField] private List<IToggle> _childs = null;
     public List<IToggle> Childs => this.TryGetMonoComponentsInChildren(ref _childs);
     [SerializeField]protected ToggleGroup group;
     private void Awake()
     {
-        foreach (var child in Childs)
+        foreach (var child in _childs)
         {
             child.OnChangedEvent = OnChildrenChanged;
             child.Toggle.group = group;
@@ -23,6 +23,6 @@ public class IToggleGroup : MonoBehaviour
     }
     private void Start()
     {
-        Childs[0].Toggle.isOn = true;
+        _childs[0].Toggle.isOn = true;
     }
 }

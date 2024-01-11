@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : CharacterBrain , IPool
 {
+    public enum Script
+    {
+        Enemy
+    }
     public LevelRomanNumerals LevelEnemy;
     [SerializeField] protected float playerDetectionRange = 25f;
     [SerializeField] protected float DashAttackRange = 6f;
@@ -20,26 +24,29 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected bool enemyRunFollow = false;
     public override bool Alive => CurrentHealth > 0;
     public virtual string objectName => gameObject.name;
-
+    private void Awake()
+    {
+        
+    }
     protected override void Start()
     {
         base.Start();
         characterAttack.Initialized();
         slash.SetSizeBox(characterAttack.SlashBoxSize);
+        slash.AddActionAttack(OnAttackHit);
         maxHealth = characterAttack.HP * (float)LevelEnemy;
         CurrentHealth = maxHealth;
         healthBar.SetHealh(maxHealth);
+        
     }
     public virtual void Init()
     {
         if (direction == null)
-        {
             direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
-        }
         maxHealth = characterAttack.HP * (float)LevelEnemy;
         CurrentHealth = maxHealth;
         healthBar.SetHealh(maxHealth);
-        slash.AddActionAttack(OnAttackHit);
+        ObseverConstants.OnBlackHeartBreak.AddListener(TakeDamage);
     }
         
     protected virtual void Update()
@@ -216,6 +223,8 @@ public class Enemy : CharacterBrain , IPool
     }
     public override void TakeDamage(float damage)
     {
+        if (!Alive)
+            return;
         base.TakeDamage(damage);
         CurrentHealth -= damage;
         healthBar.SetActive();
@@ -272,6 +281,12 @@ public class Enemy : CharacterBrain , IPool
     public void Show()
     {
         gameObject.SetActive(true);
+        if (Distance() < playerDetectionRange)
+        {
+            randomMove = true;
+            onTargetPlayer = true;
+            onFollowPlayer = false;
+        }
     }
 
     public void Hide()
@@ -282,19 +297,11 @@ public class Enemy : CharacterBrain , IPool
         randomMove = false;
         enemyThinking = false;
         enemyRunFollow = false;
+        ObseverConstants.OnBlackHeartBreak.RemoveListener(TakeDamage);
         GameLevelManager.Instance.RemoveInList(this);
         ObjectPooling.Instance.PushToPoolEnemy(this);
         deadBody.SetActive(false);
         gameObject.SetActive(false);
-    }
-    private void OnEnable()
-    {
-        if (Distance() < playerDetectionRange)
-        {
-            randomMove = true;
-            onTargetPlayer = true;
-            onFollowPlayer = false;
-        }
     }
     #endregion
 
