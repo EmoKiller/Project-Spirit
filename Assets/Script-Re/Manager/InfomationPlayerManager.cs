@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.UI;
 
 public class InfomationPlayerManager : SerializedMonoBehaviour
 {
@@ -77,11 +78,9 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         else
             Destroy(gameObject);
         heroData = (HeroData)ConfigDataHelper.HeroData.Clone();
+        ObseverConstants.OnClickButtonStart.AddListener(StartGame);
     }
-    private void OnEnable()
-    {
-        Init();
-    }
+    
     public void Init()
     {
         if (PlayerOnScenes() == OnScenes.IntroGame)
@@ -92,7 +91,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         }
         ObseverConstants.OnAttributeValueChanged.AddListener(CheckCurrentRedHeart);
         Level = 1;
-
         //AttributeOnChange(AttributeType.Level,1);
         //AttributeOnChange(AttributeType.MaxRedHeart, 0);
         //SaveGame();
@@ -107,9 +105,11 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     }
     public float GetValueTarrotAddAttribute(AttributeType type)
     {
-        if(heroData.TarrotAddattributes[SaveSlot][type] == null)
-            return 0;
         return heroData.TarrotAddattributes[SaveSlot][type].value;
+    }
+    public float GetValueTPowerAddAttribute(AttributeType type)
+    {
+        return heroData.PowerAddattributes[SaveSlot][type].value;
     }
     [Button]
     public void IncreaseValueOf(AttributeType type, float value)
@@ -149,8 +149,15 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         heroData.TarrotAddattributes[SaveSlot][type].value += value;
         ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
     }
-
-
+    public void PowerIncreaseValueOf(AttributeType type, float value)
+    {
+        heroData.PowerAddattributes[SaveSlot][type].value += value;
+        ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
+    }
+    public void BaseIncreaseValueOf(AttributeType type, float value)
+    {
+        heroData.BaseAttributes[SaveSlot][type].value = value;
+    }
 
     public void StartCountTime()
     {
@@ -166,7 +173,14 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     }
     public void StartGame()
     {
-        
+        heroData.attributes[SaveSlot] = heroData.BaseAttributes[SaveSlot];
+        foreach (var item in heroData.PowerAddattributes[SaveSlot])
+        {
+            if (heroData.attributes[SaveSlot].ContainsKey(item.Key))
+            {
+                UpdateValueOf(item.Key,GetValueAttribute(item.Key) + GetValueTPowerAddAttribute(item.Key));
+            }
+        }
     }
     public void SaveGame()
     {
@@ -175,7 +189,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     public void SelectDifficult(TypeLevelDifficult type)
     {
         heroData.GameDifficult[SaveSlot] = type;
-        UpdateValueOf(AttributeType.MaxRedHeart, ConfigDataHelper.GameConfig.GameDifficult[type][TypeControlDifficult.MaxRedHeart].value);
-        
+        BaseIncreaseValueOf(AttributeType.MaxRedHeart, ConfigDataHelper.GetValueGameDifficult(type, TypeControlDifficult.MaxRedHeart));
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -51,7 +52,7 @@ public class PowerUP : MonoBehaviour
     {
         popupShow.SetActive(false);
     }
-    private void OnClickPowerUp(AttributeType attributeAdded, Sprite sprite, string name, float valueAdded, string quote , int price)
+    private void OnClickPowerUp(AttributeType attributeAdded, Sprite sprite, string name, float valueAdded, string quote , int price )
     {
         this.attributeAdded = attributeAdded;
         SpriteImage = sprite;
@@ -61,6 +62,13 @@ public class PowerUP : MonoBehaviour
         this.price = price;
         popupShow.SetActive(true);
     }
+    public void CheckTick()
+    {
+        AttributePowerUP attri = attributePowerUPs.Find(e => e.AttributeAdded.Equals(AttributeAdded));
+        attri.AddTick(sprActive);
+    }
+
+    
 
 
 }

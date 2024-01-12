@@ -65,7 +65,7 @@
 		},
 		"CurrentCoin" : {
 			"type" : "CurrentCoin",
-			"value" : 0
+			"value" : 100
 		},
 		"MaxValueHunger" : {
 			"type" : "MaxValueHunger",
@@ -93,7 +93,7 @@
 		},
 		"MaxBlackHeart" : {
 			"type" : "MaxBlackHeart",
-			"value" : 6
+			"value" : 0
 		},
 		"CurrentBlackHeart" : {
 			"type" : "CurrentBlackHeart",
@@ -288,16 +288,8 @@
 			"type" : "MaxBlueHeart",
 			"value" : 0
 		},
-		"CurrentBlueHeart" : {
-			"type" : "CurrentBlueHeart",
-			"value" : 0
-		},
 		"MaxBlackHeart" : {
 			"type" : "MaxBlackHeart",
-			"value" : 0
-		},
-		"CurrentBlackHeart" : {
-			"type" : "CurrentBlackHeart",
 			"value" : 0
 		},
 		"CriticalHit" : {
@@ -326,6 +318,56 @@
 		},
 		"MovementSpeed" : {
 			"type" : "MovementSpeed",
+			"value" : 0
+		}
+	},
+	"PowerAddattributes" : {
+		"MaxRedHeart" : {
+			"type" : "MaxRedHeart",
+			"value" : 0
+		},
+		"MaxValueAngry" : {
+			"type" : "MaxValueAngry",
+			"value" : 0
+		},
+		"MaxBlueHeart" : {
+			"type" : "MaxBlueHeart",
+			"value" : 0
+		},
+		"MaxBlackHeart" : {
+			"type" : "MaxBlackHeart",
+			"value" : 0
+		},
+		"CriticalHit" : {
+			"type" : "CriticalHit",
+			"value" : 0
+		},
+		"AttackRate" : {
+			"type" : "AttackRate",
+			"value" : 1
+		},
+		"IncreasedMovementSpeed" : {
+			"type" : "IncreasedMovementSpeed",
+			"value" : 1
+		},
+		"ChanceOfHealing" : {
+			"type" : "ChanceOfHealing",
+			"value" : 0
+		},
+		"ChanceOfNegatingDamage" : {
+			"type" : "ChanceOfNegatingDamage",
+			"value" : 0
+		},
+		"LuckyChest" : {
+			"type" : "LuckyChest",
+			"value" : 0
+		},
+		"MovementSpeed" : {
+			"type" : "MovementSpeed",
+			"value" : 0
+		},
+		"MaxRedAddHeart" : {
+			"type" : "MaxRedAddHeart",
 			"value" : 0
 		}
 	}

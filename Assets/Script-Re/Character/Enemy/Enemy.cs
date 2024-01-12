@@ -261,6 +261,7 @@ public class Enemy : CharacterBrain , IPool
                 RewardSystem.Instance.DropObject(TypeItemsCanDrop.ObjDropExp, transform.position, out ObjectDropOnWorld objout);
                 ObjDropExp objDropExp = objout as ObjDropExp;
                 objDropExp.NumEXP = characterAttack.ExpEnemy * (float)LevelEnemy;
+                GameLevelManager.Instance.CheckAllEnemyDead(this);
                 Hide();
             });
         });
@@ -298,7 +299,6 @@ public class Enemy : CharacterBrain , IPool
         enemyThinking = false;
         enemyRunFollow = false;
         ObseverConstants.OnBlackHeartBreak.RemoveListener(TakeDamage);
-        GameLevelManager.Instance.RemoveInList(this);
         ObjectPooling.Instance.PushToPoolEnemy(this);
         deadBody.SetActive(false);
         gameObject.SetActive(false);

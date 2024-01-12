@@ -42,14 +42,24 @@ public class ConfigDataHelper
         data.attributes.Add(SaveGameSlot.Slot1, GameConfig.HeroBaseData);
         data.attributes.Add(SaveGameSlot.Slot2, GameConfig.HeroBaseData);
         data.attributes.Add(SaveGameSlot.Slot3, GameConfig.HeroBaseData);
+        data.BaseAttributes.Add(SaveGameSlot.Slot1, GameConfig.HeroBaseData);
+        data.BaseAttributes.Add(SaveGameSlot.Slot2, GameConfig.HeroBaseData);
+        data.BaseAttributes.Add(SaveGameSlot.Slot3, GameConfig.HeroBaseData);
         data.TarrotAddattributes.Add(SaveGameSlot.Slot1, GameConfig.TarrotAddattributes);
         data.TarrotAddattributes.Add(SaveGameSlot.Slot2, GameConfig.TarrotAddattributes);
         data.TarrotAddattributes.Add(SaveGameSlot.Slot3, GameConfig.TarrotAddattributes);
+        data.PowerAddattributes.Add(SaveGameSlot.Slot1, GameConfig.PowerAddattributes);
+        data.PowerAddattributes.Add(SaveGameSlot.Slot2, GameConfig.PowerAddattributes);
+        data.PowerAddattributes.Add(SaveGameSlot.Slot3, GameConfig.PowerAddattributes);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot1, OnScenes.IntroGame);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot2, OnScenes.VampireSurvivor);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot3, OnScenes.IntroGame);
 
 
         return data;
+    }
+    public static float GetValueGameDifficult(TypeLevelDifficult type, TypeControlDifficult typeAttribute)
+    {
+        return GameConfig.GameDifficult[type][typeAttribute].value;
     }
 }

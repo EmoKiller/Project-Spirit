@@ -14,6 +14,8 @@ public class GameLevelManager : MonoBehaviour
             Instance = this;
         else
             Destroy(Instance);
+        ObseverConstants.OnClickButtonStart.AddListener(Init);
+        ObseverConstants.OnClickButtonContinue.AddListener(ResetGameLevel);
     }
     public void Init()
     {
@@ -22,6 +24,16 @@ public class GameLevelManager : MonoBehaviour
             SpawnEnemy();
         });
         
+    }
+    public void ResetGameLevel()
+    {
+        level = 1;
+        round = 1;
+        for (int i = listEnemys.Count - 1; i >= 0; i--)
+        {
+            listEnemys[i].Hide();
+            listEnemys.Remove(listEnemys[i]);
+        }
     }
     public void SpawnEnemy()
     {
@@ -39,7 +51,7 @@ public class GameLevelManager : MonoBehaviour
             }
         }
     }
-    public void RemoveInList(Enemy ene)
+    public void CheckAllEnemyDead(Enemy ene)
     {
         listEnemys.Remove(ene);
         if (listEnemys.Count == 0)

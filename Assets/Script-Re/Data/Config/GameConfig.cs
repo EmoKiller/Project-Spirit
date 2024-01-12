@@ -8,6 +8,7 @@ public class GameConfig
     public Dictionary<CardType, CardConfig> cardsConfig = null;
     public Dictionary<AttributeType, BaseAttribute> HeroBaseData = null;
     public Dictionary<AttributeType, BaseAttribute> TarrotAddattributes = null;
+    public Dictionary<AttributeType, BaseAttribute> PowerAddattributes = null;
     public Dictionary<TypeLevelDifficult,Dictionary<TypeControlDifficult, LevelDifficult>> GameDifficult = null;
 
     public GameConfig()

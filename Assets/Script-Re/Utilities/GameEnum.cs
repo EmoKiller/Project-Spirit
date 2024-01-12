@@ -112,12 +112,6 @@ public enum CardType
     GiftFromBelow,
     TrueSight
 }
-public enum ListDropItems
-{
-    Exp,
-    Coin,
-    Heart
-}
 public enum TypeCoins
 {
     Coin1 = 1,
@@ -246,13 +240,6 @@ public enum Events
     //GameManager
     BaseStartGame, //Func
 
-}
-public enum TypeSave
-{
-    Level,
-    Exp,
-    AmountFollowers,
-    AmountOfCoin
 }
 public enum TypeItemsCanDrop
 {

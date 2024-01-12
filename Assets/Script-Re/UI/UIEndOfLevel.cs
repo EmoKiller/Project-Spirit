@@ -30,7 +30,7 @@ public class UIEndOfLevel : MonoBehaviour
         get { return _textTotalKillEnemy.text; }
         set { _textTotalKillEnemy.text = value; }
     }
-    private Button _Button;
+    [SerializeField] Button _Button;
     public Button ButtonContinue
     {
         get { return _Button; }

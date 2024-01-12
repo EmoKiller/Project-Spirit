@@ -52,6 +52,8 @@ public class UIManager : SerializedMonoBehaviour
         //MainSelect
         PowerUP.Init();
         PowerUP.ShowButton.onClick.AddListener(OnBuy);
+        buttonStartGame.onClick.AddListener(OnClickButtonStart);
+        UIEndOfLevel.ButtonContinue.onClick.AddListener(OnClickContinue);
 
     }
     private void Start()
@@ -83,6 +85,11 @@ public class UIManager : SerializedMonoBehaviour
             item.Value.Button.onClick.AddListener(OnSelectButtonLevelDifficult);
         }
 
+    }
+    private void OnClickButtonStart()
+    {
+        ObseverConstants.OnClickButtonStart?.Invoke();
+        OffMainSelect();
     }
     #region UIInfomation
     [Header("UI Infomation")]
@@ -354,27 +361,34 @@ public class UIManager : SerializedMonoBehaviour
         int sec = Mathf.FloorToInt(time % 60);
         UIEndOfLevel.TextTimeCLock = string.Format("{0:00}:{1:00}:{2:00}", hour, min , sec);
         UIEndOfLevel.TextTotalKillEnemy = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CountKillEnemy).ToString();
-        UIEndOfLevel.ButtonContinue.onClick.AddListener(ActiveMainSelect);
+    }
+    private void OnClickContinue()
+    {
+        ObseverConstants.OnClickButtonContinue?.Invoke();
+        objMainSelect.SetActive(true);
+        UIEndOfLevel.gameObject.SetActive(false);
     }
     #endregion
 
     #region UISelectDifficult
+    [Header("UISelectDifficult")]
     [SerializeField] Dictionary<TypeLevelDifficult, IButtonLevelDifficult> _difficultButtons = new Dictionary<TypeLevelDifficult, IButtonLevelDifficult>();
     public Dictionary<TypeLevelDifficult, IButtonLevelDifficult> DifficultButtons
     {
         get { return _difficultButtons; }
     }
     [SerializeField] GameObject selectDifficult;
-    public GameObject SelectDifficult { get { return SelectDifficult; } }
     public void OnSelectButtonLevelDifficult()
     {
-        SelectDifficult.gameObject.SetActive(false);
+        selectDifficult.gameObject.SetActive(false);
 
     }
     #endregion
 
     #region MainSelect
     [SerializeField] GameObject objMainSelect;
+    [SerializeField] Button buttonStartGame;
+    public Button ButttonStartGame { get { return ButttonStartGame; } }
     public GameObject ObjMainSelect { get { return objMainSelect; } }
     [Header("PowerUP")]
     [SerializeField] private PowerUP _PowerUP = null;
@@ -382,18 +396,20 @@ public class UIManager : SerializedMonoBehaviour
     {
         get => this.TryGetMonoComponentInChildren(ref _PowerUP);
     }
-    private void ActiveMainSelect()
+    private void OffMainSelect()
     {
-        objMainSelect.SetActive(true);
+        objMainSelect.SetActive(false);
     }
     private void OnBuy()
     {
         if (PowerUP.Price > InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentCoin))
+        {
             return;
-        InfomationPlayerManager.Instance.IncreaseValueOf(PowerUP.AttributeAdded, PowerUP.ValueAdded);
+        }
+        _PowerUP.CheckTick();
+        InfomationPlayerManager.Instance.MinusValueOf(AttributeType.CurrentCoin, PowerUP.Price);
+        InfomationPlayerManager.Instance.PowerIncreaseValueOf(PowerUP.AttributeAdded, PowerUP.ValueAdded);
         PowerUP.PopupShow.SetActive(false);
-
-
     }
     #endregion
 }
