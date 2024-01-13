@@ -12,4 +12,6 @@ public class GameConstants
     public const string ChestBonus = "Assets/Prefabs/Chest/{0}.prefab";
     public const string EffectSkill = "Assets/Prefabs/EffectSkill/{0}.prefab";
     public const string EffectEnemySkill = "Assets/Prefabs/EffectSkillEnemy/{0}.prefab";
+    public const string WeaponSword = "Assets/Prefabs/Weapon/Sword/{0}.prefab";
+    public const string SkillCurses = "Assets/Prefabs/Curses/{0}.prefab";
 }

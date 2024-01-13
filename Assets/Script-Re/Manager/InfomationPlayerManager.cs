@@ -179,8 +179,10 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             if (heroData.attributes[SaveSlot].ContainsKey(item.Key))
             {
                 UpdateValueOf(item.Key,GetValueAttribute(item.Key) + GetValueTPowerAddAttribute(item.Key));
+                Debug.Log(item.Key);
             }
         }
+        StartCountTime();
     }
     public void SaveGame()
     {

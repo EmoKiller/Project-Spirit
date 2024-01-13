@@ -65,7 +65,7 @@
 		},
 		"CurrentCoin" : {
 			"type" : "CurrentCoin",
-			"value" : 100
+			"value" : 10000
 		},
 		"MaxValueHunger" : {
 			"type" : "MaxValueHunger",
@@ -137,6 +137,14 @@
 		},
 		"CountKillEnemy" : {
 			"type" : "CountKillEnemy",
+			"value" : 0
+		},
+		"TypeLvlSword" : {
+			"type" : "TypeLvlSword",
+			"value" : 0
+		},
+		"TypeLvlCruses" : {
+			"type" : "TypeLvlCruses",
 			"value" : 0
 		}
 	},
@@ -322,16 +330,8 @@
 		}
 	},
 	"PowerAddattributes" : {
-		"MaxRedHeart" : {
-			"type" : "MaxRedHeart",
-			"value" : 0
-		},
 		"MaxValueAngry" : {
 			"type" : "MaxValueAngry",
-			"value" : 0
-		},
-		"MaxBlueHeart" : {
-			"type" : "MaxBlueHeart",
 			"value" : 0
 		},
 		"MaxBlackHeart" : {
@@ -369,6 +369,15 @@
 		"MaxRedAddHeart" : {
 			"type" : "MaxRedAddHeart",
 			"value" : 0
+		},
+		"TypeLvlSword" : {
+			"type" : "TypeLvlSword",
+			"value" : 0
+		},
+		"TypeLvlCruses" : {
+			"type" : "TypeLvlCruses",
+			"value" : 0
 		}
-	}
+	},
+	"CardPowerUPConfig" : {}
 }

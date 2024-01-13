@@ -1,13 +1,18 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class GameLevelManager : MonoBehaviour
 {
     public static GameLevelManager Instance;
+
     int level = 1;
     int round = 1;
     [SerializeField] public List<Enemy> listEnemys = new List<Enemy>();
+    [SerializeField] Transform weaponPodium;
+    [SerializeField] Transform cursesPodium;
     private void Awake()
     {
         if (Instance == null)
@@ -19,11 +24,19 @@ public class GameLevelManager : MonoBehaviour
     }
     public void Init()
     {
+        SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
+        //weaponPodium.Init();
         this.DelayCall(10f, () =>
         {
             SpawnEnemy();
         });
         
+    }
+    
+    public void SpawnObj(string path , string objectName , Transform transform)
+    {
+        GameObject objAsset = Addressables.LoadAssetAsync<GameObject>(string.Format(path, objectName)).WaitForCompletion();
+        Instantiate(objAsset, transform);
     }
     public void ResetGameLevel()
     {

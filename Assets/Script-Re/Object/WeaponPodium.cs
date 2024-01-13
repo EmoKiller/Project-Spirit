@@ -3,11 +3,12 @@ using UnityEngine;
 public class WeaponPodium : TriggerWaitAction 
 {
     [SerializeField] Weapon weapon = null;
+    [SerializeField] BoxCollider boxCollider = null;
     float damagePlayer = 0;
     float speedPlayer = 0;
-    private void Start()
+    public void SetBoxCollider(bool value)
     {
-        weapon = GetComponentInChildren<Weapon>();
+        boxCollider.enabled = value;
     }
     protected override void OnTriggerEnter(Collider other)
     {

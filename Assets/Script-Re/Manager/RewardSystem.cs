@@ -12,6 +12,7 @@ public class RewardSystem : SerializedMonoBehaviour
     [SerializeField] private List<ObjectSkill> objectSkill = new List<ObjectSkill>();
     [SerializeField] private List<ObjectSkill> objectSkillEnemy = new List<ObjectSkill>();
     [SerializeField] private List<ObjEffectAnimation> objEffectAnimation = new List<ObjEffectAnimation>();
+
     private void Awake()
     {
         Instance = this;

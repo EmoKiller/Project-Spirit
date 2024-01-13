@@ -16,15 +16,21 @@ public class PowerUP : MonoBehaviour
     [SerializeField] TMP_Text namePower;
     [SerializeField] Image showImage;
     [SerializeField] TMP_Text quoteShow;
+    [SerializeField] TMP_Text priceText;
     [SerializeField] float valueAdded;
     [SerializeField] private int price;
     private AttributeType attributeAdded;
     [Header("ButtonBuy")]
     [SerializeField] Button showButton;
-    public string namePowerText
+    public string NamePowerText
     {
         get { return namePower.text; }
         set { namePower.text = value; }
+    }
+    public string PriceText
+    {
+        get { return priceText.text; }
+        set { priceText.text = value; }
     }
     public Sprite SpriteImage
     {
@@ -36,6 +42,7 @@ public class PowerUP : MonoBehaviour
     public AttributeType AttributeAdded => attributeAdded;
     public GameObject PopupShow => popupShow;
     public Button ShowButton => showButton;
+    public Sprite SprActive => sprActive;
 
     public void Init()
     {
@@ -56,16 +63,12 @@ public class PowerUP : MonoBehaviour
     {
         this.attributeAdded = attributeAdded;
         SpriteImage = sprite;
-        namePowerText = name;
+        NamePowerText = name;
         this.valueAdded = valueAdded;
         quoteShow.text = quote;
         this.price = price;
+        PriceText = price.ToString();
         popupShow.SetActive(true);
-    }
-    public void CheckTick()
-    {
-        AttributePowerUP attri = attributePowerUPs.Find(e => e.AttributeAdded.Equals(AttributeAdded));
-        attri.AddTick(sprActive);
     }
 
     

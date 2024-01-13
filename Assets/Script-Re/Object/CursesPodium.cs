@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CursesPodium : TriggerWaitAction
 {
+    [SerializeField] Transform transformSpawn;
+    public Transform TransformSpawn => transformSpawn;
     [SerializeField] CursesEquip Curses = null;
     private void Start()
     {

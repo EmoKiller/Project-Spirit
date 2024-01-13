@@ -367,6 +367,7 @@ public class UIManager : SerializedMonoBehaviour
         ObseverConstants.OnClickButtonContinue?.Invoke();
         objMainSelect.SetActive(true);
         UIEndOfLevel.gameObject.SetActive(false);
+        isOnUIEndOfLevel = false;
     }
     #endregion
 
@@ -402,11 +403,13 @@ public class UIManager : SerializedMonoBehaviour
     }
     private void OnBuy()
     {
-        if (PowerUP.Price > InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentCoin))
+        AttributePowerUP attri = PowerUP.AttributePowerUPs.Find(e => e.AttributeAdded.Equals(PowerUP.AttributeAdded));
+        if (PowerUP.Price > InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentCoin) && attri.Check.Count - 1 > attri.NumberTick)
         {
+            PowerUP.PopupShow.SetActive(false);
             return;
         }
-        _PowerUP.CheckTick();
+        attri.AddTick(PowerUP.SprActive);
         InfomationPlayerManager.Instance.MinusValueOf(AttributeType.CurrentCoin, PowerUP.Price);
         InfomationPlayerManager.Instance.PowerIncreaseValueOf(PowerUP.AttributeAdded, PowerUP.ValueAdded);
         PowerUP.PopupShow.SetActive(false);

@@ -1,3 +1,13 @@
+public enum TypeSword
+{
+    CrusadersBlade,
+    BaneSword,
+    NecromanticSword,
+    VampiricSword,
+    MercilessSword,
+    ZealousSword,
+    GodlySword
+}
 public enum TypeLevelDifficult
 {
     Easy,
@@ -86,6 +96,8 @@ public enum AttributeType
     MovementSpeed,
     ElapsedTime,
     CountKillEnemy,
+    TypeLvlSword,
+    TypeLvlCruses
 
 }
 

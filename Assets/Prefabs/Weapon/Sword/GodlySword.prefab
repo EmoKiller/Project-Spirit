@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3369079177950722731}
   - component: {fileID: 6551847469984028738}
   - component: {fileID: 3055870618252950118}
-  m_Layer: 0
-  m_Name: 6-Godly Sword
+  - component: {fileID: -2812687184791776855}
+  - component: {fileID: -8954471343965035540}
+  m_Layer: 8
+  m_Name: GodlySword
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,3 +112,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObject: {fileID: 11400000, guid: 7cda79b61533adc4ab75bbbbde17df43, type: 2}
+  CurrentHit: []
+  weaponPodium: {fileID: -8954471343965035540}
+--- !u!65 &-2812687184791776855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556754418376368234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3899999, y: 1.56, z: 0.2}
+  m_Center: {x: 0.35049984, y: 0.49878907, z: 0}
+--- !u!114 &-8954471343965035540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556754418376368234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27e8a6b479ed3f428bd464b39ad8ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Equip  '
+  typeButton: 2
+  actioned: 0
+  weapon: {fileID: 3055870618252950118}
+  boxCollider: {fileID: -2812687184791776855}

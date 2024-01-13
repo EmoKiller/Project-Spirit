@@ -15,9 +15,11 @@ public class AttributePowerUP : MonoBehaviour
     public string Name;
     public float valueAdded;
     public string quote;
-    public int price;
+    [SerializeField]private int price = 20;
+    public int Price => price * numberTick;
     public List<Image> Check = new List<Image>();
-    public int NumberTick = 0;
+    private int numberTick = 1;
+    public int NumberTick => numberTick - 1;
     [SerializeField] private Button buttonAttribute;
     public Button ButtonAttribute => this.TryGetMonoComponent(ref buttonAttribute);
     public Action<AttributeType, Sprite, string, float, string, int> OnClickAttribute = null;
@@ -29,14 +31,11 @@ public class AttributePowerUP : MonoBehaviour
     }
     private void OnClick()
     {
-        OnClickAttribute?.Invoke(AttributeAdded, Sprite, Name, valueAdded, quote, price);
-    }
-    public void CheckNumberTicks()
-    {
-
+        OnClickAttribute?.Invoke(AttributeAdded, Sprite, Name, valueAdded, quote, Price);
     }
     public void AddTick(Sprite spr)
     {
         Check[NumberTick].sprite = spr;
+        numberTick++;
     }
 }
