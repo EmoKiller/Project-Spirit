@@ -52,7 +52,6 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
         EventDispatcher.Addlistener(Script.Player, Events.OnAttackHitEnemy, DelayTime);
         slash.AddActionAttack(OnAttackHit);
-        Debug.Log("InitNomal maxHealth: " + maxHealth);
     }
     public void SetWeapon()
     {

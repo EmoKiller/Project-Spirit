@@ -54,6 +54,9 @@ public class ConfigDataHelper
         data.PlayerOnSceness.Add(SaveGameSlot.Slot1, OnScenes.IntroGame);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot2, OnScenes.VampireSurvivor);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot3, OnScenes.IntroGame);
+        data.IsSelectedDifficult.Add(SaveGameSlot.Slot1, false);
+        data.IsSelectedDifficult.Add(SaveGameSlot.Slot2, false);
+        data.IsSelectedDifficult.Add(SaveGameSlot.Slot3, false);
 
 
         return data;

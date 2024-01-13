@@ -19,10 +19,14 @@ public class GameManager : SerializedMonoBehaviour
     }
     private void Start()
     {
+        
+    }
+    private void OnEnable()
+    {
         InfomationPlayerManager.Instance.Init();
         Player.Instance.Init();
         cameraFollow.Init();
-        if (InfomationPlayerManager.Instance.PlayerOnScenes() == OnScenes.IntroGame) 
+        if (InfomationPlayerManager.Instance.PlayerOnScenes() == OnScenes.IntroGame)
         {
             return;
         }

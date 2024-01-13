@@ -16,12 +16,16 @@ public class UIHideBar : MonoBehaviour
     [SerializeField] GameObject popUp;
     private void Start()
     {
+        
+    }
+    public void Init()
+    {
         gruopMenuEsc.SetActive(false);
         inventoryTab.SetActive(false);
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && inventoryTab != null)
         {
             ToggleTabHideBar(inventoryTab, !inventoryTab.activeSelf);
         }
@@ -32,7 +36,8 @@ public class UIHideBar : MonoBehaviour
     }
     private void ToggleTabHideBar(GameObject obj,bool value)
     {
-        topBar.gameObject.SetActive(!value);
+        if(topBar != null)
+            topBar.gameObject.SetActive(!value);
         popUp.gameObject.SetActive(!value);
         if (value == true)
         {

@@ -65,7 +65,7 @@
 		},
 		"CurrentCoin" : {
 			"type" : "CurrentCoin",
-			"value" : 10000
+			"value" : 100
 		},
 		"MaxValueHunger" : {
 			"type" : "MaxValueHunger",
@@ -330,8 +330,16 @@
 		}
 	},
 	"PowerAddattributes" : {
+		"MaxRedHeart" : {
+			"type" : "MaxRedHeart",
+			"value" : 0
+		},
 		"MaxValueAngry" : {
 			"type" : "MaxValueAngry",
+			"value" : 0
+		},
+		"MaxBlueHeart" : {
+			"type" : "MaxBlueHeart",
 			"value" : 0
 		},
 		"MaxBlackHeart" : {
@@ -378,6 +386,5 @@
 			"type" : "TypeLvlCruses",
 			"value" : 0
 		}
-	},
-	"CardPowerUPConfig" : {}
+	}
 }

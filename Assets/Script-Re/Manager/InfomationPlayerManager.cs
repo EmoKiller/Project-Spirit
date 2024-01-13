@@ -90,7 +90,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             return;
         }
         ObseverConstants.OnAttributeValueChanged.AddListener(CheckCurrentRedHeart);
-        Level = 1;
+        //Level = 1;
         //AttributeOnChange(AttributeType.Level,1);
         //AttributeOnChange(AttributeType.MaxRedHeart, 0);
         //SaveGame();
@@ -158,7 +158,14 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         heroData.BaseAttributes[SaveSlot][type].value = value;
     }
-
+    public void SelectedDifficult()
+    {
+        heroData.IsSelectedDifficult[SaveSlot] = true;
+    }
+    public bool GetSelectDifficut()
+    {
+        return heroData.IsSelectedDifficult[SaveSlot];
+    }
     public void StartCountTime()
     {
         heroData.attributes[SaveSlot][AttributeType.ElapsedTime].value = Time.time;

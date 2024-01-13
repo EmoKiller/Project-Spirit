@@ -49,22 +49,17 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
         EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
-        //MainSelect
-        PowerUP.Init();
-        PowerUP.ShowButton.onClick.AddListener(OnBuy);
-        buttonStartGame.onClick.AddListener(OnClickButtonStart);
-        UIEndOfLevel.ButtonContinue.onClick.AddListener(OnClickContinue);
+        
 
     }
     private void Start()
     {
-        UIButtonAction.gameObject.SetActive(false);
-        InfoWeapon.gameObject.SetActive(false);
-        ShowUpTarot.gameObject.SetActive(false);
-        UIEndOfLevel.gameObject.SetActive(false);
+        
+        
     }
     public void Init()
     {
+
         //UiControllerHearts
         foreach (var item in grHeart)
         {
@@ -84,6 +79,22 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.Value.Button.onClick.AddListener(OnSelectButtonLevelDifficult);
         }
+        //MainSelect
+        PowerUP.Init();
+        PowerUP.ShowButton.onClick.AddListener(OnBuy);
+        buttonStartGame.onClick.AddListener(OnClickButtonStart);
+        UIEndOfLevel.ButtonContinue.onClick.AddListener(OnClickContinue);
+
+
+        UIShowBar.Init();
+        UIButtonAction.gameObject.SetActive(false);
+        InfoWeapon.gameObject.SetActive(false);
+        ShowUpTarot.gameObject.SetActive(false);
+        UIEndOfLevel.gameObject.SetActive(false);
+        if (InfomationPlayerManager.Instance.GetSelectDifficut() == true)
+            OnSelectButtonLevelDifficult();
+
+
 
     }
     private void OnClickButtonStart()
@@ -365,9 +376,10 @@ public class UIManager : SerializedMonoBehaviour
     private void OnClickContinue()
     {
         ObseverConstants.OnClickButtonContinue?.Invoke();
-        objMainSelect.SetActive(true);
-        UIEndOfLevel.gameObject.SetActive(false);
-        isOnUIEndOfLevel = false;
+        LoadSceneExtension.LoadScene(OnScenes.VampireSurvivor.ToString());
+        //objMainSelect.SetActive(true);
+        //UIEndOfLevel.gameObject.SetActive(false);
+        //isOnUIEndOfLevel = false;
     }
     #endregion
 
@@ -381,6 +393,7 @@ public class UIManager : SerializedMonoBehaviour
     [SerializeField] GameObject selectDifficult;
     public void OnSelectButtonLevelDifficult()
     {
+        InfomationPlayerManager.Instance.SelectedDifficult();
         selectDifficult.gameObject.SetActive(false);
 
     }
