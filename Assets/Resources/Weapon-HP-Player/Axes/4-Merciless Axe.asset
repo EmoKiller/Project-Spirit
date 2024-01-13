@@ -20,8 +20,17 @@ MonoBehaviour:
   DescriptionWeapon: Chance to deal a Critical Hit when attacking enemies.
   Speed: 1
   AttackRange: 2
+  AttackRangeBow: 2
   SlashBoxSize: {x: 4, y: 1, z: 4}
   ListDamage:
   - 2
   - 2
   - 2
+  ListPowerForce:
+  - 0
+  - 0
+  - 0
+  MoveOnAttack:
+  - 0
+  - 0
+  - 0

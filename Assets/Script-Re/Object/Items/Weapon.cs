@@ -5,6 +5,8 @@ public class Weapon : MonoBehaviour
 {
     public WeaponObject weaponObject = null;
     public List<float> CurrentHit = null;
+    [SerializeField] WeaponPodium weaponPodium;
+
     public void Init()
     {
         CurrentHit.Clear();
@@ -18,6 +20,10 @@ public class Weapon : MonoBehaviour
     public void InitEnemy()
     {
         CurrentHit[0] = weaponObject.ListDamage[0];
+    }
+    public void SetBoxCollider(bool value)
+    {
+        weaponPodium.SetBoxCollider(value);
     }
     public virtual void Attack(Vector3 target)
     {

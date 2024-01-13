@@ -216,10 +216,13 @@ public class Player : CharacterBrain , IOrderable
         {
             wp.transform.SetParent(null);
             wp.transform.ReSetEulerAngle();
+            wp.SetBoxCollider(true);
         }
         Weapon obj = Instantiate(weapon, hand.transform);
         characterAttack.Initialized(obj);
         slash.SetSizeBox(characterAttack.SlashBoxSize);
+        obj.transform.localPosition = Vector3.zero;
+        obj.SetBoxCollider(false);
     }
     private void ChangeCurses(CursesEquip curses)
     {
