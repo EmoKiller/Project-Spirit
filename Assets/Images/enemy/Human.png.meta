@@ -893,6 +893,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Human_22
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 1077
+        width: 167
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec0568169abbd44581f78b34bbba2ed
+      internalID: 1622876711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -936,6 +957,7 @@ TextureImporter:
       Scamp_Head_front_1: -1058113467
       Eyes-0: 642932011
       Human_21: 683238948
+      Human_22: 1622876711
       Human_5: 1182853180
       Human_0: -965484438
       Human_17: 1004195981

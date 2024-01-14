@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,13 +36,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,392 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 323
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a092fe6c4c68e5346b7e2f20db66c895
+      internalID: 1640940901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_1
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 225
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ada73ad5300af04996acc24eb946c34
+      internalID: -990770213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 351
+        width: 243
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2c7769599e07d4a898ecc337337488
+      internalID: -1276877281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_3
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 234
+        width: 82
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e795c21e8958d64ba25d97e25a15cbc
+      internalID: 218298222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_4
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 329
+        width: 84
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c557def6dbde6b4bb6bb03331550e52
+      internalID: -1785522659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_5
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 348
+        width: 112
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb1df92ec628b744b98aaae120e5d61
+      internalID: 1104074837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 468
+        width: 137
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36941cd9e9b0d0d45a4f7def71627f34
+      internalID: 40070647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_7
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 465
+        width: 98
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc0ff88f183b7041bf36f3e28f0bad4
+      internalID: -893612052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_8
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 393
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3e28fc774f0a34cbb60012bd0c1beb
+      internalID: 98307845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_9
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 391
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f073b15d31b1e7b42b8aaa0b10a36253
+      internalID: 901728827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_10
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 233
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05c60da253f1584e8840202a9a13017
+      internalID: -432672568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_11
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 414
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae2451f035110d46becd80f88851260
+      internalID: -633037779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_12
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 324
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a87396c20610541a507da2a4608126
+      internalID: 436941458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_13
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 324
+        width: 64
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fe09d402363d54fbb7b6571c2fc076
+      internalID: 1166620603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_14
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 233
+        width: 88
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac48a013fb7af7429a272a1b3a4aa6f
+      internalID: 1584605597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_15
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 325
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9efdd01f5407a248a710ec585bef31a
+      internalID: 525609532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestFlyingFrogMiniboss_16
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 420
+        width: 86
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e3f09b1b6934b46ac6248e5e1f4d45
+      internalID: -678133192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e5079b81c4542bb45904c8c1036c21c5
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ForestFlyingFrogMiniboss_0: 1640940901
+      ForestFlyingFrogMiniboss_10: -432672568
+      ForestFlyingFrogMiniboss_11: -633037779
+      ForestFlyingFrogMiniboss_2: -1276877281
+      ForestFlyingFrogMiniboss_5: 1104074837
+      ForestFlyingFrogMiniboss_16: -678133192
+      ForestFlyingFrogMiniboss_6: 40070647
+      ForestFlyingFrogMiniboss_1: -990770213
+      ForestFlyingFrogMiniboss_14: 1584605597
+      ForestFlyingFrogMiniboss_15: 525609532
+      ForestFlyingFrogMiniboss_3: 218298222
+      ForestFlyingFrogMiniboss_4: -1785522659
+      ForestFlyingFrogMiniboss_8: 98307845
+      ForestFlyingFrogMiniboss_12: 436941458
+      ForestFlyingFrogMiniboss_13: 1166620603
+      ForestFlyingFrogMiniboss_7: -893612052
+      ForestFlyingFrogMiniboss_9: 901728827
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
