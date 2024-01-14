@@ -203,7 +203,7 @@ public class Enemy : CharacterBrain , IPool
     protected virtual void EventInDashAtks()
     {
         agent.moveSpeed = 14;
-        SetMoveWayPoint(direction.transform.position * 3, 3.5f);
+        SetMoveWayPoint(direction.transform.position, 3.5f);
     }
     public override void SetMoveWayPoint(Vector3 wayPoint, float time)
     {

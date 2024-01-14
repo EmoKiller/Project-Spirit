@@ -41,11 +41,11 @@
 	"HeroBaseData" : {
 		"MaxRedHeart" : {
 			"type" : "MaxRedHeart",
-			"value" : 2
+			"value" : 999
 		},
 		"CurrentRedHeart" : {
 			"type" : "CurrentRedHeart",
-			"value" : 2
+			"value" : 999
 		},
 		"MaxExpOfLevel" : {
 			"type" : "MaxExpOfLevel",
@@ -61,11 +61,11 @@
 		},
 		"CurrentAngry" : {
 			"type" : "CurrentAngry",
-			"value" : 100
+			"value" : 0
 		},
 		"CurrentCoin" : {
 			"type" : "CurrentCoin",
-			"value" : 100
+			"value" : 0
 		},
 		"MaxValueHunger" : {
 			"type" : "MaxValueHunger",
@@ -107,10 +107,6 @@
 			"type" : "AttackRate",
 			"value" : 1
 		},
-		"IncreasedMovementSpeed" : {
-			"type" : "IncreasedMovementSpeed",
-			"value" : 1
-		},
 		"ChanceOfHealing" : {
 			"type" : "ChanceOfHealing",
 			"value" : 0
@@ -121,10 +117,6 @@
 		},
 		"LuckyChest" : {
 			"type" : "LuckyChest",
-			"value" : 0
-		},
-		"MovementSpeed" : {
-			"type" : "MovementSpeed",
 			"value" : 0
 		},
 		"Level" : {
@@ -146,6 +138,14 @@
 		"TypeLvlCruses" : {
 			"type" : "TypeLvlCruses",
 			"value" : 0
+		},
+		"IncreasedMovementSpeed" : {
+			"type" : "IncreasedMovementSpeed",
+			"value" : 1
+		},
+		"CursesConsumeLess" : {
+			"type" : "CursesConsumeLess",
+			"value" : 1
 		}
 	},
 	"GameLevelConfig" : {
@@ -156,12 +156,97 @@
 				"1" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 5,
+							"value" : 4,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"2" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 6,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
 							"value" : 4,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"3" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 6,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 2,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"4" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 6,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 4,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"5" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 10,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 4,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"6" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 10,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 6,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"7" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 12,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 10,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						}
@@ -224,14 +309,14 @@
 		"DivineStrength" : {
 			"type" : "DivineStrength",
 			"attributeAdded" : "AttackRate",
-			"valueAdded" : 1.25,
+			"valueAdded" : 0.25,
 			"quote" : "The vigour of the Great Ones course through you.",
 			"description" : "Attack rate increased by 1.25x"
 		},
 		"ThePath" : {
 			"type" : "ThePath",
 			"attributeAdded" : "IncreasedMovementSpeed",
-			"valueAdded" : 1.25,
+			"valueAdded" : 0.25,
 			"quote" : "Banish fear! Banish doubt! Move forth unhesistant..",
 			"description" : "Increased movement speed by 1.25x"
 		},
@@ -255,6 +340,13 @@
 			"valueAdded" : 10,
 			"quote" : "Feels lucky ...and fluffy.",
 			"description" : "Increases the chance to spawn better chests."
+		},
+		"DivineCurse" : {
+			"type" : "DivineCurse",
+			"attributeAdded" : "CursesConsumeLess",
+			"valueAdded" : -0.1,
+			"quote" : "The well within deepens, the power grows.",
+			"description" : "Curses consume 10% less <sprite index=57> Fervour."
 		}
 	},
 	"GameDifficult" : {
@@ -306,11 +398,11 @@
 		},
 		"AttackRate" : {
 			"type" : "AttackRate",
-			"value" : 1
+			"value" : 0
 		},
 		"IncreasedMovementSpeed" : {
 			"type" : "IncreasedMovementSpeed",
-			"value" : 1
+			"value" : 0
 		},
 		"ChanceOfHealing" : {
 			"type" : "ChanceOfHealing",
@@ -324,22 +416,14 @@
 			"type" : "LuckyChest",
 			"value" : 0
 		},
-		"MovementSpeed" : {
-			"type" : "MovementSpeed",
+		"CursesConsumeLess" : {
+			"type" : "CursesConsumeLess",
 			"value" : 0
 		}
 	},
 	"PowerAddattributes" : {
-		"MaxRedHeart" : {
-			"type" : "MaxRedHeart",
-			"value" : 0
-		},
 		"MaxValueAngry" : {
 			"type" : "MaxValueAngry",
-			"value" : 0
-		},
-		"MaxBlueHeart" : {
-			"type" : "MaxBlueHeart",
 			"value" : 0
 		},
 		"MaxBlackHeart" : {
@@ -352,11 +436,11 @@
 		},
 		"AttackRate" : {
 			"type" : "AttackRate",
-			"value" : 1
+			"value" : 0
 		},
 		"IncreasedMovementSpeed" : {
 			"type" : "IncreasedMovementSpeed",
-			"value" : 1
+			"value" : 0
 		},
 		"ChanceOfHealing" : {
 			"type" : "ChanceOfHealing",
@@ -364,14 +448,6 @@
 		},
 		"ChanceOfNegatingDamage" : {
 			"type" : "ChanceOfNegatingDamage",
-			"value" : 0
-		},
-		"LuckyChest" : {
-			"type" : "LuckyChest",
-			"value" : 0
-		},
-		"MovementSpeed" : {
-			"type" : "MovementSpeed",
 			"value" : 0
 		},
 		"MaxRedAddHeart" : {
@@ -384,6 +460,10 @@
 		},
 		"TypeLvlCruses" : {
 			"type" : "TypeLvlCruses",
+			"value" : 0
+		},
+		"CursesConsumeLess" : {
+			"type" : "CursesConsumeLess",
 			"value" : 0
 		}
 	}

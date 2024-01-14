@@ -116,11 +116,11 @@ public class EneScamp : Enemy
             return;
         }
         OnDashAtk = true;
+        this.DelayCall(3f, () => { EnemyThinking(1, 5); });
     }
     public override void MoveTo(Vector3 direction)
     {
         base.MoveTo(direction);
-        characterAnimator.SetTrigger("OnRun");
     }
 
     //protected override void Start()

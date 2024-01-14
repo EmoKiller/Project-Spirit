@@ -14,14 +14,8 @@ public class GameManager : SerializedMonoBehaviour
     public float num = 0;
     private void Awake()
     {
-        
-        
     }
     private void Start()
-    {
-        
-    }
-    private void OnEnable()
     {
         InfomationPlayerManager.Instance.Init();
         Player.Instance.Init();
@@ -31,6 +25,17 @@ public class GameManager : SerializedMonoBehaviour
             return;
         }
         uiManager.Init();
+    }
+    private void OnEnable()
+    {
+        //    InfomationPlayerManager.Instance.Init();
+        //    Player.Instance.Init();
+        //    cameraFollow.Init();
+        //    if (InfomationPlayerManager.Instance.PlayerOnScenes() == OnScenes.IntroGame)
+        //    {
+        //        return;
+        //    }
+        //    uiManager.Init();
     }
 }
 

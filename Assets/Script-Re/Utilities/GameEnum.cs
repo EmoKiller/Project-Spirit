@@ -33,7 +33,8 @@ public enum TypeEffectAnimation
 public enum OnScenes
 {
     IntroGame,
-    VampireSurvivor
+    VampireSurvivor,
+    MenuVampireSurvivor
 }
 public enum SaveGameSlot
 {
@@ -93,12 +94,12 @@ public enum AttributeType
     ChanceOfHealing,
     ChanceOfNegatingDamage,
     LuckyChest,
-    MovementSpeed,
     ElapsedTime,
     CountKillEnemy,
     TypeLvlSword,
-    TypeLvlCruses
-
+    TypeLvlCruses,
+    CursesConsumeLess,
+    
 }
 
 public enum CardType
@@ -109,20 +110,13 @@ public enum CardType
     TheLoversI,
     TheLoversII,
     DiseasedHeart,
-    TheArachnid,
     DivineStrength,
     ThePath,
-    FervoursHarvest,
     SoulSnatcher,
     ShieldOfFaith,
-    TheBomb,
-    DivineCurse,
-    FortuneBlessing,
-    DeathsDoor,
     RabbitsFoot,
-    Ambrosia,
-    GiftFromBelow,
-    TrueSight
+    TrueSight,
+    DivineCurse,
 }
 public enum TypeCoins
 {

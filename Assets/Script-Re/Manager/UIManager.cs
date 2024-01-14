@@ -28,9 +28,7 @@ public class UIManager : SerializedMonoBehaviour
             Instance = this;
         else
             Destroy(Instance);
-        
         //UI Infomation
-
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconWeapon, UpdateIconWeapon);
         EventDispatcher.Addlistener<Sprite>(Script.UIManager, Events.UpdateIconCurses, UpdateIconCurses);
 
@@ -48,7 +46,7 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
-        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
+        
         
 
     }
@@ -57,16 +55,18 @@ public class UIManager : SerializedMonoBehaviour
         
         
     }
+    [Button]
     public void Init()
     {
-
+        Debug.Log("Init uimanager");
+        EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
         //UiControllerHearts
         foreach (var item in grHeart)
         {
             item.CreateNewHeart = CreateNewHeart;
             ObseverConstants.OnAttributeValueChanged.AddListener(item.SetStartMaxCurrentHP);
             ObseverConstants.OnIncreaseAttributeValue.AddListener(item.RestoreHeart);
-            InfomationPlayerManager.Instance.UpdateValueOf(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
+            //InfomationPlayerManager.Instance.UpdateValueOf(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
         }
         grHeart[(int)EnemGrHeart.Black].SpecialHeart = BlackHeartBreak;
 
@@ -79,13 +79,12 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.Value.Button.onClick.AddListener(OnSelectButtonLevelDifficult);
         }
+
         //MainSelect
         PowerUP.Init();
         PowerUP.ShowButton.onClick.AddListener(OnBuy);
         buttonStartGame.onClick.AddListener(OnClickButtonStart);
         UIEndOfLevel.ButtonContinue.onClick.AddListener(OnClickContinue);
-
-
         UIShowBar.Init();
         UIButtonAction.gameObject.SetActive(false);
         InfoWeapon.gameObject.SetActive(false);
@@ -93,8 +92,6 @@ public class UIManager : SerializedMonoBehaviour
         UIEndOfLevel.gameObject.SetActive(false);
         if (InfomationPlayerManager.Instance.GetSelectDifficut() == true)
             OnSelectButtonLevelDifficult();
-
-
 
     }
     private void OnClickButtonStart()
@@ -317,7 +314,7 @@ public class UIManager : SerializedMonoBehaviour
         {
             if (i < Quanty)
             {
-                int random = UnityEngine.Random.Range(0, 5);
+                int random = UnityEngine.Random.Range(0, 11);
                 CardConfig Card = ConfigDataHelper.GameConfig.cardsConfig[(CardType)random];
                 ShowUpTarot.ListCard[i].gameObject.SetActive(true);
                 ShowUpTarot.ListCard[i].NameCard = Card.Type.ToString();

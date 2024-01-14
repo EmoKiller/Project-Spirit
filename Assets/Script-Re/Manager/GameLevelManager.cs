@@ -72,7 +72,7 @@ public class GameLevelManager : MonoBehaviour
             Debug.Log("ClearEnemy");
             RewardSystem.Instance.SpawnChestBonus(DataGameLevelReward(),transform.position);
             NextRound();
-            this.DelayCall(20, () =>
+            this.DelayCall(5, () =>
             {
                 SpawnEnemy();
             });

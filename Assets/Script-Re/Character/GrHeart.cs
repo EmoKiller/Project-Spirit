@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class GrHeart
+public class GrHeart : MonoBehaviour
 {
     public AttributeType TypeHeart;
     public AttributeType TypeCurrentHeart;
@@ -28,7 +28,7 @@ public class GrHeart
         }
     }
     [SerializeField] private int CurrentHeart = 0;
-    public RectTransform rectGr = null;
+    public RectTransform rectGr;
     public List<UIHeart> heart = null;
     public EnemGrPriteHeart typeFull;
     public EnemGrPriteHeart typeHalf;

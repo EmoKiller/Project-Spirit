@@ -99,6 +99,11 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         return heroData.PlayerOnSceness[SaveSlot];
     }
+    public void SetPlayerOnScenes(OnScenes scenes)
+    {
+        heroData.PlayerOnSceness[SaveSlot] = scenes;
+    }
+
     public float GetValueAttribute(AttributeType type)
     {
         return heroData.attributes[SaveSlot][type].value;
@@ -158,6 +163,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         heroData.BaseAttributes[SaveSlot][type].value = value;
     }
+
     public void SelectedDifficult()
     {
         heroData.IsSelectedDifficult[SaveSlot] = true;

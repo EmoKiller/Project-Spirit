@@ -111,9 +111,13 @@ public class SkillsPlayer : MonoBehaviour
     {
         if (TimeUseSkill == 0)
         {
-            InfomationPlayerManager.Instance.CurrentAngry -= _CrusesEquip.CursesObject.UseAngry;
+            InfomationPlayerManager.Instance.CurrentAngry -= _CrusesEquip.CursesObject.UseAngry * CursesConsumeLess();
             useSkill?.Invoke(foward);
         }
+    }
+    private float CursesConsumeLess()
+    {
+        return InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CursesConsumeLess);
     }
     private void CheckCursesFireBall()
     {

@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.PlayerLoop;
@@ -23,18 +24,13 @@ public class Player : CharacterBrain , IOrderable
     private int combo;
     private bool atkCanDo;
 
+    #region Init
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
         else
             Destroy(Instance);
-
-        skills = GetComponent<SkillsPlayer>();
-    }
-    protected override void Start()
-    {
-        base.Start();
     }
     public void Init()
     {
@@ -48,18 +44,15 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<Vector3, float>(Script.Player, Events.MoveToWaypoint, SetMoveWayPoint);
         EventDispatcher.Addlistener<Weapon>(Script.Player, Events.PlayerChangeWeapon, ChangeWeapon);
         EventDispatcher.Addlistener<CursesEquip>(Script.Player, Events.PlayerChangeCurses, ChangeCurses);
-        EventDispatcher.Addlistener(Script.Player,Events.SetWeapon, SetWeapon);
-        EventDispatcher.Addlistener<bool>(Script.Player,Events.SetOnEvent, SetEvent);
+        EventDispatcher.Addlistener(Script.Player, Events.SetWeapon, SetWeapon);
+        EventDispatcher.Addlistener<bool>(Script.Player, Events.SetOnEvent, SetEvent);
         EventDispatcher.Addlistener(Script.Player, Events.OnAttackHitEnemy, DelayTime);
         slash.AddActionAttack(OnAttackHit);
     }
-    public void SetWeapon()
-    {
-        slash.AddActionAttack(OnAttackHit);
-        characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
-        slash.SetSizeBox(characterAttack.SlashBoxSize);
-        Debug.Log(characterAttack.TotalDamage());
-    }
+    #endregion
+
+    #region Update
+
     private void Update()
     {
         if (!Alive ||OnAction|| OnEvent || skills.OnUseSkill)
@@ -89,6 +82,9 @@ public class Player : CharacterBrain , IOrderable
         }
         characterAnimator.SetMovement(MovementType.Idle, Vertical, Horizontal);
     }
+    #endregion
+
+    #region PlayerAction
     public override void Rolling()
     {
         characterAnimator.SetTrigger(AnimationStates.Rolling);
@@ -99,94 +95,16 @@ public class Player : CharacterBrain , IOrderable
             Rotation();
         });
     }
-    public void LoopCondition(bool condition, Action callBack)
-    {
-        StartCoroutine(IELoopCondition(condition, callBack));
-    }
-    public IEnumerator IELoopCondition(bool condition, Action callBack)
-    {
-        while (condition)
-        {
-            callBack?.Invoke();
-            
-            //if (agent.AgentBody.radius > Vector3.Distance(transform.position, dirEnd))
-            //{
-            //    Debug.Log("condition filde");
-                
-            //    break;
-            //}
-            yield return null;
-
-        }
-        agent.AgentBody.isStopped = true;
-        Debug.Log("Đã đến điểm đích!");
-    }
-    private void AttackRate()
-    {
-        characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.AttackRate));
-    }
-    private void IncreasedMovementSpeed()
-    {
-        agent.moveSpeed *= InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.IncreasedMovementSpeed);
-    }
-    private void MovementSpeed()
-    {
-        agent.moveSpeed = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.MovementSpeed);
-    }
-    
     protected override void OnAttackHit(CharacterBrain target)
     {
         if (!target.Alive)
             return;
         float Crit = 1;
         CritHit(ref Crit);
-        Debug.Log("PlayerHitEne" + " " + GetDamageCombo() * Crit);
         target.TakeDamage(GetDamageCombo() * Crit);
+        ChanceOfHealing();
         CompareImpactForce(target, GetForceCombo());
         EventDispatcher.Publish(Events.OnAttackHitEnemy);
-    }
-    private void DelayTime()
-    {
-        Time.timeScale = 0.6f;
-        this.DelayCall(0.03f, () =>
-        {
-            Time.timeScale = 1;
-        });
-    }
-    protected float CritHit(ref float value)
-    {
-        int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CriticalHit))
-            value *= 2;
-        return value;
-    }
-    protected void ChanceOfHealing()
-    {
-        int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfHealing))
-        {
-            //InfomationPlayerManager.Instance.AttributeOnChange(AttributeType.CurrentRedHeart,1);
-        }
-    }
-    protected override void FinishAniAtk()
-    {
-        base.FinishAniAtk();
-        atkCanDo = false;
-        combo = 0;
-    }
-    public override void TakeDamage(float damage)
-    {
-        base.TakeDamage(damage);
-        EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDmg, damage);
-    }
-    public override void Dead()
-    {
-        Debug.Log("Player Dead");
-    }
-    protected override void EffectHit(Vector3 dir)
-    {
-        //Debug.Log(GameConstants.Slash);
-        //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
     }
     private void OnAttack()
     {
@@ -198,7 +116,7 @@ public class Player : CharacterBrain , IOrderable
         Vector3 vec = direction.position - transform.position;
         this.LoopDelayCall(0.1f, () =>
         {
-            MoveTo((vec.normalized * GetMoveOnAttack()) + transform.position );
+            MoveTo((vec.normalized * GetMoveOnAttack()) + transform.position);
             characterAnimator.SetFloat("horizontal", 0);
             characterAnimator.SetFloat("vertical", 0);
         });
@@ -207,6 +125,54 @@ public class Player : CharacterBrain , IOrderable
     {
         direction.position = transform.position + (targetPos - transform.position).normalized;
         slash.transform.position = transform.position + (targetPos - transform.position).normalized * 2f;
+    }
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        NegatingDamage(out bool negating);
+        if (negating == true)
+            return;
+        EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDmg, damage);
+    }
+    public override void Dead()
+    {
+        Debug.Log("Player Dead");
+
+    }
+    protected override void EffectHit(Vector3 dir)
+    {
+    }
+    private void StartCombo()
+    {
+        atkCanDo = false;
+        if (combo < 3)
+        {
+            combo++;
+        }
+    }
+    protected override void FinishAniAtk()
+    {
+        base.FinishAniAtk();
+        atkCanDo = false;
+        combo = 0;
+    }
+    private void DelayTime()
+    {
+        Time.timeScale = 0.6f;
+        this.DelayCall(0.03f, () =>
+        {
+            Time.timeScale = 1;
+        });
+    }
+    #endregion
+
+    #region Change Weapon/Curses
+    public void SetWeapon()
+    {
+        slash.AddActionAttack(OnAttackHit);
+        characterAttack.Initialized(hand.GetComponentInChildren<Weapon>());
+        slash.SetSizeBox(characterAttack.SlashBoxSize);
+        Debug.Log(characterAttack.TotalDamage());
     }
     private void ChangeWeapon(Weapon weapon)
     {
@@ -242,6 +208,40 @@ public class Player : CharacterBrain , IOrderable
         SpriteRenderer spr = curses.GetComponent<SpriteRenderer>();
         spr.enabled = false;
     }
+    #endregion
+
+    #region Attribute Player
+    
+    private void AttackRate()
+    {
+        characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.AttackRate));
+    }
+    private void IncreasedMovementSpeed()
+    {
+        agent.moveSpeed *= InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.IncreasedMovementSpeed);
+    }
+    
+    protected float CritHit(ref float value)
+    {
+        int i = UnityEngine.Random.Range(0, 100);
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CriticalHit))
+            value *= 2;
+        return value;
+    }
+    private void NegatingDamage(out bool NegatingDmg)
+    {
+        NegatingDmg = false;
+        int i = UnityEngine.Random.Range(0, 100);
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfNegatingDamage))
+            NegatingDmg = true;
+
+    }
+    protected void ChanceOfHealing()
+    {
+        int i = UnityEngine.Random.Range(0, 100);
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfHealing))
+            InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentRedHeart, 1);
+    }
     public bool CheckAnimationStates(AnimationStates state)
     {
         return characterAnimator.CurrentAnimationState == state;
@@ -258,12 +258,6 @@ public class Player : CharacterBrain , IOrderable
     {
         return characterAttack.MoveOnAttack[(int)characterAnimator.ComboATK];
     }
-    private void StartCombo()
-    {
-        atkCanDo = false;
-        if (combo < 3)
-        {
-            combo++;
-        }
-    }
+   
+    #endregion
 }

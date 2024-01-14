@@ -10,6 +10,7 @@ public class DoorController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         LoadSceneExtension.LoadScene(onScenes.ToString());
+        InfomationPlayerManager.Instance.SetPlayerOnScenes(onScenes);
     }
 
     public void SetDoor(bool value)

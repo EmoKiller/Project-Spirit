@@ -4,12 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public static class GameUtilities
 {
     public static void DelayCall(this MonoBehaviour mono, float time, Action callBack)
     {
-        mono.StartCoroutine(IEDelayCall(time,callBack));
+        mono.StartCoroutine(IEDelayCall(time, callBack));
     }
     public static IEnumerator IEDelayCall(float time, Action callBack)
     {
@@ -30,11 +31,11 @@ public static class GameUtilities
             yield return null;
         }
     }
-    public static void LoopDelayCall(this MonoBehaviour mono,bool condition ,float endtime, Action callBack)
+    public static void LoopDelayCall(this MonoBehaviour mono, bool condition, float endtime, Action callBack)
     {
         mono.StartCoroutine(IELoopDelayCall(condition, endtime, callBack));
     }
-    public static IEnumerator IELoopDelayCall(bool condition,float endtime, Action callBack)
+    public static IEnumerator IELoopDelayCall(bool condition, float endtime, Action callBack)
     {
         float StartTime = 0;
         while (StartTime <= endtime)
@@ -58,7 +59,7 @@ public static class GameUtilities
         Debug.Log("End LoopCondition");
     }
 
-    public static void WaitDelayCall(this MonoBehaviour mono,int repeat, float waittime, Action callBack)
+    public static void WaitDelayCall(this MonoBehaviour mono, int repeat, float waittime, Action callBack)
     {
         mono.StartCoroutine(IEWaitDelayCall(repeat, waittime, callBack));
     }
@@ -74,7 +75,7 @@ public static class GameUtilities
     }
     public static void ReSetEulerAngle(this Transform trans)
     {
-        trans.eulerAngles = new Vector3(15,0,0);
+        trans.eulerAngles = new Vector3(15, 0, 0);
     }
     public static T TryGetMonoComponent<T>(this MonoBehaviour mono, ref T tryValue)
     {
@@ -103,8 +104,15 @@ public static class GameUtilities
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            action?.Invoke(new Vector3(raycastHit.point.x,0, raycastHit.point.z));
+            action?.Invoke(new Vector3(raycastHit.point.x, 0, raycastHit.point.z));
         }
+    }
+
+    public static void RandomRange100(this MonoBehaviour mono, float value, UnityAction action)
+    {
+        int i = UnityEngine.Random.Range(0, 100);
+        if (i < value)
+            action?.Invoke();
     }
     public static int ConvertInt(EnemGrPriteHeart grSprite)
     {
