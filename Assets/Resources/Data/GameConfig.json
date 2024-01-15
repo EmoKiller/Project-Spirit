@@ -41,11 +41,11 @@
 	"HeroBaseData" : {
 		"MaxRedHeart" : {
 			"type" : "MaxRedHeart",
-			"value" : 999
+			"value" : 8
 		},
 		"CurrentRedHeart" : {
 			"type" : "CurrentRedHeart",
-			"value" : 999
+			"value" : 8
 		},
 		"MaxExpOfLevel" : {
 			"type" : "MaxExpOfLevel",
@@ -156,8 +156,18 @@
 				"1" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 4,
+							"value" : 5,
 							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 4,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 0,
+							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						}
 					},

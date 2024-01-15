@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7284408695445947238}
-  - component: {fileID: 3181428101613977702}
+  - component: {fileID: -1473558699708164726}
   - component: {fileID: 7284408695445947237}
   - component: {fileID: 7284408695445947236}
   m_Layer: 11
@@ -207,7 +207,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
---- !u!114 &3181428101613977702
+--- !u!114 &-1473558699708164726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,16 +216,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7284408695445947256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb7043c73fa62f948a910632fcdd1a5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2632542c3bf48384f89b5651b9f4f2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeMove: 15
+  Type: 2
+  TimeMove: 10
+  TimeMoveMulti: 1
   MoveY: 1
   TimeMoveY: 1
   EaseType: 0
   Ontrigger: 0
-  spriteRenderer: {fileID: 7284408695445947236}
-  NumAngry: 1
+  spriteRenderer: {fileID: 0}
+  Value: 1
+  AttributeType: 12
 --- !u!65 &7284408695445947237
 BoxCollider:
   m_ObjectHideFlags: 0

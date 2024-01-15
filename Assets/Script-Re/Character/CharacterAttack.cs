@@ -13,6 +13,9 @@ public class CharacterAttack : MonoBehaviour
     public float HP => hpObject.HP;
     public float PowerForce => hpObject.PowerForce;
     public float Weight => hpObject.weight;
+    public float RangeDash => currentWeapon.weaponObject.RangeDash;
+    public float SpeedOnDash => currentWeapon.weaponObject.SpeedOnDash;
+    public float NomalSpeed => currentWeapon.weaponObject.NomalSpeed;
     public List<float> CurrentHit => currentWeapon.CurrentHit;
     public List<float> ForceCombo => currentWeapon.weaponObject.ListPowerForce;
     public List<float> MoveOnAttack => currentWeapon.weaponObject.MoveOnAttack;

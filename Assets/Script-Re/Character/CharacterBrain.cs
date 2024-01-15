@@ -119,6 +119,7 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     {
         float i = 0;
         Rotation();
+        OnAction = true;
         this.LoopDelayCall(time, () =>
         {
             if (!Alive)

@@ -6,19 +6,11 @@ using UnityEngine.Events;
 
 public class EneDeathCatEyeBall : Enemy
 {
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-        Init();
-        
-    }
-    public override void Init()
-    {
-        base.Init();
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
         characterAnimator.AddSpawnObj(SpawnObjFireBalls);
-        
     }
     protected override void Update()
     {
@@ -52,7 +44,6 @@ public class EneDeathCatEyeBall : Enemy
             RandomMove();
             return;
         }
-
     }
     private void RandomMove()
     {
@@ -90,80 +81,16 @@ public class EneDeathCatEyeBall : Enemy
         int i = Random.Range(0, 100);
         if (i < 60)
         {
-            SpawnObjBallFireLoop("FireballsEnemy", 8);
+            SpawnObjBallFireLoop(8);
             return;
         }
         if (i > 80)
         {
-            SpawnObjBallFire("FireballsEnemy", 8);
+            SpawnObjBallFire(8);
             return;
         }
-        SpawnObjBallFire("FireballsEnemy", GetDirection());
+        SpawnObjBallFire();
         return;
-        
-    }
-    protected void SpawnObjBallFireLoop(string name, int loop)
-    {
-        OnAction = true;
-        int i = 0;
-        float euler = 0;
-        Vector3 vec3 = transform.position;
-        List<ObjectSkill> listObj = new List<ObjectSkill>();
-        Quaternion test;
-        this.WaitDelayCall(loop, 0.1f, () =>
-        {
-            test = Quaternion.Euler(0, euler, 0);
-            Vector3 dir = test * transform.position;
-            RewardSystem.Instance.SpawnObjectSkillEnemy(name, vec3 + (dir.normalized * 2) + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
-            outSkill.Init(1f, 4);
-            listObj.Add(outSkill);
-            i++;
-            euler += 45;
-            if (i == loop)
-            {
-                euler = 0;
-                for (int j = 0; j < listObj.Count; j++)
-                {
-                    test = Quaternion.Euler(0, euler, 0);
-                    Vector3 direc = (test * (direction.position ));
-                    listObj[j].transform.DOMove(((GetDirection().normalized * 40 ) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f);
-                    euler += 45;
-                }
-                OnAction = false;
-                FinishAniAtk();
-            }
-        });
-    }
-    protected void SpawnObjBallFire(string name,int loop)
-    {
-        OnAction = true;
-        int i = 0;
-        float euler = 0;
-        this.WaitDelayCall(loop, 0.5f, () =>
-        {
-            Quaternion test = Quaternion.Euler(0, euler, 0);
-            Vector3 dir = test * transform.position;
-            RewardSystem.Instance.SpawnObjectSkillEnemy(name, transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
-            outSkill.Init(1f, 4);
-            outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
-            i++;
-            euler += 45;
-            if (i == loop)
-            {
-                OnAction = false;
-                FinishAniAtk();
-            }
-        });
-    }
-    protected void SpawnObjBallFire(string name, Vector3 foward)
-    {
-        RewardSystem.Instance.SpawnObjectSkillEnemy(name, transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
-        outSkill.Init(1f, 4);
-        outSkill.transform.DOMove(transform.position + (foward.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
-    }
-    public override void TakeDamage(float damage)
-    {
-        base.TakeDamage(damage);
     }
     protected override void FinishAniAtk()
     {
@@ -177,29 +104,5 @@ public class EneDeathCatEyeBall : Enemy
         }
         EnemyThinking(2, 30, () => { IsRandomMove(); }, () => { OnAttack(); });
     }
-    //private void EnemyThinking(float TimeThink, int ratioRandomMove, UnityAction actionRandomMove, UnityAction action2)
-    //{
-    //    if (enemyThinking || !Alive)
-    //        return;
-    //    enemyThinking = true;
-    //    randomMove = false;
-    //    onFollowPlayer = false;
-    //    this.DelayCall(TimeThink, () =>
-    //    {
-    //        int i = Random.Range(0, 100);
-    //        enemyThinking = false;
-    //        if (i < ratioRandomMove)
-    //        {
-    //            actionRandomMove?.Invoke();
-    //            return;
-    //        }
-    //        action2?.Invoke();
-    //    });
-    //}
-
-    private void IsRandomMove()
-    {
-        randomMove = true;
-        onFollowPlayer = false;
-    }
+    
 }

@@ -142,6 +142,7 @@ public class ObjectPooling : SerializedMonoBehaviour
         if (obj == null)
         {
             GameObject objAsset = Addressables.LoadAssetAsync<GameObject>(string.Format(path, objectName)).WaitForCompletion();
+            objAsset.name = objectName;
             GameObject newObj = Instantiate(objAsset, transform);
             T value = newObj.GetComponent<T>();
             if (show)

@@ -37,11 +37,9 @@ public class CameraFollow : MonoBehaviour
     }
     private void vibrateCamera()
     {
-        Debug.Log("vibrateCamera");
         _camera.transform.DOComplete();
         _camera.transform.DOShakePosition(timeDurationPositonStrength, _positonStrength);
         _camera.transform.DOShakeRotation(timeDurationRotationStrength, _rotationStrength);
-        //gameObject.transform.DOShakePosition()
 
     }
     private void Update()

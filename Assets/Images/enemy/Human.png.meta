@@ -582,9 +582,9 @@ TextureImporter:
       name: Human_7
       rect:
         serializedVersion: 2
-        x: 1397
+        x: 1401
         y: 1400
-        width: 193
+        width: 189
         height: 168
       alignment: 9
       pivot: {x: 0.745768, y: 0.46285066}
@@ -897,12 +897,12 @@ TextureImporter:
       name: Human_22
       rect:
         serializedVersion: 2
-        x: 1462
+        x: 1469
         y: 1077
-        width: 167
+        width: 160
         height: 149
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.9652948, y: 0.5060642}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -910,6 +910,174 @@ TextureImporter:
       bones: []
       spriteID: 4ec0568169abbd44581f78b34bbba2ed
       internalID: 1622876711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_23
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1010
+        width: 138
+        height: 129
+      alignment: 9
+      pivot: {x: 0.4899259, y: 0.16592005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238eebe8f54f80a4b9ca9ae0c1ab431f
+      internalID: -108649890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_24
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 515
+        width: 70
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac9f7ca35efc7a4d91e2007a93233f6
+      internalID: -1263935818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_25
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 479
+        width: 66
+        height: 27
+      alignment: 9
+      pivot: {x: 0.11777566, y: 0.4466112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59eee1b5aab5f44288d32cf66a4e2ce
+      internalID: -762454800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_26
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 477
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a894a7918766e07478b0ee42a0bdefc0
+      internalID: 1189010107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_27
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 668
+        width: 231
+        height: 102
+      alignment: 9
+      pivot: {x: 0.9252063, y: 0.4999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1e5c7e2ff4d9b49a067e408fee54a1
+      internalID: -275777700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_28
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 476
+        width: 54
+        height: 26
+      alignment: 9
+      pivot: {x: 0.13809544, y: 0.65659153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d118aa8a9daa842a1b0277f5505826
+      internalID: -1284241124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_29
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 475
+        width: 81
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa8eeda73593e446bc755eee50b38d7
+      internalID: -488615280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_30
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 474
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f268ce4ffc6424e8cb362f42400867
+      internalID: 2124414978
       vertices: []
       indices: 
       edges: []
@@ -929,39 +1097,47 @@ TextureImporter:
       Scamp_Hand: 1643546706
       Scamp_Head_Bac: 1300820393
       Human_9: -1889224111
-      Human_20: 1316404920
-      Swordsman_Body_font: 1802780893
       Scamp_Head_Back: 316544033
-      Human_1: -1664588811
+      Human_25: -762454800
       Human_15: -981032986
-      Human_19: 551469939
-      Swordsman_Weapon: -142764730
       Human_8: 2058664007
-      Human_10: -1209449039
       Human_12: 284861929
-      Human_2: 1927893109
       Human_16: 488848303
+      Human_24: -1263935818
       eyes-2: 1102243393
-      Human_6: -1447052927
       Human_11: 2134152354
-      Human_7: 1231233740
-      Human_18: 1235854269
-      Human_3: -729425909
+      Human_27: -275777700
       Swordsman_Head_Back: -1175125773
-      Swordsman_Head_font_1: -543830353
-      Human_14: 437560550
-      Human_4: 996075669
-      Swordsman_Head_font: -696806740
-      Scamp_Head_front: -1089389875
+      Human_17: 1004195981
       Scamp_Body_front: 427227251
       Scamp_Head_front_1: -1058113467
       Eyes-0: 642932011
-      Human_21: 683238948
-      Human_22: 1622876711
+      Human_26: 1189010107
       Human_5: 1182853180
       Human_0: -965484438
-      Human_17: 1004195981
       eyes-1: 1838644133
+      Human_20: 1316404920
+      Swordsman_Body_font: 1802780893
+      Human_30: 2124414978
+      Human_28: -1284241124
+      Human_1: -1664588811
+      Human_19: 551469939
+      Swordsman_Weapon: -142764730
+      Human_23: -108649890
+      Human_10: -1209449039
+      Human_2: 1927893109
+      Human_6: -1447052927
+      Human_29: -488615280
+      Human_7: 1231233740
+      Human_18: 1235854269
+      Human_3: -729425909
+      Human_4: 996075669
+      Swordsman_Head_font_1: -543830353
+      Human_14: 437560550
+      Swordsman_Head_font: -696806740
+      Scamp_Head_front: -1089389875
+      Human_21: 683238948
+      Human_22: 1622876711
       Human_13: 1106094029
   spritePackingTag: 
   pSDRemoveMatte: 0

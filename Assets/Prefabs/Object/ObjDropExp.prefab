@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4760643428487060235}
-  - component: {fileID: -8367409856424700066}
+  - component: {fileID: 7475155058772399593}
   - component: {fileID: 4760643428487060234}
   m_Layer: 11
   m_Name: ObjDropExp
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8367409856424700066
+--- !u!114 &7475155058772399593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,15 +43,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4760643428487060233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe42924ba8fc4c4dab46f7156c164e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2632542c3bf48384f89b5651b9f4f2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 4
+  TimeMove: 10
+  TimeMoveMulti: 1
   MoveY: 1
   TimeMoveY: 1
   EaseType: 0
   Ontrigger: 0
   spriteRenderer: {fileID: 0}
-  NumEXP: 3
+  Value: 1
+  AttributeType: 10
 --- !u!65 &4760643428487060234
 BoxCollider:
   m_ObjectHideFlags: 0

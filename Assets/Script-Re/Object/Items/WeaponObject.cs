@@ -16,6 +16,9 @@ public class WeaponObject : ScriptableObject
     public float Speed = 1;
     public float AttackRange = 2f;
     public float AttackRangeBow = 2f;
+    public float RangeDash = 4;
+    public float SpeedOnDash = 16;
+    public float NomalSpeed = 4;
     public Vector3 SlashBoxSize = new Vector3();
     public List<float> ListDamage = new List<float>();
     public List<float> ListPowerForce = new List<float>();

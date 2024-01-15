@@ -357,6 +357,14 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Curses/HoundsOfFate.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: b049e4b4f6b077b4bb5cbadf19ccec4f
+    m_Address: Assets/Prefabs/EffectSkillEnemy/ObjBoomEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b81393b9c5647ff41ac6a279e395c125
+    m_Address: Assets/Prefabs/Enemy/EneScampBoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:

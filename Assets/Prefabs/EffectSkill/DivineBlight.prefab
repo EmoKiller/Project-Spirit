@@ -147,9 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8342450bfcd984dbbf19a73a43b7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 7
   slash: {fileID: 2940104125808314414}
   detectedEnemy: {fileID: 0}
   boxCollider: {fileID: 8641959263401820828}
+  _animator: {fileID: 2940104125808314453}
   _animator: {fileID: 2940104125808314453}
 --- !u!114 &2940104125808314414
 MonoBehaviour:

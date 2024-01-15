@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class ImpactableObjects : MonoBehaviour , IPool
 {
+
     public ListTypeEffects TypeMaterial;
     [SerializeField] HPObject hpObject;
     [SerializeField] Animator _animator;
     private float hp => hpObject.HP;
     private float weight => hpObject.weight;
 
-    public string objectName => gameObject.name;
+    public string objectName => TypeMaterial.ToString();
 
     [SerializeField]private float currentHp = 0;
 

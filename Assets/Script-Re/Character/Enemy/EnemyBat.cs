@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class EnemyBat : Enemy
 {
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-        Init();
-    }
-    public override void Init()
-    {
-        base.Init();
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
-        playerDetectionRange = 20;
     }
     protected override void Update()
     {
@@ -77,11 +70,6 @@ public class EnemyBat : Enemy
             EnemyThinking(5, 100);
         }
     }
-    protected override void EventInDashAtks()
-    {
-        agent.moveSpeed = 18;
-        SetMoveWayPoint(direction.transform.position, 4f);
-    }
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
@@ -115,9 +103,4 @@ public class EnemyBat : Enemy
         });
     }
 
-    private void IsRandomMove()
-    {
-        randomMove = true;
-        onFollowPlayer = false;
-    }
 }

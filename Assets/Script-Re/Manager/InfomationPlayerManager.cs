@@ -162,6 +162,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     public void BaseIncreaseValueOf(AttributeType type, float value)
     {
         heroData.BaseAttributes[SaveSlot][type].value = value;
+        ObseverConstants.OnAttributeValueChanged?.Invoke(type, value);
     }
 
     public void SelectedDifficult()
@@ -195,6 +196,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
                 Debug.Log(item.Key);
             }
         }
+        
         StartCountTime();
     }
     public void SaveGame()

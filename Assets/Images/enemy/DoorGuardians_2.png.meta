@@ -9791,7 +9791,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1022
-        y: 168
+        y: 169
         width: 131
         height: 57
       alignment: 9
@@ -10075,8 +10075,8 @@ TextureImporter:
         y: 713
         width: 320
         height: 251
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.93350184, y: 0.5464799}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10096,8 +10096,8 @@ TextureImporter:
         y: 783
         width: 339
         height: 229
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.8212594, y: 0.48467192}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10138,8 +10138,8 @@ TextureImporter:
         y: 229
         width: 176
         height: 79
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.089286804, y: 0.4115736}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10155,9 +10155,9 @@ TextureImporter:
       name: DoorGuardians_2_31
       rect:
         serializedVersion: 2
-        x: 1749
+        x: 1865
         y: 241
-        width: 258
+        width: 142
         height: 74
       alignment: 9
       pivot: {x: 0.014991464, y: 0.40605494}
@@ -10285,8 +10285,8 @@ TextureImporter:
         y: 238
         width: 169
         height: 69
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.0430352, y: 0.5000009}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10306,8 +10306,8 @@ TextureImporter:
         y: 224
         width: 171
         height: 67
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.041537102, y: 0.4650724}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10336,6 +10336,27 @@ TextureImporter:
       bones: []
       spriteID: 94bb17f04c704d2418e2e88576d6a353
       internalID: 1759043179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoorGuardians_2_40
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 242
+        width: 153
+        height: 73
+      alignment: 9
+      pivot: {x: 0.02756236, y: 0.41335976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6a20aa95b58aa49b89bfd5f2e268de
+      internalID: -112273611
       vertices: []
       indices: 
       edges: []
@@ -10384,6 +10405,7 @@ TextureImporter:
       DoorGuardians_2_6: 130109908
       DoorGuardians_2_27: -1852327636
       DoorGuardians_2_21: 924551372
+      DoorGuardians_2_40: -112273611
       DoorGuardians_2_9: 1721414683
       DoorGuardians_2_17: 1041847433
       DoorGuardians_2_34: -1970191893

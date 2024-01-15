@@ -23,6 +23,13 @@ public enum TypeEffectEnemy
 {
     ArrowEnemy,
     FireballsEnemy,
+    ObjBoomEnemy,
+    HoundsofFate,
+    Fireballs,
+    DivineGuardian,
+    DivineBlizzard,
+    DivineBlight,
+    DivineBlast
 }
 public enum TypeEffectAnimation
 {
@@ -152,7 +159,10 @@ public enum TypeEnemy
     DeathCatEyeball,
     EneScampArcher,
     EneScampShield,
-    Scythesman, 
+    Scythesman,
+    EneScampBoom,
+    EneSummoner,
+    EneHealer
 }
 public enum TypeInfoWeapon
 {

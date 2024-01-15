@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,12 @@ public class RewardSystem : SerializedMonoBehaviour
     }
     private void Start()
     {
+    }
+    public List<ImpactableObjects> CheckDeadHuman(Vector3 pos)
+    {
+        List<ImpactableObjects> obj = impactableObjects.FindAll(e => e.TypeMaterial.Equals(ListTypeEffects.EffectDestroySkeleton));
+        List<ImpactableObjects> obj2 = obj.FindAll(e => Vector3.Distance(pos, e.transform.position) < 30);
+        return obj2;
     }
     [Button]
     public void DropHeart(EnemGrPriteHeart TypeHeart)

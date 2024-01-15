@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,7 @@ public class Enemy : CharacterBrain , IPool
     {
         Enemy
     }
+    [SerializeField] TypeEnemy typeEnemy;
     public LevelRomanNumerals LevelEnemy;
     [SerializeField] protected float playerDetectionRange = 25f;
     [SerializeField] protected float DashAttackRange = 6f;
@@ -23,15 +25,13 @@ public class Enemy : CharacterBrain , IPool
     [SerializeField] protected bool enemyThinking = false;
     [SerializeField] protected bool enemyRunFollow = false;
     public override bool Alive => CurrentHealth > 0;
-    public virtual string objectName => gameObject.name;
+    public virtual string objectName => typeEnemy.ToString();
     private void Awake()
     {
-        
     }
     protected override void Start()
     {
         base.Start();
-        characterAttack.Initialized();
         slash.SetSizeBox(characterAttack.SlashBoxSize);
         slash.AddActionAttack(OnAttackHit);
         maxHealth = characterAttack.HP * (float)LevelEnemy;
@@ -48,7 +48,7 @@ public class Enemy : CharacterBrain , IPool
         healthBar.SetHealh(maxHealth);
         ObseverConstants.OnBlackHeartBreak.AddListener(TakeDamage);
     }
-        
+    #region
     protected virtual void Update()
     {
         //if (!Alive || OnAction)
@@ -90,7 +90,7 @@ public class Enemy : CharacterBrain , IPool
     }
     //protected virtual void EnemyIdle()
     //{
-        
+
     //}
     //protected virtual void EnemyMovement()
     //{
@@ -143,6 +143,9 @@ public class Enemy : CharacterBrain , IPool
     //        characterAnimator.SetAnimationState(CharacterAnimator.AnimationStates.MoveToTarget);
 
     //}
+
+    #endregion
+
     protected virtual void EnemyThinking(float TimeThink, int ratioRandomMove , UnityAction Random1, UnityAction random2)
     {
         if (enemyThinking || !Alive)
@@ -153,7 +156,7 @@ public class Enemy : CharacterBrain , IPool
         this.DelayCall(TimeThink, () =>
         {
             enemyThinking = false;
-            int i = Random.Range(0, 100);
+            int i = UnityEngine.Random.Range(0, 100);
             if (i < ratioRandomMove)
             {
                 Random1?.Invoke();
@@ -163,63 +166,35 @@ public class Enemy : CharacterBrain , IPool
         });
     }
 
-
-
-
+    #region SetupEnemy
     public void SetLevelEnemy(LevelRomanNumerals level)
     {
         LevelEnemy = level;
     }
+
+    #endregion
+
+    #region EnemyAction
     public void SetOnEvent(bool value)
     {
         OnEvent = value;
-    }
-
-    public override void Rolling()
-    {
-        throw new System.NotImplementedException();
-    }
-    protected void ChangeFollowPlayer()
-    {
-        onFollowPlayer = !onFollowPlayer;
-    }
-    protected override void OnAttackHit(CharacterBrain target)
-    {
-        target.TakeDamage(characterAttack.DamageEnemy);
-        base.OnAttackHit(target);
-    }
-    public void Push()
-    {
-        if (Distance() <= characterAttack.AttackRange)
-        {
-            characterAnimator.SetTrigger("Attack");
-        }
-    }
-    protected virtual void DashAtk()
-    {
-        OnDashAtk = true;
-        characterAnimator.SetTrigger("DashAttack");
-    }
-    protected virtual void EventInDashAtks()
-    {
-        agent.moveSpeed = 14;
-        SetMoveWayPoint(direction.transform.position, 3.5f);
-    }
-    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
-    {
-        base.SetMoveWayPoint(wayPoint, time);
-        //this.DelayCall(time, () =>
-        //{
-        //    characterAnimator.SetTrigger("Idie");
-        //});
     }
     public override void MoveTo(Vector3 direction)
     {
         base.MoveTo(direction);
     }
-    public float Distance()
+    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
     {
-        return Vector3.Distance(transform.position, direction.transform.position);
+        base.SetMoveWayPoint(wayPoint, time);
+    }
+    public override void Rolling()
+    {
+        throw new System.NotImplementedException();
+    }
+    protected override void OnAttackHit(CharacterBrain target)
+    {
+        target.TakeDamage(characterAttack.DamageEnemy);
+        base.OnAttackHit(target);
     }
     public override void TakeDamage(float damage)
     {
@@ -242,7 +217,6 @@ public class Enemy : CharacterBrain , IPool
         deadBody.SetActive(true);
         healthBar.gameObject.SetActive(false);
         tranformOfAni.SetActive(false);
-        slash.gameObject.SetActive(false);
         deadBody.transform.DOLocalMoveY(1.5f, 0.1f).OnComplete(() =>
         {
             deadBody.transform.DOLocalMoveY(0, 0.4f).OnComplete(() =>
@@ -259,29 +233,153 @@ public class Enemy : CharacterBrain , IPool
                     RewardSystem.Instance.DropImpactableObjects(deadBody.gameObject.name, transform.position);
                 }
                 RewardSystem.Instance.DropObject(TypeItemsCanDrop.ObjDropExp, transform.position, out ObjectDropOnWorld objout);
-                ObjDropExp objDropExp = objout as ObjDropExp;
-                objDropExp.NumEXP = characterAttack.ExpEnemy * (float)LevelEnemy;
+                ObjDrop objDropExp = objout as ObjDrop;
+                objDropExp.Value = characterAttack.ExpEnemy * (float)LevelEnemy;
                 GameLevelManager.Instance.CheckAllEnemyDead(this);
+                GameLevelManager.Instance.RemoveSummonEnemy(this);
                 Hide();
             });
         });
     }
-    protected override void EffectHit(Vector3 dir)
+    public void Push()
     {
-        //Debug.Log(GameConstants.Slash);
-        //AssetManager.Instance.InstantiateItems(string.Format(GameConstants.Slash, "HitFX_0.prefab"), transform, dir);
+        if (Distance() <= characterAttack.AttackRange)
+        {
+            characterAnimator.SetTrigger("Attack");
+        }
+    }
+    protected virtual void DashAtk()
+    {
+        OnDashAtk = true;
+        characterAnimator.SetTrigger("DashAttack");
+    }
+    protected override void FinishAniAtk()
+    {
+        base.FinishAniAtk();
+        agent.moveSpeed = characterAttack.NomalSpeed;
+    }
+    protected virtual void EventInDashAtks()
+    {
+        agent.moveSpeed = characterAttack.SpeedOnDash;
+        SetMoveWayPoint(direction.transform.position, characterAttack.RangeDash);
+    }
+    protected void IsRandomMove()
+    {
+        randomMove = true;
+        onFollowPlayer = false;
+    }
+    #endregion
+
+    #region SpawnObjEnemy
+
+    protected void SpawnObjBallFireLoop(int loop)
+    {
+        OnAction = true;
+        int i = 0;
+        float euler = 0;
+        List<ObjectSkill> listObj = new List<ObjectSkill>();
+        Quaternion test;
+        this.WaitDelayCall(loop, 0.1f, () =>
+        {
+            test = Quaternion.Euler(0, euler, 0);
+            Vector3 dir = test * transform.position;
+            RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + (dir.normalized * 2) + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+            outSkill.Init(1f, 4);
+            listObj.Add(outSkill);
+            i++;
+            euler += 45;
+            if (i == loop)
+            {
+                euler = 0;
+                for (int j = 0; j < listObj.Count; j++)
+                {
+                    test = Quaternion.Euler(0, euler, 0);
+                    Vector3 direc = (test * (direction.position));
+                    listObj[j].transform.DOMove(((GetDirection().normalized * 40) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f);
+                    euler += 45;
+                }
+                OnAction = false;
+                FinishAniAtk();
+            }
+        });
+    }
+    protected void SpawnObjBallFire(int loop)
+    {
+        OnAction = true;
+        int i = 0;
+        float euler = 0;
+        this.WaitDelayCall(loop, 0.5f, () =>
+        {
+            Quaternion test = Quaternion.Euler(0, euler, 0);
+            Vector3 dir = test * transform.position;
+            RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+            outSkill.Init(1f, 4);
+            outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+            i++;
+            euler += 45;
+            if (i == loop)
+            {
+                OnAction = false;
+                FinishAniAtk();
+            }
+        });
+    }
+    protected void SpawnObjBallFire()
+    {
+        RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+        outSkill.Init(1f, 4);
+        outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+    }
+    protected void SpawnObjBallFireLoop(int loop,float eulerYs)
+    {
+        float eulerY = -eulerYs;
+        for (int i = 0; i < loop; i++)
+        {
+            Quaternion test = Quaternion.Euler(0, eulerY, 0);
+            Vector3 dir = test * GetDirection();
+            RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+            outSkill.Init(1f, 4);
+            outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+            eulerY += eulerYs;
+        }
+
+    }
+    protected void SpawnObjBoom()
+    {
+        RewardSystem.Instance.SpawnObjectSkillEnemy("ObjBoomEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+        outSkill.Init(1f, true);
+        outSkill.transform.DOJump(direction.position, 3f, 1, 0.7f).OnComplete(() =>
+        {
+            outSkill.ActiveBoom();
+        });
+    }
+    protected void SpawnObjBow()
+    {
+        RewardSystem.Instance.SpawnObjectSkillEnemy("ArrowEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+        outSkill.transform.rotation = Quaternion.LookRotation(GetDirection());
+        outSkill.Init(1f, 2);
+        outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 50) + new Vector3(0, 1.5f, 0), 2f);
+    }
+    #endregion
+
+
+
+
+    public float Distance()
+    {
+        return Vector3.Distance(transform.position, direction.transform.position);
     }
     
-    protected virtual void SpawnObject(string name, Vector3 foward)
+    protected override void EffectHit(Vector3 dir)
     {
-        RewardSystem.Instance.SpawnObjectSkillEnemy(name, transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
-        outSkill.Init(1f, 15);
-        outSkill.transform.DOMove(transform.position + (foward * 30) + new Vector3(0, 1.5f, 0), 10);
+        
     }
     #region ObjectPooling
     public void Show()
     {
         gameObject.SetActive(true);
+        tranformOfAni.SetActive(true);
+        agent.AgentBody.enabled = true;
         if (Distance() < playerDetectionRange)
         {
             randomMove = true;

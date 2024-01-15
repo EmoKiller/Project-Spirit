@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectDropOnWorld : MonoBehaviour, IPool
 {
+    public TypeItemsCanDrop Type;
     [Header("Tranform DOMoveY")]
     public float TimeMove = 10f;
     public float TimeMoveMulti = 1;
@@ -17,7 +18,7 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
     [SerializeField] SpriteRenderer spriteRenderer;
     protected Action pubLish = null;
 
-    public virtual string objectName => GetType().Name;
+    public virtual string objectName => Type.ToString();
 
     private void Awake()
     {
