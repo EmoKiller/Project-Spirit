@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.Mathematics;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -253,6 +254,11 @@ public class Enemy : CharacterBrain , IPool
         OnDashAtk = true;
         characterAnimator.SetTrigger("DashAttack");
     }
+    protected override void StartAniAtk()
+    {
+        slash.transform.position = transform.position + GetDirection().normalized * 1.5f;
+        base.StartAniAtk();
+    }
     protected override void FinishAniAtk()
     {
         base.FinishAniAtk();
@@ -295,7 +301,7 @@ public class Enemy : CharacterBrain , IPool
                 {
                     test = Quaternion.Euler(0, euler, 0);
                     Vector3 direc = (test * (direction.position));
-                    listObj[j].transform.DOMove(((GetDirection().normalized * 40) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f);
+                    listObj[j].myTween = listObj[j].transform.DOMove(((GetDirection().normalized * 40) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f);
                     euler += 45;
                 }
                 OnAction = false;
@@ -314,7 +320,7 @@ public class Enemy : CharacterBrain , IPool
             Vector3 dir = test * transform.position;
             RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
             outSkill.Init(1f, 4);
-            outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+            outSkill.myTween = outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
             i++;
             euler += 45;
             if (i == loop)
@@ -328,7 +334,7 @@ public class Enemy : CharacterBrain , IPool
     {
         RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
         outSkill.Init(1f, 4);
-        outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+        outSkill.myTween = outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
     }
     protected void SpawnObjBallFireLoop(int loop,float eulerYs)
     {
@@ -339,7 +345,7 @@ public class Enemy : CharacterBrain , IPool
             Vector3 dir = test * GetDirection();
             RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
             outSkill.Init(1f, 4);
-            outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+            outSkill.myTween = outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
             eulerY += eulerYs;
         }
 
@@ -357,8 +363,44 @@ public class Enemy : CharacterBrain , IPool
     {
         RewardSystem.Instance.SpawnObjectSkillEnemy("ArrowEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
         outSkill.transform.rotation = Quaternion.LookRotation(GetDirection());
-        outSkill.Init(1f, 2);
-        outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 50) + new Vector3(0, 1.5f, 0), 2f);
+        outSkill.Init(1f, 1.8f);
+        outSkill.myTween = outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 60) + new Vector3(0, 1.5f, 0), 2f).OnComplete(() => { outSkill.Hide(); });
+    }
+    protected void SpawnObjBow(int loop, float eulerYs)
+    {
+        float eulerY = -eulerYs;
+        for (int i = 0; i < loop; i++)
+        {
+            Quaternion test = Quaternion.Euler(0, eulerY, 0);
+            Vector3 dir = test * GetDirection();
+            RewardSystem.Instance.SpawnObjectSkillEnemy("ArrowEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
+            outSkill.transform.rotation = Quaternion.LookRotation(GetDirection());
+            outSkill.Init(1f, 1.8f);
+            outSkill.myTween = outSkill.transform.DOMove(transform.position + (dir.normalized * 60) + new Vector3(0, 1.5f, 0), 2f).OnComplete(() => { outSkill.Hide(); });
+            eulerY += eulerYs;
+        }
+    }
+    protected void SummonEnemyFromDead(List<ImpactableObjects> obj)
+    {
+        if (obj != null)
+        {
+            for (int i = 0; i < obj.Count; i++)
+            {
+                obj[i].Hide();
+                GameLevelManager.Instance.SummonEnemy(obj[i].transform.position);
+            }
+        }
+    }
+    protected void SummonEnemy()
+    {
+        float eulerY = -60;
+        for (int i = 0; i < 4; i++)
+        {
+            Quaternion test = Quaternion.Euler(0, eulerY, 0);
+            Vector3 dir = test * GetDirection();
+            GameLevelManager.Instance.SummonEnemy(transform.position + (dir.normalized * 3));
+            eulerY += 30;
+        }
     }
     #endregion
 

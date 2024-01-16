@@ -1082,6 +1082,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Human_31
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1706
+        width: 226
+        height: 194
+      alignment: 9
+      pivot: {x: 0.46325737, y: 0.13617635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4bb2936fb879a4f8b933110c91264c
+      internalID: 64608092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_32
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 635
+        width: 250
+        height: 82
+      alignment: 9
+      pivot: {x: 0.49675927, y: 0.31223726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a21b9897382f994fbf578c640a3cb5e
+      internalID: 1604332288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_33
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 565
+        width: 125
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469dd0d47db8df34eaaa103b934f008a
+      internalID: 1016379020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_34
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 513
+        width: 151
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405ba4ac376cdcd4c9846df9dd41d518
+      internalID: -1608397690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1094,6 +1178,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Scamp_Sword: -1507553086
+      Human_32: 1604332288
       Scamp_Hand: 1643546706
       Scamp_Head_Bac: 1300820393
       Human_9: -1889224111
@@ -1113,6 +1198,7 @@ TextureImporter:
       Scamp_Head_front_1: -1058113467
       Eyes-0: 642932011
       Human_26: 1189010107
+      Human_34: -1608397690
       Human_5: 1182853180
       Human_0: -965484438
       eyes-1: 1838644133
@@ -1126,6 +1212,7 @@ TextureImporter:
       Human_23: -108649890
       Human_10: -1209449039
       Human_2: 1927893109
+      Human_31: 64608092
       Human_6: -1447052927
       Human_29: -488615280
       Human_7: 1231233740
@@ -1136,6 +1223,7 @@ TextureImporter:
       Human_14: 437560550
       Swordsman_Head_font: -696806740
       Scamp_Head_front: -1089389875
+      Human_33: 1016379020
       Human_21: 683238948
       Human_22: 1622876711
       Human_13: 1106094029

@@ -23,6 +23,7 @@ public class Player : CharacterBrain , IOrderable
     private float Vertical => Input.GetAxis("Vertical");
     private int combo;
     private bool atkCanDo;
+    private bool canDropBoom = true;
 
     #region Init
     private void Awake()
@@ -48,6 +49,8 @@ public class Player : CharacterBrain , IOrderable
         EventDispatcher.Addlistener<bool>(Script.Player, Events.SetOnEvent, SetEvent);
         EventDispatcher.Addlistener(Script.Player, Events.OnAttackHitEnemy, DelayTime);
         slash.AddActionAttack(OnAttackHit);
+        ObseverConstants.OnAttributeValueChanged.AddListener(AttackRate);
+        ObseverConstants.OnAttributeValueChanged.AddListener(IncreasedMovementSpeed);
     }
     #endregion
 
@@ -94,6 +97,18 @@ public class Player : CharacterBrain , IOrderable
             agent.MoveToDirection(dir * 3.5f);
             Rotation();
         });
+        DropBoom();
+    }
+    private void DropBoom()
+    {
+        if (InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TheBomb) > 0 && canDropBoom == true)
+        {
+            canDropBoom = false;
+            RewardSystem.Instance.SpawnObjectSkill(TypeEffectEnemy.ObjBoom.ToString(), transform.position, out ObjectSkill outSkill);
+            outSkill.Init(InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.BombDamage), true);
+            outSkill.ActiveBoom();
+            this.DelayCall(7f, () => { canDropBoom = true; });
+        }
     }
     protected override void OnAttackHit(CharacterBrain target)
     {
@@ -212,12 +227,16 @@ public class Player : CharacterBrain , IOrderable
 
     #region Attribute Player
     
-    private void AttackRate()
+    private void AttackRate(AttributeType type, float newValue)
     {
+        if (type != AttributeType.AttackRate)
+            return;
         characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.AttackRate));
     }
-    private void IncreasedMovementSpeed()
+    private void IncreasedMovementSpeed(AttributeType type, float newValue)
     {
+        if (type != AttributeType.IncreasedMovementSpeed)
+            return;
         agent.moveSpeed *= InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.IncreasedMovementSpeed);
     }
     

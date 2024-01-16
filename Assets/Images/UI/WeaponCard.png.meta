@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Bomb
+      name: TheBomb
       rect:
         serializedVersion: 2
         x: 1880
@@ -997,15 +997,15 @@ TextureImporter:
       DivineStrength: -510777450
       Telescope: 1728918587
       WeaponCard_24: -1253390589
-      The Bomb: 1137709399
+      TheBomb: 1137709399
       The Burning Dead: -1199407642
       Weeping Moon: -1667381797
       All Seeing Sun: -1087872093
       TheLoversII: 931961484
       MasterOfTheArt: -592036285
       ShieldofFaith: -1736752613
-      Hands of Rage: 141091393
       The Arachnid: 653958759
+      Hands of Rage: 141091393
       SoulSnatcher: 1873607699
   spritePackingTag: 
   pSDRemoveMatte: 0

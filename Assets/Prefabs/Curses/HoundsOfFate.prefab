@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 302458220710117859}
   - component: {fileID: 302458220710117856}
   - component: {fileID: 302458220710117858}
-  m_Layer: 0
+  - component: {fileID: -7111455615790017813}
+  - component: {fileID: 5927902452132965535}
+  m_Layer: 8
   m_Name: HoundsOfFate
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -110,3 +112,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursesObject: {fileID: 11400000, guid: 5588c623f20b2504b9830731488c982e, type: 2}
+  cursesPodium: {fileID: -7111455615790017813}
+--- !u!114 &-7111455615790017813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302458220710117887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09444c9b4c058e4eb238b873e0a3bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Equip  '
+  typeButton: 2
+  actioned: 0
+  Curses: {fileID: 302458220710117858}
+  boxCollider: {fileID: 5927902452132965535}
+--- !u!65 &5927902452132965535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302458220710117887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 1.88, z: 1}
+  m_Center: {x: 0.08550322, y: 0.017100215, z: 0}

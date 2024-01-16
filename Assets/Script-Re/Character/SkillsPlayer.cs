@@ -141,15 +141,23 @@ public class SkillsPlayer : MonoBehaviour
 
     public void CleansingFire(Vector3 foward)
     {
-        InstantiateObjSkill("Fireballs", foward);
+        //InstantiateObjSkill("Fireballs", foward);
 
-        Quaternion test = Quaternion.Euler(0, 10, 0);
-        Vector3 dir = test * foward;
-        InstantiateObjSkill("Fireballs", dir);
+        //Quaternion test = Quaternion.Euler(0, 10, 0);
+        //Vector3 dir = test * foward;
+        //InstantiateObjSkill("Fireballs", dir);
 
-        Quaternion test2 = Quaternion.Euler(0, -10, 0);
-        Vector3 dir2 = test2 * foward;
-        InstantiateObjSkill("Fireballs", dir2);
+        //Quaternion test2 = Quaternion.Euler(0, -10, 0);
+        //Vector3 dir2 = test2 * foward;
+        //InstantiateObjSkill("Fireballs", dir2);
+        float eulerY = -10;
+        for (int i = 0; i < 3; i++)
+        {
+            Quaternion test2 = Quaternion.Euler(0, eulerY, 0);
+            Vector3 dir2 = test2 * foward;
+            InstantiateObjSkill("Fireballs", dir2);
+            eulerY += 10;
+        }
     }
     public void HoundsofFate(Vector3 foward)
     {
@@ -159,7 +167,7 @@ public class SkillsPlayer : MonoBehaviour
             Vector3 dir = test * foward;
             RewardSystem.Instance.SpawnObjectSkill("HoundsofFate", transform.position, out ObjectSkill outSkill);
             outSkill.transform.rotation = Quaternion.LookRotation(dir);
-            outSkill.Init(DamageSkill, SpeedSKill, dir);
+            outSkill.Init(DamageSkill * InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurseDamageMultiple), SpeedSKill, dir);
         }
 
     }
@@ -167,6 +175,7 @@ public class SkillsPlayer : MonoBehaviour
     {
         RewardSystem.Instance.SpawnObjectSkill(TypeNameCurses, transform.position, out ObjectSkill outSkill);
         outSkill.Init(DamageSkill, SpeedSKill);
+        outSkill.Show();
     }
     public void Slashes(Vector3 foward)
     {
@@ -183,8 +192,9 @@ public class SkillsPlayer : MonoBehaviour
     private void InstantiateObjSkill(string name, Vector3 foward)
     {
         RewardSystem.Instance.SpawnObjectSkill(name, transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
-        outSkill.Init(DamageSkill, SpeedSKill);
-        outSkill.transform.DOMove(transform.position + (foward.normalized * AttackRange) + new Vector3(0, 1.5f, 0), SpeedSKill);
+        outSkill.Init(DamageSkill * InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurseDamageMultiple), SpeedSKill);
+        outSkill.myTween = outSkill.transform.DOMove(transform.position + (foward.normalized * AttackRange) + new Vector3(0, 1.5f, 0), SpeedSKill).OnComplete(() => { outSkill.Hide(); });
+        
     }
     public void CountTime()
     {

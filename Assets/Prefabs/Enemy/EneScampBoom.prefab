@@ -1254,7 +1254,7 @@ MonoBehaviour:
   healthBar: {fileID: 3927276964428591932}
   deadBody: {fileID: 7637438731096436965}
   OnDashAtk: 0
-  randomMove: 0
+  randomMove: 1
   enemyThinking: 0
   enemyRunFollow: 0
 --- !u!114 &4443494713539365145

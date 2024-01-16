@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class CursesPodium : TriggerWaitAction
 {
-    [SerializeField] Transform transformSpawn;
-    public Transform TransformSpawn => transformSpawn;
     [SerializeField] CursesEquip Curses = null;
+    [SerializeField] BoxCollider boxCollider = null;
     private void Start()
     {
         Curses = GetComponentInChildren<CursesEquip>();
+    }
+    public void SetBoxCollider(bool value)
+    {
+        boxCollider.enabled = value;
     }
     protected override void OnTriggerEnter(Collider other)
     {

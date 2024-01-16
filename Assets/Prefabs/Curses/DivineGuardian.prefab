@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 3791072452884748957}
   - component: {fileID: 3791072452884748956}
   - component: {fileID: 3791072452884748958}
-  m_Layer: 0
+  - component: {fileID: 7282496496490412322}
+  - component: {fileID: -4330565966302687559}
+  m_Layer: 8
   m_Name: DivineGuardian
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -110,3 +112,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursesObject: {fileID: 11400000, guid: f22480be7f8596f46909ea898c3ea1a2, type: 2}
+  cursesPodium: {fileID: 7282496496490412322}
+--- !u!114 &7282496496490412322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791072452884748897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09444c9b4c058e4eb238b873e0a3bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Equip  '
+  typeButton: 2
+  actioned: 0
+  Curses: {fileID: 3791072452884748958}
+  boxCollider: {fileID: -4330565966302687559}
+--- !u!65 &-4330565966302687559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791072452884748897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.78, y: 1.64, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

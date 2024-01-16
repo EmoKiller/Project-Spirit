@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class ObjectSkill : MonoBehaviour , IPool
@@ -9,21 +10,31 @@ public class ObjectSkill : MonoBehaviour , IPool
     [SerializeField] Animator _animator;
     public string objectName => type.ToString();
     protected float damage = 2;
-    protected float speedSkill = 5;
+    [SerializeField]protected float speedSkill = 5;
     [SerializeField] bool isBoomer = false;
+    public Tween myTween;
     private void Awake()
     {
         slash.AddActionAttack(OnHit);
     }
+    //private void OnEnable()
+    //{
+    //    if (isBoomer == true)
+    //        return;
+    //    this.DelayCall(speedSkill, () =>
+    //    {
+    //        Hide();
+    //    });
+    //}
     public void Init(float damage, float speedSkill)
     {
         this.damage = damage;
         this.speedSkill = speedSkill;
     }
-    public void Init(float damage, bool value)
+    public void Init(float damage, bool isBoom)
     {
         this.damage = damage;
-        isBoomer = value;
+        isBoomer = isBoom;
     }
     public void Init(float damage, float speedSkill, Vector3 dirStart)
     {
@@ -39,16 +50,11 @@ public class ObjectSkill : MonoBehaviour , IPool
     public void Show()
     {
         gameObject.SetActive(true);
-        if (isBoomer == true)
-            return;
-        this.DelayCall(speedSkill, () =>
-        {
-            Hide();
-        });
     }
 
     public void Hide()
     {
+        myTween.Kill();
         if (gameObject.tag == "Enemy")
         {
             RewardSystem.Instance.RemoveFromListObjectSkillEnemy(this);

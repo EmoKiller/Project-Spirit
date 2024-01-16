@@ -24,4 +24,6 @@ MonoBehaviour:
   TimeUseSKill: 1
   Damage: 2
   Speed: 5
-  AttackRange: 35
+  AttackRange: 60
+  UseAngry: 10
+  multipleObj: 4

@@ -70,10 +70,12 @@ public class EneScamp : Enemy
     {
         if (enemyThinking || !Alive)
             return;
+        characterAnimator.SetTrigger("Idie");
         enemyThinking = true;
         OnDashAtk = false;
         onFollowPlayer = false;
         enemyRunFollow = false;
+        agent.moveSpeed = characterAttack.NomalSpeed;
         this.DelayCall(TimeThink, () =>
         {
             int i = Random.Range(0, 100);

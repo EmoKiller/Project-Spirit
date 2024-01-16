@@ -75,11 +75,11 @@ public class EneSummoner : Enemy
     }
     protected void UseSkill()
     {
-        List<ImpactableObjects> obj = RewardSystem.Instance.CheckDeadHuman(transform.position);
-        for (int i = 0; i < obj.Count; i++)
+        int i = UnityEngine.Random.Range(0, 100);
+        if (i < 50)
         {
-            obj[0].Hide();
-            GameLevelManager.Instance.SummonEnemy(obj[0].transform.position);
+            SummonEnemy();
+            return;
         }
         SpawnObjBallFireLoop(3,15);
     }

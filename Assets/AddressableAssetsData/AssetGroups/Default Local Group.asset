@@ -281,80 +281,48 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Weapon/Sword/CrusadersBlade.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 92c20418c130d6343af35d0d5701019c
-    m_Address: Assets/Prefabs/Curses/CleansingFire.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 9106e5c91bb0dfa42b519492c78bac63
-    m_Address: Assets/Prefabs/Curses/DivineBlizzard.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 425b9fd5bf4325343aaa0328cb1beb78
-    m_Address: Assets/Prefabs/Curses/DeathsAttendant.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 1348ddbcfcf931444a24cbdffef861c2
-    m_Address: Assets/Prefabs/Curses/DeathsSquall.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3368d2c504f4a79438ae9f1699c7848b
-    m_Address: Assets/Prefabs/Curses/TouchOfIthaqua.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f56e8cdd09d2dcf47b8cd26ed0e800ce
-    m_Address: Assets/Prefabs/Curses/PathOfTheRighteous.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e62693d0678cbdc46a63d3f44776e9ba
-    m_Address: Assets/Prefabs/Curses/CallOfTheCrown.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 87f5ee81f844e7147ac3df4f11ca7e6e
-    m_Address: Assets/Prefabs/Curses/DeatsSweep.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 87ba89aacafd505499b5ccfedfe0f0c5
-    m_Address: Assets/Prefabs/Curses/DivineBlast.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 97adbc258cf040944aba0840b7bd83f9
-    m_Address: Assets/Prefabs/Curses/PointOfCorruption.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3be99be4ed6c7a541b9e26b7dfac63dd
-    m_Address: Assets/Prefabs/Curses/TouchOfTheRevenant.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 6b9b8bb5ac0dd104382fcf8484fac309
-    m_Address: Assets/Prefabs/Curses/DivineGuardian.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 9bc4c0905e6f1e34195e3d464ca7512b
-    m_Address: Assets/Prefabs/Curses/IchorThrown.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: bc222bfe379208c46ac0e859c8c87fcc
-    m_Address: Assets/Prefabs/Curses/TouchOfTurua.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: cc050224a1462a6448ef78587a3169ce
-    m_Address: Assets/Prefabs/Curses/Maelstrom.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 6db7454485a85564bb17100e7dbb952c
-    m_Address: Assets/Prefabs/Curses/FlamingShot.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 7d785e9f5d8a2b94cb6185f70b751808
     m_Address: Assets/Prefabs/Curses/DivineBlight.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ff0d06e5db289b24b9e93f1e0620865f
+    m_Address: Assets/Prefabs/Curses/HoundsOfFate.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: bf3c0be2982bf954eab49aa0f606c653
     m_Address: Assets/Prefabs/Curses/OathOfTheCrown.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ff0d06e5db289b24b9e93f1e0620865f
-    m_Address: Assets/Prefabs/Curses/HoundsOfFate.prefab
+  - m_GUID: 6db7454485a85564bb17100e7dbb952c
+    m_Address: Assets/Prefabs/Curses/FlamingShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b9b8bb5ac0dd104382fcf8484fac309
+    m_Address: Assets/Prefabs/Curses/DivineGuardian.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87ba89aacafd505499b5ccfedfe0f0c5
+    m_Address: Assets/Prefabs/Curses/DivineBlast.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87f5ee81f844e7147ac3df4f11ca7e6e
+    m_Address: Assets/Prefabs/Curses/DeatsSweep.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1348ddbcfcf931444a24cbdffef861c2
+    m_Address: Assets/Prefabs/Curses/DeathsSquall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 92c20418c130d6343af35d0d5701019c
+    m_Address: Assets/Prefabs/Curses/CleansingFire.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 425b9fd5bf4325343aaa0328cb1beb78
+    m_Address: Assets/Prefabs/Curses/DeathsAttendant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9106e5c91bb0dfa42b519492c78bac63
+    m_Address: Assets/Prefabs/Curses/DivineBlizzard.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b049e4b4f6b077b4bb5cbadf19ccec4f
@@ -363,6 +331,22 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: b81393b9c5647ff41ac6a279e395c125
     m_Address: Assets/Prefabs/Enemy/EneScampBoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9d4ddfb6b0ccb0d4fa83bf32ef1f0d6b
+    m_Address: Assets/Prefabs/Enemy/EneHealer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9507c57a7ffd45648a2f179f62e7c7da
+    m_Address: Assets/Prefabs/Enemy/EneSummoner.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 61341cfaa9b07cc4297e319e19bd1046
+    m_Address: Assets/Prefabs/EffectSkill/ObjBoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e910484bd6f239c48baf1f54ac04c997
+    m_Address: Assets/Prefabs/Enemy/EneRedArcher.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

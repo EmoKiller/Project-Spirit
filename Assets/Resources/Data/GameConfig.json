@@ -4,7 +4,7 @@
 			"itemsCanDrop" : {
 				"ObjDropCoin" : {
 					"type" : 0,
-					"value" : 3.0,
+					"value" : 5,
 					"ratio" : 100.0
 				},
 				"ObjDropAngry" : {
@@ -18,7 +18,7 @@
 			"itemsCanDrop" : {
 				"ObjDropCoin" : {
 					"type" : 0,
-					"value" : 10.0,
+					"value" : 15,
 					"ratio" : 100.0
 				}
 			}
@@ -27,7 +27,7 @@
 			"itemsCanDrop" : {
 				"ObjDropCoin" : {
 					"type" : 0,
-					"value" : 18.0,
+					"value" : 30,
 					"ratio" : 100.0
 				},
 				"ObjDropTarotCard" : {
@@ -41,11 +41,11 @@
 	"HeroBaseData" : {
 		"MaxRedHeart" : {
 			"type" : "MaxRedHeart",
-			"value" : 8
+			"value" : 2
 		},
 		"CurrentRedHeart" : {
 			"type" : "CurrentRedHeart",
-			"value" : 8
+			"value" : 2
 		},
 		"MaxExpOfLevel" : {
 			"type" : "MaxExpOfLevel",
@@ -61,11 +61,11 @@
 		},
 		"CurrentAngry" : {
 			"type" : "CurrentAngry",
-			"value" : 0
+			"value" : 100
 		},
 		"CurrentCoin" : {
 			"type" : "CurrentCoin",
-			"value" : 0
+			"value" : 3000
 		},
 		"MaxValueHunger" : {
 			"type" : "MaxValueHunger",
@@ -146,6 +146,18 @@
 		"CursesConsumeLess" : {
 			"type" : "CursesConsumeLess",
 			"value" : 1
+		},
+		"TheBomb" : {
+			"type" : "TheBomb",
+			"value" : 1
+		},
+		"BombDamage" : {
+			"type" : "BombDamage",
+			"value" : 5
+		},
+		"CurseDamageMultiple" : {
+			"type" : "CurseDamageMultiple",
+			"value" : 1
 		}
 	},
 	"GameLevelConfig" : {
@@ -159,16 +171,6 @@
 							"value" : 5,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
-						},
-						"EneScampBoom" : {
-							"value" : 4,
-							"type" : "EneScampBoom",
-							"LevelEnemy" : 1
-						},
-						"EneScampArcher" : {
-							"value" : 0,
-							"type" : "EneScampArcher",
-							"LevelEnemy" : 1
 						}
 					},
 					"chestType" : "Common"
@@ -181,7 +183,7 @@
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
-							"value" : 4,
+							"value" : 2,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						}
@@ -196,7 +198,7 @@
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
-							"value" : 2,
+							"value" : 4,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						}
@@ -226,7 +228,7 @@
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
-							"value" : 4,
+							"value" : 5,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						}
@@ -253,15 +255,350 @@
 						"EneScamp" : {
 							"value" : 12,
 							"type" : "EneScamp",
-							"LevelEnemy" : 2
+							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
 							"value" : 10,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 4,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
 						}
 					},
 					"chestType" : "Common"
+				},
+				"8" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 15,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 6,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"9" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 17,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 12,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 8,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"10" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 17,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 12,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 10,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"DeathCatEyeball" : {
+							"value" : 1,
+							"type" : "DeathCatEyeball",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"11" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 20,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 15,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 12,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 5,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Common"
+				},
+				"12" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 22,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 17,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 15,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 7,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "UnCommon",
+					"<add name>" : {
+						"enemies" : {
+							"EneScamp" : {
+								"value" : 22,
+								"type" : "EneScamp",
+								"LevelEnemy" : 1
+							},
+							"SwordsMan" : {
+								"value" : 17,
+								"type" : "SwordsMan",
+								"LevelEnemy" : 1
+							},
+							"EneScampArcher" : {
+								"value" : 15,
+								"type" : "EneScampArcher",
+								"LevelEnemy" : 1
+							},
+							"EneScampShield" : {
+								"value" : 7,
+								"type" : "EneScampShield",
+								"LevelEnemy" : 1
+							}
+						},
+						"chestType" : "UnCommon"
+					}
+				},
+				"13" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 10,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 18,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 13,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "UnCommon",
+					"<add name>" : {
+						"enemies" : {
+							"EneScamp" : {
+								"value" : 10,
+								"type" : "EneScamp",
+								"LevelEnemy" : 1
+							},
+							"SwordsMan" : {
+								"value" : 20,
+								"type" : "SwordsMan",
+								"LevelEnemy" : 1
+							},
+							"EneScampArcher" : {
+								"value" : 18,
+								"type" : "EneScampArcher",
+								"LevelEnemy" : 1
+							},
+							"EneScampShield" : {
+								"value" : 13,
+								"type" : "EneScampShield",
+								"LevelEnemy" : 1
+							}
+						},
+						"chestType" : "UnCommon"
+					}
+				},
+				"14" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 10,
+							"type" : "EneScamp",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 20,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 18,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "UnCommon",
+					"<add name>" : {
+						"enemies" : {
+							"EneScamp" : {
+								"value" : 10,
+								"type" : "EneScamp",
+								"LevelEnemy" : 1
+							},
+							"SwordsMan" : {
+								"value" : 20,
+								"type" : "SwordsMan",
+								"LevelEnemy" : 1
+							},
+							"EneScampArcher" : {
+								"value" : 20,
+								"type" : "EneScampArcher",
+								"LevelEnemy" : 1
+							},
+							"EneScampShield" : {
+								"value" : 18,
+								"type" : "EneScampShield",
+								"LevelEnemy" : 1
+							}
+						},
+						"chestType" : "UnCommon"
+					}
+				},
+				"15" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 7,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 20,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 18,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race",
+					"<add name>" : {
+						"enemies" : {
+							"EneScamp" : {
+								"value" : 7,
+								"type" : "EneScamp",
+								"LevelEnemy" : 2
+							},
+							"SwordsMan" : {
+								"value" : 20,
+								"type" : "SwordsMan",
+								"LevelEnemy" : 1
+							},
+							"EneScampArcher" : {
+								"value" : 20,
+								"type" : "EneScampArcher",
+								"LevelEnemy" : 1
+							},
+							"EneScampShield" : {
+								"value" : 18,
+								"type" : "EneScampShield",
+								"LevelEnemy" : 1
+							},
+							"Scythesman" : {
+								"value" : 5,
+								"type" : "Scythesman",
+								"LevelEnemy" : 1
+							}
+						},
+						"chestType" : "UnCommon"
+					}
+				},
+				"16" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 7,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 20,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 5,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "UnCommon"
 				}
 			}
 		}
@@ -357,6 +694,13 @@
 			"valueAdded" : -0.1,
 			"quote" : "The well within deepens, the power grows.",
 			"description" : "Curses consume 10% less <sprite index=57> Fervour."
+		},
+		"TheBomb" : {
+			"type" : "TheBomb",
+			"attributeAdded" : "TheBomb",
+			"valueAdded" : 1,
+			"quote" : "Leave carnage in your wake.",
+			"description" : "Drop an explosive when you roll 10s cooldown."
 		}
 	},
 	"GameDifficult" : {
@@ -429,6 +773,10 @@
 		"CursesConsumeLess" : {
 			"type" : "CursesConsumeLess",
 			"value" : 0
+		},
+		"TheBomb" : {
+			"type" : "TheBomb",
+			"value" : 0
 		}
 	},
 	"PowerAddattributes" : {
@@ -475,6 +823,860 @@
 		"CursesConsumeLess" : {
 			"type" : "CursesConsumeLess",
 			"value" : 0
+		},
+		"BombDamage" : {
+			"type" : "BombDamage",
+			"value" : 0
+		},
+		"CurseDamageMultiple" : {
+			"type" : "CurseDamageMultiple",
+			"value" : 0
+		}
+	},
+	"ShopPowerAddattributes" : {
+		"MaxValueAngry" : {
+			"name" : "Limit Fervour",
+			"type" : "MaxValueAngry",
+			"attributeAdded" : "MaxValueAngry",
+			"valueAdded" : "50",
+			"quote" : "Limit +50 <sprite index=57> Fervour.",
+			"price" : "300",
+			"numberTick" : 1
+		},
+		"MaxBlackHeart" : {
+			"name" : "Black Heart",
+			"type" : "MaxBlackHeart",
+			"attributeAdded" : "MaxBlackHeart",
+			"valueAdded" : "2",
+			"quote" : "Gain an extra <sprite index=118> Black Heart.",
+			"price" : "250",
+			"numberTick" : 1
+		},
+		"CriticalHit" : {
+			"name" : "Chance Crit",
+			"type" : "CriticalHit",
+			"attributeAdded" : "CriticalHit",
+			"valueAdded" : "3",
+			"quote" : "3% chance of dealing a critical hit.",
+			"price" : "400",
+			"numberTick" : 1
+		},
+		"AttackRate" : {
+			"name" : "Attack rate",
+			"type" : "AttackRate",
+			"attributeAdded" : "AttackRate",
+			"valueAdded" : "0.05",
+			"quote" : "Attack rate increased",
+			"price" : "500",
+			"numberTick" : 1
+		},
+		"IncreasedMovementSpeed" : {
+			"name" : "Move Speed",
+			"type" : "IncreasedMovementSpeed",
+			"attributeAdded" : "IncreasedMovementSpeed",
+			"valueAdded" : "0.2",
+			"quote" : "Move Speed rate increased",
+			"price" : "500",
+			"numberTick" : 1
+		},
+		"ChanceOfHealing" : {
+			"name" : "Chance Of Healing",
+			"type" : "ChanceOfHealing",
+			"attributeAdded" : "ChanceOfHealing",
+			"valueAdded" : "2",
+			"quote" : "When killing an enemy 2% chance of healing <sprite index=36>.",
+			"price" : "1000",
+			"numberTick" : 1
+		},
+		"ChanceOfNegatingDamage" : {
+			"name" : "Negating Damage",
+			"type" : "ChanceOfNegatingDamage",
+			"attributeAdded" : "ChanceOfNegatingDamage",
+			"valueAdded" : "3",
+			"quote" : "3% chance Negating Damage.",
+			"price" : "1000",
+			"numberTick" : 1
+		},
+		"MaxRedAddHeart" : {
+			"name" : "Heart",
+			"type" : "MaxRedAddHeart",
+			"attributeAdded" : "MaxRedAddHeart",
+			"valueAdded" : "2",
+			"quote" : "Gain an extra <sprite index=100> Add Red Heart",
+			"price" : "100",
+			"numberTick" : 1
+		},
+		"TypeLvlSword" : {
+			"name" : "Sword",
+			"type" : "TypeLvlSword",
+			"attributeAdded" : "TypeLvlSword",
+			"valueAdded" : "1",
+			"quote" : "Unlock weapons types.",
+			"price" : "200",
+			"numberTick" : 1
+		},
+		"TypeLvlCruses" : {
+			"name" : "Curses",
+			"type" : "TypeLvlCruses",
+			"attributeAdded" : "TypeLvlCruses",
+			"valueAdded" : "1",
+			"quote" : "Unlock Curses types",
+			"price" : "200",
+			"numberTick" : 1
+		},
+		"CursesConsumeLess" : {
+			"name" : "Use less Fervour",
+			"type" : "CursesConsumeLess",
+			"attributeAdded" : "CursesConsumeLess",
+			"valueAdded" : "-0.1",
+			"quote" : "Curses consume 10% less <sprite index=57> Fervour.",
+			"price" : "300",
+			"numberTick" : 1
+		},
+		"BombDamage" : {
+			"name" : "Update Boom",
+			"type" : "BombDamage",
+			"attributeAdded" : "BombDamage",
+			"valueAdded" : "5",
+			"quote" : "Update Boom Damage.",
+			"price" : "200",
+			"numberTick" : 1
+		},
+		"CurseDamageMultiple" : {
+			"name" : "Curse Damage Multiple",
+			"type" : "CurseDamageMultiple",
+			"attributeAdded" : "CurseDamageMultiple",
+			"valueAdded" : "1",
+			"quote" : "Curse Damage Multiple.",
+			"price" : "200",
+			"numberTick" : 1
+		}
+	},
+	"SaveSlot" : {
+		"Slot1" : {
+			"MaxRedHeart" : {
+				"type" : "MaxRedHeart",
+				"value" : 2
+			},
+			"CurrentRedHeart" : {
+				"type" : "CurrentRedHeart",
+				"value" : 2
+			},
+			"MaxExpOfLevel" : {
+				"type" : "MaxExpOfLevel",
+				"value" : 4
+			},
+			"CurrentExp" : {
+				"type" : "CurrentExp",
+				"value" : 0
+			},
+			"MaxValueAngry" : {
+				"type" : "MaxValueAngry",
+				"value" : 100
+			},
+			"CurrentAngry" : {
+				"type" : "CurrentAngry",
+				"value" : 100
+			},
+			"CurrentCoin" : {
+				"type" : "CurrentCoin",
+				"value" : 3000
+			},
+			"MaxValueHunger" : {
+				"type" : "MaxValueHunger",
+				"value" : 100
+			},
+			"CurrentHunger" : {
+				"type" : "CurrentHunger",
+				"value" : 100
+			},
+			"MaxRedAddHeart" : {
+				"type" : "MaxRedAddHeart",
+				"value" : 0
+			},
+			"CurrentRedAddHeart" : {
+				"type" : "CurrentRedAddHeart",
+				"value" : 0
+			},
+			"MaxBlueHeart" : {
+				"type" : "MaxBlueHeart",
+				"value" : 0
+			},
+			"CurrentBlueHeart" : {
+				"type" : "CurrentBlueHeart",
+				"value" : 0
+			},
+			"MaxBlackHeart" : {
+				"type" : "MaxBlackHeart",
+				"value" : 0
+			},
+			"CurrentBlackHeart" : {
+				"type" : "CurrentBlackHeart",
+				"value" : 0
+			},
+			"CriticalHit" : {
+				"type" : "CriticalHit",
+				"value" : 0
+			},
+			"AttackRate" : {
+				"type" : "AttackRate",
+				"value" : 1
+			},
+			"ChanceOfHealing" : {
+				"type" : "ChanceOfHealing",
+				"value" : 0
+			},
+			"ChanceOfNegatingDamage" : {
+				"type" : "ChanceOfNegatingDamage",
+				"value" : 0
+			},
+			"LuckyChest" : {
+				"type" : "LuckyChest",
+				"value" : 0
+			},
+			"Level" : {
+				"type" : "Level",
+				"value" : 0
+			},
+			"ElapsedTime" : {
+				"type" : "ElapsedTime",
+				"value" : 0
+			},
+			"CountKillEnemy" : {
+				"type" : "CountKillEnemy",
+				"value" : 0
+			},
+			"TypeLvlSword" : {
+				"type" : "TypeLvlSword",
+				"value" : 0
+			},
+			"TypeLvlCruses" : {
+				"type" : "TypeLvlCruses",
+				"value" : 0
+			},
+			"IncreasedMovementSpeed" : {
+				"type" : "IncreasedMovementSpeed",
+				"value" : 1
+			},
+			"CursesConsumeLess" : {
+				"type" : "CursesConsumeLess",
+				"value" : 1
+			},
+			"TheBomb" : {
+				"type" : "TheBomb",
+				"value" : 1
+			},
+			"BombDamage" : {
+				"type" : "BombDamage",
+				"value" : 5
+			},
+			"CurseDamageMultiple" : {
+				"type" : "CurseDamageMultiple",
+				"value" : 1
+			}
+		},
+		"Slot2" : {
+			"MaxRedHeart" : {
+				"type" : "MaxRedHeart",
+				"value" : 2
+			},
+			"CurrentRedHeart" : {
+				"type" : "CurrentRedHeart",
+				"value" : 2
+			},
+			"MaxExpOfLevel" : {
+				"type" : "MaxExpOfLevel",
+				"value" : 4
+			},
+			"CurrentExp" : {
+				"type" : "CurrentExp",
+				"value" : 0
+			},
+			"MaxValueAngry" : {
+				"type" : "MaxValueAngry",
+				"value" : 100
+			},
+			"CurrentAngry" : {
+				"type" : "CurrentAngry",
+				"value" : 100
+			},
+			"CurrentCoin" : {
+				"type" : "CurrentCoin",
+				"value" : 3000
+			},
+			"MaxValueHunger" : {
+				"type" : "MaxValueHunger",
+				"value" : 100
+			},
+			"CurrentHunger" : {
+				"type" : "CurrentHunger",
+				"value" : 100
+			},
+			"MaxRedAddHeart" : {
+				"type" : "MaxRedAddHeart",
+				"value" : 0
+			},
+			"CurrentRedAddHeart" : {
+				"type" : "CurrentRedAddHeart",
+				"value" : 0
+			},
+			"MaxBlueHeart" : {
+				"type" : "MaxBlueHeart",
+				"value" : 0
+			},
+			"CurrentBlueHeart" : {
+				"type" : "CurrentBlueHeart",
+				"value" : 0
+			},
+			"MaxBlackHeart" : {
+				"type" : "MaxBlackHeart",
+				"value" : 0
+			},
+			"CurrentBlackHeart" : {
+				"type" : "CurrentBlackHeart",
+				"value" : 0
+			},
+			"CriticalHit" : {
+				"type" : "CriticalHit",
+				"value" : 0
+			},
+			"AttackRate" : {
+				"type" : "AttackRate",
+				"value" : 1
+			},
+			"ChanceOfHealing" : {
+				"type" : "ChanceOfHealing",
+				"value" : 0
+			},
+			"ChanceOfNegatingDamage" : {
+				"type" : "ChanceOfNegatingDamage",
+				"value" : 0
+			},
+			"LuckyChest" : {
+				"type" : "LuckyChest",
+				"value" : 0
+			},
+			"Level" : {
+				"type" : "Level",
+				"value" : 0
+			},
+			"ElapsedTime" : {
+				"type" : "ElapsedTime",
+				"value" : 0
+			},
+			"CountKillEnemy" : {
+				"type" : "CountKillEnemy",
+				"value" : 0
+			},
+			"TypeLvlSword" : {
+				"type" : "TypeLvlSword",
+				"value" : 0
+			},
+			"TypeLvlCruses" : {
+				"type" : "TypeLvlCruses",
+				"value" : 0
+			},
+			"IncreasedMovementSpeed" : {
+				"type" : "IncreasedMovementSpeed",
+				"value" : 1
+			},
+			"CursesConsumeLess" : {
+				"type" : "CursesConsumeLess",
+				"value" : 1
+			},
+			"TheBomb" : {
+				"type" : "TheBomb",
+				"value" : 1
+			},
+			"BombDamage" : {
+				"type" : "BombDamage",
+				"value" : 5
+			},
+			"CurseDamageMultiple" : {
+				"type" : "CurseDamageMultiple",
+				"value" : 1
+			}
+		},
+		"Slot3" : {
+			"MaxRedHeart" : {
+				"type" : "MaxRedHeart",
+				"value" : 2
+			},
+			"CurrentRedHeart" : {
+				"type" : "CurrentRedHeart",
+				"value" : 2
+			},
+			"MaxExpOfLevel" : {
+				"type" : "MaxExpOfLevel",
+				"value" : 4
+			},
+			"CurrentExp" : {
+				"type" : "CurrentExp",
+				"value" : 0
+			},
+			"MaxValueAngry" : {
+				"type" : "MaxValueAngry",
+				"value" : 100
+			},
+			"CurrentAngry" : {
+				"type" : "CurrentAngry",
+				"value" : 100
+			},
+			"CurrentCoin" : {
+				"type" : "CurrentCoin",
+				"value" : 3000
+			},
+			"MaxValueHunger" : {
+				"type" : "MaxValueHunger",
+				"value" : 100
+			},
+			"CurrentHunger" : {
+				"type" : "CurrentHunger",
+				"value" : 100
+			},
+			"MaxRedAddHeart" : {
+				"type" : "MaxRedAddHeart",
+				"value" : 0
+			},
+			"CurrentRedAddHeart" : {
+				"type" : "CurrentRedAddHeart",
+				"value" : 0
+			},
+			"MaxBlueHeart" : {
+				"type" : "MaxBlueHeart",
+				"value" : 0
+			},
+			"CurrentBlueHeart" : {
+				"type" : "CurrentBlueHeart",
+				"value" : 0
+			},
+			"MaxBlackHeart" : {
+				"type" : "MaxBlackHeart",
+				"value" : 0
+			},
+			"CurrentBlackHeart" : {
+				"type" : "CurrentBlackHeart",
+				"value" : 0
+			},
+			"CriticalHit" : {
+				"type" : "CriticalHit",
+				"value" : 0
+			},
+			"AttackRate" : {
+				"type" : "AttackRate",
+				"value" : 1
+			},
+			"ChanceOfHealing" : {
+				"type" : "ChanceOfHealing",
+				"value" : 0
+			},
+			"ChanceOfNegatingDamage" : {
+				"type" : "ChanceOfNegatingDamage",
+				"value" : 0
+			},
+			"LuckyChest" : {
+				"type" : "LuckyChest",
+				"value" : 0
+			},
+			"Level" : {
+				"type" : "Level",
+				"value" : 0
+			},
+			"ElapsedTime" : {
+				"type" : "ElapsedTime",
+				"value" : 0
+			},
+			"CountKillEnemy" : {
+				"type" : "CountKillEnemy",
+				"value" : 0
+			},
+			"TypeLvlSword" : {
+				"type" : "TypeLvlSword",
+				"value" : 0
+			},
+			"TypeLvlCruses" : {
+				"type" : "TypeLvlCruses",
+				"value" : 0
+			},
+			"IncreasedMovementSpeed" : {
+				"type" : "IncreasedMovementSpeed",
+				"value" : 1
+			},
+			"CursesConsumeLess" : {
+				"type" : "CursesConsumeLess",
+				"value" : 1
+			},
+			"TheBomb" : {
+				"type" : "TheBomb",
+				"value" : 1
+			},
+			"BombDamage" : {
+				"type" : "BombDamage",
+				"value" : 5
+			},
+			"CurseDamageMultiple" : {
+				"type" : "CurseDamageMultiple",
+				"value" : 1
+			}
+		}
+	},
+	"SavePowerAddattributes" : {
+		"Slot1" : {
+			"MaxValueAngry" : {
+				"name" : "Limit Fervour",
+				"type" : "MaxValueAngry",
+				"attributeAdded" : "MaxValueAngry",
+				"valueAdded" : "50",
+				"quote" : "Limit +50 <sprite index=57> Fervour.",
+				"price" : "300",
+				"numberTick" : 2
+			},
+			"MaxBlackHeart" : {
+				"name" : "Black Heart",
+				"type" : "MaxBlackHeart",
+				"attributeAdded" : "MaxBlackHeart",
+				"valueAdded" : "2",
+				"quote" : "Gain an extra <sprite index=118> Black Heart.",
+				"price" : "250",
+				"numberTick" : 1
+			},
+			"CriticalHit" : {
+				"name" : "Chance Crit",
+				"type" : "CriticalHit",
+				"attributeAdded" : "CriticalHit",
+				"valueAdded" : "3",
+				"quote" : "3% chance of dealing a critical hit.",
+				"price" : "400",
+				"numberTick" : 1
+			},
+			"AttackRate" : {
+				"name" : "Attack rate",
+				"type" : "AttackRate",
+				"attributeAdded" : "AttackRate",
+				"valueAdded" : "0.05",
+				"quote" : "Attack rate increased",
+				"price" : "500",
+				"numberTick" : 1
+			},
+			"IncreasedMovementSpeed" : {
+				"name" : "Move Speed",
+				"type" : "IncreasedMovementSpeed",
+				"attributeAdded" : "IncreasedMovementSpeed",
+				"valueAdded" : "0.2",
+				"quote" : "Move Speed rate increased",
+				"price" : "500",
+				"numberTick" : 1
+			},
+			"ChanceOfHealing" : {
+				"name" : "Chance Of Healing",
+				"type" : "ChanceOfHealing",
+				"attributeAdded" : "ChanceOfHealing",
+				"valueAdded" : "2",
+				"quote" : "When killing an enemy 2% chance of healing <sprite index=36>.",
+				"price" : "1000",
+				"numberTick" : 1
+			},
+			"ChanceOfNegatingDamage" : {
+				"name" : "Negating Damage",
+				"type" : "ChanceOfNegatingDamage",
+				"attributeAdded" : "ChanceOfNegatingDamage",
+				"valueAdded" : "3",
+				"quote" : "3% chance Negating Damage.",
+				"price" : "1000",
+				"numberTick" : 1
+			},
+			"MaxRedAddHeart" : {
+				"name" : "Heart",
+				"type" : "MaxRedAddHeart",
+				"attributeAdded" : "MaxRedAddHeart",
+				"valueAdded" : "2",
+				"quote" : "Gain an extra <sprite index=100> Add Red Heart",
+				"price" : "100",
+				"numberTick" : 1
+			},
+			"TypeLvlSword" : {
+				"name" : "Sword",
+				"type" : "TypeLvlSword",
+				"attributeAdded" : "TypeLvlSword",
+				"valueAdded" : "1",
+				"quote" : "Unlock weapons types.",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"TypeLvlCruses" : {
+				"name" : "Curses",
+				"type" : "TypeLvlCruses",
+				"attributeAdded" : "TypeLvlCruses",
+				"valueAdded" : "1",
+				"quote" : "Unlock Curses types",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"CursesConsumeLess" : {
+				"name" : "Use less Fervour",
+				"type" : "CursesConsumeLess",
+				"attributeAdded" : "CursesConsumeLess",
+				"valueAdded" : "-0.1",
+				"quote" : "Curses consume 10% less <sprite index=57> Fervour.",
+				"price" : "300",
+				"numberTick" : 1
+			},
+			"BombDamage" : {
+				"name" : "Update Boom",
+				"type" : "BombDamage",
+				"attributeAdded" : "BombDamage",
+				"valueAdded" : "5",
+				"quote" : "Update Boom Damage.",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"CurseDamageMultiple" : {
+				"name" : "Curse Damage Multiple",
+				"type" : "CurseDamageMultiple",
+				"attributeAdded" : "CurseDamageMultiple",
+				"valueAdded" : "1",
+				"quote" : "Curse Damage Multiple.",
+				"price" : "200",
+				"numberTick" : 1
+			}
+		},
+		"Slot2" : {
+			"MaxValueAngry" : {
+				"name" : "Limit Fervour",
+				"type" : "MaxValueAngry",
+				"attributeAdded" : "MaxValueAngry",
+				"valueAdded" : "50",
+				"quote" : "Limit +50 <sprite index=57> Fervour.",
+				"price" : "300",
+				"numberTick" : 3
+			},
+			"MaxBlackHeart" : {
+				"name" : "Black Heart",
+				"type" : "MaxBlackHeart",
+				"attributeAdded" : "MaxBlackHeart",
+				"valueAdded" : "2",
+				"quote" : "Gain an extra <sprite index=118> Black Heart.",
+				"price" : "250",
+				"numberTick" : 1
+			},
+			"CriticalHit" : {
+				"name" : "Chance Crit",
+				"type" : "CriticalHit",
+				"attributeAdded" : "CriticalHit",
+				"valueAdded" : "3",
+				"quote" : "3% chance of dealing a critical hit.",
+				"price" : "400",
+				"numberTick" : 1
+			},
+			"AttackRate" : {
+				"name" : "Attack rate",
+				"type" : "AttackRate",
+				"attributeAdded" : "AttackRate",
+				"valueAdded" : "0.05",
+				"quote" : "Attack rate increased",
+				"price" : "500",
+				"numberTick" : 1
+			},
+			"IncreasedMovementSpeed" : {
+				"name" : "Move Speed",
+				"type" : "IncreasedMovementSpeed",
+				"attributeAdded" : "IncreasedMovementSpeed",
+				"valueAdded" : "0.2",
+				"quote" : "Move Speed rate increased",
+				"price" : "500",
+				"numberTick" : 1
+			},
+			"ChanceOfHealing" : {
+				"name" : "Chance Of Healing",
+				"type" : "ChanceOfHealing",
+				"attributeAdded" : "ChanceOfHealing",
+				"valueAdded" : "2",
+				"quote" : "When killing an enemy 2% chance of healing <sprite index=36>.",
+				"price" : "1000",
+				"numberTick" : 1
+			},
+			"ChanceOfNegatingDamage" : {
+				"name" : "Negating Damage",
+				"type" : "ChanceOfNegatingDamage",
+				"attributeAdded" : "ChanceOfNegatingDamage",
+				"valueAdded" : "3",
+				"quote" : "3% chance Negating Damage.",
+				"price" : "1000",
+				"numberTick" : 1
+			},
+			"MaxRedAddHeart" : {
+				"name" : "Heart",
+				"type" : "MaxRedAddHeart",
+				"attributeAdded" : "MaxRedAddHeart",
+				"valueAdded" : "2",
+				"quote" : "Gain an extra <sprite index=100> Add Red Heart",
+				"price" : "100",
+				"numberTick" : 1
+			},
+			"TypeLvlSword" : {
+				"name" : "Sword",
+				"type" : "TypeLvlSword",
+				"attributeAdded" : "TypeLvlSword",
+				"valueAdded" : "1",
+				"quote" : "Unlock weapons types.",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"TypeLvlCruses" : {
+				"name" : "Curses",
+				"type" : "TypeLvlCruses",
+				"attributeAdded" : "TypeLvlCruses",
+				"valueAdded" : "1",
+				"quote" : "Unlock Curses types",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"CursesConsumeLess" : {
+				"name" : "Use less Fervour",
+				"type" : "CursesConsumeLess",
+				"attributeAdded" : "CursesConsumeLess",
+				"valueAdded" : "-0.1",
+				"quote" : "Curses consume 10% less <sprite index=57> Fervour.",
+				"price" : "300",
+				"numberTick" : 1
+			},
+			"BombDamage" : {
+				"name" : "Update Boom",
+				"type" : "BombDamage",
+				"attributeAdded" : "BombDamage",
+				"valueAdded" : "5",
+				"quote" : "Update Boom Damage.",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"CurseDamageMultiple" : {
+				"name" : "Curse Damage Multiple",
+				"type" : "CurseDamageMultiple",
+				"attributeAdded" : "CurseDamageMultiple",
+				"valueAdded" : "1",
+				"quote" : "Curse Damage Multiple.",
+				"price" : "200",
+				"numberTick" : 1
+			}
+		},
+		"Slot3" : {
+			"MaxValueAngry" : {
+				"name" : "Limit Fervour",
+				"type" : "MaxValueAngry",
+				"attributeAdded" : "MaxValueAngry",
+				"valueAdded" : "50",
+				"quote" : "Limit +50 <sprite index=57> Fervour.",
+				"price" : "300",
+				"numberTick" : 1
+			},
+			"MaxBlackHeart" : {
+				"name" : "Black Heart",
+				"type" : "MaxBlackHeart",
+				"attributeAdded" : "MaxBlackHeart",
+				"valueAdded" : "2",
+				"quote" : "Gain an extra <sprite index=118> Black Heart.",
+				"price" : "250",
+				"numberTick" : 1
+			},
+			"CriticalHit" : {
+				"name" : "Chance Crit",
+				"type" : "CriticalHit",
+				"attributeAdded" : "CriticalHit",
+				"valueAdded" : "3",
+				"quote" : "3% chance of dealing a critical hit.",
+				"price" : "400",
+				"numberTick" : 1
+			},
+			"AttackRate" : {
+				"name" : "Attack rate",
+				"type" : "AttackRate",
+				"attributeAdded" : "AttackRate",
+				"valueAdded" : "0.05",
+				"quote" : "Attack rate increased",
+				"price" : "500",
+				"numberTick" : 1
+			},
+			"IncreasedMovementSpeed" : {
+				"name" : "Move Speed",
+				"type" : "IncreasedMovementSpeed",
+				"attributeAdded" : "IncreasedMovementSpeed",
+				"valueAdded" : "0.2",
+				"quote" : "Move Speed rate increased",
+				"price" : "500",
+				"numberTick" : 1
+			},
+			"ChanceOfHealing" : {
+				"name" : "Chance Of Healing",
+				"type" : "ChanceOfHealing",
+				"attributeAdded" : "ChanceOfHealing",
+				"valueAdded" : "2",
+				"quote" : "When killing an enemy 2% chance of healing <sprite index=36>.",
+				"price" : "1000",
+				"numberTick" : 1
+			},
+			"ChanceOfNegatingDamage" : {
+				"name" : "Negating Damage",
+				"type" : "ChanceOfNegatingDamage",
+				"attributeAdded" : "ChanceOfNegatingDamage",
+				"valueAdded" : "3",
+				"quote" : "3% chance Negating Damage.",
+				"price" : "1000",
+				"numberTick" : 1
+			},
+			"MaxRedAddHeart" : {
+				"name" : "Heart",
+				"type" : "MaxRedAddHeart",
+				"attributeAdded" : "MaxRedAddHeart",
+				"valueAdded" : "2",
+				"quote" : "Gain an extra <sprite index=100> Add Red Heart",
+				"price" : "100",
+				"numberTick" : 1
+			},
+			"TypeLvlSword" : {
+				"name" : "Sword",
+				"type" : "TypeLvlSword",
+				"attributeAdded" : "TypeLvlSword",
+				"valueAdded" : "1",
+				"quote" : "Unlock weapons types.",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"TypeLvlCruses" : {
+				"name" : "Curses",
+				"type" : "TypeLvlCruses",
+				"attributeAdded" : "TypeLvlCruses",
+				"valueAdded" : "1",
+				"quote" : "Unlock Curses types",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"CursesConsumeLess" : {
+				"name" : "Use less Fervour",
+				"type" : "CursesConsumeLess",
+				"attributeAdded" : "CursesConsumeLess",
+				"valueAdded" : "-0.1",
+				"quote" : "Curses consume 10% less <sprite index=57> Fervour.",
+				"price" : "300",
+				"numberTick" : 1
+			},
+			"BombDamage" : {
+				"name" : "Update Boom",
+				"type" : "BombDamage",
+				"attributeAdded" : "BombDamage",
+				"valueAdded" : "5",
+				"quote" : "Update Boom Damage.",
+				"price" : "200",
+				"numberTick" : 1
+			},
+			"CurseDamageMultiple" : {
+				"name" : "Curse Damage Multiple",
+				"type" : "CurseDamageMultiple",
+				"attributeAdded" : "CurseDamageMultiple",
+				"valueAdded" : "1",
+				"quote" : "Curse Damage Multiple.",
+				"price" : "200",
+				"numberTick" : 1
+			}
 		}
 	}
 }

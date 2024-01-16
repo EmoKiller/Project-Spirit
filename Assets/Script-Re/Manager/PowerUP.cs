@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class PowerUP : MonoBehaviour
 {
+    
     [SerializeField] List<AttributePowerUP> attributePowerUPs;
     public List<AttributePowerUP> AttributePowerUPs { get {  return attributePowerUPs; } }
     [SerializeField] GameObject popupShow;
@@ -18,7 +19,7 @@ public class PowerUP : MonoBehaviour
     [SerializeField] TMP_Text quoteShow;
     [SerializeField] TMP_Text priceText;
     [SerializeField] float valueAdded;
-    [SerializeField] private int price;
+    [SerializeField] private float price;
     private AttributeType attributeAdded;
     [Header("ButtonBuy")]
     [SerializeField] Button showButton;
@@ -38,7 +39,7 @@ public class PowerUP : MonoBehaviour
         set { showImage.sprite = value; }
     }
     public float ValueAdded => valueAdded;
-    public int Price => price;
+    public float Price => price;
     public AttributeType AttributeAdded => attributeAdded;
     public GameObject PopupShow => popupShow;
     public Button ShowButton => showButton;
@@ -59,7 +60,7 @@ public class PowerUP : MonoBehaviour
     {
         popupShow.SetActive(false);
     }
-    private void OnClickPowerUp(AttributeType attributeAdded, Sprite sprite, string name, float valueAdded, string quote , int price )
+    private void OnClickPowerUp(AttributeType attributeAdded, Sprite sprite, string name, float valueAdded, string quote , float price )
     {
         this.attributeAdded = attributeAdded;
         SpriteImage = sprite;

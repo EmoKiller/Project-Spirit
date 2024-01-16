@@ -139,6 +139,7 @@ MonoBehaviour:
   detectedEnemy: {fileID: 0}
   boxCollider: {fileID: 4674781808127468957}
   _animator: {fileID: 4674781808127468955}
+  speedSkill: 5
   isBoomer: 0
 --- !u!114 &4674781808127468956
 MonoBehaviour:

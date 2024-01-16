@@ -79,6 +79,13 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.Value.Button.onClick.AddListener(OnSelectButtonLevelDifficult);
         }
+        //if (InfomationPlayerManager.Instance.GetPowerUpbought())
+        //{
+        //    foreach (var item in _PowerUP.AttributePowerUPs)
+        //    {
+        //        item.Init();
+        //    }
+        //}
 
         //MainSelect
         PowerUP.Init();
@@ -90,7 +97,8 @@ public class UIManager : SerializedMonoBehaviour
         InfoWeapon.gameObject.SetActive(false);
         ShowUpTarot.gameObject.SetActive(false);
         UIEndOfLevel.gameObject.SetActive(false);
-        if (InfomationPlayerManager.Instance.GetSelectDifficut() == true)
+
+        if (InfomationPlayerManager.Instance.GetSelectDifficut())
             OnSelectButtonLevelDifficult();
 
     }
@@ -314,7 +322,7 @@ public class UIManager : SerializedMonoBehaviour
         {
             if (i < Quanty)
             {
-                int random = UnityEngine.Random.Range(0, 11);
+                int random = UnityEngine.Random.Range(0, 13);
                 CardConfig Card = ConfigDataHelper.GameConfig.cardsConfig[(CardType)random];
                 ShowUpTarot.ListCard[i].gameObject.SetActive(true);
                 ShowUpTarot.ListCard[i].NameCard = Card.Type.ToString();
@@ -373,7 +381,6 @@ public class UIManager : SerializedMonoBehaviour
     private void OnClickContinue()
     {
         ObseverConstants.OnClickButtonContinue?.Invoke();
-        LoadSceneExtension.LoadScene(OnScenes.VampireSurvivor.ToString());
         //objMainSelect.SetActive(true);
         //UIEndOfLevel.gameObject.SetActive(false);
         //isOnUIEndOfLevel = false;

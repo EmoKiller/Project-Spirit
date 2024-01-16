@@ -8,8 +8,7 @@ public class EneHealer : Enemy
     private void Awake()
     {
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
-        characterAnimator.AddDashAtk(EventInDashAtks);
-        characterAnimator.AddSpawnObj(SpawnObjBoom);
+        characterAnimator.AddSpawnObj(UseSkill);
     }
     protected override void Update()
     {
@@ -73,18 +72,15 @@ public class EneHealer : Enemy
         }
         EnemyThinking(1, 100, () => { IsRandomMove(); }, null);
     }
-    protected void SpawnObjBoom()
+    protected void UseSkill()
     {
-        SpawnObj("ObjBoomEnemy", direction.position);
-    }
-    protected void SpawnObj(string name, Vector3 foward)
-    {
-        RewardSystem.Instance.SpawnObjectSkillEnemy(name, transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
-        outSkill.Init(1f, true);
-        outSkill.transform.DOJump(foward, 3f, 1, 0.7f).OnComplete(() =>
+        List<ImpactableObjects> obj = RewardSystem.Instance.CheckDeadHuman(transform.position);
+        if (obj != null)
         {
-            outSkill.ActiveBoom();
-        });
+            SummonEnemyFromDead(obj);
+            return;
+        }
+        SpawnObjBallFireLoop(3, 15);
     }
     public override void TakeDamage(float damage)
     {

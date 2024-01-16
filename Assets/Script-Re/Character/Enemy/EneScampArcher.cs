@@ -60,9 +60,9 @@ public class EneScampArcher : Enemy
     }
     protected void OnAttackBow()
     {
+        Rotation();
         if (Distance() <= characterAttack.AttackRange)
         {
-            Rotation();
             characterAnimator.SetTrigger("Attack");
             return;
         }
@@ -83,6 +83,6 @@ public class EneScampArcher : Enemy
         base.FinishAniAtk();
         OnDashAtk = false;
         randomMove = false;
-        EnemyThinking(1, 30, () => { IsRandomMove(); }, () => { OnAttackBow(); });
+        EnemyThinking(1.5f, 30, () => { IsRandomMove(); }, () => { OnAttackBow(); });
     }
 }

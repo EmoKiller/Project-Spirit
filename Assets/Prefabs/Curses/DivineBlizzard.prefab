@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 1586632874005140323}
   - component: {fileID: 1586632874005140320}
   - component: {fileID: 1586632874005140322}
-  m_Layer: 0
+  - component: {fileID: 2537694732674829796}
+  - component: {fileID: 1479919194921112060}
+  m_Layer: 8
   m_Name: DivineBlizzard
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -110,3 +112,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursesObject: {fileID: 11400000, guid: ccb541e1287f8014099901588042e616, type: 2}
+  cursesPodium: {fileID: 2537694732674829796}
+--- !u!114 &2537694732674829796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586632874005140327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09444c9b4c058e4eb238b873e0a3bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Equip  '
+  typeButton: 2
+  actioned: 0
+  Curses: {fileID: 1586632874005140322}
+  boxCollider: {fileID: 1479919194921112060}
+--- !u!65 &1479919194921112060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586632874005140327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.84, y: 1.79, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

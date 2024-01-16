@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 3366324787879099852}
   - component: {fileID: 3366324787879099855}
   - component: {fileID: 3366324787879099853}
-  m_Layer: 0
+  - component: {fileID: -2678720464294170682}
+  - component: {fileID: -8597931776035835077}
+  m_Layer: 8
   m_Name: OathOfTheCrown
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -110,3 +112,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursesObject: {fileID: 11400000, guid: dcdf8fa8cdc0dbb479fe6b97e2e2953f, type: 2}
+  cursesPodium: {fileID: -2678720464294170682}
+--- !u!114 &-2678720464294170682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366324787879099840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09444c9b4c058e4eb238b873e0a3bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Equip  '
+  typeButton: 2
+  actioned: 0
+  Curses: {fileID: 3366324787879099853}
+  boxCollider: {fileID: -8597931776035835077}
+--- !u!65 &-8597931776035835077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366324787879099840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.19, y: 1.95, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

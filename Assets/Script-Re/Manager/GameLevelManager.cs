@@ -8,8 +8,8 @@ public class GameLevelManager : MonoBehaviour
 {
     public static GameLevelManager Instance;
 
-    int level = 1;
-    int round = 1;
+    [SerializeField] int level = 1;
+    [SerializeField] int round = 1;
     [SerializeField] public List<Enemy> listEnemys = new List<Enemy>();
     [SerializeField] private List<Enemy> EnemySummon = new List<Enemy>();
     [SerializeField] Transform weaponPodium;
@@ -26,7 +26,8 @@ public class GameLevelManager : MonoBehaviour
     public void Init()
     {
         SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
-
+        //SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
+        SpawnObj(GameConstants.SkillCurses, NameCurses.FlamingShot.ToString(), cursesPodium);
         this.DelayCall(10f, () =>
         {
             SpawnEnemy();
@@ -54,7 +55,8 @@ public class GameLevelManager : MonoBehaviour
         {
             for (int i = 0; i < item.Value.value; i++)
             {
-                Vector3 position = (UnityEngine.Random.onUnitSphere * 80) + ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position;
+                Vector3 random = (UnityEngine.Random.onUnitSphere * 80);
+                Vector3 position = new Vector3(random.x, 0, random.z);
                 PopEnemyFromPool(listEnemys, item.Value.type, item.Value.LevelEnemy, position);
             }
         }
@@ -85,7 +87,7 @@ public class GameLevelManager : MonoBehaviour
         if (listEnemys.Count == 0)
         {
             Debug.Log("ClearEnemy");
-            RewardSystem.Instance.SpawnChestBonus(DataGameLevelReward(), transform.position);
+            RewardSystem.Instance.SpawnChestBonus(DataGameLevelReward(), transform.position, out ChestBonus chest);
             NextRound();
             this.DelayCall(5, () =>
             {

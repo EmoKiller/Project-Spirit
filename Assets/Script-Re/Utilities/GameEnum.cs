@@ -29,7 +29,8 @@ public enum TypeEffectEnemy
     DivineGuardian,
     DivineBlizzard,
     DivineBlight,
-    DivineBlast
+    DivineBlast,
+    ObjBoom
 }
 public enum TypeEffectAnimation
 {
@@ -47,7 +48,8 @@ public enum SaveGameSlot
 {
     Slot1,
     Slot2,
-    Slot3
+    Slot3,
+    Slot4
 }
 public enum StateSaveGame
 {
@@ -67,15 +69,6 @@ public enum NameCurses
     OathOfTheCrown,
     DeathsAttendant,
     DeathsSquall,
-    IchorThrown,
-    PointOfCorruption,
-    PathOfTheRighteous,
-    CallOfTheCrown,
-    TouchOfTurua,
-    Maelstrom,
-    TouchOfIthaqua,
-    TouchOfTheRevenant
-
 }
 public enum AttributeType
 {
@@ -106,9 +99,26 @@ public enum AttributeType
     TypeLvlSword,
     TypeLvlCruses,
     CursesConsumeLess,
-    
+    TheBomb,
+    BombDamage,
+    CurseDamageMultiple
 }
-
+public enum ShopPowerAttributes
+{
+    MaxValueAngry,
+    MaxBlackHeart,
+    CriticalHit,
+    AttackRate,
+    IncreasedMovementSpeed,
+    ChanceOfHealing,
+    ChanceOfNegatingDamage,
+    MaxRedAddHeart,
+    TypeLvlSword,
+    TypeLvlCruses,
+    CursesConsumeLess,
+    BombDamage,
+    CurseDamageMultiple,
+}
 public enum CardType
 {
     TheHeartsI,
@@ -124,6 +134,7 @@ public enum CardType
     RabbitsFoot,
     TrueSight,
     DivineCurse,
+    TheBomb
 }
 public enum TypeCoins
 {
@@ -162,7 +173,14 @@ public enum TypeEnemy
     Scythesman,
     EneScampBoom,
     EneSummoner,
-    EneHealer
+    EneHealer,
+    EneRedArcher
+}
+public enum ChestType
+{
+    Common,
+    UnCommon,
+    Race
 }
 public enum TypeInfoWeapon
 {
@@ -264,12 +282,6 @@ public enum TypeItemsCanDrop
     ObjDropAngry,
     ObjDropHeart,
     ObjDropExp,
-}
-public enum ChestType
-{
-    Common,
-    UnCommon,
-    Race
 }
 public enum TypeMenuTab
 {

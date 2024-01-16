@@ -39,6 +39,19 @@ public class ConfigDataHelper
     private static HeroData GetHeroData()
     {
         HeroData data = new HeroData();
+        //data.attributes.Add(SaveGameSlot.Slot1, GameConfig.SaveSlot[SaveGameSlot.Slot1]);
+        //data.attributes.Add(SaveGameSlot.Slot2, GameConfig.SaveSlot[SaveGameSlot.Slot2]);
+        //data.attributes.Add(SaveGameSlot.Slot3, GameConfig.SaveSlot[SaveGameSlot.Slot3]);
+        data.ValuePowerUpbought.Add(SaveGameSlot.Slot1, GameConfig.SavePowerAddattributes[SaveGameSlot.Slot1]);
+        data.ValuePowerUpbought.Add(SaveGameSlot.Slot2, GameConfig.SavePowerAddattributes[SaveGameSlot.Slot2]);
+        data.ValuePowerUpbought.Add(SaveGameSlot.Slot3, GameConfig.SavePowerAddattributes[SaveGameSlot.Slot3]);
+
+
+
+
+
+
+
         data.attributes.Add(SaveGameSlot.Slot1, GameConfig.HeroBaseData);
         data.attributes.Add(SaveGameSlot.Slot2, GameConfig.HeroBaseData);
         data.attributes.Add(SaveGameSlot.Slot3, GameConfig.HeroBaseData);
@@ -64,5 +77,9 @@ public class ConfigDataHelper
     public static float GetValueGameDifficult(TypeLevelDifficult type, TypeControlDifficult typeAttribute)
     {
         return GameConfig.GameDifficult[type][typeAttribute].value;
+    }
+    public static BaseShopPowerAddattributes GetValueBaseShopPowerAddattributes(ShopPowerAttributes type)
+    {
+        return GameConfig.ShopPowerAddattributes[type];
     }
 }

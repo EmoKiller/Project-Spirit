@@ -23,8 +23,7 @@ public class RewardSystem : SerializedMonoBehaviour
     }
     public List<ImpactableObjects> CheckDeadHuman(Vector3 pos)
     {
-        List<ImpactableObjects> obj = impactableObjects.FindAll(e => e.TypeMaterial.Equals(ListTypeEffects.EffectDestroySkeleton));
-        List<ImpactableObjects> obj2 = obj.FindAll(e => Vector3.Distance(pos, e.transform.position) < 30);
+        List<ImpactableObjects> obj2 = impactableObjects.FindAll(e => Vector3.Distance(pos, e.transform.position) < 30);
         return obj2;
     }
     [Button]
@@ -35,10 +34,11 @@ public class RewardSystem : SerializedMonoBehaviour
         obj.TypeHeart = TypeHeart;
     }
     [Button]
-    public void SpawnChestBonus(ChestType type, Vector3 vec3)
+    public void SpawnChestBonus(ChestType type, Vector3 vec3, out ChestBonus chest)
     {
-        ChestBonus obj = ObjectPooling.Instance.PopChestBonus(type.ToString(), true);
+        ChestBonus obj = ObjectPooling.Instance.PopChestBonus(type.ToString());
         SetUpObj(chestBonus, obj, vec3);
+        chest = obj;
     }
     public void RemoveFromListChestBonus(ChestBonus obj)
     {
@@ -46,7 +46,7 @@ public class RewardSystem : SerializedMonoBehaviour
     }
     public void SpawnObjEffectAnimation(TypeEffectAnimation type, Vector3 vec3)
     {
-        ObjEffectAnimation obj = ObjectPooling.Instance.PopObjEffectAnimation(type.ToString(), true);
+        ObjEffectAnimation obj = ObjectPooling.Instance.PopObjEffectAnimation(type.ToString());
         SetUpObj(objEffectAnimation, obj, vec3);
     }
     public void RemoveFromListObjEffectAnimation(ObjEffectAnimation obj)
@@ -56,14 +56,14 @@ public class RewardSystem : SerializedMonoBehaviour
     [Button]
     public void DropObject(TypeItemsCanDrop type, Vector3 vec3)
     {
-        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString(), true);
+        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString(),true);
         SetUpObj(ObjectDropOnWorld, obj, vec3);
         obj.transform.AniDropItem();
     }
     [Button]
     public void DropObject(TypeItemsCanDrop type, Vector3 vec3, out ObjectDropOnWorld objout)
     {
-        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString(), true);
+        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString(),true);
         SetUpObj(ObjectDropOnWorld, obj, vec3);
         obj.transform.AniDropItem();
         objout = obj;
@@ -76,7 +76,7 @@ public class RewardSystem : SerializedMonoBehaviour
 
     public void DropImpactableObjects(string type, Vector3 vec3)
     {
-        ImpactableObjects obj = ObjectPooling.Instance.PopImpactableObjects(type, true);
+        ImpactableObjects obj = ObjectPooling.Instance.PopImpactableObjects(type);
         SetUpObj(impactableObjects, obj, vec3);
     }
     public void RemoveFromListImpactableObj(ImpactableObjects obj)
@@ -86,7 +86,7 @@ public class RewardSystem : SerializedMonoBehaviour
 
     public void SpawnObjectSkill(string type, Vector3 vec3, out ObjectSkill outSkill)
     {
-        ObjectSkill obj = ObjectPooling.Instance.PopChestObjectSkill(type, true);
+        ObjectSkill obj = ObjectPooling.Instance.PopChestObjectSkill(type);
         SetUpObj(objectSkill, obj, vec3);
         outSkill = obj;
     }
@@ -96,7 +96,7 @@ public class RewardSystem : SerializedMonoBehaviour
     }
     public void SpawnObjectSkillEnemy(string type, Vector3 vec3, out ObjectSkill outSkill)
     {
-        ObjectSkill obj = ObjectPooling.Instance.PopChestObjectSkillEnemy(type, true);
+        ObjectSkill obj = ObjectPooling.Instance.PopChestObjectSkillEnemy(type);
         SetUpObj(objectSkillEnemy, obj, vec3);
         outSkill = obj;
     }
@@ -105,10 +105,11 @@ public class RewardSystem : SerializedMonoBehaviour
         objectSkillEnemy.Remove(obj);
     }
 
-    private void SetUpObj<T>(List<T> list, T obj, Vector3 vec3) where T : MonoBehaviour
+    private void SetUpObj<T>(List<T> list, T obj, Vector3 vec3) where T : MonoBehaviour, IPool
     {
         obj.transform.SetParent(transform, true);
         obj.transform.position = vec3;
+        obj.Show();
         list.Add(obj);
     }
 }
