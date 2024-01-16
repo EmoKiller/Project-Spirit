@@ -56,6 +56,8 @@ MonoBehaviour:
   detectedEnemy: {fileID: 5263903204516481662}
   boxCollider: {fileID: 7787348265134597574}
   _animator: {fileID: 0}
+  speedSkill: 5
+  isBoomer: 0
 --- !u!65 &7787348265134597574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35aca168e372c37479b5fdb2a9986af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDetec: 0
+  startMove: 0
 --- !u!1 &1194539487089549833
 GameObject:
   m_ObjectHideFlags: 0

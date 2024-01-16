@@ -7,30 +7,23 @@ public class DetectedEnemy : MonoBehaviour
     Vector3 dir => enemyTranform.transform.position - transform.position;
     private float SpeedMove = 7;
     private float SpeedRotation = 2;
-    private bool startDetec = false;
-    private bool startMove = false;
+    [SerializeField] private bool startDetec = false;
+    [SerializeField] private bool startMove = false;
     private Vector3 dirStart;
     public bool StartDetec
     {
         get { return startDetec; }
         set { startDetec = value; }
     }
-    private void Start()
-    {
-        startDetec = false;
-        startMove = false;
-        transform.DOMove(transform.position + (dirStart * 3), 0.3f).OnComplete(() =>
-        {
-            startMove = true;
-        });
-    }
+    
     private void Update()
     {
         if (!startMove)
             return;
         if (!StartDetec)
         {
-            transform.position += dirStart * Time.deltaTime * SpeedMove;
+            transform.position += new Vector3(dirStart.x, 0, dirStart.z) * Time.deltaTime * SpeedMove;
+            transform.rotation = Quaternion.LookRotation(new Vector3(dirStart.x,0, dirStart.z) * Time.deltaTime * SpeedRotation);
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, enemyTranform.transform.position, SpeedMove * Time.deltaTime);
@@ -49,16 +42,27 @@ public class DetectedEnemy : MonoBehaviour
         {
             enemyTranform = GameLevelManager.Instance.listEnemys.Find(e => Vector3.Distance(e.transform.position, transform.position) < 10f);
             if (enemyTranform != null)
+            {
+                dirStart = (enemyTranform.transform.position - transform.position).normalized;
                 StartDetec = true;
+            }
         }
     }
     public void DirStarts(Vector3 dir)
     {
         dirStart = dir;
+        transform.DOMove(transform.position + dirStart + new Vector3(0,1,0), 0.3f).OnComplete(() =>
+        {
+            startMove = true;
+        });
     }
-    private void OnDisable()
+    private void OnEnable()
     {
         StartDetec = false;
         startMove = false;
+    }
+    private void OnDisable()
+    {
+        enemyTranform = null;
     }
 }

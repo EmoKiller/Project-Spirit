@@ -7,6 +7,7 @@ public class ObjectSkill : MonoBehaviour , IPool
     [SerializeField] Slash slash;
     [SerializeField] DetectedEnemy detectedEnemy;
     [SerializeField] protected BoxCollider boxCollider;
+    [SerializeField] protected CapsuleCollider capsuleCollider;
     [SerializeField] Animator _animator;
     public string objectName => type.ToString();
     protected float damage = 2;
@@ -17,15 +18,6 @@ public class ObjectSkill : MonoBehaviour , IPool
     {
         slash.AddActionAttack(OnHit);
     }
-    //private void OnEnable()
-    //{
-    //    if (isBoomer == true)
-    //        return;
-    //    this.DelayCall(speedSkill, () =>
-    //    {
-    //        Hide();
-    //    });
-    //}
     public void Init(float damage, float speedSkill)
     {
         this.damage = damage;
@@ -41,6 +33,10 @@ public class ObjectSkill : MonoBehaviour , IPool
         this.damage = damage;
         this.speedSkill = speedSkill;
         detectedEnemy.DirStarts(dirStart);
+        this.DelayCall(speedSkill, () =>
+        {
+            Hide();
+        });
     }
     protected virtual void OnHit(CharacterBrain character)
     {

@@ -22,7 +22,7 @@ MonoBehaviour:
   DescriptionCurses: Shoots multiple projectiles that seek out enemies.
   TimeUseSKill: 1
   Damage: 2
-  Speed: 15
+  Speed: 10
   AttackRange: 5
   UseAngry: 10
   multipleObj: 4

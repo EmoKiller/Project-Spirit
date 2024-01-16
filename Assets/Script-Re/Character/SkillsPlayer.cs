@@ -49,7 +49,6 @@ public class SkillsPlayer : MonoBehaviour
             return;
         if (Input.GetMouseButton(1) && GetCurrentAngryCanUseSkill())
         {
-            Debug.Log("UseSkill");
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Player.Instance.Rolling();
@@ -61,7 +60,7 @@ public class SkillsPlayer : MonoBehaviour
             fillAimingRecticule.transform.localScale = new Vector3(TimeUseSkill, 1, 1);
             GameUtilities.ScreenRayCastOnWorld(AimingRecticule);
             Player.Instance.CharacterAni.SetTrigger("UseSkill");
-            if (CrusesEquip.CursesObject.TypeCurses == TypeCurses.Fireballs)
+            if (CrusesEquip.CursesObject.TypeCurses != TypeCurses.Blasts)
             {
                 aiming.gameObject.SetActive(true);
             }
@@ -73,7 +72,6 @@ public class SkillsPlayer : MonoBehaviour
             Player.Instance.CharacterAni.SetTrigger("Idie");
             Player.Instance.StopAni();
             ResetTime();
-            
             return;
         }
     }
@@ -98,12 +96,6 @@ public class SkillsPlayer : MonoBehaviour
                 break;
             case TypeCurses.Slashes:
                 useSkill = Slashes;
-                break;
-            case TypeCurses.Splatters:
-                useSkill = Splatters;
-                break;
-            case TypeCurses.Tentacles:
-                useSkill = Tentacles;
                 break;
         }
     }
@@ -138,18 +130,8 @@ public class SkillsPlayer : MonoBehaviour
     {
         InstantiateObjSkill("Fireballs", foward);
     }
-
     public void CleansingFire(Vector3 foward)
     {
-        //InstantiateObjSkill("Fireballs", foward);
-
-        //Quaternion test = Quaternion.Euler(0, 10, 0);
-        //Vector3 dir = test * foward;
-        //InstantiateObjSkill("Fireballs", dir);
-
-        //Quaternion test2 = Quaternion.Euler(0, -10, 0);
-        //Vector3 dir2 = test2 * foward;
-        //InstantiateObjSkill("Fireballs", dir2);
         float eulerY = -10;
         for (int i = 0; i < 3; i++)
         {
@@ -167,9 +149,9 @@ public class SkillsPlayer : MonoBehaviour
             Vector3 dir = test * foward;
             RewardSystem.Instance.SpawnObjectSkill("HoundsofFate", transform.position, out ObjectSkill outSkill);
             outSkill.transform.rotation = Quaternion.LookRotation(dir);
+            outSkill.transform.position = transform.position + dir;
             outSkill.Init(DamageSkill * InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurseDamageMultiple), SpeedSKill, dir);
         }
-
     }
     public void Blasts(Vector3 foward)
     {
@@ -178,14 +160,6 @@ public class SkillsPlayer : MonoBehaviour
         outSkill.Show();
     }
     public void Slashes(Vector3 foward)
-    {
-
-    }
-    public void Splatters(Vector3 foward)
-    {
-
-    }
-    public void Tentacles(Vector3 foward)
     {
 
     }

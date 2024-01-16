@@ -30,7 +30,8 @@ public enum TypeEffectEnemy
     DivineBlizzard,
     DivineBlight,
     DivineBlast,
-    ObjBoom
+    ObjBoom,
+    Slashes,
 }
 public enum TypeEffectAnimation
 {
@@ -195,8 +196,6 @@ public enum TypeCurses
     Fireballs,
     Blasts,
     Slashes,
-    Splatters,
-    Tentacles,
     Null
 }
 public enum LevelRomanNumerals
