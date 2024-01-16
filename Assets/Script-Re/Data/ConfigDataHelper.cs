@@ -39,34 +39,30 @@ public class ConfigDataHelper
     private static HeroData GetHeroData()
     {
         HeroData data = new HeroData();
-        //data.attributes.Add(SaveGameSlot.Slot1, GameConfig.SaveSlot[SaveGameSlot.Slot1]);
-        //data.attributes.Add(SaveGameSlot.Slot2, GameConfig.SaveSlot[SaveGameSlot.Slot2]);
-        //data.attributes.Add(SaveGameSlot.Slot3, GameConfig.SaveSlot[SaveGameSlot.Slot3]);
+        data.attributes.Add(SaveGameSlot.Slot1, GameConfig.HeroBaseData);
+        data.attributes.Add(SaveGameSlot.Slot2, GameConfig.HeroBaseData);
+        data.attributes.Add(SaveGameSlot.Slot3, GameConfig.HeroBaseData);
+
+        data.BaseAttributes.Add(SaveGameSlot.Slot1, GameConfig.SaveSlot[SaveGameSlot.Slot1]);
+        data.BaseAttributes.Add(SaveGameSlot.Slot2, GameConfig.SaveSlot[SaveGameSlot.Slot2]);
+        data.BaseAttributes.Add(SaveGameSlot.Slot3, GameConfig.SaveSlot[SaveGameSlot.Slot3]);
+
+        data.TarrotAddattributes.Add(SaveGameSlot.Slot1, GameConfig.TarrotAddattributes);
+        data.TarrotAddattributes.Add(SaveGameSlot.Slot2, GameConfig.TarrotAddattributes);
+        data.TarrotAddattributes.Add(SaveGameSlot.Slot3, GameConfig.TarrotAddattributes);
+
+        data.PowerAddattributes.Add(SaveGameSlot.Slot1, GameConfig.PowerAddattributes);
+        data.PowerAddattributes.Add(SaveGameSlot.Slot2, GameConfig.PowerAddattributes);
+        data.PowerAddattributes.Add(SaveGameSlot.Slot3, GameConfig.PowerAddattributes);
+
         data.ValuePowerUpbought.Add(SaveGameSlot.Slot1, GameConfig.SavePowerAddattributes[SaveGameSlot.Slot1]);
         data.ValuePowerUpbought.Add(SaveGameSlot.Slot2, GameConfig.SavePowerAddattributes[SaveGameSlot.Slot2]);
         data.ValuePowerUpbought.Add(SaveGameSlot.Slot3, GameConfig.SavePowerAddattributes[SaveGameSlot.Slot3]);
 
-
-
-
-
-
-
-        data.attributes.Add(SaveGameSlot.Slot1, GameConfig.HeroBaseData);
-        data.attributes.Add(SaveGameSlot.Slot2, GameConfig.HeroBaseData);
-        data.attributes.Add(SaveGameSlot.Slot3, GameConfig.HeroBaseData);
-        data.BaseAttributes.Add(SaveGameSlot.Slot1, GameConfig.HeroBaseData);
-        data.BaseAttributes.Add(SaveGameSlot.Slot2, GameConfig.HeroBaseData);
-        data.BaseAttributes.Add(SaveGameSlot.Slot3, GameConfig.HeroBaseData);
-        data.TarrotAddattributes.Add(SaveGameSlot.Slot1, GameConfig.TarrotAddattributes);
-        data.TarrotAddattributes.Add(SaveGameSlot.Slot2, GameConfig.TarrotAddattributes);
-        data.TarrotAddattributes.Add(SaveGameSlot.Slot3, GameConfig.TarrotAddattributes);
-        data.PowerAddattributes.Add(SaveGameSlot.Slot1, GameConfig.PowerAddattributes);
-        data.PowerAddattributes.Add(SaveGameSlot.Slot2, GameConfig.PowerAddattributes);
-        data.PowerAddattributes.Add(SaveGameSlot.Slot3, GameConfig.PowerAddattributes);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot1, OnScenes.IntroGame);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot2, OnScenes.VampireSurvivor);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot3, OnScenes.IntroGame);
+
         data.IsSelectedDifficult.Add(SaveGameSlot.Slot1, false);
         data.IsSelectedDifficult.Add(SaveGameSlot.Slot2, false);
         data.IsSelectedDifficult.Add(SaveGameSlot.Slot3, false);

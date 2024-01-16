@@ -4,13 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class InfomationPlayerManager : SerializedMonoBehaviour
 {
-    public enum Script
-    {
-        InfomationPlayerManager
-    }
     public static InfomationPlayerManager Instance = null;
     public SaveGameSlot SaveSlot;
     [SerializeField] private HeroData heroData;
@@ -96,18 +93,10 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             return;
         }
         ObseverConstants.OnAttributeValueChanged.AddListener(CheckCurrentRedHeart);
-        //heroData.BaseAttributes[SaveSlot][AttributeType.CurrentRedHeart].actionevent = Debugs;
-        //Level = 1;
-        //AttributeOnChange(AttributeType.Level,1);
-        //AttributeOnChange(AttributeType.MaxRedHeart, 0);
         //SaveGame();
     }
     #region
     
-    private void Debugs()
-    {
-        Debug.Log("????");
-    }
     public OnScenes PlayerOnScenes()
     {
         return heroData.PlayerOnSceness[SaveSlot];
@@ -116,14 +105,13 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         heroData.PlayerOnSceness[SaveSlot] = scenes;
     }
-
     public float GetValueAttribute(AttributeType type)
     {
         return heroData.attributes[SaveSlot][type].value;
     }
-    public float GetValueTarrotAddAttribute(AttributeType type)
+    public float GetBaseValueAttribute(AttributeType type)
     {
-        return heroData.TarrotAddattributes[SaveSlot][type].value;
+        return heroData.BaseAttributes[SaveSlot][type].value;
     }
     public float GetValueTPowerAddAttribute(AttributeType type)
     {
@@ -132,10 +120,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     public BaseShopPowerAddattributes GetValuePowerUpbought(ShopPowerAttributes type)
     {
         return heroData.ValuePowerUpbought[SaveSlot][type];
-    }
-    public bool GetPowerUpbought()
-    {
-        return heroData.ValuePowerUpbought.ContainsKey(SaveSlot);
     }
     [Button]
     public void IncreaseValueOf(AttributeType type, float value)
@@ -185,7 +169,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         heroData.BaseAttributes[SaveSlot][type].value = value;
         ObseverConstants.OnAttributeValueChanged?.Invoke(type, value);
     }
-
     public void SelectedDifficult()
     {
         heroData.IsSelectedDifficult[SaveSlot] = true;
@@ -202,30 +185,19 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         return heroData.attributes[SaveSlot][AttributeType.ElapsedTime].value;
     }
-    public void OnContinueGame()
-    {
-
-    }
     #endregion
     public void StartGame()
     {
-        
-        heroData.attributes[SaveSlot] = heroData.BaseAttributes[SaveSlot];
+        heroData.BaseAttributes[SaveSlot][AttributeType.CurrentCoin].value = GetValueAttribute(AttributeType.CurrentCoin);
         foreach (var item in heroData.PowerAddattributes[SaveSlot])
         {
             if (heroData.attributes[SaveSlot].ContainsKey(item.Key))
             {
-                UpdateValueOf(item.Key, GetValueAttribute(item.Key) + GetValueTPowerAddAttribute(item.Key));
+                UpdateValueOf(item.Key, GetBaseValueAttribute(item.Key) + GetValueTPowerAddAttribute(item.Key));
             }
         }
+        SelectDifficult(heroData.GameDifficult[SaveSlot]);
         StartCountTime();
-    }
-    public void SaveGame()
-    {
-        
-        ConfigDataHelper.HeroData = heroData;
-        Debug.Log("Save Game");
-        
     }
     public void OnClickContinue()
     {
@@ -236,12 +208,10 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             {
                 heroData.ValuePowerUpbought[SaveSlot][item.TypePower].numberTick = tick;
             }
-            
         }
-        
-        Debug.Log(GetValueAttribute(AttributeType.CurrentCoin));
-        SaveGame();
-        this.DelayCall(3, () => { LoadSceneExtension.LoadScene(OnScenes.VampireSurvivor.ToString()); });
+        heroData.BaseAttributes[SaveSlot][AttributeType.CurrentCoin].value = GetValueAttribute(AttributeType.CurrentCoin);
+        ConfigDataHelper.HeroData = heroData;
+        LoadSceneExtension.LoadScene(OnScenes.VampireSurvivor.ToString());
     }
     public void SelectDifficult(TypeLevelDifficult type)
     {

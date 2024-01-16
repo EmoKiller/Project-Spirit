@@ -149,7 +149,7 @@
 		},
 		"TheBomb" : {
 			"type" : "TheBomb",
-			"value" : 1
+			"value" : 0
 		},
 		"BombDamage" : {
 			"type" : "BombDamage",
@@ -1064,7 +1064,7 @@
 			},
 			"TheBomb" : {
 				"type" : "TheBomb",
-				"value" : 1
+				"value" : 0
 			},
 			"BombDamage" : {
 				"type" : "BombDamage",
@@ -1078,7 +1078,7 @@
 		"Slot2" : {
 			"MaxRedHeart" : {
 				"type" : "MaxRedHeart",
-				"value" : 2
+				"value" : 4
 			},
 			"CurrentRedHeart" : {
 				"type" : "CurrentRedHeart",
@@ -1186,7 +1186,7 @@
 			},
 			"TheBomb" : {
 				"type" : "TheBomb",
-				"value" : 1
+				"value" : 0
 			},
 			"BombDamage" : {
 				"type" : "BombDamage",
@@ -1308,7 +1308,7 @@
 			},
 			"TheBomb" : {
 				"type" : "TheBomb",
-				"value" : 1
+				"value" : 0
 			},
 			"BombDamage" : {
 				"type" : "BombDamage",
@@ -1329,7 +1329,7 @@
 				"valueAdded" : "50",
 				"quote" : "Limit +50 <sprite index=57> Fervour.",
 				"price" : "300",
-				"numberTick" : 2
+				"numberTick" : 1
 			},
 			"MaxBlackHeart" : {
 				"name" : "Black Heart",
@@ -1448,7 +1448,7 @@
 				"valueAdded" : "50",
 				"quote" : "Limit +50 <sprite index=57> Fervour.",
 				"price" : "300",
-				"numberTick" : 3
+				"numberTick" : 1
 			},
 			"MaxBlackHeart" : {
 				"name" : "Black Heart",

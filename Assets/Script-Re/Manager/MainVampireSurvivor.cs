@@ -32,7 +32,7 @@ public class MainVampireSurvivor : MonoBehaviour
             PowerUP.PopupShow.SetActive(false);
             return;
         }
-        attri.AddTick(PowerUP.SprActive);
+        attri.AddTick(ObjectPooling.Instance.SpriteAtlasItems.GetSprite("Combat_TarotCardShrine_0"));
         InfomationPlayerManager.Instance.MinusValueOf(AttributeType.CurrentCoin, PowerUP.Price);
         InfomationPlayerManager.Instance.PowerIncreaseValueOf(PowerUP.AttributeAdded, PowerUP.ValueAdded);
         PowerUP.PopupShow.SetActive(false);

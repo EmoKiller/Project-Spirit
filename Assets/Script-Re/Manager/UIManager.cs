@@ -79,13 +79,10 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.Value.Button.onClick.AddListener(OnSelectButtonLevelDifficult);
         }
-        //if (InfomationPlayerManager.Instance.GetPowerUpbought())
-        //{
-        //    foreach (var item in _PowerUP.AttributePowerUPs)
-        //    {
-        //        item.Init();
-        //    }
-        //}
+        foreach (var item in _PowerUP.AttributePowerUPs)
+        {
+            item.Init();
+        }
 
         //MainSelect
         PowerUP.Init();

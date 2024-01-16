@@ -49,6 +49,7 @@ public class AttributePowerUP : MonoBehaviour
     }
     public void Init()
     {
+        Debug.Log("UpdateValueBounght");
         numberTick = InfomationPlayerManager.Instance.GetValuePowerUpbought(TypePower).numberTick;
         for (int i = 0; i < numberTick - 1; i++)
         {
