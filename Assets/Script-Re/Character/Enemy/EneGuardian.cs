@@ -8,7 +8,7 @@ public class EneGuardian : Enemy
     {
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
-        characterAnimator.AddSpawnObj(SpawnObjFireBalls);
+        characterAnimator.AddSpawnObj(SpawnChain);
     }
     protected override void Update()
     {
@@ -16,55 +16,85 @@ public class EneGuardian : Enemy
         {
             return;
         }
-        if (onAniATK || enemyThinking)
+        if (onAniATK)
             return;
-        if (Distance() > playerDetectionRange && !onFollowPlayer)
+        if (Distance() > playerDetectionRange && !enemyRunFollow)
         {
-            EnemyThinking(1, 0, null, () => { onFollowPlayer = true; onTargetPlayer = false; });
-            return;
+            EnemyThinking(1, 25);
         }
-        if (Distance() < playerDetectionRange && onFollowPlayer && !randomMove && !onTargetPlayer)
-        {
-            randomMove = true;
-            onTargetPlayer = true;
-            onFollowPlayer = false;
-            return;
-        }
-        if (onFollowPlayer && !randomMove && Distance() > playerDetectionRange)
-        {
-            MoveTo(direction.transform.position);
-            Rotation();
-            onTargetPlayer = false;
-            return;
-        }
-        if (onTargetPlayer && randomMove && Distance() <= playerDetectionRange)
+        //if (onFollowPlayer && Distance() < DashAttackRange && OnDashAtk && !enemyRunFollow)
+        //{
+        //    DashAtk();
+        //    return;
+        //}
+        //if (OnDashAtk)
+        //    return;
+        if (Distance() <= playerDetectionRange - 1 && Distance() <= playerDetectionRange + 1 && randomMove)
         {
             RandomMove();
             return;
         }
+        if (onFollowPlayer && Distance() > characterAttack.AttackRange && !randomMove)
+        {
+            randomMove = false;
+            MoveTo(direction.transform.position);
+            Rotation();
+            return;
+        }
+        if (onFollowPlayer && Distance() <= characterAttack.AttackRange)
+        {
+            Rotation();
+            characterAnimator.SetTrigger("Attack");
+            return;
+        }
+    }
+    private void EnemyThinking(float TimeThink, int ratioRandomMove)
+    {
+        if (enemyThinking || !Alive)
+            return;
+        enemyThinking = true;
+        onFollowPlayer = false;
+        enemyRunFollow = false;
+        this.DelayCall(TimeThink, () =>
+        {
+            int i = Random.Range(0, 100);
+            enemyThinking = false;
+            if (i < ratioRandomMove)
+            {
+                IsRandomMove();
+                return;
+            }
+            IsFollowAtK();
+        });
     }
     private void RandomMove()
     {
         if (!randomMove)
             return;
+        characterAnimator.SetTrigger("Move");
+        onFollowPlayer = false;
+        randomMove = false;
         Vector3 vec = Random.onUnitSphere;
         Vector3 point = vec.normalized * 15 + direction.transform.position;
+        SetMoveWayPoint(point, 3);
+        EnemyThinking(3, 35);
+    }
+    protected void IsFollowAtK()
+    {
         randomMove = false;
-        OnAction = true;
-        onFollowPlayer = false;
-        SetMoveWayPoint(point, 4);
+        onFollowPlayer = true;
         int i = Random.Range(0, 100);
-        if (i < 70)
+        if (i < 60)
         {
-            this.DelayCall(5, () =>
-            {
-                OnAttack();
-            });
+            characterAnimator.SetTrigger("RunFollow");
+            agent.moveSpeed = 8f;
+            enemyRunFollow = true;
             return;
         }
-        EnemyThinking(5, 100, () => { IsRandomMove(); }, null);
+        
+        this.DelayCall(3f, () => { EnemyThinking(1, 5); });
     }
-    protected void OnAttack()
+    protected void OnUseSKill()
     {
         if (Distance() <= characterAttack.AttackRangeBow)
         {
@@ -73,32 +103,35 @@ public class EneGuardian : Enemy
         }
         EnemyThinking(1, 100, () => { IsRandomMove(); }, null);
     }
-    protected void SpawnObjFireBalls()
+    private void SpawnChain()
     {
-        int i = Random.Range(0, 100);
-        if (i < 60)
-        {
-            SpawnObjBallFireLoop(8);
-            return;
-        }
-        if (i > 80)
-        {
-            SpawnObjBallFire(8);
-            return;
-        }
-        SpawnObjBallFire();
-        return;
+        RewardSystem.Instance.SpawnObjectSkillEnemy("ObjRingDeadEnemy", direction.position , out ObjectSkill outSkill);
+        outSkill.Init(1,true);
+    }
+    //protected void SpawnObjFireBalls()
+    //{
+    //    int i = Random.Range(0, 100);
+    //    if (i < 60)
+    //    {
+    //        SpawnObjBallFireLoop(8);
+    //        return;
+    //    }
+    //    if (i > 80)
+    //    {
+    //        SpawnObjBallFire(8);
+    //        return;
+    //    }
+    //    SpawnObjBallFire();
+    //    return;
+    //}
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
     }
     protected override void FinishAniAtk()
     {
+        characterAnimator.SetTrigger("Idie");
         base.FinishAniAtk();
-        agent.moveSpeed = 4;
-        randomMove = false;
-        if (Distance() > playerDetectionRange)
-        {
-            EnemyThinking(1, 0, null, () => { onFollowPlayer = true; });
-            return;
-        }
-        EnemyThinking(2, 30, () => { IsRandomMove(); }, () => { OnAttack(); });
+        EnemyThinking(1f, 35);
     }
 }

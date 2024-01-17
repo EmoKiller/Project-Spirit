@@ -124,6 +124,8 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
         {
             if (!Alive)
                 return;
+            if (Vector3.Distance(transform.position, wayPoint) < 0.1f)
+                return;
             MoveTo(wayPoint);
             i++;
             if (i >= time - 0.5f)

@@ -32,6 +32,8 @@ public enum TypeEffectEnemy
     DivineBlast,
     ObjBoom,
     Slashes,
+    ObjRingDeadEnemy,
+
 }
 public enum TypeEffectAnimation
 {

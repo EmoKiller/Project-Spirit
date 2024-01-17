@@ -49,6 +49,8 @@ public class EneScamp : Enemy
     }
     private void RandomMove()
     {
+        if (!randomMove)
+            return;
         onFollowPlayer = false;
         randomMove = false;
         Vector3 vec = Random.onUnitSphere;

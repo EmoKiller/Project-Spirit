@@ -20,7 +20,7 @@ public class GameLevelManager : MonoBehaviour
             Instance = this;
         else
             Destroy(Instance);
-        ObseverConstants.OnClickButtonStart.AddListener(Init);
+        //ObseverConstants.OnClickButtonStart.AddListener(Init);
         ObseverConstants.OnClickButtonContinue.AddListener(ResetGameLevel);
     }
     public void Init()

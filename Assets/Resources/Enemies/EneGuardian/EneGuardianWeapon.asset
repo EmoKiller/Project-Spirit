@@ -19,12 +19,13 @@ MonoBehaviour:
   QuoteWeapon: 
   DescriptionWeapon: 
   Speed: 1
-  AttackRange: 5
+  AttackRange: 3
   AttackRangeBow: 25
-  RangeDash: 5
+  RangeDash: 1.8
   SpeedOnDash: 20
   NomalSpeed: 4
-  SlashBoxSize: {x: 5, y: 0, z: 5}
-  ListDamage: []
+  SlashBoxSize: {x: 6, y: 0, z: 6}
+  ListDamage:
+  - 1
   ListPowerForce: []
   MoveOnAttack: []

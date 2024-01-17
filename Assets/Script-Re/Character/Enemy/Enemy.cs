@@ -256,7 +256,7 @@ public class Enemy : CharacterBrain, IPool
     }
     protected override void StartAniAtk()
     {
-        slash.transform.position = transform.position + GetDirection().normalized * 1.5f;
+        slash.transform.position = transform.position + GetDirection().normalized * characterAttack.AttackRange;
         base.StartAniAtk();
     }
     protected override void FinishAniAtk()

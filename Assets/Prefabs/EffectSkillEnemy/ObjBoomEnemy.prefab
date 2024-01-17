@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4674781808127468953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -138,10 +138,10 @@ MonoBehaviour:
   slash: {fileID: 4674781808127468956}
   detectedEnemy: {fileID: 0}
   boxCollider: {fileID: 4674781808127468957}
-  capsuleCollider: {fileID: 0}
   _animator: {fileID: 4674781808127468955}
   speedSkill: 5
   isBoomer: 0
+  _meshRender: {fileID: 0}
 --- !u!114 &4674781808127468956
 MonoBehaviour:
   m_ObjectHideFlags: 0
