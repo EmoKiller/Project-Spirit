@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dee15b41efdf2594ba7f78d5b5ef258a, type: 3}
-  m_Name: EyeBallHP
+  m_Name: EneGuardianHP
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  HP: 40
+  HP: 80
   PowerForce: 30
   weight: 35
-  ExpDrop: 50
+  ExpDrop: 100

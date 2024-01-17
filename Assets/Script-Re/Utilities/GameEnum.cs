@@ -175,7 +175,8 @@ public enum TypeEnemy
     EneScampBoom,
     EneSummoner,
     EneHealer,
-    EneRedArcher
+    EneRedArcher,
+    EneGuardian
 }
 public enum ChestType
 {
