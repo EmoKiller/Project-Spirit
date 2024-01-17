@@ -21,8 +21,8 @@ MonoBehaviour:
   QuoteCurses: Retainer of death, attend your master.
   DescriptionCurses: A devastating melee attack that will also summon ghosts from
     slain enemies.
-  TimeUseSKill: 1
-  Damage: 2
+  TimeUseSKill: 0.4
+  Damage: 10
   Speed: 1
   AttackRange: 2
   UseAngry: 10

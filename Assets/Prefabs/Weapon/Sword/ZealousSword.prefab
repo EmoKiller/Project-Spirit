@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3708679341758370275}
   - component: {fileID: -433040160873130887}
   - component: {fileID: -6984324744625114891}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: ZealousSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 302458220710117858}
   - component: {fileID: -7111455615790017813}
   - component: {fileID: 5927902452132965535}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: HoundsOfFate
   m_TagString: Weapon
   m_Icon: {fileID: 0}

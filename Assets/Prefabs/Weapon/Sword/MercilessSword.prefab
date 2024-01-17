@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5187564342945687933}
   - component: {fileID: 4568843580273925386}
   - component: {fileID: -1857799272239922705}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: MercilessSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}

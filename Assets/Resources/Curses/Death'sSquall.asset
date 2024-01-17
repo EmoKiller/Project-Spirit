@@ -20,8 +20,8 @@ MonoBehaviour:
   NameCurses: Death'sSquall
   QuoteCurses: A kiss from death, so cold and inviting.
   DescriptionCurses: A devastating melee attack that will also freeze hit enemies.
-  TimeUseSKill: 1
-  Damage: 2
+  TimeUseSKill: 0.5
+  Damage: 8
   Speed: 1
   AttackRange: 2
   UseAngry: 10

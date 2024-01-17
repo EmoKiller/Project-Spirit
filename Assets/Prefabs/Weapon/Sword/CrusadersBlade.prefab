@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2285697562747143152}
   - component: {fileID: -8919893828571351372}
   - component: {fileID: -6379232556490990486}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: CrusadersBlade
   m_TagString: Weapon
   m_Icon: {fileID: 0}

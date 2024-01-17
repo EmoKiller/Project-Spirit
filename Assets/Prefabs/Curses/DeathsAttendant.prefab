@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5335652766108520148}
   - component: {fileID: -5984641385692062590}
   - component: {fileID: -6469956003428765955}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DeathsAttendant
   m_TagString: Weapon
   m_Icon: {fileID: 0}

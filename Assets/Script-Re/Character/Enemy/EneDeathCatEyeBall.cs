@@ -56,7 +56,6 @@ public class EneDeathCatEyeBall : Enemy
         onFollowPlayer = false;
         SetMoveWayPoint(point, 4);
         int i = Random.Range(0, 100);
-        Debug.Log(i);
         if (i < 70)
         {
             this.DelayCall(5, () =>

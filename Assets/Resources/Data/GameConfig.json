@@ -171,6 +171,11 @@
 							"value" : 5,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
+						},
+						"DeathCatEyeball" : {
+							"value" : 5,
+							"type" : "DeathCatEyeball",
+							"LevelEnemy" : 1
 						}
 					},
 					"chestType" : "Common"

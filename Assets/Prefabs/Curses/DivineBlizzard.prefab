@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1586632874005140322}
   - component: {fileID: 2537694732674829796}
   - component: {fileID: 1479919194921112060}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DivineBlizzard
   m_TagString: Weapon
   m_Icon: {fileID: 0}

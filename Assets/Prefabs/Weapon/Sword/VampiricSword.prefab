@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2641821799082443769}
   - component: {fileID: 4789952748440715037}
   - component: {fileID: 9098057550066394630}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: VampiricSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}

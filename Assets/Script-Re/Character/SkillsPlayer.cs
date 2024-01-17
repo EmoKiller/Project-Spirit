@@ -40,6 +40,8 @@ public class SkillsPlayer : MonoBehaviour
     public float SpeedSKill => _CrusesEquip.CursesObject.Speed;
     public float MaxTimeUseSKill => _CrusesEquip.CursesObject.TimeUseSKill;
     public float UseAngry => _CrusesEquip.CursesObject.UseAngry;
+    public Color CursesColor;
+    
     private void Update()
     {
         if(_CrusesEquip == null
@@ -57,7 +59,7 @@ public class SkillsPlayer : MonoBehaviour
             }
             OnUseSkill = true;
             CountTime();
-            fillAimingRecticule.transform.localScale = new Vector3(TimeUseSkill, 1, 1);
+            fillAimingRecticule.transform.localScale = new Vector3(TimeUseSkill / MaxTimeUseSKill, 1, 1);
             GameUtilities.ScreenRayCastOnWorld(AimingRecticule);
             Player.Instance.CharacterAni.SetTrigger("UseSkill");
             if (CrusesEquip.CursesObject.TypeCurses != TypeCurses.Blasts)
@@ -96,6 +98,7 @@ public class SkillsPlayer : MonoBehaviour
                 break;
             case TypeCurses.Slashes:
                 useSkill = Slashes;
+                SwickColor();
                 break;
         }
     }
@@ -123,6 +126,24 @@ public class SkillsPlayer : MonoBehaviour
                 break;
             case NameCurses.HoundsOfFate:
                 useSkill = HoundsofFate;
+                break;
+        }
+    }
+    private void SwickColor()
+    {
+        switch (_CrusesEquip.CursesObject.TypeNameCurses)
+        {
+            case NameCurses.DeatsSweep:
+                CursesColor = Color.red;
+                break;
+            case NameCurses.OathOfTheCrown:
+                CursesColor = Color.white;
+                break;
+            case NameCurses.DeathsAttendant:
+                CursesColor = Color.cyan;
+                break;
+            case NameCurses.DeathsSquall:
+                CursesColor = Color.blue;
                 break;
         }
     }
@@ -161,14 +182,16 @@ public class SkillsPlayer : MonoBehaviour
     }
     public void Slashes(Vector3 foward)
     {
-
+        RewardSystem.Instance.SpawnObjectSkill("Slashes", transform.position, out ObjectSkill outSkill);
+        outSkill.transform.rotation = Quaternion.LookRotation(foward);
+        outSkill.Init(DamageSkill, SpeedSKill , CursesColor);
+        outSkill.Show();
     }
     private void InstantiateObjSkill(string name, Vector3 foward)
     {
         RewardSystem.Instance.SpawnObjectSkill(name, transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
         outSkill.Init(DamageSkill * InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurseDamageMultiple), SpeedSKill);
         outSkill.myTween = outSkill.transform.DOMove(transform.position + (foward.normalized * AttackRange) + new Vector3(0, 1.5f, 0), SpeedSKill).OnComplete(() => { outSkill.Hide(); });
-        
     }
     public void CountTime()
     {

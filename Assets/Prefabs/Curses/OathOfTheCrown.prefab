@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3366324787879099853}
   - component: {fileID: -2678720464294170682}
   - component: {fileID: -8597931776035835077}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: OathOfTheCrown
   m_TagString: Weapon
   m_Icon: {fileID: 0}

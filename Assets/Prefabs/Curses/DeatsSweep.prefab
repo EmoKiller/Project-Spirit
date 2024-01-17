@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4468201150360057540}
   - component: {fileID: -3563058235286023190}
   - component: {fileID: 446606612907440581}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DeatsSweep
   m_TagString: Weapon
   m_Icon: {fileID: 0}

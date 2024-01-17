@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2067522765506015626}
   m_Layer: 8
   m_Name: FireballsEnemy
-  m_TagString: Enemy
+  m_TagString: ObjEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,9 @@ MonoBehaviour:
   detectedEnemy: {fileID: 0}
   boxCollider: {fileID: 2067522765506015625}
   _animator: {fileID: 0}
+  speedSkill: 5
   isBoomer: 0
+  _meshRender: {fileID: 0}
 --- !u!114 &2067522765506015627
 MonoBehaviour:
   m_ObjectHideFlags: 0

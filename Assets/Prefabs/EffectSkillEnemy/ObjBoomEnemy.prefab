@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4674781808127468954}
   m_Layer: 8
   m_Name: ObjBoomEnemy
-  m_TagString: Enemy
+  m_TagString: ObjEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   slash: {fileID: 4674781808127468956}
   detectedEnemy: {fileID: 0}
   boxCollider: {fileID: 4674781808127468957}
+  capsuleCollider: {fileID: 0}
   _animator: {fileID: 4674781808127468955}
   speedSkill: 5
   isBoomer: 0

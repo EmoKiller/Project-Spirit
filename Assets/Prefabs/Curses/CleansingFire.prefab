@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2888601531033708480}
   - component: {fileID: -4377460411774591843}
   - component: {fileID: -4107074221820038230}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: CleansingFire
   m_TagString: Weapon
   m_Icon: {fileID: 0}

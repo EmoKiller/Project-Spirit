@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2928471699495661251}
   - component: {fileID: -113318950877005419}
   - component: {fileID: 6873873975257705452}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FlamingShot
   m_TagString: Weapon
   m_Icon: {fileID: 0}

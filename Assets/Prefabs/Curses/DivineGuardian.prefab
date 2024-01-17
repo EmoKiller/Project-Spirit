@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3791072452884748958}
   - component: {fileID: 7282496496490412322}
   - component: {fileID: -4330565966302687559}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DivineGuardian
   m_TagString: Weapon
   m_Icon: {fileID: 0}

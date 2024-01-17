@@ -16,13 +16,13 @@ MonoBehaviour:
   IconCurses: {fileID: 420557477, guid: bdaaff1e37a7063408c181fe5b2148b1, type: 3}
   TypeCurses: 2
   LevelCurses: 0
-  TypeNameCurses: 9
+  TypeNameCurses: 8
   NameCurses: OathOfTheCrown
   QuoteCurses: The curse with which the Great ones severed our world from theirs.
   DescriptionCurses: A devastating melee attack that also has a chance to possess
     impacted enemies.
-  TimeUseSKill: 1
-  Damage: 2
+  TimeUseSKill: 0.5
+  Damage: 9
   Speed: 1
   AttackRange: 2
   UseAngry: 10

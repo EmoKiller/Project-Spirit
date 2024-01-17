@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class Enemy : CharacterBrain , IPool
+public class Enemy : CharacterBrain, IPool
 {
     public enum Script
     {
@@ -38,7 +38,7 @@ public class Enemy : CharacterBrain , IPool
         maxHealth = characterAttack.HP * (float)LevelEnemy;
         CurrentHealth = maxHealth;
         healthBar.SetHealh(maxHealth);
-        
+
     }
     public virtual void Init()
     {
@@ -147,7 +147,7 @@ public class Enemy : CharacterBrain , IPool
 
     #endregion
 
-    protected virtual void EnemyThinking(float TimeThink, int ratioRandomMove , UnityAction Random1, UnityAction random2)
+    protected virtual void EnemyThinking(float TimeThink, int ratioRandomMove, UnityAction Random1, UnityAction random2)
     {
         if (enemyThinking || !Alive)
             return;
@@ -301,7 +301,7 @@ public class Enemy : CharacterBrain , IPool
                 {
                     test = Quaternion.Euler(0, euler, 0);
                     Vector3 direc = (test * (direction.position));
-                    listObj[j].myTween = listObj[j].transform.DOMove(((GetDirection().normalized * 40) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f);
+                    listObj[j].myTween = listObj[j].transform.DOMove(((GetDirection().normalized * 40) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f).OnComplete(() => { outSkill.Hide(); });
                     euler += 45;
                 }
                 OnAction = false;
@@ -320,7 +320,7 @@ public class Enemy : CharacterBrain , IPool
             Vector3 dir = test * transform.position;
             RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
             outSkill.Init(1f, 4);
-            outSkill.myTween = outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+            outSkill.myTween = outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f).OnComplete(() => { outSkill.Hide(); });
             i++;
             euler += 45;
             if (i == loop)
@@ -334,9 +334,9 @@ public class Enemy : CharacterBrain , IPool
     {
         RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
         outSkill.Init(1f, 4);
-        outSkill.myTween = outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+        outSkill.myTween = outSkill.transform.DOMove(transform.position + (GetDirection().normalized * 50) + new Vector3(0, 1.5f, 0), 4f).OnComplete(() => { outSkill.Hide(); });
     }
-    protected void SpawnObjBallFireLoop(int loop,float eulerYs)
+    protected void SpawnObjBallFireLoop(int loop, float eulerYs)
     {
         float eulerY = -eulerYs;
         for (int i = 0; i < loop; i++)
@@ -345,7 +345,7 @@ public class Enemy : CharacterBrain , IPool
             Vector3 dir = test * GetDirection();
             RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
             outSkill.Init(1f, 4);
-            outSkill.myTween = outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f);
+            outSkill.myTween = outSkill.transform.DOMove(transform.position + (dir.normalized * 50) + new Vector3(0, 1.5f, 0), 4f).OnComplete(() => { outSkill.Hide(); });
             eulerY += eulerYs;
         }
 
@@ -411,10 +411,10 @@ public class Enemy : CharacterBrain , IPool
     {
         return Vector3.Distance(transform.position, direction.transform.position);
     }
-    
+
     protected override void EffectHit(Vector3 dir)
     {
-        
+
     }
     #region ObjectPooling
     public void Show()

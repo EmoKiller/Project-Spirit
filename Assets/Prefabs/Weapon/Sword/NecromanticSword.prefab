@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7769108479858995476}
   - component: {fileID: -3950844937709259957}
   - component: {fileID: -25233720016751494}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: NecromanticSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}

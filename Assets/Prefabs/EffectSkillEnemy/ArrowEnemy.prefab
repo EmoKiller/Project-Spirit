@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 525056715706200424}
   m_Layer: 8
   m_Name: ArrowEnemy
-  m_TagString: Enemy
+  m_TagString: ObjEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,6 +307,7 @@ MonoBehaviour:
   slash: {fileID: 5824554767677986867}
   detectedEnemy: {fileID: 0}
   boxCollider: {fileID: 5824554767677986868}
+  capsuleCollider: {fileID: 0}
   _animator: {fileID: 0}
   speedSkill: 5
   isBoomer: 0

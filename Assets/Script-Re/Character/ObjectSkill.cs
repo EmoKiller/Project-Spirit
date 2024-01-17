@@ -1,27 +1,40 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class ObjectSkill : MonoBehaviour , IPool
+public class ObjectSkill : MonoBehaviour, IPool
 {
     public TypeEffectEnemy type;
     [SerializeField] Slash slash;
     [SerializeField] DetectedEnemy detectedEnemy;
     [SerializeField] protected BoxCollider boxCollider;
-    [SerializeField] protected CapsuleCollider capsuleCollider;
     [SerializeField] Animator _animator;
+    [SerializeField] protected float speedSkill = 5;
+    [SerializeField] bool isBoomer = false;
+    [SerializeField] MeshRenderer _meshRender;
+    public MeshRenderer ShaderMesh {  get { return _meshRender; } }
     public string objectName => type.ToString();
     protected float damage = 2;
-    [SerializeField]protected float speedSkill = 5;
-    [SerializeField] bool isBoomer = false;
     public Tween myTween;
     private void Awake()
     {
-        slash.AddActionAttack(OnHit);
+        if (type != TypeEffectEnemy.Slashes)
+            slash.AddActionAttack(OnHit);
     }
     public void Init(float damage, float speedSkill)
     {
         this.damage = damage;
         this.speedSkill = speedSkill;
+        this.DelayCall(speedSkill, () =>
+        {
+            Hide();
+        });
+    }
+    public void Init(float damage, float speedSkill,Color color)
+    {
+        this.damage = damage;
+        this.speedSkill = speedSkill;
+        //_meshRender.material.color = color;
+        _meshRender.material.SetColor("_Color", color);
     }
     public void Init(float damage, bool isBoom)
     {
@@ -51,7 +64,7 @@ public class ObjectSkill : MonoBehaviour , IPool
     public void Hide()
     {
         myTween.Kill();
-        if (gameObject.tag == "Enemy")
+        if (gameObject.tag == "ObjEnemy")
         {
             RewardSystem.Instance.RemoveFromListObjectSkillEnemy(this);
             ObjectPooling.Instance.PushToPoolObjectSkillEnemy(this);

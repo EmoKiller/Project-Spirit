@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3055870618252950118}
   - component: {fileID: -2812687184791776855}
   - component: {fileID: -8954471343965035540}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: GodlySword
   m_TagString: Weapon
   m_Icon: {fileID: 0}

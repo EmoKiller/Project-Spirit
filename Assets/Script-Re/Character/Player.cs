@@ -213,9 +213,11 @@ public class Player : CharacterBrain , IOrderable
             cur.transform.ReSetEulerAngle();
             SpriteRenderer spr = cur.GetComponent<SpriteRenderer>();
             spr.enabled = true;
+            cur.SetBoxCollider(false);
         }
         CursesEquip obj = Instantiate(curses, handCurses.transform);
         InitCurses(obj);
+        obj.SetBoxCollider(false);
     }
     private void InitCurses(CursesEquip curses)
     {

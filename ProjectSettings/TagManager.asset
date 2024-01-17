@@ -9,6 +9,8 @@ TagManager:
   - Weapon
   - SlashObj
   - UIManager
+  - Podium
+  - ObjEnemy
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8985611872994079743}
   - component: {fileID: 6737175903992504711}
   - component: {fileID: -2146140881165120439}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DivineBlight
   m_TagString: Weapon
   m_Icon: {fileID: 0}

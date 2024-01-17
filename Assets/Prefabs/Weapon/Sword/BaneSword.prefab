@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 208908493409930970}
   - component: {fileID: -4731134629754819513}
   - component: {fileID: 4107617912731838340}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: BaneSword
   m_TagString: Weapon
   m_Icon: {fileID: 0}

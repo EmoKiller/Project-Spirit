@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 762183520671110578}
   - component: {fileID: 8336957137166894525}
   - component: {fileID: 1128017848547139835}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DivineBlast
   m_TagString: Weapon
   m_Icon: {fileID: 0}
