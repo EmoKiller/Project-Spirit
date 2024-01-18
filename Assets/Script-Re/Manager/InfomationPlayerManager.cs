@@ -12,7 +12,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     public SaveGameSlot SaveSlot;
     [SerializeField] private HeroData heroData;
     [SerializeField] private AnimationCurve MaxExpPerLevelCurve;
-    
+
     public float Level
     {
         get { return GetValueAttribute(AttributeType.Level); }
@@ -21,6 +21,10 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             heroData.attributes[SaveSlot][AttributeType.Level].value = value;
             UpdateValueOf(AttributeType.MaxExpOfLevel, MaxExpPerLevelCurve.Evaluate(GetValueAttribute(AttributeType.Level)));
             CurrentExp = 0;
+            if (GetValueAttribute(AttributeType.Level) % 1 == 0)
+            {
+                UIManager.Instance.ShowTarotCard(2);
+            }
         }
     }
     public float CurrentExp
@@ -28,7 +32,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         get { return GetValueAttribute(AttributeType.CurrentExp); }
         set
         {
-            heroData.attributes[SaveSlot][AttributeType.CurrentExp].value = Mathf.Clamp(value,0, GetValueAttribute(AttributeType.MaxExpOfLevel));
+            heroData.attributes[SaveSlot][AttributeType.CurrentExp].value = Mathf.Clamp(value, 0, GetValueAttribute(AttributeType.MaxExpOfLevel));
             UpdateValueOf(AttributeType.CurrentExp, GetValueAttribute(AttributeType.CurrentExp));
             if (CurrentExp >= GetValueAttribute(AttributeType.MaxExpOfLevel))
             {
@@ -83,7 +87,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         ObseverConstants.OnClickButtonStart.AddListener(StartGame);
         ObseverConstants.OnClickButtonContinue.AddListener(OnClickContinue);
     }
-    
+
     public void Init()
     {
         if (PlayerOnScenes() == OnScenes.IntroGame)
@@ -96,7 +100,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         //SaveGame();
     }
     #region
-    
+
     public OnScenes PlayerOnScenes()
     {
         return heroData.PlayerOnSceness[SaveSlot];
@@ -113,9 +117,19 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         return heroData.BaseAttributes[SaveSlot][type].value;
     }
+    public float GetTarrotValueAttribute(AttributeType type)
+    {
+        return heroData.TarrotAddattributes[SaveSlot][type].value;
+    }
     public float GetValueTPowerAddAttribute(AttributeType type)
     {
+        if (!heroData.PowerAddattributes[SaveSlot].ContainsKey(type))
+            return 0f;
         return heroData.PowerAddattributes[SaveSlot][type].value;
+    }
+    public float GetTotalValue(AttributeType type)
+    {
+        return GetValueTPowerAddAttribute(type) + GetBaseValueAttribute(type) + GetTarrotValueAttribute(type);
     }
     public BaseShopPowerAddattributes GetValuePowerUpbought(ShopPowerAttributes type)
     {
@@ -151,13 +165,14 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         if (heroData.attributes[SaveSlot][AttributeType.CurrentRedHeart].value == 0)
         {
             Debug.Log("PlayerDead");
+            ObseverConstants.ReloadScene?.Invoke();
             UIManager.Instance.ShowUIEndOfLevel(Events.PlayerDied);
-        } 
+        }
     }
     public void TarrotIncreaseValueOf(AttributeType type, float value)
     {
         heroData.TarrotAddattributes[SaveSlot][type].value += value;
-        ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
+        ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type) + GetTarrotValueAttribute(type));
     }
     public void PowerIncreaseValueOf(AttributeType type, float value)
     {
@@ -167,6 +182,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     public void BaseIncreaseValueOf(AttributeType type, float value)
     {
         heroData.BaseAttributes[SaveSlot][type].value = value;
+        heroData.attributes[SaveSlot][type].value = value;
         ObseverConstants.OnAttributeValueChanged?.Invoke(type, value);
     }
     public void SelectedDifficult()
@@ -198,7 +214,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         }
         SelectDifficult(heroData.GameDifficult[SaveSlot]);
         StartCountTime();
-        //AudioManager.instance.Play();
     }
     public void OnClickContinue()
     {
@@ -218,5 +233,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         heroData.GameDifficult[SaveSlot] = type;
         BaseIncreaseValueOf(AttributeType.MaxRedHeart, ConfigDataHelper.GetValueGameDifficult(type, TypeControlDifficult.MaxRedHeart));
+
     }
 }

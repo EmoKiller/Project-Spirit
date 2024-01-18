@@ -15,5 +15,5 @@ MonoBehaviour:
   projectTile: {fileID: 0}
   HP: 20
   PowerForce: 30
-  weight: 30
-  ExpDrop: 2
+  weight: 28
+  ExpDrop: 20

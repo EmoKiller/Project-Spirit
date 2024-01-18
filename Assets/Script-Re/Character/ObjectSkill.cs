@@ -80,4 +80,12 @@ public class ObjectSkill : MonoBehaviour, IPool
     {
         _animator.SetTrigger("ActiveBoom");
     }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(Hide);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(Hide);
+    }
 }

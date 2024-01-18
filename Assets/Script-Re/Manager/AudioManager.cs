@@ -12,7 +12,8 @@ public class AudioManager : SerializedMonoBehaviour
 {
     public static AudioManager instance;
     public Sound[] sounds;
-    public Dictionary<TypeListAudio, Sound[]> audioSources;
+    private Sound soundCurrent;
+    private Coroutine CoroutineSound;
     private void Awake()
     {
         if (instance == null)
@@ -22,8 +23,6 @@ public class AudioManager : SerializedMonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-
         DontDestroyOnLoad(gameObject);
         foreach (Sound item in sounds)
         {
@@ -33,30 +32,37 @@ public class AudioManager : SerializedMonoBehaviour
             item.source.pitch = item.pitch;
             item.source.loop = item.loop;
         }
+        ObseverConstants.OnClickButtonStart.AddListener(StopListSound);
+        ObseverConstants.OnClickButtonContinue.AddListener(StopListSound);
+        ObseverConstants.OnClickButtonStart.AddListener(PlayListOnRound);
     }
     private void Start()
     {
-        //CheckScene("MainMenu", "MainMenu");
     }
-    public void PlayList<T>(T listPlay) where T : Enum
+    public void PlayListOnRound()
     {
         float length = 0;
-        Play(listPlay.ToString(),ref length);
-        //Debug.Log(length);
-        ListAudioShop a;
-        if (Enum.TryParse(listPlay.ToString(), out a))
-        {
-            Debug.Log(listPlay);
-        }
-        //this.DelayCall(length, () =>
-        //{
-        //    ListAudioShop a;
-        //    if (Enum.TryParse(listPlay.ToString(),out a))
-        //    {
-        //        Debug.Log(listPlay);
-        //    }
-        //});
+        float randomSound = UnityEngine.Random.Range(0, 5);
+        Play(((ListAudioOnRound)randomSound).ToString(), ref length, ref soundCurrent);
+        CoroutineSound = StartCoroutine(GameUtilities.IEDelayCall(length, () => { PlayListOnRound(); }));
     }
+    public void PlayListShop()
+    {
+        float length = 0;
+        float randomSound = UnityEngine.Random.Range(0, 2);
+        Play(((ListAudioShop)randomSound).ToString(), ref length, ref soundCurrent);
+        CoroutineSound = StartCoroutine(GameUtilities.IEDelayCall(length, () => { PlayListShop(); }));
+    }
+    public void StopListSound()
+    {
+        if (CoroutineSound != null)
+        {
+            StopCoroutine(CoroutineSound);
+        }
+        soundCurrent.source.Stop();
+    }
+
+
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
@@ -67,7 +73,7 @@ public class AudioManager : SerializedMonoBehaviour
         }
         s.source.Play();
     }
-    public void Play(string name,ref float lengthClip)
+    public void Play(string name, ref float lengthClip , ref Sound outSound)
     {
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
         if (s == null)
@@ -76,6 +82,7 @@ public class AudioManager : SerializedMonoBehaviour
             return;
         }
         s.source.Play();
+        outSound = s;
         lengthClip = s.source.clip.length;
     }
 

@@ -307,10 +307,10 @@ MonoBehaviour:
   slash: {fileID: 5824554767677986867}
   detectedEnemy: {fileID: 0}
   boxCollider: {fileID: 5824554767677986868}
-  capsuleCollider: {fileID: 0}
   _animator: {fileID: 0}
   speedSkill: 5
   isBoomer: 0
+  _meshRender: {fileID: 0}
 --- !u!114 &5824554767677986867
 MonoBehaviour:
   m_ObjectHideFlags: 0

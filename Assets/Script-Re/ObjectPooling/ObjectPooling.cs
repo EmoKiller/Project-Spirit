@@ -34,9 +34,12 @@ public class ObjectPooling : SerializedMonoBehaviour
     private void Awake()
     {
         if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
             Instance = this;
+        }
         else
-            Destroy(Instance);
+            Destroy(gameObject);
     }
     public EffectDestroyObject PopChestEffectDestroyObj(string name, bool show = false)
     {
@@ -157,6 +160,8 @@ public class ObjectPooling : SerializedMonoBehaviour
     }
     private void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
     {
+        if (pool.Contains(objectToPush))
+            return;
         objectToPush.transform.SetParent(transform, true);
         pool.Add(objectToPush);
     }

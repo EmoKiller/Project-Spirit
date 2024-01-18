@@ -9,10 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : CharacterBrain, IPool
 {
-    public enum Script
-    {
-        Enemy
-    }
     [SerializeField] TypeEnemy typeEnemy;
     public LevelRomanNumerals LevelEnemy;
     [SerializeField] protected float playerDetectionRange = 25f;
@@ -47,7 +43,6 @@ public class Enemy : CharacterBrain, IPool
         maxHealth = characterAttack.HP * (float)LevelEnemy;
         CurrentHealth = maxHealth;
         healthBar.SetHealh(maxHealth);
-        ObseverConstants.OnBlackHeartBreak.AddListener(TakeDamage);
     }
     #region
     protected virtual void Update()
@@ -452,13 +447,28 @@ public class Enemy : CharacterBrain, IPool
         onFollowPlayer = false;
         onTargetPlayer = false;
         OnDashAtk = false;
-        randomMove = false;
+        randomMove = true;
         enemyThinking = false;
         enemyRunFollow = false;
-        ObseverConstants.OnBlackHeartBreak.RemoveListener(TakeDamage);
         ObjectPooling.Instance.PushToPoolEnemy(this);
         deadBody.SetActive(false);
         gameObject.SetActive(false);
+    }
+    public void OnReloadScence()
+    {
+        GameLevelManager.Instance.RemoveEnemy(this);
+        GameLevelManager.Instance.RemoveSummonEnemy(this);
+        Hide();
+    }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(OnReloadScence);
+        ObseverConstants.OnBlackHeartBreak.AddListener(TakeDamage);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(OnReloadScence);
+        ObseverConstants.OnBlackHeartBreak.RemoveListener(TakeDamage);
     }
     #endregion
 

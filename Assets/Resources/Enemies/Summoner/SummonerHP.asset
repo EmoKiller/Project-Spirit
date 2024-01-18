@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SummonerHP
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  HP: 20
+  HP: 25
   PowerForce: 30
   weight: 30
-  ExpDrop: 2
+  ExpDrop: 30

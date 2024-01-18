@@ -27,6 +27,7 @@ public class TriggerWaitAction : MonoBehaviour
     protected virtual void OnTriggerExit(Collider other)
     {
         EventDispatcher.Publish(UIManager.Script.UIManager, Events.UIButtonReset);
+        EventDispatcher.RemoveEvent(Script.TriggerWaitAction, Events.OnTringgerWaitAction);
     }
     protected virtual void OnTringgerWaitAction()
     {

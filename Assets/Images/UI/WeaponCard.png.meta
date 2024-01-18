@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShieldofFaith
+      name: ShieldOfFaith
       rect:
         serializedVersion: 2
         x: 3136
@@ -982,6 +982,7 @@ TextureImporter:
       Nature's Boon: -1830990117
       TheLoversI: 911337017
       TrueSight: -4184924
+      ShieldOfFaith: -1736752613
       TheHeartsI: -43287497
       WeaponCard_36: -591918105
       WeaponCard_15: 931961484
@@ -1003,9 +1004,8 @@ TextureImporter:
       All Seeing Sun: -1087872093
       TheLoversII: 931961484
       MasterOfTheArt: -592036285
-      ShieldofFaith: -1736752613
-      The Arachnid: 653958759
       Hands of Rage: 141091393
+      The Arachnid: 653958759
       SoulSnatcher: 1873607699
   spritePackingTag: 
   pSDRemoveMatte: 0

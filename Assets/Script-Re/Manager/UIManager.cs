@@ -102,6 +102,7 @@ public class UIManager : SerializedMonoBehaviour
     private void OnClickButtonStart()
     {
         ObseverConstants.OnClickButtonStart?.Invoke();
+        Time.timeScale = 1;
         OffMainSelect();
     }
     #region UIInfomation
@@ -201,6 +202,7 @@ public class UIManager : SerializedMonoBehaviour
     }
     private void ResetButton()
     {
+        ButtonUp();
         UIButtonAction.gameObject.SetActive(false);
         UIButtonAction.rectButton.sizeDelta = new Vector2(0, 110);
         UIButtonAction.TypeButton[TypeUIButton.ButtonE].FillAmount = 0f;
@@ -358,6 +360,7 @@ public class UIManager : SerializedMonoBehaviour
     public void ShowUIEndOfLevel(Events type)
     {
         UIEndOfLevel.gameObject.SetActive(true);
+        Time.timeScale = 0;
         isOnUIEndOfLevel = true;
         if (type == Events.PlayerDied)
         {
@@ -397,8 +400,9 @@ public class UIManager : SerializedMonoBehaviour
         InfomationPlayerManager.Instance.SelectedDifficult();
         selectDifficult.gameObject.SetActive(false);
         objMainSelect.gameObject.SetActive(true);
-        AudioManager.instance.PlayList((ListAudioShop)UnityEngine.Random.Range(0,2));
+        AudioManager.instance.PlayListShop();
     }
+
     #endregion
 
     #region MainSelect

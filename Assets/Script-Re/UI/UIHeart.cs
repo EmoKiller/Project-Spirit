@@ -9,7 +9,6 @@ public class UIHeart : MonoBehaviour , IPool
     [SerializeField] Image imageHeart;
     [SerializeField] RectTransform rectHeart;
     [SerializeField] float Current = 0;
-
     public string objectName => GetType().Name;
     public void UpdateHeart()
     {
@@ -64,5 +63,13 @@ public class UIHeart : MonoBehaviour , IPool
     {
         ObjectPooling.Instance.PushToPoolHeart(this);
         gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(Hide);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(Hide);
     }
 }

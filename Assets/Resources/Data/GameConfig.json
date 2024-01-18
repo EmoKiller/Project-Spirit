@@ -4,7 +4,7 @@
 			"itemsCanDrop" : {
 				"ObjDropCoin" : {
 					"type" : 0,
-					"value" : 5,
+					"value" : 10,
 					"ratio" : 100.0
 				},
 				"ObjDropAngry" : {
@@ -18,7 +18,12 @@
 			"itemsCanDrop" : {
 				"ObjDropCoin" : {
 					"type" : 0,
-					"value" : 15,
+					"value" : 20,
+					"ratio" : 100.0
+				},
+				"ObjDropAngry" : {
+					"type" : 2,
+					"value" : 25,
 					"ratio" : 100.0
 				}
 			}
@@ -27,12 +32,17 @@
 			"itemsCanDrop" : {
 				"ObjDropCoin" : {
 					"type" : 0,
-					"value" : 30,
+					"value" : 35,
 					"ratio" : 100.0
 				},
 				"ObjDropTarotCard" : {
 					"type" : 1,
 					"value" : 1.0,
+					"ratio" : 100.0
+				},
+				"ObjDropAngry" : {
+					"type" : 2,
+					"value" : 25,
 					"ratio" : 100.0
 				}
 			}
@@ -171,11 +181,6 @@
 							"value" : 5,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
-						},
-						"DeathCatEyeball" : {
-							"value" : 5,
-							"type" : "DeathCatEyeball",
-							"LevelEnemy" : 1
 						}
 					},
 					"chestType" : "Common"
@@ -206,9 +211,14 @@
 							"value" : 4,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 2,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "UnCommon"
 				},
 				"4" : {
 					"enemies" : {
@@ -221,24 +231,44 @@
 							"value" : 4,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 2,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 2,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "UnCommon"
 				},
 				"5" : {
 					"enemies" : {
-						"EneScamp" : {
-							"value" : 10,
-							"type" : "EneScamp",
+						"EneRedArcher" : {
+							"value" : 5,
+							"type" : "EneRedArcher",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
 							"value" : 5,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
+						},
+						"DeathCatEyeball" : {
+							"value" : 1,
+							"type" : "DeathCatEyeball",
+							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "Race"
 				},
 				"6" : {
 					"enemies" : {
@@ -251,9 +281,14 @@
 							"value" : 6,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 5,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "UnCommon"
 				},
 				"7" : {
 					"enemies" : {
@@ -271,9 +306,14 @@
 							"value" : 4,
 							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "UnCommon"
 				},
 				"8" : {
 					"enemies" : {
@@ -291,9 +331,14 @@
 							"value" : 6,
 							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "UnCommon"
 				},
 				"9" : {
 					"enemies" : {
@@ -307,19 +352,24 @@
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
-						"EneScampArcher" : {
+						"EnemyBat" : {
 							"value" : 8,
-							"type" : "EneScampArcher",
+							"type" : "EnemyBat",
+							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
 							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "UnCommon"
 				},
 				"10" : {
 					"enemies" : {
-						"EneScamp" : {
-							"value" : 17,
-							"type" : "EneScamp",
+						"EnemyBat" : {
+							"value" : 10,
+							"type" : "EnemyBat",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
@@ -332,9 +382,9 @@
 							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						},
-						"DeathCatEyeball" : {
+						"EneGuardian" : {
 							"value" : 1,
-							"type" : "DeathCatEyeball",
+							"type" : "EneGuardian",
 							"LevelEnemy" : 1
 						}
 					},
@@ -342,9 +392,9 @@
 				},
 				"11" : {
 					"enemies" : {
-						"EneScamp" : {
+						"EnemyBigBat" : {
 							"value" : 20,
-							"type" : "EneScamp",
+							"type" : "EnemyBigBat",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
@@ -363,7 +413,7 @@
 							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Common"
+					"chestType" : "Race"
 				},
 				"12" : {
 					"enemies" : {
@@ -386,34 +436,14 @@
 							"value" : 7,
 							"type" : "EneScampShield",
 							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 5,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "UnCommon",
-					"<add name>" : {
-						"enemies" : {
-							"EneScamp" : {
-								"value" : 22,
-								"type" : "EneScamp",
-								"LevelEnemy" : 1
-							},
-							"SwordsMan" : {
-								"value" : 17,
-								"type" : "SwordsMan",
-								"LevelEnemy" : 1
-							},
-							"EneScampArcher" : {
-								"value" : 15,
-								"type" : "EneScampArcher",
-								"LevelEnemy" : 1
-							},
-							"EneScampShield" : {
-								"value" : 7,
-								"type" : "EneScampShield",
-								"LevelEnemy" : 1
-							}
-						},
-						"chestType" : "UnCommon"
-					}
+					"chestType" : "Race"
 				},
 				"13" : {
 					"enemies" : {
@@ -438,32 +468,7 @@
 							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "UnCommon",
-					"<add name>" : {
-						"enemies" : {
-							"EneScamp" : {
-								"value" : 10,
-								"type" : "EneScamp",
-								"LevelEnemy" : 1
-							},
-							"SwordsMan" : {
-								"value" : 20,
-								"type" : "SwordsMan",
-								"LevelEnemy" : 1
-							},
-							"EneScampArcher" : {
-								"value" : 18,
-								"type" : "EneScampArcher",
-								"LevelEnemy" : 1
-							},
-							"EneScampShield" : {
-								"value" : 13,
-								"type" : "EneScampShield",
-								"LevelEnemy" : 1
-							}
-						},
-						"chestType" : "UnCommon"
-					}
+					"chestType" : "Race"
 				},
 				"14" : {
 					"enemies" : {
@@ -486,44 +491,24 @@
 							"value" : 18,
 							"type" : "EneScampShield",
 							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 18,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "UnCommon",
-					"<add name>" : {
-						"enemies" : {
-							"EneScamp" : {
-								"value" : 10,
-								"type" : "EneScamp",
-								"LevelEnemy" : 1
-							},
-							"SwordsMan" : {
-								"value" : 20,
-								"type" : "SwordsMan",
-								"LevelEnemy" : 1
-							},
-							"EneScampArcher" : {
-								"value" : 20,
-								"type" : "EneScampArcher",
-								"LevelEnemy" : 1
-							},
-							"EneScampShield" : {
-								"value" : 18,
-								"type" : "EneScampShield",
-								"LevelEnemy" : 1
-							}
-						},
-						"chestType" : "UnCommon"
-					}
+					"chestType" : "UnCommon"
 				},
 				"15" : {
 					"enemies" : {
-						"EneScamp" : {
+						"EnemyBat" : {
 							"value" : 7,
-							"type" : "EneScamp",
-							"LevelEnemy" : 2
+							"type" : "EnemyBat",
+							"LevelEnemy" : 1
 						},
-						"SwordsMan" : {
-							"value" : 20,
+						"EneScampBoom" : {
+							"value" : 12,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
@@ -541,46 +526,26 @@
 							"value" : 10,
 							"type" : "Scythesman",
 							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 2,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 1,
+							"type" : "EneHealer",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "Race",
-					"<add name>" : {
-						"enemies" : {
-							"EneScamp" : {
-								"value" : 7,
-								"type" : "EneScamp",
-								"LevelEnemy" : 2
-							},
-							"SwordsMan" : {
-								"value" : 20,
-								"type" : "SwordsMan",
-								"LevelEnemy" : 1
-							},
-							"EneScampArcher" : {
-								"value" : 20,
-								"type" : "EneScampArcher",
-								"LevelEnemy" : 1
-							},
-							"EneScampShield" : {
-								"value" : 18,
-								"type" : "EneScampShield",
-								"LevelEnemy" : 1
-							},
-							"Scythesman" : {
-								"value" : 5,
-								"type" : "Scythesman",
-								"LevelEnemy" : 1
-							}
-						},
-						"chestType" : "UnCommon"
-					}
+					"chestType" : "Race"
 				},
 				"16" : {
 					"enemies" : {
-						"EneScamp" : {
+						"EneScampBoom" : {
 							"value" : 7,
-							"type" : "EneScamp",
-							"LevelEnemy" : 2
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
 							"value" : 20,
@@ -661,16 +626,16 @@
 		"DivineStrength" : {
 			"type" : "DivineStrength",
 			"attributeAdded" : "AttackRate",
-			"valueAdded" : 0.25,
+			"valueAdded" : 0.05,
 			"quote" : "The vigour of the Great Ones course through you.",
-			"description" : "Attack rate increased by 1.25x"
+			"description" : "Attack rate increased by 5%"
 		},
 		"ThePath" : {
 			"type" : "ThePath",
 			"attributeAdded" : "IncreasedMovementSpeed",
-			"valueAdded" : 0.25,
+			"valueAdded" : 0.1,
 			"quote" : "Banish fear! Banish doubt! Move forth unhesistant..",
-			"description" : "Increased movement speed by 1.25x"
+			"description" : "Increased movement speed by 10%"
 		},
 		"SoulSnatcher" : {
 			"type" : "SoulSnatcher",
@@ -871,7 +836,7 @@
 			"type" : "AttackRate",
 			"attributeAdded" : "AttackRate",
 			"valueAdded" : "0.05",
-			"quote" : "Attack rate increased",
+			"quote" : "Attack rate increased 5%",
 			"price" : "500",
 			"numberTick" : 1
 		},
@@ -879,7 +844,7 @@
 			"name" : "Move Speed",
 			"type" : "IncreasedMovementSpeed",
 			"attributeAdded" : "IncreasedMovementSpeed",
-			"valueAdded" : "0.2",
+			"valueAdded" : "0.1",
 			"quote" : "Move Speed rate increased",
 			"price" : "500",
 			"numberTick" : 1

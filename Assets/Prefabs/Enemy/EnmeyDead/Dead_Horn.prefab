@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6631247776058182700}
   m_Layer: 9
   m_Name: Dead_Horn
-  m_TagString: Untagged
+  m_TagString: EnemyDead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

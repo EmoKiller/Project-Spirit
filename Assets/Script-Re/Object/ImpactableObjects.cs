@@ -13,7 +13,6 @@ public class ImpactableObjects : MonoBehaviour , IPool
     public string objectName => TypeMaterial.ToString();
 
     [SerializeField]private float currentHp = 0;
-
     private void Start()
     {
         currentHp = hp;
@@ -53,8 +52,19 @@ public class ImpactableObjects : MonoBehaviour , IPool
 
     public void Hide()
     {
-        RewardSystem.Instance.RemoveFromListImpactableObj(this);
-        ObjectPooling.Instance.PushToPoolImpactableObjects(this);
+        if (gameObject.CompareTag("EnemyDead")) 
+        {
+            RewardSystem.Instance.RemoveFromListImpactableObj(this);
+            ObjectPooling.Instance.PushToPoolImpactableObjects(this);
+        }
         gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(Hide);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(Hide);
     }
 }

@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  chest: {fileID: 11400000, guid: af64613c4a9b172409466d94f509696f, type: 2}
 --- !u!210 &5594678522209748490
 SortingGroup:
   m_ObjectHideFlags: 0

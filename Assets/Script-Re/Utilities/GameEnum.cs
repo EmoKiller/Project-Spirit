@@ -362,11 +362,13 @@ public enum TypeListAudio
     ListAudioStartGame,
     ListAudioShop
 }
-public enum ListAudioStartGame
+public enum ListAudioOnRound
 {
-    AudioStartGame1,
-    AudioStartGame2,
-    AudioStartGame3,
+    AudioOnRound1,
+    AudioOnRound2,
+    AudioOnRound3,
+    AudioOnRound4,
+    AudioOnRound5,
 }
 public enum ListAudioShop
 {

@@ -29,13 +29,13 @@ public class CameraFollow : MonoBehaviour
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraDefault, CameraDefault);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraFocus, CameraFocus);
 
-        EventDispatcher.Addlistener(Script.CameraFollow, Events.OnAttackHitEnemy, vibrateCamera);
+        EventDispatcher.Addlistener(Script.CameraFollow, Events.OnAttackHitEnemy, VibrateCamera);
     }
     public void Init()
     {
         TargetPlayer();
     }
-    private void vibrateCamera()
+    private void VibrateCamera()
     {
         _camera.transform.DOComplete();
         _camera.transform.DOShakePosition(timeDurationPositonStrength, _positonStrength);
@@ -74,26 +74,4 @@ public class CameraFollow : MonoBehaviour
     {
         smooth = value;
     }
-    private void FixedUpdate()
-    {
-        //transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
-        //transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
-        //if (player.isRolling || player.isJump)
-        //{
-        //    smooth += Time.deltaTime * 0.4f;
-        //}
-        //else    Rotation -    30
-        //{       ofset 0,10,-15
-        //    smooth -= Time.deltaTime * 0.16f;
-        //    if (smooth <= 0)
-        //    {
-        //        smooth = 0;
-        //    }
-        //}new Color32(242, 236, 222, 255);
-        //targetpos = target.transform.position;
-        //targetpos.x = Mathf.Clamp(targetpos.x, minX, maxX);
-        //targetpos.z = Mathf.Clamp(targetpos.z, minZ, maxZ);
-        //transform.position = Vector3.SmoothDamp(transform.position, targetpos + offset, ref vecref, smooth);
-    }
-
 }

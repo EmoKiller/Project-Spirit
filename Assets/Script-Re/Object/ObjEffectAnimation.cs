@@ -6,7 +6,6 @@ public class ObjEffectAnimation : MonoBehaviour, IPool
 {
     [SerializeField] Animator _animator;
     public string objectName => gameObject.name;
-
     public void Hide()
     {
         RewardSystem.Instance.RemoveFromListObjEffectAnimation(this);
@@ -17,5 +16,13 @@ public class ObjEffectAnimation : MonoBehaviour, IPool
     public void Show()
     {
         gameObject.SetActive(true);
+    }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(Hide);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(Hide);
     }
 }

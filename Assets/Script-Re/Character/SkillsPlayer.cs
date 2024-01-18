@@ -112,7 +112,7 @@ public class SkillsPlayer : MonoBehaviour
     }
     private float CursesConsumeLess()
     {
-        return InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CursesConsumeLess);
+        return InfomationPlayerManager.Instance.GetTotalValue(AttributeType.CursesConsumeLess);
     }
     private void CheckCursesFireBall()
     {

@@ -16,4 +16,4 @@ MonoBehaviour:
   HP: 5
   PowerForce: 30
   weight: 25
-  ExpDrop: 2
+  ExpDrop: 4

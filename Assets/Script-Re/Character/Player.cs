@@ -8,7 +8,7 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using static CharacterAnimator;
 
-public class Player : CharacterBrain , IOrderable
+public class Player : CharacterBrain, IOrderable
 {
     public static Player Instance = null;
     public enum Script
@@ -58,7 +58,7 @@ public class Player : CharacterBrain , IOrderable
 
     private void Update()
     {
-        if (!Alive ||OnAction|| OnEvent || skills.OnUseSkill)
+        if (!Alive || OnAction || OnEvent || skills.OnUseSkill)
         {
             return;
         }
@@ -74,13 +74,13 @@ public class Player : CharacterBrain , IOrderable
             Rolling();
             return;
         }
-        if (Horizontal != 0 || Vertical!=0)
+        if (Horizontal != 0 || Vertical != 0)
         {
             Rotation();
             direction.localPosition = new Vector3(Horizontal, 0, Vertical).normalized;
             characterAnimator.SetMovement(MovementType.Run, Vertical, Horizontal);
             characterAnimator.SetDirection(direction.transform.localPosition.x, direction.transform.localPosition.z);
-            agent.MoveToDirection(new Vector3(Horizontal,0, Vertical));
+            agent.MoveToDirection(new Vector3(Horizontal, 0, Vertical));
             return;
         }
         characterAnimator.SetMovement(MovementType.Idle, Vertical, Horizontal);
@@ -229,24 +229,24 @@ public class Player : CharacterBrain , IOrderable
     #endregion
 
     #region Attribute Player
-    
+
     private void AttackRate(AttributeType type, float newValue)
     {
         if (type != AttributeType.AttackRate)
             return;
-        characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.AttackRate));
+        characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetTotalValue(AttributeType.AttackRate));
     }
     private void IncreasedMovementSpeed(AttributeType type, float newValue)
     {
         if (type != AttributeType.IncreasedMovementSpeed)
             return;
-        agent.moveSpeed *= InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.IncreasedMovementSpeed);
+        agent.moveSpeed *= InfomationPlayerManager.Instance.GetTotalValue(AttributeType.IncreasedMovementSpeed);
     }
-    
+
     protected float CritHit(ref float value)
     {
         int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CriticalHit))
+        if (i < InfomationPlayerManager.Instance.GetTotalValue(AttributeType.CriticalHit))
             value *= 2;
         return value;
     }
@@ -254,14 +254,14 @@ public class Player : CharacterBrain , IOrderable
     {
         NegatingDmg = false;
         int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfNegatingDamage))
+        if (i < InfomationPlayerManager.Instance.GetTotalValue(AttributeType.ChanceOfNegatingDamage))
             NegatingDmg = true;
 
     }
     protected void ChanceOfHealing()
     {
         int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfHealing))
+        if (i < InfomationPlayerManager.Instance.GetTotalValue(AttributeType.ChanceOfHealing))
             InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentRedHeart, 1);
     }
     public bool CheckAnimationStates(AnimationStates state)
@@ -272,7 +272,7 @@ public class Player : CharacterBrain , IOrderable
     {
         return characterAttack.CurrentHit[(int)characterAnimator.ComboATK];
     }
-    private float GetForceCombo() 
+    private float GetForceCombo()
     {
         return characterAttack.ForceCombo[(int)characterAnimator.ComboATK];
     }
@@ -280,6 +280,6 @@ public class Player : CharacterBrain , IOrderable
     {
         return characterAttack.MoveOnAttack[(int)characterAnimator.ComboATK];
     }
-   
+
     #endregion
 }

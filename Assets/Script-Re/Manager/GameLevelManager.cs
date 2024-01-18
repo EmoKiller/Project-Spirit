@@ -20,17 +20,16 @@ public class GameLevelManager : MonoBehaviour
             Instance = this;
         else
             Destroy(Instance);
-        //ObseverConstants.OnClickButtonStart.AddListener(Init);
-        ObseverConstants.OnClickButtonContinue.AddListener(ResetGameLevel);
-        SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
-        //SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
-        SpawnObj(GameConstants.SkillCurses, NameCurses.DeathsSquall.ToString(), cursesPodium);
+        ObseverConstants.OnClickButtonStart.AddListener(Init);
+        //SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
+        ////SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
+        //SpawnObj(GameConstants.SkillCurses, NameCurses.DeathsSquall.ToString(), cursesPodium);
     }
     public void Init()
     {
         SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
-        //SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
-        SpawnObj(GameConstants.SkillCurses, NameCurses.DeathsSquall.ToString(), cursesPodium);
+        SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
+        //SpawnObj(GameConstants.SkillCurses, NameCurses.DeathsSquall.ToString(), cursesPodium);
         this.DelayCall(10f, () =>
         {
             SpawnEnemy();
@@ -41,16 +40,6 @@ public class GameLevelManager : MonoBehaviour
     {
         GameObject objAsset = Addressables.LoadAssetAsync<GameObject>(string.Format(path, objectName)).WaitForCompletion();
         Instantiate(objAsset, transform);
-    }
-    public void ResetGameLevel()
-    {
-        level = 1;
-        round = 1;
-        for (int i = listEnemys.Count - 1; i >= 0; i--)
-        {
-            listEnemys[i].Hide();
-            listEnemys.Remove(listEnemys[i]);
-        }
     }
     public void SpawnEnemy()
     {
@@ -80,6 +69,8 @@ public class GameLevelManager : MonoBehaviour
     }
     public void RemoveSummonEnemy(Enemy ene)
     {
+        if (!EnemySummon.Contains(ene))
+            return;
         EnemySummon.Remove(ene);
     }
     public void CheckAllEnemyDead(Enemy ene)
@@ -97,6 +88,12 @@ public class GameLevelManager : MonoBehaviour
                 SpawnEnemy();
             });
         }
+    }
+    public void RemoveEnemy(Enemy ene)
+    {
+        if (!listEnemys.Contains(ene))
+            return;
+        listEnemys.Remove(ene);
     }
     private void NextRound()
     {

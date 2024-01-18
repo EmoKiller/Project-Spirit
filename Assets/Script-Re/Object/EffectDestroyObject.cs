@@ -7,7 +7,6 @@ public class EffectDestroyObject : MonoBehaviour , IPool
     [SerializeField]List<GameObject> gameObjects = new List<GameObject>();
     public ListTypeEffects effects;
     public string objectName => effects.ToString();
-
     public void DesTroyObject()
     {
 
@@ -53,6 +52,14 @@ public class EffectDestroyObject : MonoBehaviour , IPool
     {
         ResetTransform();
         gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(Hide);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(Hide);
     }
 }
 

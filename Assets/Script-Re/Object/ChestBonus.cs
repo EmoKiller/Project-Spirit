@@ -39,4 +39,12 @@ public class ChestBonus : MonoBehaviour, IPool
         ObjectPooling.Instance.PushToPoolChestBonus(this);
         gameObject.SetActive(false);
     }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(Hide);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(Hide);
+    }
 }

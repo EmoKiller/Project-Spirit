@@ -17,12 +17,13 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
     [Header("Sprite")]
     [SerializeField] SpriteRenderer spriteRenderer;
     protected Action pubLish = null;
-
+    
     public virtual string objectName => Type.ToString();
 
     private void Awake()
     {
         pubLish = PublishEvent;
+        ObseverConstants.ReloadScene.AddListener(Hide);
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
@@ -46,10 +47,6 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
         if (!Ontrigger)
             return;
         Event();
-    }
-    private void OnDisable()
-    {
-        Ontrigger = false;
     }
     protected virtual void Event()
     {
@@ -81,5 +78,14 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
         RewardSystem.Instance.RemoveFromListObj(this);
         ObjectPooling.Instance.PushToPoolObjectDrop(this);
         gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        ObseverConstants.ReloadScene.AddListener(Hide);
+    }
+    private void OnDisable()
+    {
+        ObseverConstants.ReloadScene.RemoveListener(Hide);
+        Ontrigger = false;
     }
 }
