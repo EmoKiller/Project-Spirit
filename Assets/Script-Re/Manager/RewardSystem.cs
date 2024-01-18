@@ -7,6 +7,7 @@ public class RewardSystem : SerializedMonoBehaviour
 {
     //SpawnSystem
     public static RewardSystem Instance = null;
+    [SerializeField] private List<EffectDestroyObject> effectDestroyObj = new List<EffectDestroyObject>();
     [SerializeField] private List<ObjectDropOnWorld> ObjectDropOnWorld = new List<ObjectDropOnWorld>();
     [SerializeField] private List<ImpactableObjects> impactableObjects = new List<ImpactableObjects>();
     [SerializeField] private List<ChestBonus> chestBonus = new List<ChestBonus>();
@@ -34,6 +35,16 @@ public class RewardSystem : SerializedMonoBehaviour
         ObjDropHeart obj = ObjectPooling.Instance.PopDropHeart(true);
         obj.UpdateSprite(TypeHeart.ToString());
         obj.TypeHeart = TypeHeart;
+    }
+    public void SpawnEffectDestroyObj(ChestType type, Vector3 vec3, out EffectDestroyObject chest)
+    {
+        EffectDestroyObject obj = ObjectPooling.Instance.PopChestEffectDestroyObj(type.ToString());
+        SetUpObj(effectDestroyObj, obj, vec3);
+        chest = obj;
+    }
+    public void RemoveFromListEffectDestroyObj(EffectDestroyObject obj)
+    {
+        effectDestroyObj.Remove(obj);
     }
     [Button]
     public void SpawnChestBonus(ChestType type, Vector3 vec3, out ChestBonus chest)

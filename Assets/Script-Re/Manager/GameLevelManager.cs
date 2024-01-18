@@ -28,8 +28,8 @@ public class GameLevelManager : MonoBehaviour
     public void Init()
     {
         SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
-        SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
-        //SpawnObj(GameConstants.SkillCurses, NameCurses.DeathsSquall.ToString(), cursesPodium);
+        //SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
+        SpawnObj(GameConstants.SkillCurses, NameCurses.CleansingFire.ToString(), cursesPodium);
         this.DelayCall(10f, () =>
         {
             SpawnEnemy();

@@ -71,13 +71,15 @@ public class GrHeart : MonoBehaviour
         {
             while (heart[i].ReturnCurrent() < (int)heart[i].heartType)
             {
+                if (InfomationPlayerManager.Instance.GetValueAttribute(TypeCurrentHeart) >= InfomationPlayerManager.Instance.GetValueAttribute(TypeHeart))
+                    break;
                 heart[i].RestoreHeart();
                 valueRestore--;
                 CurrentHP++;
                 if (valueRestore == 0)
                     break;
             }
-            if (valueRestore == 0)
+            if (valueRestore == 0 || InfomationPlayerManager.Instance.GetValueAttribute(TypeCurrentHeart) >= InfomationPlayerManager.Instance.GetValueAttribute(TypeHeart))
                 break;
         }
         InfomationPlayerManager.Instance.UpdateValueOf(TypeCurrentHeart, currentHP);

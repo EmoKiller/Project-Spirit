@@ -34,15 +34,12 @@ public class Enemy : CharacterBrain, IPool
         maxHealth = characterAttack.HP * (float)LevelEnemy;
         CurrentHealth = maxHealth;
         healthBar.SetHealh(maxHealth);
-
     }
     public virtual void Init()
     {
         if (direction == null)
             direction = (Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform);
-        maxHealth = characterAttack.HP * (float)LevelEnemy;
-        CurrentHealth = maxHealth;
-        healthBar.SetHealh(maxHealth);
+        SetupHPEnemy();
     }
     #region
     protected virtual void Update()
@@ -167,7 +164,17 @@ public class Enemy : CharacterBrain, IPool
     {
         LevelEnemy = level;
     }
-
+    private void SetupHPEnemy()
+    {
+        maxHealth = characterAttack.HP * (float)LevelEnemy;
+        CurrentHealth = maxHealth;
+        healthBar.SetHealh(maxHealth);
+    }
+    public float Distance()
+    {
+        return Vector3.Distance(transform.position, direction.transform.position);
+    }
+    protected override void EffectHit(Vector3 dir) { }
     #endregion
 
     #region EnemyAction
@@ -196,6 +203,11 @@ public class Enemy : CharacterBrain, IPool
     {
         if (!Alive)
             return;
+        if (!OnAction)
+        {
+            string str = UnityEngine.Random.Range(1, 6).ToString();
+            AudioManager.instance.Play("SoundEnemy" + str);
+        }
         base.TakeDamage(damage);
         CurrentHealth -= damage;
         healthBar.SetActive();
@@ -207,6 +219,8 @@ public class Enemy : CharacterBrain, IPool
     }
     public override void Dead()
     {
+        string str = UnityEngine.Random.Range(1, 4).ToString();
+        AudioManager.instance.Play("EnemyDead" + str);
         InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CountKillEnemy, 1);
         Vector3 dir = transform.position - direction.position;
         ImpactForce(dir.normalized * 20);
@@ -251,6 +265,7 @@ public class Enemy : CharacterBrain, IPool
     }
     protected override void StartAniAtk()
     {
+        AudioManager.instance.Play("EnemyAtk");
         slash.transform.position = transform.position + GetDirection().normalized * characterAttack.AttackRange;
         base.StartAniAtk();
     }
@@ -299,6 +314,7 @@ public class Enemy : CharacterBrain, IPool
                     listObj[j].myTween = listObj[j].transform.DOMove(((GetDirection().normalized * 40) + direction.transform.position + (direc.normalized * 3)) + new Vector3(0, 1.5f, 0), 4f).OnComplete(() => { outSkill.Hide(); });
                     euler += 45;
                 }
+                AudioManager.instance.Play("FireBall8SkillEnemy");
                 OnAction = false;
                 FinishAniAtk();
             }
@@ -417,23 +433,13 @@ public class Enemy : CharacterBrain, IPool
     #endregion
 
 
-
-
-    public float Distance()
-    {
-        return Vector3.Distance(transform.position, direction.transform.position);
-    }
-
-    protected override void EffectHit(Vector3 dir)
-    {
-
-    }
     #region ObjectPooling
     public void Show()
     {
         gameObject.SetActive(true);
         tranformOfAni.SetActive(true);
         agent.AgentBody.enabled = true;
+        SetupHPEnemy();
         if (Distance() < playerDetectionRange)
         {
             randomMove = true;

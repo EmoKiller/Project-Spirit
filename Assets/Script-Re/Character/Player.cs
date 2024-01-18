@@ -144,6 +144,7 @@ public class Player : CharacterBrain, IOrderable
     }
     public override void TakeDamage(float damage)
     {
+        AudioManager.instance.Play("PlayerHitDamage");
         base.TakeDamage(damage);
         NegatingDamage(out bool negating);
         if (negating == true)
@@ -234,19 +235,20 @@ public class Player : CharacterBrain, IOrderable
     {
         if (type != AttributeType.AttackRate)
             return;
-        characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetTotalValue(AttributeType.AttackRate));
+        characterAnimator.SetFloat("AttackRate", InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.AttackRate));
     }
     private void IncreasedMovementSpeed(AttributeType type, float newValue)
     {
         if (type != AttributeType.IncreasedMovementSpeed)
             return;
-        agent.moveSpeed *= InfomationPlayerManager.Instance.GetTotalValue(AttributeType.IncreasedMovementSpeed);
+        agent.moveSpeed *= InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.IncreasedMovementSpeed);
+        Debug.Log(InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.IncreasedMovementSpeed));
     }
 
     protected float CritHit(ref float value)
     {
         int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetTotalValue(AttributeType.CriticalHit))
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CriticalHit))
             value *= 2;
         return value;
     }
@@ -254,14 +256,14 @@ public class Player : CharacterBrain, IOrderable
     {
         NegatingDmg = false;
         int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetTotalValue(AttributeType.ChanceOfNegatingDamage))
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfNegatingDamage))
             NegatingDmg = true;
 
     }
     protected void ChanceOfHealing()
     {
         int i = UnityEngine.Random.Range(0, 100);
-        if (i < InfomationPlayerManager.Instance.GetTotalValue(AttributeType.ChanceOfHealing))
+        if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfHealing))
             InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentRedHeart, 1);
     }
     public bool CheckAnimationStates(AnimationStates state)

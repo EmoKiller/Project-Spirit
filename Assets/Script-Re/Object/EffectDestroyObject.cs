@@ -13,7 +13,7 @@ public class EffectDestroyObject : MonoBehaviour , IPool
         gameObject.SetActive(true);
         foreach (GameObject obj in gameObjects)
         {
-            this.DelayCall(4, () =>
+            this.DelayCall(2, () =>
             {
                 if (isActiveAndEnabled == false)
                     return;
@@ -50,8 +50,10 @@ public class EffectDestroyObject : MonoBehaviour , IPool
 
     public void Hide()
     {
-        ResetTransform();
         gameObject.SetActive(false);
+        RewardSystem.Instance.RemoveFromListEffectDestroyObj(this);
+        ObjectPooling.Instance.PushToPoolEffectDestroyObj(this);
+        ResetTransform();
     }
     private void OnEnable()
     {

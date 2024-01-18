@@ -127,10 +127,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             return 0f;
         return heroData.PowerAddattributes[SaveSlot][type].value;
     }
-    public float GetTotalValue(AttributeType type)
-    {
-        return GetValueTPowerAddAttribute(type) + GetBaseValueAttribute(type) + GetTarrotValueAttribute(type);
-    }
     public BaseShopPowerAddattributes GetValuePowerUpbought(ShopPowerAttributes type)
     {
         return heroData.ValuePowerUpbought[SaveSlot][type];
@@ -138,9 +134,14 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     [Button]
     public void IncreaseValueOf(AttributeType type, float value)
     {
+        if (type == AttributeType.CurrentRedHeart)
+        {
+            Debug.Log("Heal");
+        }
         heroData.attributes[SaveSlot][type].value += value;
         ObseverConstants.OnIncreaseAttributeValue?.Invoke(type, GetValueAttribute(type));
         ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
+        ObseverConstants.OnRestoreHeart?.Invoke(type, value);
     }
     [Button]
     public void MinusValueOf(AttributeType type, float value)
@@ -171,8 +172,9 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     }
     public void TarrotIncreaseValueOf(AttributeType type, float value)
     {
+        Debug.Log("UpdateAttibute Tarrot Card : " + type + "Value" + value);
         heroData.TarrotAddattributes[SaveSlot][type].value += value;
-        ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type) + GetTarrotValueAttribute(type));
+        IncreaseValueOf(type, value);
     }
     public void PowerIncreaseValueOf(AttributeType type, float value)
     {

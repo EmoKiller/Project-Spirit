@@ -97,6 +97,7 @@ public class EneScamp : Enemy
         int i = Random.Range(0, 100);
         if (i < 50)
         {
+            AudioManager.instance.Play("EnemyRunAtk");
             characterAnimator.SetTrigger("RunFollow");
             agent.moveSpeed = 8f;
             enemyRunFollow = true;

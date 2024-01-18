@@ -28,7 +28,6 @@ public class CameraFollow : MonoBehaviour
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraTargetPlayer, TargetPlayer);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraDefault, CameraDefault);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraFocus, CameraFocus);
-
         EventDispatcher.Addlistener(Script.CameraFollow, Events.OnAttackHitEnemy, VibrateCamera);
     }
     public void Init()
@@ -40,7 +39,6 @@ public class CameraFollow : MonoBehaviour
         _camera.transform.DOComplete();
         _camera.transform.DOShakePosition(timeDurationPositonStrength, _positonStrength);
         _camera.transform.DOShakeRotation(timeDurationRotationStrength, _rotationStrength);
-
     }
     private void Update()
     {
@@ -48,8 +46,8 @@ public class CameraFollow : MonoBehaviour
     }
     private void CameraDefault()
     {
-        offset = new Vector3(0,22,-28);
-        transform.eulerAngles = new Vector3(38,0,0);
+        offset = new Vector3(0, 22, -28);
+        transform.eulerAngles = new Vector3(38, 0, 0);
         SetSmooth(0.4f);
     }
     private void CameraFocus()

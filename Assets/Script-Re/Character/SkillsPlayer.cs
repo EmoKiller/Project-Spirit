@@ -21,7 +21,6 @@ public class SkillsPlayer : MonoBehaviour
     [SerializeField] private Transform aimingRecticule;
     [SerializeField] private Transform fillAimingRecticule;
     [SerializeField] private GameObject aiming;
-    public Action<Vector3> useSkill = null;
     [SerializeField] private bool onUseSkill = false;
     public bool OnUseSkill
     {
@@ -40,6 +39,7 @@ public class SkillsPlayer : MonoBehaviour
     public float SpeedSKill => _CrusesEquip.CursesObject.Speed;
     public float MaxTimeUseSKill => _CrusesEquip.CursesObject.TimeUseSKill;
     public float UseAngry => _CrusesEquip.CursesObject.UseAngry;
+    public Action<Vector3> useSkill = null;
     public Color CursesColor;
     
     private void Update()
@@ -57,15 +57,15 @@ public class SkillsPlayer : MonoBehaviour
                 ResetTime();
                 return;
             }
-            OnUseSkill = true;
-            CountTime();
-            fillAimingRecticule.transform.localScale = new Vector3(TimeUseSkill / MaxTimeUseSKill, 1, 1);
-            GameUtilities.ScreenRayCastOnWorld(AimingRecticule);
-            Player.Instance.CharacterAni.SetTrigger("UseSkill");
             if (CrusesEquip.CursesObject.TypeCurses != TypeCurses.Blasts)
             {
                 aiming.gameObject.SetActive(true);
             }
+            OnUseSkill = true;
+            Player.Instance.CharacterAni.SetTrigger("UseSkill");
+            fillAimingRecticule.transform.localScale = new Vector3(TimeUseSkill / MaxTimeUseSKill, 1, 1);
+            GameUtilities.ScreenRayCastOnWorld(AimingRecticule);
+            CountTime();
             return;
         }
         if (Input.GetMouseButtonUp(1))
@@ -77,15 +77,7 @@ public class SkillsPlayer : MonoBehaviour
             return;
         }
     }
-    protected void AimingRecticule(Vector3 targetPos)
-    {
-        Player.Instance.Direction.position = transform.position + (targetPos - transform.position).normalized;
-        aimingRecticule.DORotateQuaternion(Quaternion.LookRotation((targetPos - transform.position).normalized, Vector3.up), 0.3f);
-    }
-    private bool GetCurrentAngryCanUseSkill()
-    {
-        return InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentAngry) > UseAngry;
-    }
+    #region Setup
     public void Init(TypeCurses type)
     {
         switch (type)
@@ -101,18 +93,6 @@ public class SkillsPlayer : MonoBehaviour
                 SwickColor();
                 break;
         }
-    }
-    public void UseSkill(Vector3 foward)
-    {
-        if (TimeUseSkill == 0)
-        {
-            InfomationPlayerManager.Instance.CurrentAngry -= _CrusesEquip.CursesObject.UseAngry * CursesConsumeLess();
-            useSkill?.Invoke(foward);
-        }
-    }
-    private float CursesConsumeLess()
-    {
-        return InfomationPlayerManager.Instance.GetTotalValue(AttributeType.CursesConsumeLess);
     }
     private void CheckCursesFireBall()
     {
@@ -147,6 +127,40 @@ public class SkillsPlayer : MonoBehaviour
                 break;
         }
     }
+    protected void AimingRecticule(Vector3 targetPos)
+    {
+        Player.Instance.Direction.position = transform.position + (targetPos - transform.position).normalized;
+        aimingRecticule.DORotateQuaternion(Quaternion.LookRotation((targetPos - transform.position).normalized, Vector3.up), 0.3f);
+    }
+    private bool GetCurrentAngryCanUseSkill()
+    {
+        return InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurrentAngry) > UseAngry * CursesConsumeLess();
+    }
+    public void UseSkill(Vector3 foward)
+    {
+        if (TimeUseSkill == 0)
+        {
+            InfomationPlayerManager.Instance.CurrentAngry -= UseAngry * CursesConsumeLess();
+            useSkill?.Invoke(foward);
+        }
+    }
+    private float CursesConsumeLess()
+    {
+        return InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CursesConsumeLess);
+    }
+    public void CountTime()
+    {
+        TimeUseSkill -= Time.deltaTime;
+    }
+    public void ResetTime()
+    {
+        timeUseSkill = MaxTimeUseSKill;
+        OnUseSkill = false;
+        aiming.gameObject.SetActive(false);
+    }
+    #endregion
+
+    #region SpawnObj
     public void FlamingShot(Vector3 foward)
     {
         InstantiateObjSkill("Fireballs", foward);
@@ -193,14 +207,5 @@ public class SkillsPlayer : MonoBehaviour
         outSkill.Init(DamageSkill * InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CurseDamageMultiple), SpeedSKill);
         outSkill.myTween = outSkill.transform.DOMove(transform.position + (foward.normalized * AttackRange) + new Vector3(0, 1.5f, 0), SpeedSKill).OnComplete(() => { outSkill.Hide(); });
     }
-    public void CountTime()
-    {
-        TimeUseSkill -= Time.deltaTime;
-    }
-    public void ResetTime()
-    {
-        timeUseSkill = MaxTimeUseSKill;
-        OnUseSkill = false;
-        aiming.gameObject.SetActive(false);
-    }
+    #endregion
 }

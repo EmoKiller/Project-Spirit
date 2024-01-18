@@ -65,7 +65,7 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.CreateNewHeart = CreateNewHeart;
             ObseverConstants.OnAttributeValueChanged.AddListener(item.SetStartMaxCurrentHP);
-            ObseverConstants.OnIncreaseAttributeValue.AddListener(item.RestoreHeart);
+            ObseverConstants.OnRestoreHeart.AddListener(item.RestoreHeart);
             //InfomationPlayerManager.Instance.UpdateValueOf(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
         }
         grHeart[(int)EnemGrHeart.Black].SpecialHeart = BlackHeartBreak;

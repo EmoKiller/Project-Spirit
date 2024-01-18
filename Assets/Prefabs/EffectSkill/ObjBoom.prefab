@@ -141,6 +141,7 @@ MonoBehaviour:
   _animator: {fileID: 2548330473504652364}
   speedSkill: 5
   isBoomer: 0
+  _meshRender: {fileID: 0}
 --- !u!114 &2548330473504652363
 MonoBehaviour:
   m_ObjectHideFlags: 0

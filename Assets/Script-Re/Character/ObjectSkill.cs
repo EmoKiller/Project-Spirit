@@ -11,7 +11,7 @@ public class ObjectSkill : MonoBehaviour, IPool
     [SerializeField] protected float speedSkill = 5;
     [SerializeField] bool isBoomer = false;
     [SerializeField] MeshRenderer _meshRender;
-    public MeshRenderer ShaderMesh {  get { return _meshRender; } }
+    public MeshRenderer ShaderMesh { get { return _meshRender; } }
     public string objectName => type.ToString();
     protected float damage = 2;
     public Tween myTween;
@@ -29,7 +29,7 @@ public class ObjectSkill : MonoBehaviour, IPool
             Hide();
         });
     }
-    public void Init(float damage, float speedSkill,Color color)
+    public void Init(float damage, float speedSkill, Color color)
     {
         this.damage = damage;
         this.speedSkill = speedSkill;
@@ -80,8 +80,17 @@ public class ObjectSkill : MonoBehaviour, IPool
     {
         _animator.SetTrigger("ActiveBoom");
     }
+    public void SoundBoom()
+    {
+        AudioManager.instance.Play("BoomExplosion");
+    }
     private void OnEnable()
     {
+        if (type == TypeEffectEnemy.Fireballs || type == TypeEffectEnemy.FireballsEnemy)
+        {
+            string str = UnityEngine.Random.Range(1, 3).ToString();
+            AudioManager.instance.Play("FireBall" + str);
+        }
         ObseverConstants.ReloadScene.AddListener(Hide);
     }
     private void OnDisable()

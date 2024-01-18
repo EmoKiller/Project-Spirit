@@ -181,6 +181,11 @@
 							"value" : 5,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
+						},
+						"EneScampBoom" : {
+							"value" : 5,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
 						}
 					},
 					"chestType" : "Common"

@@ -58,6 +58,7 @@ public class AudioManager : SerializedMonoBehaviour
         if (CoroutineSound != null)
         {
             StopCoroutine(CoroutineSound);
+            Debug.Log("StopCoroutine");
         }
         soundCurrent.source.Stop();
     }

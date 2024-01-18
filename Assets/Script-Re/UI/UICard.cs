@@ -34,6 +34,7 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
     }
     [SerializeField] private GameObject _gameObjectCard;
     public Action OnActiveCard = null;
+    private bool _active = false;
 
     private Sequence sequenceLoop;
     private void Awake()
@@ -42,10 +43,12 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
     }
     private void OnEnable()
     {
+        _active = false;
         transform.DORotate(new Vector3(0, -90, 0), 0.8f,RotateMode.Fast).OnComplete(() =>
         {
             _CradFont.enabled = enabled;
             transform.DORotate(new Vector3(0, 0, 0), 0.8f);
+            _active = true;
         });
     }
     private void OnDisable()
@@ -71,11 +74,9 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        //transform.DOScale(new Vector3(0.3f,0.3f,0),0.8f);
-        //transform.DOLocalMoveX(2,0.8f);
+        if(_active == false)
+            return;
         OnActiveCard?.Invoke();
-
-
     }
 
     
