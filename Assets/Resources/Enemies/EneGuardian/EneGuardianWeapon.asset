@@ -20,7 +20,7 @@ MonoBehaviour:
   DescriptionWeapon: 
   Speed: 1
   AttackRange: 3
-  AttackRangeBow: 25
+  AttackRangeBow: 35
   RangeDash: 1.8
   SpeedOnDash: 20
   NomalSpeed: 4

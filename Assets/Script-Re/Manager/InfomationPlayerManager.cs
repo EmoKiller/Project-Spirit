@@ -198,6 +198,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         }
         SelectDifficult(heroData.GameDifficult[SaveSlot]);
         StartCountTime();
+        //AudioManager.instance.Play();
     }
     public void OnClickContinue()
     {

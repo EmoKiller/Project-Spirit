@@ -21,6 +21,8 @@ public class RewardSystem : SerializedMonoBehaviour
     private void Start()
     {
     }
+    [Button]
+    
     public List<ImpactableObjects> CheckDeadHuman(Vector3 pos)
     {
         List<ImpactableObjects> obj2 = impactableObjects.FindAll(e => Vector3.Distance(pos, e.transform.position) < 30);

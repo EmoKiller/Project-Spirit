@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class EneGuardian : Enemy
@@ -8,7 +10,7 @@ public class EneGuardian : Enemy
     {
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
-        characterAnimator.AddSpawnObj(SpawnChain);
+        characterAnimator.AddSpawnObj(SpawnChain, SpawnObjBallJumpRandom, SpawnObj3);
     }
     protected override void Update()
     {
@@ -22,13 +24,6 @@ public class EneGuardian : Enemy
         {
             EnemyThinking(1, 25);
         }
-        //if (onFollowPlayer && Distance() < DashAttackRange && OnDashAtk && !enemyRunFollow)
-        //{
-        //    DashAtk();
-        //    return;
-        //}
-        //if (OnDashAtk)
-        //    return;
         if (Distance() <= playerDetectionRange - 1 && Distance() <= playerDetectionRange + 1 && randomMove)
         {
             RandomMove();
@@ -62,6 +57,7 @@ public class EneGuardian : Enemy
             if (i < ratioRandomMove)
             {
                 IsRandomMove();
+                characterAnimator.SetTrigger("Move");
                 return;
             }
             IsFollowAtK();
@@ -71,7 +67,6 @@ public class EneGuardian : Enemy
     {
         if (!randomMove)
             return;
-        characterAnimator.SetTrigger("Move");
         onFollowPlayer = false;
         randomMove = false;
         Vector3 vec = Random.onUnitSphere;
@@ -84,54 +79,56 @@ public class EneGuardian : Enemy
         randomMove = false;
         onFollowPlayer = true;
         int i = Random.Range(0, 100);
-        if (i < 60)
+        if (i < 50)
         {
             characterAnimator.SetTrigger("RunFollow");
             agent.moveSpeed = 8f;
             enemyRunFollow = true;
             return;
         }
-        
-        this.DelayCall(3f, () => { EnemyThinking(1, 5); });
+        OnUseSKill();
     }
     protected void OnUseSKill()
     {
         if (Distance() <= characterAttack.AttackRangeBow)
         {
-            characterAnimator.SetTrigger("UseSkill");
+            int i = Random.Range(0, 100);
+            if (i < 40)
+            {
+                characterAnimator.SetTrigger("UseSKill1");
+                return;
+            }
+            if (i > 60)
+            {
+                characterAnimator.SetTrigger("UseSKill2");
+                return;
+            }
+            characterAnimator.SetTrigger("UseSKill3");
             return;
         }
-        EnemyThinking(1, 100, () => { IsRandomMove(); }, null);
+        EnemyThinking(2, 0);
     }
-    private void SpawnChain()
-    {
-        RewardSystem.Instance.SpawnObjectSkillEnemy("ObjRingDeadEnemy", direction.position , out ObjectSkill outSkill);
-        outSkill.Init(1,true);
-    }
-    //protected void SpawnObjFireBalls()
-    //{
-    //    int i = Random.Range(0, 100);
-    //    if (i < 60)
-    //    {
-    //        SpawnObjBallFireLoop(8);
-    //        return;
-    //    }
-    //    if (i > 80)
-    //    {
-    //        SpawnObjBallFire(8);
-    //        return;
-    //    }
-    //    SpawnObjBallFire();
-    //    return;
-    //}
     public override void TakeDamage(float damage)
     {
-        base.TakeDamage(damage);
+        if (!Alive)
+            return;
+        CurrentHealth -= damage;
+        healthBar.SetActive();
+        healthBar.UpdateHealth(CurrentHealth);
+        if (CurrentHealth <= 0)
+        {
+            Dead();
+        }
     }
+    protected void SpawnObj3()
+    {
+        SpawnObjBallFireLoop(8);
+    }
+
     protected override void FinishAniAtk()
     {
         characterAnimator.SetTrigger("Idie");
         base.FinishAniAtk();
-        EnemyThinking(1f, 35);
+        EnemyThinking(2f, 35);
     }
 }

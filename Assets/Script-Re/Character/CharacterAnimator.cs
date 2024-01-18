@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    public enum AnimationStates { Idle, Movement, RandomMove, Chase, Attack, RunAtk, FollowRunAtk, Rolling, RangeAttack, UseSkill, MoveToTarget }
+    public enum AnimationStates { Idle, Movement, Move, RandomMove, Chase, Attack, RunAtk, FollowRunAtk, Rolling, RangeAttack, UseSkill, MoveToTarget }
     public enum MovementType { Idle, Run }
     public enum AttackStep { step1, step2, step3, step4 }
 
@@ -24,6 +24,8 @@ public class CharacterAnimator : MonoBehaviour
         get { return comboATK; }
     }
     Action SpawnObj = null;
+    Action SpawnObj2 = null;
+    Action SpawnObj3 = null;
     Action dashAtk = null;
     Action step1aniAtk = null;
     Action step2aniAtk = null;
@@ -114,6 +116,17 @@ public class CharacterAnimator : MonoBehaviour
     {
         this.SpawnObj = SpawnObj;
     }
+    public void AddSpawnObj(Action SpawnObj, Action SpawnObj2)
+    {
+        this.SpawnObj = SpawnObj;
+        this.SpawnObj2 = SpawnObj2;
+    }
+    public void AddSpawnObj(Action SpawnObj, Action SpawnObj2, Action SpawnObj3)
+    {
+        this.SpawnObj = SpawnObj;
+        this.SpawnObj2 = SpawnObj2;
+        this.SpawnObj3 = SpawnObj3;
+    }
     public void StartAnimation()
     {
         StartAni?.Invoke();
@@ -146,6 +159,14 @@ public class CharacterAnimator : MonoBehaviour
     public void SpawnObjs()
     {
         SpawnObj?.Invoke();
+    }
+    public void SpawnObjs2()
+    {
+        SpawnObj2?.Invoke();
+    }
+    public void SpawnObjs3()
+    {
+        SpawnObj3?.Invoke();
     }
 
 }

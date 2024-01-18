@@ -135,6 +135,7 @@ public class Player : CharacterBrain , IOrderable
             characterAnimator.SetFloat("horizontal", 0);
             characterAnimator.SetFloat("vertical", 0);
         });
+        AudioManager.instance.Play("Slash");
     }
     public void DirSlash(Vector3 targetPos)
     {

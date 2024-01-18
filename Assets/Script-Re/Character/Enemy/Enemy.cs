@@ -350,6 +350,17 @@ public class Enemy : CharacterBrain, IPool
         }
 
     }
+    protected void SpawnObjBallJumpRandom()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            Vector3 vec = UnityEngine.Random.onUnitSphere * 25;
+            RewardSystem.Instance.SpawnObjectSkillEnemy("FireballsEnemy", transform.position + new Vector3(0, 6, 0), out ObjectSkill outSkill);
+            outSkill.Init(1f, 4);
+            outSkill.myTween = outSkill.transform.DOJump(transform.position + new Vector3(vec.x, 0, vec.z), 10, 1, 3);
+        }
+
+    }
     protected void SpawnObjBoom()
     {
         RewardSystem.Instance.SpawnObjectSkillEnemy("ObjBoomEnemy", transform.position + new Vector3(0, 1.5f, 0), out ObjectSkill outSkill);
@@ -402,6 +413,12 @@ public class Enemy : CharacterBrain, IPool
             eulerY += 30;
         }
     }
+    protected void SpawnChain()
+    {
+        RewardSystem.Instance.SpawnObjectSkillEnemy("ObjRingDeadEnemy", direction.position, out ObjectSkill outSkill);
+        outSkill.Init(1, true);
+    }
+
     #endregion
 
 

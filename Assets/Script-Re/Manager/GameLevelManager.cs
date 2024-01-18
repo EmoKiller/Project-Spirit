@@ -22,6 +22,9 @@ public class GameLevelManager : MonoBehaviour
             Destroy(Instance);
         //ObseverConstants.OnClickButtonStart.AddListener(Init);
         ObseverConstants.OnClickButtonContinue.AddListener(ResetGameLevel);
+        SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
+        //SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
+        SpawnObj(GameConstants.SkillCurses, NameCurses.DeathsSquall.ToString(), cursesPodium);
     }
     public void Init()
     {

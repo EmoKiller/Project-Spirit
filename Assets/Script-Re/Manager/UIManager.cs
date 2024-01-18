@@ -94,7 +94,7 @@ public class UIManager : SerializedMonoBehaviour
         InfoWeapon.gameObject.SetActive(false);
         ShowUpTarot.gameObject.SetActive(false);
         UIEndOfLevel.gameObject.SetActive(false);
-
+        objMainSelect.gameObject.SetActive(false);
         if (InfomationPlayerManager.Instance.GetSelectDifficut())
             OnSelectButtonLevelDifficult();
 
@@ -396,7 +396,8 @@ public class UIManager : SerializedMonoBehaviour
     {
         InfomationPlayerManager.Instance.SelectedDifficult();
         selectDifficult.gameObject.SetActive(false);
-
+        objMainSelect.gameObject.SetActive(true);
+        AudioManager.instance.PlayList((ListAudioShop)UnityEngine.Random.Range(0,2));
     }
     #endregion
 

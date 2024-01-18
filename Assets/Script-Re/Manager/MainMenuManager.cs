@@ -18,12 +18,7 @@ public class MainMenuManager : SerializedMonoBehaviour
     [SerializeField] bool PressStart = false;
     private void Awake()
     {
-        
-    }
-    void Start()
-    {
         mainMenuObj[MenuType.PressToPlay][1].gameObject.SetActive(false);
-        //mainMenu[MenuType.PressToPlay].onClick.AddListener(PressToPlay);
         mainMenu[MenuType.Play].onClick.AddListener(Play);
         mainMenu[MenuType.Settings].onClick.AddListener(Setting);
         mainMenu[MenuType.Credits].onClick.AddListener(Credits);
@@ -36,6 +31,14 @@ public class MainMenuManager : SerializedMonoBehaviour
         mainMenu[MenuType.SaveGame2].onClick.AddListener(SaveGame2);
         mainMenu[MenuType.SaveGame3].onClick.AddListener(SaveGame3);
     }
+    void Start()
+    {
+        
+        foreach(var item in mainMenu)
+        {
+            
+        }
+    }
     private void Update()
     {
         if (PressStart)
@@ -44,6 +47,7 @@ public class MainMenuManager : SerializedMonoBehaviour
         {
             PressStart = true;
             PressToPlay();
+            AudioManager.instance.Play("ButtonPressToPlay");
         }
 
     }

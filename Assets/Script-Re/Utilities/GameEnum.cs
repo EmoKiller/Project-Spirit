@@ -357,4 +357,20 @@ public enum HeartInfo
     Half,
     Full
 }
+public enum TypeListAudio
+{
+    ListAudioStartGame,
+    ListAudioShop
+}
+public enum ListAudioStartGame
+{
+    AudioStartGame1,
+    AudioStartGame2,
+    AudioStartGame3,
+}
+public enum ListAudioShop
+{
+    Shop1,
+    Shop2,
+}
 
