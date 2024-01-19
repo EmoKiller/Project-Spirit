@@ -36,11 +36,11 @@ public class RewardSystem : SerializedMonoBehaviour
         obj.UpdateSprite(TypeHeart.ToString());
         obj.TypeHeart = TypeHeart;
     }
-    public void SpawnEffectDestroyObj(ChestType type, Vector3 vec3, out EffectDestroyObject chest)
+    public void SpawnEffectDestroyObj(ListTypeEffects type, Vector3 vec3, out EffectDestroyObject effectDestroy)
     {
         EffectDestroyObject obj = ObjectPooling.Instance.PopChestEffectDestroyObj(type.ToString());
         SetUpObj(effectDestroyObj, obj, vec3);
-        chest = obj;
+        effectDestroy = obj;
     }
     public void RemoveFromListEffectDestroyObj(EffectDestroyObject obj)
     {

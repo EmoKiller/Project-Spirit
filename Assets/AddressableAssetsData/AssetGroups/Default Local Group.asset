@@ -361,6 +361,10 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Enemy/EneGuardian.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9a1aeb10d01f99440aef8f5d16ff68bd
+    m_Address: Assets/Prefabs/Enemy/EneRedGuardian.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f27fd6504f9515042a5a13a1d35435e5, type: 2}
   m_SchemaSet:

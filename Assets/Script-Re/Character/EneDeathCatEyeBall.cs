@@ -78,6 +78,10 @@ public class EneDeathCatEyeBall : Enemy
             Dead();
         }
     }
+    public override void Dead()
+    {
+        base.Dead();
+    }
     protected void OnAttack()
     {
         if (Distance() <= characterAttack.AttackRangeBow)
@@ -115,5 +119,4 @@ public class EneDeathCatEyeBall : Enemy
         }
         EnemyThinking(2, 30, () => { IsRandomMove(); }, () => { OnAttack(); });
     }
-    
 }

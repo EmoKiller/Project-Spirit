@@ -20,18 +20,18 @@ public class ConfigDataHelper
     {
         get
         {
-            heroData = GetHeroData();
-            ES3.Save("HeroDatas", GetHeroData());
+            //heroData = GetHeroData();
+            //ES3.Save("HeroDatas", GetHeroData());
 
-            //if (!ES3.KeyExists("HeroDatas"))
-            //{
-            //    heroData = GetHeroData();
-            //    ES3.Save("HeroDatas", GetHeroData());
-            //}
-            //else
-            //{
-            //    heroData = ES3.Load<HeroData>("HeroDatas");
-            //}
+            if (!ES3.KeyExists("HeroDatas"))
+            {
+                heroData = GetHeroData();
+                ES3.Save("HeroDatas", GetHeroData());
+            }
+            else
+            {
+                heroData = ES3.Load<HeroData>("HeroDatas");
+            }
             return heroData;
         }
         set => ES3.Save("HeroDatas", value);

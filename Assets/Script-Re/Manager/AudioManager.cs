@@ -12,7 +12,7 @@ public class AudioManager : SerializedMonoBehaviour
 {
     public static AudioManager instance;
     public Sound[] sounds;
-    private Sound soundCurrent;
+    [SerializeField]private Sound soundCurrent;
     private Coroutine CoroutineSound;
     private void Awake()
     {

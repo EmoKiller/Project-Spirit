@@ -21,7 +21,7 @@ MonoBehaviour:
   QuoteCurses: Seek and strike those who dare doubt.
   DescriptionCurses: Shoots multiple projectiles that seek out enemies.
   TimeUseSKill: 0.8
-  Damage: 8
+  Damage: 5
   Speed: 10
   AttackRange: 5
   UseAngry: 12

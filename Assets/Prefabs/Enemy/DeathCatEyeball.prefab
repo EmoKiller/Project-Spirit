@@ -1168,7 +1168,7 @@ MonoBehaviour:
   onAction: 0
   onAniATK: 0
   OnEvent: 0
-  typeEnemy: 0
+  typeEnemy: 4
   LevelEnemy: 1
   playerDetectionRange: 30
   DashAttackRange: 6

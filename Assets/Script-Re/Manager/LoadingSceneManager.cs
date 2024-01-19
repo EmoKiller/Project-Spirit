@@ -14,9 +14,12 @@ public class LoadingSceneManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(LoadSenceAsync());
-        myTween = circle.DORotate(new Vector3(0f, 0f, 360f), 3, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart);
+        //myTween = circle.DORotate(new Vector3(0f, 0f, 360f), 3, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart);
     }
-
+    private void Update()
+    {
+        circle.transform.Rotate(Vector3.up, 10 * Time.deltaTime);
+    }
     public IEnumerator LoadSenceAsync()
     {
         AsyncOperation handle = SceneManager.LoadSceneAsync(LoadSceneExtension.sceneToLoad);
@@ -25,6 +28,6 @@ public class LoadingSceneManager : MonoBehaviour
             loadingText.text = "Loading... " + handle.progress + "%";
             yield return new WaitForSeconds(0.5f);
         }
-        myTween.Kill(); 
+        //myTween.Kill(); 
     }
 }

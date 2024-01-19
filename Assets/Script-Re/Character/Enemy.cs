@@ -1,8 +1,5 @@
 using DG.Tweening;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.Mathematics;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -434,7 +431,7 @@ public class Enemy : CharacterBrain, IPool
 
 
     #region ObjectPooling
-    public void Show()
+    public virtual void Show()
     {
         gameObject.SetActive(true);
         tranformOfAni.SetActive(true);
@@ -450,15 +447,18 @@ public class Enemy : CharacterBrain, IPool
 
     public void Hide()
     {
+        deadBody.SetActive(false);
+        gameObject.SetActive(false);
+        slash.SetActiveSlash(false);
         onFollowPlayer = false;
         onTargetPlayer = false;
         OnDashAtk = false;
+        onAniATK = false;
+        OnAction = false;
         randomMove = true;
         enemyThinking = false;
         enemyRunFollow = false;
         ObjectPooling.Instance.PushToPoolEnemy(this);
-        deadBody.SetActive(false);
-        gameObject.SetActive(false);
     }
     public void OnReloadScence()
     {

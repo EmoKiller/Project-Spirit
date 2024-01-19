@@ -178,7 +178,8 @@ public enum TypeEnemy
     EneSummoner,
     EneHealer,
     EneRedArcher,
-    EneGuardian
+    EneGuardian,
+    EneRedGuardian
 }
 public enum ChestType
 {
@@ -327,7 +328,11 @@ public enum MenuType
     SaveGame2,
     SaveGame3,
     DeleteSaveGame,
-    BackToMenu
+    BackToMenu,
+    QuitGame,
+    Resume,
+    Help,
+    MainMenu,
 }
 public enum EnemGrHeart
 {

@@ -21,7 +21,11 @@ MonoBehaviour:
   Speed: 1
   AttackRange: 2
   AttackRangeBow: 30
+  RangeDash: 4
+  SpeedOnDash: 16
+  NomalSpeed: 4
   SlashBoxSize: {x: 0, y: 0, z: 0}
-  ListDamage: []
+  ListDamage:
+  - 1
   ListPowerForce: []
   MoveOnAttack: []

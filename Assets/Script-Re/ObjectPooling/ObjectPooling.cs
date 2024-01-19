@@ -160,8 +160,8 @@ public class ObjectPooling : SerializedMonoBehaviour
     }
     private void PushToPool<T>(T objectToPush, List<T> pool) where T : MonoBehaviour, IPool, new()
     {
-        if (pool.Contains(objectToPush))
-            return;
+        //if (pool.Contains(objectToPush))
+        //    return;
         objectToPush.transform.SetParent(transform, true);
         pool.Add(objectToPush);
     }

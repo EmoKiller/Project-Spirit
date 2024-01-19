@@ -1,0 +1,267 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2171531406824794748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2171531406824794626}
+  - component: {fileID: 2171531406824794627}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2171531406824794626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171531406824794748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2171531406824794627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171531406824794748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c2511e9d20bc848b5ff192c8b7891e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sounds:
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: 69fd1ebf1f6469a4e99795644483ce21, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ButtonPressToPlay
+    clip: {fileID: 8300000, guid: 923c1c462825df74d9895754adcfccc7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonMouseEnterHandler
+    clip: {fileID: 8300000, guid: 2114779427b959d4ea9cc486c6c38a94, type: 3}
+    volume: 1
+    pitch: 2.31
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonPress
+    clip: {fileID: 8300000, guid: c2a97cf58ee5ced499cb8bf4b43ab817, type: 3}
+    volume: 1
+    pitch: 1.52
+    loop: 0
+    source: {fileID: 0}
+  - name: Slash
+    clip: {fileID: 8300000, guid: 23ae130a1b6ecff408c9dafb13473736, type: 3}
+    volume: 1
+    pitch: 1.35
+    loop: 0
+    source: {fileID: 0}
+  - name: Shop1
+    clip: {fileID: 8300000, guid: 028e09f24639e934298fa904311db5fd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shop2
+    clip: {fileID: 8300000, guid: bbe09e1b0edee0b4eb4c1e25554b2545, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AudioOnRound1
+    clip: {fileID: 8300000, guid: 4305a78f26d6bb94eb24ada006d7c906, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AudioOnRound2
+    clip: {fileID: 8300000, guid: 1094380b80c0fb3448745d1a33cb5246, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AudioOnRound3
+    clip: {fileID: 8300000, guid: 4cc82c86b5b5b4344989cdd34f937b30, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AudioOnRound4
+    clip: {fileID: 8300000, guid: e1a8c32b3088ea0418682b5e830b9175, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AudioOnRound5
+    clip: {fileID: 8300000, guid: a373d7faadd218743b3bb8cb1f9d9db0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BoomExplosion
+    clip: {fileID: 8300000, guid: b120f97431cbe564785e97afa9de4074, type: 3}
+    volume: 0.629
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireBall1
+    clip: {fileID: 8300000, guid: f2d76f09b67ffc9429f93c947a52aba3, type: 3}
+    volume: 0.872
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireBall2
+    clip: {fileID: 8300000, guid: 8dc049c2bd6d6af4e9750870b08b80f9, type: 3}
+    volume: 0.89
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireSkillEnemy
+    clip: {fileID: 8300000, guid: 9984cd1753178c04fb29cd487486e83d, type: 3}
+    volume: 0.888
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireBall8SkillEnemy
+    clip: {fileID: 8300000, guid: 9b9cf547f296be942bc4c3bce4e78bb1, type: 3}
+    volume: 0.909
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyAtk
+    clip: {fileID: 8300000, guid: 7bafa01b6f96a354ea407264b2edc3a2, type: 3}
+    volume: 0.395
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyRunAtk
+    clip: {fileID: 8300000, guid: 7983a12c520f4c24eaeea2d57df2d2a7, type: 3}
+    volume: 0.338
+    pitch: 1.071
+    loop: 0
+    source: {fileID: 0}
+  - name: SoundEnemy1
+    clip: {fileID: 8300000, guid: 9967bfc4e9e58164e84b370f8be2e494, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SoundEnemy2
+    clip: {fileID: 8300000, guid: 6aa0037e74c7a3842832c0f347df9025, type: 3}
+    volume: 0.285
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SoundEnemy3
+    clip: {fileID: 8300000, guid: f1d6e9b53a66ad14d8639c98b02b7eb4, type: 3}
+    volume: 0.299
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SoundEnemy4
+    clip: {fileID: 8300000, guid: 98f4db9defe8e3941acfe2a8c460edb3, type: 3}
+    volume: 0.303
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SoundEnemy5
+    clip: {fileID: 8300000, guid: 000f3a6d59721a24da9964d736a9426e, type: 3}
+    volume: 0.312
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDead1
+    clip: {fileID: 8300000, guid: 30dbf80b418955742b4a499cbbff684f, type: 3}
+    volume: 0.546
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDead2
+    clip: {fileID: 8300000, guid: e40ce1bf2d49bd44f903c73575df98f3, type: 3}
+    volume: 0.537
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDead3
+    clip: {fileID: 8300000, guid: 9086f61583227f64d95ce044cb889ec5, type: 3}
+    volume: 0.555
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerHitDamage
+    clip: {fileID: 8300000, guid: a2106cbc17474154986b96663bff85b5, type: 3}
+    volume: 0.574
+    pitch: 1.157
+    loop: 0
+    source: {fileID: 0}
+  - name: OnBossSpawn1
+    clip: {fileID: 8300000, guid: fcda22160246a4046baf4fd6d11cbf7f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OnBossSpawn2
+    clip: {fileID: 8300000, guid: 176e00b3ab00714478602a0a6cccb49b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OnBossSpawn3
+    clip: {fileID: 8300000, guid: c5dfe3487aac96e4aa033c283444fc05, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OnPlayDead
+    clip: {fileID: 8300000, guid: b305cf38e9d7f40458b8b74e4cf5b6ff, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SlashEnemy
+    clip: {fileID: 8300000, guid: a47c7cf56c4b7ef41b94b0d29db39f3d, type: 3}
+    volume: 0.705
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SoundFxSkillChains
+    clip: {fileID: 8300000, guid: fcdb0d092a61f754f85fe095e8aa7ef1, type: 3}
+    volume: 0.857
+    pitch: 1.072
+    loop: 0
+    source: {fileID: 0}
+  soundCurrent:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}

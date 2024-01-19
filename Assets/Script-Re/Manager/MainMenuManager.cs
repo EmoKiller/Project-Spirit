@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using System;
 
 public class MainMenuManager : SerializedMonoBehaviour
 {
@@ -30,18 +31,20 @@ public class MainMenuManager : SerializedMonoBehaviour
         mainMenu[MenuType.SaveGame1].onClick.AddListener(SaveGame1);
         mainMenu[MenuType.SaveGame2].onClick.AddListener(SaveGame2);
         mainMenu[MenuType.SaveGame3].onClick.AddListener(SaveGame3);
+        mainMenu[MenuType.QuitGame].onClick.AddListener(QuitGame);
     }
-    void Start()
+    private void Start()
     {
         
-        foreach(var item in mainMenu)
-        {
-            
-        }
+    }
+    private void OnEnable()
+    {
+        PressStart = false;
+        
     }
     private void Update()
     {
-        if (PressStart)
+        if (PressStart == true)
             return;
         if (Input.anyKeyDown)
         {
@@ -66,10 +69,9 @@ public class MainMenuManager : SerializedMonoBehaviour
     private void CheckSaveGame(SaveGameSlot slot)
     {
         InfomationPlayerManager.Instance.SaveSlot = slot;
+        AudioManager.instance.PlayListOnRound();
         LoadSceneExtension.LoadScene(ConfigDataHelper.HeroData.PlayerOnSceness[slot].ToString());
     }
-
-
     private void SetActiveObj(MenuType type , bool value)
     {
         foreach (var item in mainMenuObj[type])
@@ -77,7 +79,7 @@ public class MainMenuManager : SerializedMonoBehaviour
             item.gameObject.SetActive(value);
         }
     }
-
+    [Button]
     private void PressToPlay()
     {
         SetActiveObj(MenuType.PressToPlay,false);
@@ -133,6 +135,8 @@ public class MainMenuManager : SerializedMonoBehaviour
         WaterWayBack();
         mainMenuObj[MenuType.BackToMenu][7].gameObject.SetActive(true);
     }
-
-
+    private void QuitGame()
+    {
+        Application.Quit();
+    }
 }

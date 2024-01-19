@@ -178,13 +178,13 @@
 				"1" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 4,
+							"value" : 0,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						},
-						"EneGuardian" : {
+						"EneRedGuardian" : {
 							"value" : 1,
-							"type" : "EneGuardian",
+							"type" : "EneRedGuardian",
 							"LevelEnemy" : 1
 						}
 					},
@@ -262,14 +262,14 @@
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
-						"DeathCatEyeball" : {
-							"value" : 1,
-							"type" : "DeathCatEyeball",
-							"LevelEnemy" : 1
-						},
 						"EneScampBoom" : {
 							"value" : 3,
 							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"DeathCatEyeball" : {
+							"value" : 1,
+							"type" : "DeathCatEyeball",
 							"LevelEnemy" : 1
 						}
 					},
@@ -278,7 +278,7 @@
 				"6" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 10,
+							"value" : 9,
 							"type" : "EneScamp",
 							"LevelEnemy" : 2
 						},
@@ -288,7 +288,7 @@
 							"LevelEnemy" : 1
 						},
 						"EneScampArcher" : {
-							"value" : 5,
+							"value" : 4,
 							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						}
@@ -466,6 +466,11 @@
 							"value" : 5,
 							"type" : "Scythesman",
 							"LevelEnemy" : 1
+						},
+						"EnemyBat" : {
+							"value" : 10,
+							"type" : "EnemyBat",
+							"LevelEnemy" : 1
 						}
 					},
 					"chestType" : "Race"
@@ -490,6 +495,11 @@
 						"EneScampShield" : {
 							"value" : 13,
 							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"DeathCatEyeball" : {
+							"value" : 2,
+							"type" : "DeathCatEyeball",
 							"LevelEnemy" : 1
 						}
 					},
@@ -518,7 +528,7 @@
 							"LevelEnemy" : 1
 						},
 						"EneSummoner" : {
-							"value" : 18,
+							"value" : 2,
 							"type" : "EneSummoner",
 							"LevelEnemy" : 1
 						}
@@ -537,9 +547,9 @@
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
-						"EneScampArcher" : {
-							"value" : 20,
-							"type" : "EneScampArcher",
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
 							"LevelEnemy" : 1
 						},
 						"EneScampShield" : {
@@ -558,7 +568,7 @@
 							"LevelEnemy" : 1
 						},
 						"EneHealer" : {
-							"value" : 1,
+							"value" : 2,
 							"type" : "EneHealer",
 							"LevelEnemy" : 1
 						}
@@ -578,7 +588,7 @@
 							"LevelEnemy" : 1
 						},
 						"EneScampArcher" : {
-							"value" : 20,
+							"value" : 15,
 							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						},
@@ -589,6 +599,66 @@
 						},
 						"Scythesman" : {
 							"value" : 5,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"17" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 15,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"18" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneScampArcher" : {
+							"value" : 15,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 10,
 							"type" : "Scythesman",
 							"LevelEnemy" : 1
 						}
@@ -825,6 +895,10 @@
 		},
 		"CurseDamageMultiple" : {
 			"type" : "CurseDamageMultiple",
+			"value" : 0
+		},
+		"TheBomb" : {
+			"type" : "TheBomb",
 			"value" : 0
 		}
 	},

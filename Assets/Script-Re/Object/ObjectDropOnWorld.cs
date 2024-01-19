@@ -66,7 +66,6 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
     {
         
     }
-
     public virtual void Show()
     {
         gameObject.SetActive(true);
@@ -76,6 +75,7 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
     {
         gameObject.SetActive(false);
         TimeMoveMulti = 1;
+        Ontrigger = false;
         RewardSystem.Instance.RemoveFromListObj(this);
         ObjectPooling.Instance.PushToPoolObjectDrop(this);
     }
@@ -86,6 +86,5 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
     private void OnDisable()
     {
         ObseverConstants.ReloadScene.RemoveListener(Hide);
-        Ontrigger = false;
     }
 }

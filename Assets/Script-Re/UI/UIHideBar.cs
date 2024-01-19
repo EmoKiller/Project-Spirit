@@ -1,8 +1,4 @@
 using DG.Tweening;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public class UIHideBar : MonoBehaviour
@@ -14,22 +10,25 @@ public class UIHideBar : MonoBehaviour
     [SerializeField] GameObject inventoryTab;
     [SerializeField] GameObject topBar;
     [SerializeField] GameObject popUp;
+    [SerializeField] MenuInGame menuInGame;
     private void Start()
-    {
-        
-    }
-    public void Init()
     {
         gruopMenuEsc.SetActive(false);
         inventoryTab.SetActive(false);
+        menuInGame.OnResume = OnResume;
     }
+    //public void Init()
+    //{
+    //    gruopMenuEsc.SetActive(false);
+    //    inventoryTab.SetActive(false);
+    //}
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && inventoryTab != null)
+        if (Input.GetKeyDown(KeyCode.Tab) && gruopMenuEsc.activeSelf == false)
         {
             ToggleTabHideBar(inventoryTab, !inventoryTab.activeSelf);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && inventoryTab.activeSelf == false)
         {
             ToggleTabHideBar(gruopMenuEsc, !gruopMenuEsc.activeSelf);
         }
@@ -38,10 +37,10 @@ public class UIHideBar : MonoBehaviour
     {
         if(topBar != null)
             topBar.gameObject.SetActive(!value);
-        popUp.gameObject.SetActive(!value);
+        if (popUp != null)
+            popUp.gameObject.SetActive(!value);
         if (value == true)
         {
-
             wayBlack.gameObject.SetActive(value);
             obj.gameObject.SetActive(value);
             wayBlack.DOAnchorPos(new Vector2(0, 0), 0.6f).OnComplete(() =>
@@ -55,5 +54,9 @@ public class UIHideBar : MonoBehaviour
         {
             obj.gameObject.SetActive(value);
         });
+    }
+    private void OnResume()
+    {
+        ToggleTabHideBar(gruopMenuEsc, !gruopMenuEsc.activeSelf);
     }
 }

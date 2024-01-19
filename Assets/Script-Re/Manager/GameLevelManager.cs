@@ -26,7 +26,7 @@ public class GameLevelManager : MonoBehaviour
     {
         SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
         SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
-        
+
         this.DelayCall(10f, () =>
         {
             SpawnEnemy();
@@ -51,12 +51,13 @@ public class GameLevelManager : MonoBehaviour
                 Vector3 random = (UnityEngine.Random.onUnitSphere * 80);
                 Vector3 position = new Vector3(random.x, 0, random.z);
                 PopEnemyFromPool(listEnemys, item.Value.type, item.Value.LevelEnemy, position);
+                Debug.Log(item.Value.type);
             }
         }
     }
     private void PopEnemyFromPool(List<Enemy> listEnemy, string name, LevelRomanNumerals levelEnemy, Vector3 pos)
     {
-        Enemy ene = ObjectPooling.Instance.PopEnemy(name, false);
+        Enemy ene = ObjectPooling.Instance.PopEnemy(name);
         ene.transform.position = pos;
         ene.transform.SetParent(transform, true);
         ene.SetLevelEnemy(levelEnemy);

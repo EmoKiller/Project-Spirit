@@ -1,13 +1,8 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor.Drawers;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem.iOS;
-using UnityEngine.ProBuilder;
 using UnityEngine.UI;
 
 public class UIManager : SerializedMonoBehaviour
@@ -48,16 +43,17 @@ public class UIManager : SerializedMonoBehaviour
     }
     private void Start()
     {
-        UIButtonAction.gameObject.SetActive(false);
-        InfoWeapon.gameObject.SetActive(false);
-        ShowUpTarot.gameObject.SetActive(false);
-        UIEndOfLevel.gameObject.SetActive(false);
-        objMainSelect.gameObject.SetActive(false);
+        
     }
     [Button]
     public void Init()
     {
         Debug.Log("Init uimanager");
+        UIButtonAction.gameObject.SetActive(false);
+        InfoWeapon.gameObject.SetActive(false);
+        ShowUpTarot.gameObject.SetActive(false);
+        UIEndOfLevel.gameObject.SetActive(false);
+        objMainSelect.gameObject.SetActive(false);
         EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
         if (InfomationPlayerManager.Instance.GetSelectDifficut())
             OnSelectButtonLevelDifficult();
@@ -80,7 +76,7 @@ public class UIManager : SerializedMonoBehaviour
         }
         //MainSelect
         PowerUP.Init();
-        UIShowBar.Init();
+        //UIShowBar.Init();
         PowerUP.ShowButton.onClick.AddListener(OnBuy);
         buttonStartGame.onClick.AddListener(OnClickButtonStart);
         UIEndOfLevel.ButtonContinue.onClick.AddListener(OnClickContinue);

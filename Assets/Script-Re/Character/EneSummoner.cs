@@ -52,7 +52,7 @@ public class EneSummoner : Enemy
         onFollowPlayer = false;
         SetMoveWayPoint(point, 4);
         int i = Random.Range(0, 100);
-        if (i < 50)
+        if (i < 75)
         {
             this.DelayCall(5, () =>
             {

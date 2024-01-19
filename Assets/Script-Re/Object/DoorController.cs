@@ -11,6 +11,7 @@ public class DoorController : MonoBehaviour
     {
         LoadSceneExtension.LoadScene(onScenes.ToString());
         InfomationPlayerManager.Instance.SetPlayerOnScenes(onScenes);
+        AudioManager.instance.StopListSound();
     }
 
     public void SetDoor(bool value)

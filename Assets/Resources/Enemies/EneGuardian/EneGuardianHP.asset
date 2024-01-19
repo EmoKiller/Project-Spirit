@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EneGuardianHP
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  HP: 10
+  HP: 100
   PowerForce: 30
   weight: 35
   ExpDrop: 150

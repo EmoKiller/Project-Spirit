@@ -201,7 +201,7 @@ public class Player : CharacterBrain, IOrderable
         {
             wp.transform.SetParent(null);
             wp.transform.ReSetEulerAngle();
-            wp.SetBoxCollider(true);
+            this.DelayCall(2, () => { wp.SetBoxCollider(true); });
         }
         Weapon obj = Instantiate(weapon, hand.transform);
         characterAttack.Initialized(obj);
@@ -219,7 +219,7 @@ public class Player : CharacterBrain, IOrderable
             cur.transform.position += new Vector3(0,1.5f,0);
             SpriteRenderer spr = cur.GetComponent<SpriteRenderer>();
             spr.enabled = true;
-            cur.SetBoxCollider(false);
+            this.DelayCall(2, () => { cur.SetBoxCollider(true); });
         }
         CursesEquip obj = Instantiate(curses, handCurses.transform);
         InitCurses(obj);

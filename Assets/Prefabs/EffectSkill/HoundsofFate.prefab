@@ -58,6 +58,7 @@ MonoBehaviour:
   _animator: {fileID: 0}
   speedSkill: 5
   isBoomer: 0
+  _meshRender: {fileID: 0}
 --- !u!65 &7787348265134597574
 BoxCollider:
   m_ObjectHideFlags: 0
