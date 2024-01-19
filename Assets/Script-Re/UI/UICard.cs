@@ -47,8 +47,11 @@ public class UICard : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler 
         transform.DORotate(new Vector3(0, -90, 0), 0.8f,RotateMode.Fast).OnComplete(() =>
         {
             _CradFont.enabled = enabled;
-            transform.DORotate(new Vector3(0, 0, 0), 0.8f);
-            _active = true;
+            transform.DORotate(new Vector3(0, 0, 0), 0.8f).OnComplete(() =>
+            {
+                _active = true;
+            });
+            
         });
     }
     private void OnDisable()

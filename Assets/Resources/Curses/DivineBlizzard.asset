@@ -20,8 +20,8 @@ MonoBehaviour:
   NameCurses: DivineBlizzard
   QuoteCurses: The breath of a forgotten God... once stronger than them all.
   DescriptionCurses: Knocks back and freezes enemies.
-  TimeUseSKill: 1
-  Damage: 2
+  TimeUseSKill: 0
+  Damage: 7
   Speed: 1
   AttackRange: 2
   UseAngry: 10

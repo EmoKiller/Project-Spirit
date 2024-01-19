@@ -1,11 +1,13 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor.Drawers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem.iOS;
+using UnityEngine.ProBuilder;
 using UnityEngine.UI;
 
 public class UIManager : SerializedMonoBehaviour
@@ -17,10 +19,7 @@ public class UIManager : SerializedMonoBehaviour
     public static UIManager Instance = null;
 
     private bool isOnUIEndOfLevel = false;
-    public bool IsOnUIEndOfLevel
-    {
-        get { return isOnUIEndOfLevel; }
-    }
+    public bool IsOnUIEndOfLevel { get { return isOnUIEndOfLevel; } }
 
     private void Awake()
     {
@@ -36,7 +35,7 @@ public class UIManager : SerializedMonoBehaviour
         UIButtonAction.OnButtonDown = ButtonDown;
         UIButtonAction.OnButtonUp = ButtonUp;
         UIButtonAction.OnTriggerUpdateFillValue = OnTriggerUpdateFillValue;
-        
+
         UIButtonAction.TypeButton[TypeUIButton.ButtonE].gameObject.SetActive(false);
         UIButtonAction.TypeButton[TypeUIButton.Mouse].gameObject.SetActive(false);
 
@@ -46,20 +45,22 @@ public class UIManager : SerializedMonoBehaviour
         EventDispatcher.Addlistener<string, string, string, float, float>(Script.UIManager, Events.UpdateInfoWeapon, UpdateInfoWeapon);
         EventDispatcher.Addlistener<string, string, string>(Script.UIManager, Events.UpdateInfoCurses, UpdateInfoCurses);
         EventDispatcher.Addlistener(Script.UIManager, Events.SetDefault, SetDefault);
-        
-        
-
     }
     private void Start()
     {
-        
-        
+        UIButtonAction.gameObject.SetActive(false);
+        InfoWeapon.gameObject.SetActive(false);
+        ShowUpTarot.gameObject.SetActive(false);
+        UIEndOfLevel.gameObject.SetActive(false);
+        objMainSelect.gameObject.SetActive(false);
     }
     [Button]
     public void Init()
     {
         Debug.Log("Init uimanager");
         EventDispatcher.Addlistener<float>(Script.UIManager, Events.PlayerTakeDmg, TakeDamage);
+        if (InfomationPlayerManager.Instance.GetSelectDifficut())
+            OnSelectButtonLevelDifficult();
         //UiControllerHearts
         foreach (var item in grHeart)
         {
@@ -69,12 +70,6 @@ public class UIManager : SerializedMonoBehaviour
             //InfomationPlayerManager.Instance.UpdateValueOf(item.TypeHeart, InfomationPlayerManager.Instance.GetValueAttribute(item.TypeHeart));
         }
         grHeart[(int)EnemGrHeart.Black].SpecialHeart = BlackHeartBreak;
-
-        List<UI_Attribute> _UI_Attribute = GetComponentsInChildren<UI_Attribute>().ToList();
-        foreach (var item in _UI_Attribute)
-        {
-            item.Init();
-        }
         foreach (var item in _difficultButtons)
         {
             item.Value.Button.onClick.AddListener(OnSelectButtonLevelDifficult);
@@ -83,21 +78,14 @@ public class UIManager : SerializedMonoBehaviour
         {
             item.Init();
         }
-
         //MainSelect
         PowerUP.Init();
+        UIShowBar.Init();
         PowerUP.ShowButton.onClick.AddListener(OnBuy);
         buttonStartGame.onClick.AddListener(OnClickButtonStart);
         UIEndOfLevel.ButtonContinue.onClick.AddListener(OnClickContinue);
-        UIShowBar.Init();
-        UIButtonAction.gameObject.SetActive(false);
-        InfoWeapon.gameObject.SetActive(false);
-        ShowUpTarot.gameObject.SetActive(false);
-        UIEndOfLevel.gameObject.SetActive(false);
-        objMainSelect.gameObject.SetActive(false);
-        if (InfomationPlayerManager.Instance.GetSelectDifficut())
-            OnSelectButtonLevelDifficult();
-
+        ObseverConstants.OnSpawnBoss.AddListener(OnSpawnBoss);
+        ObseverConstants.OnBossDeath.AddListener(OnBossDeath);
     }
     private void OnClickButtonStart()
     {
@@ -107,7 +95,7 @@ public class UIManager : SerializedMonoBehaviour
     }
     #region UIInfomation
     [Header("UI Infomation")]
-    
+
     [SerializeField] private UiInfomation _UIInfomation = null;
     public UiInfomation UIInfomation
     {
@@ -157,7 +145,7 @@ public class UIManager : SerializedMonoBehaviour
             if (valueHit == 0)
             {
                 break;
-            }   
+            }
         }
     }
     private void BlackHeartBreak()
@@ -282,7 +270,7 @@ public class UIManager : SerializedMonoBehaviour
     {
         InfoWeapon.gameObject.SetActive(false);
         InfoWeapon.SetSizeImgRL(Vector2.zero);
-        InfoWeapon.imageArrowDamage.transform.DORotate(Vector3.zero,0);
+        InfoWeapon.imageArrowDamage.transform.DORotate(Vector3.zero, 0);
         InfoWeapon.imageArrowSpeed.transform.DORotate(Vector3.zero, 0);
     }
     private void SetUpDownValue(GameObject trans, float damage)
@@ -321,7 +309,7 @@ public class UIManager : SerializedMonoBehaviour
         {
             if (i < Quanty)
             {
-                int random = UnityEngine.Random.Range(0, 13);
+                int random = UnityEngine.Random.Range(0, 14);
                 CardConfig Card = ConfigDataHelper.GameConfig.cardsConfig[(CardType)random];
                 ShowUpTarot.ListCard[i].gameObject.SetActive(true);
                 ShowUpTarot.ListCard[i].NameCard = Card.Type.ToString();
@@ -373,17 +361,14 @@ public class UIManager : SerializedMonoBehaviour
 
         float time = Time.time - InfomationPlayerManager.Instance.GetElapsedTime();
         int hour = Mathf.FloorToInt(time / 3600);
-        int min = Mathf.FloorToInt((time % 3600)/60);
+        int min = Mathf.FloorToInt((time % 3600) / 60);
         int sec = Mathf.FloorToInt(time % 60);
-        UIEndOfLevel.TextTimeCLock = string.Format("{0:00}:{1:00}:{2:00}", hour, min , sec);
+        UIEndOfLevel.TextTimeCLock = string.Format("{0:00}:{1:00}:{2:00}", hour, min, sec);
         UIEndOfLevel.TextTotalKillEnemy = InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.CountKillEnemy).ToString();
     }
     private void OnClickContinue()
     {
         ObseverConstants.OnClickButtonContinue?.Invoke();
-        //objMainSelect.SetActive(true);
-        //UIEndOfLevel.gameObject.SetActive(false);
-        //isOnUIEndOfLevel = false;
     }
     #endregion
 
@@ -433,5 +418,18 @@ public class UIManager : SerializedMonoBehaviour
         InfomationPlayerManager.Instance.PowerIncreaseValueOf(PowerUP.AttributeAdded, PowerUP.ValueAdded);
         PowerUP.PopupShow.SetActive(false);
     }
+    #endregion
+    #region HealthBoss
+    [SerializeField] UIHealthBoss _HealthBoss;
+    public UIHealthBoss HealthBoss => this.TryGetMonoComponent(ref _HealthBoss);
+    private void OnSpawnBoss()
+    {
+        _HealthBoss.gameObject.SetActive(true);
+    }
+    private void OnBossDeath()
+    {
+        _HealthBoss.gameObject.SetActive(false);
+    }
+
     #endregion
 }

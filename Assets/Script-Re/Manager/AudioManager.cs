@@ -35,22 +35,49 @@ public class AudioManager : SerializedMonoBehaviour
         ObseverConstants.OnClickButtonStart.AddListener(StopListSound);
         ObseverConstants.OnClickButtonContinue.AddListener(StopListSound);
         ObseverConstants.OnClickButtonStart.AddListener(PlayListOnRound);
+        ObseverConstants.ReloadScene.AddListener(OnLoadScene);
+        ObseverConstants.OnSpawnBoss.AddListener(OnSpawnBoss);
+        ObseverConstants.OnBossDeath.AddListener(OnBossDeath);
     }
     private void Start()
     {
     }
+    private void OnLoadScene()
+    {
+        StopListSound();
+        Play("OnPlayDead",true);
+    }
+    private void OnSpawnBoss()
+    {
+        StopListSound();
+        float length = 0;
+        Play("OnBossSpawn1", ref length);
+        CoroutineSound = StartCoroutine(GameUtilities.IEDelayCall(length, () => { PlayListBoss(); }));
+    }
+    private void OnBossDeath()
+    {
+        StopListSound();
+        PlayListOnRound();
+    }
+    public void PlayListBoss()
+    {
+        float length = 0;
+        string randomSound = UnityEngine.Random.Range(1, 4).ToString();
+        Play("OnBossSpawn" + randomSound, ref length);
+        CoroutineSound = StartCoroutine(GameUtilities.IEDelayCall(length, () => { PlayListBoss(); }));
+    }
     public void PlayListOnRound()
     {
         float length = 0;
-        float randomSound = UnityEngine.Random.Range(0, 5);
-        Play(((ListAudioOnRound)randomSound).ToString(), ref length, ref soundCurrent);
+        int randomSound = UnityEngine.Random.Range(0, 5);
+        Play(((ListAudioOnRound)randomSound).ToString(), ref length);
         CoroutineSound = StartCoroutine(GameUtilities.IEDelayCall(length, () => { PlayListOnRound(); }));
     }
     public void PlayListShop()
     {
         float length = 0;
-        float randomSound = UnityEngine.Random.Range(0, 2);
-        Play(((ListAudioShop)randomSound).ToString(), ref length, ref soundCurrent);
+        int randomSound = UnityEngine.Random.Range(0, 2);
+        Play(((ListAudioShop)randomSound).ToString(), ref length);
         CoroutineSound = StartCoroutine(GameUtilities.IEDelayCall(length, () => { PlayListShop(); }));
     }
     public void StopListSound()
@@ -64,7 +91,7 @@ public class AudioManager : SerializedMonoBehaviour
     }
 
 
-    public void Play(string name)
+    public void Play(string name,bool setCurrentSound = false)
     {
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
         if (s == null)
@@ -73,8 +100,10 @@ public class AudioManager : SerializedMonoBehaviour
             return;
         }
         s.source.Play();
+        if (setCurrentSound == true)
+            soundCurrent = s;
     }
-    public void Play(string name, ref float lengthClip , ref Sound outSound)
+    public void Play(string name, ref float lengthClip)
     {
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
         if (s == null)
@@ -83,7 +112,7 @@ public class AudioManager : SerializedMonoBehaviour
             return;
         }
         s.source.Play();
-        outSound = s;
+        soundCurrent = s;
         lengthClip = s.source.clip.length;
     }
 

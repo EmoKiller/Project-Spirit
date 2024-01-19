@@ -21,20 +21,21 @@ public class GameLevelManager : MonoBehaviour
         else
             Destroy(Instance);
         ObseverConstants.OnClickButtonStart.AddListener(Init);
-        //SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
-        ////SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
-        //SpawnObj(GameConstants.SkillCurses, NameCurses.DeathsSquall.ToString(), cursesPodium);
     }
     public void Init()
     {
         SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlSword) + 1)).ToString(), weaponPodium);
-        //SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
-        SpawnObj(GameConstants.SkillCurses, NameCurses.CleansingFire.ToString(), cursesPodium);
+        SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(0, InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.TypeLvlCruses) + 1)).ToString(), cursesPodium);
+        
         this.DelayCall(10f, () =>
         {
             SpawnEnemy();
         });
-
+    }
+    public void SpawnNewWeapon()
+    {
+        SpawnObj(GameConstants.SkillCurses, ((NameCurses)UnityEngine.Random.Range(7, 11)).ToString(), cursesPodium);
+        SpawnObj(GameConstants.WeaponSword, ((TypeSword)UnityEngine.Random.Range(1, 7)).ToString(), weaponPodium);
     }
     public void SpawnObj(string path, string objectName, Transform transform)
     {
@@ -80,13 +81,13 @@ public class GameLevelManager : MonoBehaviour
         listEnemys.Remove(ene);
         if (listEnemys.Count == 0)
         {
-            Debug.Log("ClearEnemy");
-            RewardSystem.Instance.SpawnChestBonus(DataGameLevelReward(), transform.position, out ChestBonus chest);
-            NextRound();
+            round++;
             this.DelayCall(5, () =>
             {
                 SpawnEnemy();
+                Debug.Log("Spawn Enemy");
             });
+            Reward();
         }
     }
     public void RemoveEnemy(Enemy ene)
@@ -95,9 +96,11 @@ public class GameLevelManager : MonoBehaviour
             return;
         listEnemys.Remove(ene);
     }
-    private void NextRound()
+    private void Reward()
     {
-        round++;
+        RewardSystem.Instance.SpawnChestBonus(DataGameLevelReward(), transform.position, out ChestBonus chest);
+        if (round % 6 == 0)
+            SpawnNewWeapon();
     }
     private Dictionary<TypeEnemy, ConfigEnemy> DataGameLevelConfig()
     {

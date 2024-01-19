@@ -111,9 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01049902dc37d2448a2f663f3d5824e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 0
+  TimeMove: 10
+  TimeMoveMulti: 1
   MoveY: 1
   TimeMoveY: 1
   EaseType: 0
   Ontrigger: 0
   spriteRenderer: {fileID: 0}
-  NumberCard: 0

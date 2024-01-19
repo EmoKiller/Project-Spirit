@@ -66,6 +66,18 @@ public class EneDeathCatEyeBall : Enemy
         }
         EnemyThinking(5, 100, () => { IsRandomMove(); }, null);
     }
+    public override void TakeDamage(float damage)
+    {
+        if (!Alive)
+            return;
+        CurrentHealth -= damage;
+        healthBar.SetActive();
+        healthBar.UpdateHealth(CurrentHealth);
+        if (CurrentHealth <= 0)
+        {
+            Dead();
+        }
+    }
     protected void OnAttack()
     {
         if (Distance() <= characterAttack.AttackRangeBow)

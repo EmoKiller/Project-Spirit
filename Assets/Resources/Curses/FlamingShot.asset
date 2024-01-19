@@ -22,7 +22,7 @@ MonoBehaviour:
   DescriptionCurses: Shoot a piercing bolt of fire. Hold and release at the mark
     to make it explosive.
   TimeUseSKill: 1
-  Damage: 2
+  Damage: 6
   Speed: 5
   AttackRange: 60
   UseAngry: 10

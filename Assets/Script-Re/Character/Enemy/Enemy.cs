@@ -203,7 +203,7 @@ public class Enemy : CharacterBrain, IPool
     {
         if (!Alive)
             return;
-        if (!OnAction)
+        if (!OnAction || enemyThinking)
         {
             string str = UnityEngine.Random.Range(1, 6).ToString();
             AudioManager.instance.Play("SoundEnemy" + str);

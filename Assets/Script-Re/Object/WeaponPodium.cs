@@ -35,7 +35,7 @@ public class WeaponPodium : TriggerWaitAction
     private void GetDamagePlayer(Collider other)
     {
         CharacterAttack charatk = other.GetComponent<CharacterAttack>();
-        if (charatk != null)
+        if (charatk.CurrentWeapon == null)
             return;
         damagePlayer = charatk.TotalDamage();
         speedPlayer = charatk.Speed;
@@ -52,6 +52,7 @@ public class WeaponPodium : TriggerWaitAction
     }
     private float CompareDamage()
     {
+
         float dmg = weapon.TotalDamage() - damagePlayer;
         return dmg;
     }

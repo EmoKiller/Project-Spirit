@@ -45,15 +45,9 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
         get { return GetValueAttribute(AttributeType.CurrentAngry); }
         set
         {
-            heroData.attributes[SaveSlot][AttributeType.CurrentAngry].value = value;
+            heroData.attributes[SaveSlot][AttributeType.CurrentAngry].value = Mathf.Clamp(value, 0, GetValueAttribute(AttributeType.MaxValueAngry));
             UpdateValueOf(AttributeType.CurrentAngry, GetValueAttribute(AttributeType.CurrentAngry));
         }
-
-    }
-    public void SetAngry(float value)
-    {
-        heroData.attributes[SaveSlot][AttributeType.CurrentAngry].value = value;
-        UpdateValueOf(AttributeType.CurrentAngry, GetValueAttribute(AttributeType.CurrentAngry));
     }
     public float CurrentHunger
     {
@@ -97,7 +91,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             return;
         }
         ObseverConstants.OnAttributeValueChanged.AddListener(CheckCurrentRedHeart);
-        //SaveGame();
     }
     #region
 
@@ -117,10 +110,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         return heroData.BaseAttributes[SaveSlot][type].value;
     }
-    public float GetTarrotValueAttribute(AttributeType type)
-    {
-        return heroData.TarrotAddattributes[SaveSlot][type].value;
-    }
     public float GetValueTPowerAddAttribute(AttributeType type)
     {
         if (!heroData.PowerAddattributes[SaveSlot].ContainsKey(type))
@@ -134,10 +123,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     [Button]
     public void IncreaseValueOf(AttributeType type, float value)
     {
-        if (type == AttributeType.CurrentRedHeart)
-        {
-            Debug.Log("Heal");
-        }
         heroData.attributes[SaveSlot][type].value += value;
         ObseverConstants.OnIncreaseAttributeValue?.Invoke(type, GetValueAttribute(type));
         ObseverConstants.OnAttributeValueChanged?.Invoke(type, GetValueAttribute(type));
@@ -206,7 +191,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     #endregion
     public void StartGame()
     {
-        heroData.BaseAttributes[SaveSlot][AttributeType.CurrentCoin].value = GetValueAttribute(AttributeType.CurrentCoin);
         foreach (var item in heroData.PowerAddattributes[SaveSlot])
         {
             if (heroData.attributes[SaveSlot].ContainsKey(item.Key))
@@ -214,6 +198,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
                 UpdateValueOf(item.Key, GetBaseValueAttribute(item.Key) + GetValueTPowerAddAttribute(item.Key));
             }
         }
+        UpdateValueOf(AttributeType.CurrentAngry, GetValueAttribute(AttributeType.CurrentAngry));
         SelectDifficult(heroData.GameDifficult[SaveSlot]);
         StartCountTime();
     }
@@ -235,6 +220,5 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
     {
         heroData.GameDifficult[SaveSlot] = type;
         BaseIncreaseValueOf(AttributeType.MaxRedHeart, ConfigDataHelper.GetValueGameDifficult(type, TypeControlDifficult.MaxRedHeart));
-
     }
 }

@@ -6,14 +6,16 @@ public class Weapon : MonoBehaviour
     public WeaponObject weaponObject = null;
     public List<float> CurrentHit = null;
     [SerializeField] WeaponPodium weaponPodium;
-
+    private void OnEnable()
+    {
+        Init();
+    }
     public void Init()
     {
         CurrentHit.Clear();
         for (int i = 0; i < weaponObject.ListDamage.Count; i++)
         {
             float num = weaponObject.ListDamage[i] * (1 + (0.13f + 0.07f * (int)weaponObject.LevelWeapon)) ;
-            //+ [Tarot Card multiplier] + [Fleece multiplier] + [Run Damage multiplier] × [Difficulty modifier]
             CurrentHit.Add(num);
         }
     }

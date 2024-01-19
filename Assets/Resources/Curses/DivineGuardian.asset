@@ -20,8 +20,8 @@ MonoBehaviour:
   NameCurses: DivineGuardian
   QuoteCurses: Under the shadow of wings thou lie protected.
   DescriptionCurses: 2 seconds of invincibility. Deflects projectiles, causing damage.
-  TimeUseSKill: 1
-  Damage: 2
+  TimeUseSKill: 0
+  Damage: 6
   Speed: 1
   AttackRange: 2
   UseAngry: 10

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterAttack : MonoBehaviour
 {
     [SerializeField] private Weapon currentWeapon = null;
+    public Weapon CurrentWeapon { get { return currentWeapon; } }
     [SerializeField] private HPObject hpObject = null;
     public LevelRomanNumerals LevelWeapon => currentWeapon.weaponObject.LevelWeapon;
     public float Speed => currentWeapon.weaponObject.Speed;

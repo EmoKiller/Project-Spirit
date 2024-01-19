@@ -11,6 +11,24 @@ public class EneGuardian : Enemy
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
         characterAnimator.AddSpawnObj(SpawnChain, SpawnObjBallJumpRandom, SpawnObj3);
+        characterAnimator.AddTriggerSound(TriggerSound, TriggerSound2);
+    }
+    public override void Init()
+    {
+        base.Init();
+        ObseverConstants.OnSpawnBoss?.Invoke();
+        healthBar.SetHealthSlider(UIManager.Instance.HealthBoss.HealthSlider);
+        healthBar.SetHealh(maxHealth);
+        healthBar.UpdateHealth(maxHealth);
+        Debug.Log("setHealthBarBoss");
+    }
+    private void OnEnable()
+    {
+        
+    }
+    private void OnDisable()
+    {
+        
     }
     protected override void Update()
     {
@@ -113,18 +131,30 @@ public class EneGuardian : Enemy
         if (!Alive)
             return;
         CurrentHealth -= damage;
-        healthBar.SetActive();
         healthBar.UpdateHealth(CurrentHealth);
         if (CurrentHealth <= 0)
         {
             Dead();
+            ObseverConstants.OnBossDeath?.Invoke();
         }
     }
     protected void SpawnObj3()
     {
         SpawnObjBallFireLoop(8);
     }
-
+    protected void TriggerSound()
+    {
+        AudioManager.instance.Play("FireSkillEnemy");
+    }
+    protected void TriggerSound2()
+    {
+        AudioManager.instance.Play("SlashEnemy");
+    }
+    protected override void StartAniAtk()
+    {
+        Rotation();
+        base.StartAniAtk();
+    }
     protected override void FinishAniAtk()
     {
         characterAnimator.SetTrigger("Idie");

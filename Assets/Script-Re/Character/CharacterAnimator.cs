@@ -23,6 +23,8 @@ public class CharacterAnimator : MonoBehaviour
     {
         get { return comboATK; }
     }
+    Action triggerSound = null;
+    Action triggerSound2 = null;
     Action SpawnObj = null;
     Action SpawnObj2 = null;
     Action SpawnObj3 = null;
@@ -127,6 +129,15 @@ public class CharacterAnimator : MonoBehaviour
         this.SpawnObj2 = SpawnObj2;
         this.SpawnObj3 = SpawnObj3;
     }
+    public void AddTriggerSound(Action sound)
+    {
+        this.triggerSound = sound;
+    }
+    public void AddTriggerSound(Action sound, Action sound2)
+    {
+        this.triggerSound = sound;
+        this.triggerSound2 = sound2;
+    }
     public void StartAnimation()
     {
         StartAni?.Invoke();
@@ -168,5 +179,12 @@ public class CharacterAnimator : MonoBehaviour
     {
         SpawnObj3?.Invoke();
     }
-
+    public void TriggerSound()
+    {
+        triggerSound?.Invoke();
+    }
+    public void TriggerSound2()
+    {
+        triggerSound2?.Invoke();
+    }
 }

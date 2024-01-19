@@ -24,6 +24,7 @@ public class Player : CharacterBrain, IOrderable
     private int combo;
     private bool atkCanDo;
     private bool canDropBoom = true;
+    private bool canRoll = true;
 
     #region Init
     private void Awake()
@@ -69,7 +70,7 @@ public class Player : CharacterBrain, IOrderable
         }
         if (onAniATK)
             return;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canRoll)
         {
             Rolling();
             return;
@@ -90,8 +91,10 @@ public class Player : CharacterBrain, IOrderable
     #region PlayerAction
     public override void Rolling()
     {
+        canRoll = false;
         characterAnimator.SetTrigger(AnimationStates.Rolling);
         Vector3 dir = direction.position - transform.position;
+        this.DelayCall(0.7f, () => { canRoll = true; });
         this.LoopDelayCall(0.3f, () =>
         {
             agent.MoveToDirection(dir * 3.5f);
@@ -213,6 +216,7 @@ public class Player : CharacterBrain, IOrderable
         {
             cur.transform.SetParent(null);
             cur.transform.ReSetEulerAngle();
+            cur.transform.position += new Vector3(0,1.5f,0);
             SpriteRenderer spr = cur.GetComponent<SpriteRenderer>();
             spr.enabled = true;
             cur.SetBoxCollider(false);
@@ -264,7 +268,7 @@ public class Player : CharacterBrain, IOrderable
     {
         int i = UnityEngine.Random.Range(0, 100);
         if (i < InfomationPlayerManager.Instance.GetValueAttribute(AttributeType.ChanceOfHealing))
-            InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentRedHeart, 1);
+            InfomationPlayerManager.Instance.IncreaseValueOf(AttributeType.CurrentBlueHeart, 1);
     }
     public bool CheckAnimationStates(AnimationStates state)
     {

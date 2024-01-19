@@ -178,13 +178,13 @@
 				"1" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 5,
+							"value" : 4,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						},
-						"EneScampBoom" : {
-							"value" : 5,
-							"type" : "EneScampBoom",
+						"EneGuardian" : {
+							"value" : 1,
+							"type" : "EneGuardian",
 							"LevelEnemy" : 1
 						}
 					},
@@ -252,9 +252,9 @@
 				},
 				"5" : {
 					"enemies" : {
-						"EneRedArcher" : {
-							"value" : 5,
-							"type" : "EneRedArcher",
+						"EneScampArcher" : {
+							"value" : 3,
+							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
@@ -287,9 +287,9 @@
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
-						"EneRedArcher" : {
+						"EneScampArcher" : {
 							"value" : 5,
-							"type" : "EneRedArcher",
+							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						}
 					},
@@ -308,7 +308,7 @@
 							"LevelEnemy" : 1
 						},
 						"EneScampArcher" : {
-							"value" : 4,
+							"value" : 5,
 							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						},
@@ -323,7 +323,7 @@
 				"8" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 15,
+							"value" : 8,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						},
@@ -341,6 +341,11 @@
 							"value" : 3,
 							"type" : "EneScampBoom",
 							"LevelEnemy" : 1
+						},
+						"EnemyBat" : {
+							"value" : 4,
+							"type" : "EnemyBat",
+							"LevelEnemy" : 1
 						}
 					},
 					"chestType" : "UnCommon"
@@ -348,12 +353,12 @@
 				"9" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 17,
+							"value" : 8,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
-							"value" : 12,
+							"value" : 6,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
@@ -366,24 +371,34 @@
 							"value" : 3,
 							"type" : "EneScampBoom",
 							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 1,
+							"type" : "EneHealer",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 5,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "UnCommon"
+					"chestType" : "Race"
 				},
 				"10" : {
 					"enemies" : {
 						"EnemyBat" : {
-							"value" : 10,
+							"value" : 5,
 							"type" : "EnemyBat",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
-							"value" : 12,
+							"value" : 7,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
 						"EneScampArcher" : {
-							"value" : 10,
+							"value" : 3,
 							"type" : "EneScampArcher",
 							"LevelEnemy" : 1
 						},
@@ -397,9 +412,9 @@
 				},
 				"11" : {
 					"enemies" : {
-						"EnemyBigBat" : {
-							"value" : 20,
-							"type" : "EnemyBigBat",
+						"EnemyBat" : {
+							"value" : 10,
+							"type" : "EnemyBat",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
@@ -407,14 +422,19 @@
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
-						"EneScampArcher" : {
-							"value" : 12,
-							"type" : "EneScampArcher",
+						"EneRedArcher" : {
+							"value" : 3,
+							"type" : "EneRedArcher",
 							"LevelEnemy" : 1
 						},
 						"EneScampShield" : {
 							"value" : 5,
 							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"DeathCatEyeball" : {
+							"value" : 2,
+							"type" : "DeathCatEyeball",
 							"LevelEnemy" : 1
 						}
 					},
@@ -422,9 +442,9 @@
 				},
 				"12" : {
 					"enemies" : {
-						"EneScamp" : {
-							"value" : 22,
-							"type" : "EneScamp",
+						"EneSummoner" : {
+							"value" : 1,
+							"type" : "EneSummoner",
 							"LevelEnemy" : 1
 						},
 						"SwordsMan" : {
@@ -452,8 +472,8 @@
 				},
 				"13" : {
 					"enemies" : {
-						"EneScamp" : {
-							"value" : 10,
+						"EneRedArcher" : {
+							"value" : 5,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
 						},
@@ -573,7 +593,7 @@
 							"LevelEnemy" : 1
 						}
 					},
-					"chestType" : "UnCommon"
+					"chestType" : "Race"
 				}
 			}
 		}

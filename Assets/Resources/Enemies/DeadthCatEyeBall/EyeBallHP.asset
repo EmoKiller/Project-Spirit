@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EyeBallHP
   m_EditorClassIdentifier: 
   projectTile: {fileID: 0}
-  HP: 40
+  HP: 25
   PowerForce: 30
   weight: 35
   ExpDrop: 60

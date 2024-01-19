@@ -21,7 +21,7 @@ MonoBehaviour:
   QuoteCurses: A curse against those unworthy of your presence.
   DescriptionCurses: Knocks back enemies in your range while also damaging them.
   TimeUseSKill: 0
-  Damage: 2
+  Damage: 5
   Speed: 1
   AttackRange: 2
   UseAngry: 10

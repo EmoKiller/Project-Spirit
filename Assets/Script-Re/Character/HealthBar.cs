@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
     private float _maxHealth;
     private float _health;
     [SerializeField] private Slider slider;
+    public Slider HealthSlider => slider;
 
     private void Awake()
     {
@@ -27,5 +28,13 @@ public class HealthBar : MonoBehaviour
     {
         this._health = health;
         slider.value = health;
+    }
+    public void SetHealthSlider(Slider slider)
+    {
+        this.slider = slider;
+    }
+    private void OnEnable()
+    {
+        slider.value = _maxHealth;
     }
 }

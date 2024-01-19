@@ -21,8 +21,8 @@ MonoBehaviour:
   QuoteCurses: Flames of cleansing burn thrice as bright.
   DescriptionCurses: Shoots 3 projectiles at once.
   TimeUseSKill: 1
-  Damage: 2
+  Damage: 6
   Speed: 5
   AttackRange: 60
-  UseAngry: 10
-  multipleObj: 4
+  UseAngry: 12
+  multipleObj: 3

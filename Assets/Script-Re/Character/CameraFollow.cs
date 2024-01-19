@@ -29,6 +29,7 @@ public class CameraFollow : MonoBehaviour
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraDefault, CameraDefault);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraFocus, CameraFocus);
         EventDispatcher.Addlistener(Script.CameraFollow, Events.OnAttackHitEnemy, VibrateCamera);
+        ObseverConstants.OnBossDeath.AddListener(OnBossDeadth);
     }
     public void Init()
     {
@@ -43,6 +44,17 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
+    }
+    private void OnBossDeadth()
+    {
+        
+        CameraFocus();
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = 1, 0.1f, 0.4f).SetEase(Ease.InQuad).SetUpdate(true).OnComplete(() =>
+        {
+            Time.timeScale = 1;
+            //DOTween.To(() => Time.timeScale, x => Time.timeScale = 0.1f, 1, 0.4f).SetEase(Ease.InQuad).SetUpdate(true);
+        });
+        this.DelayCall(2, () => { CameraDefault(); });
     }
     private void CameraDefault()
     {

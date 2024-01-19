@@ -20,9 +20,9 @@ MonoBehaviour:
   NameCurses: HoundsOfFate
   QuoteCurses: Seek and strike those who dare doubt.
   DescriptionCurses: Shoots multiple projectiles that seek out enemies.
-  TimeUseSKill: 1
-  Damage: 2
+  TimeUseSKill: 0.8
+  Damage: 8
   Speed: 10
   AttackRange: 5
-  UseAngry: 10
+  UseAngry: 12
   multipleObj: 4

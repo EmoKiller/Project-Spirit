@@ -63,6 +63,7 @@ public class ObjectSkill : MonoBehaviour, IPool
 
     public void Hide()
     {
+        gameObject.SetActive(false);
         myTween.Kill();
         if (gameObject.tag == "ObjEnemy")
         {
@@ -74,7 +75,6 @@ public class ObjectSkill : MonoBehaviour, IPool
             RewardSystem.Instance.RemoveFromListObjectSkill(this);
             ObjectPooling.Instance.PushToPoolObjectSkill(this);
         }
-        gameObject.SetActive(false);
     }
     public void ActiveBoom()
     {
@@ -83,6 +83,10 @@ public class ObjectSkill : MonoBehaviour, IPool
     public void SoundBoom()
     {
         AudioManager.instance.Play("BoomExplosion");
+    }
+    public void SoundChains()
+    {
+        AudioManager.instance.Play("SoundFxSkillChains");
     }
     private void OnEnable()
     {
