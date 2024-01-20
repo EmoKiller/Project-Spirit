@@ -20,18 +20,18 @@ public class ConfigDataHelper
     {
         get
         {
-            heroData = GetHeroData();
-            ES3.Save("HeroDatas", GetHeroData());
+            //heroData = GetHeroData();
+            //ES3.Save("HeroDatas", GetHeroData());
 
-            //if (!ES3.KeyExists("HeroDatas"))
-            //{
-            //    heroData = GetHeroData();
-            //    ES3.Save("HeroDatas", GetHeroData());
-            //}
-            //else
-            //{
-            //    heroData = ES3.Load<HeroData>("HeroDatas");
-            //}
+            if (!ES3.KeyExists("HeroDatas"))
+            {
+                heroData = GetHeroData();
+                ES3.Save("HeroDatas", GetHeroData());
+            }
+            else
+            {
+                heroData = ES3.Load<HeroData>("HeroDatas");
+            }
             return heroData;
         }
         set => ES3.Save("HeroDatas", value);
@@ -60,7 +60,7 @@ public class ConfigDataHelper
         data.ValuePowerUpbought.Add(SaveGameSlot.Slot3, GameConfig.SavePowerAddattributes[SaveGameSlot.Slot3]);
 
         data.PlayerOnSceness.Add(SaveGameSlot.Slot1, OnScenes.IntroGame);
-        data.PlayerOnSceness.Add(SaveGameSlot.Slot2, OnScenes.VampireSurvivor);
+        data.PlayerOnSceness.Add(SaveGameSlot.Slot2, OnScenes.IntroGame);
         data.PlayerOnSceness.Add(SaveGameSlot.Slot3, OnScenes.IntroGame);
 
         data.IsSelectedDifficult.Add(SaveGameSlot.Slot1, false);
