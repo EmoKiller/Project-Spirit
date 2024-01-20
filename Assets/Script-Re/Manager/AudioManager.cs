@@ -39,9 +39,6 @@ public class AudioManager : SerializedMonoBehaviour
         ObseverConstants.OnSpawnBoss.AddListener(OnSpawnBoss);
         ObseverConstants.OnBossDeath.AddListener(OnBossDeath);
     }
-    private void Start()
-    {
-    }
     private void OnLoadScene()
     {
         StopListSound();
@@ -89,8 +86,6 @@ public class AudioManager : SerializedMonoBehaviour
         }
         soundCurrent.source.Stop();
     }
-
-
     public void Play(string name,bool setCurrentSound = false)
     {
         Sound s = Array.Find(sounds, sounds => sounds.name == name);

@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class InfoWeapon : SerializedMonoBehaviour
 {
-
     [SerializeField] RectTransform imageRL;
     public readonly GameObject imageArrowDamage;
     public readonly GameObject imageArrowSpeed;

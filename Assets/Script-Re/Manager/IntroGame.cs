@@ -37,9 +37,6 @@ public class IntroGame : MonoBehaviour
         enemy[10].gameObject.SetActive(false);
         enemy[11].gameObject.SetActive(false);
     }
-    public void Init()
-    {
-    }
     private void EnemyGoToWayPoint()
     {
         enemy[0].SetMoveWayPoint(waypoint.points[0].position, 2f);

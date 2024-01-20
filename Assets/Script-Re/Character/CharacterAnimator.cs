@@ -28,6 +28,7 @@ public class CharacterAnimator : MonoBehaviour
     Action SpawnObj = null;
     Action SpawnObj2 = null;
     Action SpawnObj3 = null;
+    Action SpawnObj4 = null;
     Action dashAtk = null;
     Action step1aniAtk = null;
     Action step2aniAtk = null;
@@ -129,6 +130,13 @@ public class CharacterAnimator : MonoBehaviour
         this.SpawnObj2 = SpawnObj2;
         this.SpawnObj3 = SpawnObj3;
     }
+    public void AddSpawnObj(Action SpawnObj, Action SpawnObj2, Action SpawnObj3, Action SpawnObj4)
+    {
+        this.SpawnObj = SpawnObj;
+        this.SpawnObj2 = SpawnObj2;
+        this.SpawnObj3 = SpawnObj3;
+        this.SpawnObj4 = SpawnObj4;
+    }
     public void AddTriggerSound(Action sound)
     {
         this.triggerSound = sound;
@@ -178,6 +186,10 @@ public class CharacterAnimator : MonoBehaviour
     public void SpawnObjs3()
     {
         SpawnObj3?.Invoke();
+    }
+    public void SpawnObjs4()
+    {
+        SpawnObj4?.Invoke();
     }
     public void TriggerSound()
     {

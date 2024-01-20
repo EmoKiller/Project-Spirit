@@ -58,10 +58,7 @@ public class EneDeathCatEyeBall : Enemy
         int i = Random.Range(0, 100);
         if (i < 70)
         {
-            this.DelayCall(5, () =>
-            {
-                OnAttack();
-            });
+            this.DelayCall(5, () => { OnAttack();});
             return;
         }
         EnemyThinking(5, 100, () => { IsRandomMove(); }, null);
@@ -73,14 +70,8 @@ public class EneDeathCatEyeBall : Enemy
         CurrentHealth -= damage;
         healthBar.SetActive();
         healthBar.UpdateHealth(CurrentHealth);
-        if (CurrentHealth <= 0)
-        {
+        if (CurrentHealth <= 0) 
             Dead();
-        }
-    }
-    public override void Dead()
-    {
-        base.Dead();
     }
     protected void OnAttack()
     {

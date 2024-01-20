@@ -41,7 +41,6 @@ public class EnemyBat : Enemy
     }
     private void RandomMove()
     {
-
         Vector3 vec = Random.onUnitSphere;
         Vector3 point = vec.normalized * 15 + direction.transform.position;
         randomMove = false;
@@ -58,17 +57,13 @@ public class EnemyBat : Enemy
                 {
                     Rotation();
                     DashAtk();
+                    return;
                 }
-                else
-                {
-                    EnemyThinking(1, 100);
-                }
+                EnemyThinking(1, 100);
             });
+            return;
         }
-        else
-        {
-            EnemyThinking(5, 100);
-        }
+        EnemyThinking(5, 100);
     }
     public override void TakeDamage(float damage)
     {

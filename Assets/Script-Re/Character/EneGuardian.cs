@@ -10,7 +10,7 @@ public class EneGuardian : Enemy
     {
         characterAnimator.AddStepAniAtk(StartAniAtk, SetOnSlash, SetoffSlash, FinishAniAtk);
         characterAnimator.AddDashAtk(EventInDashAtks);
-        characterAnimator.AddSpawnObj(SpawnChain, SpawnObjBallJumpRandom, SpawnObj3);
+        characterAnimator.AddSpawnObj(SpawnChain, SpawnObjBallJumpRandom, SpawnObj3, SpawnObj4);
         characterAnimator.AddTriggerSound(TriggerSound, TriggerSound2);
     }
     public override void Init()
@@ -22,14 +22,6 @@ public class EneGuardian : Enemy
         healthBar.UpdateHealth(maxHealth);
         Debug.Log("setHealthBarBoss");
     }
-    private void OnEnable()
-    {
-        
-    }
-    private void OnDisable()
-    {
-        
-    }
     protected override void Update()
     {
         if (OnAction || OnEvent || !Alive)
@@ -40,7 +32,9 @@ public class EneGuardian : Enemy
             return;
         if (Distance() > playerDetectionRange && !enemyRunFollow)
         {
-            EnemyThinking(1, 25);
+            randomMove = false;
+            EnemyThinking(1, 10);
+            return;
         }
         if (Distance() <= playerDetectionRange - 1 && Distance() <= playerDetectionRange + 1 && randomMove)
         {
@@ -90,18 +84,19 @@ public class EneGuardian : Enemy
         Vector3 vec = Random.onUnitSphere;
         Vector3 point = vec.normalized * 15 + direction.transform.position;
         SetMoveWayPoint(point, 3);
-        EnemyThinking(3, 35);
+        EnemyThinking(3, 50);
     }
     protected void IsFollowAtK()
     {
         randomMove = false;
         onFollowPlayer = true;
         int i = Random.Range(0, 100);
-        if (i < 50)
+        if (i < 55)
         {
             characterAnimator.SetTrigger("RunFollow");
             agent.moveSpeed = 8f;
             enemyRunFollow = true;
+            onFollowPlayer = true;
             return;
         }
         OnUseSKill();
@@ -116,7 +111,7 @@ public class EneGuardian : Enemy
                 characterAnimator.SetTrigger("UseSKill1");
                 return;
             }
-            if (i > 60)
+            if (i > 65)
             {
                 characterAnimator.SetTrigger("UseSKill2");
                 return;
@@ -124,12 +119,13 @@ public class EneGuardian : Enemy
             characterAnimator.SetTrigger("UseSKill3");
             return;
         }
-        EnemyThinking(2, 0);
+        EnemyThinking(0.5f, 100);
     }
     public override void TakeDamage(float damage)
     {
         if (!Alive)
             return;
+        RewardSystem.Instance.SpawnObjEffectAnimation(TypeEffectAnimation.FxAniSlash, transform.position + new Vector3(0, 2, 0));
         CurrentHealth -= damage;
         healthBar.UpdateHealth(CurrentHealth);
         if (CurrentHealth <= 0)
@@ -142,14 +138,13 @@ public class EneGuardian : Enemy
     {
         SpawnObjBallFireLoop(8);
     }
-    protected void TriggerSound()
+    protected void SpawnObj4()
     {
-        AudioManager.instance.Play("FireSkillEnemy");
+        Rotation();
+        SpawnChain(direction.position);
     }
-    protected void TriggerSound2()
-    {
-        AudioManager.instance.Play("SlashEnemy");
-    }
+    protected void TriggerSound() => AudioManager.instance.Play("FireSkillEnemy");
+    protected void TriggerSound2() => AudioManager.instance.Play("SlashEnemy");
     protected override void StartAniAtk()
     {
         Rotation();

@@ -48,7 +48,7 @@ public class GameLevelManager : MonoBehaviour
         {
             for (int i = 0; i < item.Value.value; i++)
             {
-                Vector3 random = (UnityEngine.Random.onUnitSphere * 80);
+                Vector3 random = (UnityEngine.Random.onUnitSphere * 60);
                 Vector3 position = new Vector3(random.x, 0, random.z);
                 PopEnemyFromPool(listEnemys, item.Value.type, item.Value.LevelEnemy, position);
                 Debug.Log(item.Value.type);
@@ -85,8 +85,13 @@ public class GameLevelManager : MonoBehaviour
             round++;
             this.DelayCall(5, () =>
             {
+                if (round == 25) { round = 1; level++; }
+                if (level == 3)
+                {
+                    ObseverConstants.ReloadScene?.Invoke();
+                    UIManager.Instance.ShowUIEndOfLevel(Events.PlayerEndLevel);
+                }
                 SpawnEnemy();
-                Debug.Log("Spawn Enemy");
             });
             Reward();
         }

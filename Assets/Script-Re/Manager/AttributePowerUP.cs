@@ -31,12 +31,6 @@ public class AttributePowerUP : MonoBehaviour
         ActiveTick = AddTick;
         UpdateInfomation();
     }
-    private void Start()
-    {
-        //Check[0].sprite = ObjectPooling.Instance.SpriteAtlasItems.GetSprite("Checkmark");
-        //Check[0].sprite = ObjectPooling.Instance.SpriteAtlasItems.GetSprite("Combat_TarotCardShrine_0");
-        
-    }
     private void UpdateInfomation()
     {
         BaseShopPowerAddattributes item = ConfigDataHelper.GetValueBaseShopPowerAddattributes(TypePower);
@@ -51,9 +45,7 @@ public class AttributePowerUP : MonoBehaviour
     {
         numberTick = InfomationPlayerManager.Instance.GetValuePowerUpbought(TypePower).numberTick;
         for (int i = 0; i < numberTick - 1; i++)
-        {
             Check[i].sprite = ObjectPooling.Instance.SpriteAtlasItems.GetSprite("Combat_TarotCardShrine_0");
-        }
     }
     private void OnClick()
     {

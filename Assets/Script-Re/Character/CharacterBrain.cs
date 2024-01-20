@@ -1,7 +1,7 @@
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public abstract class CharacterBrain : MonoBehaviour , IDamageAble
+public abstract class CharacterBrain : MonoBehaviour, IDamageAble
 {
     [Header("Component System")]
     [SerializeField] protected MeshAgent agent = null;
@@ -10,49 +10,28 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     [SerializeField] protected Slash slash = null;
     [SerializeField] protected Transform direction;
     [SerializeField] protected GameObject tranformOfAni;
-
-    
-
     [SerializeField] protected bool onAction = false;
     [SerializeField] protected bool onAniATK = false;
     [SerializeField] protected bool OnEvent = false;
     private string characterName { get; set; }
     //public
-    public CharacterAnimator CharacterAni
-    {
-        get { return characterAnimator; }
-    }
-    public Transform Direction
-    {
-        get { return direction; }
-    }
+    public CharacterAnimator CharacterAni => characterAnimator;
+    public Transform Direction => direction;
     public bool OnAction
     {
         get { return onAction; }
         set { onAction = value; }
     }
-    public bool OnAniATK
-    {
-        get { return onAniATK; }
-    }
-    
-    public virtual bool Alive { get; }
+    public bool OnAniATK => onAniATK;
     public string Name => characterName;
-
-    
-
+    public virtual bool Alive { get; }
     protected virtual void Start()
     {
         agent.Initialized();
         characterName = gameObject.name;
         if (characterAttack.BoolWeaponEquip())
-        {
             slash.SetSizeBox(characterAttack.SlashBoxSize);
-        }
     }
-
-
-
     #region Health / Die
 
     public float CurrentHealth { get; set; }
@@ -61,47 +40,23 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     {
         OnAction = true;
         onAniATK = false;
-        this.DelayCall(0.2f, () =>
-        {
-            OnAction = false;
-        });
+        this.DelayCall(0.2f, () => { OnAction = false; });
     }
-    public virtual void Dead()
-    {
-
-    }
+    public virtual void Dead() { }
     #endregion
 
     #region SetupTriggerAni
-    protected virtual void SetOnSlash()
-    {
-        slash.SetActiveSlash(true);
-    }
-    protected virtual void SetoffSlash()
-    {
-        slash.SetActiveSlash(false);
-    }
-    protected virtual void StartAniAtk()
-    {
-        onAniATK = true;
-    }
+    protected virtual void SetOnSlash() => slash.SetActiveSlash(true);
+    protected virtual void SetoffSlash() => slash.SetActiveSlash(false);
+    protected virtual void StartAniAtk() => onAniATK = true;
     protected virtual void FinishAniAtk()
     {
         characterAnimator.ResetTrigger();
         onAniATK = false;
     }
-    public void StartAni()
-    {
-        OnAction = true;
-    }
-    public void StopAni()
-    {
-        OnAction = false;
-    }
-    public void TriggerAni(string str)
-    {
-        characterAnimator.SetTrigger(str);
-    }
+    public void StartAni() => OnAction = true;
+    public void StopAni() => OnAction = false;
+    public void TriggerAni(string str) => characterAnimator.SetTrigger(str);
     #endregion
 
     #region ControllerCharacter
@@ -175,10 +130,7 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
     }
     protected void ImpactForce(Vector3 dir)
     {
-        this.LoopDelayCall(0.2f, () =>
-        {
-            agent.AgentBody.Move(dir * Time.deltaTime);
-        });
+        this.LoopDelayCall(0.2f, () => { agent.AgentBody.Move(dir * Time.deltaTime); });
     }
     protected abstract void EffectHit(Vector3 dir);
 
@@ -190,20 +142,4 @@ public abstract class CharacterBrain : MonoBehaviour , IDamageAble
         Vector3 dir = direction.position - transform.position;
         return dir;
     }
-    //public virtual void SetMoveWayPoints(Vector3 wayPoint)
-    //{
-    //    float i = 0;
-    //    this.LoopCondition(Vector3.Distance(transform.position, wayPoint) > 0.1f , () =>
-    //    {
-    //        if (!Alive)
-    //            return;
-    //        MoveTo(wayPoint);
-    //        Rotation();
-    //        i++;
-    //        //if (i >= time - 0.5f)
-    //        //{
-    //        //    OnAction = false;
-    //        //}
-    //    });
-    //}
 }

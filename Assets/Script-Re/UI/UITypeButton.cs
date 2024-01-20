@@ -10,7 +10,7 @@ public class UITypeButton : MonoBehaviour
     private Image _img = null;
     private Image Img
     {
-        get 
+        get
         {
             if (_img == null)
             {
@@ -21,36 +21,22 @@ public class UITypeButton : MonoBehaviour
                         _img = items;
                 }
             }
-            return _img; 
+            return _img;
         }
     }
     public float FillAmount
     {
-        get
-        {
-            return Img.fillAmount;
-        }
-        set
-        {
-            _img.fillAmount = value;
-        }
+        get { return Img.fillAmount; }
+        set { _img.fillAmount = value; }
     }
     private TMP_Text _text = null;
-    private TMP_Text text 
+    private TMP_Text text
     {
         get => this.TryGetMonoComponent(ref _text);
     }
-    public string Text 
+    public string Text
     {
-        get
-        { 
-            return text.text;
-        }
-        set
-        {
-            text.text = value;
-        }
+        get { return text.text; }
+        set { text.text = value; }
     }
-
-
 }

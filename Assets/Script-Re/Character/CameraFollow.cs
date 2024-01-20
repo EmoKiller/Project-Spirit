@@ -47,13 +47,8 @@ public class CameraFollow : MonoBehaviour
     }
     private void OnBossDeadth()
     {
-        
         CameraFocus();
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = 1, 0.1f, 0.4f).SetEase(Ease.InQuad).SetUpdate(true).OnComplete(() =>
-        {
-            Time.timeScale = 1;
-            //DOTween.To(() => Time.timeScale, x => Time.timeScale = 0.1f, 1, 0.4f).SetEase(Ease.InQuad).SetUpdate(true);
-        });
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = 1, 0.1f, 0.4f).SetEase(Ease.InQuad).SetUpdate(true).OnComplete(() => { Time.timeScale = 1; });
         this.DelayCall(2, () => { CameraDefault(); });
     }
     private void CameraDefault()

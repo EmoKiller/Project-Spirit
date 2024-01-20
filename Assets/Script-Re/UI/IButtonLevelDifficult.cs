@@ -7,17 +7,11 @@ public class IButtonLevelDifficult : MonoBehaviour
 {
     public TypeLevelDifficult Type;
     [SerializeField] Button _button;
-    public Button Button
-    {
-        get { return _button; }
-    }
+    public Button Button => _button;
     private void Awake()
     {
         _button.onClick.AddListener(OnSelectButton);
     }
-    public void OnSelectButton()
-    {
-        InfomationPlayerManager.Instance.SelectDifficult(Type);
-    }
+    public void OnSelectButton() => InfomationPlayerManager.Instance.SelectDifficult(Type);
 
 }

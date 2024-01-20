@@ -7,10 +7,7 @@ public class IToggle : MonoBehaviour
     public TypeMenuTab TypeMenu;
     [SerializeField] protected Image image = null;
     [SerializeField] protected Toggle _toggle = null;
-    public Toggle Toggle 
-    {
-        get => this.TryGetMonoComponent(ref _toggle);
-    }
+    public Toggle Toggle { get => this.TryGetMonoComponent(ref _toggle); }
     public Action<IToggle, bool> OnChangedEvent;
     private void Awake()
     {

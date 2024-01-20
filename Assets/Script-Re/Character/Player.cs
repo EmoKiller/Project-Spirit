@@ -55,8 +55,6 @@ public class Player : CharacterBrain, IOrderable
     }
     #endregion
 
-    #region Update
-
     private void Update()
     {
         if (!Alive || OnAction || OnEvent || skills.OnUseSkill)
@@ -86,7 +84,6 @@ public class Player : CharacterBrain, IOrderable
         }
         characterAnimator.SetMovement(MovementType.Idle, Vertical, Horizontal);
     }
-    #endregion
 
     #region PlayerAction
     public override void Rolling()
@@ -153,11 +150,6 @@ public class Player : CharacterBrain, IOrderable
         if (negating == true)
             return;
         EventDispatcher.Publish<float>(UIManager.Script.UIManager, Events.PlayerTakeDmg, damage);
-    }
-    public override void Dead()
-    {
-        Debug.Log("Player Dead");
-
     }
     protected override void EffectHit(Vector3 dir)
     {

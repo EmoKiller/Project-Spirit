@@ -50,13 +50,9 @@ public class EneScampArcher : Enemy
         SetMoveWayPoint(point, 4);
         int i = Random.Range(0, 100);
         if (i < 50)
-        {
             this.DelayCall(5, () => { OnAttackBow(); });
-        }
         else
-        {
             EnemyThinking(5, 100, () => { IsRandomMove(); }, null);
-        }
     }
     protected void OnAttackBow()
     {

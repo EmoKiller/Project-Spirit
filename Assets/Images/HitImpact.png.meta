@@ -293,7 +293,7 @@ TextureImporter:
         width: 641
         height: 119
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -377,7 +377,7 @@ TextureImporter:
         width: 255
         height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -398,7 +398,7 @@ TextureImporter:
         width: 247
         height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,6 +406,510 @@ TextureImporter:
       bones: []
       spriteID: ab95a4c452c28e642bd1e5e751814ab6
       internalID: 2126487568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_14
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 326
+        width: 127
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1909eeddf53adbd4b80cf35e9e382985
+      internalID: 990812596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_15
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 132
+        width: 245
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6a633cac786fd438a1ac552ac23c46
+      internalID: -1272207246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_16
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 269
+        width: 48
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a6895cc3710364da0ed9b0fb92d88e
+      internalID: 1573610826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_17
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 839
+        width: 50
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639f64826cbad9e4db99431456ba487f
+      internalID: -1928139644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_18
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 853
+        width: 41
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f614f12647d4b64fa980431634b8c0f
+      internalID: -361485981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_19
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 851
+        width: 112
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c870cb857d7a14c90c024b3911fe45
+      internalID: 725326305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_20
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 933
+        width: 168
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2225a94da2028e4ab0d58d6c9ed4ad6
+      internalID: -1286489287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 933
+        width: 501
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab98912a97334ee4bbe138906cf1096a
+      internalID: -1631872030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_22
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 333
+        width: 140
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e804f761a1172be4ab29ff0d34b35c34
+      internalID: -598828659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_23
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 220
+        width: 105
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c865629e0f0f2f34eb04de99485fbb8b
+      internalID: -25232418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 322
+        width: 228
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e11bf6391905d43bd3966a093b6a61
+      internalID: -1940982999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 364
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5808c22d98e7f4cb6dd3e184e8d2c9
+      internalID: -1611220613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_26
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 311
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c70f21964d86f40a77466de79c0abc
+      internalID: -573873787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_27
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 714
+        width: 264
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24549bb57399c79498758a12a8302d2c
+      internalID: -1439187702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_28
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 0
+        width: 19
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b948a3528f2d46044b88ba9c02417e12
+      internalID: 947418787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_29
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 0
+        width: 39
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04a84756c3519d4abfa1dad2f6aaec6
+      internalID: -1603974601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_30
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 798
+        width: 424
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bc8c1089eaebb479738ea8fa910178
+      internalID: -966560028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_31
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 324
+        width: 59
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdaa352a504b674d8e82716b6aac2ad
+      internalID: 486327086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_32
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 0
+        width: 101
+        height: 577
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e956cd064364943bdaff375dd1e36b
+      internalID: -1448915271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_33
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 802
+        width: 313
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db5278f8737e4a42b1c1f6306294865
+      internalID: -241241065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 577
+        width: 76
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07b736d07a572744b58ce8acefc1f03
+      internalID: -1908696054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_35
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 579
+        width: 84
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edfc1ce8c6ec2b641b132b2272138cdf
+      internalID: 1458330576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_36
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 648
+        width: 47
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5a1e11a5f2809478c2e4d4fe6edbec
+      internalID: 1290289415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitImpact_37
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 45
+        width: 51
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fa19f4ee31ed2459e2584a4df0f0af
+      internalID: -521227764
       vertices: []
       indices: 
       edges: []
@@ -421,20 +925,44 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      HitImpact_31: 486327086
       HitImpact_2: -1233820652
+      HitImpact_32: -1448915271
       HitImpact_8: 166976336
       HitImpact_9: 2066594296
       HitImpact_1: -19391412
+      HitImpact_16: 1573610826
+      HitImpact_25: -1611220613
+      HitImpact_26: -573873787
+      HitImpact_28: 947418787
       HitImpact_0: -1616693612
       HitImpact_3: 563456802
       HitImpact_10: 455536482
       HitImpact_11: -1577432760
       HitImpact_12: 343516882
+      HitImpact_14: 990812596
+      HitImpact_15: -1272207246
+      HitImpact_21: -1631872030
+      HitImpact_36: 1290289415
+      HitImpact_23: -25232418
+      HitImpact_24: -1940982999
+      HitImpact_27: -1439187702
+      HitImpact_30: -966560028
+      HitImpact_33: -241241065
+      HitImpact_35: 1458330576
+      HitImpact_18: -361485981
       HitImpact_4: 1176583520
       HitImpact_6: -157345583
       HitImpact_5: -1771145868
       HitImpact_7: 1025799406
+      HitImpact_34: -1908696054
+      HitImpact_19: 725326305
+      HitImpact_20: -1286489287
       HitImpact_13: 2126487568
+      HitImpact_29: -1603974601
+      HitImpact_17: -1928139644
+      HitImpact_22: -598828659
+      HitImpact_37: -521227764
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

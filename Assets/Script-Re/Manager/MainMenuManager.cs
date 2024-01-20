@@ -9,8 +9,8 @@ using System;
 
 public class MainMenuManager : SerializedMonoBehaviour
 {
-    [SerializeField] Dictionary<MenuType, Button> mainMenu ;
-    [SerializeField] Dictionary<MenuType,List<GameObject>> mainMenuObj;
+    [SerializeField] Dictionary<MenuType, Button> mainMenu;
+    [SerializeField] Dictionary<MenuType, List<GameObject>> mainMenuObj;
     [SerializeField] Dictionary<SaveGameSlot, IconCheckSaveGame> saveGame;
     [SerializeField] private Camera cameraMenu;
 
@@ -33,14 +33,9 @@ public class MainMenuManager : SerializedMonoBehaviour
         mainMenu[MenuType.SaveGame3].onClick.AddListener(SaveGame3);
         mainMenu[MenuType.QuitGame].onClick.AddListener(QuitGame);
     }
-    private void Start()
-    {
-        
-    }
     private void OnEnable()
     {
         PressStart = false;
-        
     }
     private void Update()
     {
@@ -52,27 +47,17 @@ public class MainMenuManager : SerializedMonoBehaviour
             PressToPlay();
             AudioManager.instance.Play("ButtonPressToPlay");
         }
-
     }
-    private void SaveGame1()
-    {
-        CheckSaveGame(SaveGameSlot.Slot1);
-    }
-    private void SaveGame2()
-    {
-        CheckSaveGame(SaveGameSlot.Slot2);
-    }
-    private void SaveGame3()
-    {
-        CheckSaveGame(SaveGameSlot.Slot3);
-    }
+    private void SaveGame1() => CheckSaveGame(SaveGameSlot.Slot1);
+    private void SaveGame2() => CheckSaveGame(SaveGameSlot.Slot2);
+    private void SaveGame3() => CheckSaveGame(SaveGameSlot.Slot3);
     private void CheckSaveGame(SaveGameSlot slot)
     {
         InfomationPlayerManager.Instance.SaveSlot = slot;
         AudioManager.instance.PlayListOnRound();
         LoadSceneExtension.LoadScene(ConfigDataHelper.HeroData.PlayerOnSceness[slot].ToString());
     }
-    private void SetActiveObj(MenuType type , bool value)
+    private void SetActiveObj(MenuType type, bool value)
     {
         foreach (var item in mainMenuObj[type])
         {
@@ -82,7 +67,7 @@ public class MainMenuManager : SerializedMonoBehaviour
     [Button]
     private void PressToPlay()
     {
-        SetActiveObj(MenuType.PressToPlay,false);
+        SetActiveObj(MenuType.PressToPlay, false);
         cameraMenu.transform.DOLocalMoveZ(-20, 3, false).OnComplete(() =>
         {
             cameraMenu.transform.DOLocalMoveZ(-25, 1, false).OnComplete(() =>
@@ -95,7 +80,6 @@ public class MainMenuManager : SerializedMonoBehaviour
     {
         mainMenuObj[MenuType.Play][0].gameObject.SetActive(false);
         mainMenuObj[MenuType.Play][1].gameObject.SetActive(true);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     private void Setting()
     {
@@ -112,31 +96,19 @@ public class MainMenuManager : SerializedMonoBehaviour
         bloomBloom.color = new Color32(0, 0, 0, 225);
         SetActiveObj(MenuType.RoadMap, true);
     }
-    private void ExitGame()
-    {
-        Debug.Log("Exit Game");
-    }
     private void Quit()
     {
         bloomBloom.color = new Color32(255, 0, 0, 225);
         SetActiveObj(MenuType.Quit, true);
     }
-    private void WaterWayMove()
-    {
-        waterway.transform.DOLocalMoveX(100, 1, false);
-    }
-    private void WaterWayBack()
-    {
-        waterway.transform.DOLocalMoveX(-1980, 1, false);
-    }
+    private void WaterWayMove() => waterway.transform.DOLocalMoveX(100, 1, false);
+    private void WaterWayBack() => waterway.transform.DOLocalMoveX(-1980, 1, false);
+
     private void BackToMenu()
     {
         SetActiveObj(MenuType.BackToMenu, false);
         WaterWayBack();
         mainMenuObj[MenuType.BackToMenu][7].gameObject.SetActive(true);
     }
-    private void QuitGame()
-    {
-        Application.Quit();
-    }
+    private void QuitGame() => Application.Quit();
 }

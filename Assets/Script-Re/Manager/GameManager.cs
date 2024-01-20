@@ -6,9 +6,6 @@ public class GameManager : SerializedMonoBehaviour
 {
     [SerializeField] private CameraFollow cameraFollow = null;
     [SerializeField] private UIManager uiManager = null;
-    private void Awake()
-    {
-    }
     private void Start()
     {
         InfomationPlayerManager.Instance.Init();

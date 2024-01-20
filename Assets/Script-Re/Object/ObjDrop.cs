@@ -16,7 +16,6 @@ public class ObjDrop : ObjectDropOnWorld
                 Ontrigger = true;
             });
         }
-
     }
     protected override void PublishEvent()
     {

@@ -40,11 +40,9 @@ public class EneSummoner : Enemy
             RandomMove();
             return;
         }
-
     }
     private void RandomMove()
     {
-
         Vector3 vec = Random.onUnitSphere;
         Vector3 point = vec.normalized * 15 + direction.transform.position;
         randomMove = false;
@@ -53,16 +51,9 @@ public class EneSummoner : Enemy
         SetMoveWayPoint(point, 4);
         int i = Random.Range(0, 100);
         if (i < 75)
-        {
-            this.DelayCall(5, () =>
-            {
-                OnAttackBow();
-            });
-        }
+            this.DelayCall(5, () => { OnAttackBow(); });
         else
-        {
             EnemyThinking(5, 100, () => { IsRandomMove(); }, null);
-        }
     }
     protected void OnAttackBow()
     {
@@ -81,7 +72,7 @@ public class EneSummoner : Enemy
             SummonEnemy();
             return;
         }
-        SpawnObjBallFireLoop(3,15);
+        SpawnObjBallFireLoop(3, 15);
     }
     public override void TakeDamage(float damage)
     {

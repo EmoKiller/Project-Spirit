@@ -9,8 +9,6 @@ public class LoadingSceneManager : MonoBehaviour
     [SerializeField] RectTransform circle;
     [SerializeField] TMP_Text loadingText = null;
     Tween myTween;
-
-
     private void Start()
     {
         StartCoroutine(LoadSenceAsync());
@@ -28,6 +26,5 @@ public class LoadingSceneManager : MonoBehaviour
             loadingText.text = "Loading... " + handle.progress + "%";
             yield return new WaitForSeconds(0.5f);
         }
-        //myTween.Kill(); 
     }
 }

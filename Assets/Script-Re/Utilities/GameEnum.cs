@@ -1,3 +1,120 @@
+public enum Events
+{
+    CameraChangeColorBackGround,
+    CameraDefault,
+    CameraFocus,
+    CameraChangeTarget,
+    CameraTargetPlayer,
+    GoToMap1,
+    GoToMap2,
+    EnemyGoToWayPoint,
+    BruterTriggerAni,
+    WhoWaitTriggerAni,
+    SetVideoIntro,
+    PlayTalkScript3,
+    OnAttackHitEnemy,
+    PlayerTransform,
+    PlayerDirection,
+    PlayerTriggerAni,
+    PlayerChangeWeapon,
+    PlayerChangeCurses,
+    PlayerDied,
+    PlayerEndLevel,
+    BlackHeartbreak,
+    SetWeapon,
+    SetOnEvent,
+    UpdateAttackRate,
+    PlayerTakeDmg,
+    UpdateValueAngry,
+    UpdateInfoWeapon,
+    UpdateInfoCurses,
+    UpdateIconWeapon,
+    UpdateIconCurses,
+    UpdateUICoin,
+    UpdateValueHunger,
+    UpdateValueExp,
+    AddHeartAndRestoreFull,
+    RestoreHeart,
+    CheckCurrentHP,
+    UIButtonOpen,
+    UIButtonReset,
+    DialogBoxChangeTalkScript,
+    OnTringgerWaitAction,
+    TheScriptTalkEnd,
+    MoveToWaypoint,
+    SetDefault,
+    BaseStartGame
+}
+public enum MenuType
+{
+    PressToPlay,
+    Play,
+    Settings,
+    Credits,
+    RoadMap,
+    Quit,
+    buttonAccept,
+    buttonBack,
+    buttonReset,
+    buttonOnQuitBack,
+    buttonOnQuitAccept,
+    backOnStartMenu,
+    SaveGame1,
+    SaveGame2,
+    SaveGame3,
+    DeleteSaveGame,
+    BackToMenu,
+    QuitGame,
+    Resume,
+    Help,
+    MainMenu,
+}
+public enum TypeEnemy
+{
+    EneScamp,
+    SwordsMan,
+    EnemyBat,
+    EnemyBigBat,
+    DeathCatEyeball,
+    EneScampArcher,
+    EneScampShield,
+    Scythesman,
+    EneScampBoom,
+    EneSummoner,
+    EneHealer,
+    EneRedArcher,
+    EneGuardian,
+    EneRedGuardian
+}
+public enum NameCurses
+{
+    FlamingShot,
+    CleansingFire,
+    HoundsOfFate,
+    DivineBlast,
+    DivineGuardian,
+    DivineBlizzard,
+    DivineBlight,
+    DeatsSweep,
+    OathOfTheCrown,
+    DeathsAttendant,
+    DeathsSquall,
+}
+public enum TypeEffectEnemy
+{
+    ArrowEnemy,
+    FireballsEnemy,
+    ObjBoomEnemy,
+    HoundsofFate,
+    Fireballs,
+    DivineGuardian,
+    DivineBlizzard,
+    DivineBlight,
+    DivineBlast,
+    ObjBoom,
+    Slashes,
+    ObjRingDeadEnemy,
+}
 public enum TypeSword
 {
     CrusadersBlade,
@@ -15,31 +132,12 @@ public enum TypeLevelDifficult
     Hard,
     ExtraHard
 }
-public enum TypeControlDifficult
-{
-    MaxRedHeart
-}
-public enum TypeEffectEnemy
-{
-    ArrowEnemy,
-    FireballsEnemy,
-    ObjBoomEnemy,
-    HoundsofFate,
-    Fireballs,
-    DivineGuardian,
-    DivineBlizzard,
-    DivineBlight,
-    DivineBlast,
-    ObjBoom,
-    Slashes,
-    ObjRingDeadEnemy,
-
-}
 public enum TypeEffectAnimation
 {
     HitObject,
     HitObject2,
-    SpawnEnemyEffect
+    SpawnEnemyEffect,
+    FxAniSlash
 }
 public enum OnScenes
 {
@@ -47,32 +145,7 @@ public enum OnScenes
     VampireSurvivor,
     MenuVampireSurvivor
 }
-public enum SaveGameSlot
-{
-    Slot1,
-    Slot2,
-    Slot3,
-    Slot4
-}
-public enum StateSaveGame
-{
-    NewGame,
-    Continue
-}
-public enum NameCurses
-{
-    FlamingShot,
-    CleansingFire,
-    HoundsOfFate,
-    DivineBlast,
-    DivineGuardian,
-    DivineBlizzard,
-    DivineBlight,
-    DeatsSweep,
-    OathOfTheCrown,
-    DeathsAttendant,
-    DeathsSquall,
-}
+
 public enum AttributeType
 {
     Level,
@@ -139,11 +212,17 @@ public enum CardType
     DivineCurse,
     TheBomb
 }
-public enum TypeCoins
+public enum SaveGameSlot
 {
-    Coin1 = 1,
-    Coin2 = 2,
-    Coin3 = 3
+    Slot1,
+    Slot2,
+    Slot3,
+    Slot4
+}
+public enum StateSaveGame
+{
+    NewGame,
+    Continue
 }
 public enum ListTypeEffects
 {
@@ -163,23 +242,6 @@ public enum TalkScript
     IntroGame1,
     IntroGame2,
     IntroGame3
-}
-public enum TypeEnemy
-{
-    EneScamp,
-    SwordsMan,
-    EnemyBat,
-    EnemyBigBat,
-    DeathCatEyeball,
-    EneScampArcher,
-    EneScampShield,
-    Scythesman,
-    EneScampBoom,
-    EneSummoner,
-    EneHealer,
-    EneRedArcher,
-    EneGuardian,
-    EneRedGuardian
 }
 public enum ChestType
 {
@@ -215,69 +277,7 @@ public enum LevelRomanNumerals
     IX = 9,
     X = 10,
 }
-public enum Events
-{
-    //Cammera
-    CameraChangeColorBackGround,
-    CameraDefault,
-    CameraFocus,
-    CameraChangeTarget,
-    CameraTargetPlayer,
-    //IntroGame
-    GoToMap1,
-    GoToMap2,
-    EnemyGoToWayPoint,
-    BruterTriggerAni,
-    WhoWaitTriggerAni,
-    SetVideoIntro,
-    PlayTalkScript3,
-    //player
 
-    OnAttackHitEnemy,
-
-
-
-    PlayerTransform,
-    PlayerDirection,//func
-    PlayerTriggerAni,
-    PlayerChangeWeapon,
-    PlayerChangeCurses,
-    PlayerDied,
-    PlayerEndLevel,
-    BlackHeartbreak,
-    SetWeapon,
-    SetOnEvent,
-    UpdateAttackRate,
-    PlayerTakeDmg,
-    //UIManager
-    UpdateValueAngry,
-    UpdateInfoWeapon,
-    UpdateInfoCurses,
-    UpdateIconWeapon,
-    UpdateIconCurses,
-    UpdateUICoin,
-    UpdateValueHunger,
-    UpdateValueExp,
-    AddHeartAndRestoreFull,
-    RestoreHeart,
-    CheckCurrentHP,
-    UIButtonOpen,
-    UIButtonReset,
-    //popup
-
-    // UIDialogBox
-    DialogBoxChangeTalkScript,
-    //OnTringgerWaitAction
-    OnTringgerWaitAction,
-    //TriggerTalk
-    TheScriptTalkEnd,
-
-    MoveToWaypoint,
-    SetDefault,
-    //GameManager
-    BaseStartGame, //Func
-
-}
 public enum TypeItemsCanDrop
 {
     ObjDropCoin,
@@ -309,30 +309,6 @@ public enum TypeShowButton
     Items,
     TakeWeapon,
     None
-}
-public enum MenuType
-{
-    PressToPlay,
-    Play,
-    Settings,
-    Credits,
-    RoadMap,
-    Quit,
-    buttonAccept,
-    buttonBack,
-    buttonReset,
-    buttonOnQuitBack,
-    buttonOnQuitAccept,
-    backOnStartMenu,
-    SaveGame1,
-    SaveGame2,
-    SaveGame3,
-    DeleteSaveGame,
-    BackToMenu,
-    QuitGame,
-    Resume,
-    Help,
-    MainMenu,
 }
 public enum EnemGrHeart
 {
@@ -379,5 +355,9 @@ public enum ListAudioShop
 {
     Shop1,
     Shop2,
+}
+public enum TypeControlDifficult
+{
+    MaxRedHeart
 }
 

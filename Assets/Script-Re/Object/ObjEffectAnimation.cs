@@ -12,7 +12,6 @@ public class ObjEffectAnimation : MonoBehaviour, IPool
         ObjectPooling.Instance.PushToPoolObjEffectAnimation(this);
         gameObject.SetActive(false);
     }
-
     public void Show()
     {
         gameObject.SetActive(true);

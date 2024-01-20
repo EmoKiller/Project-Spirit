@@ -13,7 +13,6 @@ public class DoorController : MonoBehaviour
         InfomationPlayerManager.Instance.SetPlayerOnScenes(onScenes);
         AudioManager.instance.StopListSound();
     }
-
     public void SetDoor(bool value)
     {
         obstacle.enabled = value;

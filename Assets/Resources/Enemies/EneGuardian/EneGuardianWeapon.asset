@@ -20,10 +20,10 @@ MonoBehaviour:
   DescriptionWeapon: 
   Speed: 1
   AttackRange: 3
-  AttackRangeBow: 35
+  AttackRangeBow: 30
   RangeDash: 1.8
   SpeedOnDash: 20
-  NomalSpeed: 4
+  NomalSpeed: 5
   SlashBoxSize: {x: 6, y: 0, z: 6}
   ListDamage:
   - 1

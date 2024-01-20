@@ -7,19 +7,10 @@ public class Itext : MonoBehaviour
 {
     public TypeInfoWeapon Type;
     private TMP_Text _Text = null;
-    public TMP_Text text
-    {
-        get => this.TryGetMonoComponent(ref _Text);
-    }
+    public TMP_Text text { get => this.TryGetMonoComponent(ref _Text); }
     public string Text
     {
-        get
-        {
-            return text.text;
-        }
-        set
-        {
-            text.text = value;
-        }
+        get { return text.text; }
+        set { text.text = value; }
     }
 }

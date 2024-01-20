@@ -25,6 +25,11 @@
 					"type" : 2,
 					"value" : 25,
 					"ratio" : 100.0
+				},
+				"ObjDropHeart" : {
+					"type" : 3,
+					"value" : 2,
+					"ratio" : 100.0
 				}
 			}
 		},
@@ -43,6 +48,11 @@
 				"ObjDropAngry" : {
 					"type" : 2,
 					"value" : 25,
+					"ratio" : 100.0
+				},
+				"ObjDropHeart" : {
+					"type" : 3,
+					"value" : 1,
 					"ratio" : 100.0
 				}
 			}
@@ -178,13 +188,8 @@
 				"1" : {
 					"enemies" : {
 						"EneScamp" : {
-							"value" : 0,
+							"value" : 4,
 							"type" : "EneScamp",
-							"LevelEnemy" : 1
-						},
-						"EneRedGuardian" : {
-							"value" : 1,
-							"type" : "EneRedGuardian",
 							"LevelEnemy" : 1
 						}
 					},
@@ -507,7 +512,7 @@
 				},
 				"14" : {
 					"enemies" : {
-						"EneScamp" : {
+						"EnemyBat" : {
 							"value" : 10,
 							"type" : "EneScamp",
 							"LevelEnemy" : 1
@@ -537,39 +542,24 @@
 				},
 				"15" : {
 					"enemies" : {
-						"EnemyBat" : {
-							"value" : 7,
-							"type" : "EnemyBat",
-							"LevelEnemy" : 1
-						},
 						"EneScampBoom" : {
 							"value" : 12,
 							"type" : "SwordsMan",
 							"LevelEnemy" : 1
 						},
-						"EneRedArcher" : {
-							"value" : 10,
-							"type" : "EneRedArcher",
-							"LevelEnemy" : 1
-						},
 						"EneScampShield" : {
-							"value" : 18,
+							"value" : 4,
 							"type" : "EneScampShield",
 							"LevelEnemy" : 1
 						},
 						"Scythesman" : {
-							"value" : 10,
+							"value" : 4,
 							"type" : "Scythesman",
 							"LevelEnemy" : 1
 						},
-						"EneSummoner" : {
-							"value" : 2,
-							"type" : "EneSummoner",
-							"LevelEnemy" : 1
-						},
-						"EneHealer" : {
-							"value" : 2,
-							"type" : "EneHealer",
+						"EneRedGuardian" : {
+							"value" : 1,
+							"type" : "EneRedGuardian",
 							"LevelEnemy" : 1
 						}
 					},
@@ -661,6 +651,1027 @@
 							"value" : 10,
 							"type" : "Scythesman",
 							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"19" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"20" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"21" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneGuardian" : {
+							"value" : 1,
+							"type" : "EneGuardian",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"22" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"23" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 4,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 12,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"24" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 4,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 12,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"25" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						},
+						"EneSummoner" : {
+							"value" : 4,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 1
+						},
+						"Scythesman" : {
+							"value" : 12,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"EnemyBigBat" : {
+							"value" : 10,
+							"type" : "EnemyBigBat",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				}
+			}
+		},
+		"2" : {
+			"levelIndex" : 2,
+			"levelName" : "Dungeon",
+			"rounds" : {
+				"1" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 4,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 2,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 2,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"2" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 6,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 2,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 2,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 1
+						}
+					},
+					"chestType" : "Race"
+				},
+				"3" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 6,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 4,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 2,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"4" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 6,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 4,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneRedArcher" : {
+							"value" : 2,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 2,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"5" : {
+					"enemies" : {
+						"EneScampArcher" : {
+							"value" : 3,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 5,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						},
+						"DeathCatEyeball" : {
+							"value" : 2,
+							"type" : "DeathCatEyeball",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"6" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 9,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 6,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 2,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"DeathCatEyeball" : {
+							"value" : 3,
+							"type" : "DeathCatEyeball",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"7" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 12,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 5,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 3
+						}
+					},
+					"chestType" : "Race"
+				},
+				"8" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 8,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 6,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						},
+						"EnemyBat" : {
+							"value" : 4,
+							"type" : "EnemyBat",
+							"LevelEnemy" : 3
+						}
+					},
+					"chestType" : "Race"
+				},
+				"9" : {
+					"enemies" : {
+						"EneScamp" : {
+							"value" : 8,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 6,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EnemyBat" : {
+							"value" : 8,
+							"type" : "EnemyBat",
+							"LevelEnemy" : 2
+						},
+						"EneScampBoom" : {
+							"value" : 3,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						},
+						"EneHealer" : {
+							"value" : 1,
+							"type" : "EneHealer",
+							"LevelEnemy" : 2
+						},
+						"EneScampShield" : {
+							"value" : 5,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"10" : {
+					"enemies" : {
+						"DeathCatEyeball" : {
+							"value" : 3,
+							"type" : "EnemyBat",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 5,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneGuardian" : {
+							"value" : 1,
+							"type" : "EneGuardian",
+							"LevelEnemy" : 3
+						}
+					},
+					"chestType" : "Race"
+				},
+				"11" : {
+					"enemies" : {
+						"EnemyBat" : {
+							"value" : 10,
+							"type" : "EnemyBat",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 15,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneRedArcher" : {
+							"value" : 3,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampShield" : {
+							"value" : 5,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 2
+						},
+						"DeathCatEyeball" : {
+							"value" : 4,
+							"type" : "DeathCatEyeball",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"12" : {
+					"enemies" : {
+						"EneSummoner" : {
+							"value" : 1,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 17,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 15,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampShield" : {
+							"value" : 7,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 2
+						},
+						"Scythesman" : {
+							"value" : 5,
+							"type" : "Scythesman",
+							"LevelEnemy" : 2
+						},
+						"EnemyBat" : {
+							"value" : 10,
+							"type" : "EnemyBat",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"13" : {
+					"enemies" : {
+						"EneRedArcher" : {
+							"value" : 5,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 18,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampShield" : {
+							"value" : 13,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 3
+						},
+						"DeathCatEyeball" : {
+							"value" : 3,
+							"type" : "DeathCatEyeball",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"14" : {
+					"enemies" : {
+						"EnemyBat" : {
+							"value" : 10,
+							"type" : "EneScamp",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 20,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampShield" : {
+							"value" : 18,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 2
+						},
+						"EneSummoner" : {
+							"value" : 2,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"15" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 12,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 3
+						},
+						"EneScampShield" : {
+							"value" : 10,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 4
+						},
+						"Scythesman" : {
+							"value" : 15,
+							"type" : "Scythesman",
+							"LevelEnemy" : 1
+						},
+						"EneRedGuardian" : {
+							"value" : 1,
+							"type" : "EneRedGuardian",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"16" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 7,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 15,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 2
+						},
+						"Scythesman" : {
+							"value" : 5,
+							"type" : "Scythesman",
+							"LevelEnemy" : 2
+						}
+					},
+					"chestType" : "Race"
+				},
+				"17" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 2
+						},
+						"EneScampArcher" : {
+							"value" : 15,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 2
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 2
+						},
+						"Scythesman" : {
+							"value" : 15,
+							"type" : "Scythesman",
+							"LevelEnemy" : 4
+						}
+					},
+					"chestType" : "Race"
+				},
+				"18" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 15,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 3
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 3
+						},
+						"EneScampArcher" : {
+							"value" : 15,
+							"type" : "EneScampArcher",
+							"LevelEnemy" : 3
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 4
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 4
+						}
+					},
+					"chestType" : "Race"
+				},
+				"19" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 5
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 5
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 5
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 4
+						}
+					},
+					"chestType" : "Race"
+				},
+				"20" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 4
+						},
+						"EneSummoner" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 4
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 4
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 4
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 4
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 4
+						}
+					},
+					"chestType" : "Race"
+				},
+				"21" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 2
+						},
+						"EneSummoner" : {
+							"value" : 6,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 5
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 1
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 4
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 5
+						},
+						"EneHealer" : {
+							"value" : 4,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 6
+						},
+						"EneGuardian" : {
+							"value" : 1,
+							"type" : "EneGuardian",
+							"LevelEnemy" : 3
+						}
+					},
+					"chestType" : "Race"
+				},
+				"22" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 5
+						},
+						"EneSummoner" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 6
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 7
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 8
+						},
+						"Scythesman" : {
+							"value" : 10,
+							"type" : "Scythesman",
+							"LevelEnemy" : 9
+						},
+						"EneHealer" : {
+							"value" : 3,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 1
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 5
+						}
+					},
+					"chestType" : "Race"
+				},
+				"23" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 8
+						},
+						"EneSummoner" : {
+							"value" : 6,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 8
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 8
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 8
+						},
+						"Scythesman" : {
+							"value" : 16,
+							"type" : "Scythesman",
+							"LevelEnemy" : 8
+						},
+						"EneHealer" : {
+							"value" : 6,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 8
+						},
+						"SwordsMan" : {
+							"value" : 10,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 8
+						}
+					},
+					"chestType" : "Race"
+				},
+				"24" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 10,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 8
+						},
+						"EneSummoner" : {
+							"value" : 8,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 8
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 8
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 8
+						},
+						"Scythesman" : {
+							"value" : 20,
+							"type" : "Scythesman",
+							"LevelEnemy" : 8
+						},
+						"EneHealer" : {
+							"value" : 10,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 8
+						},
+						"SwordsMan" : {
+							"value" : 20,
+							"type" : "SwordsMan",
+							"LevelEnemy" : 8
+						}
+					},
+					"chestType" : "Race"
+				},
+				"25" : {
+					"enemies" : {
+						"EneScampBoom" : {
+							"value" : 15,
+							"type" : "EneScampBoom",
+							"LevelEnemy" : 8
+						},
+						"EneSummoner" : {
+							"value" : 12,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 8
+						},
+						"EneRedArcher" : {
+							"value" : 10,
+							"type" : "EneRedArcher",
+							"LevelEnemy" : 8
+						},
+						"EneScampShield" : {
+							"value" : 20,
+							"type" : "EneScampShield",
+							"LevelEnemy" : 8
+						},
+						"Scythesman" : {
+							"value" : 20,
+							"type" : "Scythesman",
+							"LevelEnemy" : 8
+						},
+						"EneHealer" : {
+							"value" : 10,
+							"type" : "EneSummoner",
+							"LevelEnemy" : 8
+						},
+						"EnemyBigBat" : {
+							"value" : 10,
+							"type" : "EnemyBigBat",
+							"LevelEnemy" : 8
 						}
 					},
 					"chestType" : "Race"

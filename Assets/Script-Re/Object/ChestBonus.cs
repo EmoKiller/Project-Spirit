@@ -6,7 +6,6 @@ public class ChestBonus : MonoBehaviour, IPool
 {
     public ChestType type;
     private ObjectAnimator ObjAnimator => GetComponentInChildren<ObjectAnimator>();
-
     public string objectName => type.ToString();
 
     public Action OnDropItems = null;
@@ -23,16 +22,12 @@ public class ChestBonus : MonoBehaviour, IPool
                 RewardSystem.Instance.DropObject(item.Value.type, transform.position);
             }
         }
-        this.DelayCall(20, () =>
-        {
-            Hide();
-        });
+        this.DelayCall(20, () => { Hide(); });
     }
     public void Show()
     {
         gameObject.SetActive(true);
     }
-
     public void Hide()
     {
         RewardSystem.Instance.RemoveFromListChestBonus(this);

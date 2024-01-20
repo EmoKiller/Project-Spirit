@@ -17,7 +17,6 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
     [Header("Sprite")]
     [SerializeField] SpriteRenderer spriteRenderer;
     protected Action pubLish = null;
-    
     public virtual string objectName => Type.ToString();
 
     private void Awake()
@@ -54,23 +53,16 @@ public class ObjectDropOnWorld : MonoBehaviour, IPool
         {
             TimeMoveMulti = 2;
         }
-        transform.position = Vector3.LerpUnclamped(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position, TimeMove* TimeMoveMulti * Time.deltaTime);
-        
+        transform.position = Vector3.LerpUnclamped(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position, TimeMove * TimeMoveMulti * Time.deltaTime);
+
         if (Vector3.Distance(transform.position, ((Transform)EventDispatcher.Call(Player.Script.Player, Events.PlayerTransform)).position) < 0.5f)
         {
             pubLish?.Invoke();
             Hide();
         }
     }
-    protected virtual void PublishEvent()
-    {
-        
-    }
-    public virtual void Show()
-    {
-        gameObject.SetActive(true);
-    }
-
+    protected virtual void PublishEvent() { }
+    public virtual void Show() => gameObject.SetActive(true);
     public virtual void Hide()
     {
         gameObject.SetActive(false);

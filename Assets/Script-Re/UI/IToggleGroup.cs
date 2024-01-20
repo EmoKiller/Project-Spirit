@@ -21,8 +21,5 @@ public class IToggleGroup : MonoBehaviour
     {
         listContents[(int)Child.TypeMenu].gameObject.SetActive(value);
     }
-    private void Start()
-    {
-        _childs[0].Toggle.isOn = true;
-    }
+    private void Start() => _childs[0].Toggle.isOn = true;
 }

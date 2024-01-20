@@ -35,10 +35,6 @@ public class GrHeart : MonoBehaviour
     public Action<EnemGrPriteHeart> CreateNewHeart = null;
     public Action<AttributeType> OnRestoreHeart= null;
     public UnityAction SpecialHeart = null;
-    public GrHeart()
-    {
-        
-    }
     public void Add(UIHeart uiHeart)
     {
         heart.Add(uiHeart);

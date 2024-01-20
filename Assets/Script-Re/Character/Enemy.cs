@@ -20,9 +20,6 @@ public class Enemy : CharacterBrain, IPool
     [SerializeField] protected bool enemyRunFollow = false;
     public override bool Alive => CurrentHealth > 0;
     public virtual string objectName => typeEnemy.ToString();
-    private void Awake()
-    {
-    }
     protected override void Start()
     {
         base.Start();
@@ -157,10 +154,7 @@ public class Enemy : CharacterBrain, IPool
     }
 
     #region SetupEnemy
-    public void SetLevelEnemy(LevelRomanNumerals level)
-    {
-        LevelEnemy = level;
-    }
+    public void SetLevelEnemy(LevelRomanNumerals level) => LevelEnemy = level;
     private void SetupHPEnemy()
     {
         maxHealth = characterAttack.HP * (float)LevelEnemy;
@@ -175,18 +169,7 @@ public class Enemy : CharacterBrain, IPool
     #endregion
 
     #region EnemyAction
-    public void SetOnEvent(bool value)
-    {
-        OnEvent = value;
-    }
-    public override void MoveTo(Vector3 direction)
-    {
-        base.MoveTo(direction);
-    }
-    public override void SetMoveWayPoint(Vector3 wayPoint, float time)
-    {
-        base.SetMoveWayPoint(wayPoint, time);
-    }
+    public void SetOnEvent(bool value) => OnEvent = value;
     public override void Rolling()
     {
         throw new System.NotImplementedException();
@@ -205,14 +188,13 @@ public class Enemy : CharacterBrain, IPool
             string str = UnityEngine.Random.Range(1, 6).ToString();
             AudioManager.instance.Play("SoundEnemy" + str);
         }
+        RewardSystem.Instance.SpawnObjEffectAnimation(TypeEffectAnimation.HitObject, transform.position + new Vector3(0, 2, 0));
         base.TakeDamage(damage);
         CurrentHealth -= damage;
         healthBar.SetActive();
         healthBar.UpdateHealth(CurrentHealth);
         if (CurrentHealth <= 0)
-        {
             Dead();
-        }
     }
     public override void Dead()
     {
@@ -251,9 +233,7 @@ public class Enemy : CharacterBrain, IPool
     public void Push()
     {
         if (Distance() <= characterAttack.AttackRange)
-        {
             characterAnimator.SetTrigger("Attack");
-        }
     }
     protected virtual void DashAtk()
     {
@@ -426,7 +406,17 @@ public class Enemy : CharacterBrain, IPool
         RewardSystem.Instance.SpawnObjectSkillEnemy("ObjRingDeadEnemy", direction.position, out ObjectSkill outSkill);
         outSkill.Init(1, true);
     }
-
+    protected void SpawnChain(Vector3 direction)
+    {
+        Vector3 dirx = GetDirection().normalized;
+        float mutipDistance = 4;
+        this.WaitDelayCall(20, 0.1f, () =>
+        {
+            RewardSystem.Instance.SpawnObjectSkillEnemy("ObjRingDeadEnemy", transform.position + (dirx * mutipDistance), out ObjectSkill outSkill);
+            outSkill.Init(1, true);
+            mutipDistance += 4;
+        });
+    }
     #endregion
 
 
@@ -442,6 +432,12 @@ public class Enemy : CharacterBrain, IPool
             randomMove = true;
             onTargetPlayer = true;
             onFollowPlayer = false;
+        }
+        if (Distance() > playerDetectionRange)
+        {
+            randomMove = false;
+            onTargetPlayer = false;
+            onFollowPlayer = true;
         }
     }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIHideBar : MonoBehaviour
 {
-    
+
     [Header("HideBar")]
     [SerializeField] RectTransform wayBlack;
     [SerializeField] GameObject gruopMenuEsc;
@@ -17,11 +17,6 @@ public class UIHideBar : MonoBehaviour
         inventoryTab.SetActive(false);
         menuInGame.OnResume = OnResume;
     }
-    //public void Init()
-    //{
-    //    gruopMenuEsc.SetActive(false);
-    //    inventoryTab.SetActive(false);
-    //}
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab) && gruopMenuEsc.activeSelf == false)
@@ -33,9 +28,9 @@ public class UIHideBar : MonoBehaviour
             ToggleTabHideBar(gruopMenuEsc, !gruopMenuEsc.activeSelf);
         }
     }
-    private void ToggleTabHideBar(GameObject obj,bool value)
+    private void ToggleTabHideBar(GameObject obj, bool value)
     {
-        if(topBar != null)
+        if (topBar != null)
             topBar.gameObject.SetActive(!value);
         if (popUp != null)
             popUp.gameObject.SetActive(!value);
@@ -55,8 +50,5 @@ public class UIHideBar : MonoBehaviour
             obj.gameObject.SetActive(value);
         });
     }
-    private void OnResume()
-    {
-        ToggleTabHideBar(gruopMenuEsc, !gruopMenuEsc.activeSelf);
-    }
+    private void OnResume() => ToggleTabHideBar(gruopMenuEsc, !gruopMenuEsc.activeSelf);
 }

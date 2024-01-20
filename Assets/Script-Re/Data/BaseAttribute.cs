@@ -5,10 +5,7 @@ public class BaseAttribute
     public string type;
     public float value;
     public AttributeType Type => (AttributeType)Enum.Parse(typeof(AttributeType), type);
-    public BaseAttribute()
-    {
-
-    }
+    public BaseAttribute() { }
     public BaseAttribute(string type, float value)
     {
         this.type = type;

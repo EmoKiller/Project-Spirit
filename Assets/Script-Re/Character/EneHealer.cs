@@ -39,11 +39,9 @@ public class EneHealer : Enemy
             RandomMove();
             return;
         }
-
     }
     private void RandomMove()
     {
-
         Vector3 vec = Random.onUnitSphere;
         Vector3 point = vec.normalized * 15 + direction.transform.position;
         randomMove = false;
@@ -53,10 +51,7 @@ public class EneHealer : Enemy
         int i = Random.Range(0, 100);
         if (i < 50)
         {
-            this.DelayCall(5, () =>
-            {
-                OnAttackBow();
-            });
+            this.DelayCall(5, () => { OnAttackBow(); });
         }
         else
         {

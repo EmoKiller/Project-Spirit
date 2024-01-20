@@ -20,14 +20,6 @@ public class EneRedGuardian : Enemy
         healthBar.UpdateHealth(maxHealth);
         Debug.Log("setHealthBarBoss");
     }
-    private void OnEnable()
-    {
-
-    }
-    private void OnDisable()
-    {
-
-    }
     protected override void Update()
     {
         if (OnAction || OnEvent || !Alive)
@@ -38,7 +30,9 @@ public class EneRedGuardian : Enemy
             return;
         if (Distance() > playerDetectionRange && !enemyRunFollow)
         {
-            EnemyThinking(1, 25);
+            randomMove = false;
+            EnemyThinking(1, 10);
+            return;
         }
         if (Distance() <= playerDetectionRange - 1 && Distance() <= playerDetectionRange + 1 && randomMove)
         {
@@ -110,6 +104,7 @@ public class EneRedGuardian : Enemy
             characterAnimator.SetTrigger("RunFollow");
             agent.moveSpeed = 8f;
             enemyRunFollow = true;
+            onFollowPlayer = true;
             return;
         }
         OnUseSKill();
@@ -132,12 +127,13 @@ public class EneRedGuardian : Enemy
             EnemyThinking(1, 0);
             return;
         }
-        EnemyThinking(1, 0);
+        EnemyThinking(1, 100);
     }
     public override void TakeDamage(float damage)
     {
         if (!Alive)
             return;
+        RewardSystem.Instance.SpawnObjEffectAnimation(TypeEffectAnimation.FxAniSlash, transform.position + new Vector3(0, 2, 0));
         CurrentHealth -= damage;
         healthBar.UpdateHealth(CurrentHealth);
         if (CurrentHealth <= 0)

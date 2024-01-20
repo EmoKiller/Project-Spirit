@@ -27,7 +27,7 @@ public class MenuInGame : SerializedMonoBehaviour
     private void Settings()
     {
         throw new NotImplementedException();
-    }
+    } 
 
     private void Quit()
     {

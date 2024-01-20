@@ -10,7 +10,6 @@ public class HeroData : ICloneable
     public Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>> BaseAttributes = new Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>>();
     public Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>> TarrotAddattributes = new Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>>();
     public Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>> PowerAddattributes = new Dictionary<SaveGameSlot, Dictionary<AttributeType, BaseAttribute>>();
-
     public Dictionary<SaveGameSlot, Dictionary<ShopPowerAttributes, BaseShopPowerAddattributes>> ValuePowerUpbought = new Dictionary<SaveGameSlot, Dictionary<ShopPowerAttributes, BaseShopPowerAddattributes>>();
     public HeroData() { }
     public object Clone()

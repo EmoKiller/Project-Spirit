@@ -24,10 +24,7 @@ public class ObjectSkill : MonoBehaviour, IPool
     {
         this.damage = damage;
         this.speedSkill = speedSkill;
-        this.DelayCall(speedSkill, () =>
-        {
-            Hide();
-        });
+        this.DelayCall(speedSkill, () => { Hide(); });
     }
     public void Init(float damage, float speedSkill, Color color)
     {
@@ -46,20 +43,14 @@ public class ObjectSkill : MonoBehaviour, IPool
         this.damage = damage;
         this.speedSkill = speedSkill;
         detectedEnemy.DirStarts(dirStart);
-        this.DelayCall(speedSkill, () =>
-        {
-            Hide();
-        });
+        this.DelayCall(speedSkill, () => { Hide(); });
     }
     protected virtual void OnHit(CharacterBrain character)
     {
         character.TakeDamage(damage);
         Hide();
     }
-    public void Show()
-    {
-        gameObject.SetActive(true);
-    }
+    public void Show() => gameObject.SetActive(true);
 
     public void Hide()
     {
@@ -76,18 +67,9 @@ public class ObjectSkill : MonoBehaviour, IPool
             ObjectPooling.Instance.PushToPoolObjectSkill(this);
         }
     }
-    public void ActiveBoom()
-    {
-        _animator.SetTrigger("ActiveBoom");
-    }
-    public void SoundBoom()
-    {
-        AudioManager.instance.Play("BoomExplosion");
-    }
-    public void SoundChains()
-    {
-        AudioManager.instance.Play("SoundFxSkillChains");
-    }
+    public void ActiveBoom() => _animator.SetTrigger("ActiveBoom");
+    public void SoundBoom() => AudioManager.instance.Play("BoomExplosion");
+    public void SoundChains() => AudioManager.instance.Play("SoundFxSkillChains");
     private void OnEnable()
     {
         if (type == TypeEffectEnemy.Fireballs || type == TypeEffectEnemy.FireballsEnemy)

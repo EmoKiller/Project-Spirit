@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
-public class UIHeart : MonoBehaviour , IPool
+public class UIHeart : MonoBehaviour, IPool
 {
     public EnemGrPriteHeart TypeHearts;
     public HeartType heartType;
@@ -10,11 +10,7 @@ public class UIHeart : MonoBehaviour , IPool
     [SerializeField] RectTransform rectHeart;
     [SerializeField] float Current = 0;
     public string objectName => GetType().Name;
-    public void UpdateHeart()
-    {
-        
-    }
-    private void UpdateSpriteHeart(EnemGrPriteHeart typeHearts , HeartInfo heartInfo)
+    private void UpdateSpriteHeart(EnemGrPriteHeart typeHearts, HeartInfo heartInfo)
     {
         imageHeart.sprite = Addressables.LoadAssetAsync<Sprite>(string.Format(GameConstants.Hearts, typeHearts, heartInfo + ".asset")).WaitForCompletion();
         if (TypeHearts == EnemGrPriteHeart.RedHalf || TypeHearts == EnemGrPriteHeart.AddHalf)
@@ -35,7 +31,7 @@ public class UIHeart : MonoBehaviour , IPool
         }
         else
             heartType = HeartType.Full;
-        
+
         Current = (int)heartType;
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
@@ -54,10 +50,7 @@ public class UIHeart : MonoBehaviour , IPool
         UpdateSpriteHeart(TypeHearts, (HeartInfo)Current);
     }
 
-    public void Show()
-    {
-        gameObject.SetActive(true);
-    }
+    public void Show() => gameObject.SetActive(true);
 
     public void Hide()
     {

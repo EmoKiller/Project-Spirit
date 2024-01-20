@@ -54,11 +54,9 @@ public class EneBoomer : Enemy
         if (i < 50)
         {
             this.DelayCall(5, () => { OnAttackBow(); });
+            return;
         }
-        else
-        {
-            EnemyThinking(5, 100, () => { IsRandomMove(); }, null);
-        }
+        EnemyThinking(5, 100, () => { IsRandomMove(); }, null);
     }
     protected void OnAttackBow()
     {

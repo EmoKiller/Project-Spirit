@@ -13,19 +13,7 @@ public class AssetManager : SerializedMonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-
     }
-    private void Start()
-    {
-       
-    }
-    //public void InstantiateObj()
-    //{
-    //    Addressables.LoadAssetAsync<GameObject>("Assets/Prefabs/Object/ItemDropObject.prefab").Completed += (handle) =>
-    //    {
-    //        ItemDropObject = handle.Result;
-    //    };
-    //}
     public GameObject Instantiate(string str)
     {
         GameObject obj = Addressables.LoadAssetAsync<GameObject>(str).WaitForCompletion();
@@ -34,22 +22,4 @@ public class AssetManager : SerializedMonoBehaviour
         
 }
 
-    //public void Instantiate(string str, Transform pos, Vector3 dir)
-    //{
-    //    GameObject item = null;
-    //    Addressables.LoadAssetAsync<GameObject>(str).Completed += (handle) =>
-    //    {
-    //        item = handle.Result;
-    //        GameObject obj = Instantiate(item, pos);
-    //    };
-    //}
-    //public Sprite Instantia()
-    //{
-    //    Sprite item = null;
-    //    Addressables.LoadAssetAsync<Sprite>("Assets/Prefabs/UI/Hearts/Red/Empty.asset").Completed += (handle) =>
-    //    {
-    //        item = handle.Result;
-    //    };
-    //    return item;
-    //}
 
