@@ -11,9 +11,14 @@ public class IconCheckSaveGame : MonoBehaviour
     [SerializeField] TMP_Text newGame;
     private void Start()
     {
-        if(ConfigDataHelper.HeroData.PlayerOnSceness.ContainsKey(Slot))
+        Initialized();
+    }
+    public void Initialized()
+    {
+        Debug.Log(ConfigDataHelper.HeroData.PlayerOnSceness[Slot]);
+        if (ConfigDataHelper.HeroData.PlayerOnSceness.ContainsKey(Slot))
         {
-            if(ConfigDataHelper.HeroData.PlayerOnSceness[Slot] == OnScenes.IntroGame)
+            if (ConfigDataHelper.HeroData.PlayerOnSceness[Slot] == OnScenes.IntroGame)
             {
                 StateSave = StateSaveGame.NewGame;
                 newGame.text = StateSave.ToString();
@@ -22,6 +27,7 @@ public class IconCheckSaveGame : MonoBehaviour
             StateSave = StateSaveGame.Continue;
             newGame.text = StateSave.ToString();
         }
-            
+        Debug.Log("SavegameLoad" + " " + ConfigDataHelper.HeroData.PlayerOnSceness[Slot]);
+
     }
 }

@@ -55,6 +55,7 @@ public class MenuInGame : SerializedMonoBehaviour
 
     private void MainMenu()
     {
+        InfomationPlayerManager.Instance.OnClickContinue();
         AudioManager.instance.StopListSound();
         Time.timeScale = 1f;
         LoadSceneExtension.LoadScene("MainMenu");

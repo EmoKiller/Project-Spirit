@@ -72,6 +72,7 @@ public class AudioManager : SerializedMonoBehaviour
     }
     public void PlayListShop()
     {
+        StopListSound();
         float length = 0;
         int randomSound = UnityEngine.Random.Range(0, 2);
         Play(((ListAudioShop)randomSound).ToString(), ref length);

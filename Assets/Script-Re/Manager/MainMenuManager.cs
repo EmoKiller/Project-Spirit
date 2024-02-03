@@ -36,6 +36,13 @@ public class MainMenuManager : SerializedMonoBehaviour
     private void OnEnable()
     {
         PressStart = false;
+        Debug.Log("MainMenuOnEnable");
+        //foreach (var menu in saveGame)
+        //{
+        //    menu.Value.Initialized();
+        //    Debug.Log(menu.Key);
+        //}
+            
     }
     private void Update()
     {
