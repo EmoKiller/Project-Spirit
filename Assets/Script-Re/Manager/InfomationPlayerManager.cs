@@ -199,7 +199,9 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             }
         }
         UpdateValueOf(AttributeType.CurrentAngry, GetValueAttribute(AttributeType.CurrentAngry));
-        heroData.BaseAttributes[SaveSlot][AttributeType.CountKillEnemy].value = 0;
+        heroData.attributes[SaveSlot][AttributeType.CountKillEnemy].value = 0;
+        heroData.attributes[SaveSlot][AttributeType.CurrentBlueHeart].value = 0;
+        heroData.attributes[SaveSlot][AttributeType.MaxBlueHeart].value = 0;
         SelectDifficult(heroData.GameDifficult[SaveSlot]);
         StartCountTime();
     }
