@@ -106,12 +106,12 @@ public class EneGuardian : Enemy
         if (Distance() <= characterAttack.AttackRangeBow)
         {
             int i = Random.Range(0, 100);
-            if (i < 40)
+            if (i < 35)
             {
                 characterAnimator.SetTrigger("UseSKill1");
                 return;
             }
-            if (i > 65)
+            if (i > 70)
             {
                 characterAnimator.SetTrigger("UseSKill2");
                 return;

@@ -199,6 +199,7 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             }
         }
         UpdateValueOf(AttributeType.CurrentAngry, GetValueAttribute(AttributeType.CurrentAngry));
+        heroData.BaseAttributes[SaveSlot][AttributeType.CountKillEnemy].value = 0;
         SelectDifficult(heroData.GameDifficult[SaveSlot]);
         StartCountTime();
     }
@@ -213,7 +214,6 @@ public class InfomationPlayerManager : SerializedMonoBehaviour
             }
         }
         heroData.BaseAttributes[SaveSlot][AttributeType.CurrentCoin].value = GetValueAttribute(AttributeType.CurrentCoin);
-
         ConfigDataHelper.HeroData = heroData;
         LoadSceneExtension.LoadScene(OnScenes.VampireSurvivor.ToString());
     }

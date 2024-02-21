@@ -69,15 +69,17 @@ public class RewardSystem : SerializedMonoBehaviour
     [Button]
     public void DropObject(TypeItemsCanDrop type, Vector3 vec3)
     {
-        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString(),true);
+        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString());
         SetUpObj(ObjectDropOnWorld, obj, vec3);
+        obj.Show();
         obj.transform.AniDropItem();
     }
     [Button]
     public void DropObject(TypeItemsCanDrop type, Vector3 vec3, out ObjectDropOnWorld objout)
     {
-        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString(),true);
+        ObjectDropOnWorld obj = ObjectPooling.Instance.PopObjectDrop(type.ToString());
         SetUpObj(ObjectDropOnWorld, obj, vec3);
+        obj.Show();
         obj.transform.AniDropItem();
         objout = obj;
     }
